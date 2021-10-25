@@ -1,9 +1,9 @@
-<?php include_once 'includes/inicio/head.php' ?>
+<?php include_once 'includes/inicio/Head.php' ?>
 
 <body id="home" data-spy="scroll" data-target="#navbar-wd" data-offset="98">
-<?php include_once 'includes/inicio/loader.php' ?>
+<?php include_once 'includes/inicio/Loader.php' ?>
 
-<?php include_once 'includes/inicio/header.php' ?>
+<?php include_once 'includes/inicio/Header.php' ?>
 
 <?php include_once 'includes/nosotros/Noscontenido.php' ?>
 
