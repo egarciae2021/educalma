@@ -1,0 +1,290 @@
+// Import Font
+@font-face
+  font-family: Montserrat
+  src: url("../fonts/Montserrat/Montserrat-Regular.ttf")
+
+  // Icons Styles
+$size-icons: 20px
+$size-box-icons: 50px
+$back-hover-icons: rgba(0, 0, 0, .05)
+$space-mx-icons: 10px
+$space-px-icons: 10px
+$colors-icons: #212121
+
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+    //Estilos estándar experimentales (Principalmente Firefox)
+  scrollbar-color: rgba(0, 0, 0, .25) transparent
+  scrollbar-width: thin
+  font-family: 'Montserrat', sans-serif
+
+.separator
+  width: 100%
+  height: 1px
+  background: #ccc
+  margin-bottom: 10px
+  margin-top: 10px
+
+/* Estilos para motores Webkit y blink (Chrome, Safari, Opera... )*/
+*::-webkit-scrollbar
+  -webkit-appearance: none
+
+*::-webkit-scrollbar:vertical
+  width: 10px
+
+*::-webkit-scrollbar-button:increment, .contenedor::-webkit-scrollbar-button
+  display: none
+
+*::-webkit-scrollbar:horizontal
+  height: 10px
+
+*::-webkit-scrollbar-thumb
+  background-color: rgba(0, 0, 0, 0.25)
+
+*::-webkit-scrollbar-track
+  border-radius: 10px
+
+html
+  height: 100%
+
+body
+  height: 100%
+  background: #fff
+
+header
+  width: 100%
+  box-shadow: 0 2px 4px rgba(0,0,0,0.5)
+  padding: 0 5%
+  background: #f5f5f5
+  display: flex
+  flex-direction: row-reverse
+  justify-content: space-between
+  align-items: center
+  position: fixed
+  height: 70px
+  z-index: 2
+  top: 0
+  left: 0
+
+  & > .btn-toggle
+    display: flex
+    justify-content: center
+    align-items: center
+    width: $size-box-icons
+    height: $size-box-icons
+    margin: 0 $space-mx-icons
+    cursor: pointer
+
+    & > a
+      text-align: center
+
+      & > i
+        font-size: $size-icons
+        color: $colors-icons
+        margin: 0 $space-mx-icons
+
+    &:hover
+      border-radius: 50%
+      background: $back-hover-icons
+
+  & > .group-items
+    display: flex
+    justify-content: space-between
+    align-items: center
+    height: 100%
+    flex: 1
+
+    & > a
+      & > img
+        height: 50px
+
+    & > .group-tools
+      display: flex
+      justify-content: flex-end
+      align-items: center
+      flex: 1
+      height: 100%
+
+      & > .group-icons
+        display: flex
+        align-items: center
+        height: 100%
+
+        & > .dropdown
+          position: relative
+          z-index: 4
+
+          & .info-user
+            font-weight: bold
+            display: flex
+            flex-direction: column
+            align-items: center
+            padding: 10px 0
+
+            & > span
+              text-align: end
+              &.name
+                color: #333
+              &.type
+                font-size: x-small
+                color: #aaa
+
+          & > .info-user
+            display: none
+
+          & > .main-data
+            position: absolute
+            background: #f5f5f5
+            top: calc(100% + 15px)
+            right: 0
+            border-radius: 5px
+            box-shadow: 0 2px 4px rgba(0,0,0,0.5)
+            padding: 10px 0
+            display: none
+
+            &.show
+              display: flex
+
+            & > ul
+              display: block
+              list-style: none
+
+              & > .separator
+                display: normal
+
+              & > li
+                padding: 15px 30px
+                cursor: pointer
+
+                & > :first-child
+                  margin-right: 15px
+                  color: #757575
+
+                &:hover
+                  background: #ddd
+
+        & .icon
+          display: flex
+          align-items: center
+          justify-content: center
+          height: 100%
+          padding: 0 $space-px-icons
+          height: $size-box-icons
+          width: $size-box-icons
+          border-radius: 50%
+          cursor: pointer
+          margin: 0 $space-mx-icons
+          position: relative
+          color: $colors-icons
+
+          &:hover
+            background: $back-hover-icons
+
+          & > i
+            font-size: $size-icons
+
+        & > .icon
+          display: none
+
+        & > :last-child
+          display: flex
+          align-items: center
+
+.main-context
+  display: none
+  position: fixed
+  top: 70px
+  left: 0
+  width: 100%
+  max-width: 250px
+  background: #eee
+  height: calc( 100% - 70px )
+  min-height: calc(100% - 70px)
+  max-height: calc(100% - 70px)
+  padding: 10px 0
+  box-shadow: 0 2px 4px rgba(0,0,0,0.5)
+  z-index: 1
+  overflow-y: auto
+
+  &.show
+    display: flex
+
+    & + .container
+      padding-left: 250px
+
+  & > ul
+    width: 100%
+
+    & > li
+      display: flex
+      width: 100%
+      align-items: center
+      height: 45px
+      cursor: pointer
+
+      & > a
+        text-decoration: none
+        color: #333
+        padding: 10px 0 10px 30px
+        display: flex
+        justify-content: flex-start
+        align-items: center
+        width: 100%
+        height: 100%
+
+        & > i:nth-child(1)
+          font-size: xx-large
+          color: #757575
+          margin-right: 10px
+
+      &:hover
+        background: $back-hover-icons
+
+.container
+  padding-top: 70px
+  height: 100%
+
+  iframe
+    display: block
+    width: 100%
+    height: 100%
+    border: none
+    outline: none
+
+// // Small devices (landscape phones, 576px and up)
+// @media (min-width: 576px)
+
+// // Medium devices (tablets, 768px and up)
+// @media (min-width: 768px)
+
+// // Large devices (desktops, 992px and up)
+// @media (min-width: 992px)
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 768px)
+  header
+    flex-direction: row
+
+    & > .group-items
+      & > .group-tools
+        & > .group-icons
+          & > .dropdown
+            & .info-user
+              display: flex
+              align-items: center
+
+            & > .main-data
+              & > ul
+                & > .info-user
+                  display: none
+
+                // Dentro de los "()" debe estar en numero
+                // de hijos que esta el primer ".separator"
+                // con respecto a UL
+                & > .separator:nth-child(2)
+                  display: none
+
+          & > .icon
+            display: flex

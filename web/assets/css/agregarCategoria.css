@@ -1,0 +1,99 @@
+*{
+    padding: 0%;
+    margin: 0%;
+}
+
+body{
+  background-image: linear-gradient(135deg,cornsilk,#BBBEED,#F0F0F0,#C9CCFF,#BBBEED,cornsilk);
+  background-size: 500%;
+  animation: fanimado 10s infinite;
+}
+
+.container_cate{
+    /*background: aqua;*/
+    padding: auto;
+    margin-top: 35mm;
+}
+.get_in_touch{
+    /*background: blue;*/
+    max-width: 500px;
+    margin: 50px auto;
+    position: relative;
+    padding: 30px;
+    border:  1px solid #7C83FD;
+}
+.conteni h3{
+    font-size: 25px;
+    padding: 0px 0px 30px 30px;
+}
+.cont_boton{
+    width: 100%;
+    /*background: blueviolet;*/
+    padding: 15px;
+    text-align: center;
+}
+.boton{
+    border: 1px solid #EF58C1;
+    background: #fff;
+    padding: 10px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.boton:hover{
+    background: #7C83FD;
+    color: cornsilk;
+}
+.title{
+    color:#2BD1EC; 
+    font-size:30px;
+}
+
+/*TABLA*/
+table{
+    border-collapse: collapse;
+    width: 100%;
+    padding: auto;
+  }
+
+  th, td {
+    text-align: center;
+    padding: 10px;
+  }
+  
+  tr:nth-child(even){background-color: whitesmoke}
+  
+  th {
+    background-color: #7C83FD;
+    color: white;
+  }
+
+  tr {
+    background-color: whitesmoke;
+  }
+  .cont{
+    max-width: 650px;
+    margin: 30px auto;
+    position: relative;
+    padding: 30px;
+    border:  1px solid #7C83FD;
+  }
+  .boton_add{
+    width: 100%;
+    padding: 5px;
+    text-align: center;
+  }
+  .btn-outline-secondary:hover {
+    box-shadow: 0 0 8px 0 rgb(145, 144, 144), 0 0 10px 4px white;
+  }
+
+  @keyframes fanimado {
+    0%{
+      background-position: 0% 50%;
+    }
+    50%{
+      background-position: 100% 50%;
+    }
+    100%{
+      background-position: 0% 50%;
+    }
+  }

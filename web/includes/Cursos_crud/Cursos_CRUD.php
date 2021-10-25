@@ -1,0 +1,139 @@
+<?php
+    require_once '../../database/databaseConection.php';
+   
+    /*=============================================
+                 PARA Agregar CURSO 
+    ===============================================*/
+
+    if(isset($_POST['nombres_agrecursos'])){
+        ob_start(); 
+        session_start();
+
+        $nombreCur=$_POST['nombres_agrecursos'];
+        $descripcionCur=$_POST['descripcio_curso'];
+        $intro = $_POST['intro_curso'];
+        $categoriaCur = $_POST['categoria'];
+        $precio="Gratis";
+        $nombreimagen=$_FILES['txtimagen']['tmp_name'];
+        $dirigido =$_POST['publico_dirigido'];
+        $idProfe = $_SESSION['codUsuario'];
+        
+        
+        if($_FILES['txtimagen']['size']>0){
+            $nombreimagen = addslashes(file_get_contents($nombreimagen));
+        }else{
+            $aux = "../../assets/images/CursoxDefecto.png";
+            $nombreimagen = addslashes(file_get_contents($aux));
+
+        }
+        
+        $pdo = Database::connect();  
+        $veri="SELECT * FROM cursos WHERE nombreCurso = '$nombreCur' ";
+        $q = $pdo->prepare($veri);
+        $q->execute(array());
+        $dato=$q->fetch(PDO::FETCH_ASSOC);
+
+
+        Database::disconnect();
+    
+        if($dato==0){
+            //moviendo imagen temporal a una carpeta
+            //$ruta="../../assets/images/imagenes_cursos/".$nombreimagen;
+            //$resultado=move_uploaded_file($_FILES['txtimagen']['tmp_name'],$ruta);
+    
+            $pdo = Database::connect();
+            $verif=$pdo->prepare(" INSERT INTO cursos (nombreCurso,descripcionCurso,categoriaCurso
+            ,dirigido,costoCurso,imagenDestacadaCurso,permisoCurso,introduccion,id_userprofesor) VALUES ('$nombreCur','$descripcionCur'
+            ,'$categoriaCur','$dirigido','$precio','$nombreimagen',0,'$intro','$idProfe') ");
+    /*
+            $verif->execute(array(
+                ':nombres_agrecursos'=>$nombreCur,
+                ':descripcio_curso'=>$descripcionCur,
+                ':categoriaCurso'=>$categoriaCur,
+                ':publico_dirigido'=>$dirigido,
+                ':precio_curso'=>$precio,
+                ':imagen_agregar'=>$nombreimagen,
+                ':intro_curso'=>$intro,
+                ':codUsuario'=>$idProfe,
+            ));*/
+            $verif->execute();
+            //traer el id del insert que se agregado
+            $veri2="SELECT * FROM cursos  WHERE nombreCurso = '$nombreCur' ";
+            $q2 = $pdo->prepare($veri2);
+            $q2->execute(array());
+            $dato2=$q2->fetch(PDO::FETCH_ASSOC);
+            
+            
+            echo'
+            <script>
+                alert ("inscrito exitosamente");
+                window.location = "../../agregarModulos.php?id='.$dato2['idCurso'].'";
+            </script>
+            ';
+            
+            Database::disconnect();
+        }
+        
+        else{
+            
+         echo' <script> alert("El curso ya existe");
+            window.location = "../../agregarcurso.php";
+         </script> '; 
+            
+        }
+    }
+
+
+    /*=============================================
+                 PARA OCULTAR CURSO (Elimina)
+    ===============================================*/
+
+    if(isset($_GET['id_curso'])){
+        $id=$_GET['id_curso'];
+
+        $pdo = Database::connect();  
+        $veri="UPDATE cursos SET permisoCurso='0' WHERE idCurso = '$id' ";
+        $q = $pdo->prepare($veri);
+        $q->execute(array());
+        $dato=$q->fetch(PDO::FETCH_ASSOC);
+        Database::disconnect();
+        echo'
+            <script>
+                alert ("ocultado exitosamente");
+                window.location = "../../agregarcurso.php";
+            </script>
+        ';
+    }
+
+    /*===========================================
+                PARA ACTUALIZAR CURSO
+    =============================================*/
+
+    if(isset($_POST['idcurso'])){
+
+        $id=$_POST['idcurso'];
+        $nomb=$_POST['nomb_actu_cursos'];
+        $descr=$_POST['desc_curso'];
+        $prec=$_POST['prec_curso'];
+        $nombreimagenes=$_FILES['txtimagenAct']['tmp_name'];
+        $nombreimagen=addslashes(file_get_contents($nombreimagenes));
+   
+
+        $pdo2 = Database::connect();  
+        $veri2="UPDATE cursos SET nombreCurso='$nomb', descripcionCurso='$descr',   costoCurso='$prec', imagenDestacadaCurso='$nombreimagen' WHERE idCurso = '$id' ";
+        $q2 = $pdo2->prepare($veri2);
+        $q2->execute(array());
+        $dato2=$q2->fetch(PDO::FETCH_ASSOC);
+        Database::disconnect();
+
+        echo'
+            <script>
+                alert ("Actualizado exitosamente");
+                window.location = "../../agregarcurso.php";
+            </script>
+        ';
+
+    }
+    
+
+?>

@@ -1,0 +1,50 @@
+.cont{
+    
+    padding: 0% 30% ;
+}
+.formu{
+    height: 700px;
+    border: 2px solid #d1d3fc;
+}
+.formu h3{
+    background: #7C83FD;
+    padding: 4%;
+    text-align: center;
+    font-size: 30px;
+    box-sizing: border-box;
+}
+.formu form{
+    
+    padding: 5% 10%;
+}
+.formu input{
+    width: 100%;
+    outline: none;
+    border: 1px solid #5a95b1;
+    border-radius: 5px;
+    font-size: 20px;
+    padding: 5px 15px;
+    color: #5a95b1;
+}
+.boton{
+    
+    padding: 5%;
+    text-align: center;
+}
+.boton button{
+    border: 1px solid #7C83FD;
+    border-radius: 15px;
+    padding: 5px 15px;
+    color: #7C83FD;
+    background: none;
+}
+.boton button:hover{
+    background:  #7C83FD;
+    border: 1px solid #7C83FD;
+    color: bisque;
+}
+/*listado de las preguntas*/
+.formu02{
+    padding: 15px 50px;
+    background: rgb(192, 207, 214);
+}

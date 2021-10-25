@@ -1,0 +1,86 @@
+:root {
+  --clr-primary: #651fff;
+  --clr-gray: #37474f;
+  --clr-gray-light: #b0bec5;
+}
+
+.banner-area {
+  background-image: url(https://static.vecteezy.com/system/resources/previews/002/187/946/non_2x/online-education-school-internet-university-training-courses-background-vector.jpg);
+  background-size: cover;
+  background-position: center center;
+  top: 0px;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+}
+.banner-area:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: #130f40;
+  opacity: 0.7;
+  z-index: -1;
+}
+.banner-area h2 {
+  padding-top: 8%;
+  font-size: 80px;
+  color: aliceblue;
+  text-align: center;
+}
+.content-area{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background: aliceblue;
+    top: 600px;
+}
+.wrapper-flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.container {
+  overflow: hidden;
+  box-shadow: 0px 2px 8px 0px var(--clr-gray-light);
+  background-color: white;
+  text-align: center;
+  border-radius: 1rem;
+  position: relative;
+  width: 280px;
+  margin-bottom: 1rem;
+  margin-left: 1rem;
+  padding-top: 0px;
+  margin-top: 50px;
+  height: 100%;
+}
+
+.banner-img {
+  position: absolute;
+  background-image: url(https://scontent.flim13-1.fna.fbcdn.net/v/t1.6435-9/169966266_2536940643281179_1711644677174768215_n.jpg?_nc_cat=105&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=XqIRsxaQMz4AX8ckQNH&_nc_ht=scontent.flim13-1.fna&oh=d823300365ef2d518149b00a821df9d8&oe=618D6FE7);
+  height: 10rem;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.profile-img {
+  width: 8rem;
+  clip-path: circle(60px at center);
+  margin-top: 4.5rem;
+}
+
+.name {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.description {
+  margin: 1rem 2rem;
+  font-size: 0.9rem;
+}

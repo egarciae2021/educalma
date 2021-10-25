@@ -1,0 +1,94 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+
+
+/* bontones del la página: videoCurso */
+#btnV{
+    border: 1px solid rgba(240, 240, 240);
+    color: black;
+    background-color: white;
+    height: 50px;
+    width: 22%;
+    font-size: 15px;
+    margin: auto;
+    color: #4F52D6;
+}
+#btnV strong{
+    font-size: 20px;
+}
+#btnV:hover{
+    border: 1px solid rgba(240, 240, 240);
+    color: #4F52D6;
+    background-color: white;
+    border-bottom: 3px solid #4F52D6;
+
+}
+
+#btnV2{
+    border: 1px solid rgba(240, 240, 240);
+    color: black;
+    background-color: white;
+    height: 50px;
+    width:54%;
+    font-size: 15px;
+    margin: auto;
+    border-bottom: 3px solid #4F52D6;
+}
+#btnV2:hover{
+    border: 1px solid rgba(240, 240, 240);
+    color: black;
+    background-color: white;
+    border-bottom: 3px solid #4F52D6;
+}
+
+.containervid{
+    background: transparent;
+    padding: 12em;
+    
+}
+
+
+.contvid{
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -20%) scale(1);
+    box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.2),
+                0px 4px 8px 0 rgba(0, 0, 0, 0.19);
+    transition: all 0.3s ease;
+    background: rgb(2,0,36);
+    background: linear-gradient(180deg, rgba(2,0,36,0.19931722689075626) 0%, rgba(79,82,214,0.6811099439775911) 56%);
+    width: 42%;
+    height: 42%;
+    border-radius: 10px;
+    
+}
+
+.vid iframe{
+    margin: 10px;
+    width: 97%;
+    height: 24rem;
+    border-radius: 10px;
+}
+
+
+
+@media screen and (max-width: 1600px) {
+    .contvid{
+        top: 55%; 
+    }
+    .vid iframe{
+        margin: 10px;
+        width: 97%;
+        height: 19.5rem;
+        border-radius: 10px;
+    }
+
+}

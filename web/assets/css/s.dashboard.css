@@ -1,0 +1,312 @@
+@font-face {
+  font-family: Montserrat;
+  src: url("../fonts/Montserrat/Montserrat-Regular.ttf");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scrollbar-color: rgba(0, 0, 0, 0.25) transparent;
+  scrollbar-width: thin;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.separator {
+  width: 100%;
+  height: 1px;
+  background: #ccc;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+/* Estilos para motores Webkit y blink (Chrome, Safari, Opera... )*/
+*::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
+
+*::-webkit-scrollbar:vertical {
+  width: 10px;
+}
+
+*::-webkit-scrollbar-button:increment, .contenedor::-webkit-scrollbar-button {
+  display: none;
+}
+
+*::-webkit-scrollbar:horizontal {
+  height: 10px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+*::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  background: #fff;
+}
+
+header {
+  width: 100%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  padding: 0 5%;
+  background: #f5f5f5;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  height: 70px;
+  z-index: 2;
+  top: 0;
+  left: 0;
+}
+
+header > .btn-toggle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+header > .btn-toggle > a {
+  text-align: center;
+}
+
+header > .btn-toggle > a > i {
+  font-size: 20px;
+  color: #212121;
+  margin: 0 10px;
+}
+
+header > .btn-toggle:hover {
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.05);
+}
+
+header > .group-items {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  flex: 1;
+}
+
+header > .group-items > a > img {
+  height: 50px;
+}
+
+header > .group-items > .group-tools {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex: 1;
+  height: 100%;
+}
+
+header > .group-items > .group-tools > .group-icons {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+header > .group-items > .group-tools > .group-icons > .dropdown {
+  position: relative;
+  z-index: 4;
+}
+
+header > .group-items > .group-tools > .group-icons > .dropdown .info-user {
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 0;
+}
+
+header > .group-items > .group-tools > .group-icons > .dropdown .info-user > span {
+  text-align: end;
+}
+
+header > .group-items > .group-tools > .group-icons > .dropdown .info-user > span.name {
+  color: #333;
+}
+
+header > .group-items > .group-tools > .group-icons > .dropdown .info-user > span.type {
+  font-size: x-small;
+  color: #aaa;
+}
+
+header > .group-items > .group-tools > .group-icons > .dropdown > .info-user {
+  display: none;
+}
+
+header > .group-items > .group-tools > .group-icons > .dropdown > .main-data {
+  position: absolute;
+  background: #f5f5f5;
+  top: calc(100% + 15px);
+  right: 0;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  padding: 10px 0;
+  display: none;
+}
+
+header > .group-items > .group-tools > .group-icons > .dropdown > .main-data.show {
+  display: flex;
+}
+
+header > .group-items > .group-tools > .group-icons > .dropdown > .main-data > ul {
+  display: block;
+  list-style: none;
+}
+
+header > .group-items > .group-tools > .group-icons > .dropdown > .main-data > ul > .separator {
+  display: normal;
+}
+
+header > .group-items > .group-tools > .group-icons > .dropdown > .main-data > ul > li {
+  padding: 15px 30px;
+  cursor: pointer;
+}
+
+header > .group-items > .group-tools > .group-icons > .dropdown > .main-data > ul > li > :first-child {
+  margin-right: 15px;
+  color: #757575;
+}
+
+header > .group-items > .group-tools > .group-icons > .dropdown > .main-data > ul > li:hover {
+  background: #ddd;
+}
+
+header > .group-items > .group-tools > .group-icons .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 0 10px;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  margin: 0 10px;
+  position: relative;
+  color: #212121;
+}
+
+header > .group-items > .group-tools > .group-icons .icon:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+header > .group-items > .group-tools > .group-icons .icon > i {
+  font-size: 20px;
+}
+
+header > .group-items > .group-tools > .group-icons > .icon {
+  display: none;
+}
+
+header > .group-items > .group-tools > .group-icons > :last-child {
+  display: flex;
+  align-items: center;
+}
+
+.main-context {
+  display: none;
+  position: fixed;
+  top: 70px;
+  left: 0;
+  width: 100%;
+  max-width: 250px;
+  background: #eee;
+  height: calc( 100% - 70px);
+  min-height: calc(100% - 70px);
+  max-height: calc(100% - 70px);
+  padding: 10px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  z-index: 1;
+  overflow-y: auto;
+}
+
+.main-context.show {
+  display: flex;
+}
+
+.main-context.show + .container {
+  padding-left: 250px;
+}
+
+.main-context > ul {
+  width: 100%;
+}
+
+.main-context > ul > li {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  height: 45px;
+  cursor: pointer;
+}
+
+.main-context > ul > li > a {
+  text-decoration: none;
+  color: #333;
+  padding: 10px 0 10px 30px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.main-context > ul > li > a > i:nth-child(1) {
+  font-size: xx-large;
+  color: #757575;
+  margin-right: 10px;
+}
+
+.main-context > ul > li:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.container {
+  padding-top: 70px;
+  height: 100%;
+}
+
+.container iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+}
+
+@media (min-width: 768px) {
+  header {
+    flex-direction: row;
+  }
+  header > .group-items > .group-tools > .group-icons > .dropdown .info-user {
+    display: flex;
+    align-items: center;
+  }
+  header > .group-items > .group-tools > .group-icons > .dropdown > .main-data > ul > .info-user {
+    display: none;
+  }
+  header > .group-items > .group-tools > .group-icons > .dropdown > .main-data > ul > .separator:nth-child(2) {
+    display: none;
+  }
+  header > .group-items > .group-tools > .group-icons > .icon {
+    display: flex;
+  }
+}

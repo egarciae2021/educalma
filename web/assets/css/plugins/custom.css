@@ -1,0 +1,40 @@
+/** ADD YOUR AWESOME CODES HERE **/
+
+.roundedpill{
+    border-radius: 120px;
+}
+
+.w165{
+   width: 165px;
+}
+
+.mdl2
+{margin-left: 25px;}
+
+.pdt50
+{padding-top: 50px;}
+
+.mdl5
+{margin-left: 5%;}
+
+.imgd{
+    height: 190px;
+}
+
+.w175{
+    width: 175px;
+}
+
+.roundedcard{
+    border-radius: 5px;
+}
+
+.roundedimg{
+    border-radius: 5px;
+}
+
+.bdnone{
+    border: 1px solid #ffff;
+    box-shadow: 2px 2px 2px 2px #00000009;
+}
+

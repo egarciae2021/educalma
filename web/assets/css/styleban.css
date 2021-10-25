@@ -1,0 +1,261 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i');
+@import url('https://fonts.googleapis.com/css?family=Great+Vibes');
+@import url('https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Relaway", sans-serif;
+}
+
+body{
+    font-family: "Relaway", sans-serif;
+}
+
+
+/*style banner*/
+.banner{
+    position: relative;
+    width: 100%;
+    height: calc(150vh - 50px);
+    background-color: transparent;
+    background-size: cover;
+    background-position: center;
+    background-image: url('../images/nostros_girl.jpg');
+    flex-wrap: wrap;
+}
+
+.banner-content{
+   margin: 0;
+   padding: 0;
+   width: 100%;
+   height: 100%;
+   color: #fff;
+   min-width: 300px;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+
+.banner-content h1{
+    margin: 0;
+    padding: 0;
+    padding-bottom: 30px;
+    text-align: right;
+    font-weight: bold;
+    color: #4F52D6;
+}
+
+.banner-content p{
+    margin: 0;
+    padding: 0;
+    padding-bottom: 30px;
+    font-size: 20px;
+    margin-left: 50%;
+    text-align: right;
+    color: #7C83FD;
+   
+}
+
+.banner-content a{
+    text-decoration: none;
+    padding: 10px;
+    padding-left: 65px;
+    padding-right: 65px;
+    color: white;
+    border: 2px solid #7C83FD;
+    background-color: #7C83FD;
+    border-radius: 30px;
+    transition: all 300ms;
+}
+
+.banner-content a:hover{
+    background-color: #4F52D6;
+    border: 2px solid #4F52D6;
+    
+}
+
+
+@media only screen and (max-width: 700px) {
+    .banner{
+        width: 100%;
+    }
+    .banner-content{
+        width: 100%;
+    } 
+}
+
+@media only screen and (max-width: 540px) {
+    .banner{
+        width: 100%;
+    }
+    .banner-content{
+        margin-top: 0px;
+    }
+    h1{
+        font-size: 5em;
+    } 
+   p{
+       font: 1.4em;
+   }
+}
+
+/*style contentbox*/
+.wrapperbox{
+   display: flex;
+   justify-content: space-between;
+   width: 1200px;
+   margin: 7rem auto;
+   flex-wrap: wrap; 
+}
+
+.contbox{
+    position: relative;
+    width: 80%;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background: #fff;
+    box-shadow: 0 5px 15px  rgba(124, 131, 253, 1);
+    border-radius: 4px;
+    box-sizing: border-box;
+    overflow: hidden;
+    border-radius: 50px;
+    text-align: center;
+
+}
+
+.contbox:hover{
+    transition: 0.5s ease-in-out;
+    color: white;
+}
+
+.contbox img{
+    width: 150px;
+    margin: 30px;
+    
+    
+}
+
+.contbox img:hover{
+    transform: scale(1.1);
+}
+
+.contbox h1{
+    font-weight: bold;
+    font-size: 20px;
+}
+.contbox p{
+    font-weight: bold;
+    font-size: 13px;
+    color: #acacac;
+}
+
+
+/*style FAQ*/
+
+.conttitu h1{
+color: #4F52D6;
+font-family: Arial, Helvetica, sans-serif;
+font-weight: bold;
+font-size: 35px;
+}
+
+.lineahori{
+    height: 1px;
+    background-color: aqua;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.lineahori2{
+    height: 1px;
+    background-color: #4F52D6;  
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.accordion_outer {
+    padding: 10px 0;
+}
+
+.accordion_outer .container{
+    margin: auto; 
+}
+
+.accordion_outer details{
+    width: 100%;
+    background: transparent;
+    cursor: pointer;
+    font-size: 16px;
+    color: #4F52D6;
+    font-size: 20px;
+    font-weight: 550;
+  
+}
+
+.accordion_outer .info{
+    margin: 10px;
+    width: 97%;
+    padding: 10px;
+    background: transparent;
+    margin-top: 10px;
+    cursor: auto;
+    text-align: left;
+    
+
+}
+
+.accordion_outer .info p{
+    color: #acacac;
+    font-size: 14px;
+}
+
+.conth1 h1{
+    color: #acacac;
+    margin: 5%;
+    font-size: 15px;
+}
+
+.buttonfaq a{
+    text-decoration: none;
+padding: 10px;
+padding-left: 65px;
+padding-right: 65px;
+color: white;
+border: 2px solid #7C83FD;
+background-color: #7C83FD;
+border-radius: 30px;
+transition: all 300ms;
+   
+}
+
+.buttonfaq{
+    
+    text-align: center;
+    margin-bottom: 150px;
+}
+
+/* -- Scroll suave -- */
+html{
+	scroll-behavior: smooth;
+}
+
+
+.card-body{
+    background-color:whitesmoke;
+    text-align: justify;
+    width: 250px;
+    height: 360px;
+    position: relative;
+   
+}
+.ins{
+    position: absolute;
+    top: 285px;;
+    left: 35px;
+}
+
+

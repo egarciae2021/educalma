@@ -1,0 +1,337 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  outline: none;
+  font-family: "Montserrat", sans-serif;
+}
+
+section {
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+section > .contenedor {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+          width: 100%;
+          height: auto;
+}
+section > .contenedor > .contenedor-contenido {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+}
+section > .contenedor > .contenedor-contenido > .contenedor-formulario {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 10px 0;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+}
+section > .contenedor > .contenedor-contenido > .contenedor-formulario > h1 {
+  display: inline-block;
+  color: #5451d7;
+  font-weight: bold;
+  font-size: x-large;
+  padding: 0;
+  margin: 5px auto;
+  border-bottom: 3px solid #95f3ff;
+  letter-spacing: 1px;
+}
+section > .contenedor > .contenedor-contenido > .contenedor-formulario > h3 {
+  color: #8a8e91;
+  font-size: small;
+  padding: 0;
+  margin-bottom: 20px;
+}
+section > .contenedor > .contenedor-contenido > .contenedor-formulario > form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+section > .contenedor > .contenedor-contenido > .contenedor-formulario > form > * {
+  width: 70%;
+}
+section > .contenedor > .contenedor-contenido > .contenedor-formulario > form > .two-row-input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+section > .contenedor > .contenedor-contenido > .contenedor-formulario > form > .three-row-input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+section > .contenedor > .contenedor-contenido > .contenedor-formulario > form .input {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 0 10px;
+  margin-bottom: 5px;
+}
+section > .contenedor > .contenedor-contenido > .contenedor-formulario > form .input > span {
+  color: #5451d7;
+  font-size: small;
+  font-weight: bold;
+}
+section > .contenedor > .contenedor-contenido > .contenedor-formulario > form .input > .image-view {
+  width: 150px;
+  height: 150px;
+  -webkit-box-shadow: 0 0 0 2px #5451d7;
+          box-shadow: 0 0 0 2px #5451d7;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  text-align: center;
+}
+section > .contenedor > .contenedor-contenido > .contenedor-formulario > form .input > .image-view > img {
+  max-width: 100%;
+  max-height: 100%;
+}
+section > .contenedor > .contenedor-contenido > .contenedor-formulario > form .input > input {
+  display: block;
+  width: 100%;
+  padding: 4px 20px;
+  border: none;
+  font-size: 1em;
+  letter-spacing: 1px;
+  border-radius: 50px;
+  -webkit-box-shadow: 0 0 0 1px #ddd;
+          box-shadow: 0 0 0 1px #ddd;
+}
+section > .contenedor > .contenedor-contenido > .contenedor-formulario > form .input > input:focus, section > .contenedor > .contenedor-contenido > .contenedor-formulario > form .input > input:valid {
+  -webkit-box-shadow: 0 0 0 2px #5451d7;
+          box-shadow: 0 0 0 2px #5451d7;
+}
+section > .contenedor > .contenedor-contenido > .contenedor-formulario > form .input > input:focus + .message, section > .contenedor > .contenedor-contenido > .contenedor-formulario > form .input > input:valid + .message {
+  color: transparent;
+  font-size: xx-small;
+  font-weight: normal;
+}
+section > .contenedor > .contenedor-contenido > .contenedor-formulario > form .input > input[type=file] {
+  display: none;
+}
+section > .contenedor > .contenedor-contenido > .contenedor-formulario > form .input > input:-moz-placeholder-shown + .message {
+  color: transparent;
+  font-size: xx-small;
+  font-weight: normal;
+}
+section > .contenedor > .contenedor-contenido > .contenedor-formulario > form .input > input:-ms-input-placeholder + .message {
+  color: transparent;
+  font-size: xx-small;
+  font-weight: normal;
+}
+section > .contenedor > .contenedor-contenido > .contenedor-formulario > form .input > input:placeholder-shown + .message {
+  color: transparent;
+  font-size: xx-small;
+  font-weight: normal;
+}
+section > .contenedor > .contenedor-contenido > .contenedor-formulario > form .input > .message {
+  font-size: xx-small;
+  color: #dc3545;
+}
+section > .contenedor > .contenedor-contenido > .contenedor-formulario > form .input > div.nivel {
+  display: block;
+  margin-top: 3px;
+}
+section > .contenedor > .contenedor-contenido > .contenedor-formulario > form .input > div.nivel > ul {
+  display: block;
+  padding: 0 35px;
+}
+section > .contenedor > .contenedor-contenido > .contenedor-formulario > form .input > div.nivel > ul > li {
+  display: list-item;
+  font-size: x-small;
+  line-height: normal;
+  margin-top: 1px;
+  list-style-type: circle;
+}
+section > .contenedor > .contenedor-contenido > .contenedor-formulario > form .input > select {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  display: block;
+  width: 100%;
+  padding: 4px 20px;
+  border: none;
+  font-size: 1em;
+  letter-spacing: 1px;
+  border-radius: 50px;
+  -webkit-box-shadow: 0 0 0 1px #ddd;
+          box-shadow: 0 0 0 1px #ddd;
+  background: #fff;
+  cursor: pointer;
+}
+section > .contenedor > .contenedor-contenido > .contenedor-formulario > form .input > select::-ms-expand {
+  display: none;
+}
+section > .contenedor > .contenedor-contenido > .contenedor-formulario > form .input > select > option {
+  background: #fff;
+}
+section > .contenedor > .contenedor-contenido > .contenedor-formulario > form > .text-center {
+  display: block;
+  text-align: center;
+  font-style: italic;
+  font-weight: 500;
+  color: #aaa;
+}
+section > .contenedor > .contenedor-contenido > .contenedor-formulario > form > div.links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+section > .contenedor > .contenedor-contenido > .contenedor-formulario > form > div.links > div.link-internal {
+  font-weight: 500;
+}
+section > .contenedor > .contenedor-contenido > .contenedor-formulario > form > div.links > div.link-internal > a {
+  margin: auto;
+}
+section > .contenedor > .contenedor-contenido > .contenedor-formulario > form > .button-center {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 5px;
+}
+section > .contenedor > .contenedor-contenido > .contenedor-formulario > form > .button-center > button {
+  border: none;
+  background: #5451d7;
+  color: #fff;
+  padding: 10px 30px;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+}
+section > .contenedor > .contenedor-contenido > .contenedor-formulario > form > .button-center > button:hover {
+  background: #6a70e8;
+  -webkit-box-shadow: 0 0 2px 0 #000;
+          box-shadow: 0 0 2px 0 #000;
+}
+
+
+@media (min-width: 600px) {
+  section > .contenedor {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+  section > .contenedor > .contenedor-contenido > .contenedor-formulario > form > .two-row-input {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  section > .contenedor > .contenedor-contenido > .contenedor-formulario > form > .three-row-input {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+@media (min-width: 800px) {
+  section {
+    margin-top: 20px;
+  }
+}
+@media (min-width: 990px) {
+  section {
+    margin-top: 90px;
+  }
+}
+@media (min-width: 1150px) {
+  section {
+    margin-top: 92px;
+  }
+  section > .contenedor {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  section > .contenedor > .contenedor-contenido {
+    padding-left: 20%;
+    padding-right: 20%;
+  }
+  
+}

@@ -1,0 +1,260 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.contbody{
+    position: relative;
+    min-height: 100vh;
+    padding: 60px 80px 10px ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    background: white;
+    background-size: cover;
+}
+
+
+.contdetinfo{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 150px;
+
+}
+
+.contdetinfo .continfo{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/*    Content box     */
+.contboxdet{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -350px;
+    
+}
+
+.contboxinfo{
+    width: 600px;
+    height: 900px;
+    background-color: white;
+    display: flex;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    box-shadow:  5px 15px 15px rgba(0, 0, 0, 0.2);
+}
+
+.detbox{
+    width: 700px;
+    height: 300px;
+    text-align: center;
+    
+
+}
+
+.detbox img{
+    width: 600px;
+    height: 400px;
+    margin-bottom: 50px;
+}
+
+.detbox a{
+    text-decoration: none;
+    padding: 14px;
+    padding-left: 70px;
+    padding-right: 70px;
+    color: #4F52D6;
+    border: 2px solid #4F52D6;
+    background-color: transparent;
+    border-radius: 30px;
+    transition: all 300ms;
+    font-size: 16px;
+    
+}
+
+.detbox a:hover{
+    background-color: #4F52D6;
+    color: white;
+    border: 2px solid #4F52D6;
+    
+}
+
+.detbox h1{
+    margin-left: 30px;
+    margin-top: 50px;
+    font-size: 25px;
+    font-weight: 500;
+    color: #4F52D6;
+    text-align: left;
+    font-weight: 600;
+
+}
+
+.detbox p{
+    font-weight: 400;
+    color: #4F52D6;
+    text-align: left;
+    margin-left: 30px;
+}
+
+
+/*    Contentenido     */
+
+.detboxinfo {
+    
+    
+}
+
+.detboxinfo h1{
+    text-align: left;
+    margin-left: -80px;
+    margin-top: -200px;
+    font-weight: bold;
+    font-size: 25px;
+    color: #4F52D6;
+}
+
+
+.detboxinfo2{
+    margin: -80px;
+}
+
+.detboxinfo2 img{
+    width: -59px;
+    height: 20px;
+  margin: 20px;
+    
+}
+
+.detboxinfo2 h1{
+    margin-left: 0px;
+    margin-top: -100px;
+    font-weight: 550;
+    font-size: 18px;
+    color: #4F52D6;
+    
+}
+.detboxinfo2 p{
+    margin-left: 50px;
+    margin-top: 25px;
+    color: #4F52D6;
+    
+}
+
+.videocurso {
+    margin-left: 400px;
+    margin-top: -120px;
+
+}
+
+
+
+.detboxinfo3{
+    
+    
+    border: 2px solid #4F52D6;
+    border-radius: 50px ;
+    padding: 30px;
+    margin: 20px;
+    
+}
+
+.detboxinfo3 h1{
+    
+    padding-top: 20px;
+    padding-left: 30px;
+    font-size: 20px;
+    font-weight: 700;
+    text-align: left;
+    color: #4F52D6;
+
+}
+
+.detboxinfo3 p{
+    
+    padding-left: 30px;
+    padding-right: 50px;
+    font-size: 20px;
+    font-weight: 200;
+    text-align: left;
+    color: #c0c0c0;
+
+}
+
+/*   Temario    */
+
+.conttitudet h1{
+    padding-left: 30px;
+    margin-left: 110px;
+    color: #4F52D6;
+    font-weight: bold;
+    font-size: 40px;
+    margin-top: 20px;
+    text-align: left;
+}
+
+    
+.lineahoridet{
+        height: 1px;
+        background-color: aqua;
+        margin-left: 7%;
+        margin-right: 7%;
+    }
+    
+    
+.accordion_outerdet {
+        padding: 10px 0;
+    }
+    
+.accordion_outerdet .containerdet{
+        margin: auto; 
+    }
+    
+.accordion_outerdet details{
+        width: 100%;
+        background: transparent;
+        cursor: pointer;
+        font-size: 16px;
+        color: #4F52D6;
+        font-size: 20px;
+        font-weight: 550;
+      
+    }
+    
+ .accordion_outerdet .infodet{
+        margin: 10px;
+        width: 97%;
+        padding: 10px;
+        background: transparent;
+        margin-top: 10px;
+        cursor: auto;
+        text-align: left;
+        
+    
+    }
+    
+.accordion_outerdet .infodet p{
+        color: #acacac;
+        padding-right: 100px;
+        font-weight: 200;
+        font-size: 18px;
+    }    
+
+.accordion_outerdet summary p{
+        text-align: right;
+        margin-top: -30px;
+        font-size: 20px;
+        font-weight: 600;
+        color: #4F52D6;
+    } 

@@ -1,0 +1,182 @@
+* {
+  outline: none;
+}
+
+.container-backgorund {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: linear-gradient(to right, #c0d8db, #b2b1d4);
+}
+.elements div {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: 2px solid rgba(0, 0, 0, 0.9);
+}
+.elements div:nth-child(1) {
+  top: 100%;
+  left: 21%;
+  animation: animate 10s linear infinite;
+}
+.elements div:nth-child(2) {
+  top: 100%;
+  left: 31%;
+  animation: animate 7s linear infinite;
+}
+.elements div:nth-child(3) {
+  top: 100%;
+  left: 11%;
+  animation: animate 9s linear infinite;
+}
+.elements div:nth-child(4) {
+  top: 100%;
+  left: 81%;
+  animation: animate 10s linear infinite;
+}
+.elements div:nth-child(5) {
+  top: 100%;
+  left: 71%;
+  animation: animate 7s linear infinite;
+}
+.elements div:nth-child(6) {
+  top: 100%;
+  left: 61%;
+  animation: animate 9s linear infinite;
+}
+.elements div:nth-child(7) {
+  top: 100%;
+  left: 51%;
+  animation: animate 10s linear infinite;
+}
+.elements div:nth-child(8) {
+  top: 100%;
+  left: 41%;
+  animation: animate 7s linear infinite;
+}
+.elements div:nth-child(9) {
+  top: 100%;
+  left: 31%;
+  animation: animate 9s linear infinite;
+}
+.elements div:nth-child(10) {
+  top: 100%;
+  left: 21%;
+  animation: animate 10s linear infinite;
+}
+.elements div:nth-child(11) {
+  top: 100%;
+  left: 71%;
+  animation: animate 7s linear infinite;
+}
+.elements div:nth-child(12) {
+  top: 100%;
+  left: 61%;
+  animation: animate 9s linear infinite;
+}
+@keyframes animate {
+  0% {
+    transform: scale(0) translateY(-600px) rotate(360deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.3) translateY(-600px) rotate(-180deg);
+    border-radius: 100%;
+    opacity: 0;
+  }
+}
+.container-formulario {
+  width: 70%;
+  min-width: 420px;
+  padding: 35px 50px;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border-radius: 10px;
+}
+h1 {
+  font-size: 30px;
+  text-align: center;
+  color: #1c093c;
+}
+p {
+  position: relative;
+  margin: auto;
+  width: 100%;
+  text-align: center;
+  color: #606060;
+  font-size: 14px;
+  font-weight: 400;
+}
+form {
+  width: 100%;
+  position: relative;
+  margin: 30px auto 0 auto;
+}
+.row {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 20px 30px;
+  margin-bottom: 20px;
+}
+label {
+  color: #1c093c;
+  font-size: 14px;
+
+  font-weight: bold;
+}
+select,
+textarea,
+input {
+  width: 100%;
+  font-weight: 400;
+  padding: 8px 10px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0 0 0 1px #aaa;
+  margin-top: 5px;
+}
+textarea{
+  resize: none;
+}
+textarea:focus,input:focus,
+select:focus,
+textarea.is-valid,
+input.is-valid,
+select.is-valid
+{outline: none;
+  box-shadow: 0 0 0 2px green;
+}
+input.is-invalid,
+select.is-invalid {
+  box-shadow: 0 0 0 1px red;
+}
+
+
+button {
+  border: none;
+  padding: 10px 20px;
+  background: linear-gradient(130deg, #6f6df4, #4c46f5);
+  color: #ffffff;
+  border-radius: 3px;
+  width: 100%;
+}
+@media (max-width: 1600px) {
+  .container-formulario {
+    transform: translate(-50%, -45%);
+  }
+}
+@media (max-width: 1043px) {
+  .container-formulario {
+    transform: translate(-50%, -30%);
+  }
+}
+@media (max-width: 793px) {
+  .container-formulario {
+    transform: translate(-50%, -29%);
+  }
+}

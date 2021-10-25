@@ -1,0 +1,265 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  font-family: "Montserrat", sans-serif;
+}
+
+section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  background-image: url(../images/background1.jpg);
+  margin: 6em auto 0;
+}
+
+section > .contenedor {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+}
+
+section > .contenedor > .contenedor-img {
+  position: relative;
+  width: 50%;
+  height: 100%;
+}
+section > .contenedor > .contenedor-img > img {
+  position: relative;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+section > .contenedor > .contenedor-contenido {
+  display: flex;
+  width: 50%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+section > .contenedor > .contenedor-contenido > .contenedor-formulario {
+  width: 50%;
+}
+
+section > .contenedor > .contenedor-contenido > .contenedor-formulario > h1 {
+  display: inline-block;
+  color: #5451d7;
+  font-weight: bold;
+  font-size: x-large;
+  padding: 0;
+  margin-bottom: 10px;
+  border-bottom: 3px solid #95f3ff;
+  letter-spacing: 1px;
+}
+
+section > .contenedor > .contenedor-contenido > .contenedor-formulario > h3 {
+  color: #8a8e91;
+  font-size: small;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+section
+  > .contenedor
+  > .contenedor-contenido
+  > .contenedor-formulario
+  > .input {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+section > .contenedor > .contenedor-contenido > .contenedor-formulario > form {
+  display: block;
+  width: 100%;
+}
+
+section
+  > .contenedor
+  > .contenedor-contenido
+  > .contenedor-formulario
+  > form
+  > .input {
+  margin-bottom: 15px;
+}
+
+section
+  > .contenedor
+  > .contenedor-contenido
+  > .contenedor-formulario
+  > form
+  > .input
+  > span {
+  color: #5451d7;
+  font-size: small;
+  font-weight: bold;
+}
+
+section
+  > .contenedor
+  > .contenedor-contenido
+  > .contenedor-formulario
+  > form
+  > .input
+  > input {
+  display: block;
+  width: 100%;
+  padding: 5px 20px;
+  border: 2px;
+  font-size: 1em;
+  letter-spacing: 1px;
+  border-radius: 50px;
+  box-shadow: 0 0 0 1px #ddd;
+}
+section
+  > .contenedor
+  > .contenedor-contenido
+  > .contenedor-formulario
+  > form
+  > .input
+  > input:focus,
+section
+  > .contenedor
+  > .contenedor-contenido
+  > .contenedor-formulario
+  > form
+  > .input
+  > input:valid {
+  box-shadow: 0 0 0 2px #5451d7;
+}
+
+section
+  > .contenedor
+  > .contenedor-contenido
+  > .contenedor-formulario
+  > form
+  > .links
+  > .text-center {
+  display: block;
+  text-align: center;
+  font-weight: bold;
+  color: #aaa;
+}
+
+section
+  > .contenedor
+  > .contenedor-contenido
+  > .contenedor-formulario
+  > form
+  > .links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: small;
+}
+
+section
+  > .contenedor
+  > .contenedor-contenido
+  > .contenedor-formulario
+  > form
+  > .links
+  > .link-internal {
+  font-weight: 500;
+}
+
+section
+  > .contenedor
+  > .contenedor-contenido
+  > .contenedor-formulario
+  > form
+  > .links
+  > :nth-child(1) {
+  margin-bottom: 15px;
+}
+
+section
+  > .contenedor
+  > .contenedor-contenido
+  > .contenedor-formulario
+  > form
+  > .button-left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+section
+  > .contenedor
+  > .contenedor-contenido
+  > .contenedor-formulario
+  > form
+  > .button-left
+  > button {
+  border: none;
+  background: #5451d7;
+  color: #fff;
+  padding: 10px 30px;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+
+  width: 100%;
+}
+
+section
+  > .contenedor
+  > .contenedor-contenido
+  > .contenedor-formulario
+  > form
+  > .button-left
+  > button:hover {
+  background: #6a70e8;
+  box-shadow: 0 0 2px 0 #000;
+}
+
+@media (max-width: 768px) {
+  section{
+    margin: 0;
+  }
+  section > .contenedor > .contenedor-img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+  }
+
+  section > .contenedor > .contenedor-contenido {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-image: url(../images/background1.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  section > .contenedor > .contenedor-formulario {
+    width: 100%;
+    padding: 40px;
+    background-image: url(../images/background1.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 50px;
+  }
+}
+@media (max-width: 991px) {
+  section{
+    margin: 0;
+  }
+}

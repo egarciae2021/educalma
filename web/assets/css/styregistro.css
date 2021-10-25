@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&family=Open+Sans:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
+
+*{  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
+
+
+}
+
+body{
+    font-family: "Relaway", sans-serif;
+}
+section{
+  width: 100vw;
+  height: 120vh;
+  background-image: url("../images/background.png");
+  font-family: 'Anton', sans-serif;
+}
+.contenedor{
+width: 100%;
+height: 100%;
+position: relative;
+display: flex;
+}
+.contenedor-img{
+  position: relative;
+  width: 50%;
+  height: 100%;
+
+}
+.contenedor-img img{
+position: relative;
+top: 0;
+left: 0;
+width: 100%;
+height: 88%;
+margin-top:90px;
+
+object-fit: cover;
+
+}
+.contenedor-contenido{
+  position: relative;
+  display: flex;
+  width: 50%;
+  height: 100%;
+  justify-content:center;
+  align-items: center;
+  margin-top:50px;
+}
+.contenedor-formulario{
+  width: 55%;
+}
+.contenedor-contenido h1{
+  color:#3E95EC  ;
+  font-size: 250%;
+  margin-bottom: 20px;
+  display: inline-block;
+}
+.contenedor-contenido h3{
+  color:#8A8E91   ;
+  font-weight: 500;
+  font-size: 150%;
+  display: inline-block;
+}
+.input{
+  margin-bottom: 20px;
+}
+.input span{
+  font-family: 'Fjalla One', sans-serif;
+  color:#81BAF3 ;
+  font-size: 1em;
+  display: inline;
+  font-weight: 300;
+  letter-spacing: 1px;
+  }
+.input span{
+  font-family: 'Fjalla One', sans-serif;
+  color:#7E8185 ;
+}
+.input input, .input button{
+  width: 100%;
+  padding: 12px 20px;
+  font-weight: 400;
+  border: 2px;
+  font-size: 1em;
+  letter-spacing: 1px;
+  border-radius: 50px;}
+.input button{
+  background-color: #4A9EF1;
+  border: none;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 15px;
+
+}
