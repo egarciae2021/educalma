@@ -1,0 +1,58 @@
+version: '3'
+
+networks:
+  default:
+    external:
+      name: nginx-proxy
+  internal:
+    internal: true
+
+services:
+  # php-apache server configuration
+  php-edu:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: php-apache-edu
+    ports:
+      - 8086:80
+    depends_on:
+      - mysqlbdcli
+    restart: always
+    environment:
+      VIRTUAL_HOST: ${VIRTUAL_HOST}
+      LETSENCRYPT_HOST: ${VIRTUAL_HOST}
+      LETSENCRYPT_EMAIL:
+# mysql configuration
+  mysqlbd-edu:
+    image: mysql:${MYSQL_VERSION}
+    container_name: ${MYSQL_HOST}
+    restart: always
+    command: --default-authentication-plugin=mysql_native_password
+    env_file:
+      - ".env"
+    environment:
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+    ports:
+      - "9001:3306"
+    volumes:
+    # Montamos un volumen para MySQL para no perder los datos de bd
+    - dbdats:/var/lib/mysql
+# phpmyadmin configuration
+  phpmyadmin-edu:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmincli
+    restart: always
+    ports:
+      - 8085:80
+    environment:
+      - PMA_ARBITRARY=1
+      - PMA_HOST=${MYSQL_HOST}  
+    depends_on:
+      - mysqlbdcli
+volumes:
+  dbdatsedu:
+
