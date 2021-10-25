@@ -1,17 +1,17 @@
 <?php include_once 'includes/Inicio/Head.php' ?>
 
 <body id="home" data-spy="scroll" data-target="#navbar-wd" data-offset="98">
-<?php include_once 'includes/Inicio/loader.php' ?>
+<?php //include_once 'includes/Inicio/loader.php' ?>
 
 <?php 
 // Sesión
-    ob_start();
+    /*ob_start();
     @session_start();
     $now = time();
     if(isset($_SESSION['acabo'])){
       echo '<script>swal({title: "Su Sesión Terminó",icon: "warning",allowEscapeKey: false,allowOutsideClick:false,text: "Ingrese sus Datos Nuevamente para continuar.",showConfirmButton: false});</script>';
       session_destroy(); 
-    }
+    }*/
 ?>
 
 <?php include_once 'includes/Inicio/Header.php' ?>
