@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>nosotros</title>
-    <link rel="stylesheet" href="../../assets/css/styleban.css">
+    <link rel="stylesheet" href="././assets/css/styleban.css">
 </head>
 <body>
 
@@ -39,7 +39,7 @@
     <div class="col-md-4">
 
         <div class="contbox">
-            <img src="assets/images/bx1.png" alt="#">
+            <img src="./assets/images/bx1.png" alt="#">
             <h1>Clases Virtuales </h1>
             <p>Otorgamos clases vituales con profesores y especialistas calificados para que el alumno aprenda y desarrolle nuevas habilidades.</p>
 
@@ -47,7 +47,7 @@
     </div>
     <div class="col-md-4">
         <div class="contbox">
-            <img src="assets/images/bx2.png" alt="#">
+            <img src="./assets/images/bx2.png" alt="#">
             <h1>Material Digital </h1>
             <p>Cada clase tendra material respecto al tema enseñado, el material podra reforzar la clases dictada y sera de buena ayuda en los test de cada sesion.</p>
 
