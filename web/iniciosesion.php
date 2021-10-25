@@ -1,4 +1,4 @@
-<?php include_once 'includes/Inicio/Head.php' ?>
+<?php include_once 'includes/Inicio/head.php' ?>
 
 <body id="home" data-spy="scroll" data-target="#navbar-wd" data-offset="98">
 <?php include_once 'includes/Inicio/Loader.php' ?>
