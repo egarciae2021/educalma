@@ -1,0 +1,22 @@
+image: docker/compose:1.25.0-rc2
+
+stages:
+  - deploy
+
+variables:
+  MAIN_URL: fundacioncalma.org
+  LETSENCRYPT_EMAIL: daniel.amaya@fundacioncalma.org
+
+deploy:
+  stage: deploy
+  script:
+    - docker-compose pull
+    - docker-compose build
+    - docker-compose up -d --force-recreate --remove-orphans
+  variables:
+    VIRTUAL_HOST: educalma.${MAIN_URL}
+  when: always
+  tags:
+    - VMFUNDACIONCALMA001
+  only:
+    - main
