@@ -44,7 +44,7 @@ services:
 # phpmyadmin configuration
   phpmyadmin-edu:
     image: phpmyadmin/phpmyadmin
-    container_name: phpmyadmincli
+    container_name: phpmyadminedu
     restart: always
     ports:
       - 8091:80
