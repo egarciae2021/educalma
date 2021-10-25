@@ -47,7 +47,7 @@
     </div>
     <div class="col-md-4">
         <div class="contbox">
-            <img src="./assets/images/bx2.png" alt="#">
+            <img src="assets/images/bx2.png" alt="#">
             <h1>Material Digital </h1>
             <p>Cada clase tendra material respecto al tema enseñado, el material podra reforzar la clases dictada y sera de buena ayuda en los test de cada sesion.</p>
 
@@ -56,7 +56,7 @@
 
     <div class="col-md-4">
         <div class="contbox">
-            <img src="./assets/images/bx3.png" alt="#">
+            <img src="assets/images/bx3.png" alt="#">
             <h1>Certificado </h1>
             <p>Al concluir el curso se les entregara un Certificado por todo lo aprendido en cada sesion.</p>
 
