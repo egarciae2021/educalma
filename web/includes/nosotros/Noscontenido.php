@@ -39,7 +39,7 @@
     <div class="col-md-4">
 
         <div class="contbox">
-            <img src="./assets/images/bx1.png" alt="#">
+            <img src="assets/images/bx1.png" alt="#">
             <h1>Clases Virtuales </h1>
             <p>Otorgamos clases vituales con profesores y especialistas calificados para que el alumno aprenda y desarrolle nuevas habilidades.</p>
 
