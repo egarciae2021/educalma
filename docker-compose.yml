@@ -35,6 +35,7 @@ services:
       - MYSQL_DATABASE=${MYSQL_DATABASE}
       - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
       - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_ROOT_USER=${MYSQL_ROOT_USER}
       - MYSQL_PASSWORD=${MYSQL_PASSWORD}
     ports:
       - "9002:3306"
@@ -42,17 +43,18 @@ services:
     # Montamos un volumen para MySQL para no perder los datos de bd
     - dbdatsedu:/var/lib/mysql
 # phpmyadmin configuration
-  phpmyadmin-edu:
-    image: phpmyadmin/phpmyadmin
+  phpmyadminedu:
     container_name: phpmyadminedu
+    image: phpmyadminedu:lastet
     restart: always
     ports:
-      - 8093:80
+      - 8093
     environment:
-      - PMA_ARBITRARY=1
-      - PMA_HOST=${MYSQL_HOST}  
-    depends_on:
-      - mysqlbd-edu
-volumes:
-  dbdatsedu:
+      PMA_HOST: mysql
+      UPLOAD_LIMIT: 512M
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      VIRTUAL_HOST: myadminbd.${MAIN_URL}
+      LETSENCRYPT_HOST: myadminbd.${MAIN_URL}
+      LETSENCRYPT_EMAIL:
 
