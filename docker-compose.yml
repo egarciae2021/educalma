@@ -48,7 +48,7 @@ services:
 # phpmyadmin configuration
   phpmyadmin:
     container_name: phpmyadmin
-    image: phpmyadmin:lastet
+    image: phpmyadmin:latest
     restart: always
     ports:
       - 8093
