@@ -19,14 +19,14 @@ services:
     ports:
       - 8090:80
     depends_on:
-      - mysqlbdedu
+      - mysqlbdeducalma
     restart: always
     environment:
       VIRTUAL_HOST: ${VIRTUAL_HOST}
       LETSENCRYPT_HOST: ${VIRTUAL_HOST}
       LETSENCRYPT_EMAIL:
 # mysql configuration
-  mysqlbdedu:
+  mysqlbdeducalma:
     image: mysql:${MYSQL_VERSION}
     container_name: ${MYSQL_HOST}
     restart: always
