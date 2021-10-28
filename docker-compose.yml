@@ -40,7 +40,7 @@ services:
     ports:
       - "9002:3306"
     volumes:
-    # Montamos un volumen para MySQL para no perder los datos de bd
+    # Montamos un volumen para el MySQL para no perder los datos de bd
     - dbdatsedu:/var/lib/mysql
 # phpmyadmin configuration
   phpmyadminedu:
