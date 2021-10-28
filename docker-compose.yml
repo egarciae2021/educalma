@@ -46,9 +46,9 @@ services:
     - dbdatsedu:/var/lib/mysql
 
 # phpmyadmin configuration
-  phpmyadmin:
+  phpmyadminedu:
     container_name: phpmyadminedu
-    image: phpmyadminedu:latest
+    image: phpmyadmin:latest
     restart: always
     ports:
       - 8093
