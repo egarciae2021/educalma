@@ -46,7 +46,7 @@ services:
     - dbdatsedu:/var/lib/mysql
 
 # phpmyadmin configuration
-  phpmyadminedu:
+  phpmyadmin:
     container_name: phpmyadminedu
     image: phpmyadminedu:lastet
     restart: always
