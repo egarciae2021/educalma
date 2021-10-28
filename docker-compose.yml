@@ -6,6 +6,8 @@ networks:
       name: nginx-proxy
   internal:
     internal: true
+volumes:
+  dbdatsedu:
 
 services:
   # php-apache server configuration
@@ -17,14 +19,14 @@ services:
     ports:
       - 8090:80
     depends_on:
-      - mysqlbd-edu
+      - mysqlbdeducalma
     restart: always
     environment:
       VIRTUAL_HOST: ${VIRTUAL_HOST}
       LETSENCRYPT_HOST: ${VIRTUAL_HOST}
       LETSENCRYPT_EMAIL:
 # mysql configuration
-  mysqlbd-edu:
+  mysqlbdeducalma:
     image: mysql:${MYSQL_VERSION}
     container_name: ${MYSQL_HOST}
     restart: always
@@ -55,7 +57,7 @@ services:
       UPLOAD_LIMIT: 512M
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
       MYSQL_PASSWORD: ${MYSQL_PASSWORD}
-      VIRTUAL_HOST: myadminbd.${MAIN_URL}
-      LETSENCRYPT_HOST: myadminbd.${MAIN_URL}
+      VIRTUAL_HOST: dbeducalma.${MAIN_URL}
+      LETSENCRYPT_HOST: dbeducalma.${MAIN_URL}
       LETSENCRYPT_EMAIL:
 
