@@ -15,7 +15,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: php-apache
+    container_name: php-apache-edu
     ports:
       - 8090:80
     depends_on:
@@ -47,8 +47,8 @@ services:
 
 # phpmyadmin configuration
   phpmyadmin:
-    container_name: phpmyadmin
-    image: phpmyadmin:latest
+    container_name: phpmyadminedu
+    image: phpmyadminedu:latest
     restart: always
     ports:
       - 8093
