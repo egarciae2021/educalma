@@ -15,18 +15,18 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: php-apache-edu
+    container_name: php-apache
     ports:
       - 8090:80
     depends_on:
-      - mysqlbdeducalma
+      - mysqlbdedu
     restart: always
     environment:
       VIRTUAL_HOST: ${VIRTUAL_HOST}
       LETSENCRYPT_HOST: ${VIRTUAL_HOST}
       LETSENCRYPT_EMAIL:
 # mysql configuration
-  mysqlbdeducalma:
+  mysqlbdedu:
     image: mysql:${MYSQL_VERSION}
     container_name: ${MYSQL_HOST}
     restart: always
