@@ -48,7 +48,7 @@ services:
 # phpmyadmin configuration
   phpmyadmin:
     container_name: phpmyadminedu
-    image: phpmyadmin:latest
+    image: phpmyadminedu:latest
     restart: always
     ports:
       - 8093
