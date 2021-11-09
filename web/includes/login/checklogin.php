@@ -1,6 +1,6 @@
 <?php
 //iniciar componentes de sesión
-  echo'<script type="text/javascript"> alert("llega a sesiones");  </script>';
+
 ob_start(); 
 session_start();
 
@@ -19,7 +19,7 @@ if(isset($_POST['pass_login'])){
 }
 
 $_SESSION['Logueado'] = false;
-
+  echo'<script type="text/javascript"> alert("llega a sesiones");  </script>';
 $pdo = Database::connect();
 $sql = "SELECT * FROM usuarios WHERE email = '$username'";
 $q = $pdo->prepare($sql);
