@@ -15,7 +15,7 @@
         <div class="contenedor-formulario">
           <h1>Bienvenido de nuevo!</h1>
           <h3>¡Qué bueno verte de nuevo por aquí!</h3>
-          <form id="form_login" role="form" action="includes/login/checklogin.php" method="POST">
+          <form id="form_login" role="form" action="includes/login/checklogin.php" onsubmit="cargando()" method="POST">
             <div class="input">
               <span> Ingresa tu correo </span>
               <input type="email" name="email_user_login" id="email-user-login" class="correo" placeholder="Correo" required />

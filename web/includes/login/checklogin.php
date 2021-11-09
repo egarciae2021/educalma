@@ -1,7 +1,7 @@
 <?php
 //iniciar componentes de sesión
-
 ob_start(); 
+session_start();
 
 require_once '../../database/databaseConection.php';
 
