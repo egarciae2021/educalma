@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
       events: ["keyup", "focus", "blur"],
       // Validado (true) - (function)
       validAction: greenEffect,
-      // No alidado (false) - (function)
+      // No validado (false) - (function)
       noValidAction: redEffect,
     },
     {

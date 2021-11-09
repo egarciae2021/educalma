@@ -83,7 +83,7 @@ ob_start();
 <div class="main-context" id="mainContex">
   <ul>
     <li>
-      <a href="user-sidebar.php">
+      <a href="">
         <i class="fas fa-chart-pie"></i>
         <span>Dashboard</span>
       </a>

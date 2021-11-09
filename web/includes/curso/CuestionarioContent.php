@@ -145,6 +145,7 @@
             ?>
             <h5 style="background: #CFE8FE; padding: 20px 35px; color: #4F52D6"><?php echo $fila1['pregunta'];?>?</h5>
 
+            
             <form style="padding: 30px;"
                 action="includes/cuestionarioCRUD/cuestion.php?contador=<?php echo $contador;?>&id=<?php echo $id;?>&idModulo=<?php echo $idModulo;?>&c_tema=<?php echo $c_tema;?>&validar=1&c_modulo=<?php echo $c_modulo;?>"
                 method="POST">

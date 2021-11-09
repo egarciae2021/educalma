@@ -6,7 +6,8 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i');
 @import url('https://fonts.googleapis.com/css?family=Great+Vibes');
 @import url('https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
-
+@import url('https://fonts.googleapis.com/css2?family=Lobster+Two&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap');
 /*------------------------------------------------------------------
     IMPORT FILES
 -------------------------------------------------------------------*/
@@ -360,7 +361,7 @@ button:focus {
 	padding: 5px 0px;
 }
 .top-header .navbar-nav .btn{
-	font-size: 18px;
+	font-size: 14px;
 }
 
 .top-header {
@@ -476,6 +477,82 @@ a.navbar-brand img {
 .full > img {
     width: 100%;
 }
+
+.btn_cursovideo{
+	width: 100%;
+	text-align: center;
+}
+.cursoslinks {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	gap: 2rem;
+	background: transparent;
+  }
+  
+  .cursoslinks .titulotemario {
+	-webkit-box-flex: 1;
+	-ms-flex: 1 1 30rem;
+	flex: 1 1 30rem;
+	text-align: center;
+  }
+  
+  .cursoslinks .titulotemario h3 {
+	font-family: 'Lobster Two', cursive;
+	font-size: 3rem;
+	color: #7C83FD;
+  }
+
+  .cursoslinks .content {
+	-webkit-box-flex: 1;
+	-ms-flex: 1 1 30rem;
+	flex: 1 1 30rem;
+  }
+
+  .inputcodigo{
+	font-family: 'Nunito', sans-serif;
+	padding:4px 0 4px 4px;
+	border:.1rem solid rgba(0,0,0,.1);
+	font-size: 1rem;
+	color:#333;
+	text-transform: none;
+  }
+
+.formcodigocursos{
+transform: translate(12rem,-2.5rem);
+}
+
+@media (max-width: 1060px) {
+	.img_logo_cursos{
+		max-width: 400px;
+	}
+  }
+
+@media (max-width: 860px) {
+	.img_logo_cursos{
+		max-width: 350px;
+	}
+  }
+
+@media (max-width: 767px) {
+	.img_logo_cursos{
+		max-width: 500px;
+	}
+  }
+@media (max-width: 550px) {
+	.formcodigocursos{
+		transform: translate(0rem,1rem);
+	}
+	.img_logo_cursos{
+		max-width: 400px;
+	}
+  }
+
 .blog_img_popular {
     margin-bottom: 30px;
 }

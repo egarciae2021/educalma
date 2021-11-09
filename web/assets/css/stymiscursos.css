@@ -1,34 +1,36 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
 
-
-
-html{
-    font-family: 'Poppins', sans-serif;
-    font-size: 10px;
+.title_miscursos{
+    width: 50%;
+    text-align: center;
+    margin: 0px auto;
+    font-family: "Satisfy", cursive;
+    font-size: 3rem;
+    color: #27ae60;
 }
-
-.blog-post{
+.blog-post-cursos{
     width: 90%;
     max-width: 150rem;
-    background-color: #fff;
-    box-shadow: 0 1.4rem 8rem rgba(0, 0, 0, .2);
+    background-color: #fff !important;
+    box-shadow: 0 1.4rem 8rem #00000033;
     display: flex;
     align-items: center;
     border-radius: 2.5rem;
     background: transparent;
-    border: 1px solid #4F52D6;
+    border: 1px solid #130f40;
     margin-left: 90px;
-
 }
 
 
-.blog-post_img{
-    min-width: 38rem;
-    max-width: 38rem;
-    height: 20rem;
+.blog-post_img_cursos{
+    min-width: 30rem;
+    max-width: 30rem;
+    height: 13rem;
     position: relative;
 }
 
-.blog-post_img img{
+.blog-post_img_cursos img{
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -38,16 +40,16 @@ html{
 }
 
 .blog-post_title{
-    font-size: 2.5rem;
-    color: #4F52D6;
+    font-size: 2rem;
+    color: #130f40;
     padding: 10px;
     margin-left: 20px;
     font-weight: 600;
 }
 
 .blog-posrt_text{
-    font-size: 1.4rem;
-    color: rgba(0, 0, 0, .7);
+    font-size: 1rem;
+    color: #666;
     padding-left: 10px;
     padding-right: 5px;
     margin-left: 20px;
@@ -55,59 +57,89 @@ html{
     text-align: left;
 }
 
-.blog-post_cta{
+.blog-post_cta_cursos{
     display: inline-block;
-    padding: .5rem 5rem;
+    padding: .5rem 4rem;
     letter-spacing: 1px;
-    font-size: 1.3rem;
-    color: #4F52D6;
-    border: 2px solid #4F52D6;
+    font-size: .9rem;
+    margin: 0 0 20px 0;
+    color: #130f40;
+    border: 2px solid #130f40;
     background-color: transparent;
     border-radius: 5rem;
     text-decoration: none;
-    transform: translateX(73rem);
+    transform: translateX(20rem);
 }
 
-.blog-post_cta:hover{
-    background-color: #70718d;
+.blog-post_cta_cursos:hover{
+    background-color: #130f40;
     color: white;
-    border: 2px solid #4F52D6;
+    border: 2px solid #130f40;
 }
 
 
-@media screen and (max-width: 1668px){
+@media screen and (max-width: 1323px){
     .blog-post_containter{
         height: 255vh;
     }
     .titlemc h1{
         transform: translateY(12rem);
     }
-    .blog-post{
+    .blog-post-cursos{
         max-width: 120rem;
+        margin: auto;
+    }
+    .blog-posrt_text{
+        padding: 0 20px 0 10px;
     }
     .blog-post_cta{
         transform: translateX(50rem);
     }
-    
+    .blog-post_cta_cursos{
+        transform: translateX(18rem);
+    }
 }
 
-@media screen and (max-width: 1200px){
+@media screen and (max-width: 1248px){
     
     .titlemc h1{
         transform: translateY(12rem);
     }
-    .blog-post{
+    .blog-post-cursos{
         max-width: 120rem;
     }
-    .blog-post_cta{
-        transform: translateX(50rem);
+    .blog-post_img_cursos{
+        min-width: 28rem;
+        max-width: 28rem;
     }
-    .blog-post_img img{
-        border-radius: 1.5em;
+    .blog-post_cta_cursos{
+        transform: translateX(41rem);
+    }
+    .blog-post_cta_cursos{
+        transform: translateX(14rem);
     }
 }
-@media screen and (max-width: 1090px){
-    .blog-post{
+@media screen and (max-width: 1177px){
+    .blog-post-cursos{
+        max-width: 80rem;
+    }
+    .blog-post_img_cursos{
+        min-width: 25rem;
+        max-width: 25rem;
+    }
+    .titlemc h1{
+        transform: translateY(12rem);
+    }
+    .blog-post_cta_cursos{
+        transform: translateX(30rem);
+    }
+    .blog-post_cta_cursos{
+        transform: translateX(11rem);
+    }
+}
+
+@media screen and (max-width: 1126px){
+    .blog-post-cursos{
         max-width: 80rem;
     }
     .blog-post_img{
@@ -117,52 +149,100 @@ html{
     .titlemc h1{
         transform: translateY(12rem);
     }
-    .blog-post_cta{
+    .blog-post_cta_cursos{
         transform: translateX(30rem);
     }
-    .blog-post_img img{
-        border-radius: 1.5em;
+    .blog-post_cta_cursos{
+        transform: translateX(8rem);
     }
 }
 
-@media screen and (max-width: 868px){
+@media screen and (max-width: 1085px){
+    .blog-post-cursos{
+        max-width: 80rem;
+    }
+    .titlemc h1{
+        transform: translateY(12rem);
+    }
+    .blog-post_img_cursos{
+        min-width: 18rem;
+        max-width: 18rem;
+        height: 13rem;
+        position: relative;
+    }
+    .blog-post_cta_cursos{
+        transform: translateX(10rem);
+    }
+}
+
+@media screen and (max-width: 995px){
+    .blog-post-cursos{
+        max-width: 80rem;
+    }
+    .titlemc h1{
+        transform: translateY(12rem);
+    }
+    .blog-post_img_cursos{
+        min-width: 18rem;
+        max-width: 18rem;
+        height: 13rem;
+        position: relative;
+    }
+    .blog-post_cta_cursos{
+        transform: translateX(4rem);
+    }
+}
+
+@media screen and (max-width: 900px){
     .blog-post_containter{
         height: 290vh;
     }
-    .blog-post{
+    .blog-post-cursos{
         max-width: 70rem;
     }
-    .blog-post_cta{
-        transform: translateX(20rem);
+    .blog-posrt_text{
+        font-size: 1rem;
+        color: rgba(0, 0, 0, .7);
+        padding-left: 10px;
+        padding-right: 5px;
+        margin-left: 20px;
+        margin-right: 10px;
+        text-align: left;
     }
-    .blog-post_img img{
-        border-radius: 1.5em;
+    .blog-post_img_cursos{
+        min-width: 16rem;
+        max-width: 16rem;
+        height: 13rem;
+        position: relative;
     }
+    .blog-post_cta_cursos{
+        transform: translateX(2rem);
+    }
+    
     
 }
 
 
-@media screen and (max-width: 768px){
-    .blog-post{
+@media screen and (max-width: 815px){
+    .blog-post-cursos{
         text-align: center;
         transform: translatey(8rem);
         padding: .5rem;
         flex-direction: column;
     }
-    .blog-post_img{
+    .blog-post_img_cursos{
         min-width: 60%;
         max-width: 60%; 
     }
-    .blog-post_img img{
-        border-radius: 1.5em;
+    .blog-post_img_cursos img{
+        border-radius: 2.5rem;
     }
     .titlemc h1{
         text-align: center;
         transform: translateY(12Srem);
         
     }
-    .blog-post_cta{
+    .blog-post_cta_cursos{
         transform: translateX(.1rem);
     }
 }
-

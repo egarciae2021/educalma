@@ -1,5 +1,7 @@
 
   <?php 
+        // ob_start(); 
+        // session_start();
         require_once '././database/databaseConection.php';
         $id=$_GET['id'];
 
@@ -25,8 +27,20 @@
                         <a class="button" data-filter=".development" href="foro.php?id=<?php echo $id;?>"><span>FORO</span> </a>
                         <a class="button" data-filter=".marketing" href="descargas.php"><span>DESCARGABLE</span></a>
                         <a class="button" data-filter=".seo" href="progreso.php?id=<?php echo $id ?>"><span>PROGRESO</span></a>
-                        <a class="button" data-filter=".seo" href="plugins/ejemplo.php"><span>CERTIFICADO</span></a>       
-            </div> <!-- end of button group -->
+
+                        <?php
+                        /*
+                         *METODO PARA VALIDAR EL CERTIFICADO
+                         *@AUTOR: Jean
+                         */
+                            
+                        ?>
+
+
+                        <a class="button" data-filter=".seo" href="plugins/ejemplo.php?idCurso=<?php echo $id; ?>"><span>CERTIFICADO</span></a>       
+            
+            
+                    </div> <!-- end of button group -->
 
     <!-- section -->
 
@@ -64,17 +78,83 @@
                 </div>
                 <div class="col-md-6">
                     <div class="full" style="width: 500px ; height: 300px;">
-                        <img style="height: 100%;" src="data:image/*;base64,<?php echo base64_encode($dato4['imagenDestacadaCurso'])?>" alt="#" />
-                       
+                        <img class="img_logo_cursos" style="height: 100%;" src="data:image/*;base64,<?php echo base64_encode($dato4['imagenDestacadaCurso'])?>" alt="#" />
                     </div>
                 </div>
             </div>
+            <?php
+            $con = Database::connect(); 
+            $idusuario=$_SESSION['iduser'];
+            $ver = "SELECT curso_obt FROM cursoinscrito WHERE curso_id=$id AND usuario_id=$idusuario";
+            $veremos = $con->prepare($ver);
+            $veremos->setFetchMode(PDO::FETCH_ASSOC);
+            $veremos->execute();
+            $vere=$veremos->fetchColumn();
+            $query=1;
+            if ($vere==false || $vere==0) {
+            if(isset($_POST['vali'])){
+            $codi=$_POST['codi'];
+            $conn = Database::connect(); 
+            $squery = "SELECT COUNT(*) FROM cursoinscrito WHERE cod_curso='$codi' AND curso_id=$id AND usuario_id=$idusuario";
+            $querys = $conn->prepare($squery);
+            $querys->setFetchMode(PDO::FETCH_ASSOC);
+            $querys->execute();
+            $query=$querys->fetchColumn();
+            if ($query==1||$query==true) {
+                $cop="UPDATE cursoinscrito SET curso_obt=1 WHERE curso_id=$id AND usuario_id=$idusuario";
+                $cops = $conn->prepare($cop);
+                $cops->execute();
+                $vere=1;
+            }
+            }
+        }
+        ?>
             <div class="full">
-                           <a class="hvr-radial-out button-theme" href="Cursoiniciar.php?id=<?php echo $id; ?>">Iniciar curso</a>
-                     </div>
+                        <a class="hvr-radial-out button-theme"href="Cursoiniciar.php?id=<?php echo $id;?>"<?php if ($query==0 || $vere==false) {
+                    echo 'style="pointer-events: none;"';}?> >Iniciar curso</a>
+            </div>
+            <form action="" method="POST" name="frm1" class="formcodigocursos">
+                
+                
+
+            <?php
+            /*validar que si ya ingreso un codigo valida no muestro el input
+            *@autor: Jean
+            */
+            if ($vere==0){
+        ?>
+        <input type="text" placeholder="XPFJ-AFAKN" class="inputcodigo" name="codi" id="codiguito" required><button type="submit" class="btn btn-primary" name="vali">Ingresar</button>
+                        <br>
+                        <label for="codiguito" style="color: #7C83FD;">Obtener curso por medio del código</label>
+        <?php
+            }else{
+                echo "<br><br>";
+            }
+        ?>
+                        
+                    </form>
         </div>
-    </div>
-    <br>
+        <br>
+        <br>
+        <section class="cursoslinks" id="about">
+        <div class="titulotemario col">
+            <h3>Introducción al Curso</h3>
+        </div>
+        <div class="content col">
+            <div class="icons-container">
+                <a href="video.php?id=<?php echo $id; ?>&idtema=1&validar=1&a=d" role="button" class="btn btn-primary btn_cursovideo">
+                    <i class="fas fa-play"></i>
+                    Toca aqui para ver el primer video del curso
+                </a>
+                <br>
+                <br>
+                <a href="video.php?id=<?php echo $id; ?>&c_tema=2&validar=1&c_modulo=1&a=d" role="button" class="btn btn-primary btn_cursovideo">
+                    <i class="fas fa-play"></i>
+                    Toca aqui para ver el segundo video del curso
+                </a>
+            </div>
+        </div>
+    </section>
     <!-- end section -->
     <!-- section -->
     <div class="section layout_padding">

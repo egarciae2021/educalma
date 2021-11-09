@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/cuestionario_formu.css">
+    <link rel="stylesheet" href="assets/css/agretemas.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
@@ -32,20 +33,37 @@
     <br>
     <br>
     <br>
+     <!--Contenido-->
+     <div class="container-fluid">
+        <div class="title">
+            <div class="mb-4">
+                <center>Cuestionario de Preguntas</center>
+            </div>
+        </div>
+    </DIV>
     <!--Contenido del cuestionario-->
     <?php $idmodulo=$_GET['id_modulo']?>
     <div class="cont">
-        <div class="formu"  style="height: 100%;border-radius:15px;border-color:#53F5ED;"  >
-            <h3 style="color:white; background:#53F5ED; border-radius:15px;">Cuestionario</h3>
-            <div style=" padding: 5px 50px 0px 50px; font-size: 20px; ">Preguntas</div>
+
+    <div class="container-contformulario">
+    <div class="contformulario" id="contformulario">
+        <div class="formu"  style="border-radius:15px;box-shadow:2px 3px 5px gray;">
+            <div style=" padding: 5px 50px 0px 50px; font-size: 20px;">
+            <div class="inputBox"><br>
+            <i class="fas fa-question-circle"></i> Preguntas</div></div>
             <form action="includes/Pregunta_Respuesta/Pregunta_CRUD.php?id_modulo=<?php echo $idmodulo;?>" method="POST">
-                <input type="text" name="pregunta" placeholder="Agregue una Pregunta" >
-                <div class="boton">
-                    <button type="submit" style="background:#9888DC;color:#FFFFFF;">agregar pregunta</button>
-                </div>
+            <div class="inputBox">
+                <textarea name="pregunta" placeholder="Agregue una Pregunta"></textarea>
+            </div>
+                <div class="inputBox">
+                <button type="submit" class="boton1"><i class="fas fa-plus"></i> Agregar Pregunta</button>
+            </div>
             </form>
-            <div class="formu02"  style="color:white; background:#53F5ED;">Listado de Preguntas</div>
+            <div class="inputBox">
+                    <h3><i class="fas fa-list"></i> Listado de Preguntas</h3>
+            </div>
             <div style="height: 300px;" class="overflow-auto">
+
                 <?php
                     error_reporting(0);
                     require_once 'database/databaseConection.php';
@@ -65,10 +83,13 @@
 
                 ?>
                 <div style="padding: 15px 50px;">
+                <div class="inputBox">
                     <input type="text" value="<?php echo $registro1['pregunta'];?>" style="border-radius:15px;border-color:#53F5ED;" disabled>
+                    </div>
                     <div style="padding: 10px 20px;">
                         <a href="Form_respue_cuestionario.php?id_pregunta=<?php echo $registro1['idPregunta']?>&id_modulo=<?php echo $idmodulo;?>&pregunta=<?php echo $registro1['pregunta']?>">
-                            <button type="button" class="btn btn-outline-primary" style="background:#9888DC;color:#FFFFFF;">Agregar Respuestas</button>
+                            <button type="button" class="btn btn-success">
+                            <i class="fas fa-plus"></i> Agregar Respuestas</button>
                         </a>
                         <!--editar-->
                         <a href="Editar_pregun_Cuestionario.php?id_pregunta=<?php echo $registro1['idPregunta']?>&pregunta=<?php echo $registro1['pregunta']?>&id_modulo=<?php echo $idmodulo;?>">
@@ -80,12 +101,17 @@
                         </a>
                     </div>
                 </div>
+
                 <?php }?>
+
             </div>
         </div>
     </div>
-
-    <br><br>
+                    </div>
+                    </div>
+                    </div>
+    <br>
+    <br>
     <br>
     <br>
     <br>

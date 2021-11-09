@@ -5,6 +5,6 @@
 <body>
 
 <?php //include_once 'includes/usersidebar/sidebaruser.php' ?>
-<?php include_once 'includes/dashboard/pages/index.php' ?>
+<?php include_once 'includes/dashboard/pages/index1.php' ?>
 
 </body>

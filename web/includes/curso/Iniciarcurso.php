@@ -41,14 +41,14 @@
         $pdo2 = Database::connect(); 
         $sql2 = "SELECT * FROM modulo WHERE id_curso='$id'";
         $q2 = $pdo2->prepare($sql2);
-        $q2->execute(array());
+        $q2->execute();
         $dato2 = $q2->fetch(PDO::FETCH_ASSOC);
         Database::disconnect();
 
         $pdo3 = Database::connect(); 
         $sql3 = "SELECT * FROM tema WHERE id_modulo='$dato2[idModulo]'";
         $q3 = $pdo3->prepare($sql3);
-        $q3->execute(array());
+        $q3->execute();
         $dato3 = $q3->fetch(PDO::FETCH_ASSOC);
         Database::disconnect();
     ?>

@@ -8,7 +8,7 @@ class Conexion {
     public function __construct()
     {
         try {
-            self::$instancia = new PDO('mysql:host=mysqleducalma;dbname=educalma','root', 'root');
+            self::$instancia = new PDO('mysql:host=localhost;dbname=educalma','root', '');
             self::$instancia->exec("SET CHARACTER SET utf8");
             
         } catch (PDOException $e) {

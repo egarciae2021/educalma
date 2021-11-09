@@ -1,5 +1,5 @@
-<!--<!DOCTYPE html>
-<html lang="en">-->
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -56,7 +56,7 @@
 
     <div class="col-md-4">
         <div class="contbox">
-            <img src="assets/images/bx3.png" alt="#">
+            <img src="./assets/images/bx3.png" alt="#">
             <h1>Certificado </h1>
             <p>Al concluir el curso se les entregara un Certificado por todo lo aprendido en cada sesion.</p>
 

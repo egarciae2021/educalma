@@ -1,10 +1,14 @@
-<?php include_once 'includes/dashboard/head.php' ?>
+<?php include_once 'includes/dashboard/head1.php' ?>
 
 <body>
-<?php include_once 'includes/dashboard/header.php' ?>
+    <?php include_once 'includes/dashboard/header1.php' ?>
 
-<?php include_once 'includes/dashboard/miscursos.php' ?>
-<script src="./assets/lib/jquery-3.2.1.slim.min.js"></script>
+    <?php include_once 'includes/dashboard/body1.php' ?>
+
+    <?php include_once 'includes/dashboard/miscursos.php' ?>
+    <script src="./assets/js/main.js"></script>
+    <script src="./assets/lib/jquery-3.2.1.slim.min.js"></script>
     <script src="./assets/js/m.dashboard.js"></script>
 </body>
+
 </html>

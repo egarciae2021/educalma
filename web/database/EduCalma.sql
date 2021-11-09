@@ -60,11 +60,12 @@ INSERT INTO privilegio VALUES  (6, "SUPERADMIN");
 CREATE TABLE cursoInscrito (
     id_cursoInscrito int(10) auto_increment primary key,
     curso_id int(10) not null,
-    usuario_id int(10) not null
+    usuario_id int(10) not null,
+    cod_curso varchar(50) not null,
+    curso_obt boolean not null
 );
 
-INSERT INTO cursoInscrito VALUES (1, 1, 3);
-
+INSERT INTO cursoInscrito VALUES (1, 1, 3,'P 001',0);
 
 -- Tabla de empresa
 CREATE TABLE padreEmpresa (
@@ -176,6 +177,7 @@ CREATE TABLE certificados (
 CREATE TABLE cuestionario (
     idCuestionario int(10) auto_increment primary key,
     id_modulo int(10) not null,
+    puntaje int(10) not null,
     estado boolean not null
 );
 
@@ -216,3 +218,11 @@ CREATE TABLE tipoDocumentoIdentidad (
 INSERT INTO tipoDocumentoIdentidad VALUES ('1', 'DNI', 8);
 INSERT INTO tipoDocumentoIdentidad VALUES ('2', 'PASAPORTE', 11);
 INSERT INTO tipoDocumentoIdentidad VALUES ('3', 'CARNE DE EXTRANJERIA', 8);
+
+delimiter |
+create trigger generar_codigo before insert on cursoinscrito for each row
+    begin
+        declare siguiente_codigo int;
+        set siguiente_codigo =(Select ifnull(max(convert(substring(cod_curso, 3), signed integer)),0) from cursoinscrito)+1;
+    set new.cod_curso=concat('P ',LPAD(siguiente_codigo,3,'0'));
+end |

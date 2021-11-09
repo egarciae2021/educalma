@@ -14,12 +14,7 @@ $link = $_POST['link'];
 $pdo = Database::connect();  
 $verif=$pdo->prepare("INSERT INTO tema (id_Modulo, nombreTema, descripcionTema, link_video, encuestaTema) VALUES ('$idModulo','$nombreTema','$descripcionTema','$link','activo') ");
 
-$verif->execute(array(
-    ':idModulo' => $idModulo,
-    ':temas_agregar'=>$nombreTema,
-    ':descripcio_tema'=>$descripcionTema,
-    ':link'=>$link,
-));
+$verif->execute();
 Database::disconnect();
 echo'
         <script>

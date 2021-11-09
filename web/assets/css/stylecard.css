@@ -1,0 +1,127 @@
+    /*CARD*/
+    body{
+        height: 100%;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .cont-padre{
+        width: 100%;
+        height: auto;
+        margin: 0;
+        display: flex;
+        justify-content:center;
+        align-items: center;
+        flex-wrap: wrap;
+        
+    }
+    .contenedor{
+        width: 21%;
+        height: 300px; 
+        margin: 0 20px;
+        overflow: hidden;
+        border-radius: 7px;    
+        box-shadow: rgba(112, 112, 112, 0.9) 2px 4px 6px;
+        background-color: white;
+        margin-top: 4%;
+    }
+    .contenedor img{
+        width: 100%;
+        height: 235px; 
+        object-fit: cover;
+    }
+
+    .box-datos{
+        width: 100%;
+        height: auto; 
+        background-color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        transition: .8s;
+    }
+    .box-datos h1{
+        font-size: 1em;
+        margin-top: 10px;
+        color: #4f52d6;
+        cursor: pointer;
+    }
+    .box-datos h2{
+        font-size: .8em;
+        font-style: italic;
+    }
+    .box-datos h1,h2{
+        text-align: center;
+    }
+    .box-datos p{
+        text-align: justify;
+        font-size: 13.28px;
+        line-height: 1.5;
+        width: 80%;
+    }
+    .box-datos span{
+        margin-bottom: 4px;
+        font-size: 15px;
+    }
+    span:nth-child(1){ /*HORA Y/O MES*/
+    color: #4f52d6;
+    }
+    span:nth-child(2){ /*COMENTARIOS*/
+    color: #4f52d6;
+    }
+    span:nth-child(3){ /*Algo Adicional*/
+    color: #4f52d6;
+    }
+
+    .redes{
+        font-size: .7em;
+    }
+
+    .contenedor:hover .box-datos{
+        transform: translateY(-160px); 
+    }
+
+
+    @media screen and (max-width:1024px){
+        .cont-padre .contenedor{
+             width: 30%;
+             margin: 15px;
+         }
+     }
+
+     @media screen and (max-width:800px){
+        .cont-padre .contenedor{
+             width: 50%;
+             margin: 15px;
+         }
+     }
+
+     @media screen and (max-width:768px){
+        .cont-padre .contenedor{
+             width: 40%;
+             margin: 15px;
+         }
+     }
+
+     @media screen and (max-width:600px){
+        .cont-padre .contenedor{
+             width: 55%;
+             margin:20px 10px;
+         }
+     }
+
+     @media screen and (max-width:414px){
+         .cont-padre .contenedor{
+              width: 100%;
+              margin:20px  10px;
+          }
+      }
+      
+      @media screen and (max-width:360px){
+         .cont-padre .contenedor{
+              width:100%;
+              margin:20px 10px;
+          }
+      }

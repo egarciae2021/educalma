@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/cuestionario_formu.css">
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
@@ -32,6 +33,15 @@
     <br>
     <br>
     <br>
+    <!--Contenido-->
+    <div class="container-fluid">
+        <div class="title">
+            <div class="mb-4">
+                <center><i class="fas fa-edit"></i> Editar<strong> Pregunta</strong></center>
+            </div>
+        </div>
+    </DIV>
+
     <!--Contenido del cuestionario-->
     <?php
         $idmodulo=$_GET['id_modulo'];
@@ -40,13 +50,14 @@
     ?>
     <div class="cont">
         <div class="formu" style="height: 250px; border-radius:15px; border-color:#53F5ED ; ">
-            <h3 style="background:#53F5ED ; border-radius:15px;color: #FFFFFF; ">Editando la Pregunta: <strong><?php echo $nombre_pregunta;?></strong></h3>
+            <h3 style="background:#53F5ED ; border-radius:15px;color: #FFFFFF; ">Edita tu Pregunta: <strong><?php echo $nombre_pregunta;?></strong></h3>
 
             <form action="includes/Pregunta_Respuesta/Pregunta_CRUD.php?id_modulo=<?php echo $idmodulo;?>" method="POST">
                 <input type="text" name="actuali_pregunta" style="  border-radius:15px; border-color:#53F5ED ;"   value="<?php echo $nombre_pregunta;?>" >
                 <input type="hidden" name="id_pregunta" style="  border-radius:15px; border-color:#53F5ED ; "  value="<?php echo $id_pregunta;?>" >
                 <div class="boton">
-                    <button type="submit"style="background:#9888DC;color:#FFFFFF;" >Actualizar</button>
+                    <button type="submit"style="background:#9888DC;color:#FFFFFF;" >
+                    <i class="fas fa-redo"></i> Actualizar</button>
                 </div>
             </form>
         </div>

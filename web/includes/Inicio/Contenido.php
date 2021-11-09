@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>nosotros</title>
     <link rel="stylesheet" href="././assets/css/styleban.css">
+    <link rel="stylesheet" href="././assets/css/stylecard.css">
 </head>
 
 <body>
@@ -15,8 +15,7 @@
     if(!isset($_GET['pag'])){
         $_GET['pag']=1;
     }
-    
-   
+
   ?>
     <!-- Start Carousel -->
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -55,34 +54,31 @@
                 <div class="col-md-10">
                     <div class="full">
                         <div class="heading_main text_align_start pdt50">
-                            <h2><span style="color: #4F52D6;"> Cursos destacados</span></h2>
+                            <h2><span> Cursos destacados</span></h2>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-1"></div>
             </div>
-            <hr class="lineahori">
-
-            <br>
+            <hr class="lineahori" style="width: 340px; height: 5px; background-color: #7C83FD;">
+          
             <div class="row">
                 <div class="col-md-1"></div>
                 <div class="col-md-10">
-                    <div class="card-deck">
-                        <?php 
+           <!-- CARDS -->
+            <div class="cont-padre">
+<?php 
                             require_once 'database/databaseConection.php';
                                 
                             $pdo=Database::connect();
-                            $sql="SELECT COUNT(*) as Cantidad,curso_id,c.permisoCurso FROM cursoinscrito as ci INNER JOIN cursos as c ON ci.id_cursoInscrito = c.idCurso WHERE c.permisoCurso = 1 GROUP BY curso_id ORDER BY Cantidad DESC";
+                            $sql="SELECT COUNT(*) cantidad, curso_id FROM cursoinscrito as ci INNER JOIN cursos as c ON ci.curso_id = c.idCurso GROUP BY c.idCurso ORDER BY cantidad desc";
                             $q=$pdo->prepare($sql);
                             $q->execute(array());
                             Database::disconnect();
 
                             $cont = 0;
-
-                            while($reco=$q->fetch(PDO::FETCH_ASSOC)){
-                                $cont = $cont + 1;
-
-                                    
+                            while($reco=$q->fetch(PDO::FETCH_ASSOC)){    
+                                $cont = $cont + 1;    
                         //ALGORITMO CURSO INSCRITO Y NO INSCRITO
                          if(isset($_SESSION['codUsuario'])){
                             $pdo5 = Database::connect();
@@ -107,7 +103,7 @@
                         
                         $pdo15=Database::connect();
                         $curso_Id= $reco['curso_id'];
-                        $sql15 = "SELECT * FROM cursos where idCurso='$curso_Id'";
+                        $sql15 = "SELECT * FROM cursos where idCurso='$curso_Id' AND  permisoCurso = 1";
                         $q15 = $pdo15->prepare($sql15);
                         $q15->execute(array());
                         
@@ -115,36 +111,33 @@
                         while($reco2=$q15->fetch(PDO::FETCH_ASSOC)){
 
                         error_reporting(0);
-                        echo '<div class="col-md-3">
-                            <div class="card bdnone roundedcard" style="width: 100%;">
-                                <img src="data:image/*;base64,'.base64_encode($reco2['imagenDestacadaCurso']).'" class="card-img-top imgd roundedimg" alt="190">
-                                <div class="card-body">
-                                  <a href= "'.$paginaRed.'.php?id='.$reco2['idCurso'].'" style="font-size:15px; color: #4F52D6"> <center>'.$reco2['nombreCurso'] .' </center></a>
-                                  <label class="card-text" style="font-size:14px;">'.$reco2['descripcionCurso'].'</label>
-                                     <div class="ins">
-                                       <p style="font-size:15px; color: #4F52D6"><strong>Dirigido a: '.$reco2['dirigido'].'</strong></p>
-                                     </div>
-                                </div>
-                                
-                            </div>
-                        </div>';
+                        echo '<div class="contenedor">
+                        <img src="data:image/*;base64,'.base64_encode($reco2['imagenDestacadaCurso']).'" alt="">
+                        <div class="box-datos">
+                        
+                        <a href= "'.$paginaRed.'.php?id='.$reco2['idCurso'].'" style="font-size:18px; color: #4F52D6"> <center><strong>'.$reco2['nombreCurso'] .'</strong> </center></a>
+                        <div class="redes">
+                                <span class="date">Dirigido: '.$reco2['dirigido'].'</span>
+                            </div>    
+                        
+                        <p>'.$reco2['descripcionCurso'].'</p>
+                            
+                        </div>
+                    </div>';
                         }
-                                if($cont==4){
-                                    break ;
-                                }
-                            }
+                        if($cont==4){
+                            break;
+                         }
+                    }
                          
                          
                          ?>
-                    </div>
-
-                </div>
-                <div class="col-md-1"></div>
+            </div>            
+            <div class="col-md-1"></div>
             </div>
-
-            <br>
-
-        </div>
+                </div>
+                
+<!-- CARDS -->
 
         <!-- parte 2 -->
         <div class="container">
@@ -153,25 +146,28 @@
                 <div class="col-md-10">
                     <div class="full">
                         <div class="heading_main text_align_start pdt50">
-                            <h2><span style="color: #4F52D6;"> Todos los cursos</span></h2>
+                            <h2><span> Todos los cursos</span></h2>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-1"></div>
             </div>
-            <hr class="lineahori">
+            <hr class="lineahori" style="width: 340px; height: 5px; background-color: #7C83FD;">
 
-            <br>
+      
             <div class="row">
                 <div class="col-md-1"></div>
                 <div class="col-md-10">
-                    <div class="card-deck">
+
+
+                   
                         <!--recorre los cursos-->
+                        <div class="cont-padre">
                         <?php 
                             require_once 'database/databaseConection.php';
                                 
                             $pdo=Database::connect();
-                            $sql="SELECT * FROM cursos WHERE permisoCurso='1'";
+                            $sql="SELECT * FROM cursos";
                             $q=$pdo->prepare($sql);
                             $q->execute();
                             $cont=$q->rowCount();
@@ -179,7 +175,7 @@
 
                         //generar para el paginador
                             //constante 
-                            $cant_pagi=4;
+                            $cant_pagi=8;
                             
                             $pagina=$cont/$cant_pagi;
                             $pagina=ceil($pagina);
@@ -193,14 +189,14 @@
                             
                             
                             $pdo2=Database::connect();
-                            $sql2="SELECT * FROM cursos WHERE permisoCurso='1' LIMIT $iniciar,$cant_pagi";
+                            $sql2="SELECT * FROM cursos where permisoCurso = 1  LIMIT $iniciar,$cant_pagi";
                             $q2=$pdo2->prepare($sql2);
                             $q2->execute();
                             Database::disconnect();
 
-
+                            $cont = 0;
                             while($reco2=$q2->fetch(PDO::FETCH_ASSOC)){
-
+                                $cont = $cont + 1;
       
                         //ALGORITMO CURSO INSCRITO Y NO INSCRITO
                          if(isset($_SESSION['codUsuario'])){
@@ -224,22 +220,24 @@
                                $paginaRed = "detallecurso";
                         }
 
-                       
-                       
-                        echo '<div class="col-md-3">
-                        <div class="card bdnone roundedcard" style="width: 100%;">
-                            <img src="data:image/*;base64,'.base64_encode($reco2['imagenDestacadaCurso']).'" class="card-img-top imgd roundedimg" alt="190">
-                            <div class="card-body">
-                                <a href= "'.$paginaRed.'.php?id='.$reco2['idCurso'].'" > <center>'.$reco2['nombreCurso'] .' </center></a>
-                                <label class="card-text" style="font-size:14px;">'.$reco2['descripcionCurso'].'</p>
-                                <div class="ins">
-                                  <p style="color:#4F52D6;">Dirigido a: '.$reco2['dirigido'].'</label></p>
-                                </div>
-                            </div>
+                    
+                        echo '<div class="contenedor">
+                        <img src="data:image/*;base64,'.base64_encode($reco2['imagenDestacadaCurso']).'" alt="">
+                        <div class="box-datos">
+                        <a href= "'.$paginaRed.'.php?id='.$reco2['idCurso'].'" style="font-size:18px; color: #4F52D6"> <center><strong>'.$reco2['nombreCurso'] .'</strong> </center></a>
+                        <div class="redes">
+                                <span class="date">Dirigido: '.$reco2['dirigido'].'</span>
+                            </div>    
+                        <p>'.$reco2['descripcionCurso'].'</p>
+
                         </div>
                     </div>';
-                         } ?>
-                    </div>
+                         } 
+                         
+                         
+                         ?>
+                         </div>
+                   
                     <nav aria-label="Page navigation calma" class="pdt50">
                         <ul class="pagination justify-content-end">
                             <li class="page-item <?php if($_GET['pag']<=1) echo 'disabled'?>">

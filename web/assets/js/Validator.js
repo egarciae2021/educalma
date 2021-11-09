@@ -1,3 +1,4 @@
+
 // // Formato JS
 // let controlsArray = [
 //   {
@@ -44,7 +45,7 @@ const FormatLocal = (date) => {
     "-" +
     zfill(new Date(date).getMonth() + 1, 2) +
     "-" +
-    new Date(date).getDate()
+    zfill(new Date(date).getDate(), 2)
   );
 };
 

@@ -60,8 +60,21 @@
     <div class="row">
         <div class="col-md-1"></div>
         <div class="col-md-10">
-            <div class="infoMin">
-                <a href="Cursoiniciar.php?id=<?php echo $id;?>"><?php echo $dato6['nombreCurso'];?></a> <label> > </label> <a
+            <div class="infoMin"> 
+            <h2><?php 
+                    $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+                    $components = parse_url($url);
+                    parse_str($components['query'], $results);
+                    if (array_key_exists('a', $results)) {
+                        $access=$results["a"]; 
+                    }else{
+                        $access="true";
+                    }
+                ?></h2>
+                <a href="Cursoiniciar.php?id=<?php echo $id;?>" <?php if ($access=="d") {
+                    echo 'style="pointer-events: none;"';
+                }?>
+                ><?php echo $dato6['nombreCurso'];?></a> <label> > </label> <a
                     href=""><?php echo $dato['nombreModulo'];?> </a>
             </div>
         </div>
@@ -74,13 +87,26 @@
         <div class="row">
             <div class="col-md-1"></div>
             <div class="col-md-10">
-                
-                <button type="button" class="btn btn-outline-secondary" id="btnV"
+                <h2><?php 
+                    $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+                    $components = parse_url($url);
+                    parse_str($components['query'], $results);
+                    if (array_key_exists('a', $results)) {
+                        $access=$results["a"]; 
+                    }else{
+                        $access="true";
+                    }
+                ?></h2>
+                <button type="button" <?php if ($access=="d") {
+                    echo "disabled";
+                }?>  class="btn btn-outline-secondary" id="btnV"
                     onclick="parent.location='includes/curso/VideoSiguiente.php?id=<?php echo $id;?>&c_modulo=<?php echo $cont_modulo;?>&c_tema=<?php echo ($cont_tema-1);?>&idmodulo=<?php echo $dato['idModulo']?>'"> <strong> < </strong> Anterior</button>
                 <button type="button" class="btn btn-outline-secondary" id="btnV2"> 
                     <?php echo $dato2['nombreTema'];?>
                     <img src="././assets/images/video_icono_32.png"></button>
-                <button type="button" class="btn btn-outline-secondary" id="btnV"
+                <button type="button"<?php if ($access=="d") {
+                    echo "disabled";
+                }?> class="btn btn-outline-secondary" id="btnV"
                     onclick="parent.location='includes/curso/VideoSiguiente.php?id=<?php echo $id; ?>&c_modulo=<?php echo $cont_modulo;?>&c_tema=<?php echo ($cont_tema+1);?>&idmodulo=<?php echo $dato['idModulo']?>'">
                     Siguiente <strong> > </strong></button>
             </div>
