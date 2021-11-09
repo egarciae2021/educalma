@@ -1,5 +1,6 @@
 <?php
 //iniciar componentes de sesión
+  echo'<script type="text/javascript"> alert("llega a sesiones");  </script>';
 ob_start(); 
 session_start();
 
@@ -29,7 +30,7 @@ Database::disconnect();
 //sacando el pass de la DB
 $pass_con_hash = $dato['pass'];
 //ESTADO PENDIENTE
-  echo'<script type="text/javascript"> alert("llega a sesiones");  </script>';
+
 if ($dato['estado'] == 1 && password_verify($password_sinHash, $pass_con_hash) === true) {
     $_SESSION['start'] = time();
     $_SESSION['expire'] = $_SESSION['start'] + (10 * 60);
