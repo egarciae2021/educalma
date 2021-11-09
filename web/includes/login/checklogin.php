@@ -29,6 +29,7 @@ Database::disconnect();
 //sacando el pass de la DB
 $pass_con_hash = $dato['pass'];
 //ESTADO PENDIENTE
+  echo'<script type="text/javascript"> alert("llega a sesiones");  </script>';
 if ($dato['estado'] == 1 && password_verify($password_sinHash, $pass_con_hash) === true) {
     $_SESSION['start'] = time();
     $_SESSION['expire'] = $_SESSION['start'] + (10 * 60);
@@ -51,7 +52,7 @@ if ($dato['estado'] == 1 && password_verify($password_sinHash, $pass_con_hash) =
     $_SESSION['padre']= $dato['padreEmpresa'];
     $_SESSION['hijo']= $dato['hijoEmpresa'];
 
-    echo'<script type="text/javascript"> alert("llega a sesiones");  </script>';
+  
 
     if($_SESSION['privilegio'] == 1 || $_SESSION['privilegio'] == 2 || $_SESSION['privilegio'] == 3 || $_SESSION['privilegio'] == 4 || $_SESSION['privilegio'] == 5 || $_SESSION['privilegio'] == 6){
         echo '<script>swal("Inicio de Sesión Exitoso", "Has iniciado sesión correctamente.", "success");</script>';
