@@ -20,7 +20,9 @@ if(isset($_POST['pass_login'])){
 $_SESSION['Logueado'] = false;
   
 $pdo = Database::connect();
-$sql = "SELECT * FROM usuarios WHERE email = '$username'";
+$sql = "SELECT 
+    * FROM usuarios 
+    WHERE email = '$username'";
 $q = $pdo->prepare($sql);
 $q->execute(array());
 $dato=$q->fetch(PDO::FETCH_ASSOC);
