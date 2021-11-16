@@ -110,6 +110,6 @@ ob_start();
  <?php
     }
     else{
-        header('Location:iniciosesion.php');
+        header('Location: ../../iniciosesion.php');
     }
 ?>
