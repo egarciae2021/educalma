@@ -1,6 +1,6 @@
 <?php
 ob_start();
-@session_start();
+session_start();
 ?>
 <style>
     .li_cursos {
@@ -67,7 +67,7 @@ ob_start();
 
                         <?php
 
-                            echo "hola mundo2;";
+                            echo $_SESSION['Logueado'];
                         if (isset($_SESSION['Logueado']) && $_SESSION['Logueado'] === true) {
                             echo "hola mundo;";
                             require_once 'database/databaseConection.php';
