@@ -9,7 +9,8 @@ ob_start();
         if (isset($_SESSION['Logueado']) && $_SESSION['Logueado'] === true) {
             require_once 'database/databaseConection.php';
             $pdo = Database::connect();
-            $sql = "SELECT * FROM usuarios WHERE id_user = '$_SESSION[codUsuario]'";
+            $iduser = $_SESSION['codUsuario'];
+            $sql = "SELECT * FROM usuarios WHERE id_user = '$iduser'";
             $q = $pdo->prepare($sql);
             $q->execute(array());
             $dato = $q->fetch(PDO::FETCH_ASSOC);
