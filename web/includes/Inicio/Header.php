@@ -1,6 +1,8 @@
 <?php
 ob_start();
 @session_start();
+
+require_once 'database/databaseConection.php';
 ?>
 <style>
     .li_cursos {
@@ -27,13 +29,10 @@ ob_start();
                                 <?php
 
 
-                                require_once 'database/databaseConection.php';
                                 $pdo4 = Database::connect();
                                 $sql4 = "SELECT * FROM categorias";
                                 $q4 = $pdo4->prepare($sql4);
                                 $q4->execute(array());
-
-
 
 
                                 ?>
@@ -66,11 +65,11 @@ ob_start();
                         </div>
 
                         <?php
-
+                             Database::disconnect();
                             echo $_SESSION['nombres']." hello";
                         if (isset($_SESSION['Logueado']) && $_SESSION['Logueado'] === true) {
                             echo "hola mundo;";
-                            require_once 'database/databaseConection.php';
+                           
                             $pdo = Database::connect();
                             $idUsuario = $_SESSION['codUsuario'];
                             $sql = "SELECT * FROM usuarios WHERE id_user = '$idUsuario'";
