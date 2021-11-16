@@ -26,11 +26,12 @@ $q->execute(array());
 $dato=$q->fetch(PDO::FETCH_ASSOC);
 Database::disconnect();
 
-echo $dato['email']." + ".$password_sinHash;
+
 //sacando el pass de la DB
 $pass_con_hash = $dato['pass'];
 //ESTADO PENDIENTE
 if ($dato['estado'] == 1 && password_verify($password_sinHash, $pass_con_hash) === true) {
+    echo "hola mundo";
     $_SESSION['start'] = time();
     $_SESSION['expire'] = $_SESSION['start'] + (10 * 60);
     $_SESSION['passSinHash'] = $password_sinHash;
