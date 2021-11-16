@@ -31,7 +31,7 @@ Database::disconnect();
 $pass_con_hash = $dato['pass'];
 //ESTADO PENDIENTE
 if ($dato['estado'] == 1 && password_verify($password_sinHash, $pass_con_hash) === true) {
-    echo "hola mundo";
+    
     $_SESSION['start'] = time();
     $_SESSION['expire'] = $_SESSION['start'] + (10 * 60);
     $_SESSION['passSinHash'] = $password_sinHash;
@@ -54,12 +54,12 @@ if ($dato['estado'] == 1 && password_verify($password_sinHash, $pass_con_hash) =
     $_SESSION['hijo']= $dato['hijoEmpresa'];
 
     if($_SESSION['privilegio'] == 1 || $_SESSION['privilegio'] == 2 || $_SESSION['privilegio'] == 3 || $_SESSION['privilegio'] == 4 || $_SESSION['privilegio'] == 5 || $_SESSION['privilegio'] == 6){
-        //echo '<script>swal("Inicio de Sesión Exitoso", "Has iniciado sesión correctamente.", "success");</script>';
-        //header('Location: ../../index.php'); 
+        echo '<script>swal("Inicio de Sesión Exitoso", "Has iniciado sesión correctamente.", "success");</script>';
+        header('Location: ../../index.php'); 
         $_SESSION['Logueado']=true;
     }else{
-        //echo '<script>swal("Falló el Inicio de Sesión", "El Nombre de Usuario y/o Contraseña son Incorrectos.", "error");</script>';
-        //header('Location: ../../iniciosesion.php'); 
+        echo '<script>swal("Falló el Inicio de Sesión", "El Nombre de Usuario y/o Contraseña son Incorrectos.", "error");</script>';
+        header('Location: ../../iniciosesion.php'); 
         $_SESSION['Logueado']=false;
     } 
 }else{
