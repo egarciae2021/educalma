@@ -1,7 +1,4 @@
-<?php
-ob_start();
-@session_start();
-?>
+
 
 <header class="header">
     <div class="header__container">

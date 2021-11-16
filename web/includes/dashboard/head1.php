@@ -15,8 +15,7 @@
     <title>Educalma Dashboard</title>
 </head>
 <?php
-ob_start();
-@session_start();
+
 require_once 'database/databaseConection.php';
 
 $id = $_SESSION['codUsuario'];
