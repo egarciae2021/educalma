@@ -1,3 +1,8 @@
+<?php
+// Este codigo hace validacion para que no se pueda acceder a cualquier pagina sin estar logueado__Pablo Loyola
+
+ if(isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)){
+?>
  <!--========== NAV ==========-->
  <div class="nav" id="navbar">
      <nav class="nav__container">
@@ -101,3 +106,9 @@
  </div>
 
  <!--========== CONTENTS ==========-->
+ <?php
+    }
+    else{
+                header('Location:iniciosesion.php');
+    }
+?>

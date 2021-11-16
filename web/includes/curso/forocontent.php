@@ -1,23 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FORO</title>
     <!-- Stylesheet -->
-
     <link rel="stylesheet" href="assets/css/styleforo.css">
-
     <!-- Fuente -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
-
     <script src="https://kit.fontawesome.com/882c415911.js" crossorigin="anonymous"></script>
-
 </head>
+
 <!-- Hola mundo -->
 <div style="margin-top:100px;" class="container abs-center">
     <nav class="navbar navbar-inverse">
@@ -34,6 +30,9 @@
 
 
 <body>
+<?php
+ if(isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)){
+?>
     <?php
     
     require_once '././database/databaseConection.php';
@@ -223,6 +222,12 @@
             </div>
         </div>
     </div>
+    <?php
+    }
+    else{
+                header('Location:iniciosesion.php');
+    }
+?>
 </body>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>

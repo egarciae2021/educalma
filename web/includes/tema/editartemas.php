@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,26 +9,42 @@
 </head>
 
 <body>
+<?php
+// Este codigo hace validacion para que no se pueda acceder a cualquier pagina sin estar logueado
 
+ if(isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)){
+?>
     <div class="container">
         <div class="row">
             <div class="col-md-1"></div>
             <div class="col-md-10">
-                <div class="titlemc">
-                </div>
+                <div class="titlemc"></div>
             </div>
             <div class="col-md-1"></div>
         </div>
     </div>
-
-    <br><br>
     <br>
     <br>
     <br>
+    <br>
+    <br>
 
+    <!--contenido-->
+    <div class="container-fluid">
+        <div class="title">
+            <div class="mb-4">
+                <center><i class="fas fa-edit"></i> Editar <strong>Tema</strong></center>
+            </div>
+        </div>
+    </div>
 
-    <div class="contai">
-        <div class="cont_text" style="border-radius:15px; border-color:#53F5ED;">
+    <div class="container-contformulario">
+    <div class="contformulario" id="contformulario">
+    <div class="row">
+            <div class="image">
+                <img src="./assets/images/donar05.png" alt="">
+            </div>
+            
             <?php
                 require_once '././database/databaseConection.php';
                 $idCurso= $_GET['id_curso'];
@@ -43,45 +58,55 @@
                 $dato2=$q2->fetch(PDO::FETCH_ASSOC)
             ?>
 
-            <h3 style="color:white; background:#53F5ED ; border-radius:15px;">Editar los Temas: <strong><?php echo $dato2['nombreTema'];?></strong>
-            </h3>
+             <!--
+                                        ======================================
+                                                    Editar Tema
+                                        ======================================              
+            -->
 
-            <div class="cont_formu">
                 <form id="form-agretemas" action="includes/tema/checkEditTema.php?id_mo=<?php echo $idModulo?>&idCurso=<?php echo $idCurso?>"
                     target="dummyframe" method="POST" onsubmit="registrar_nuevo_usuario();">
-                    <input type="hidden" name="idtema" value="<?php echo $dato2['idTema']?>">
-                    <div class="mb-3">
-                        <input type="text" name="temas_agregar" id="tema-agregar" class="form-control form-control-lg "
-                            value="<?php echo $dato2['nombreTema']?>" aria-label="TemaAgr" aria-describedby="temaAgr-addon"
-                            style="border-radius:15px; border-color:#53F5ED;"  required>
+                    <div class="inputBox">
+                        <h3>Editar Tema: <strong>"<?php echo $dato2['nombreTema'];?>"</strong></h3>
+                        <input type="hidden" name="idtema" value="<?php echo $dato2['idTema']?>">
                     </div>
-                    <div class="mb-3">
-                        <div class="form-floating">
-                            <textarea class="form-control" placeholder="<?php echo $dato2['descripcionTema']?>" id="descripcio-tema"
-                                name="descripcio_tema" style="height: 100px;border-radius:15px; border-color:#53F5ED; " required></textarea>
-                        </div>
+                    <div class="inputBox">
+                        <input type="text" name="temas_agregar" id="tema-agregar" value="<?php echo $dato2['nombreTema']?>" aria-label="TemaAgr" aria-describedby="temaAgr-addon" required>
                     </div>
-                    <div class="mb-3">
-                        <input type="text" name="link" id="apellidoMat-registro" class="form-control form-control-lg "
-                            value="<?php echo $dato2['link_video']?>" aria-label="ApellidosMat" aria-describedby="apellidoMat-addon"
-                          style="border-radius:15px; border-color:#53F5ED;"    required>
+                    <div class="inputBox">
+                        <h3>Descripción:</h3>
+                            <textarea placeholder="<?php echo $dato2['descripcionTema']?>" id="descripcio-tema" name="descripcio_tema" required></textarea>
                     </div>
-                    <div style="text-align: center; padding: 5% 0px; width: 50%; float: left;">
-                        <button type="submit" class="boton"  style="background:#9888DC;color:#FFFFFF;">Actualizar</button>
+                    <div class="inputBox">
+                        <h3>Editar link de vídeo:</h3>
+                        <input type="text" name="link" id="apellidoMat-registro" value="<?php echo $dato2['link_video']?>" aria-label="ApellidosMat" aria-describedby="apellidoMat-addon" required>
                     </div>
-                    <div style="text-align: center; padding: 5% 0px; width: 50%;float: left;">
-                        <a href="agregartema.php?idCurso=<?php echo $idCurso;?>&id_mo=<?php echo $idModulo;?>">
-                            <button type="button" class="boton" style="background:#9888DC;color:#FFFFFF;">Salir</button></a>
+                    <div class="inputBox">
+                        <button type="submit" class="boton1"><i class="fas fa-redo"></i> Actualizar Tema</button>
                     </div>
+                    <div class="inputBox">
+                    <div style="text-align: right;">
+                    <a href="agregartema.php?idCurso=<?php echo $idCurso;?>&id_mo=<?php echo $idModulo;?>">
+                            <button type="button" class="btn btn-outline-secondary"><i class="fas fa-times"></i> Salir</button>
+                    </a>
+                    </div>
+                </div>
                 </form>
             </div>
-
         </div>
     </div>
-    <br><br>
+ </div>
+ </div>
     <br>
     <br>
     <br>
-</body>
 
+    <?php
+    }
+    else{
+                header('Location:iniciosesion.php');
+    }
+    ?>
+
+</body>
 </html>

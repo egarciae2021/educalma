@@ -25,37 +25,12 @@ require_once '../../database/databaseConection.php';
             $pdo2 = Database::connect();  
             $veri2="UPDATE usuarios SET nombres='$nombre', apellido_pat='$ape_pater', apellido_mat='$ape_mater', email='$correo', pass='$password', telefono='$telefono', tipo_doc='$tipo_docu',nro_doc='$num_docume',sexo='$sexo',fecha_nacimiento	='$fecha',pais ='$pais',mifoto = '$imagen' WHERE id_user = '$id' ";
             $q2 = $pdo2->prepare($veri2);
-            $q2->execute(array(
-                ':Nombre'=> $nombre,
-                ':Apellido_Paterno'=> $ape_pater,
-                ':Apellido_Materno'=> $ape_mater,
-                ':Correo'=> $correo,
-                ':pass'=> $password,
-                ':telefono'=> $telefono,
-                ':tipo_doc'=> $tipo_docu,
-                ':nume_documento'=> $num_docume,
-                ':sexo'=> $sexo,
-                ':fecha_naci'=> $fecha,
-                ':pais'=> $pais,
-                ':imagen'=> $imagen,
-            ));
+            $q2->execute(array());
         }else{
             $pdo2 = Database::connect();  
             $veri2="UPDATE usuarios SET nombres='$nombre', apellido_pat='$ape_pater', apellido_mat='$ape_mater', email='$correo', pass='$password', telefono='$telefono', tipo_doc='$tipo_docu',nro_doc='$num_docume',sexo='$sexo',fecha_nacimiento	='$fecha',pais ='$pais' WHERE id_user = '$id' ";
             $q2 = $pdo2->prepare($veri2);
-            $q2->execute(array(
-                ':Nombre'=> $nombre,
-                ':Apellido_Paterno'=> $ape_pater,
-                ':Apellido_Materno'=> $ape_mater,
-                ':Correo'=> $correo,
-                ':pass'=> $password,
-                ':telefono'=> $telefono,
-                ':tipo_doc'=> $tipo_docu,
-                ':nume_documento'=> $num_docume,
-                ':sexo'=> $sexo,
-                ':fecha_naci'=> $fecha,
-                ':pais'=> $pais,
-            ));    
+            $q2->execute(array());    
 
         }
      

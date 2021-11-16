@@ -62,10 +62,11 @@ CREATE TABLE cursoInscrito (
     curso_id int(10) not null,
     usuario_id int(10) not null,
     cod_curso varchar(50) not null,
-    curso_obt boolean not null
+    curso_obt boolean not null,
+    cantidad_respuestas int(11) not null
 );
 
-INSERT INTO cursoInscrito VALUES (1, 1, 3,'P 001',0);
+INSERT INTO cursoInscrito VALUES (1, 1, 3,'P 001',0,0);
 
 -- Tabla de empresa
 CREATE TABLE padreEmpresa (

@@ -43,7 +43,7 @@ Database::disconnect();
         $pdo = Database::connect();
         $verif=$pdo->prepare(" INSERT INTO usuarios (privilegio,padreEmpresa,hijoEmpresa,nombres,apellido_pat,apellido_mat,email,pass,telefono,tipo_doc,nro_doc,sexo,fecha_nacimiento,pais,cod_tipoDonador,estado,fecha_registro,mifoto) 
         VALUES 
-        ('1','0','1','$nombre','$ape_pater','$ape_mater','$correo','$password','$telefono','$tipo_docu','$num_docume','$sexo','$fecha','$pais','1','1',now(),'$imga')");
+        ('3','0','1','$nombre','$ape_pater','$ape_mater','$correo','$password','$telefono','$tipo_docu','$num_docume','$sexo','$fecha','$pais','1','1',now(),'$imga')");
         $verif->execute();
 
         Database::disconnect();

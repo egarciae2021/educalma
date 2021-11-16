@@ -1,3 +1,8 @@
+<?php
+// Este codigo hace validacion para que no se pueda acceder a cualquier pagina sin estar logueado__Pablo Loyola
+
+ if(isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)){
+?>
 <?php 
         require_once '././database/databaseConection.php';
         $validacion=1;
@@ -8,6 +13,12 @@
         $q1 = $pdo1->prepare($sql1);
         $q1->execute(array());
         $dato1 = $q1->fetch(PDO::FETCH_ASSOC);
+        Database::disconnect();
+
+        $pdo=Database::connect();
+        $sql = "UPDATE `cursoinscrito` SET `cantidad_respuestas` ='0' WHERE `cursoinscrito`.`id_cursoInscrito` ='$id' ";
+        $q = $pdo->prepare($sql);
+        $q->execute();
         Database::disconnect();
     ?>
 <link rel="stylesheet" href="assets/css/style.css">
@@ -130,3 +141,9 @@
     </div>
     <br>
     <br>
+    <?php
+    }
+    else{
+                header('Location:iniciosesion.php');
+    }
+?>

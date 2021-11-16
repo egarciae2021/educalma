@@ -13,9 +13,22 @@
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
     <script src="https://kit.fontawesome.com/f9e5248491.js" crossorigin="anonymous"></script>
+    <style>
+         label.error{
+    	color: red;
+        font-style: italic;
+        font-size: 13px;    
+        max-width:400px;
+        padding: 10px;
+        margin:0;
+        }
+    </style>
     <title>Agregar Cursos</title>
 </head>
 <body>
+<?php
+ if(isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)){
+?>
     <div class="container">
         <div class="row">
             <div class="col-md-1"></div>
@@ -37,7 +50,8 @@
                 <center><i class="fas fa-edit"></i> Editar<strong> Respuesta</strong></center>
             </div>
         </div>
-    </DIV>
+    </div>
+
     <!--Contenido del cuestionario-->
     <?php
         $idmodulo=$_GET['id_modulo'];
@@ -47,27 +61,47 @@
         $respuesta=$_GET['respuesta'];
 
     ?>
-    <div class="cont">
-        <div class="formu" style="height: 250px;  border-radius:15px; border-color:#53F5ED;">
-            <h3  style="background:#53F5ED ; border-radius:15px;color: #FFFFFF; ">Edita tu respuesta</h3>
-            <form action="includes/Pregunta_Respuesta/Respuesta_CRUD.php?id_modulo=<?php echo $idmodulo;?>"
-                method="POST">
-                <input type="text" name="actu_respuesta" style="border-radius:15px; border-color:#53F5ED;" value="<?php echo $respuesta;?>">
-                <input type="hidden" name="idrespuesta" style="border-radius:15px; border-color:#53F5ED;" value="<?php echo $id_respuesta;?>">
-                <input type="hidden" name="pregunta" style="border-radius:15px; border-color:#53F5ED;" value="<?php echo $pregunta;?>">
-                <input type="hidden" name="idpregunta"  style="border-radius:15px; border-color:#53F5ED;" value="<?php echo $id_pregunta;?>">
-                <div class="boton">
-                    <button type="submit" style="background:#9888DC;color:#FFFFFF;">
-                    <i class="fas fa-redo"></i> Actualizar Respuesta</button>
+    
+    <div class="container-contformulario">
+        <div class="contformulario" id="contformulario">
+            <div class="row">
+                <div class="image">
+                    <img src="./assets/images/donar03.png" alt="">
                 </div>
-            </form>
+                
+                <form name="formulario" method="POST" id="editando_respuestas" action="includes/Pregunta_Respuesta/Respuesta_CRUD.php?id_modulo=<?php echo $idmodulo;?>" target="dummyframe" style="background:#F7F7F7;">
+                <div class="inputBox">
+                    <h3>
+                        <i class="fas fa-edit"></i> Edita la Respuesta: <strong>"<?php echo $respuesta;?>"</strong>
+                    </h3>
+                    <input type="text" name="actu_respuesta" id="" value="<?php echo $respuesta;?>">
+                    <input type="hidden" name="actu_respuesta" value="<?php echo $respuesta;?>">
+                    <input type="hidden" name="idrespuesta" value="<?php echo $id_respuesta;?>">
+                    <input type="hidden" name="pregunta" value="<?php echo $pregunta;?>">
+                    <input type="hidden" name="idpregunta" value="<?php echo $id_pregunta;?>">
+                </div>
+                <div class="inputBox">
+                    <button type="submit" class="boton1">
+                        <i class="fas fa-redo"></i> Actualizar respuesta</button>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
+ <br>
+ <br>
+ <br>
 
-    <br><br>
-    <br>
-    <br>
-    <br>
+    <?php
+    }
+    else{
+                header('Location:iniciosesion.php');
+    }
+    ?>
+
+<!-- Validaciones Autor:Jorge Martinez-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.js"></script>
+<script src="assets/js/validarCategoria.js"></script>
 </body>
-
 </html>

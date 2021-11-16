@@ -20,9 +20,7 @@
                 $pdo2 = Database::connect();  
                 $verif2=$pdo2->prepare("INSERT INTO cuestionario (id_modulo, estado)VALUES ('$id_modulo',1) ");
 
-                $verif2->execute(array(
-                    ':id_modulo' => $id_modulo,
-                ));
+                $verif2->execute(array());
                 Database::disconnect();
             }
 
@@ -36,9 +34,7 @@
         //insertar pregunta 
             $pdo4 = Database::connect(); 
             $verif4=$pdo4->prepare("INSERT INTO preguntas (pregunta, id_cuestionario)VALUES ('$nombre','$dato3[idCuestionario]') ");
-            $verif4->execute(array(
-                ':pregunta' => $nombre,
-            ));
+            $verif4->execute(array());
             Database::disconnect();
             echo'
                 <script>
@@ -82,9 +78,7 @@
         $pdo1 = Database::connect();  
         $verif1=$pdo1->prepare("DELETE FROM respuestas where id_Pregunta = '$id_pregu'");
 
-        $verif1->execute(array(
-            ':id_pregunta' => $id_pregu,
-        ));
+        $verif1->execute(array());
         Database::disconnect();
 
 
@@ -92,9 +86,7 @@
         $pdo = Database::connect();  
         $verif=$pdo->prepare("DELETE FROM preguntas where idPregunta = '$id_pregu'");
 
-        $verif->execute(array(
-            ':id_pregunta' => $id_pregu,
-        ));
+        $verif->execute(array());
         Database::disconnect();
         echo'
             <script>

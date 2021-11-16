@@ -13,11 +13,23 @@
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
     <script src="https://kit.fontawesome.com/f9e5248491.js" crossorigin="anonymous"></script>
+    <style>
+         label.error{
+    	color: red;
+        font-style: italic;
+        font-size: 13px;    
+        max-width:400px;
+        padding: 10px;
+        margin:0;
+        }
+    </style>
     <title>Agregar Cursos</title>
 </head>
 
 <body>
-
+<?php
+ if(isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)){
+?>
     <div class="container">
         <div class="row">
             <div class="col-md-1"></div>
@@ -51,7 +63,7 @@
             <div style=" padding: 5px 50px 0px 50px; font-size: 20px;">
             <div class="inputBox"><br>
             <i class="fas fa-question-circle"></i> Preguntas</div></div>
-            <form action="includes/Pregunta_Respuesta/Pregunta_CRUD.php?id_modulo=<?php echo $idmodulo;?>" method="POST">
+            <form id="preguntas_cuestionario" action="includes/Pregunta_Respuesta/Pregunta_CRUD.php?id_modulo=<?php echo $idmodulo;?>" method="POST">
             <div class="inputBox">
                 <textarea name="pregunta" placeholder="Agregue una Pregunta"></textarea>
             </div>
@@ -115,6 +127,16 @@
     <br>
     <br>
     <br>
+    <?php
+    }
+    else{
+                header('Location:iniciosesion.php');
+    }
+?>
+<!-- Validaciones Autor:Jorge Martinez-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.js"></script>
+<script src="assets/js/validarCategoria.js"></script>
 </body>
 
 </html>

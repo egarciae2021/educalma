@@ -18,11 +18,9 @@ if(isset($_POST['pass_login'])){
 }
 
 $_SESSION['Logueado'] = false;
-  
+
 $pdo = Database::connect();
-$sql = "SELECT 
-    * FROM usuarios 
-    WHERE email = '$username'";
+$sql = "SELECT * FROM usuarios WHERE email = '$username'";
 $q = $pdo->prepare($sql);
 $q->execute(array());
 $dato=$q->fetch(PDO::FETCH_ASSOC);
@@ -31,7 +29,6 @@ Database::disconnect();
 //sacando el pass de la DB
 $pass_con_hash = $dato['pass'];
 //ESTADO PENDIENTE
-
 if ($dato['estado'] == 1 && password_verify($password_sinHash, $pass_con_hash) === true) {
     $_SESSION['start'] = time();
     $_SESSION['expire'] = $_SESSION['start'] + (10 * 60);
@@ -54,11 +51,9 @@ if ($dato['estado'] == 1 && password_verify($password_sinHash, $pass_con_hash) =
     $_SESSION['padre']= $dato['padreEmpresa'];
     $_SESSION['hijo']= $dato['hijoEmpresa'];
 
-  
-
     if($_SESSION['privilegio'] == 1 || $_SESSION['privilegio'] == 2 || $_SESSION['privilegio'] == 3 || $_SESSION['privilegio'] == 4 || $_SESSION['privilegio'] == 5 || $_SESSION['privilegio'] == 6){
         echo '<script>swal("Inicio de Sesión Exitoso", "Has iniciado sesión correctamente.", "success");</script>';
-        header('Location: ../../user-sidebar.php'); 
+        header('Location: ../../index.php'); 
         $_SESSION['Logueado']=true;
     }else{
         echo '<script>swal("Falló el Inicio de Sesión", "El Nombre de Usuario y/o Contraseña son Incorrectos.", "error");</script>';

@@ -6,6 +6,11 @@
     <link rel="stylesheet" href="././assets/css/styleprogreso.css">
 </head>
 <?php
+// Este codigo hace validacion para que no se pueda acceder a cualquier pagina sin estar logueado__Pablo Loyola
+
+ if(isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)){
+?>
+<?php
     
     require_once '././database/databaseConection.php';
     if(isset($_GET['validar'])){
@@ -234,3 +239,9 @@
 
 <br>
 <?php }?>
+<?php
+    }
+    else{
+                header('Location:iniciosesion.php');
+    }
+?>

@@ -2,6 +2,9 @@
     <link rel="stylesheet" href="././assets/css/stymiscursos.css">
 </head>
 <body>
+<?php
+ if(isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)){
+?>
 <br>
 <div class="title_miscursos">
     <h3>Mis Cursos</h2>
@@ -73,4 +76,10 @@
 
 <br>
 <br>
+<?php
+    }
+    else{
+                header('Location:iniciosesion.php');
+    }
+?>
 </body>

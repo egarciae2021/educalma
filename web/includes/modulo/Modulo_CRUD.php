@@ -32,9 +32,7 @@ require_once '../../database/databaseConection.php';
         $pdo = Database::connect();  
         $verif=$pdo->prepare("UPDATE modulo SET nombreModulo='$actu_Modulo' WHERE idModulo='$idmodulo'");
 
-        $verif->execute(array(
-            ':actu_nomb_agregar'=>$actu_Modulo,
-        ));
+        $verif->execute(array());
         Database::disconnect();
         echo'
             <script>
@@ -53,9 +51,7 @@ require_once '../../database/databaseConection.php';
         $pdo1 = Database::connect();  
             $verif1=$pdo1->prepare("DELETE FROM tema where id_modulo = '$idModulo'");
 
-        $verif1->execute(array(
-            ':id_modulo' => $idModulo,
-        ));
+        $verif1->execute(array());
         Database::disconnect();
 
 
@@ -63,9 +59,7 @@ require_once '../../database/databaseConection.php';
         $pdo = Database::connect();  
         $verif=$pdo->prepare("DELETE FROM modulo where idModulo = '$idModulo'");
 
-        $verif->execute(array(
-            ':idModulo' => $idModulo,
-        ));
+        $verif->execute(array());
         Database::disconnect();
         echo'
             <script>

@@ -19,9 +19,9 @@ body{
     box-sizing: border-box;
 }
 .formu form{
-    
     padding: 5% 10%;
 }
+
 .formu input{
     width: 100%;
     outline: none;
@@ -31,11 +31,12 @@ body{
     padding: 5px 15px;
     color: #5a95b1;
 }
+
 .boton{
-    
     padding: 5%;
     text-align: center;
 }
+
 .boton button{
     border: 1px solid #7C83FD;
     border-radius: 15px;
@@ -43,11 +44,13 @@ body{
     color: #7C83FD;
     background: none;
 }
+
 .boton button:hover{
     background:  #7C83FD;
     border: 1px solid #7C83FD;
     color: bisque;
 }
+
 /*listado de las preguntas*/
 .formu02{
     padding: 15px 50px;
@@ -57,7 +60,6 @@ body{
 }
 
 /*codigo sidebar*/
-
 :root{
   --orange:#9494fc ;
 }

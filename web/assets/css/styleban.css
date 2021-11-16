@@ -18,6 +18,51 @@ body{
     font-family: "Relaway", sans-serif;
 }
 
+/* CAROUSEL */
+ 
+/* Carousel Header Styles */
+.header-text {
+    position: absolute;
+    top: 30%;
+    width: 100%;
+    right: auto;
+    color: #fff;
+    
+}
+
+.header-text h2 {
+    font-size: 55px;
+}
+
+.header-text h2 span {
+    color: #484ac0;
+    text-shadow:white 0.1em 0.1em 0.2em;
+    font-family: "Satisfy", cursive;
+}
+
+.header-text h3 span {
+    color: white;
+    background-color: #130F40;
+    font-weight: bold;
+	padding: 12px;
+}
+
+.btn-min-block {
+    min-width: 180px;
+    line-height: 26px;
+}
+
+.btn-theme {
+    color: #130F40;
+    background-color:#98CAFF;
+    border: 2px solid #61acfd;
+}
+
+.btn-theme:hover {
+    color: #ffff;
+    background-color: #8D8D8D;
+    border-color: #8D8D8D;
+}
 
 /*style banner*/
 .banner{
@@ -316,6 +361,14 @@ html{
     .about .image img {
       display: none;
     }
+    .header-text h3{
+        visibility: hidden;
+        max-height: 0;
+    }
+
+    .header-text .btn-min-block{
+        width: 100%;
+    }
   }
   
   @media (max-width: 991px) {
@@ -329,3 +382,4 @@ html{
   
   @media (max-width: 450px) {
   }
+

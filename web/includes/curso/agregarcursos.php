@@ -40,6 +40,11 @@
     <title>Agregar Cursos</title>
 </head>
 <body>
+<?php
+// Este codigo hace validacion para que no se pueda acceder a cualquier pagina sin estar logueado
+
+ if(isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)){
+?>
     <div class="container">
         <div class="row">
             <div class="col-md-1"></div>
@@ -64,7 +69,7 @@
                 <center><i class="fas fa-book"></i> Dona un Curso</center>
             </div>
         </div>
-    </DIV>
+ </div>
         <!--contenido de los cursos -->
 
         <!-- 
@@ -168,7 +173,7 @@
                                                   <!--boton modal <i class="fas fa-plus "></i>
                                                  <button type="button" class="btn btn-success ml-auto" data-toggle="modal" data-target="#exampleModal">
                                                             ver
-                                                 </button> NO BORRAR-->
+                                                 </button> -->
                               <!--              </div>
                                         </div>
                                    </form> 
@@ -200,7 +205,7 @@
                 <div class="inputBox">
                 <h3>Categoría</h3>
                 <select id="categoria" name="categoria" class="seleccionador">
-                    <option value="">Seleccionar</option>
+                    <option value="" selected disabled>Seleccionar</option>
                             
                         <?php
                         require_once 'database/databaseConection.php';
@@ -356,7 +361,6 @@
             </div>
             <!-- /.card -->
         </div>
-
     </div>
     <!--
                     ======================================
@@ -683,5 +687,11 @@
   	<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.js"></script>
     <script src="assets/js/validarCategoria.js"></script>
     <script src="assets/js/plugins/sweetalert2.all.min.js"></script>
+    <?php
+    }
+    else{
+                header('Location:iniciosesion.php');
+    }
+?>
 </body>
 </html>

@@ -12,10 +12,7 @@
         //insertar pregunta 
             $pdo4 = Database::connect(); 
             $verif4=$pdo4->prepare("INSERT INTO respuestas (respuesta, id_Pregunta,estado)VALUES ('$respuesta','$id_pregunta',0) ");
-            $verif4->execute(array(
-                ':respuesta' => $respuesta,
-                ':idpregunta' => $id_pregunta,
-            ));
+            $verif4->execute(array());
 
             Database::disconnect();
             echo'
@@ -67,9 +64,7 @@
         $pdo1 = Database::connect();  
         $verif1=$pdo1->prepare("DELETE FROM respuestas where idRespuesta = '$id_respuesta'");
 
-        $verif1->execute(array(
-            ':id_pregunta' => $id_respuesta,
-        ));
+        $verif1->execute(array());
         Database::disconnect();
         echo'
             <script>

@@ -9,10 +9,23 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+    <style>
+         label.error{
+    	color: red;
+        font-style: italic;
+        font-size: 13px;    
+        max-width:400px;
+        padding: 10px;
+        margin:0;
+        }
+    </style>
     <title>Módulo</title>
 </head>
 
 <body>
+<?php
+ if(isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)){
+?>
     <div class="container">
         <div class="row">
             <div class="col-md-1"></div>
@@ -56,7 +69,7 @@
             <div class="image">
                 <img src="./assets/images/donar01.png" alt="">
             </div>
-            <form name="formulario" id="form-agretemas" method="POST" action="includes/modulo/Modulo_CRUD.php?id=<?php echo $dato['id_curso'];?>" target="dummyframe" method="POST">   
+            <form name="formulario" id="form-agretemas3" action="includes/modulo/Modulo_CRUD.php?id=<?php echo $dato['id_curso'];?>" target="dummyframe" method="POST">   
             <div class="inputBox">
                     <h3>Renombrar Módulo:</h3>
                     <input type="text" name="actu_nomb_agregar" id="actu-nomb-agregar" value="<?php echo $dato['nombreModulo'];?>" 
@@ -72,6 +85,15 @@
     </div>
 </div>
 </div>
-
+<?php
+    }
+    else{
+                header('Location:iniciosesion.php');
+    }
+?>
+<!-- Validaciones Autor:Jorge Martinez-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.js"></script>
+<script src="assets/js/validarCategoria.js"></script>
 </body>
 </html>

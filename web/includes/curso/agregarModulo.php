@@ -17,10 +17,25 @@
     <link rel="stylesheet" href="assets/js/plugins/sweetalert2.min.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous">
     </script>
+    <style>
+         label.error{
+    	color: red;
+        font-style: italic;
+        font-size: 13px;    
+        max-width:400px;
+        padding: 10px;
+        margin:0;
+        }
+    </style>
     <title>Módulo</title>
 </head>
 
 <body>
+<?php
+// Este codigo hace validacion para que no se pueda acceder a cualquier pagina sin estar logueado
+
+ if(isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)){
+?>
     <div class="container">
         <div class="row">
             <div class="col-md-1"></div>
@@ -47,8 +62,6 @@
     $q->execute(array());
     $dato=$q->fetch(PDO::FETCH_ASSOC);
     Database::disconnect();
-
-
     ?>
 
 <div class="container-fluid">
@@ -60,9 +73,7 @@
                 <center><i class="fas fa-plus-circle"></i> Agrega Módulos a un Curso <i class="fas fa-plus-circle"></i></center>
             </div>
         </div>
-
-    
-<!-- CODIGO VIEJO -->
+ </div>
 
 <div class="container-contformulario">
     <div class="contformulario" id="contformulario">
@@ -177,5 +188,14 @@
             </div>
         </div>
     </div>
+    <?php
+    }
+    else{
+                header('Location:iniciosesion.php');
+    }
+?>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.js"></script>
+<script src="assets/js/validarCategoria.js"></script>
 </body>
 </html>

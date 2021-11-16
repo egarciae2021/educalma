@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>nosotros</title>
+    <title>Nosotros</title>
     <link rel="stylesheet" href="././assets/css/styleban.css">
     <link rel="stylesheet" href="././assets/css/stylecard.css">
 </head>
@@ -18,7 +18,7 @@
 
   ?>
     <!-- Start Carousel -->
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel">
         <ol class="carousel-indicators">
             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
             <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -26,13 +26,59 @@
         </ol>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img class="d-block w-100" src="./assets/images/crs1.png" alt="First slide">
+                <img class="d-block w-100" src="./assets/images/slider1.png" alt="First slide">
+                 <!-- Static Header -->
+                 <div class="header-text hidden-xs">
+                        <div class="col-md-12 text-center">
+                            <h2>
+                            	<span>Bienvenido a <strong style="color:#130F40;">EduCalma</strong></span>
+                            </h2>
+                            <br>
+                            <h3>
+                            	<span>¡Impulsa tu aprendizaje junto a los mejores especialistas en EduCalma desde hoy!</span>
+                            </h3>
+                        </div>
+                    </div><!-- /header-text -->
             </div>
             <div class="carousel-item">
-                <img class="d-block w-100" src="./assets/images/crs1.png" alt="Second slide">
+                <img class="d-block w-100" src="./assets/images/slider2.png" alt="Second slide">
+                <!-- Static Header -->
+                <div class="header-text hidden-xs">
+                        <div class="col-md-12 text-center">
+                            <h2>
+                            	<span>Bienvenido a <strong style="color:#130F40;">EduCalma</strong></span>
+                            </h2>
+                            <br>
+                            <h3>
+                            	<span>¡Encuentra los cursos que desees aprender y comienza YA!</span>
+                            </h3>
+                            <br>
+                            <div class="">
+                                <a class="btn btn-theme btn-sm btn-min-block" href="../educalma/ListaCursos.php">Ver Cursos</a>
+                            </div>
+                        </div>
+                    </div><!-- /header-text -->
             </div>
             <div class="carousel-item">
-                <img class="d-block w-100" src="./assets/images/crs1.png" alt="Third slide">
+                <img class="d-block w-100" src="./assets/images/slider3.jpg" alt="Third slide">
+                <!-- Static Header -->
+                <div class="header-text hidden-xs">
+                        <div class="col-md-12 text-center">
+                            <h2>
+                            	<span>Bienvenido a <strong style="color:#130F40;">EduCalma</strong></span>
+                            </h2>
+                            <br>
+                            <h3>
+                            	<span>El Bullying es un tipo de violencia que sufren 1 de cada 10 niños y niñas en nuestro país.</span>
+                                <br>
+                                <p><span>Descubre más sobre este Curso.</span></p>
+                            </h3>
+                            <br>
+                            <div class="">
+                                <a class="btn btn-theme btn-sm btn-min-block" href="../educalma/ListaCursos.php?idcate=1">Ver Bullying</a>
+                            </div>
+                        </div>
+                    </div><!-- /header-text -->
             </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -45,7 +91,7 @@
         </a>
     </div>
     <!-- End Carousel-->
-
+    
     <div class="section layout_padding">
 
         <div class="container">
@@ -261,6 +307,7 @@
 
         </div>
     </div>
+
 </body>
 
 </html>

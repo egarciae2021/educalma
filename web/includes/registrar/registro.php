@@ -135,7 +135,7 @@
               <span style="text-align: center;">Inserte su foto</span>
             </div>
             <div class="container-input">
-              <input type="file" name="file-7 imagen" id="file-7" class="inputfile inputfile-7" data-multiple-caption="{count} archivos seleccionados" multiple />
+              <input type="file" name="imagen" id="file-7" class="inputfile inputfile-7" data-multiple-caption="{count} archivos seleccionados" multiple />
               <label for="file-7">
                 <span class="iborrainputfile"></span>
                 <strong>

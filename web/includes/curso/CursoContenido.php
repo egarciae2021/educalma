@@ -1,4 +1,6 @@
-
+<?php
+ if(isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)){
+?>
   <?php 
         // ob_start(); 
         // session_start();
@@ -31,13 +33,50 @@
                         <?php
                         /*
                          *METODO PARA VALIDAR EL CERTIFICADO
-                         *@AUTOR: Jean
+                         *@AUTOR: Giancarlo S. xd
                          */
                             
                         ?>
 
+                          <?php 
+                        
 
-                        <a class="button" data-filter=".seo" href="plugins/ejemplo.php?idCurso=<?php echo $id; ?>"><span>CERTIFICADO</span></a>       
+                              $pdo5 = Database::connect(); 
+
+
+
+                              $q5=$pdo5->query("SELECT count(*) FROM respuestas res INNER JOIN preguntas pre ON res.id_Pregunta=pre.idPregunta
+                                                                                    INNER JOIN cuestionario cues ON cues.idCuestionario=pre.id_cuestionario
+                                                                                    INNER JOIN modulo mo ON mo.idModulo=cues.id_modulo
+                                                                                    INNER JOIN cursos cur ON cur.idCurso= mo.id_curso
+                                                                                    where cur.idCurso=$id and res.estado=1");
+                              $cantidad_respuestas_validas= $q5->fetchColumn();
+    
+                              $minimo_respuestas_para_aprobar=$cantidad_respuestas_validas/2;
+                               Database::disconnect();
+
+                                $pdo6 = Database::connect();
+                                $sql6 = "SELECT cantidad_respuestas FROM cursoinscrito WHERE curso_id = '$id' ";
+                                $q6 = $pdo6->prepare($sql6);
+                                $q6->execute(array());
+                                $dato=$q6->fetch(PDO::FETCH_ASSOC);
+                                Database::disconnect();
+                               
+                                    $cantidad_respuesta_acertadas=$dato['cantidad_respuestas'];
+                              
+                                
+    
+                              if($cantidad_respuesta_acertadas>=$minimo_respuestas_para_aprobar){
+                                    
+                             echo '<a class="button" data-filter=".seo" href="plugins/ejemplo.php?idCurso='.$id.'"><span>CERTIFICADO</span></a>';
+                              }
+                          
+
+                          ?>
+
+
+
+                               
             
             
                     </div> <!-- end of button group -->
@@ -336,3 +375,9 @@ jQuery(function ($) {
   }
 });
     </script>
+    <?php
+    }
+    else{
+                header('Location:iniciosesion.php');
+    }
+?>

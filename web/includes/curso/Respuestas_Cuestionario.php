@@ -12,10 +12,23 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
+    <style>
+         label.error{
+    	color: red;
+        font-style: italic;
+        font-size: 13px;    
+        max-width:400px;
+        padding: 10px;
+        margin:0;
+        }
+    </style>
     <script src="https://kit.fontawesome.com/f9e5248491.js" crossorigin="anonymous"></script>
     <title>Agregar Cursos</title>
 </head>
 <body>
+<?php
+    if(isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)){
+?>
     <div class="container">
         <div class="row">
             <div class="col-md-1"></div>
@@ -34,11 +47,11 @@
     <!--Contenido-->
     <div class="container-fluid">
         <div class="title">
-            <div class="mb-4">
+            <div class="mb">
                 <center>Cuestionario de Respuestas</center>
             </div>
         </div>
-    </DIV>
+    </div>
 
     <!--Contenido del cuestionario-->
 
@@ -48,14 +61,14 @@
         $pregunta=$_GET['pregunta'];
     ?>
 
-<!-- codigo sidebar --->
+<!-- codigo --->
 <div class="container-contformulario">
     <div class="contformulario" id="contformulario">
         <div class="row">
             <div class="image">
                 <img src="./assets/images/donar08.png" alt="">
             </div>
-            <form action="includes/Pregunta_Respuesta/Respuesta_CRUD.php?id_modulo=<?php echo $idmodulo;?>" method="POST" enctype="multipart/form-data">
+            <form id="respuestas_cuestionario" action="includes/Pregunta_Respuesta/Respuesta_CRUD.php?id_modulo=<?php echo $idmodulo;?>" method="POST" enctype="multipart/form-data">
                 <div class="inputBox">
                     <h3><i class="fas fa-pen"></i> Dale Respuestas a tu Pregunta</h3>
                     <textarea name="respuesta" ></textarea>
@@ -67,6 +80,7 @@
             <div class="inputBox">
                 <button type="submit" class="boton1"><i class="fas fa-plus"></i> Agregar Respuesta</button>
             </div>
+            
 
 <!-- Listado -->            
             <div class="inputBox">
@@ -120,12 +134,15 @@
                         <?php }?>
                     </tbody>
                 </table>
-            </div>
+           
 
-            <h5 style="padding: 20px 20px 0px 20px; text-align: center;">Elija la respuesta correcta <i class="fas fa-mouse-pointer"></i></h5>
+            </form>       
+            
             <form action="includes/tema/checkAgrTema.php?idpregunta=<?php echo $id_pregunta;?>&id_modulo=<?php echo $idmodulo;?>&pregunta=<?php echo $pregunta;?>" method="POST">
+            <h5 style="padding: 20px 20px 0px 20px; text-align: center;">Elija la respuesta correcta <i class="fas fa-mouse-pointer"></i></h5>
                 <div style="padding: 20px;" class="input-group">
                     <select class="form-select" name="respu_correcta" id="inputGroupSelect04" aria-label="Example select with button addon">
+                        
                         <?php
                             $pdo2 = Database::connect();
                             $sql2 = "SELECT * FROM respuestas WHERE id_Pregunta='$id_pregunta'";
@@ -136,11 +153,14 @@
 
                         <option value="<?php echo $registro2['idRespuesta'];?>"><?php echo $registro2['respuesta'];?>
                         </option>
+
                         <?php }?>
+
                     </select>
                     <button class="btn btn-outline-primary" type="submit" style="background:blue;color:#FFFFFF;font-size:15px;">Correcto</button>
                 </div>
             </form>
+            </div>
         </div>
     </div>
     <br>
@@ -149,5 +169,15 @@
 </div>  
 </div>
 </div>
+<?php
+    }
+    else{
+                header('Location:iniciosesion.php');
+    }
+?>
+<!-- Validaciones Autor:Jorge Martinez-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.js"></script>
+<script src="assets/js/validarCategoria.js"></script>
 </body>
 </html>

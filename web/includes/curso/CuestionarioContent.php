@@ -20,6 +20,11 @@
 </head>
 
 <body>
+<?php
+// Este codigo hace validacion para que no se pueda acceder a cualquier pagina sin estar logueado__Pablo Loyola
+
+ if(isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)){
+?>
     <div class="container">
         <div class="row">
             <div class="col-md-1"></div>
@@ -112,7 +117,7 @@
             ?>
             <h6 style="text-align: center;">fin de cuestionario</h6>
             <div style="text-align: center;">
-                <a href="Cursoiniciar.php?id=<?php echo $id;?>"><button type="button" class="btn btn-outline-secondary">Terminar</button></a>
+                <a href="curso.php?id=<?php echo $id;?>"><button type="button" class="btn btn-outline-secondary">Terminar</button></a>
                 <a href="video.php?id=<?php echo $id;?>&c_tema=<?php echo $c_tema;?>&validar=1&c_modulo=<?php echo $c_modulo;?>"><button type="button" class="btn btn-outline-secondary">Siguiente</button></a>
                 
                 
@@ -138,23 +143,28 @@
             <?php } ?>
             <?php 
                 if($fila1=$q1->fetch(PDO::FETCH_ASSOC)){
+                    
                     $pdo2 = Database::connect();
                     $sql2 = "SELECT * FROM respuestas WHERE id_Pregunta='$fila1[idPregunta]'";
                     $q2 = $pdo2->prepare($sql2);
                     $q2->execute(array());
+                    $idpregunta=$fila1['idPregunta'];
             ?>
             <h5 style="background: #CFE8FE; padding: 20px 35px; color: #4F52D6"><?php echo $fila1['pregunta'];?>?</h5>
 
             
             <form style="padding: 30px;"
-                action="includes/cuestionarioCRUD/cuestion.php?contador=<?php echo $contador;?>&id=<?php echo $id;?>&idModulo=<?php echo $idModulo;?>&c_tema=<?php echo $c_tema;?>&validar=1&c_modulo=<?php echo $c_modulo;?>"
+                action="includes/cuestionarioCRUD/cuestion.php?contador=<?php echo $contador;?>&id=<?php echo $id;?>&idModulo=<?php echo $idModulo;?>&c_tema=<?php echo $c_tema;?>&validar=1&c_modulo=<?php echo $c_modulo;?>&id_pregunta=<?php echo $idpregunta ?>"
                 method="POST">
-                <?php while($fila2=$q2->fetch(PDO::FETCH_ASSOC)){?>
+                <?php while($fila2=$q2->fetch(PDO::FETCH_ASSOC)){
+                          //checked
+                    ?>
                 <div
                     style="padding: 10px; border-radius: 5px; background: #ffff; border-bottom: 1px solid slategray; margin-bottom: 20px;">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="verif_resp"
-                            value="<?php echo $fila2['respuesta'];?>" checked>
+                      
+                            value="<?php echo $fila2['respuesta'];?>">
                         <input type="hidden" name="c" value="<?php echo $c;?>">
                         <label class="form-check-label" for="exampleRadios1">
                             <?php echo $fila2['respuesta'];?>
@@ -176,7 +186,12 @@
     <br>
     <br>
     <br>
-
+    <?php
+    }
+    else{
+                header('Location:iniciosesion.php');
+    }
+?>
 </body>
 
 </html>

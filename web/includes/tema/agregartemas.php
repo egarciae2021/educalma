@@ -7,10 +7,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/agretemas.css">
     <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    <style>
+         label.error{
+    	color: red;
+        font-style: italic;
+        font-size: 13px;    
+        max-width:400px;
+        padding: 10px;
+        margin:0;
+        }
+    </style>
     <title>Agregar Temas</title>
 </head>
 
 <body>
+<?php
+// Este codigo hace validacion para que no se pueda acceder a cualquier pagina sin estar logueado
+
+ if(isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)){
+?>
     <div class="container">
         <div class="row">
             <div class="col-md-1"></div>
@@ -35,6 +50,7 @@
                 <center><i class="fas fa-plus-square"></i> Agrega Temas a un Módulo</center>
             </div>
         </div>
+    </div>
             <?php
                 require_once '././database/databaseConection.php';
                 $idModulo=$_GET['id_mo'];
@@ -133,7 +149,7 @@
                                         ======================================
 
             -->
-            <form name="formulario" id="form-agretemas" method="POST" action="includes/tema/checkAgrTema.php?id_mo=<?php echo $idModulo?>&idCurso=<?php echo $idCurso?>" target="dummyframe" onsubmit="registrar_nuevo_usuario();">
+            <form name="formulario" id="form-agretemas2" method="POST" action="includes/tema/checkAgrTema.php?id_mo=<?php echo $idModulo?>&idCurso=<?php echo $idCurso?>" target="dummyframe" onsubmit="registrar_nuevo_usuario();">
             <div class="inputBox">
                     <h3>Agregue temas del módulo: "<strong><?php echo $dato2['nombreModulo'];?>"</strong></h3>
             </div>
@@ -174,31 +190,68 @@
         </div>
     </div>
 </div>
-</div>
-<br>
 
 <!--    Barra que muestra los temas añadidos   -->
-        <div class="container_fluid">
-            <div class="m-2">
-                <input type="text" class="form-control" value="<?php echo $dato3['nombreTema']?>"
-                    aria-label="Recipient's username with two button addons" disabled>
-                <a href="editartema.php?id_modulo=<?php echo $idd; ?>&id_curso=<?php echo $idCurso;?>&id_tema=<?php echo $dato3['idTema'];?>">
-                    <button class="btn btn-outline-secondary" type="button">
-                        <i class="fas fa-edit"></i> Editar Tema</button>
-                </a>
-                <a href="includes/tema/quitartemas.php?id_modulo=<?php echo $idd; ?>&id_curso=<?php echo $idCurso;?>&id_tema=<?php echo $dato3['idTema'];?>">
-                    <button class="btn btn-outline-secondary" type="button">
-                    <i class="fas fa-trash"></i> Quitar Tema</button>
-                </a>
+<div class="col-12 mt-5 text-center">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Listado de Temas</h3>
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body">
+                    <div class="table-responsive">
+                            <table id="" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                                <thead>
+                                    <tr>
+                                        <th>Nombre</th>
+                                        <th>Link del vídeo</th>
+                                        <th>Descripción</th>
+                                        <th>Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>
+                                        <input type="text" class="form-control-sm" value="<?php echo $dato3['nombreTema']?>" aria-label="Recipient's username with two button addons" disabled>
+                                    </td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                        <!--para editar tema-->
+                                        <a href="editartema.php?id_modulo=<?php echo $idd; ?>&id_curso=<?php echo $idCurso;?>&id_tema=<?php echo $dato3['idTema'];?>">
+                                            <button class="btn btn-outline-success" type="button"><i class="fas fa-edit"></i> Editar tema</button>
+                                        </a>
+                                        <!--para borrar tema-->
+                                        <a href="includes/tema/quitartemas.php?id_modulo=<?php echo $idd; ?>&id_curso=<?php echo $idCurso;?>&id_tema=<?php echo $dato3['idTema'];?>">
+                                            <button class="btn btn-outline-danger" type="button"><i class="fas fa-trash"></i> Quitar tema</button>
+                                        </a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                            </table>
+                        
+                            <?php }
+                                    Database::disconnect();
+                                    ?>
+                                    
+                        </div>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
             </div>
+            <!-- /.card -->
         </div>
-                </div></div>
-            <?php
-                        }
-                        Database::disconnect();
-                    ?>
-</div>
-        </div>
-    </div>
+        <br>
+
+    <?php
+    }
+    else{
+                header('Location:iniciosesion.php');
+    }
+    ?>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.js"></script>
+<script src="assets/js/validarCategoria.js"></script>
 </body>
 </html>
