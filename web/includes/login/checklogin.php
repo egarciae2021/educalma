@@ -70,7 +70,7 @@ if ($dato['estado'] == 1 && password_verify($password_sinHash, $pass_con_hash) =
 
 if($_SESSION['Logueado'] != true){
     $_SESSION['usuario'] = $username;
-    //header('Location: ../../iniciosesion.php');
+    header('Location: ../../iniciosesion.php');
 }
 //ob_end_flush();
 ?>
