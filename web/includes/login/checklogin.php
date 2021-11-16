@@ -54,13 +54,13 @@ if ($dato['estado'] == 1 && password_verify($password_sinHash, $pass_con_hash) =
     $_SESSION['hijo']= $dato['hijoEmpresa'];
 
     if($_SESSION['privilegio'] == 1 || $_SESSION['privilegio'] == 2 || $_SESSION['privilegio'] == 3 || $_SESSION['privilegio'] == 4 || $_SESSION['privilegio'] == 5 || $_SESSION['privilegio'] == 6){
-        echo '<script>swal("Inicio de Sesión Exitoso", "Has iniciado sesión correctamente.", "success");</script>';
+        //echo '<script>swal("Inicio de Sesión Exitoso", "Has iniciado sesión correctamente.", "success");</script>';
          $_SESSION['Logueado']=true;
         header('Location: ../../index.php'); 
        
     }else{
         $_SESSION['Logueado']=false;
-        echo '<script>swal("Falló el Inicio de Sesión", "El Nombre de Usuario y/o Contraseña son Incorrectos.", "error");</script>';
+        //echo '<script>swal("Falló el Inicio de Sesión", "El Nombre de Usuario y/o Contraseña son Incorrectos.", "error");</script>';
         header('Location: ../../iniciosesion.php'); 
         
     } 
