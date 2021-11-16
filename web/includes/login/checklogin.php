@@ -72,5 +72,5 @@ if($_SESSION['Logueado'] != true){
     $_SESSION['usuario'] = $username;
     //header('Location: ../../iniciosesion.php');
 }
-ob_end_flush();
+//ob_end_flush();
 ?>
