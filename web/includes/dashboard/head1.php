@@ -20,6 +20,8 @@ require_once 'database/databaseConection.php';
 
 $id = $_SESSION['codUsuario'];
 
+echo $id;
+
 $pdo1 = Database::connect();
 $veri1 = "SELECT * FROM cursoinscrito WHERE usuario_id = '$id' order by curso_id desc";
 $q1 = $pdo1->prepare($veri1);
