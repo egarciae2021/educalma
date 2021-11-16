@@ -1,8 +1,5 @@
 <?php
 require_once 'database/databaseConection.php';
-ob_start(); 
-@session_start();
-
 
 ?>
 <style>
@@ -63,7 +60,7 @@ ob_start();
 
                         <?php
                              Database::disconnect();
-                            echo $_SESSION['nombres']." hello";
+                            
                         if (isset($_SESSION['Logueado']) && $_SESSION['Logueado'] === true) {
                             echo "hola mundo;";
                            
