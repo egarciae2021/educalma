@@ -1,8 +1,7 @@
 <?php
+
 require_once 'database/databaseConection.php';
 
-ob_start(); 
-session_start();
 ?>
 <style>
     .li_cursos {
