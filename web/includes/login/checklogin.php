@@ -26,7 +26,7 @@ $q->execute(array());
 $dato=$q->fetch(PDO::FETCH_ASSOC);
 Database::disconnect();
 
-echo $username." + ".$password_sinHash;
+echo $dato['email']." + ".$password_sinHash;
 //sacando el pass de la DB
 $pass_con_hash = $dato['pass'];
 //ESTADO PENDIENTE
