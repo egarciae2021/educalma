@@ -26,6 +26,7 @@ $q->execute(array());
 $dato=$q->fetch(PDO::FETCH_ASSOC);
 Database::disconnect();
 
+echo $username." + ".$password_sinHash;
 //sacando el pass de la DB
 $pass_con_hash = $dato['pass'];
 //ESTADO PENDIENTE
@@ -68,5 +69,5 @@ if($_SESSION['Logueado'] != true){
     $_SESSION['usuario'] = $username;
     //header('Location: ../../iniciosesion.php');
 }
-ob_end_flush();
+//ob_end_flush();
 ?>
