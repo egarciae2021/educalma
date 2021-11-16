@@ -5,13 +5,13 @@
 
 <?php 
 // Sesión
-    /*ob_start();
+    ob_start();
     @session_start();
     $now = time();
-    if(isset($_SESSION['acabo'])){
+    if(isset($_SESSION['expire'])){
       echo '<script>swal({title: "Su Sesión Terminó",icon: "warning",allowEscapeKey: false,allowOutsideClick:false,text: "Ingrese sus Datos Nuevamente para continuar.",showConfirmButton: false});</script>';
       session_destroy(); 
-    }*/
+    }
 ?>
 
 <?php include_once 'includes/Inicio/Header.php' ?>
