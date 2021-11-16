@@ -62,8 +62,7 @@ require_once 'database/databaseConection.php';
                              Database::disconnect();
                             
                         if (isset($_SESSION['Logueado']) && $_SESSION['Logueado'] === true) {
-                            echo "hola mundo;";
-                           
+                     
                             $pdo = Database::connect();
                             $idUsuario = $_SESSION['codUsuario'];
                             $sql = "SELECT * FROM usuarios WHERE id_user = '$idUsuario'";
