@@ -67,7 +67,7 @@ ob_start();
 
                         <?php
 
-                            echo $_SESSION['Logueado'];
+                            echo $_SESSION['codUsuario']." hello";
                         if (isset($_SESSION['Logueado']) && $_SESSION['Logueado'] === true) {
                             echo "hola mundo;";
                             require_once 'database/databaseConection.php';
