@@ -1,7 +1,8 @@
 <?php
+require_once 'database/databaseConection.php';
 ob_start(); 
 @session_start();
-require_once 'database/databaseConection.php';
+
 
 ?>
 <style>
@@ -27,14 +28,10 @@ require_once 'database/databaseConection.php';
                                 <li><a class="nav-link text-primary" href="nosotros.php">Nosotros</a></li>
 
                                 <?php
-
-
                                 $pdo4 = Database::connect();
                                 $sql4 = "SELECT * FROM categorias";
                                 $q4 = $pdo4->prepare($sql4);
                                 $q4->execute(array());
-
-
                                 ?>
                                 <li>
                                     <div class="dropdown">
