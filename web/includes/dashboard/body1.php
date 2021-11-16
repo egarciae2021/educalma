@@ -3,6 +3,7 @@
 ob_start();
     @session_start();
  if(isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)){
+     echo "hola mundo";
 ?>
  <!--========== NAV ==========-->
  <div class="nav" id="navbar">
