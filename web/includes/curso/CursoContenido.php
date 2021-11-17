@@ -51,8 +51,14 @@
                                                                                     INNER JOIN cursos cur ON cur.idCurso= mo.id_curso
                                                                                     where cur.idCurso=$id and res.estado=1");
                               $cantidad_respuestas_validas= $q5->fetchColumn();
-    
-                              $minimo_respuestas_para_aprobar=$cantidad_respuestas_validas/2;
+
+                              if($cantidad_respuestas_validas<=9){
+                                $minimo_respuestas_para_aprobar=$cantidad_respuestas_validas;
+                              }else{
+                                $minimo_respuestas_para_aprobar=$cantidad_respuestas_validas-2;
+                              }
+
+                              
                                Database::disconnect();
 
                                 $pdo6 = Database::connect();
