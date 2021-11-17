@@ -1,9 +1,11 @@
 <?php 
+    session_start();
     require_once '../../database/databaseConection.php';
     $id=$_GET['id'];
     $idModulo=$_GET['idModulo'];
     $contador=$_GET['contador'];
     $id_pregunta=$_GET['id_pregunta'];
+    $validar=$_SESSION['validar'];
     //para el boton siguientes necesita estas variables
     if(isset($_GET['c_tema']) && isset($_GET['c_modulo'])){
         $c_tema=$_GET['c_tema'];
@@ -21,8 +23,9 @@
     Database::disconnect();
 
     if($cuenta==1){
-        // CALCULAR LA CANTIDAD DE RESPUESTAS ACERTADAS 
-        $pdo = Database::connect();
+        // CALCULAR LA CANTIDAD DE RESPUESTS ACERTADAS 
+        if($validar==0){
+            $pdo = Database::connect();
         $sql = "SELECT cantidad_respuestas FROM cursoinscrito WHERE curso_id = '$id' ";
         $q = $pdo->prepare($sql);
         $q->execute(array());
@@ -37,6 +40,9 @@
         $q = $pdo->prepare($sql);
         $q->execute();
         Database::disconnect();
+
+        }
+        
         
         echo'
             <script>
