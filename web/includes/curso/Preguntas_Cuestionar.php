@@ -51,6 +51,13 @@
             <div class="mb-4">
                 <center>Cuestionario de Preguntas</center>
             </div>
+            <!-- <h1><a href="agregarModulos.php?id=<?php //echo $idCurso=$_GET['idCurso'];?>">Atras <-</a></h1> -->
+            <?php
+    $previous = "javascript:history.go(-1)";
+if(isset($_SERVER['HTTP_REFERER'])) {
+    $previous = $_SERVER['HTTP_REFERER'];
+}?>
+    <h3><a href="<?= $previous ?>">Atras <-</a></h3>
         </div>
     </DIV>
     <!--Contenido del cuestionario-->

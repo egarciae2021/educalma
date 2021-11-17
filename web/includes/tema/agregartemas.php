@@ -49,6 +49,7 @@
             <div class="mb-4">
                 <center><i class="fas fa-plus-square"></i> Agrega Temas a un Módulo</center>
             </div>
+            <h1><a href="agregarModulos.php?id=<?php echo $idCurso=$_GET['idCurso'];?>">Atras <-</a></h1>
         </div>
     </div>
             <?php

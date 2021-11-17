@@ -87,6 +87,7 @@
     <!-- section -->
   
     <div class="section margin-top_50">
+        <h3><a href="sidebarCursos.php">Ir a cursos</a></h3>
         <div class="container">
             <div class="row">
                 <div class="col-md-6 layout_padding_2">

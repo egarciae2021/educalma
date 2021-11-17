@@ -69,6 +69,7 @@
                 <center><i class="fas fa-book"></i> Dona un Curso</center>
             </div>
         </div>
+        <h2><a href="sidebarCursos.php">Atras <-</a></h2>
  </div>
         <!--contenido de los cursos -->
 

@@ -72,6 +72,7 @@
             <div class="mb-4">
                 <center><i class="fas fa-plus-circle"></i> Agrega Módulos a un Curso <i class="fas fa-plus-circle"></i></center>
             </div>
+            <h2><a href="agregarcurso.php">Atras <-</a></h2>
         </div>
  </div>
 
