@@ -122,7 +122,7 @@
 
 <div class="containervid">
 
-    <div class="contvid" style="width: 500px; height: 270px; padding: 10px;">
+    <div class="contvid" style="max-width: 500px; min-width:350px; height: 270px; padding: 10px; ">
         <?php 
               $url=$dato2['link_video'];
               function getYoutubeEmbedUrl($url){

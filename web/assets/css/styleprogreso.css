@@ -51,7 +51,7 @@
 .containervid{
     background: transparent;
     padding: 12em;
-    
+    position: relative;
 }
 
 
@@ -81,9 +81,6 @@
 
 
 @media screen and (max-width: 1600px) {
-    .contvid{
-        top: 55%; 
-    }
     .vid iframe{
         margin: 10px;
         width: 97%;
