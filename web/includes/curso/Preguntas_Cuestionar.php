@@ -55,6 +55,7 @@
             </div>
     </DIV>
     <!--Contenido del cuestionario-->
+    <?php $idmodulo=$_GET['id_modulo'];?>
     <div class="cont">
     <div class="container-contformulario">
     <div class="contformulario" id="contformulario">
