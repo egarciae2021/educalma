@@ -51,7 +51,7 @@
             <div class="mb-4">
                 <center>Cuestionario de Preguntas</center>
             </div>
-            <h1><a href="agregarModulos.php?id=<?php echo $idmodulo=$_GET['id_modulo']?>">Atras <-</a></h1>
+            <h1><a href="agregarModulos.php?id=<?php echo $id=$_SESSION['ids'];?>">Atras <-</a></h1>
             </div>
     </DIV>
     <!--Contenido del cuestionario-->
