@@ -30,7 +30,7 @@
                             ?>
                      </h4>
                      <div class="nav__dropdown">
-                         <a href="sidebarEditar.php" class="nav__link">
+                         <a href="#" class="nav__link">
                              <i class="far fa-user-circle nav__icon"></i>
                              <!-- <i class="far fa-bookmark nav__icon"></i> -->
                              <span class="nav__name">Perfil</span>
@@ -83,7 +83,7 @@
                          <span class="nav__name">Educalma</span>
                      </a>
 
-                     <a href="#" class="nav__link">
+                     <a href="sidebarEditar.php" class="nav__link">
                          <i class="fas fa-cog nav__icon"></i>
                          <span class="nav__name">Ajustes</span>
                      </a>
