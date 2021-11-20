@@ -83,6 +83,7 @@ require_once 'database/databaseConection.php';
                                             </a>
                                             <div class="dropdown-menu content_dropdown" id="menu_dropdown">
                                                 <a class="dropdown-item" href="user-sidebar.php">Dashboard</a>
+                                                <a class="dropdown-item" href="sidebarCursos.php">Ir a Cursos</a>
                                                 <a class="dropdown-item" href="includes/login/logout.php">Cerrar Sesión</a>
                                             </div>
                                         </div>
