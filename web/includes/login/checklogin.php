@@ -30,7 +30,7 @@ Database::disconnect();
 //sacando el pass de la DB
 $pass_con_hash = $dato['pass'];
 //ESTADO PENDIENTE
-echo "Antes de IF";
+
 if ($dato['estado'] == 1 && password_verify($password_sinHash, $pass_con_hash) === true) {
     echo "Verifico correctamente";
     $_SESSION['start'] = time();
@@ -57,24 +57,20 @@ if ($dato['estado'] == 1 && password_verify($password_sinHash, $pass_con_hash) =
     if($_SESSION['privilegio'] == 1 || $_SESSION['privilegio'] == 2 || $_SESSION['privilegio'] == 3 || $_SESSION['privilegio'] == 4 || $_SESSION['privilegio'] == 5 || $_SESSION['privilegio'] == 6){
         echo '<script>swal("Inicio de Sesión Exitoso", "Has iniciado sesión correctamente.", "success");</script>';
          $_SESSION['Logueado']=true;
-         echo "LOGEADO TRUE";
-        //header('Location: ../../index.php'); 
+    
+        header('Location: ../../index.php'); 
        
     }else{
-         echo "LOGEADO FALSE";
+      
         $_SESSION['Logueado']=false;
         echo '<script>swal("Falló el Inicio de Sesión", "El Nombre de Usuario y/o Contraseña son Incorrectos.", "error");</script>';
-        //header('Location: ../../iniciosesion.php'); 
+        header('Location: ../../iniciosesion.php'); 
         
     } 
 }else{
 	    $_SESSION['estado_actividad']=$dato['estado'];
     }
 
-if($_SESSION['Logueado'] != true){
-    $_SESSION['usuario'] = $username;
-    //header('Location: ../../iniciosesion.php');
-}
 
 ob_end_flush();
 
