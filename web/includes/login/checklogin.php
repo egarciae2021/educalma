@@ -30,6 +30,7 @@ Database::disconnect();
 //sacando el pass de la DB
 $pass_con_hash = $dato['pass'];
 //ESTADO PENDIENTE
+echo "Antes de IF";
 if ($dato['estado'] == 1 && password_verify($password_sinHash, $pass_con_hash) === true) {
     echo "Verifico correctamente";
     $_SESSION['start'] = time();
