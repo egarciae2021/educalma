@@ -1,3 +1,7 @@
+<?php 
+  ob_start();
+  @session_start();
+?> 
 <?php //include_once 'includes/inicio/head.php' ?>
 <head>
 <link rel="shortcut icon" href="assets/images/educalmalogo.svg">
