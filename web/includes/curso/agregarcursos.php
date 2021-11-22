@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/js/plugins/sweetalert2.min.css">
+    <link rel="stylesheet" href="assets/css/stylebuttonAtras.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
     <?php require_once "includes/Inicio/Head.php"; ?>
@@ -69,6 +70,7 @@
                 <center><i class="fas fa-book"></i> Dona un Curso</center>
             </div>
         </div>
+        <h2><a href="sidebarCursos.php" class="btn-before-custom">Volver</a></h2>
  </div>
         <!--contenido de los cursos -->
 

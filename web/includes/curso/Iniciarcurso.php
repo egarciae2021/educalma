@@ -7,6 +7,7 @@
         require_once '././database/databaseConection.php';
         $validacion=1;
         $id=$_GET['id'];
+        $validar=$_SESSION['validar'];
 
         $pdo1 = Database::connect(); 
         $sql1 = "SELECT * FROM cursos WHERE idCurso='$id'";
@@ -14,12 +15,17 @@
         $q1->execute(array());
         $dato1 = $q1->fetch(PDO::FETCH_ASSOC);
         Database::disconnect();
+            if($validar==0){
+                $pdo=Database::connect();
+            $sql = "UPDATE `cursoinscrito` SET `cantidad_respuestas` ='0' WHERE `cursoinscrito`.`curso_id` ='$id' ";
+            $q = $pdo->prepare($sql);
+            $q->execute();
+            Database::disconnect();
 
-        $pdo=Database::connect();
-        $sql = "UPDATE `cursoinscrito` SET `cantidad_respuestas` ='0' WHERE `cursoinscrito`.`id_cursoInscrito` ='$id' ";
-        $q = $pdo->prepare($sql);
-        $q->execute();
-        Database::disconnect();
+            }
+            
+       
+        
     ?>
 <link rel="stylesheet" href="assets/css/style.css">
 

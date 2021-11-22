@@ -51,8 +51,14 @@
                                                                                     INNER JOIN cursos cur ON cur.idCurso= mo.id_curso
                                                                                     where cur.idCurso=$id and res.estado=1");
                               $cantidad_respuestas_validas= $q5->fetchColumn();
-    
-                              $minimo_respuestas_para_aprobar=$cantidad_respuestas_validas/2;
+
+                              if($cantidad_respuestas_validas<=9){
+                                $minimo_respuestas_para_aprobar=$cantidad_respuestas_validas;
+                              }else{
+                                $minimo_respuestas_para_aprobar=$cantidad_respuestas_validas-2;
+                              }
+
+                              
                                Database::disconnect();
 
                                 $pdo6 = Database::connect();
@@ -69,8 +75,13 @@
                               if($cantidad_respuesta_acertadas>=$minimo_respuestas_para_aprobar){
                                     
                              echo '<a class="button" data-filter=".seo" href="plugins/ejemplo.php?idCurso='.$id.'"><span>CERTIFICADO</span></a>';
+                                 $validar=1;
+
+                              }else {
+                                 $validar=0;
+                                
                               }
-                          
+                              $_SESSION['validar']=$validar;
 
                           ?>
 
@@ -87,7 +98,59 @@
     <!-- section -->
   
     <div class="section margin-top_50">
+        <h3><a href="sidebarCursos.php">Ir a cursos</a></h3>
         <div class="container">
+              <!-- boton pregunta -->
+              <div class="btn_preg" data-toggle="modal" data-target="#dialogo1">
+                            <i class="fas fa-question"></i>
+                            </div>
+                        <!-- fin boton pregunta -->
+                            
+    <!-- MODAL -->
+    <div class="modal fade" id="dialogo1">
+      <div class="modal-dialog modal-sm modal-dialog-centered">
+        <div class="modal-content">
+    
+          <!-- cabecera del diálogo -->
+          <div class="modal-header">
+            <h4 class="modal-title" style="font-size:15px;">Este curso incluye:</h4>
+            <button type="button" class="close" data-dismiss="modal">X</button>
+          </div>
+          <!-- cuerpo del diálogo -->
+          <div class="modal-body" style="justify-content:;">
+          <div class="row">
+              <div class="right"><i class="far fa-file"></i></div>
+                  <div class="left">n° Módulos</div>
+                </div>
+                  <div class="row">
+                    <div class="right"><i class="fas fa-folder"></i></div>
+                        <div class="left">n° Temas</div>
+                    </div>
+                    <div class="row">
+                    <div class="right"><i class="fas fa-infinity"></i></div>
+                        <div class="left">n° Cuestionarios</div>
+                    </div>
+                    <div class="row">
+                    <div class="right"><i class="fas fa-mobile-alt"></i></div>
+                        <div class="left">La nota mínima para aprobar el curso es 15.</div>
+                    </div>
+                    <div class="row">
+                    <div class="right"><i class="fas fa-list-ol"></i></div>
+                        <div class="left">Cantidad de preguntas: n°</div>
+                    </div>
+                    <div class="row">
+                    <div class="right"><i class="fas fa-trophy"></i></div>
+                    <div class="left">Certificado de Finalización</div>
+                </div>
+            </div>
+          <!-- pie del diálogo -->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal" style="font-size:12px;">Cerrar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- FIN DE MODAL -->
             <div class="row">
                 <div class="col-md-6 layout_padding_2">
                     <div class="full">

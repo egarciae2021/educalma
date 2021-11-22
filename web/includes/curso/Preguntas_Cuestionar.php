@@ -51,12 +51,12 @@
             <div class="mb-4">
                 <center>Cuestionario de Preguntas</center>
             </div>
-        </div>
+            <h1><a href="agregarModulos.php?id=<?php echo $id=$_SESSION['ids'];?>">Atras <-</a></h1>
+            </div>
     </DIV>
     <!--Contenido del cuestionario-->
-    <?php $idmodulo=$_GET['id_modulo']?>
+    <?php $idmodulo=$_GET['id_modulo'];?>
     <div class="cont">
-
     <div class="container-contformulario">
     <div class="contformulario" id="contformulario">
         <div class="formu"  style="border-radius:15px;box-shadow:2px 3px 5px gray;">

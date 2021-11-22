@@ -72,6 +72,12 @@
             <div class="mb-4">
                 <center><i class="fas fa-plus-circle"></i> Agrega Módulos a un Curso <i class="fas fa-plus-circle"></i></center>
             </div>
+            <h2><a href="agregarcurso.php">Atras <-</a></h2>
+            <?php
+                    $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+                    $envio=substr($url, strrpos($url, '=') + 1);
+                    $_SESSION['ids']=$envio;
+                    ?>
         </div>
  </div>
 

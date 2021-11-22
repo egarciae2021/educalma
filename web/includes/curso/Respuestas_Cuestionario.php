@@ -50,13 +50,13 @@
             <div class="mb">
                 <center>Cuestionario de Respuestas</center>
             </div>
+            <h3><a href="Form_pregun_cuestionario.php?id_modulo=<?php echo $idmodulo=$_GET['id_modulo'];?>">Atras <-</a></h3>
         </div>
     </div>
 
     <!--Contenido del cuestionario-->
 
     <?php
-        $idmodulo=$_GET['id_modulo'];
         $id_pregunta=$_GET['id_pregunta'];
         $pregunta=$_GET['pregunta'];
     ?>

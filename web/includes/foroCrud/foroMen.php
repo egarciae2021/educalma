@@ -18,12 +18,7 @@ if(isset($_POST['mensaje']))
     $veri="INSERT INTO comentarioforo (comentario,idcurso,nombreUser,fecha_ingreso,estado,iduser) 
     VALUES ('$mensaje','$idcurso','$nombre',now(),1,'$idUser')";
     $q = $pdo->prepare($veri);
-    $q->execute(array(
-        ':mensaje'=>$mensaje,
-        ':id'=>$idcurso,
-        ':nombres'=>$nombre,
-        ':codUsuario'=>$idUser,
-    ));
+    $q->execute(array());
     
     echo'
     <script>
@@ -43,13 +38,7 @@ if(isset($_POST['submensaje'])){
     $veri="INSERT INTO sub_come_foro (subcomentario,id_curso,user_men,idcomentario,fecha_ingreso,estado,iduser) 
     VALUES ('$submensaje','$idcurso','$nombre','$idcomen',now(),1,'$idUser')";
     $q = $pdo->prepare($veri);
-    $q->execute(array(
-        ':submensaje'=>$submensaje,
-        ':nombres'=>$nombre,
-        ':id_comenta'=>$idcomen,
-        ':codUsuario'=>$idUser,
-        ':id'=>$idcurso,
-    ));
+    $q->execute(array());
 
     echo'
     <script>

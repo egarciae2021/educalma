@@ -1,0 +1,15 @@
+.btn-before-custom {
+  padding: 10px 25px;
+  color: #fff;
+  border-top-right-radius: 25px;
+  border-bottom-left-radius: 25px;
+  background: #4F52D6;
+  font-weight: 200;
+  margin-left: 25px;
+}
+
+.btn-before-custom:hover {
+  font-weight: 300;
+  color: #fff;
+  opacity: 1;
+}
