@@ -8,7 +8,7 @@
     ob_start();
     @session_start();
     $now = time();
-    if(isset($_SESSION['expire'])){
+    if(isset($_SESSION['acabo'])){
       echo '<script>swal({title: "Su Sesión Terminó",icon: "warning",allowEscapeKey: false,allowOutsideClick:false,text: "Ingrese sus Datos Nuevamente para continuar.",showConfirmButton: false});</script>';
       session_destroy(); 
     }
