@@ -6,7 +6,7 @@ class Database
 	private static $dbUsername = '992086412';
 	private static $dbUserPassword = 'WxUWZaB#ee@U';
 
- /*TUTUTUTU*/
+ 
 
 	private static $cont  = null;
 
