@@ -12,6 +12,40 @@
         $q4 = $pdo4->prepare($sql4);
         $q4->execute(array());
         $dato4 = $q4->fetch(PDO::FETCH_ASSOC);
+
+        //Cantidad de modulos del curso
+        $pdo13 = Database::connect(); 
+        $q13=$pdo13->query("SELECT count(*) FROM modulo WHERE id_curso='$id'");
+        $modulos= $q13->fetchColumn();
+
+        //Cantidad de temas
+        $pdo14 = Database::connect(); 
+        $q14 =$pdo14 ->query("SELECT  COUNT(tema.idTema) AS 'TEMA' from tema 
+                                                    INNER JOIN modulo ON tema.id_modulo = modulo.idModulo
+                                                    INNER JOIN  cursos ON cursos.idCurso = modulo.id_curso
+                                                    WHERE cursos.idCurso = '$id'
+                                                    GROUP BY cursos.idCurso");
+        $temas= $q14 ->fetchColumn();
+
+        //Cantidad de Cuestionarios
+        $pdo15 = Database::connect(); 
+        $q15 =$pdo15 ->query("SELECT  COUNT(cuestionario.idCuestionario) AS 'Cuestionario'  from cursos 
+                                                    INNER JOIN modulo ON cursos.idCurso = modulo.id_curso
+                                                    INNER JOIN  cuestionario ON cuestionario.id_modulo = modulo.idModulo
+                                                    WHERE cursos.idCurso = '$id'
+                                                    GROUP BY cursos.idCurso");
+        $cuestionarios= $q15 ->fetchColumn();
+
+        //Cantidad de preguntas
+        $pdo16 = Database::connect(); 
+        $q16 =$pdo16 ->query("SELECT COUNT(preguntas.idPregunta) AS 'preguntas'  from cursos 
+                                                    INNER JOIN modulo ON cursos.idCurso = modulo.id_curso
+                                                    INNER JOIN cuestionario ON cuestionario.id_modulo = modulo.idModulo
+                                                    INNER JOIN preguntas on cuestionario.idcuestionario = preguntas.id_cuestionario
+                                                    WHERE cursos.idCurso = '$id'
+                                                    GROUP BY cursos.idCurso");
+        $preguntas= $q16 ->fetchColumn();
+
         Database::disconnect();
     ?>
 
@@ -117,18 +151,18 @@
             <button type="button" class="close" data-dismiss="modal">X</button>
           </div>
           <!-- cuerpo del diálogo -->
-          <div class="modal-body" style="justify-content:;">
+          <div class="modal-body" >
           <div class="row">
               <div class="right"><i class="far fa-file"></i></div>
-                  <div class="left">n° Módulos</div>
+                  <div class="left"><?php echo $modulos; ?> Módulos</div>
                 </div>
                   <div class="row">
                     <div class="right"><i class="fas fa-folder"></i></div>
-                        <div class="left">n° Temas</div>
+                        <div class="left"><?php echo $temas; ?> Temas</div>
                     </div>
                     <div class="row">
                     <div class="right"><i class="fas fa-infinity"></i></div>
-                        <div class="left">n° Cuestionarios</div>
+                        <div class="left"><?php echo $cuestionarios; ?> Cuestionarios</div>
                     </div>
                     <div class="row">
                     <div class="right"><i class="fas fa-mobile-alt"></i></div>
@@ -136,7 +170,7 @@
                     </div>
                     <div class="row">
                     <div class="right"><i class="fas fa-list-ol"></i></div>
-                        <div class="left">Cantidad de preguntas: n°</div>
+                        <div class="left">Cantidad de preguntas: <?php echo $preguntas; ?></div>
                     </div>
                     <div class="row">
                     <div class="right"><i class="fas fa-trophy"></i></div>
