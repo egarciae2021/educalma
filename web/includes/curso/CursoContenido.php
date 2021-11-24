@@ -166,7 +166,7 @@
                     </div>
                     <div class="row">
                     <div class="right"><i class="fas fa-mobile-alt"></i></div>
-                        <div class="left">La nota mínima para aprobar el curso es <?php echo $minimo_respuestas_para_aprobar; ?>.</div>
+                        <div class="left">La nota mínima para aprobar el curso es <?php echo $minimo_respuestas_para_aprobar; ?></div>
                     </div>
                     <div class="row">
                     <div class="right"><i class="fas fa-list-ol"></i></div>
