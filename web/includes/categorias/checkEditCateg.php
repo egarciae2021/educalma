@@ -1,5 +1,8 @@
 <?php 
 
+    /*=====================
+        EDITAR CATEGORIA
+    =======================*/
 require_once '../../database/databaseConection.php';
 
     $id=$_GET['idCategoria'];

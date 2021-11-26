@@ -36,28 +36,6 @@ require_once '../../database/databaseConection.php';
     }
 
     /*=====================
-        EDITAR CATEGORIA
-    =======================*/
-    else if(isset($_POST['categoria_editar'])){
-        $id=isset($_POST['idCategoria']);
-        $nomb=isset($_POST['nombreCategoria']);
-
-        $pdo2 = Database::connect();  
-        //$veri2="UPDATE categorias SET nombreCategoria='$nomb' WHERE idCategoria = '$id' ";
-        $veri2="UPDATE categorias SET nombreCategoria='gatos' WHERE idCategoria = '$id' "; //prueba
-        $q2 = $pdo2->prepare($veri2);
-        $q2->execute(array());
-        $dato2=$q2->fetch(PDO::FETCH_ASSOC);
-        Database::disconnect();
-        
-        echo'
-            <script>
-                alert ("Actualizado exitosamente");
-                window.location = "../../agregarCategorias.php";
-            </script>
-        ';
-    }
-    /*=====================
         ELIMINAR CATEGORIA
     =======================*/
     else if (isset($_GET['categoria_eliminar'])){

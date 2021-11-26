@@ -10,7 +10,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
     <title>Document</title>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 </head>
 <body>
     <script type="text/javascript">
@@ -87,7 +86,7 @@
                                 <td>
                                     <!-- Funcionalidad de los Botones NO CORRE -->
                                     <!--Boton Editar Categoría-->
-                                    <!-- <a href="includes/categorias/checkAgrCateg.php?idCategoria=<?php echo $dato3['idCategoria'];?>"> -->
+                                    
                                     <a>
                                         <button class="btn btn-outline-success" nombre="categoria_editar" type="button" data-toggle="modal" data-target="#ModalCategoria<?php echo $dato3['idCategoria']; ?>">
                                         <i class='fas fa-edit'></i></button>
