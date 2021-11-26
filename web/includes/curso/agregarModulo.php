@@ -107,6 +107,9 @@
                         <i class="fas fa-eye"></i> Ver</button>
                     </div>
                 </div>
+                <div class="inputBox">
+                    <button type="button" id="salir_agregar" class="boton1"><i class="fas fa-sign-out-alt"></i> Finalizar</buton>
+                </div>
             </form>
         </div>
     </div>
@@ -202,6 +205,8 @@
 ?>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.js"></script>
+<script src="assets/js/plugins/sweetalert2.all.min.js"></script>
 <script src="assets/js/validarCategoria.js"></script>
+<script src="assets/js/validarModulo.js"></script>
 </body>
 </html>
