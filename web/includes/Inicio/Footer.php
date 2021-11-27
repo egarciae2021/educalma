@@ -5,21 +5,20 @@
         <div class="row">
             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-1">
             </div>
-            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-1">
-            </div>
-            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-2">
-                <br>
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3"><br>
                 <div class="footer_blog">
                     <div class="full white_fonts">
-                        <img src="./assets/images/LogoWhite.PNG" class="img-fluid" alt="Logo" style="width: 90%;">
-
+                        <img src="assets/images/Logo.svg" class="img-fluid" alt="Logo" style="width: 60%;">
                     </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-1">
+                
                 </div>
             </div>
 
 
             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-2">
-                <div class="footer_blog footer_menu white_fonts">
+                <div class="footer_blog footer_menu">
                     <h3 style="font-size: 17px;">Nosotros</h3>
                     <ul>
                         <li><a href="https://fundacioncalma.org/%C2%BFqui%C3%A9nes-somos%3F" style="font-size: 12px;" target="_blank">Quiénes Somos</a></li>
@@ -31,7 +30,7 @@
 
 
             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-2">
-                <div class="footer_blog footer_menu white_fonts">
+                <div class="footer_blog footer_menu">
                     <h3 style="font-size: 17px;">Blog</h3>
                     <ul>
                         <li><a href="certi.php" style="font-size: 12px;"><b>Validación de Certificado</b></a></li>
@@ -40,28 +39,28 @@
                 </div>
             </div>
             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
-                <div class="footer_blog footer_menu white_fonts">
-                    <h3 style="font-size: 17px;">Redes Sociales</h3>
+                <div class="footer_blog footer_menu ">
+                    <h3 style="font-size: 17px;">Contactos</h3>
                     <div style="margin: 50px;">
                         <ul class="d-flex flex-row ms-n3 nav">
                             <li class="nav-item">
                                 <a href="https://www.facebook.com/fundacioncalma.org/" target="_blank">
-                                <img src="./assets/images/FBicono_48.png" alt="">
+                                <img src="./assets/images/facebook.png" alt="">
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a href="https://www.instagram.com/fundacioncalma/?hl=es" target="_blank">
-                                <img src="./assets/images/Instaicono_48.png" alt="">
+                                <img src="./assets/images/instagram.png" alt="">
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a href="mailto:contacto@fundacioncalma.org" target="_blank">
-                                <img src="./assets/images/Mailicono_48.png" alt="">
+                                <img src="./assets/images/gmail.png" alt="">
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a href="https://www.youtube.com/channel/UCsEmW0is_Q-d_IMfux0pfEw" target="_blank">
-                                    <img src="./assets/images/youtube.png" alt="">
+                                    <img src="./assets/images/youtube_footer.png" alt="">
                                 </a>
                             </li>
                         </ul>
@@ -71,14 +70,12 @@
         </div>
     </div>
 </footer>
-
-
 <!-- End Footer -->
-
-<div class="footer_bottom">
+<div class="footer_bottom">     <hr>       
     <div class="container">
         <div class="row">
             <div class="col-12">
+                
                 <p class="crp">© Fundación Calma - Copyright 2021</p>
             </div>
         </div>

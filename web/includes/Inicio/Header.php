@@ -3,11 +3,14 @@ ob_start();
 @session_start();
 require_once 'database/databaseConection.php';
 ?>
+<head>
+    <link rel="stylesheet" href="assets/css/style.css"/>
+</head>
 <style>
     .li_cursos {
         border: #768b99 1px solid;
-
     }
+
 </style>
 <header class="top-header w-100">
     <div class="container">
@@ -23,7 +26,7 @@ require_once 'database/databaseConection.php';
                         </button>
                         <div class="collapse navbar-collapse justify-content-end" id="navbar-wd">
                             <ul class="navbar-nav">
-                                <li><a class="nav-link text-primary" href="nosotros.php">Nosotros</a></li>
+                                <li><a class="nav-link" href="nosotros.php">NOSOTROS</a></li>
 
                                 <?php
                                 $pdo4 = Database::connect();
@@ -34,7 +37,7 @@ require_once 'database/databaseConection.php';
                                 <li>
                                     <div class="dropdown">
                                         <button type="button" class="dropdown-toggle" id="curso-btn" data-toggle="dropdown">
-                                            Cursos</button>
+                                            CURSOS</button>
 
 
 
@@ -97,11 +100,11 @@ require_once 'database/databaseConection.php';
                             <div class="collapse navbar-collapse justify-content-end" id="navbar-wd">
                                 <ul class="navbar-nav">
                                     <li>
-                                        <a href="registros.php"><button type="button" class="roundedpill w165 mdl2 btn btn-lg btn-block btn-outline-primary">Registrar</button></a>
+                                        <a href="registros.php"><button type="button" class="rounded w165 mdl2 btn btn-lg btn-block btn-outline-primary">Registrar</button></a>
                                     </li>
 
                                     <li>
-                                        <a href="iniciosesion.php"><button type="button" class="roundedpill  w165 mdl2 btn btn-lg btn-block btn-primary ">Login</button></a>
+                                        <a href="iniciosesion.php"><button type="button" class="rounded  w165 mdl2 btn btn-lg btn-block btn-primary ">Login</button></a>
                                     </li>
                                 </ul>
                             </div>

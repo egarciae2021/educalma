@@ -19,7 +19,7 @@
     <!-- Pogo Slider CSS -->
     <link rel="stylesheet" href="assets/css/plugins/pogo-slider.min.css" />
     <!-- Site CSS -->
-    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/style.css" /> 
     <!-- Responsive CSS -->
     <link rel="stylesheet" href="assets/css/plugins/responsive.css" />
     <!-- Custom CSS -->

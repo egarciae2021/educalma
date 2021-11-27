@@ -5,8 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nosotros</title>
-    <link rel="stylesheet" href="././assets/css/styleban.css">
-    <link rel="stylesheet" href="././assets/css/stylecard.css">
+    <!-- <link rel="stylesheet" href="././assets/css/styleban.css"> -->
+    <!-- <link rel="stylesheet" href="././assets/css/stylecard.css"> -->
+    <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 
 <body>
@@ -95,25 +96,114 @@
     <div class="section layout_padding">
 
         <div class="container">
-            <div class="row" style="height: 100px;">
-                <div class="col-md-1"></div>
-                <div class="col-md-10">
-                    <div class="full">
-                        <div class="heading_main text_align_start pdt50">
-                            <h2><span> Cursos destacados</span></h2>
-                        </div>
+            <div class="row">
+                <div class="col-md-12">
+
+    <!-- Cards / Cursos destacados -->
+                
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="section-title-course">
+                        <hr>Cursos destacados
                     </div>
                 </div>
-                <div class="col-md-1"></div>
+                
+                <div class="row">
+                    <!-- 1er card -->
+                        <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                            <div class="card">
+                                <div class="row">
+                                    <div class="col-5">
+                                        <div class="circulo">
+                                            <div class="container-image">
+                                                <img src="./assets/images/libro_card.png" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-7">
+                                        <div class="container-title">
+                                            LOREM IPSUM
+                                        </div>
+                                        <div class="container-text">
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+                                        <button class="btn btn-card container-link">
+                                            Ver informaci&oacute;n >
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!--2do card-->
+                    <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                            <div class="card">
+                                <div class="row">
+                                    <div class="col-5">
+                                        <div class="circulo">
+                                            <div class="container-image">
+                                                <img src="./assets/images/libro_card.png" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-7">
+                                        <div class="container-title">
+                                            LOREM IPSUM
+                                        </div>
+                                        <div class="container-text">
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+                                        <button class="btn btn-card container-link">
+                                            Ver informaci&oacute;n >
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--3er card-->
+                    <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                            <div class="card">
+                                <div class="row">
+                                    <div class="col-5">
+                                        <div class="circulo">
+                                            <div class="container-image">
+                                                <img src="./assets/images/libro_card.png" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-7">
+                                        <div class="container-title">
+                                            LOREM IPSUM
+                                        </div>
+                                        <div class="container-text">
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+                                        <button class="btn btn-card container-link">
+                                            Ver informaci&oacute;n >
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- fin 3er card-->
+                    
+                    </div>
+                </div>
             </div>
-            <hr class="lineahori" style="width: 340px; height: 5px; background-color: #7C83FD;">
-          
-            <div class="row">
-                <div class="col-md-1"></div>
-                <div class="col-md-10">
-           <!-- CARDS -->
+        </div>
+    </div>
+</div>
+</div> <!--fin layout padding-->
+            
+    <!-- Fin Cards-->
+
             <div class="cont-padre">
-<?php 
+                
+                <?php 
                             require_once 'database/databaseConection.php';
                                 
                             $pdo=Database::connect();
@@ -190,15 +280,14 @@
             <div class="row" style="height: 100px;">
                 <div class="col-md-1"></div>
                 <div class="col-md-10">
-                    <div class="full">
+                    <!-- <div class="full">
                         <div class="heading_main text_align_start pdt50">
                             <h2><span> Todos los cursos</span></h2>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="col-md-1"></div>
             </div>
-            <hr class="lineahori" style="width: 340px; height: 5px; background-color: #7C83FD;">
 
       
             <div class="row">
@@ -307,6 +396,7 @@
 
         </div>
     </div>
+</div>
 
 </body>
 
