@@ -87,7 +87,7 @@
                         }
 
                         $inicio=($_GET['pag']-1)*$cantidad_paginas;
-                        $sql3 = "SELECT * FROM cursos LIMIT :iniciar,:narticulos";
+                        $sql3 = "SELECT * FROM cursos WHERE permisoCurso=1 LIMIT :iniciar,:narticulos";
 
                         $query3=$pdo->prepare($sql3);
                         $query3->bindParam('iniciar',$inicio,PDO::PARAM_INT);
