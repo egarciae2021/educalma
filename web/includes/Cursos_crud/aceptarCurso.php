@@ -13,7 +13,6 @@
 
     echo'
         <script>
-            alert ("Aceptado exitosamente");
             window.location = "../../publicarcursos.php";
         </script>
     ';
