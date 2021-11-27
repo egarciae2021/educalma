@@ -57,16 +57,19 @@
                                 <th>Acción</th>
                             </tr>
                             <tr>
+                          
                                 <td style="border-right:1px #DADADA solid;" rowspan=100>
                                     <div class="inputBox">
                                         <h3>Nombre de la Categoría:</h3>
-                                        <input type="text" id="categoria_agregar" name="categoria_agregar" id="tema-agregar" aria-label="default input example" aria-describedby="temaAgr-addon" required>
+                                        <input type="text" id="categoria_agregar" name="categoria_agregar"   aria-describedby="temaAgr-addon" required>
                                     </div>
                                     <div class="inputBox">
                                         <button type="submit" id="categoria_agregar" class="boton1"><i class="fas fa-plus"></i> Agregar</button>
                                     </div>
                                 </td>
+                                </form>
 
+                                
                                 <?php
                                 require_once 'database/databaseConection.php';
                                 $pdo3 = Database::connect();
@@ -93,11 +96,13 @@
                                     </a>       
                                     <!--Boton Quitar Categoría--> 
                                     <!--<a href="includes/categorias/checkAgrCateg.php">-->
-                                    <a href="includes/categorias/checkAgrCateg.php?categoria_eliminar=<?php echo $dato3['idCategoria']; ?>">
-                                        <button class="btn btn-outline-danger" type="button">
-                                        <i class="fas fa-trash-alt"></i></button>
-                                    </a>
+                                   
+
+                             <button class="btn btn-outline-danger" type="button" data-target="#ModalCategoria<?php echo $dato3['idCategoria']; ?>" > <i class="fas fa-trash-alt"></i></button>
+                       <!--   <button class="btn btn-outline-danger" type="button" data-target="#ModalCategoria<?php echo $dato3['idCategoria']; ?>" > <i class="fas fa-trash-alt"></i></button>-->
                                         <?php include('ModalEdit.php'); ?>
+
+                                      
                                 </td> 
                             </tr>
                             <?php
@@ -106,7 +111,7 @@
                                 Database::disconnect();
                                 ?> 
                         </table>    
-                    </form>
+                   
                     
                 </div>
             </div>

@@ -5,7 +5,7 @@
     =======================*/
 require_once '../../database/databaseConection.php';
 
-    $id=$_GET['idCategoria'];
+    $id=$_POST['idCategoria'];
     $no=$_POST['nombreCategoria'];
 
     $pdo2 = Database::connect();  

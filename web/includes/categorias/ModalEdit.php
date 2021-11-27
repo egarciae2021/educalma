@@ -9,9 +9,10 @@
                 </button>
             </div>
             <div>
-                <form id="formCatEditar" method="post" action="includes/categorias/checkEditCateg.php?idCategoria=<?php echo $dato3['idCategoria']; ?>">
+                <form id="formCatEditar" method="post" action="includes/categorias/checkEditCateg.php">
                     
                         <div class="modal-body ">
+                            
                             <input type="text" id="idCategoria" name="idCategoria" class="form-control" value="<?php echo $dato3['idCategoria']; ?>" style="display: none;" />
                             <div class="form-group" style="padding: 0px;">
                                 <label class="col-form-label">CATEGORIA</label>
