@@ -45,7 +45,11 @@
                         $query2 = $pdo->prepare($sql2);
                         $query2->execute(array());
                         $datoAdicional = $query2->fetch(PDO::FETCH_ASSOC);
-                        $mensaje = "Categoria ".$datoAdicional['nombreCategoria']."";
+                        if(!empty($datoAdicional)){
+                            $mensaje = "Categoria ".$datoAdicional['nombreCategoria']."";
+                        }else{
+                            $mensaje = null;
+                        }
                     }else{
                         $mensaje = "";
                     }
@@ -53,7 +57,8 @@
                     <section class="about" id="about">
                         <div class="content col">
                             <span>Cursos</span>
-                            <h3 class="title"><?php echo $mensaje; ?></h3>
+                            <h3 class="title"><?php echo ($mensaje)? $mensaje:"" ?></h3>
+                            <!-- <h3 class="title"><?php //echo $mensaje; ?></h3> -->
                         </div>
                         <div class="image col">
                             <img src="assets/images/clasesvirtuales.jpg" alt="">
@@ -68,7 +73,7 @@
                         require_once 'database/databaseConection.php';
                         error_reporting(0);
                         $idcategoria = $_GET['idcate'];
-                        $sql2 = "SELECT * FROM cursos";
+                        $sql2 = "SELECT * FROM cursos WHERE permisoCurso=1";
                         $query2 = $pdo->prepare($sql2);
                         $query2->execute();
                         $contar=$query2->rowCount();
