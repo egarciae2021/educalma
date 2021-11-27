@@ -66,7 +66,7 @@
             
             echo'
             <script>
-                alert ("inscrito exitosamente");
+                // alert ("inscrito exitosamente");
                 window.location = "../../agregarModulos.php?id='.$dato2['idCurso'].'";
             </script>
             ';
@@ -128,7 +128,7 @@
 
         echo'
             <script>
-                alert ("Actualizado exitosamente");
+                // alert ("Actualizado exitosamente");
                 window.location = "../../agregarcurso.php";
             </script>
         ';

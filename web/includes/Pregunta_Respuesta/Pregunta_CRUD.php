@@ -18,7 +18,7 @@
             
             if($cuenta==0){
                 $pdo2 = Database::connect();  
-                $verif2=$pdo2->prepare("INSERT INTO cuestionario (id_modulo, estado)VALUES ('$id_modulo',1) ");
+                $verif2=$pdo2->prepare("INSERT INTO cuestionario (id_modulo, puntaje, estado)VALUES ('$id_modulo',0,1) ");
 
                 $verif2->execute(array());
                 Database::disconnect();
@@ -38,7 +38,7 @@
             Database::disconnect();
             echo'
                 <script>
-                    alert("pregunta agregada");
+                    // alert("pregunta agregada");
                     window.location = "../../Form_pregun_cuestionario.php?id_modulo='.$id_modulo.'";
                 </script>
             ';
