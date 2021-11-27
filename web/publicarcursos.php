@@ -9,7 +9,7 @@
 
 <?php include_once 'includes/Inicio/Header.php' ?>
 
-<?php include_once 'includes/curso/agregarcursos.php' ?>
+<?php include_once 'includes/curso/listarcurso.php' ?>
 
 
 <?php include_once 'includes/Inicio/Footer.php' ?>

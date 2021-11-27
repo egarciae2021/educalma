@@ -59,6 +59,7 @@
                              <div class="nav__dropdown-content">
                                  <a href="sidebarCursos.php" class="nav__dropdown-item nav__link">Mis Cursos</a>
                                  <a href="agregarcurso.php" class="nav__dropdown-item nav__link">Donar Curso</a>
+                                 <a href="publicarcursos.php" class="nav__dropdown-item nav__link">Publicar cursos</a>
                              </div>
                          </div>
                      </div>

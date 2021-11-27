@@ -38,7 +38,7 @@
         margin:0;
         }
     </style>
-    <title>Agregar Cursos</title>
+
 </head>
 <body>
 <?php
@@ -63,20 +63,16 @@
     <!--contenido-->
     <div class="container-fluid">
         <h2 class="mb-4" style="text-align: center; color:#4F52D6; font-size: 300%;font-family: 'Oswald', sans-serif;">
-                <center>Bienvenido a EduCalma</center>
+                <center>Publicación de cursos</center>
         </h2>
-        <div class="title">
-            <div class="mb-4">
-                <center><i class="fas fa-book"></i> Dona un Curso</center>
-            </div>
-        </div>
-        <h2><a href="sidebarCursos.php" class="btn-before-custom">Volver</a></h2>
- </div>
+        
+        <h2><a href="user-sidebar.php" class="btn-before-custom">Volver</a></h2>
+    </div>
         <!--contenido de los cursos -->
 
-        <!-- 
+<!--         
 
-        <div class="row justify-content-center">
+        <div class="row justify-content-center">-->
             <!--formulario curso -->
          <!--   <div class="col-10">
                 <div class=" card" style="border-radius:8px; box-shadow:2px 3px 5px gray;">
@@ -84,7 +80,7 @@
                         <h1 class="text-white text-center mt-2"><i class="fas fa-book"></i> Dona un Curso</h1>
                     </div>
                     <div class="card-body">
-                        <div class="cont_formu" style="border-radius:8px;">
+                        <div class="cont_formu" style="border-radius:8px;">-->
                             <!--
                                         ======================================
                                                     Agregar Curso
@@ -184,82 +180,112 @@
                     
                    
                 </div>
-            </div>-->
+            </div> -->
 
-<!--FORMULARIO NUEVO -->
-<div class="container-contformulario">
-    <div class="contformulario" id="contformulario">
-        <div class="row">
-            <div class="image">
-                <img src="./assets/images/donar02.png" alt="">
-            </div>
-             <!--
-                                        ======================================
-                                                    Agregar Curso
-                                        ======================================
-                                         
-            -->
-            <form name="formulario" id="newUserForm" method="POST" action="includes/Cursos_crud/Cursos_CRUD.php" target="dummyframe" onsubmit="return comprobarDatosFormulario()" enctype="multipart/form-data">   
-                <div class="inputBox">
-                    <h3>Nombre del Curso</h3>
-                <input type="text" name="nombres_agrecursos" id="names-agrecursos" placeholder="" aria-label="Nombrecurso" aria-describedby="names-addon">      
-                </div>
-                <div class="inputBox">
-                <h3>Categoría</h3>
-                <select id="categoria" name="categoria" class="seleccionador">
-                    <option value="" selected disabled>Seleccionar</option>
-                            
+    <!--tabla de curso -->
+            <div class="col-12 mt-5 text-center">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Listado de Cursos</h3>
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body">
                         <?php
                         require_once 'database/databaseConection.php';
-                        $pdo4 = Database::connect();
-                        $sql4 = "SELECT * FROM categorias";
-                        $q4 = $pdo4->prepare($sql4);
-                        $q4->execute(array());
-                        
-                        while ($registro =  $q4->fetch(PDO::FETCH_ASSOC)) {
-                            
-                            ?>
-                            <option value="<?php echo $registro['idCategoria'] ?>"><?php echo $registro['nombreCategoria'] ?></option>
+                        $pdo3 = Database::connect();
 
-                        <?php
+                        if ($_SESSION['privilegio'] == 2) {
+                            $idProfe = $_SESSION['codUsuario'];
+                            $sql3 = "SELECT * FROM cursos WHERE id_userprofesor='$idProfe' order by idCurso DESC";
+                        } else {
+                            $idProfe = $_SESSION['codUsuario'];
+                            $sql3 = "SELECT * FROM cursos WHERE permisoCurso=0 order by idCurso DESC";
                         }
-                        
-                        Database::disconnect();
+
+                        $q3 = $pdo3->prepare($sql3);
+                        $q3->execute();
+                        $curso = $q3->fetchAll(PDO::FETCH_ASSOC);
+
                         ?>
-                </select>
-                </div>
-                <div class="inputBox">
-                    <h3>Descripción del Curso</h3>
-                    <textarea maxlength="250" placeholder="" id="descripcio-curso" name="descripcio_curso"></textarea> 
-                </div>
-                <div class="inputBox">
-                <h3>Introducción del Curso</h3>
-                    <textarea maxlength="250" placeholder="" id="intro-curso" name="intro_curso"></textarea>
-                </div>
-                <div class="inputBox">
-                    <h3>Público Dirigido</h3>
-                    <input type="text" id="publico_dirigidoo" name="publico_dirigido" placeholder="" aria-label="Dirigido" aria-describedby="names-addon">
-                </div>
-                <div class="inputBox">
-                    <h3>*Agregar Imagen del Curso</h3>
-                    <div class="column" style="margin:auto;">
-                        <label for="file-upload" class="subir">
-                            <i class="fas fa-cloud-upload-alt" aria-hidden="true"></i>
-                            Insertar imagen
-                        </label>
-                        <input  type="file" id="file-upload" name="txtimagen" onchange='cambiar()' style='display: none;' 
-                        aria-label="Upload" aria-describedby="inputGroupFileAddon04" accept="image/*"; multiple/>
+                        <div class="table-responsive">
+                            <table id="example1" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                                <thead>
+
+                                    <tr>
+                                        <th>Nombre</th>
+                                        <th>Categoría</th>
+                                        <th>Público dirigido</th>
+                                        <th>Imagen</th>
+                                        <th>Descripción</th>
+                                        <th>Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php
+
+                                    foreach ($curso as $curso) {
+                                        $idCate = $curso['categoriaCurso'];
+                                        $sql4 = "SELECT * FROM categorias WHERE idCategoria = '$idCate'";
+                                        $q4 = $pdo4->prepare($sql4);
+                                        $q4->execute(array());
+                                        $datoCate = $q4->fetch(PDO::FETCH_ASSOC)
+                                    ?>
+                                        <tr>
+                                            <td><?php echo $curso['nombreCurso']; ?></td>
+                                            <td><?php echo $datoCate['nombreCategoria']; ?></td>
+                                            <td><?php echo $curso['dirigido']; ?></td>
+                                            <td><img height="50px" src="data:image/*;base64,<?php echo base64_encode($curso['imagenDestacadaCurso']) ?>"></td>
+                                            <td><?php echo $curso['descripcionCurso']; ?></td>
+                                            <td>
+                                                <?php
+
+                    
+                                                ?>
+                                                    <!--para agregar modulo-->
+                                                    <a href="agregarModulos.php?id=<?php echo $curso['idCurso']; ?>">
+                                                        <button class="boton_personalizado" type="button"><i class="far fa-plus-square  fa-2x"></i> </button>
+                                                    </a>
+                                                    <!--para editar curso-->
+                                                    <a href="editarcurso.php?id_curso=<?php echo $curso['idCurso']; ?>">
+                                                        <button class="boton_personalizado" type="button"><i class="far fa-edit fa-2x"></i></button>
+                                                    </a>
+                                                    <!--para quitar curso-->
+                                                    <a href="includes/Cursos_crud/Cursos_CRUD.php?id_curso=<?php echo $curso['idCurso']; ?>">
+                                                        <button class="boton_personalizado" type="button"><i class="far fa-bell-slash fa-2x"></i></button>
+                                                    </a>
+                                                <?php
+                                                 if($_SESSION['privilegio'] == 1) {
+                                                ?>
+                                                    <!--para quitar curso-->
+                                                    <a href="includes/Cursos_crud/aceptarCurso.php?id_curso=<?php echo $curso['idCurso']; ?>">
+                                                        <button class="boton_personalizado" type="button">Publicar</button>
+                                                    </a>
+
+                                                <?php
+
+                                                }
+                                                ?>
+
+                                                <!--ver curso-->
+                                                <a href="curso.php?id=<?php echo $curso['idCurso']; ?>">
+                                                    <i class="far fa-eye fa-2x"></i>
+                                                </a>
+                                            </td>
+
+                                        </tr>
+                                    <?php }
+                                    Database::disconnect();
+                                    ?>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
-                    <div class="column" style="margin:auto;">
-                        <div id="info"></div>
-                    </div>
+                    <!-- /.card-body -->
                 </div>
-                <input type="submit" class="boton1" style="font-size:medium;" value="Agregar">
-            </form>
+            </div>
+            <!-- /.card -->
         </div>
     </div>
-</div>
-
     <!--
                     ======================================
                                 Lista Curso
