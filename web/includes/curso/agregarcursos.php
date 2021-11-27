@@ -506,10 +506,6 @@
     <?php Database::disconnect(); ?>
 
     <br>
-    <br>
-    <br>
-    <br>
-    <br>
 
     <script>
         function cambiar() {

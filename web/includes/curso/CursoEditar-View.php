@@ -41,6 +41,10 @@
         $q3 = $pdo3->prepare($sql3);
         $q3->execute(array());
         $dato2 = $q3->fetch(PDO::FETCH_ASSOC);
+
+        if($dato2['costoCurso']=="Gratis"){
+            $dato2['costoCurso']=0;
+        }
     ?>
 
 <div class="container-fluid">

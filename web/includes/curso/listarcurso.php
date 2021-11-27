@@ -15,30 +15,7 @@
 
     <?php require_once "includes/Inicio/Head.php"; ?>
 
-    <style>
-        .subir {
-            padding: 5px 10px;
-            background: #5451D6;
-            color: #fff;
-            border: 0px solid #fff;
-            border-radius: 8px;
-        }
-
-        .subir:hover {
-            color: #fff;
-            background: #8886f3;
-        }
-        
-  	    label.error{
-    	color: red;
-        font-style: italic;
-        font-size: 13px;
-        max-width:300px;
-        padding: 10px;
-        margin:0;
-        }
-    </style>
-
+   
 </head>
 <body>
 <?php
@@ -62,11 +39,10 @@
     <br>
     <!--contenido-->
     <div class="container-fluid">
+        <h2><a href="user-sidebar.php" class="btn-before-custom">Volver</a></h2>
         <h2 class="mb-4" style="text-align: center; color:#4F52D6; font-size: 300%;font-family: 'Oswald', sans-serif;">
                 <center>Publicación de cursos</center>
         </h2>
-        
-        <h2><a href="user-sidebar.php" class="btn-before-custom">Volver</a></h2>
     </div>
         <!--contenido de los cursos -->
 
@@ -105,6 +81,7 @@
                                         <th>Público dirigido</th>
                                         <th>Imagen</th>
                                         <th>Descripción</th>
+                                        <th>Precio</th>
                                         <th>Acciones</th>
                                     </tr>
                                 </thead>
@@ -124,6 +101,7 @@
                                             <td><?php echo $curso['dirigido']; ?></td>
                                             <td><img height="50px" src="data:image/*;base64,<?php echo base64_encode($curso['imagenDestacadaCurso']) ?>"></td>
                                             <td><?php echo $curso['descripcionCurso']; ?></td>
+                                            <td><?php echo $curso['costoCurso'];?></td>
                                             <td>
                                                 <?php
 
@@ -267,10 +245,10 @@
                                                 <i class="far fa-eye fa-2x"></i>
                                             </a>
 
-                                            <!--<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleVer">
+                                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleVer">
                                                       
                                                         <i class="far fa-eye fa-2x"></i>
-                                                    </button>-->
+                                                    </button>
 
                                         </td>
                                     </tr>
