@@ -98,8 +98,10 @@
                                     <!--<a href="includes/categorias/checkAgrCateg.php">-->
                                    
 
-                             <button class="btn btn-outline-danger" type="button" data-target="#ModalCategoria<?php echo $dato3['idCategoria']; ?>" > <i class="fas fa-trash-alt"></i></button>
-                       <!--   <button class="btn btn-outline-danger" type="button" data-target="#ModalCategoria<?php echo $dato3['idCategoria']; ?>" > <i class="fas fa-trash-alt"></i></button>-->
+                                    <a href="includes/categorias/checkAgrCateg.php?categoria_eliminar=<?php echo $dato3['idCategoria']; ?>">
+                                        <button class="btn btn-outline-danger" type="button">
+                                        <i class="fas fa-trash-alt"></i></button>
+                                    </a>
                                         <?php include('ModalEdit.php'); ?>
 
                                       
