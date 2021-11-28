@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/js/plugins/sweetalert2.min.css">
     <title>Document</title>
 </head>
 <body>
@@ -22,7 +23,10 @@
                     return false;
                 }
             }
-    </script>   
+    </script>  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="assets/js/validarRegisCateg.js"></script>
+    <script src="assets/js/plugins/sweetalert2.all.min.js"></script>   
     <?php
     
     // Este codigo hace validacion para que no se pueda acceder a cualquier pagina sin estar logueado
@@ -49,7 +53,7 @@
                         <img src="./assets/images/donar07.png" alt="">
                     </div>
 
-                    <form  action="includes/categorias/checkAgrCateg.php" method="POST" onsubmit="return comprobarCategoria()" style="padding:0;"> 
+                    <form id="formRegis" action="includes/categorias/checkAgrCateg.php" target="dummyframe" method="POST" onsubmit="return comprobarCategoria()" style="padding:0;"> 
                         <table> 
                             <tr>
                                 <th>Agregar Categoría</th>
@@ -98,7 +102,7 @@
                                     <!--<a href="includes/categorias/checkAgrCateg.php">-->
                                    
 
-                                    <a href="includes/categorias/checkAgrCateg.php?categoria_eliminar=<?php echo $dato3['idCategoria']; ?>">
+                                    <a id="eliminar_categoria" href="#" data-id="<?php echo $dato3['idCategoria'] ?>">
                                         <button class="btn btn-outline-danger" type="button">
                                         <i class="fas fa-trash-alt"></i></button>
                                     </a>

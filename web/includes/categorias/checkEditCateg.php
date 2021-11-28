@@ -17,7 +17,7 @@ require_once '../../database/databaseConection.php';
     Database::disconnect();
     echo'
         <script>
-            alert ("Actualizado exitosamente");
+            
             window.location = "../../agregarCategorias.php";
         </script>
     ';

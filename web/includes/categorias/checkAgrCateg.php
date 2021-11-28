@@ -14,23 +14,13 @@ require_once '../../database/databaseConection.php';
         Database::disconnect();
     
         if(empty($dato)){
-            $pdo = Database::connect();  
+            $pdo = Database::connect();
             $verif=$pdo->prepare("INSERT INTO categorias (nombreCategoria) VALUES ('$nomb')");
             $verif->execute();
             Database::disconnect();
-            echo'
-                <script>
-                    alert ("Categoria Agregada ");
-                    window.location = "../../agregarCategorias.php";
-                </script>
-                ';
+            echo 0;
         }else{
-            echo'
-                <script>
-                    alert ("Ya existe dicha categoría");
-                    window.location = "../../agregarCategorias.php";
-                </script>
-            ';
+            echo 1;
         }
 
     }
@@ -38,9 +28,9 @@ require_once '../../database/databaseConection.php';
     /*=====================
         ELIMINAR CATEGORIA
     =======================*/
-    else if (isset($_GET['categoria_eliminar'])){
+    else if (isset($_POST['id'])){
         
-        $id=$_GET['categoria_eliminar'];
+        $id=$_POST['id'];
         $pdo = Database::connect();  
         $veri="DELETE FROM categorias WHERE idCategoria = '$id' ";
         $q = $pdo->prepare($veri);
