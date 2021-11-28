@@ -150,7 +150,7 @@
                                         ======================================
 
             -->
-            <form name="formulario" id="form-agretemas2" method="POST" action="includes/tema/checkAgrTema.php?id_mo=<?php echo $idModulo?>&idCurso=<?php echo $idCurso?>" target="dummyframe" onsubmit="registrar_nuevo_usuario();">
+            <form name="formulario" id="form-agretemas2" method="POST" action="includes/tema/checkAgrTema.php?id_mo=<?php echo $idModulo?>&idCurso=<?php echo $idCurso?>" onsubmit="registrar_nuevo_usuario();">
             <div class="inputBox">
                     <h3>Agregue temas del módulo: "<strong><?php echo $dato2['nombreModulo'];?>"</strong></h3>
             </div>

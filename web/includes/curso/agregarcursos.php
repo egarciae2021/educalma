@@ -199,7 +199,7 @@
                                         ======================================
                                          
             -->
-            <form name="formulario" id="newUserForm" method="POST" action="includes/Cursos_crud/Cursos_CRUD.php" target="dummyframe" onsubmit="return comprobarDatosFormulario()" enctype="multipart/form-data">   
+            <form name="formulario" id="newUserForm" method="POST" action="includes/Cursos_crud/Cursos_CRUD.php"  onsubmit="return comprobarDatosFormulario()" enctype="multipart/form-data">   
                 <div class="inputBox">
                     <h3>Nombre del Curso</h3>
                 <input type="text" name="nombres_agrecursos" id="names-agrecursos" placeholder="" aria-label="Nombrecurso" aria-describedby="names-addon">      

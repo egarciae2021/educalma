@@ -93,7 +93,7 @@
                                         ======================================
                                          
             -->
-            <form name="formulario" id="form-agretemas" method="POST" action="includes/modulo/Modulo_CRUD.php?id=<?php echo $dato['idCurso'];?>" target="dummyframe" style="background:#F7F7F7;">   
+            <form name="formulario" id="form-agretemas" method="POST" action="includes/modulo/Modulo_CRUD.php?id=<?php echo $dato['idCurso'];?>" style="background:#F7F7F7;">   
                 <div class="inputBox">
                     <h3>Nombre del Módulo:</h3>
                     <input type="text" name="modulo_agregar" id="modulo-agregar" placeholder="" aria-label="ModuloAgr" aria-describedby="ModuloAgr" aria-describedby="moduloAgr-addon" required>

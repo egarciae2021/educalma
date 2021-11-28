@@ -49,7 +49,7 @@
                         <img src="./assets/images/donar07.png" alt="">
                     </div>
 
-                    <form  action="includes/categorias/checkAgrCateg.php" target="dummyframe" method="POST" onsubmit="return comprobarCategoria()" style="padding:0;"> 
+                    <form  action="includes/categorias/checkAgrCateg.php" method="POST" onsubmit="return comprobarCategoria()" style="padding:0;"> 
                         <table> 
                             <tr>
                                 <th>Agregar Categoría</th>

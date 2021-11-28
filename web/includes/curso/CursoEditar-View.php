@@ -68,9 +68,10 @@
                                         ======================================
                                                     Editar Curso
                                         ======================================
+            sirve para direccionar a otra pestaña (target="dummyframe")
             -->
 
-            <form id="form-agrecursos" method="POST" action="includes/Cursos_crud/Cursos_CRUD.php?id=<?php echo $dato2['idCurso'];?>" onsubmit="registrar_nuevo_usuario();" target="dummyframe" enctype="multipart/form-data">
+            <form id="form-agrecursos" method="POST" action="includes/Cursos_crud/Cursos_CRUD.php?id=<?php echo $dato2['idCurso'];?>" onsubmit="registrar_nuevo_usuario();"  enctype="multipart/form-data">
             <div class="inputBox">
                   <h3>Actualizar nombre del Curso: <strong>"<?php echo $dato2['nombreCurso'];?>"</strong></h3> 
                       <input type="text" name="nomb_actu_cursos" id="names-agrecursos" value="<?php echo $dato2['nombreCurso'];?>" aria-label="Nombrecurso" aria-describedby="names-addon" required>
