@@ -60,8 +60,8 @@
                     <!-- Filter -->
                     <div class="button-group filters-button-group">
                         <a class="button" data-filter=".design"><span>CURSO</span> </a>
-                        <a class="button" data-filter=".development" href="foro.php?id=<?php echo $id;?>"><span>FORO</span> </a>
-                        <a class="button" data-filter=".marketing" href="descargas.php"><span>DESCARGABLE</span></a>
+                        <!-- <a class="button" data-filter=".development" href="foro.php?id=<?php echo $id;?>"><span>FORO</span> </a> -->
+                        <!-- <a class="button" data-filter=".marketing" href="descargas.php"><span>DESCARGABLE</span></a> -->
                         <a class="button" data-filter=".seo" href="progreso.php?id=<?php echo $id ?>"><span>PROGRESO</span></a>
 
                         <?php
