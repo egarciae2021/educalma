@@ -19,8 +19,7 @@ function buscar(){
         error_reporting(0);
         $query3=$pdo2->prepare($sql);
         $query3->execute();
-        Database::disconnect();       
-                              
+        Database::disconnect();                 
         while ($dato = $query3->fetch(PDO::FETCH_ASSOC)) {
            
             //ALGORITMO CURSO INSCRITO Y NO INSCRITO
