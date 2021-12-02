@@ -32,7 +32,7 @@
 
   
     <div class="section layout_padding">
-        <div class="container">
+        <div class="container" >
             <br>
             <div class="row" >
                 <div class="col-md-1"></div>
@@ -64,10 +64,20 @@
                             <img src="assets/images/clasesvirtuales.jpg" alt="">
                         </div>
                     </section>
+
+                    <!--Búsqueda -->
+                    <div>
+                        <form class="form-inline">
+                            <input type="text" class="form-control" placeholder="Buscar..." id="buscar" name="buscar">
+                            <button  type="button" class="btn btn-outline-primary" onClick="location.reload()">
+                            <i class="fas fa-times"></i></button>
+                        </form>
+                    </div>
+                    <!--Fin de Búsqueda-->
                     <hr>
                     
                   
-                    <div class="cont-padre">
+                    <div class="cont-padre" id='result'>
                         <!--recorre los cursos-->
                         <?php
                         require_once 'database/databaseConection.php';
@@ -98,8 +108,6 @@
                         $query3->bindParam('iniciar',$inicio,PDO::PARAM_INT);
                         $query3->bindParam('narticulos',$cantidad_paginas,PDO::PARAM_INT);
                         $query3->execute();
-                        ?>
-                        <?php
                         $conteo = 0;
                         while ($dato = $query3->fetch(PDO::FETCH_ASSOC)) {
                             $conteo = $conteo + 1;
@@ -120,38 +128,24 @@
                                 $paginaRed = "detallecurso";
                             }
                         ?>
-                            <!--<div class="col-lg-3 col-md-5 col-sm-6 col-12">
-                                <?php echo '<img src="data:image/*;base64,' . base64_encode($dato['imagenDestacadaCurso']) . '"
-                                class="card-img-top imgd roundedimg img-responsive" alt="190" style=" height:180px; ">';?>
-                                <div class="card-body">
-                                    <label class="card-text" style="font-size:15px; color: #4F52D6"><strong><?php echo $dato['nombreCurso']; ?></strong></label>
-                                    <label class="card-text" style="font-size:14px;"><?php echo $dato['descripcionCurso']; ?></label>
-                                    <div class="ins">
-                                        <a href="<?php echo $paginaRed ?>.php?id=<?php echo $dato['idCurso']; ?>">
-                                        <button type="button" style="width: 80%; height: 40px; font-size:13px;" class="roundedpill w165 mdl2 btn btn-lg btn-block btn-outline-primary">
-                                        Empezar Curso</button></a>
-                                    </div>
-                                </div>
-                            </div>-->
-
-                          
-                                 <div class="contenedor">
-                                    <img src="data:image/*;base64,<?php echo base64_encode($dato['imagenDestacadaCurso']); ?>" alt="">
-                                    <div class="box-datos">
-                                        <a href= "<?php echo $paginaRed ?>.php?id=<?php echo $dato['idCurso']; ?>" style="font-size:18px; color: #4F52D6"> <center><strong><?php echo $dato['nombreCurso']; ?></strong> </center></a>
-                                         <div class="redes">
+                            <div class="contenedor">
+                                <img src="data:image/*;base64,<?php echo base64_encode($dato['imagenDestacadaCurso']); ?>" alt="">
+                                <div class="box-datos">
+                                    <a href= "<?php echo $paginaRed ?>.php?id=<?php echo $dato['idCurso']; ?>" style="font-size:18px; color: #4F52D6"> <center><strong><?php echo $dato['nombreCurso']; ?></strong> </center></a>
+                                        <div class="redes">
                                            <span class="date">Dirigido: <?php echo $dato['dirigido']; ?></span>
                                          </div>    
                                          <p><?php echo $dato['descripcionCurso']; ?>'</p>
-
-                                     </div>
                                 </div>
+                                 
+                            </div>
                             
                         <?php
                         }
                         ?>
                         </div>
-                    <nav aria-label="Page navigation calma" class="pdt50">
+                        <!--PAGINADOR-->       
+                        <nav aria-label="Page navigation calma" class="pdt50">
                         <ul class="pagination justify-content-end">
                             <li class="page-item <?php if($_GET['pag']<=1)echo 'disabled'?>">
                                 <a class="page-link" href="ListaCursos.php?pag=<?php echo $_GET['pag']-1;?>&idcate=<?php echo $_GET['$idcate']; ?>" tabindex="-1">
@@ -167,6 +161,7 @@
                         </li>
                         </ul>
                     </nav>
+                    <!--PAGINADOR-->
                 </div>
                 <div class="col-md-1"></div>
             </div>
@@ -187,5 +182,9 @@
         </div>
     </div>
     <!-- End Contenido -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
+    </script>
+    <script type="text/javascript" src="././assets/js/buscarCurso.js"></script>
+    
 </body>
 </html>
