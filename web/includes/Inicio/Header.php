@@ -40,7 +40,6 @@ require_once 'database/databaseConection.php';
                                             CURSOS</button>
 
 
-
                                         <div class="dropdown-menu">
                                             <a class="dropdown-item" href="ListaCursos.php">Todos</a>
                                             <?php
@@ -87,6 +86,7 @@ require_once 'database/databaseConection.php';
                                             <div class="dropdown-menu content_dropdown" id="menu_dropdown">
                                                 <a class="dropdown-item" href="user-sidebar.php">Dashboard</a>
                                                 <a class="dropdown-item" href="sidebarCursos.php">Ir a Cursos</a>
+                                                <a class="dropdown-item" href="InfoCurso.php">Información Cursos</a>
                                                 <a class="dropdown-item" href="includes/login/logout.php">Cerrar Sesión</a>
                                             </div>
                                         </div>

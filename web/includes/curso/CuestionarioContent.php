@@ -45,8 +45,8 @@
             $c_tema=$_GET['c_tema'];
             $c_modulo=$_GET['c_modulo'];
         }
-        echo $c_tema.'/';
-        echo $c_modulo;
+        //echo $c_tema.'/';
+        //echo $c_modulo;
         //esta variable solo me cuenta las respuestas correctas
         if(!isset($_GET['c'])){
             $_GET['c']=0;
@@ -118,6 +118,28 @@
             <h6 style="text-align: center;">fin de cuestionario</h6>
             <div style="text-align: center;">
                 <a href="curso.php?id=<?php echo $id;?>"><button type="button" class="btn btn-outline-secondary">Terminar</button></a>
+                <?php
+                            $pdow = Database::connect(); 
+                            $sqli = "SELECT * FROM modulo WHERE id_curso='$id'";
+                            $qi = $pdow->prepare($sqli);
+                            $qi->execute(array());
+                            $datoi = $qi->fetch(PDO::FETCH_ASSOC);
+                            Database::disconnect();
+                            $di=$datoi['idModulo'];
+                            $pdodi = Database::connect(); 
+                            
+                            $sqli="SELECT c.idModulo,p.idTema,l.idCurso FROM tema p INNER JOIN modulo c ON c.idModulo=p.id_modulo INNER JOIN cursos l ON idCurso= c.id_curso WHERE c.idModulo='$di' AND l.idCurso='$id'";
+                            $qst = $pdow->prepare($sqlt);
+                            $qst->execute(array());
+                            echo "<br>";
+                            $resultado1t=$qst->fetchAll();
+                            echo $resultado1t[1]['idTema'];
+                            // $idtema=$_GET['idtema'];
+                            $nuevat=$_GET['idtema'];
+                            $idtemat=$resultado1t[intval($_GET['idtema'])-1]['idTema'];
+
+                            echo $nuevat;
+                            ?>
                 <a href="video.php?id=<?php echo $id;?>&c_tema=<?php echo $c_tema;?>&validar=1&c_modulo=<?php echo $c_modulo;?>"><button type="button" class="btn btn-outline-secondary">Siguiente</button></a>
                 
                 
@@ -173,6 +195,7 @@
                 </div>
                 <?php }?>
                 <div style="text-align: right;">
+                <?php echo "bueno";?>
                     <button type="submit" class="btn btn-outline-primary">Siguiente</button>
                 </div>
 

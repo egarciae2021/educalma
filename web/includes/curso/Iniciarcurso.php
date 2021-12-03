@@ -8,7 +8,7 @@
         $validacion=1;
         $id=$_GET['id'];
         $validar=$_SESSION['validar'];
-
+        
         $pdo1 = Database::connect(); 
         $sql1 = "SELECT * FROM cursos WHERE idCurso='$id'";
         $q1 = $pdo1->prepare($sql1);
@@ -67,14 +67,13 @@
         $q3 = $pdo3->prepare($sql3);
         $q3->execute();
         $dato3 = $q3->fetch(PDO::FETCH_ASSOC);
-        Database::disconnect();
     ?>
     <br>
     <div class="row">
         <div class="col-md-1"></div>
         <div class="col-md-10">
             <div class="buttonfaq">
-                <a href="video.php?id=<?php echo $id;?>&idtema=<?php echo $dato3['idTema'];?>&validar=<?php echo $validacion;?>">Siguiente</a>
+                <a style="pointer-events: none; href="video.php?id=<?php echo $id;?>&idtema=<?php echo $dato3['idTema'];?>&id_modulo=<?php echo $dato2['idModulo']?>">Siguiente</a>
             </div>
         </div>
         <div class="col-md-1"></div>
@@ -101,6 +100,57 @@
             $q4->execute(array());
             Database::disconnect();
         
+            $d=$dato2['idModulo'];
+
+        $sqli="SELECT c.idModulo,c.nombreModulo,p.nombreTema,p.idTema,l.idCurso FROM tema p INNER JOIN modulo c ON c.idModulo=p.id_modulo INNER JOIN cursos l ON idCurso= c.id_curso WHERE l.idCurso='$id'ORDER BY c.idModulo, p.idTema ASC";
+        $qs = $pdo3->prepare($sqli);
+        $qs->execute(array());
+        
+        $resultado1=$qs->fetchAll();
+        
+        $datoss=$qs->fetch(PDO::FETCH_ASSOC);
+
+        if (!isset($resultado1[0]['idTema']) || $resultado1[0]['idTema']==false) {
+        echo "No Tiene ningun video";
+        }
+        else{
+            $nueva=$resultado1[0]['idTema'];
+        }
+        echo "<br>";
+        $temp=0;
+        $temp2=0;
+
+        for ($i=0; $i < count($resultado1); $i++) { 
+            if ($temp!=$resultado1[$i]['idModulo']) {
+                ?>
+                <summary><?php echo $resultado1[$i]['nombreModulo'];?></summary>
+                <?php
+                $temp2=0;
+                $temp=0;
+
+            }
+            if ($temp==$resultado1[$i]['idModulo'] || $temp==0) {
+                $temp2++;
+
+                ?>
+                <a href="video.php?id=<?php echo $id; ?>&idtema=<?php echo ($temp2);?>&id_modulo=<?php echo $resultado1[$i]['idModulo'];?>">
+                    <div style=" padding: 5px 20px;"><?php echo $resultado1[$i]['nombreTema'];?></div>
+                </a>
+                <?php
+                if($temp!=$resultado1[$i]['idModulo']){
+                    $dato4=$q4->fetch(PDO::FETCH_ASSOC);
+                    ?>
+                    <a href="cuestionario.php?id=<?php echo $id;?>&idModulo=<?php echo $dato4['idModulo'];?>">
+                                <div style=" padding: 5px 30px;">Cuestionario</div>
+                            </a>
+                    <?php
+                }
+            }
+            
+            $temp=$resultado1[$i]['idModulo'];
+        }
+        
+        Database::disconnect();
             
         ?>
         <?php while($dato4=$q4->fetch(PDO::FETCH_ASSOC)){ ?>
@@ -122,12 +172,18 @@
                                 $q5->execute(array());
                                 Database::disconnect();
                                 while($dato5=$q5->fetch(PDO::FETCH_ASSOC)){
+                                    echo var_dump($dato5['idTema']) ;
+                                    // echo $n=count($dato5['idTema']);
+                                    $n=($dato5['idTema']-$dato5['idTema']);
                             ?>
                             
-                            <a href="video.php?id=<?php echo $id;?>&idtema=<?php echo $dato5['idTema'];?>">
+                            <a href="video.php?id=<?php echo $id; ?>&idtema=<?php echo ($n+1);?>&id_modulo=<?php echo $dato4['idModulo']?>">
                                 <div style=" padding: 5px 20px;"><?php echo $dato5['nombreTema'];?></div>
                             </a>
                             <?php }?>
+                            
+
+
                             <a href="cuestionario.php?id=<?php echo $id;?>&idModulo=<?php echo $dato4['idModulo'];?>">
                                 <div style=" padding: 5px 30px;">Cuestionario</div>
                             </a>

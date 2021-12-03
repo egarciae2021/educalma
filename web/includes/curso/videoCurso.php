@@ -101,18 +101,19 @@
                     }else{
                         $access="true";
                     }
-                ?></h2>
+                ?>
+            </h2>
                 <button type="button" <?php if ($access=="d") {
                     echo "disabled";
                 }?>  class="btn btn-outline-secondary" id="btnV"
-                    onclick="parent.location='includes/curso/VideoSiguiente.php?id=<?php echo $id;?>&c_modulo=<?php echo $cont_modulo;?>&c_tema=<?php echo ($cont_tema-1);?>&idmodulo=<?php echo $dato['idModulo']?>'"> <strong> < </strong> Anterior</button>
+                    onclick="parent.location='includes/curso/VideoSiguiente.php?id=<?php echo $id; ?>&idtema=<?php echo ($idtema-1)?>&id_modulo=<?php echo $dato['idModulo']?>'"> <strong> < </strong> Anterior</button>
                 <button type="button" class="btn btn-outline-secondary" id="btnV2"> 
                     <?php echo $dato2['nombreTema'];?>
                     <img src="././assets/images/video_icono_32.png"></button>
                 <button type="button"<?php if ($access=="d") {
                     echo "disabled";
                 }?> class="btn btn-outline-secondary" id="btnV"
-                    onclick="parent.location='includes/curso/VideoSiguiente.php?id=<?php echo $id; ?>&c_modulo=<?php echo $cont_modulo;?>&c_tema=<?php echo ($cont_tema+1);?>&idmodulo=<?php echo $dato['idModulo']?>'">
+                    onclick="parent.location='includes/curso/VideoSiguiente.php?id=<?php echo $id; ?>&idtema=<?php echo ($idtema+1)?>&id_modulo=<?php echo $dato['idModulo']?>'">
                     Siguiente <strong> > </strong></button>
             </div>
             <div class="col-md-1"></div>
@@ -158,14 +159,28 @@
 <?php 
     
     $id=$_GET['id'];
-    $idtema=$_GET['idtema'];
-
     $pdo = Database::connect(); 
     $sql = "SELECT * FROM modulo WHERE id_curso='$id'";
     $q = $pdo->prepare($sql);
     $q->execute(array());
     $dato = $q->fetch(PDO::FETCH_ASSOC);
     Database::disconnect();
+    $d=$dato['idModulo'];
+    $pdod = Database::connect(); 
+    
+    $sqli="SELECT c.idModulo,p.idTema,l.idCurso FROM tema p INNER JOIN modulo c ON c.idModulo=p.id_modulo INNER JOIN cursos l ON idCurso= c.id_curso WHERE c.idModulo='$_GET[id_modulo]' AND l.idCurso='$id'";
+    $qs = $pdod->prepare($sqli);
+    $qs->execute(array());
+    // echo "<br>";
+    $resultado1=$qs->fetchAll();
+    // echo $resultado1[1]['idTema'];
+    // $idtema=$_GET['idtema'];
+    $nueva=$_GET['idtema'];
+    $idtema=$resultado1[intval($_GET['idtema'])-1]['idTema'];
+    // echo $idtema;
+    
+
+
 
     $pdo2 = Database::connect(); 
     $sql2 = "SELECT * FROM tema WHERE idTema='$idtema'";
@@ -201,14 +216,19 @@
         <div class="row">
             <div class="col-md-1"></div>
             <div class="col-md-10">
-                <button type="button" class="btn btn-outline-secondary" id="btnV"
-                    onclick="parent.location='Cursoiniciar.php?id=<?php echo $_GET['id']?>'"> <strong>
-                        < </strong> Anterior</button>
+                <?php $d=$dato['idModulo'];
+                // echo $dato['idModulo'];
+                ?>
+                <br>
+                <button type="button" class="btn btn-outline-secondary" id="btnV"<?php if($nueva<=1){ echo "disabled";}?>
+                    onclick="parent.location='video.php?id=<?php echo $id; ?>&idtema=<?php echo ($nueva-1); ?>&id_modulo=<?php echo $dato['idModulo']?>'"> <strong>
+                        <?php if(count($resultado1)<=0){echo "No existo";}?>< </strong> Anterior </button>
                 <button type="button" class="btn btn-outline-secondary" id="btnV2"> <img
                         src="././assets/images/video_icono_32.png"></button>
-                <button type="button" class="btn btn-outline-secondary" id="btnV"
-                    onclick="parent.location='includes/curso/VideoSiguiente.php?id=<?php echo $id; ?>&idtema=<?php echo $idtema; ?>'">
-                    Siguiente <strong> > </strong></button>
+                <button type="button" class="btn btn-outline-secondary" id="btnV" <?php if($nueva>=count($resultado1)){?>onclick="parent.location='cuestionario.php?id=<?php echo $id;?>&idModulo=<?php echo $_GET['id_modulo'];?>'">Siguiente<strong> > </strong></button> <?php }else{ ?>
+                    onclick="parent.location='video.php?id=<?php echo $id; ?>&idtema=<?php echo ($nueva+1); ?>&id_modulo=<?php echo $_GET['id_modulo']?>'">Siguiente<strong> > </strong></button>
+                    <?php }?>
+                    
             </div>
             <div class="col-md-1"></div>
         </div>
