@@ -1,403 +1,302 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nosotros</title>
-    <!-- <link rel="stylesheet" href="././assets/css/styleban.css"> -->
-    <!-- <link rel="stylesheet" href="././assets/css/stylecard.css"> -->
-    <link rel="stylesheet" href="assets/css/style.css" />
-</head>
-
-<body>
-  <?php
+<?php
    
     if(!isset($_GET['pag'])){
         $_GET['pag']=1;
     }
 
   ?>
-    <!-- Start Carousel -->
-    <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel">
-        <ol class="carousel-indicators">
-            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-        </ol>
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img class="d-block w-100" src="./assets/images/slider1.png" alt="First slide">
-                 <!-- Static Header -->
-                 <div class="header-text hidden-xs">
-                        <div class="col-md-12 text-center">
-                            <h2>
-                            	<span>Bienvenido a <strong style="color:#130F40;">EduCalma</strong></span>
-                            </h2>
-                            <br>
-                            <h3>
-                            	<span>¡Impulsa tu aprendizaje junto a los mejores especialistas en EduCalma desde hoy!</span>
-                            </h3>
-                        </div>
-                    </div><!-- /header-text -->
-            </div>
-            <div class="carousel-item">
-                <img class="d-block w-100" src="./assets/images/slider2.png" alt="Second slide">
-                <!-- Static Header -->
-                <div class="header-text hidden-xs">
-                        <div class="col-md-12 text-center">
-                            <h2>
-                            	<span>Bienvenido a <strong style="color:#130F40;">EduCalma</strong></span>
-                            </h2>
-                            <br>
-                            <h3>
-                            	<span>¡Encuentra los cursos que desees aprender y comienza YA!</span>
-                            </h3>
-                            <br>
-                            <div class="">
-                                <a class="btn btn-theme btn-sm btn-min-block" href="../educalma/ListaCursos.php">Ver Cursos</a>
-                            </div>
-                        </div>
-                    </div><!-- /header-text -->
-            </div>
-            <div class="carousel-item">
-                <img class="d-block w-100" src="./assets/images/slider3.jpg" alt="Third slide">
-                <!-- Static Header -->
-                <div class="header-text hidden-xs">
-                        <div class="col-md-12 text-center">
-                            <h2>
-                            	<span>Bienvenido a <strong style="color:#130F40;">EduCalma</strong></span>
-                            </h2>
-                            <br>
-                            <h3>
-                            	<span>El Bullying es un tipo de violencia que sufren 1 de cada 10 niños y niñas en nuestro país.</span>
-                                <br>
-                                <p><span>Descubre más sobre este Curso.</span></p>
-                            </h3>
-                            <br>
-                            <div class="">
-                                <a class="btn btn-theme btn-sm btn-min-block" href="../educalma/ListaCursos.php?idcate=1">Ver Bullying</a>
-                            </div>
-                        </div>
-                    </div><!-- /header-text -->
+  <head>
+  <link rel="stylesheet" href="assets/css/home.css" /> 
+</head>
+<!-- PANEL -->
+<div class="container-fluid div-container-panel">
+    <div class="row">
+        <div class="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-6 container-panel">
+            <div class="container-title-panel">
+                <div class="title-panel">
+                    Bienvenido! <br> <span>EduCalma</span>
+                </div>
+                <div class="description-panel">
+                    ¡Impulsa tu aprendizaje junto a los mejores especialistas en EduCalma desde hoy!
+                </div>
+                <div class="button-panel">
+                    <button type="button" class="btn btn_registrar_panel">Registrate!</button>
+                </div>
             </div>
         </div>
-        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
-    </div>
-    <!-- End Carousel-->
-    
-    <div class="section layout_padding">
-
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-
-    <!-- Cards / Cursos destacados -->
-                
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="row">
-                    <div class="section-title-course">
-                        <hr>Cursos destacados
-                    </div>
+        <div class="col-12 col-sm-12 col-md-7 col-lg-7 col-xl-6 container-panel-image">
+            <div class="container-image-panel">
+                <div class="image-panel">
+                    <img src="./assets/images/—Pngtree—hand drawn online mobile phone_5341169.png" alt="">
                 </div>
-                
+            </div>
+        </div>
+    </div>
+</div>
+<!-- MODAL -->
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered  modal-xl">
+        <div class="modal-content">
+            <div class="modal-body">
                 <div class="row">
-                    <!-- 1er card -->
-                        <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
-                            <div class="card">
-                                <div class="row">
-                                    <div class="col-5">
-                                        <div class="circulo">
-                                            <div class="container-image">
-                                                <img src="./assets/images/libro_card.png" alt="">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-7">
-                                        <div class="container-title">
-                                            LOREM IPSUM
-                                        </div>
-                                        <div class="container-text">
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit...
-                                        <button class="btn btn-card container-link">
-                                            Ver informaci&oacute;n >
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
+                    <div class="col-12">
+                        <img src="./assets/images/2232688.png" alt="" width="28px">
+                        <span class="title-modal">Cursos > Categoría ></span>
+                        <span class="title-modal">Nombre-Categoría</span>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span class="button_close" aria-hidden="true">&times;</span>
+                    </div>
+                    <!-- col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6"> -->
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                        <div class="cont_titulos">
+                            <h3 class="titulo">LLOREM IPSUM DOLOR</h3>
+                            <span class="descripcion">Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit
+                                amet, consectetur adipiscing elit</span>
+                            <br><br>
+                            <button type="button" class="btn btn-outline-info btn_registrar">
+                                <i class="far fa-play-circle"></i>
+                                Comienza este curso
+                            </button>
                         </div>
                     </div>
-
-
-                    <!--2do card-->
-                    <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
-                            <div class="card">
-                                <div class="row">
-                                    <div class="col-5">
-                                        <div class="circulo">
-                                            <div class="container-image">
-                                                <img src="./assets/images/libro_card.png" alt="">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-7">
-                                        <div class="container-title">
-                                            LOREM IPSUM
-                                        </div>
-                                        <div class="container-text">
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit...
-                                        <button class="btn btn-card container-link">
-                                            Ver informaci&oacute;n >
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!--3er card-->
-                    <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
-                            <div class="card">
-                                <div class="row">
-                                    <div class="col-5">
-                                        <div class="circulo">
-                                            <div class="container-image">
-                                                <img src="./assets/images/libro_card.png" alt="">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-7">
-                                        <div class="container-title">
-                                            LOREM IPSUM
-                                        </div>
-                                        <div class="container-text">
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit...
-                                        <button class="btn btn-card container-link">
-                                            Ver informaci&oacute;n >
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- fin 3er card-->
-                    
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                        <img class="img_nueva" src="./assets/images/_111437543_197389d9-800f-4763-8654-aa30c04220e4.png" alt="" style="max-width: 100%;">
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-</div> <!--fin layout padding-->
-            
-    <!-- Fin Cards-->
-
-            <div class="cont-padre">
-                
-                <?php 
-                            require_once 'database/databaseConection.php';
-                                
-                            $pdo=Database::connect();
-                            $sql="SELECT COUNT(*) cantidad, curso_id FROM cursoinscrito as ci INNER JOIN cursos as c ON ci.curso_id = c.idCurso GROUP BY c.idCurso ORDER BY cantidad desc";
-                            $q=$pdo->prepare($sql);
-                            $q->execute(array());
-                            Database::disconnect();
-
-                            $cont = 0;
-                            while($reco=$q->fetch(PDO::FETCH_ASSOC)){    
-                                $cont = $cont + 1;    
-                        //ALGORITMO CURSO INSCRITO Y NO INSCRITO
-                         if(isset($_SESSION['codUsuario'])){
-                            $pdo5 = Database::connect();
-                          
-                            $cursoID = $reco['curso_id'];
-                            $userID = $_SESSION['codUsuario'];
-
-                            $sql5 = "SELECT * FROM cursoinscrito where curso_id='$cursoID' and usuario_id = '$userID'";
-                            $q5 = $pdo5->prepare($sql5);
-                            $q5->execute(array());
-                            $dato5=$q5->fetch(PDO::FETCH_ASSOC);
-
-                              if (empty($dato5)){
-                                $paginaRed = "detallecurso";
-                              }else{
-                                $paginaRed = "curso";
-                              }
-                            
-                         }else{
-                               $paginaRed = "detallecurso";
-                        }
-                        
-                        $pdo15=Database::connect();
-                        $curso_Id= $reco['curso_id'];
-                        $sql15 = "SELECT * FROM cursos where idCurso='$curso_Id' AND  permisoCurso = 1";
-                        $q15 = $pdo15->prepare($sql15);
-                        $q15->execute(array());
-                        
-
-                        while($reco2=$q15->fetch(PDO::FETCH_ASSOC)){
-
-                        error_reporting(0);
-                        echo '<div class="contenedor">
-                        <img src="data:image/*;base64,'.base64_encode($reco2['imagenDestacadaCurso']).'" alt="">
-                        <div class="box-datos">
-                        
-                        <a href= "'.$paginaRed.'.php?id='.$reco2['idCurso'].'" style="font-size:18px; color: #4F52D6"> <center><strong>'.$reco2['nombreCurso'] .'</strong> </center></a>
-                        <div class="redes">
-                                <span class="date">Dirigido: '.$reco2['dirigido'].'</span>
-                            </div>    
-                        
-                        <p>'.$reco2['descripcionCurso'].'</p>
-                            
-                        </div>
-                    </div>';
-                        }
-                        if($cont==4){
-                            break;
-                         }
-                    }
-                         
-                         
-                         ?>
-            </div>            
-            <div class="col-md-1"></div>
-            </div>
-                </div>
-                
-<!-- CARDS -->
-
-        <!-- parte 2 -->
-        <div class="container">
-            <div class="row" style="height: 100px;">
-                <div class="col-md-1"></div>
-                <div class="col-md-10">
-                    <!-- <div class="full">
-                        <div class="heading_main text_align_start pdt50">
-                            <h2><span> Todos los cursos</span></h2>
-                        </div>
-                    </div> -->
-                </div>
-                <div class="col-md-1"></div>
-            </div>
-
-      
+<!-- CARDS BRINDA -->
+<div class="container-fluid container-fluid-brida">
+    <div class="row">
+        <div class="col-12">
             <div class="row">
-                <div class="col-md-1"></div>
-                <div class="col-md-10">
-
-
-                   
-                        <!--recorre los cursos-->
-                        <div class="cont-padre">
-                        <?php 
-                            require_once 'database/databaseConection.php';
-                                
-                            $pdo=Database::connect();
-                            $sql="SELECT * FROM cursos";
-                            $q=$pdo->prepare($sql);
-                            $q->execute();
-                            $cont=$q->rowCount();
-                            Database::disconnect();
-
-                        //generar para el paginador
-                            //constante 
-                            $cant_pagi=8;
-                            
-                            $pagina=$cont/$cant_pagi;
-                            $pagina=ceil($pagina);
-                            //para el paginador
-                            if($cont>0){
-                                if($_GET['pag']>$pagina || $_GET['pag']<1){
-                                    header('Location:index.php');
-                                }
-                            }
-                            $iniciar=($_GET['pag']-1)*$cant_pagi;
-                            
-                            
-                            $pdo2=Database::connect();
-                            $sql2="SELECT * FROM cursos where permisoCurso = 1  LIMIT $iniciar,$cant_pagi";
-                            $q2=$pdo2->prepare($sql2);
-                            $q2->execute();
-                            Database::disconnect();
-
-                            $cont = 0;
-                            while($reco2=$q2->fetch(PDO::FETCH_ASSOC)){
-                                $cont = $cont + 1;
-      
-                        //ALGORITMO CURSO INSCRITO Y NO INSCRITO
-                         if(isset($_SESSION['codUsuario'])){
-                            $pdo5 = Database::connect();
-                          
-                            $cursoID = $reco2['idCurso'];
-                            $userID = $_SESSION['codUsuario'];
-
-                            $sql5 = "SELECT * FROM cursoinscrito where curso_id='$cursoID' and usuario_id = '$userID'";
-                            $q5 = $pdo5->prepare($sql5);
-                            $q5->execute(array());
-                            $dato5=$q5->fetch(PDO::FETCH_ASSOC);
-
-                              if (empty($dato5)){
-                                $paginaRed = "detallecurso";
-                              }else{
-                                $paginaRed = "curso";
-                              }
-                            
-                         }else{
-                               $paginaRed = "detallecurso";
-                        }
-
-                    
-                        echo '<div class="contenedor">
-                        <img src="data:image/*;base64,'.base64_encode($reco2['imagenDestacadaCurso']).'" alt="">
-                        <div class="box-datos">
-                        <a href= "'.$paginaRed.'.php?id='.$reco2['idCurso'].'" style="font-size:18px; color: #4F52D6"> <center><strong>'.$reco2['nombreCurso'] .'</strong> </center></a>
-                        <div class="redes">
-                                <span class="date">Dirigido: '.$reco2['dirigido'].'</span>
-                            </div>    
-                        <p>'.$reco2['descripcionCurso'].'</p>
-
-                        </div>
-                    </div>';
-                         } 
-                         
-                         
-                         ?>
-                         </div>
-                   
-                    <nav aria-label="Page navigation calma" class="pdt50">
-                        <ul class="pagination justify-content-end">
-                            <li class="page-item <?php if($_GET['pag']<=1) echo 'disabled'?>">
-                                <a class="page-link" href="index.php?pag=<?php echo $_GET['pag']-1;?>" tabindex="-1">Anterior</a>
-                            </li>
-                            <?php for($i=0;$i<$pagina;$i++):?>
-                            <li class="page-item <?php echo $_GET['pag']==$i+1 ? 'active':'' ?>">
-                              <a class="page-link" href="index.php?pag=<?php echo $i+1;?>"><?php echo $i+1;?></a>
-                            </li>
-                            <?php endfor?>
-                            <li class="page-item <?php if($_GET['pag']>=$pagina) echo 'disabled'?>">
-                                <a class="page-link" href="index.php?pag=<?php echo $_GET['pag']+1;?>">Siguiente</a>
-                            </li>
-                        </ul>
-                    </nav>
+                <div class="section-title">
+                    <h2>¿Qué te brinda <span>Educalma</span>?</h2>
                 </div>
-                <div class="col-md-1"></div>
             </div>
-
+            <div class="row">
+                <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="./assets/images/2000920.png" alt="" />
+                        </div>
+                        <div class="card-title">
+                            <p>Cursos</p>
+                        </div>
+                        <div class="card-descripti">
+                            <p>
+                                Otorgamos cursos calificados para que el alumno aprenda y
+                                desarrolle nuevas habilidades.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="./assets/images/3966968.png" alt="" />
+                        </div>
+                        <div class="card-title">
+                            <p>Cursos</p>
+                        </div>
+                        <div class="card-descripti">
+                            <p>
+                                Cada tema enseñado será de buena ayuda en los test de cada sesion.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="./assets/images/certificado.png" alt="" />
+                        </div>
+                        <div class="card-title">
+                            <p>Cursos</p>
+                        </div>
+                        <div class="card-descripti">
+                            <p>
+                                Al concluir el curso se les entregará un certificado por todo lo aprendido en cada sesion.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <br>
-
+            <div class="row">
+                <div class="section-button">
+                    <button type="button" class="btn btn-success">
+                        Comienza a ver los cursos
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
 </div>
-
-</body>
-
-</html>
+<!-- CARDS CURSOS -->
+<div class="container-fluid container-fluid-course">
+    <div class="row">
+        <div class="col-12">
+            <div class="row">
+                <div class="section-title">
+                    <div class="line"></div>
+                    <h2>Cursos destacados</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 mb-4">
+                    <div class="card">
+                        <div class="row">
+                            <div class="col-4 col-sm-4 col-md-12 col-lg-4 col-xl-4">
+                                <div class="container-image-course">
+                                    <img src="./assets/images/2232688.png" alt="" />
+                                </div>
+                            </div>
+                            <div class="col-8 col-sm-8 col-md-12 col-lg-8 col-xl-8">
+                                <h4>CURSO DESTACADO1</h4>
+                                <h5>Lorem ipsum dolor sit amet, consectetur adipiscing ... </h5>
+                                <a href="#" class="btn btn-success mt-2" data-toggle="modal" data-target=".bd-example-modal-lg">ver
+                                    informaci&oacute;n ></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 mb-4">
+                    <div class="card">
+                        <div class="row">
+                            <div class="col-4 col-sm-4 col-md-12 col-lg-4 col-xl-4">
+                                <div class="container-image-course">
+                                    <img src="./assets/images/2232688.png" alt="" />
+                                </div>
+                            </div>
+                            <div class="col-8 col-sm-8 col-md-12 col-lg-8 col-xl-8">
+                                <h4>CURSO DESTACADO1</h4>
+                                <h5>Lorem ipsum dolor sit amet, consectetur adipiscing ... </h5>
+                                <a href="#" class="btn btn-success mt-2" data-toggle="modal" data-target=".bd-example-modal-lg">ver
+                                    informaci&oacute;n ></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 mb-4">
+                    <div class="card">
+                        <div class="row">
+                            <div class="col-4 col-sm-4 col-md-12 col-lg-4 col-xl-4">
+                                <div class="container-image-course">
+                                    <img src="./assets/images/2232688.png" alt="" />
+                                </div>
+                            </div>
+                            <div class="col-8 col-sm-8 col-md-12 col-lg-8 col-xl-8">
+                                <h4>CURSO DESTACADO1</h4>
+                                <h5>Lorem ipsum dolor sit amet, consectetur adipiscing ... </h5>
+                                <a href="#" class="btn btn-success mt-2" data-toggle="modal" data-target=".bd-example-modal-lg">ver
+                                    informaci&oacute;n ></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- EMPRESAS -->
+<div class="container container-empresas">
+    <div class="info-part">
+        <div class="line"></div>
+        <h2>Educalma para empresas</h2>
+        <ul>
+            <li><i class="fas fa-check-circle mr-3"></i>Mide y analiza los resultados de tu equipo con nuestro servicio.
+            </li>
+            <li><i class="fas fa-check-circle mr-3"></i>Acompañamiento y seguimiento por un Ejecutivo de Cuenta.</li>
+            <li><i class="fas fa-check-circle mr-3"></i>Certificaciones por cada curso de plan compleado.</li>
+        </ul>
+        <span>Recibe informaci&oacute;n específica para tu empresa</span>
+        <div class="box-email">
+            <div class="row">
+                <input type="email" placeholder="Escribe tu correo empresarial" id="txtEmail" />
+                <button id="btnAction">CONOCE MÁS</button>
+            </div>
+            <span class="msg-error">Debe ser un correo corporativo.</span>
+        </div>
+    </div>
+    <div class="turn-container">
+        <div class="box-rotate" id="boxRotate">
+            <div class="front">
+                <div class="box-image">
+                    <img src="./assets/images/—Pngtree—people make puzzles concept team_5356575.png" alt="" />
+                </div>
+            </div>
+            <div class="back">
+                <div class="header">
+                    <div class="box-image">
+                        <img src="./assets/images/Rectangle 51.png" alt="" />
+                    </div>
+                    <div class="box-text">
+                        <h3>CAPACITA A TU EQUIPO</h3>
+                        <span>Completa los datos y te ayudaremos a crear un plan alineado a
+                            los objetivos del equipo y tu empresa.</span>
+                    </div>
+                </div>
+                <div class="formu">
+                    <div class="row">
+                        <div class="group-control">
+                            <span class="title">Nombre Completo</span><input type="text" name="" id="" />
+                        </div>
+                        <div class="group-control">
+                            <span class="title">Correo electrónico</span><input type="text" name="" id="" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="group-control">
+                            <span class="title">Empresa</span><input type="text" name="" id="" />
+                        </div>
+                        <div class="group-control">
+                            <span class="title">Teléfono móvil</span>
+                            <div class="row-icon">
+                                <div class="selItem">
+                                    <div class="btn-select" id="btnPais">
+                                        <img id="imgPais" src="./assets/images/peru.png" alt="+51" />
+                                        <input type="text" class="code" id="code" value="+51" readonly />
+                                    </div>
+                                    <ul class="sel" id="listPais">
+                                        <li>
+                                            <img src="./assets/images/peru.png" alt="+51" />
+                                            <span>Perú (+51)</span>
+                                        </li>
+                                        <li>
+                                            <img src="./assets/images/estados-unidos.png" alt="+1" />
+                                            <span>Estados Unidos (+1)</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <input type="tel" name="" id="" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="group-control">
+                            <span class="title">Tamaño de la empresa</span><input type="text" name="" id="" />
+                        </div>
+                        <div class="group-control">
+                            <span class="title">Número de suscripciones</span>
+                            <div class="row-three">
+                                <div class="icon" id="quitNumber">-</div>
+                                <input type="number" min="0" value="0" name="" id="numSusc" />
+                                <div class="icon" id="plusNumber">+</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="group-control">
+                        <span>¿Qué objetivo tiene tu equipo?</span>
+                        <textarea rows="2"></textarea>
+                    </div>
+                    <div class="box-btn">
+                        <button>COMENZAR</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
