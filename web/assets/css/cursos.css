@@ -182,4 +182,5 @@
 .container-fluid .container-card-course .row .card .container-card-link a{
   color: #33C6E7;
   margin-bottom: 1rem;
+  text-decoration: none;
 }
