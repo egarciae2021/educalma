@@ -100,7 +100,7 @@ require_once 'database/databaseConection.php';
                             <div class="collapse navbar-collapse justify-content-end" id="navbar-wd">
                                 <ul class="navbar-nav">
                                     <li>
-                                        <a href="registros.php"><button type="button" class="rounded w165 mdl2 btn btn-lg btn-block btn-outline-primary">Registrar</button></a>
+                                        <a href="registroUsuario.php"><button type="button" class="rounded w165 mdl2 btn btn-lg btn-block btn-outline-primary">Registrar</button></a>
                                     </li>
 
                                     <li>
