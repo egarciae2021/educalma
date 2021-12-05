@@ -5,6 +5,10 @@
   <title>Registro | Educalma</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Expires" content="0">
+  <meta http-equiv="Last-Modified" content="0">
+  <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
+  <meta http-equiv="Pragma" content="no-cache">
   <link rel="stylesheet" href="assets/lib/bootstrap.min.css" />
   <script src="assets/lib/jquery.min.js"></script>
   <script src="assets/lib/popper.min.js"></script>
@@ -37,7 +41,7 @@
           <div class="col-12 p-0" id="first-data">
             <div class="col my-3">
               <label for="txtEmail" id="lblEmail">Valida tu correo electrónico</label>
-              <input type="email" class="form-control" id="txtEmail" required />
+              <input type="email" class="form-control" id="txtEmail" autocomplete="off" required />
               <div class="invalid-feedback">
                 <span id="correoMessage"></span>
               </div>
@@ -49,10 +53,11 @@
                 <div class="input-group-append">
                   <span class="input-group-text" id="basic-addon2"><i class="fa fa-eye-slash" aria-hidden="true"></i></span>
                 </div>
+                <div class="invalid-feedback">
+                  <span>¡La contraseña debe tener al menos 8 carácteres, una mayúscula, una minúscula y un número!</span>
+                </div>
               </div>
-              <div class="invalid-feedback">
-                <span>¡La contraseña debe tener al menos 8 carácteres!</span>
-              </div>
+
             </div>
           </div>
 
@@ -66,30 +71,45 @@
             <div class="col my-3">
               <label for="txtNombres">Nombres</label>
               <input type="text" class="form-control" id="txtNombres" required />
+              <div class="invalid-feedback">
+                <span>¡Este es un campo requerido!</span>
+              </div>
             </div>
             <!-- Apellidos -->
             <div class="col my-3">
               <label for="txtAPaterno">Ap. paterno</label>
               <input type="text" class="form-control" id="txtAPaterno" required />
+              <div class="invalid-feedback">
+                <span>¡Este es un campo requerido!</span>
+              </div>
             </div>
             <div class="col my-3">
               <label for="txtAMaterno">Ap. materno</label>
               <input type="text" class="form-control" id="txtAMaterno" required />
+              <div class="invalid-feedback">
+                <span>¡Este es un campo requerido!</span>
+              </div>
             </div>
             <!-- Tipo de documento -->
             <div class="col my-3">
               <label for="cmbTDocumento">T. documento</label>
               <select id="cmbTDocumento" class="form-control">
-                <option>Seleccionar</option>
+                <option value="">Seleccionar</option>
                 <option value="1">DNI</option>
                 <option value="2">Pasaporte</option>
                 <option value="3">Carnet Extranjería</option>
               </select>
+              <div class="invalid-feedback">
+                <span>¡Este es un campo requerido!</span>
+              </div>
             </div>
             <!-- Documento -->
             <div class="col my-3">
               <label for="txtDocumento">Documento</label>
               <input type="text" class="form-control" id="txtDocumento">
+              <div class="invalid-feedback">
+                <span>¡Este es un campo requerido!</span>
+              </div>
             </div>
           </div>
 
@@ -103,31 +123,43 @@
             <div class="col my-3">
               <label for="txtNacimiento">F. nacimiento</label>
               <input type="date" class="form-control" id="txtNacimiento" required>
+              <div class="invalid-feedback">
+                <span>¡Debe ser mayor de 18 años!</span>
+              </div>
             </div>
             <!-- Celular -->
             <div class="col my-3">
               <label for="txtCelular">Celular</label>
               <input type="tel" class="form-control" id="txtCelular" required>
+              <div class="invalid-feedback">
+                <span>¡Este es un campo requerido!</span>
+              </div>
             </div>
             <!-- Pais -->
             <div class="col my-3">
               <label for="cmbPais">Pais</label>
               <select id="cmbPais" class="form-control">
-                <option>Seleccionar</option>
+                <option value="">Seleccionar</option>
                 <option value="1">Perú</option>
                 <option value="2">Argentina</option>
               </select>
+              <div class="invalid-feedback">
+                <span>¡Este es un campo requerido!</span>
+              </div>
             </div>
             <!-- Genero -->
             <div class="col my-3">
               <label for="cmbGenero">Género</label>
               <select id="cmbGenero" class="form-control">
-                <option>Seleccionar</option>
+                <option value="">Seleccionar</option>
                 <option value="1">Masculino</option>
                 <option value="2">Femenino</option>
                 <option value="3">No binario</option>
                 <option value="4">Prefiero no decir</option>
               </select>
+              <div class="invalid-feedback">
+                <span>¡Este es un campo requerido!</span>
+              </div>
             </div>
           </div>
 
@@ -150,7 +182,28 @@
           background-position: 50%;
         "></div>
   </div>
+  <!-- Modal -->
+  <div class="modal fade" id="regSuccess" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">¡Registro éxitoso!</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Inicie sesión, por favor.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" id="btnTogoLogin">Ir</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
+  <script src="assets/js/Validator.js"></script>
   <script src="assets/js/registroUsuario.js"></script>
 </body>
 

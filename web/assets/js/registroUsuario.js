@@ -1,4 +1,133 @@
 $(document).ready(() => {
+  const greenEffect = (e) => {
+    let ctrl = e.target === undefined ? e : e.target;
+    if (ctrl.tagName === "INPUT" && ctrl.type === "radio") {
+      $(ctrl).removeClass("is-invalid");
+      $(ctrl).addClass("is-valid");
+    } else {
+      $(ctrl).removeClass("is-invalid");
+      $(ctrl).addClass("is-valid");
+    }
+  };
+
+  const redEffect = (e) => {
+    let ctrl = e.target === undefined ? e : e.target;
+    if (ctrl.tagName === "INPUT" && ctrl.type === "radio") {
+      $(ctrl).removeClass("is-valid");
+      $(ctrl).parent().parent().addClass("is-invalid");
+    } else {
+      $(ctrl).removeClass("is-valid");
+      $(ctrl).addClass("is-invalid");
+    }
+  };
+
+  // Formato JS
+  let controlsArray = [
+    {
+      // Selector
+      element: "input[type=text]",
+      // Propiedades a asignar
+      properties: [
+        {
+          required: true,
+          minlength: 3,
+        },
+      ],
+      // Eventos
+      events: ["keyup", "focus", "blur"],
+      // Validado (true) - (function)
+      validAction: greenEffect,
+      // No validado (false) - (function)
+      noValidAction: redEffect,
+    },
+    {
+      element: "input[type=number]",
+      properties: [
+        {
+          required: true,
+          min: 0,
+        },
+      ],
+      events: ["keyup", "focus", "blur"],
+      validAction: greenEffect,
+      noValidAction: redEffect,
+    },
+    {
+      element: "input[type=tel]",
+      properties: [
+        {
+          required: true,
+          pattern: "[0-9]{9,}",
+        },
+      ],
+      events: ["keyup", "focus", "blur"],
+      validAction: greenEffect,
+      noValidAction: redEffect,
+    },
+    {
+      element: "input#Numero",
+      properties: [
+        {
+          required: true,
+          pattern: "[0-9]{8}",
+        },
+      ],
+      events: ["keyup", "focus", "blur"],
+      validAction: greenEffect,
+      noValidAction: redEffect,
+    },
+    {
+      element: "input[type=password]",
+      properties: [
+        {
+          required: true,
+          pattern:
+            "(?=^.{8,}$)((?=.*\\d)|(?=.*\\W+))(?![.\\n])(?=.*[A-Z])(?=.*[a-z]).*$",
+        },
+      ],
+      events: ["keyup", "focus", "blur"],
+      validAction: greenEffect,
+      noValidAction: redEffect,
+    },
+    {
+      element: "input[type=radio]",
+      properties: [
+        {
+          required: true,
+        },
+      ],
+      events: ["change"],
+      validAction: greenEffect,
+      noValidAction: redEffect,
+    },
+    {
+      element: "input[type=date]#txtNacimiento",
+      properties: [
+        {
+          required: true,
+          min: FormatLocal(getMaxMinDate(18, 115).fMin),
+          max: FormatLocal(getMaxMinDate(18, 115).fMax),
+        },
+      ],
+      events: ["change", "focus"],
+      validAction: greenEffect,
+      noValidAction: redEffect,
+    },
+    {
+      element: "select",
+      properties: [
+        {
+          required: true,
+        },
+      ],
+      events: ["change", "focus", "blur"],
+      validAction: greenEffect,
+      noValidAction: redEffect,
+    },
+  ];
+
+  ValidControl(controlsArray);
+
   // Password change type and icon
   $("#basic-addon2").click((e) => {
     var txt = $("#txtPass");
@@ -15,17 +144,46 @@ $(document).ready(() => {
   $("#form_data").submit((e) => e.preventDefault())
 
   var partAction = 0;
-  var email;
-  var pass;
-  var firstname;
-  var lastname1;
-  var lastname2;
-  var tdoc;
-  var doc;
-  var fnac;
-  var cel;
-  var pais;
-  var gen;
+  var email = "";
+  var pass = "";
+  var firstname = "";
+  var lastname1 = "";
+  var lastname2 = "";
+  var tdoc = "";
+  var doc = "";
+  var fnac = "";
+  var cel = "";
+  var pais = "";
+  var gen = "";
+
+  const Reset_data = () => {
+    partAction = 0;
+    $("#first-data").removeClass("d-none");
+    $("#txtEmail").removeClass("is-valid").removeClass("is-invalid").prop("readonly", false);
+    $("#passBox").addClass("d-none");
+    $("#second-data").addClass("d-none");
+    $("#three-data").addClass("d-none");
+    email = "";
+    $("#txtEmail").val("");
+    pass = "";
+    $("#txtPass").val("");
+    lastname1 = "";
+    $("#txtAPaterno").val("");
+    lastname2 = "";
+    $("#txtAMaterno").val("");
+    tdoc = "";
+    $("#cmbTDocumento").val("");
+    doc = "";
+    $("#txtDocumento").val("");
+    fnac = "";
+    $("#txtNacimiento").val("");
+    cel = "";
+    $("#txtCelular").val("");
+    pais = "";
+    $("#cmbPais").val("");
+    gen = "";
+    $("#cmbGenero").val("");
+  }
 
   // Validar correo
   $("#btnSubmit").click((e) => {
@@ -44,60 +202,76 @@ $(document).ready(() => {
             if (response.cantidad === "0") {
               $("#lblEmail").text("Correo");
               $("#txtEmail").removeClass("is-invalid").addClass("is-valid").attr("readonly", "");
-              $("#passBox").removeClass("d-none").addClass("d-block");
+              $("#passBox").fadeIn("slow").removeClass("d-none");
               $("#passBox input").focus();
               $("#btnSubmit").text("REGISTRARSE");
               partAction = 1;
             }
             else {
               $("#txtEmail").removeClass("is-valid").addClass("is-invalid");
-              $("#correoMessage").html("¡El correo ya está registrado! <a href='./iniciosesion.php'>Inicia sesión aquí</a>!")
+              $("#correoMessage").html("¡El correo ya está registrado! <a href='./iniciosesion.php'>Inicia sesión aquí</a>")
             }
           });
       } else $("#correoMessage").text("¡Debe ingresar su correo!").addClass("is-invalid")
     } else if (partAction === 1) {
-      pass = $("#txtPass").val();
-      $("#first-data").addClass("d-none");
-      $("#second-data").removeClass("d-none").addClass("d-block");
-      $("#txtNombres").focus();
-      $("#btnSubmit").text("CONTINUAR →");
-      partAction = 2;
+      if (document.getElementById("txtPass").validity.valid) {
+        pass = $("#txtPass").val();
+        $("#first-data").addClass("d-none");
+        $("#second-data").fadeIn("slow").removeClass("d-none");
+        $("#txtNombres").focus();
+        $("#btnSubmit").text("CONTINUAR →");
+        partAction = 2;
+      } else {
+        $("#txtPass").addClass("is-invalid");
+      }
     } else if (partAction === 2) {
-      firstname = $("#txtNombres").val();
-      lastname1 = $("#txtAPaterno").val();
-      lastname2 = $("#txtAMaterno").val();
-      tdoc = $("#cmbTDocumento").val();
-      doc = $("#txtDocumento").val();
-      $("#txtNacimiento").focus();
-      $("#second-data").removeClass("d-block").addClass("d-none");
-      $("#three-data").removeClass("d-none").addClass("d-block");
-      partAction = 3;
+      if (document.getElementById("txtNombres").validity.valid &&
+        document.getElementById("txtAPaterno").validity.valid &&
+        document.getElementById("txtAMaterno").validity.valid &&
+        document.getElementById("cmbTDocumento").validity.valid &&
+        document.getElementById("txtDocumento").validity.valid) {
+        firstname = $("#txtNombres").val();
+        lastname1 = $("#txtAPaterno").val();
+        lastname2 = $("#txtAMaterno").val();
+        tdoc = $("#cmbTDocumento").val();
+        doc = $("#txtDocumento").val();
+        $("#txtNacimiento").focus();
+        $("#second-data").removeClass("d-block").addClass("d-none");
+        $("#three-data").removeClass("d-none");
+        partAction = 3;
+      }
     } else if (partAction === 3) {
-      fnac = $("#txtNacimiento").val();
-      cel = $("#txtCelular").val();
-      pais = $("#cmbPais").val();
-      gen = $("#cmbGenero").val();
+      if (document.getElementById("txtNacimiento").validity.valid &&
+        document.getElementById("txtCelular").validity.valid &&
+        document.getElementById("cmbPais").validity.valid &&
+        document.getElementById("cmbGenero").validity.valid) {
+        fnac = $("#txtNacimiento").val();
+        cel = $("#txtCelular").val();
+        pais = $("#cmbPais").val();
+        gen = $("#cmbGenero").val();
 
-      var formData = new FormData();
-      formData.append('nombres_registrar', firstname);
-      formData.append('apellidoPat_registrar', lastname1);
-      formData.append('apellidoMat_registrar', lastname2);
-      formData.append('email_user_registrar', email);
-      formData.append('pass_registrar', pass);
-      formData.append('telef_registrar', cel);
-      formData.append('tipo_documento', tdoc);
-      formData.append('num_docu_registrar', doc);
-      formData.append('sexo', gen);
-      formData.append('fecha_registrar', fnac);
-      formData.append('pais_registrar', pais);
+        var formData = new FormData();
+        formData.append('nombres_registrar', firstname);
+        formData.append('apellidoPat_registrar', lastname1);
+        formData.append('apellidoMat_registrar', lastname2);
+        formData.append('email_user_registrar', email);
+        formData.append('pass_registrar', pass);
+        formData.append('telef_registrar', cel);
+        formData.append('tipo_documento', tdoc);
+        formData.append('num_docu_registrar', doc);
+        formData.append('sexo', gen);
+        formData.append('fecha_registrar', fnac);
+        formData.append('pais_registrar', pais);
 
-      fetch("./register.php", {
-        method: 'POST',
-        body: formData
-      }).then(response => response.ok)
-        .catch(error => console.error('Error:', error))
-        .then(() => { alert("¡Registro éxitoso!"); window.location.href = "./iniciosesion.php" })
-      // alert("¡Registro éxitoso!");
+        fetch("./register.php", {
+          method: 'POST',
+          body: formData
+        }).then(response => response.ok)
+          .catch(error => console.error('Error:', error))
+          .then(() => { Reset_data(); $("#regSuccess").modal("show"); })
+      }
     }
   })
+
+  $("#btnTogoLogin").click(() => { window.location.href = "./iniciosesion.php" })
 });
