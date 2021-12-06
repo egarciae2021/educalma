@@ -32,9 +32,11 @@
   <div class="row row-cols-1 row-cols-md-2 h-100 w-100 m-0">
     <div class="col h-md-100 bg-light row row-cols-1 m-0 p-5">
       <div class="col"></div>
-      <div class="col mx-auto align-self-center" style="max-width: 400px">
-        <div class="col-12 mb-5">
-          <img style="max-width: 150px" src="assets/img/logo_educalma.svg" alt="Logo Educalma" />
+      <div class="col h-auto mx-auto align-self-center" style="max-width: 400px">
+        <div class="col-12 mb-4">
+          <a href="./iniciosesion.php">
+            <img style="max-width: 150px" src="assets/img/logo_educalma.svg" alt="Logo Educalma" />
+          </a>
         </div>
         <h5 class="col d-block">¡Únete y comienza a potenciar tu carrera!</h5>
         <form autocomplete="off" id="form_data">
@@ -188,15 +190,11 @@
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">¡Registro éxitoso!</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
         </div>
         <div class="modal-body">
           Inicie sesión, por favor.
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
           <button type="button" class="btn btn-primary" id="btnTogoLogin">Ir</button>
         </div>
       </div>

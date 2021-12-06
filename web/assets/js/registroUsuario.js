@@ -134,14 +134,14 @@ $(document).ready(() => {
     var icon = $("#basic-addon2 i");
     if (txt.attr("type") === "password") {
       txt.attr("type", "text");
-      icon.attr("class", "fa fa-eye")
+      icon.attr("class", "fa fa-eye");
     } else {
       txt.attr("type", "password");
-      icon.attr("class", "fa fa-eye-slash")
+      icon.attr("class", "fa fa-eye-slash");
     }
   });
 
-  $("#form_data").submit((e) => e.preventDefault())
+  $("#form_data").submit((e) => e.preventDefault());
 
   var partAction = 0;
   var email = "";
@@ -159,31 +159,48 @@ $(document).ready(() => {
   const Reset_data = () => {
     partAction = 0;
     $("#first-data").removeClass("d-none");
-    $("#txtEmail").removeClass("is-valid").removeClass("is-invalid").prop("readonly", false);
-    $("#passBox").addClass("d-none");
+    email = "";
+    $("#txtEmail")
+      .val("")
+      .removeClass("is-valid")
+      .removeClass("is-invalid")
+      .prop("readonly", false);
+    $("#passBox")
+      .addClass("d-none")
+      .removeClass("is-invalid")
+      .removeClass("is-valid");
     $("#second-data").addClass("d-none");
     $("#three-data").addClass("d-none");
-    email = "";
-    $("#txtEmail").val("");
     pass = "";
-    $("#txtPass").val("");
+    $("#txtPass").val("").removeClass("is-invalid").removeClass("is-valid");
+    firstname = "";
+    $("#txtNombres").val("").removeClass("is-invalid").removeClass("is-valid");
     lastname1 = "";
-    $("#txtAPaterno").val("");
+    $("#txtAPaterno").val("").removeClass("is-invalid").removeClass("is-valid");
     lastname2 = "";
-    $("#txtAMaterno").val("");
+    $("#txtAMaterno").val("").removeClass("is-invalid").removeClass("is-valid");
     tdoc = "";
-    $("#cmbTDocumento").val("");
+    $("#cmbTDocumento")
+      .val("")
+      .removeClass("is-invalid")
+      .removeClass("is-valid");
     doc = "";
-    $("#txtDocumento").val("");
+    $("#txtDocumento")
+      .val("")
+      .removeClass("is-invalid")
+      .removeClass("is-valid");
     fnac = "";
-    $("#txtNacimiento").val("");
+    $("#txtNacimiento")
+      .val("")
+      .removeClass("is-invalid")
+      .removeClass("is-valid");
     cel = "";
-    $("#txtCelular").val("");
+    $("#txtCelular").val("").removeClass("is-invalid").removeClass("is-valid");
     pais = "";
-    $("#cmbPais").val("");
+    $("#cmbPais").val("").removeClass("is-invalid").removeClass("is-valid");
     gen = "";
-    $("#cmbGenero").val("");
-  }
+    $("#cmbGenero").val("").removeClass("is-invalid").removeClass("is-valid");
+  };
 
   // Validar correo
   $("#btnSubmit").click((e) => {
@@ -191,28 +208,36 @@ $(document).ready(() => {
     if (partAction === 0) {
       if (document.getElementById("txtEmail").validity.valid) {
         var formData = new FormData();
-        formData.append('email', email);
+        formData.append("email", email);
         fetch("./verifiedCorreo.php", {
-          method: 'POST',
-          body: formData
-        }).then(response => response.json())
-          .catch(error => console.error('Error:', error))
-          .then(response => {
+          method: "POST",
+          body: formData,
+        })
+          .then((response) => response.json())
+          .catch((error) => console.error("Error:", error))
+          .then((response) => {
             $("#txtEmail").val(email);
             if (response.cantidad === "0") {
               $("#lblEmail").text("Correo");
-              $("#txtEmail").removeClass("is-invalid").addClass("is-valid").attr("readonly", "");
+              $("#txtEmail")
+                .removeClass("is-invalid")
+                .addClass("is-valid")
+                .attr("readonly", "");
               $("#passBox").fadeIn("slow").removeClass("d-none");
               $("#passBox input").focus();
               $("#btnSubmit").text("REGISTRARSE");
               partAction = 1;
-            }
-            else {
+            } else {
               $("#txtEmail").removeClass("is-valid").addClass("is-invalid");
-              $("#correoMessage").html("¡El correo ya está registrado! <a href='./iniciosesion.php'>Inicia sesión aquí</a>")
+              $("#correoMessage").html(
+                "¡El correo ya está registrado! <a href='./iniciosesion.php'>Inicia sesión aquí</a>"
+              );
             }
           });
-      } else $("#correoMessage").text("¡Debe ingresar su correo!").addClass("is-invalid")
+      } else
+        $("#correoMessage")
+          .text("¡Debe ingresar su correo!")
+          .addClass("is-invalid");
     } else if (partAction === 1) {
       if (document.getElementById("txtPass").validity.valid) {
         pass = $("#txtPass").val();
@@ -225,11 +250,13 @@ $(document).ready(() => {
         $("#txtPass").addClass("is-invalid");
       }
     } else if (partAction === 2) {
-      if (document.getElementById("txtNombres").validity.valid &&
+      if (
+        document.getElementById("txtNombres").validity.valid &&
         document.getElementById("txtAPaterno").validity.valid &&
         document.getElementById("txtAMaterno").validity.valid &&
         document.getElementById("cmbTDocumento").validity.valid &&
-        document.getElementById("txtDocumento").validity.valid) {
+        document.getElementById("txtDocumento").validity.valid
+      ) {
         firstname = $("#txtNombres").val();
         lastname1 = $("#txtAPaterno").val();
         lastname2 = $("#txtAMaterno").val();
@@ -241,37 +268,45 @@ $(document).ready(() => {
         partAction = 3;
       }
     } else if (partAction === 3) {
-      if (document.getElementById("txtNacimiento").validity.valid &&
+      if (
+        document.getElementById("txtNacimiento").validity.valid &&
         document.getElementById("txtCelular").validity.valid &&
         document.getElementById("cmbPais").validity.valid &&
-        document.getElementById("cmbGenero").validity.valid) {
+        document.getElementById("cmbGenero").validity.valid
+      ) {
         fnac = $("#txtNacimiento").val();
         cel = $("#txtCelular").val();
         pais = $("#cmbPais").val();
         gen = $("#cmbGenero").val();
 
         var formData = new FormData();
-        formData.append('nombres_registrar', firstname);
-        formData.append('apellidoPat_registrar', lastname1);
-        formData.append('apellidoMat_registrar', lastname2);
-        formData.append('email_user_registrar', email);
-        formData.append('pass_registrar', pass);
-        formData.append('telef_registrar', cel);
-        formData.append('tipo_documento', tdoc);
-        formData.append('num_docu_registrar', doc);
-        formData.append('sexo', gen);
-        formData.append('fecha_registrar', fnac);
-        formData.append('pais_registrar', pais);
+        formData.append("nombres_registrar", firstname);
+        formData.append("apellidoPat_registrar", lastname1);
+        formData.append("apellidoMat_registrar", lastname2);
+        formData.append("email_user_registrar", email);
+        formData.append("pass_registrar", pass);
+        formData.append("telef_registrar", cel);
+        formData.append("tipo_documento", tdoc);
+        formData.append("num_docu_registrar", doc);
+        formData.append("sexo", gen);
+        formData.append("fecha_registrar", fnac);
+        formData.append("pais_registrar", pais);
 
         fetch("./register.php", {
-          method: 'POST',
-          body: formData
-        }).then(response => response.ok)
-          .catch(error => console.error('Error:', error))
-          .then(() => { Reset_data(); $("#regSuccess").modal("show"); })
+          method: "POST",
+          body: formData,
+        })
+          .then((response) => response.ok)
+          .catch((error) => console.error("Error:", error))
+          .then(() => {
+            Reset_data();
+            $("#regSuccess").modal({ backdrop: "static" });
+          });
       }
     }
-  })
+  });
 
-  $("#btnTogoLogin").click(() => { window.location.href = "./iniciosesion.php" })
+  $("#btnTogoLogin").click(() => {
+    window.location.href = "./iniciosesion.php";
+  });
 });
