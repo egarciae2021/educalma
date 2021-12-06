@@ -89,6 +89,7 @@
                                     <?php
 
                                     foreach ($curso as $curso) {
+                                        $pdo4 = Database::connect();
                                         $idCate = $curso['categoriaCurso'];
                                         $sql4 = "SELECT * FROM categorias WHERE idCategoria = '$idCate'";
                                         $q4 = $pdo4->prepare($sql4);
