@@ -113,7 +113,7 @@
                 <button type="button"<?php if ($access=="d") {
                     echo "disabled";
                 }?> class="btn btn-outline-secondary" id="btnV"
-                    onclick="parent.location='includes/curso/VideoSiguiente.php?id=<?php echo $id; ?>&idtema=<?php echo ($idtema+1)?>&id_modulo=<?php echo $dato['idModulo']?>'">
+                    onclick="parent.location='includes/curso/VideoSiguiente.php?id=<?php echo $id; ?>&validar=1&c_modulo=<?php echo $cont_modulo;?>&c_tema=<?php echo ($cont_tema+1);?>&idmodulo=<?php echo $dato['idModulo']?>'">
                     Siguiente <strong> > </strong></button>
             </div>
             <div class="col-md-1"></div>

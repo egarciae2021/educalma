@@ -73,7 +73,8 @@
         <div class="col-md-1"></div>
         <div class="col-md-10">
             <div class="buttonfaq">
-                <a style="pointer-events: none; href="video.php?id=<?php echo $id;?>&idtema=<?php echo $dato3['idTema'];?>&id_modulo=<?php echo $dato2['idModulo']?>">Siguiente</a>
+                <!-- <a style="pointer-events: none;" href="video.php?id=<?php echo $id;?>&validar=1&idtema=<?php echo $dato3['idTema'];?>&id_modulo=<?php echo $dato2['idModulo']?>">Siguiente</a> -->
+                <a href="video.php?id=<?php echo $id;?>&idtema=<?php echo $dato3['idTema'];?>&validar=<?php echo $validacion;?>&id_modulo=<?php echo $dato2['idModulo']?>">Siguiente</a>
             </div>
         </div>
         <div class="col-md-1"></div>
@@ -99,8 +100,18 @@
             $q4 = $pdo4->prepare($sql4);
             $q4->execute(array());
             Database::disconnect();
+
+            if(!isset($_GET['c_modulo'])){
+                $_GET['c_modulo']=1;
+            }
+            $cont_modulo=$_GET['c_modulo'];
+            if(!isset($_GET['c_tema'])){
+                $_GET['c_tema']=1;
+            }
+            $cont_tema=$_GET['c_tema'];
         
-            $d=$dato2['idModulo'];
+        
+            //$d=$dato2['idModulo'];
 
         $sqli="SELECT c.idModulo,c.nombreModulo,p.nombreTema,p.idTema,l.idCurso FROM tema p INNER JOIN modulo c ON c.idModulo=p.id_modulo INNER JOIN cursos l ON idCurso= c.id_curso WHERE l.idCurso='$id'ORDER BY c.idModulo, p.idTema ASC";
         $qs = $pdo3->prepare($sqli);
@@ -108,7 +119,7 @@
         
         $resultado1=$qs->fetchAll();
         
-        $datoss=$qs->fetch(PDO::FETCH_ASSOC);
+        // $datoss=$qs->fetch(PDO::FETCH_ASSOC);
 
         if (!isset($resultado1[0]['idTema']) || $resultado1[0]['idTema']==false) {
         echo "No Tiene ningun video";
@@ -133,14 +144,16 @@
                 $temp2++;
 
                 ?>
-                <a href="video.php?id=<?php echo $id; ?>&idtema=<?php echo ($temp2);?>&id_modulo=<?php echo $resultado1[$i]['idModulo'];?>">
+                <a href="video.php?id=<?php echo $id; ?>&idtema=<?php echo ($temp2);?>&validar=<?php $validacion?>&id_modulo=<?php echo $resultado1[$i]['idModulo'];?>">
                     <div style=" padding: 5px 20px;"><?php echo $resultado1[$i]['nombreTema'];?></div>
                 </a>
                 <?php
                 if($temp!=$resultado1[$i]['idModulo']){
                     $dato4=$q4->fetch(PDO::FETCH_ASSOC);
+                    $cont_modulo++;
                     ?>
-                    <a href="cuestionario.php?id=<?php echo $id;?>&idModulo=<?php echo $dato4['idModulo'];?>">
+                    <!-- <a href="cuestionario.php?id=<?php echo $id;?>&idModulo=<?php echo $dato4['idModulo'];?>"> -->
+                    <a href="cuestionario.php?id=<?php echo $id;?>&c_modulo=<?php echo $cont_modulo;?>&c_tema=<?php echo ($cont_tema);?>&idModulo=<?php echo $dato4['idModulo'];?>">
                                 <div style=" padding: 5px 30px;">Cuestionario</div>
                             </a>
                     <?php
@@ -153,8 +166,8 @@
         Database::disconnect();
             
         ?>
-        <?php while($dato4=$q4->fetch(PDO::FETCH_ASSOC)){ ?>
-        <hr class="lineahori">
+        <?php //while($dato4=$q4->fetch(PDO::FETCH_ASSOC)){ ?>
+        <!-- <hr class="lineahori">
         <div class="row">
 
             <div class="col-md-1"></div>
@@ -166,21 +179,21 @@
                         <details>
                             <summary><?php echo $dato4['nombreModulo'];?></summary>
                             <?php 
-                                $pdo5 = Database::connect(); 
-                                $sql5 = "SELECT * FROM tema WHERE id_modulo='$dato4[idModulo]'";
-                                $q5 = $pdo5->prepare($sql5);
-                                $q5->execute(array());
-                                Database::disconnect();
-                                while($dato5=$q5->fetch(PDO::FETCH_ASSOC)){
-                                    echo var_dump($dato5['idTema']) ;
-                                    // echo $n=count($dato5['idTema']);
-                                    $n=($dato5['idTema']-$dato5['idTema']);
+                                // $pdo5 = Database::connect(); 
+                                // $sql5 = "SELECT * FROM tema WHERE id_modulo='$dato4[idModulo]'";
+                                // $q5 = $pdo5->prepare($sql5);
+                                // $q5->execute(array());
+                                // Database::disconnect();
+                                // while($dato5=$q5->fetch(PDO::FETCH_ASSOC)){
+                                //     echo var_dump($dato5['idTema']) ;
+                                //     // echo $n=count($dato5['idTema']);
+                                //     $n=($dato5['idTema']-$dato5['idTema']);
                             ?>
                             
                             <a href="video.php?id=<?php echo $id; ?>&idtema=<?php echo ($n+1);?>&id_modulo=<?php echo $dato4['idModulo']?>">
                                 <div style=" padding: 5px 20px;"><?php echo $dato5['nombreTema'];?></div>
                             </a>
-                            <?php }?>
+                            <?php //}?>
                             
 
 
@@ -195,8 +208,8 @@
 
             <div class="col-md-1"></div>
 
-        </div>
-        <?php }?>
+        </div> -->
+        <?php //}?>
         <hr class="lineahori">
 
 
