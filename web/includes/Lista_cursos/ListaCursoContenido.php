@@ -11,7 +11,7 @@
                     <hr>
                 </div>
             </div>
-            <div class="row">
+            <div class="row container" style="margin: 0 auto;">
                 <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
                     <div class="card">
                         <div class="row">
@@ -83,7 +83,7 @@
     </div>
 </div>
 
-<div class="container-fluid px-0">
+<div class="container-fluid px-0 ">
     <div class="row">
         <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4 section-title-courses">
             Cursos
@@ -114,7 +114,7 @@
             </div>
         </div> -->
     <div class="container-card-course">
-        <div class="row pt-4">
+        <div class="row pt-4 container" style="margin: 0 auto;">
             <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3">
                 <div class="card">
                     <div class="container-card-image">
