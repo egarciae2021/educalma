@@ -26,6 +26,9 @@ $(function () {
   
       if (!exists) {
         if (validarEmail($("#txtEmail").val())) {
+          window.location.href = "./#boxRotate";
+          scrollTo(scrollX, scrollY - 100);
+          $(".back input").first().focus();
           $("#boxRotate").addClass("active")
           $($(".box-email > .msg-error")[0]).removeClass("show")
         }
@@ -64,7 +67,8 @@ $(function () {
     })
     // Para reducir numero de suscripciones
     $("#quitNumber").click((e) => {
-      $("#numSusc").val(parseInt($("#numSusc").val()) - 1 || 0)
+      var numberSus = parseInt($("#numSusc").val()) || 0;
+      $("#numSusc").val(numberSus > 0 ? numberSus - 1 : 0)
     })
   })
   
