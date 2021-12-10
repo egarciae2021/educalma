@@ -1,7 +1,9 @@
 <?php   
     ob_start();
     @session_start();
+    if(isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)){
 ?>
+
 <?php include_once 'includes/Inicio/Head.php' ?>
 
 <body id="home" data-spy="scroll" data-target="#navbar-wd" data-offset="98">
@@ -13,6 +15,12 @@
 
 <?php include_once 'includes/Inicio/Footer.php' ?>
 <script src="assets/js/home.js"></script>
+<script src="assets/js/buscarCurso.js"></script>
+<?php
+    }else{
+        header('Location: iniciosesion.php');
+    }
+?>
 
 
 </body>

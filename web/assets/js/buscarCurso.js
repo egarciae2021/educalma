@@ -1,4 +1,5 @@
 $(document).ready(function(){
+  $('.buscar').focus();
     $('#buscar').on('keyup', function(){
       var buscar = $('#buscar').val()
       $.ajax({
