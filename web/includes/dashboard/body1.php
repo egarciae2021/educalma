@@ -58,6 +58,7 @@
                          <div class="nav__dropdown-collapse">
                              <div class="nav__dropdown-content">
                                  <a href="sidebarCursos.php" class="nav__dropdown-item nav__link">Mis Cursos</a>
+                                 <a href="ListaCursos.php" class="nav__dropdown-item nav__link">Ver todos los Cursos</a>
                                  <a href="agregarcurso.php" class="nav__dropdown-item nav__link">Donar Curso</a>
                                 <?php
                                     if($_SESSION['privilegio']==1 ||$_SESSION['privilegio']==6 ){

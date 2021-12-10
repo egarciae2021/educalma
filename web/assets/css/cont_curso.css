@@ -14,7 +14,7 @@ body {
 
 .filter {
     padding-top: 6.5rem;
-    padding-bottom: 7rem;
+    padding-bottom: 6.5rem;
 }
 
 .filter .container .col-lg-12 .button-group {
@@ -82,26 +82,27 @@ body {
 
 .filter .container .col-lg-12 .container .modal {
     font-family: "Montserrat", sans-serif;
+    font-size: 16px;
 }
 
 .filter .container .col-lg-12 .container .modal .modal-dialog .modal-content .modal-header .modal-title {
-    font-size: 16px;
     color: #7b7e85;
-    margin-top: 20px;
+    font-size: 16px;
+    margin-top: 1.3rem;
 }
 
 .filter .container .col-lg-12 .container .modal .modal-dialog .modal-content .modal-body .row .right {
-    height: 30px;
-    margin-left: 20px;
-    position: relative;
-    width: 30px;
-    display: inline;
+    /*texto largo*/
+    float: right;
+    margin-left: 4px;
 }
 
 .filter .container .col-lg-12 .container .modal .modal-dialog .modal-content .modal-body .row .left {
-    /*texto largo*/
-    float: left;
-    width: 80%;
+    height: 2rem;
+    margin-left: 20px;
+    position: relative;
+    width: 2rem;
+    text-align: center;
 }
 
 .filter .container .col-lg-12 .container .modal .modal-dialog .modal-content .modal-footer .btn-light {

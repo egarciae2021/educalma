@@ -72,8 +72,8 @@
             <div class="button-group">
                 <a class="button" data-filter=".design">CURSO</a>
                 <a class="button" data-filter=".development" href="foro.php?id=<?php echo $id;?>">FORO</a>
-                <!-- <a class="button" data-filter=".marketing" href="descargas.php">DESCARGABLE</a> -->
-                <!-- <a class="button" data-filter=".seo" href="progreso.php?id=<?php //echo $id ?>">PROGRESO</a> -->
+                <a class="button" data-filter=".marketing" href="descargas.php">DESCARGABLE</a>
+                <a class="button" data-filter=".seo" href="progreso.php?id=<?php echo $id ?>">PROGRESO</a>
                 
                 <?php
                 /*
@@ -146,45 +146,45 @@
                 <!-- MODAL -->
                 
                 <div class="modal fade" id="dialogo1">
-                    <div class="modal-dialog modal-sm modal-dialog-centered">
+                    <div class="modal-dialog modal modal-dialog-centered">
                         <div class="modal-content">
                             
                             <!-- cabecera del diálogo -->
                             <div class="modal-header">
-                                <h4 class="modal-title" style="font-size:15px;">Este curso incluye:</h4>
+                                <h4 class="modal-title">Este curso incluye:</h4>
                                 <button type="button" class="close" data-dismiss="modal">X</button>
                             </div>
                             
                             <!-- cuerpo del diálogo -->
                             <div class="modal-body">
                                 <div class="row">
-                                    <div class="right"><i class="far fa-file"></i></div>
-                                    <div class="left"><?php echo $modulos; ?> Módulos</div>
-                                </div>
-                            
+                                    <div class="left"><i class="far fa-file"></i></div>
+                                    <div class="rigth"><?php echo $modulos; ?> Módulos</div>
+                                </div>  
+                                
                                 <div class="row">
-                                    <div class="right"><i class="fas fa-folder"></i></div>
-                                    <div class="left"><?php echo $temas; ?> Temas</div>
+                                    <div class="left"><i class="fas fa-folder"></i></div>
+                                    <div class="right"><?php echo $temas; ?> Temas</div>
                                 </div>
                                 
                                 <div class="row">
-                                    <div class="right"><i class="fas fa-infinity"></i></div>
-                                    <div class="left"><?php echo $cuestionarios; ?> Cuestionarios</div>
+                                    <div class="left"><i class="fas fa-infinity"></i></div>
+                                    <div class="right"><?php echo $cuestionarios; ?> Cuestionarios</div>
                                 </div>
 
                                 <div class="row">
-                                    <div class="right"><i class="fas fa-mobile-alt"></i></div>
-                                    <div class="left">La nota mínima para aprobar el curso es <?php echo $minimo_respuestas_para_aprobar; ?></div>
+                                    <div class="left"><i class="fas fa-mobile-alt"></i></div>
+                                    <div class="right">La nota mínima para aprobar el curso es <?php echo $minimo_respuestas_para_aprobar; ?></div>
                                 </div>
                                 
                                 <div class="row">
-                                    <div class="right"><i class="fas fa-list-ol"></i></div>
-                                    <div class="left">Cantidad de preguntas: <?php echo $preguntas; ?></div>
+                                    <div class="left"><i class="fas fa-list-ol"></i></div>
+                                    <div class="right">Cantidad de preguntas: <?php echo $preguntas; ?></div>
                                 </div>
                                 
                                 <div class="row">
-                                    <div class="right"><i class="fas fa-trophy"></i></div>
-                                    <div class="left">Certificado de Finalización</div>
+                                    <div class="left"><i class="fas fa-trophy"></i></div>
+                                    <div class="right">Certificado de Finalización</div>
                                 </div>
                             
                             </div>
@@ -332,67 +332,68 @@
         
         <!-- Cursos destacados -->
         <!-- section -->
-        <div class="section layout_padding">
+        <!-- <div class="section layout_padding">
             <div class="container">
                 <div class="row">
                     
-                <div class="col-md-12">
-                    <div class="full">
-                        <div class="heading_main text-center">
-                           <h2><span>Cursos </span>destacados</h2>
+                    <div class="col-md-12">
+                        <div class="full">
+                            <div class="heading_main text-center">
+                            <h2><span>Cursos </span>destacados</h2>
+                            </div>
                         </div>
-                      </div>
-                </div>
-                
-                <?php 
-            
-                $pdo=Database::connect();
-                $sql="SELECT COUNT(*) as Cantidad,curso_id,c.permisoCurso FROM cursoinscrito as ci INNER JOIN cursos as c ON ci.id_cursoInscrito = c.idCurso WHERE c.permisoCurso = 1 GROUP BY curso_id ORDER BY Cantidad DESC";
-                $q=$pdo->prepare($sql);
-                $q->execute(array());
-
-                $cont = 0;
-                while($dato2=$q->fetch(PDO::FETCH_ASSOC)){
-                    $cont = $cont + 1;
-                    
-                    $curso_Id= $dato2['curso_id'];
-                    $pdo15=Database::connect();
-                    $sql15 = "SELECT * FROM cursos where idCurso='$curso_Id'";
-                    $q15 = $pdo15->prepare($sql15);
-                    $q15->execute(array());
-                            
-
-                    while($dato=$q15->fetch(PDO::FETCH_ASSOC)){
-                        
-                        
-                        ?>
-                    
-                    <div class="col-md-4">
-                        <div class="full blog_img_popular" style="width: 390px; height: 300px;">
-                        <a href="DetalleCurso.php?id=<?php echo $dato['idCurso']; ?>">
-                        <img style="height: 100%; width: 100%;" class="img-responsive" src="data:image/*;base64,<?php echo base64_encode($dato['imagenDestacadaCurso'])?>" alt="#" />
-                        <h4><?php echo $dato['nombreCurso']; ?></h4>
                     </div>
-                </div>
+                    
+                    <?php 
                 
-                <?php 
-         
-                }
-                if($cont==3){
-                    break ;
-                }
-            
-            }
-            
-            ?>
-            
+                    $pdo=Database::connect();
+                    $sql="SELECT COUNT(*) as Cantidad,curso_id,c.permisoCurso FROM cursoinscrito as ci INNER JOIN cursos as c ON ci.id_cursoInscrito = c.idCurso WHERE c.permisoCurso = 1 GROUP BY curso_id ORDER BY Cantidad DESC";
+                    $q=$pdo->prepare($sql);
+                    $q->execute(array());
+
+                    $cont = 0;
+                    while($dato2=$q->fetch(PDO::FETCH_ASSOC)){
+                        
+                        $cont = $cont + 1;
+                        
+                        $curso_Id= $dato2['curso_id'];
+                        $pdo15=Database::connect();
+                        $sql15 = "SELECT * FROM cursos where idCurso='$curso_Id'";
+                        $q15 = $pdo15->prepare($sql15);
+                        $q15->execute(array());
+                        
+                        while($dato=$q15->fetch(PDO::FETCH_ASSOC)){
+                            
+                            ?>
+                            
+                            <div class="col-md-4">
+                                <div class="full blog_img_popular" style="width: 390px; height: 300px;">
+                                <a href="DetalleCurso.php?id=<?php echo $dato['idCurso']; ?>">
+                                <img style="height: 100%; width: 100%;" class="img-responsive" src="data:image/*;base64,<?php echo base64_encode($dato['imagenDestacadaCurso'])?>" alt="#" />
+                                <h4><?php echo $dato['nombreCurso']; ?></h4>
+                                </div>
+                            </div>
+                            
+                            <?php
+                            
+                        }
+                        
+                        if($cont==3){
+                            
+                            break ;
+                        
+                        }
+                    
+                    }
+                    
+                    ?>
+                </div>
             </div>
-        </div>
+        </div> -->
     </div>
-  </div>
 </div>
-</div>
-    <!-- end section -->
+</div></div></div></div>
+<!-- end section -->
 
 
 
