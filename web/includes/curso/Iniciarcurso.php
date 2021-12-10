@@ -82,7 +82,7 @@
 
     <!-- start FAQ -->
     <div class="container">
-        <div class="row">
+      <!--  <div class="row">
             <div class="col-md-1"></div>
             <div class="col-md-10">
                 <div class="conttitu">
@@ -90,12 +90,12 @@
                 </div>
             </div>
             <div class="col-md-1"></div>
-        </div>
+        </div>-->
 
 
         <?php 
 
-            $pdo4 = Database::connect(); 
+          /*  $pdo4 = Database::connect(); 
             $sql4 = "SELECT * FROM modulo WHERE id_curso='$id'";
             $q4 = $pdo4->prepare($sql4);
             $q4->execute(array());
@@ -163,7 +163,7 @@
             $temp=$resultado1[$i]['idModulo'];
         }
         
-        Database::disconnect();
+        Database::disconnect();*/
             
         ?>
         <?php //while($dato4=$q4->fetch(PDO::FETCH_ASSOC)){ ?>
