@@ -72,8 +72,8 @@
             <div class="button-group">
                 <a class="button" data-filter=".design">CURSO</a>
                 <a class="button" data-filter=".development" href="foro.php?id=<?php echo $id;?>">FORO</a>
-                <a class="button" data-filter=".marketing" href="descargas.php">DESCARGABLE</a>
-                <a class="button" data-filter=".seo" href="progreso.php?id=<?php echo $id ?>">PROGRESO</a>
+               <!--  <a class="button" data-filter=".marketing" href="descargas.php">DESCARGABLE</a>-->
+               <!--  <a class="button" data-filter=".seo" href="progreso.php?id=<?php echo $id ?>">PROGRESO</a>-->
                 
                 <?php
                 /*
