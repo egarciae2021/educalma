@@ -23,7 +23,9 @@ function AlertEliminaTodo(idtodo) {
                     'Borrado!',
                     arr,
                     'success'
-                )
+                ).then(() => {
+                    window.location.reload();
+                });
             })
         }
     })
@@ -52,7 +54,9 @@ function AlertEliminacion(id) {
                     'Borrado!',
                     arr,
                     'success'
-                )
+                ).then(() => {
+                    window.location.reload();
+                });
             })
         }
     })
@@ -83,8 +87,10 @@ function AlertElimiSubComen(idSub) {
                     'Borrado!',
                     arr,
                     'success'
-                )
-            })
+                ).then(() => {
+                    window.location.reload();
+                });
+            })            
         }
     })
 }

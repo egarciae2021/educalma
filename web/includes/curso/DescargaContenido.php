@@ -6,8 +6,8 @@
     <div class="button-group filters-button-group"><center>
         <a class="button" data-filter=".design"><span>CURSO</span></a>
         <a class="button" data-filter=".development"><span>FORO</span></a>
-        <a class="button" data-filter=".marketing" href="descargas.php"><span>DESCARGABLE</span></a>
-        <a class="button" data-filter=".seo" href="progreso.php"><span>PROGRESO</span></a>
+        <!-- <a class="button" data-filter=".marketing" href="descargas.php"><span>DESCARGABLE</span></a>
+        <a class="button" data-filter=".seo" href="progreso.php"><span>PROGRESO</span></a> -->
     </Center></div>
     </div>
 
