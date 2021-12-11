@@ -12,7 +12,6 @@
     <link rel="stylesheet" href="assets/js/plugins/sweetalert2.min.css">
     <link rel="stylesheet" href="assets/css/stylebuttonAtras.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-
     <?php require_once "includes/Inicio/Head.php"; ?>
 
    
@@ -61,9 +60,25 @@ if(isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)){
                         <?php
                         require_once 'database/databaseConection.php';
                         $pdo3 = Database::connect();
-                        $sql0 = "SELECT * FROM cursos order by idCurso DESC";
+                        $sqlz = "SELECT * FROM cursos where permisoCurso=1 order by idCurso DESC ";
+                        $qz = $pdo3->prepare($sqlz);
+                        $qz->execute();
+
+                        $contar=$qz->rowCount();
+                        $cantidad_paginas=6;
+                        $page=$contar/$cantidad_paginas;
+                        $page=ceil($page);
+                        if ($contar>0) {
+                            if($_GET['pag']>$page||$_GET['pag']<1){
+                                header('Location:InfoCurso.php?pag=1');
+                            }
+                        }
+                        $inicio=($_GET['pag']-1)*$cantidad_paginas;
+
+                        $sql0 = "SELECT * FROM cursos WHERE permisoCurso=1 order by idCurso DESC ";
                         $q0 = $pdo3->prepare($sql0);
                         $q0->execute();
+                        
                         $cursio = $q0->fetchAll(PDO::FETCH_ASSOC);
                         if ($_SESSION['privilegio'] == 2) {
                             $idProfe = $_SESSION['codUsuario'];
@@ -73,7 +88,7 @@ if(isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)){
                             $sql3 = "SELECT p.idCurso,p.nombreCurso,p.descripcionCurso, p.categoriaCurso,
                              p.dirigido, p.costoCurso,p.introduccion,p.id_userprofesor,p.imagenDestacadaCurso,c.id_cursoInscrito,
                              c.curso_id, c.usuario_id, c.cod_curso,
-                              c.curso_obt FROM cursos p inner join cursoinscrito c WHERE c.usuario_id='$idProfe' AND p.idCurso=c.curso_id order by idCurso DESC";
+                              c.curso_obt FROM cursos p inner join cursoinscrito c WHERE c.usuario_id='$idProfe' AND p.idCurso=c.curso_id order by idCurso DESC LIMIT $inicio,$cantidad_paginas";
                         }
 
                         $q3 = $pdo3->prepare($sql3);
@@ -82,7 +97,7 @@ if(isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)){
 
                         ?>
                         <div class="table-responsive">
-                            <table id="example1" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                            <table id="example5" class="table table-striped table-bordered" cellspacing="0" width="100%">
                                 <thead>
 
                                     <tr>
@@ -133,6 +148,28 @@ if(isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)){
             </div>
             <!-- /.card -->
         </div>
+        <?php
+        
+
+        ?>
+                                <!--PAGINADOR-->       
+                                <nav aria-label="Page navigation calma" class="pdt50">
+                        <ul class="pagination justify-content-end">
+                            <li class="page-item <?php if($_GET['pag']<=1)echo 'disabled'?>">
+                                <a class="page-link" href="InfoCurso.php?pag=<?php echo $_GET['pag']-1;?>">
+                                Anterior
+                                </a>
+                            </li>
+                            <?php for($i=0;$i<$page;$i++):?>
+                            <li class="page-item <?php echo $_GET['pag']==$i+1?'activate':''?>"><a class="page-link" href="InfoCurso.php?pag=<?php echo $i+1;?>"><?php echo $i+1;?></a>
+                            </li>
+                            <?php endfor?>
+                            <li class="page-item <?php if($_GET['pag']>=$page) echo 'disabled'?>">
+                            <a class="page-link" href="InfoCurso.php?pag=<?php echo $_GET['pag']+1;?>">Siguiente</a>
+                        </li>
+                        </ul>
+                    </nav>
+                    <!--PAGINADOR-->
     </div>
     <!--
                     ======================================
@@ -376,6 +413,7 @@ if(isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)){
                 </div>
             </div>
         </div>
+
     </div>
     <?php Database::disconnect(); ?>
 
@@ -438,13 +476,13 @@ if(isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)){
     <!-- Page specific script -->
     <script>
         $(function() {
-            $("#example1").DataTable({
+            $("#example5").DataTable({
                 "responsive": true,
                 "lengthChange": false,
                 "autoWidth": false,
                 "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
             }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-            $('#example2').DataTable({
+            $('#example5').DataTable({
                 "paging": true,
                 "lengthChange": false,
                 "searching": false,
@@ -459,6 +497,7 @@ if(isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)){
   	<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.js"></script>
     <script src="assets/js/validarCategoria.js"></script>
     <script src="assets/js/plugins/sweetalert2.all.min.js"></script>
+    <script src="assets/js/pagination.js"></script>
     <?php
     }
     else{

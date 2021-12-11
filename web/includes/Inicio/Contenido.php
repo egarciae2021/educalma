@@ -21,7 +21,7 @@ if (!isset($_GET['pag'])) {
           ¡Impulsa tu aprendizaje junto a los mejores especialistas en EduCalma desde hoy!
         </div>
         <div class="button-panel">
-          <button type="button" class="btn btn_registrar_panel">Registrate!</button>
+          <a href="registroUsuario.php" type="button" class="btn btn_registrar_panel">Registrate!</a>
         </div>
       </div>
     </div>
@@ -128,9 +128,9 @@ if (!isset($_GET['pag'])) {
       <br>
       <div class="row">
         <div class="section-button">
-          <button type="button" class="btn btn-success">
+          <a href="ListaCursos.php?pag=1"type="button" class="btn btn-primary">
             Comienza a ver los cursos
-          </button>
+          </a>
         </div>
       </div>
     </div>

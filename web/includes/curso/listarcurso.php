@@ -58,12 +58,28 @@
                         require_once 'database/databaseConection.php';
                         $pdo3 = Database::connect();
 
+                    $sqlz = "SELECT * FROM cursos where permisoCurso=0 order by idCurso DESC ";
+                    $qz = $pdo3->prepare($sqlz);
+                    $qz->execute();
+
+                    $contar=$qz->rowCount();
+                    $cantidad_paginas=6;
+                    $page=$contar/$cantidad_paginas;
+                    $page=ceil($page);
+                    if ($contar>0) {
+                        if($_GET['pag']>$page||$_GET['pag']<1){
+                            header('Location:InfoCurso.php?pag=1');
+                        }
+                    }
+                    $inicio=($_GET['pag']-1)*$cantidad_paginas;
+
+
                         if ($_SESSION['privilegio'] == 2) {
                             $idProfe = $_SESSION['codUsuario'];
                             $sql3 = "SELECT * FROM cursos WHERE id_userprofesor='$idProfe' order by idCurso DESC";
                         } else {
                             $idProfe = $_SESSION['codUsuario'];
-                            $sql3 = "SELECT * FROM cursos WHERE permisoCurso=0 order by idCurso DESC";
+                            $sql3 = "SELECT * FROM cursos WHERE permisoCurso=0 order by idCurso DESC LIMIT $inicio,$cantidad_paginas";
                         }
 
                         $q3 = $pdo3->prepare($sql3);
@@ -140,6 +156,7 @@
                                             </td>
 
                                         </tr>
+                                        
                                     <?php }
                                     Database::disconnect();
                                     ?>
@@ -153,6 +170,24 @@
             <!-- /.card -->
         </div>
     </div>
+                                    <!--PAGINADOR-->       
+                                    <nav aria-label="Page navigation calma" class="pdt50">
+                        <ul class="pagination justify-content-end">
+                            <li class="page-item <?php if($_GET['pag']<=1)echo 'disabled'?>">
+                                <a class="page-link" href="publicarcursos.php?pag=<?php echo $_GET['pag']-1;?>">
+                                Anterior
+                                </a>
+                            </li>
+                            <?php for($i=0;$i<$page;$i++):?>
+                            <li class="page-item <?php echo $_GET['pag']==$i+1?'activate':''?>"><a class="page-link" href="publicarcursos.php?pag=<?php echo $i+1;?>"><?php echo $i+1;?></a>
+                            </li>
+                            <?php endfor?>
+                            <li class="page-item <?php if($_GET['pag']>=$page) echo 'disabled'?>">
+                            <a class="page-link" href="publicarcursos.php?pag=<?php echo $_GET['pag']+1;?>">Siguiente</a>
+                        </li>
+                        </ul>
+                    </nav>
+                    <!--PAGINADOR-->
     <!--
                     ======================================
                                 Lista Curso
@@ -186,7 +221,7 @@
                         $sql3 = "SELECT * FROM cursos WHERE id_userprofesor='$idProfe' order by idCurso DESC";
                     } else {
                         $idProfe = $_SESSION['codUsuario'];
-                        $sql3 = "SELECT * FROM cursos WHERE permisoCurso=0 order by idCurso DESC";
+                        $sql3 = "SELECT * FROM cursos WHERE permisoCurso=0 order by idCurso DESC LIMIT $inicio,$cantidad_paginas";
                     }
 
 
@@ -288,7 +323,7 @@
 
     <?php
     $sql4 = "SELECT * FROM categorias";
-    $q4 = $pdo4->prepare($sql4);
+    $q4 = $pdo3->prepare($sql4);
     $q4->execute(array());
     $datoCate = $q4->fetch(PDO::FETCH_ASSOC)
     ?>
