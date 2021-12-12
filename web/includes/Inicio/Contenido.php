@@ -100,7 +100,7 @@ if (!isset($_GET['pag'])) {
               <img src="./assets/images/3966968.png" alt="" />
             </div>
             <div class="card-title">
-              <p>Cursos</p>
+              <p>Desarrollo Personal</p>
             </div>
             <div class="card-descripti">
               <p>
@@ -115,7 +115,7 @@ if (!isset($_GET['pag'])) {
               <img src="./assets/images/certificado.png" alt="" />
             </div>
             <div class="card-title">
-              <p>Cursos</p>
+              <p>Certificados</p>
             </div>
             <div class="card-descripti">
               <p>

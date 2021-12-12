@@ -19,6 +19,7 @@
         .subir {
             padding: 5px 10px;
             background: #5451D6;
+            font-size: .8rem;
             color: #fff;
             border: 0px solid #fff;
             border-radius: 8px;
@@ -61,17 +62,7 @@
     <br>
     <br>
     <!--contenido-->
-    <div class="container-fluid">
-        <h2 class="mb-4" style="text-align: center; color:#4F52D6; font-size: 300%;font-family: 'Oswald', sans-serif;">
-                <center>Bienvenido a EduCalma</center>
-        </h2>
-        <div class="title">
-            <div class="mb-4">
-                <center><i class="fas fa-book"></i> Dona un Curso</center>
-            </div>
-        </div>
-        <h2><a href="sidebarCursos.php" class="btn-before-custom">Volver</a></h2>
- </div>
+    
         <!--contenido de los cursos -->
 
         <!-- 
@@ -190,16 +181,23 @@
 <div class="container-contformulario">
     <div class="contformulario" id="contformulario">
         <div class="row">
-            <div class="image">
-                <img src="./assets/images/donar02.png" alt="">
-            </div>
              <!--
                                         ======================================
                                                     Agregar Curso
                                         ======================================
                                          
             -->
-            <form name="formulario" id="newUserForm" method="POST" action="includes/Cursos_crud/Cursos_CRUD.php"  onsubmit="return comprobarDatosFormulario()" enctype="multipart/form-data">   
+            <form name="formulario" id="newUserForm" method="POST" action="includes/Cursos_crud/Cursos_CRUD.php"  onsubmit="return comprobarDatosFormulario()" enctype="multipart/form-data"> 
+                <div class="col-auto2">
+                    <a href="sidebarCursos.php" class="boton-nuevo">VOLVER</a>
+                </div>
+                <div class="container-fluid">
+                    <div class="title">
+                        <div class="mb-1">
+                            <center></i> Dona un Curso</center>
+                        </div>
+                    </div>
+                </div>
                 <div class="inputBox">
                     <h3>Nombre del Curso</h3>
                 <input type="text" name="nombres_agrecursos" id="names-agrecursos" placeholder="" aria-label="Nombrecurso" aria-describedby="names-addon">      
@@ -254,8 +252,14 @@
                         <div id="info"></div>
                     </div>
                 </div>
-                <input type="submit" class="boton1" style="font-size:medium;" value="Agregar">
+                <input type="submit" class="boton1"  value="Agregar">
             </form>
+            <div class="image">
+                <img src="./assets/images/card_04.jpg" alt="">
+            </div>
+            <div class="image2">
+                <img src="./assets/images/card_03.jpg" alt="">
+            </div>
         </div>
     </div>
 </div>
