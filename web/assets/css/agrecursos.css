@@ -108,6 +108,68 @@ body{
   width:460px;
 }
 
+/*botones*/
+
+.col-12 .card .card-body .table-responsive table tbody tr td a .btn {
+    display: inline-block;
+    font-size: 0.8rem;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    margin: 0.2rem;
+    padding: 1rem;
+    color: #ffffff;
+    border: none;
+    background: gray;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: medium;
+    text-transform: none;
+}
+
+.col-12 .card .card-body .table-responsive table tbody tr td a .btn:hover {
+    color: black;
+    background: transparent;
+    transition: 0.3s ease-in-out all;
+    text-decoration: none;
+}
+
+.col-12 .card .card-body .table-responsive table tbody tr td a .boton_add {
+    color: #fff;
+    border: 1px solid red;
+    background: red;
+    cursor: pointer;
+}
+
+.col-12 .card .card-body .table-responsive table tbody tr td a .boton_add:hover {
+    color: red;
+}
+
+.col-12 .card .card-body .table-responsive table tbody tr td a .boton_edit {
+    color: #fff;
+    border: 1px solid blue;
+    background: blue;
+    cursor: pointer;
+}
+
+.col-12 .card .card-body .table-responsive table tbody tr td a .boton_edit:hover {
+    color: blue;
+}
+
+.col-12 .card .card-body .table-responsive table tbody tr td a .boton_upload {
+    color: #fff;
+    border: 1px solid green;
+    background: green;
+    cursor: pointer;
+}
+
+.col-12 .card .card-body .table-responsive table tbody tr td a .boton_upload:hover {
+    color: darkgreen;
+}
+
+
+/*fin botones*/
+
 .contformulario .row form{
   flex:1 1 25rem;
   margin: 0 46rem 0 15rem;
