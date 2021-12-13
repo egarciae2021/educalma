@@ -13,45 +13,39 @@
 </head>
 
 <body>
-  <section class="Form my-4 mx-5">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-6">
-        <img src="./assets/images/—Pngtree—gradient fingerprint unlock login computer_5044947.png" class="img-fluid" alt="">
-        </div>
-        <div class="col-lg-6 px-5 pt-5">
-          <a href="index.php">
-            <img src="./assets/images/Logo.svg" class="logo-img" alt="image">
-          </a>
-          <h1 class="font-weight-bold py-3" style="font-weight: 900;">Bienvenido de nuevo!</h1>
-          <h4>¡Que bueno verte de nuevo por aquí!</h4>
-          <form id="form_login" action="includes/login/checklogin.php" method="POST">
-            <div class="form-row">
-              <div class="col-lg-7">
-                <span> Ingresa tu correo: </span>
-                <input type="email" name="email_user_login" id="email-user-login" class="form-control my-3 p-2 cajita" placeholder="Correo" required />
-              </div>
-            </div>
-            <div class="form-row">
-              <div class="col-lg-7">
-                <span> Ingresa tu contraseña: </span>
-                <input type="password" name="pass_login" id="pass-login" class="form-control my-3 p-2 cajita" placeholder="Contraseña" required />
-              </div>
-            </div>
-            <div class="form-row">
-              <div class="col-lg-7">
-                <button type="submit" class="btn1 mt-3 mb-5">Ingresar</button>
-              </div>
-            </div>
+  <div class="container" style="height: 100vh;">
+    <div class="row">
+      <div class="col-lg-6">
+        <img src="./assets/images/login.jpg" class="img-fluid" alt="">
+      </div>
+      <div class="col-lg-6 container-formulario">
+        <a href="index.php">
+          <img src="./assets/images/Logo.svg" class="logo-img" alt="image">
+        </a>
+        <h1 class="font-weight-bold py-3">Bienvenido de nuevo!</h1>
+        <form id="form_login" action="includes/login/checklogin.php" method="POST">
+          <div class="form-group">
+            <label for="email">Ingresa tu correo: </label>
+            <input type="email" name="email_user_login" id="email-user-login" class="form-control" placeholder="Correo" required />
+          </div>
+          <div class="form-group">
+            <label for="password">Ingresa tu contraseña: </label>
+            <input type="password" name="pass_login" id="pass-login" class="form-control" placeholder="Contraseña" required />
+          </div>
+          <div class="form-group my-5">
+            <button type="submit" class="btn btn-primary w-100">INGRESAR</button>
+          </div>
+          <div class="form-group my-3" style="text-align: center;">
             <a href="recuperar.php">¿Olvidaste tu Contraseña?</a>
             <br>
-            <p class="parr">¿Aún no tienes cuenta?</p><a href="registros.php" class="links">Registrarse</a>
-          </form>
-        </div>
+            <p class="parr mr-2">¿Aún no tienes cuenta?</p><a href="registros.php" class="links">Registrarse</a>
+          </div>
+
+
+        </form>
       </div>
     </div>
-  </section>
-
+  </div>
 
 
   <?php

@@ -167,7 +167,7 @@
 
           <!-- Button -->
           <div class="col">
-            <button class="col-12 btn btn-primary my-3" id="btnSubmit">CONTINUAR →</button>
+            <button class="col-12 btn btn-primary my-3" id="btnSubmit" style="background-color: #99ccff;border: none;">CONTINUAR →</button>
           </div>
         </form>
       </div>

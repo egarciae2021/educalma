@@ -69,7 +69,7 @@ if (!isset($_GET['pag'])) {
   </div>
 </div>
 <!-- CARDS BRINDA -->
-<div class="container-fluid container-fluid-brida">
+<div class="container container-fluid-brida">
   <div class="row">
     <div class="col-12">
       <div class="row">
@@ -128,7 +128,7 @@ if (!isset($_GET['pag'])) {
       <br>
       <div class="row">
         <div class="section-button">
-          <a href="ListaCursos.php?pag=1"type="button" class="btn btn-primary">
+          <a href="ListaCursos.php?pag=1" type="button" class="btn btn-primary">
             Comienza a ver los cursos
           </a>
         </div>
@@ -137,7 +137,7 @@ if (!isset($_GET['pag'])) {
   </div>
 </div>
 <!-- CARDS CURSOS -->
-<div class="container-fluid container-fluid-course">
+<div class="container container-fluid-course">
   <div class="row">
     <div class="col-12">
       <div class="row">
@@ -203,7 +203,7 @@ if (!isset($_GET['pag'])) {
   </div>
 </div>
 <!-- EMPRESAS -->
-<div class="container-bussines row m-5" id="test">
+<div class="container-bussines container row" id="test">
   <div class="col-12 col-xl-6 my-auto px-5">
     <div class="line"></div>
     <h2 class="">Educalma para empresas</h2>
@@ -227,6 +227,7 @@ if (!isset($_GET['pag'])) {
       <div class="front d-flex w-100">
         <div class="box-image d-flex align-items-center justify-content-center w-100">
           <img class="img-fluid" src="./assets/images/—Pngtree—people make puzzles concept team_5356575.png" alt="" />
+          <!-- <img class="img-fluid" src="./assets/images/empresas.jpg" alt="" /> -->
         </div>
       </div>
       <div class="back">
@@ -301,3 +302,38 @@ if (!isset($_GET['pag'])) {
     </div>
   </div>
 </div>
+<!-- EMPRESAS SHEYLA -->
+<!-- <div class="container container-fluid-empresa" style="border: 1px solid red;">
+  <div class="row">
+    <div class="col-12 col-sm-12 col-md-6 col-lg-8 col-xl-6" style="border: 1px solid red;">
+      <div class="line"></div>
+      <h2 class="">Educalma para empresas</h2>
+      <ul>
+        <li><i class="fas fa-check-circle mr-3"></i>Mide y analiza los resultados de tu equipo con nuestro servicio.
+        </li>
+        <li><i class="fas fa-check-circle mr-3"></i>Acompañamiento y seguimiento por un Ejecutivo de Cuenta.</li>
+        <li><i class="fas fa-check-circle mr-3"></i>Certificaciones por cada curso de plan compleado.</li>
+      </ul>
+
+
+      <div class="box-email">
+        <span>Recibe informaci&oacute;n específica para tu empresa</span>
+        <div class="row mt-2">
+          <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-8 mb-2" style="border: 1px solid red;">
+            <input type="email" placeholder="Escribe tu correo empresarial" id="txtEmail" />
+          </div>
+          <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-4" style="border: 1px solid red;">
+            <button id="btnAction">CONOCE MÁS</button>
+          </div>
+
+
+        </div>
+        <span class="msg-error">Debe ser un correo corporativo.</span>
+
+      </div>
+    </div>
+    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6" style="border: 1px solid red;">
+    <img class="img-fluid" src="./assets/images/empresas.jpg" alt="" />
+    </div>
+  </div>
+</div> -->
