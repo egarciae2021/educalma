@@ -1,3 +1,7 @@
+<head>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
 <?php
 // Este codigo hace validacion para que no se pueda acceder a cualquier pagina sin estar logueado__Pablo Loyola
 
@@ -27,62 +31,64 @@
        
         
     ?>
-<link rel="stylesheet" href="assets/css/style.css">
+
 
 <div class="section layout_padding">
     <div class="container">
-        <div class="row" style="height: 100px;">
+        <div class="row">
             <div class="col-md-1"></div>
             <div class="col-md-10">
-                <div class="full">
-                    <div class="heading_main text_align_start pdt50">
-                        <h2><span style="color: #4F52D6;"><?php echo $dato1['nombreCurso'];?></span></h2>
+                <div class="full pt-5" style="margin:0 5%;">
+                    <div class="heading_main text-left">
+                        <h2><span style="color: #4F52D6; font-weight:bold;"><?php echo $dato1['nombreCurso'];?></span></h2>
                     </div>
                 </div>
             </div>
             <div class="col-md-1"></div>
         </div>
         <hr class="lineahori">
-        <div class="row" >
-        <div class="col-md-1"></div>
-        <div class="col-md-10">
-        <div class="contbox">
-            <h1>Introducción</h1>
-            <p> <?php echo $dato1['introduccion']; ?></p>
-        </div>
-        </div>
-        <div class="col-md-1"></div>
-        </div>
-    </div>
-    <?php 
-        $pdo2 = Database::connect(); 
-        $sql2 = "SELECT * FROM modulo WHERE id_curso='$id'";
-        $q2 = $pdo2->prepare($sql2);
-        $q2->execute();
-        $dato2 = $q2->fetch(PDO::FETCH_ASSOC);
-        Database::disconnect();
-
-        $pdo3 = Database::connect(); 
-        $sql3 = "SELECT * FROM tema WHERE id_modulo='$dato2[idModulo]'";
-        $q3 = $pdo3->prepare($sql3);
-        $q3->execute();
-        $dato3 = $q3->fetch(PDO::FETCH_ASSOC);
-    ?>
-    <br>
-    <div class="row">
-        <div class="col-md-1"></div>
-        <div class="col-md-10">
-            <div class="buttonfaq">
-                <!-- <a style="pointer-events: none;" href="video.php?id=<?php echo $id;?>&validar=1&idtema=<?php echo $dato3['idTema'];?>&id_modulo=<?php echo $dato2['idModulo']?>">Siguiente</a> -->
-                <a href="video.php?id=<?php echo $id;?>&idtema=<?php echo $dato3['idTema'];?>&validar=<?php echo $validacion;?>&id_modulo=<?php echo $dato2['idModulo']?>">Siguiente</a>
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+                <div class="contbox">
+                    <h1>Introducción</h1>
+                    <p><?php echo $dato1['introduccion']; ?></p>
+                </div>
             </div>
+            <div class="col-md-1"></div>
         </div>
-        <div class="col-md-1"></div>
-    </div>
+    
+        <?php 
+            $pdo2 = Database::connect(); 
+            $sql2 = "SELECT * FROM modulo WHERE id_curso='$id'";
+            $q2 = $pdo2->prepare($sql2);
+            $q2->execute();
+            $dato2 = $q2->fetch(PDO::FETCH_ASSOC);
+            Database::disconnect();
 
+            $pdo3 = Database::connect(); 
+            $sql3 = "SELECT * FROM tema WHERE id_modulo='$dato2[idModulo]'";
+            $q3 = $pdo3->prepare($sql3);
+            $q3->execute();
+            $dato3 = $q3->fetch(PDO::FETCH_ASSOC);
+        ?>
+        
+        <br>
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+                <div class="buttonfaq">
+                    <!-- <a style="pointer-events: none;" href="video.php?id=<?php echo $id;?>&validar=1&idtema=<?php echo $dato3['idTema'];?>&id_modulo=<?php echo $dato2['idModulo']?>">Siguiente</a> -->
+                    <a href="video.php?id=<?php echo $id;?>&idtema=<?php echo $dato3['idTema'];?>&validar=<?php echo $validacion;?>&id_modulo=<?php echo $dato2['idModulo']?>">Siguiente</a>
+                </div>
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+    </div>
+    
     <!-- start FAQ -->
     <div class="container">
-      <!--  <div class="row">
+        <!--  <div class="row">
             <div class="col-md-1"></div>
             <div class="col-md-10">
                 <div class="conttitu">
@@ -210,15 +216,17 @@
 
         </div> -->
         <?php //}?>
-        <hr class="lineahori">
 
+        <hr class="lineahori">
 
     </div>
     <br>
     <br>
+
     <?php
     }
     else{
                 header('Location:iniciosesion.php');
     }
+    
 ?>

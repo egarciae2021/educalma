@@ -90,7 +90,6 @@
                         <div class="table-responsive">
                             <table id="example1" class="table table-striped table-bordered" cellspacing="0" width="100%">
                                 <thead>
-
                                     <tr>
                                         <th>Nombre</th>
                                         <th>Categoría</th>
@@ -112,7 +111,7 @@
                                         $q4->execute(array());
                                         $datoCate = $q4->fetch(PDO::FETCH_ASSOC)
                                     ?>
-                                        <tr>
+                                        <tr class="h-100 justify-content-center align-items-center">
                                             <td><?php echo $curso['nombreCurso']; ?></td>
                                             <td><?php echo $datoCate['nombreCategoria']; ?></td>
                                             <td><?php echo $curso['dirigido']; ?></td>
@@ -126,22 +125,22 @@
                                                 ?>
                                                     <!--para agregar modulo-->
                                                     <a href="agregarModulos.php?id=<?php echo $curso['idCurso']; ?>">
-                                                        <button class="boton_personalizado" type="button"><i class="far fa-plus-square  fa-2x"></i> </button>
+                                                        <button class="btn btn-outline-secondary boton_add" type="button"><i class="far fa-plus-square"></i> </button>
                                                     </a>
                                                     <!--para editar curso-->
                                                     <a href="editarcurso.php?id_curso=<?php echo $curso['idCurso']; ?>">
-                                                        <button class="boton_personalizado" type="button"><i class="far fa-edit fa-2x"></i></button>
+                                                        <button class="btn boton_edit" type="button"><i class="far fa-edit"></i></button>
                                                     </a>
                                                     <!--para quitar curso-->
-                                                    <a href="includes/Cursos_crud/Cursos_CRUD.php?id_curso=<?php echo $curso['idCurso']; ?>">
+                                                    <!-- <a href="includes/Cursos_crud/Cursos_CRUD.php?id_curso=<?php echo $curso['idCurso']; ?>">
                                                         <button class="boton_personalizado" type="button"><i class="far fa-bell-slash fa-2x"></i></button>
-                                                    </a>
+                                                    </a> -->
                                                 <?php
                                                  if($_SESSION['privilegio'] == 1) {
                                                 ?>
                                                     <!--para quitar curso-->
                                                     <a href="includes/Cursos_crud/aceptarCurso.php?id_curso=<?php echo $curso['idCurso']; ?>">
-                                                        <button class="boton_personalizado" type="button">Publicar</button>
+                                                        <button class="btn boton_upload" type="button">Publicar</button>
                                                     </a>
 
                                                 <?php
@@ -150,9 +149,9 @@
                                                 ?>
 
                                                 <!--ver curso-->
-                                                <a href="curso.php?id=<?php echo $curso['idCurso']; ?>">
+                                                <!-- <a href="curso.php?id=<?php echo $curso['idCurso']; ?>">
                                                     <i class="far fa-eye fa-2x"></i>
-                                                </a>
+                                                </a> -->
                                             </td>
 
                                         </tr>
