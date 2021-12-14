@@ -16,8 +16,8 @@
         <div class="navbar-header">
           <a class="navbar-brand" href="curso.php">Curso</a>
           <a class="navbar-brand" href="#">Foro</a>
-          <a class="navbar-brand" href="descargas.php">Descargables</a>
-          <a class="navbar-brand" href="progreso.php">Progreso</a>
+          <!-- <a class="navbar-brand" href="descargas.php">Descargables</a>
+          <a class="navbar-brand" href="progreso.php">Progreso</a> -->
         </div>
     </div>
 </nav>

@@ -58,24 +58,42 @@
                          <div class="nav__dropdown-collapse">
                              <div class="nav__dropdown-content">
                                  <a href="sidebarCursos.php" class="nav__dropdown-item nav__link">Mis Cursos</a>
+                                 <a href="ListaCursos.php?pag=1" class="nav__dropdown-item nav__link">Ver todos los Cursos</a>
                                  <a href="agregarcurso.php" class="nav__dropdown-item nav__link">Donar Curso</a>
+                                <?php
+                                    if($_SESSION['privilegio']==1 ||$_SESSION['privilegio']==6 ){
+                                ?>
+                                 <a href="publicarcursos.php?pag=1" class="nav__dropdown-item nav__link">Publicar cursos</a>
+                                 <?php
+                                  }
+                                ?>
                              </div>
                          </div>
                      </div>
-                     <div class="nav__dropdown">
-                         <a href="agregarCategorias.php" class="nav__link">
-                             <i class="far fa-check-circle nav__icon"></i>
-                             <span class="nav__name">Categoria</span>
-                             <!-- <i class='bx bx-chevron-down nav__icon nav__dropdown-icon'></i> -->
-                             <i class="fas fa-caret-down nav__icon nav__dropdown-icon"></i>
-                         </a>
 
-                         <div class="nav__dropdown-collapse">
-                             <div class="nav__dropdown-content">
-                                 <a href="agregarCategorias.php" class="nav__dropdown-item nav__link">Nueva Categoria</a>
-                             </div>
-                         </div>
-                     </div>
+                    <?php
+                        if($_SESSION['privilegio']==1 ||$_SESSION['privilegio']==6 ){
+                    ?>
+                        <div class="nav__dropdown">
+                            <a href="agregarCategorias.php" class="nav__link">
+                                <i class="far fa-check-circle nav__icon"></i>
+                                <span class="nav__name">Categoria</span>
+                                <!-- <i class='bx bx-chevron-down nav__icon nav__dropdown-icon'></i> -->
+                                <i class="fas fa-caret-down nav__icon nav__dropdown-icon"></i>
+                            </a>
+
+                            <div class="nav__dropdown-collapse">
+                                <div class="nav__dropdown-content">
+                                    
+                                    <a href="agregarCategorias.php" class="nav__dropdown-item nav__link">Nueva Categoria</a>
+                                    
+                                </div>
+                            </div>
+                        </div>
+
+                    <?php
+                        }
+                    ?>
 
                      <a href="index.php" class="nav__link">
                          <!-- <i class='bx bx-home nav__icon'></i> -->

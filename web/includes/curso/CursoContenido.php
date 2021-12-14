@@ -1,3 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Cursos</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="././assets/css/cont_curso.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
 <?php
  if(isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)){
 ?>
@@ -12,312 +24,376 @@
         $q4 = $pdo4->prepare($sql4);
         $q4->execute(array());
         $dato4 = $q4->fetch(PDO::FETCH_ASSOC);
+
+        //Cantidad de modulos del curso
+        $pdo13 = Database::connect(); 
+        $q13=$pdo13->query("SELECT count(*) FROM modulo WHERE id_curso='$id'");
+        $modulos= $q13->fetchColumn();
+
+        //Cantidad de temas
+        $pdo14 = Database::connect(); 
+        $q14 =$pdo14 ->query("SELECT  COUNT(tema.idTema) AS 'TEMA' from tema 
+                                                    INNER JOIN modulo ON tema.id_modulo = modulo.idModulo
+                                                    INNER JOIN  cursos ON cursos.idCurso = modulo.id_curso
+                                                    WHERE cursos.idCurso = '$id'
+                                                    GROUP BY cursos.idCurso");
+        $temas= $q14 ->fetchColumn();
+
+        //Cantidad de Cuestionarios
+        $pdo15 = Database::connect(); 
+        $q15 =$pdo15 ->query("SELECT  COUNT(cuestionario.idCuestionario) AS 'Cuestionario'  from cursos 
+                                                    INNER JOIN modulo ON cursos.idCurso = modulo.id_curso
+                                                    INNER JOIN  cuestionario ON cuestionario.id_modulo = modulo.idModulo
+                                                    WHERE cursos.idCurso = '$id'
+                                                    GROUP BY cursos.idCurso");
+        $cuestionarios= $q15 ->fetchColumn();
+
+        //Cantidad de preguntas
+        $pdo16 = Database::connect(); 
+        $q16 =$pdo16 ->query("SELECT COUNT(preguntas.idPregunta) AS 'preguntas'  from cursos 
+                                                    INNER JOIN modulo ON cursos.idCurso = modulo.id_curso
+                                                    INNER JOIN cuestionario ON cuestionario.id_modulo = modulo.idModulo
+                                                    INNER JOIN preguntas on cuestionario.idcuestionario = preguntas.id_cuestionario
+                                                    WHERE cursos.idCurso = '$id'
+                                                    GROUP BY cursos.idCurso");
+        $preguntas= $q16 ->fetchColumn();
+
         Database::disconnect();
     ?>
 
-
-
-    <div id="projects" class="filter">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12"></div>
-            </div> <!-- end of row -->
-                <div class="col-lg-12">
-                    <!-- Filter -->
-                    <div class="button-group filters-button-group">
-                        <a class="button" data-filter=".design"><span>CURSO</span> </a>
-                        <a class="button" data-filter=".development" href="foro.php?id=<?php echo $id;?>"><span>FORO</span> </a>
-                        <a class="button" data-filter=".marketing" href="descargas.php"><span>DESCARGABLE</span></a>
-                        <a class="button" data-filter=".seo" href="progreso.php?id=<?php echo $id ?>"><span>PROGRESO</span></a>
-
-                        <?php
-                        /*
-                         *METODO PARA VALIDAR EL CERTIFICADO
-                         *@AUTOR: Giancarlo S. xd
-                         */
-                            
-                        ?>
-
-                          <?php 
-                        
-
-                              $pdo5 = Database::connect(); 
-
-
-
-                              $q5=$pdo5->query("SELECT count(*) FROM respuestas res INNER JOIN preguntas pre ON res.id_Pregunta=pre.idPregunta
+<div class="filter" id="projects">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12"></div>
+        </div> <!-- end of row -->
+        
+        <div class="col-lg-12">
+            <!-- Filter -->
+            <div class="button-group">
+                <a class="button" data-filter=".design">CURSO</a>
+                <a class="button" data-filter=".development" href="foro.php?id=<?php echo $id;?>">FORO</a>
+               <!--  <a class="button" data-filter=".marketing" href="descargas.php">DESCARGABLE</a>-->
+               <!--  <a class="button" data-filter=".seo" href="progreso.php?id=<?php echo $id ?>">PROGRESO</a>-->
+                
+                <?php
+                /*
+                
+                *METODO PARA VALIDAR EL CERTIFICADO
+                *@AUTOR: Giancarlo S. xd
+                */
+                
+                ?>
+                
+                <?php
+                
+                $pdo5 = Database::connect();
+                
+                $q5=$pdo5->query("SELECT count(*) FROM respuestas res INNER JOIN preguntas pre ON res.id_Pregunta=pre.idPregunta
                                                                                     INNER JOIN cuestionario cues ON cues.idCuestionario=pre.id_cuestionario
                                                                                     INNER JOIN modulo mo ON mo.idModulo=cues.id_modulo
                                                                                     INNER JOIN cursos cur ON cur.idCurso= mo.id_curso
                                                                                     where cur.idCurso=$id and res.estado=1");
-                              $cantidad_respuestas_validas= $q5->fetchColumn();
-
-                              if($cantidad_respuestas_validas<=9){
-                                $minimo_respuestas_para_aprobar=$cantidad_respuestas_validas;
-                              }else{
-                                $minimo_respuestas_para_aprobar=$cantidad_respuestas_validas-2;
-                              }
-
-                              
-                               Database::disconnect();
-
-                                $pdo6 = Database::connect();
-                                $sql6 = "SELECT cantidad_respuestas FROM cursoinscrito WHERE curso_id = '$id' ";
-                                $q6 = $pdo6->prepare($sql6);
-                                $q6->execute(array());
-                                $dato=$q6->fetch(PDO::FETCH_ASSOC);
-                                Database::disconnect();
-                               
-                                    $cantidad_respuesta_acertadas=$dato['cantidad_respuestas'];
-                              
-                                
-    
-                              if($cantidad_respuesta_acertadas>=$minimo_respuestas_para_aprobar){
-                                    
-                             echo '<a class="button" data-filter=".seo" href="plugins/ejemplo.php?idCurso='.$id.'"><span>CERTIFICADO</span></a>';
-                                 $validar=1;
-
-                              }else {
-                                 $validar=0;
-                                
-                              }
-                              $_SESSION['validar']=$validar;
-
-                          ?>
-
-
-
-                               
-            
-            
-                    </div> <!-- end of button group -->
-
-    <!-- section -->
-
-    <!-- end section -->
-    <!-- section -->
-  
-    <div class="section margin-top_50">
-        <h3><a href="sidebarCursos.php">Ir a cursos</a></h3>
-        <div class="container">
-              <!-- boton pregunta -->
-              <div class="btn_preg" data-toggle="modal" data-target="#dialogo1">
-                            <i class="fas fa-question"></i>
-                            </div>
-                        <!-- fin boton pregunta -->
-                            
-    <!-- MODAL -->
-    <div class="modal fade" id="dialogo1">
-      <div class="modal-dialog modal-sm modal-dialog-centered">
-        <div class="modal-content">
-    
-          <!-- cabecera del diálogo -->
-          <div class="modal-header">
-            <h4 class="modal-title" style="font-size:15px;">Este curso incluye:</h4>
-            <button type="button" class="close" data-dismiss="modal">X</button>
-          </div>
-          <!-- cuerpo del diálogo -->
-          <div class="modal-body" style="justify-content:;">
-          <div class="row">
-              <div class="right"><i class="far fa-file"></i></div>
-                  <div class="left">n° Módulos</div>
-                </div>
-                  <div class="row">
-                    <div class="right"><i class="fas fa-folder"></i></div>
-                        <div class="left">n° Temas</div>
-                    </div>
-                    <div class="row">
-                    <div class="right"><i class="fas fa-infinity"></i></div>
-                        <div class="left">n° Cuestionarios</div>
-                    </div>
-                    <div class="row">
-                    <div class="right"><i class="fas fa-mobile-alt"></i></div>
-                        <div class="left">La nota mínima para aprobar el curso es 15.</div>
-                    </div>
-                    <div class="row">
-                    <div class="right"><i class="fas fa-list-ol"></i></div>
-                        <div class="left">Cantidad de preguntas: n°</div>
-                    </div>
-                    <div class="row">
-                    <div class="right"><i class="fas fa-trophy"></i></div>
-                    <div class="left">Certificado de Finalización</div>
-                </div>
-            </div>
-          <!-- pie del diálogo -->
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal" style="font-size:12px;">Cerrar</button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- FIN DE MODAL -->
-            <div class="row">
-                <div class="col-md-6 layout_padding_2">
-                    <div class="full">
-                        <div class="heading_main text_align_left">
-                           <h2><span><?php echo $dato4['nombreCurso']; ?></h2>
-                        </div>
-                        <div class="full">
-                          <p><?php echo $dato4['descripcionCurso']; ?></p>
-                          <?php
-                    $pdo10 = Database::connect(); 
-                    $sql10 = "SELECT * FROM cursoinscrito WHERE curso_id='$id'";
-                    $q10 = $pdo10->prepare($sql10);
-                    $q10->execute();
-                    $dato10 = $q10->rowCount();
-                    Database::disconnect();
-
-
-                    if($dato10!=1){
-                        echo "<p style='color:#4F52D6;'>Este curso cuenta con <strong>".$dato10."</strong> usuarios incritos<p>";
-                    }else{
-                        echo "<p style='color:#4F52D6;'>Este curso cuenta con <strong>".$dato10."</strong> usuario incrito<p>";
-                    }
-                   
+                                                                                    
+                $cantidad_respuestas_validas= $q5->fetchColumn();
+                
+                if($cantidad_respuestas_validas<=9){
+                    $minimo_respuestas_para_aprobar=$cantidad_respuestas_validas;
+                }else{
+                    $minimo_respuestas_para_aprobar=$cantidad_respuestas_validas-2;
+                }
+                
+                Database::disconnect();
+                
+                $pdo6 = Database::connect();
+                $sql6 = "SELECT cantidad_respuestas FROM cursoinscrito WHERE curso_id = '$id' ";
+                $q6 = $pdo6->prepare($sql6);
+                $q6->execute(array());
+                $dato=$q6->fetch(PDO::FETCH_ASSOC);
+                Database::disconnect();
+                
+                $cantidad_respuesta_acertadas=$dato['cantidad_respuestas'];
+                
+                if($cantidad_respuesta_acertadas>=$minimo_respuestas_para_aprobar){
+                    echo '<a class="button" data-filter=".seo" href="plugins/ejemplo.php?idCurso='.$id.'">CERTIFICADO</a>';
+                    $validar=1;
+                }else {
+                    $validar=0;
+                }
+                
+                $_SESSION['validar']=$validar;
+                
                 ?>
-                        </div>
-                       </div>
+                
+            </div>
+            
+            <!-- end of button group -->
+            
+            <!-- section -->
+            
+            <div class="container">
+                <h3>
+                    <a href="sidebarCursos.php">Ir a cursos</a>
+                </h3>
+                
+                <!-- boton pregunta -->
+                
+                <div class="btn_preg" data-toggle="modal" data-target="#dialogo1">
+                    <i class="fas fa-question"></i>
                 </div>
-                <div class="col-md-6">
-                    <div class="full" style="width: 500px ; height: 300px;">
+                
+                <!-- fin boton pregunta -->
+                
+                <!-- MODAL -->
+                
+                <div class="modal fade" id="dialogo1">
+                    <div class="modal-dialog modal modal-dialog-centered">
+                        <div class="modal-content">
+                            
+                            <!-- cabecera del diálogo -->
+                            <div class="modal-header">
+                                <h4 class="modal-title">Este curso incluye:</h4>
+                                <button type="button" class="close" data-dismiss="modal">X</button>
+                            </div>
+                            
+                            <!-- cuerpo del diálogo -->
+                            <div class="modal-body">
+                                <div class="row">
+                                    <div class="left"><i class="far fa-file"></i></div>
+                                    <div class="rigth"><?php echo $modulos; ?> Módulos</div>
+                                </div>  
+                                
+                                <div class="row">
+                                    <div class="left"><i class="fas fa-folder"></i></div>
+                                    <div class="right"><?php echo $temas; ?> Temas</div>
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="left"><i class="fas fa-infinity"></i></div>
+                                    <div class="right"><?php echo $cuestionarios; ?> Cuestionarios</div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="left"><i class="fas fa-mobile-alt"></i></div>
+                                    <div class="right">La nota mínima para aprobar el curso es <?php echo $minimo_respuestas_para_aprobar; ?></div>
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="left"><i class="fas fa-list-ol"></i></div>
+                                    <div class="right">Cantidad de preguntas: <?php echo $preguntas; ?></div>
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="left"><i class="fas fa-trophy"></i></div>
+                                    <div class="right">Certificado de Finalización</div>
+                                </div>
+                            
+                            </div>
+                            
+                            <!-- pie del diálogo -->
+                            
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-light" data-dismiss="modal" style="font-size:12px;">Cerrar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- FIN DE MODAL -->
+                
+                <div class="row">
+                    <div class="col-md-6 layout_padding_2">
+                        <div class="full">
+                            <div class="heading_main text-center">
+                                <h2>
+                                    <?php echo $dato4['nombreCurso']; ?>
+                                </h2>
+                            </div>
+
+                            <div class="full">
+                                <p><?php echo $dato4['descripcionCurso']; ?></p>
+                                
+                                <?php
+                                $pdo10 = Database::connect(); 
+                                $sql10 = "SELECT * FROM cursoinscrito WHERE curso_id='$id'";
+                                $q10 = $pdo10->prepare($sql10);
+                                $q10->execute();
+                                $dato10 = $q10->rowCount();
+                                Database::disconnect();
+
+
+                                if($dato10!=1){
+                                    echo "<p style='color:#4F52D6;'>Este curso cuenta con <strong>".$dato10."</strong> usuarios incritos<p>";
+                                }else{
+                                    echo "<p style='color:#4F52D6;'>Este curso cuenta con <strong>".$dato10."</strong> usuario incrito<p>";
+                                }
+                                
+                                ?>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 center">
+                        <div class="full" style="width: 500px ; height: 300px;">
                         <img class="img_logo_cursos" style="height: 100%;" src="data:image/*;base64,<?php echo base64_encode($dato4['imagenDestacadaCurso'])?>" alt="#" />
                     </div>
-                </div>
-            </div>
-            <?php
-            $con = Database::connect(); 
-            $idusuario=$_SESSION['iduser'];
-            $ver = "SELECT curso_obt FROM cursoinscrito WHERE curso_id=$id AND usuario_id=$idusuario";
-            $veremos = $con->prepare($ver);
-            $veremos->setFetchMode(PDO::FETCH_ASSOC);
-            $veremos->execute();
-            $vere=$veremos->fetchColumn();
-            $query=1;
-            if ($vere==false || $vere==0) {
-            if(isset($_POST['vali'])){
-            $codi=$_POST['codi'];
-            $conn = Database::connect(); 
-            $squery = "SELECT COUNT(*) FROM cursoinscrito WHERE cod_curso='$codi' AND curso_id=$id AND usuario_id=$idusuario";
-            $querys = $conn->prepare($squery);
-            $querys->setFetchMode(PDO::FETCH_ASSOC);
-            $querys->execute();
-            $query=$querys->fetchColumn();
-            if ($query==1||$query==true) {
-                $cop="UPDATE cursoinscrito SET curso_obt=1 WHERE curso_id=$id AND usuario_id=$idusuario";
-                $cops = $conn->prepare($cop);
-                $cops->execute();
-                $vere=1;
-            }
-            }
-        }
-        ?>
-            <div class="full">
-                        <a class="hvr-radial-out button-theme"href="Cursoiniciar.php?id=<?php echo $id;?>"<?php if ($query==0 || $vere==false) {
-                    echo 'style="pointer-events: none;"';}?> >Iniciar curso</a>
-            </div>
-            <form action="" method="POST" name="frm1" class="formcodigocursos">
                 
-                
-
-            <?php
-            /*validar que si ya ingreso un codigo valida no muestro el input
-            *@autor: Jean
-            */
-            if ($vere==0){
-        ?>
-        <input type="text" placeholder="XPFJ-AFAKN" class="inputcodigo" name="codi" id="codiguito" required><button type="submit" class="btn btn-primary" name="vali">Ingresar</button>
-                        <br>
-                        <label for="codiguito" style="color: #7C83FD;">Obtener curso por medio del código</label>
-        <?php
-            }else{
-                echo "<br><br>";
-            }
-        ?>
-                        
-                    </form>
-        </div>
-        <br>
-        <br>
-        <section class="cursoslinks" id="about">
-        <div class="titulotemario col">
-            <h3>Introducción al Curso</h3>
-        </div>
-        <div class="content col">
-            <div class="icons-container">
-                <a href="video.php?id=<?php echo $id; ?>&idtema=1&validar=1&a=d" role="button" class="btn btn-primary btn_cursovideo">
-                    <i class="fas fa-play"></i>
-                    Toca aqui para ver el primer video del curso
-                </a>
-                <br>
-                <br>
-                <a href="video.php?id=<?php echo $id; ?>&c_tema=2&validar=1&c_modulo=1&a=d" role="button" class="btn btn-primary btn_cursovideo">
-                    <i class="fas fa-play"></i>
-                    Toca aqui para ver el segundo video del curso
-                </a>
-            </div>
-        </div>
-    </section>
-    <!-- end section -->
-    <!-- section -->
-    <div class="section layout_padding">
-        <div class="container">
-            <div class="row">
-       
-                <div class="col-md-12">
-                    <div class="full">
-                        <div class="heading_main text_align_center">
-                           <h2><span>Cursos </span>destacados</h2>
-                        </div>
-                      </div>
                 </div>
-            <?php 
             
-            $pdo=Database::connect();
-            $sql="SELECT COUNT(*) as Cantidad,curso_id,c.permisoCurso FROM cursoinscrito as ci INNER JOIN cursos as c ON ci.id_cursoInscrito = c.idCurso WHERE c.permisoCurso = 1 GROUP BY curso_id ORDER BY Cantidad DESC";
-            $q=$pdo->prepare($sql);
-            $q->execute(array());
-
-            $cont = 0;
-            while($dato2=$q->fetch(PDO::FETCH_ASSOC)){ 
-                $cont = $cont + 1;
-                
-                $curso_Id= $dato2['curso_id'];
-                $pdo15=Database::connect();
-                $sql15 = "SELECT * FROM cursos where idCurso='$curso_Id'";
-                $q15 = $pdo15->prepare($sql15);
-                $q15->execute(array());
+                        <?php
                         
-
-                while($dato=$q15->fetch(PDO::FETCH_ASSOC)){
-
+                        $con = Database::connect();
+                        $idusuario=$_SESSION['iduser'];
+                        $ver = "SELECT curso_obt FROM cursoinscrito WHERE curso_id=$id AND usuario_id=$idusuario";
+                        $veremos = $con->prepare($ver);
+                        $veremos->setFetchMode(PDO::FETCH_ASSOC);
+                        $veremos->execute();
+                        $vere=$veremos->fetchColumn();
+                        $query=1;
+                        if ($vere==false || $vere==0) {
+                        if(isset($_POST['vali'])){
+                        $codi=$_POST['codi'];
+                        $conn = Database::connect(); 
+                        $squery = "SELECT COUNT(*) FROM cursoinscrito WHERE cod_curso='$codi' AND curso_id=$id AND usuario_id=$idusuario";
+                        $querys = $conn->prepare($squery);
+                        $querys->setFetchMode(PDO::FETCH_ASSOC);
+                        $querys->execute();
+                        $query=$querys->fetchColumn();
+                        if ($query==1||$query==true) {
+                            $cop="UPDATE cursoinscrito SET curso_obt=1 WHERE curso_id=$id AND usuario_id=$idusuario";
+                            $cops = $conn->prepare($cop);
+                            $cops->execute();
+                            $vere=1;
+                        }
+                    }
+                }
                 
                 ?>
-                <div class="col-md-4">
-                    <div class="full blog_img_popular" style="width: 390px; height: 300px;">
-                       <a href="DetalleCurso.php?id=<?php echo $dato['idCurso']; ?>">
-                            <img style="height: 100%; width: 100%;" class="img-responsive" src="data:image/*;base64,<?php echo base64_encode($dato['imagenDestacadaCurso'])?>" alt="#" />
-                            <h4><?php echo $dato['nombreCurso']; ?></h4>
-                       </a>
+                
+                <div class="full">
+                    <a class="hvr-radial-out button-theme" href="Cursoiniciar.php?id=<?php echo $id;?>"<?php if ($query==0 || $vere==false) {
+                        echo 'style="pointer-events: none;"';}?> >Iniciar curso
+                    </a>
+                </div>
+                
+                <form action="" method="POST" name="frm1" class="formcodigocursos">
+                    
+                    <?php
+                        /*validar que si ya ingreso un codigo valida no muestro el input
+                        *@autor: Jean
+                        */
+                        if ($vere==0){
+                    ?>
+                    
+                    <!-- barra de codigo -->
+                    <div class="input-group mb-2">
+                        <input type="text" class="inputcodigo" placeholder="XPFJ-AFAKN" name="codi" id="codiguito" aria-label="Recipient's username" aria-describedby="button-addon2" required>
+                        <div class="input-group-append">
+                            <button class="btn btn-primary m-0" type="submit" name="vali" id="button-addon2">Ingresar</button>
+                        </div>
+                    </div>
+                    <label for="codiguito" style="color: #7C83FD;">Obtener curso por medio del código</label>
+                    <!-- Fin barra de codigo -->
+
+                    <?php
+                        }else{
+                            echo "<br><br>";
+                        }
+                    ?>
+                    
+                </form>
+            </div>
+            <br>
+            <br>
+            
+            <!-- section introduccion al curso -->
+            <section class="cursoslinks mb-3" id="about">
+                <div class="titulotemario col">
+                    <h3>Introducción al Curso</h3>
+                </div>
+                
+                <div class="content col">
+                    <div class="icons-container">
+                        <a href="video.php?id=<?php echo $id; ?>&idtema=1&validar=1&a=d" role="button" class="btn btn-primary btn_cursovideo">
+                        <i class="fas fa-play"></i>
+                        Toca aquí para ver el primer vídeo del curso
+                        </a>
+                        <br>
+                        <br>
+                        <a href="video.php?id=<?php echo $id; ?>&c_tema=2&validar=1&c_modulo=1&a=d" role="button" class="btn btn-primary btn_cursovideo">
+                        <i class="fas fa-play"></i>
+                        Toca aquí para ver el segundo vídeo del curso
+                        </a>
                     </div>
                 </div>
-            <?php 
-         
-        }
-        if($cont==3){
-            break ;
-        }
-        
-    }
-            
-            ?>
-            
-            </div>
+            </section>
+            <!-- fin section -->
         </div>
+        
+        <!-- Cursos destacados -->
+        <!-- section -->
+        <!-- <div class="section layout_padding">
+            <div class="container">
+                <div class="row">
+                    
+                    <div class="col-md-12">
+                        <div class="full">
+                            <div class="heading_main text-center">
+                            <h2><span>Cursos </span>destacados</h2>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <?php 
+                
+                    $pdo=Database::connect();
+                    $sql="SELECT COUNT(*) as Cantidad,curso_id,c.permisoCurso FROM cursoinscrito as ci INNER JOIN cursos as c ON ci.id_cursoInscrito = c.idCurso WHERE c.permisoCurso = 1 GROUP BY curso_id ORDER BY Cantidad DESC";
+                    $q=$pdo->prepare($sql);
+                    $q->execute(array());
+
+                    $cont = 0;
+                    while($dato2=$q->fetch(PDO::FETCH_ASSOC)){
+                        
+                        $cont = $cont + 1;
+                        
+                        $curso_Id= $dato2['curso_id'];
+                        $pdo15=Database::connect();
+                        $sql15 = "SELECT * FROM cursos where idCurso='$curso_Id'";
+                        $q15 = $pdo15->prepare($sql15);
+                        $q15->execute(array());
+                        
+                        while($dato=$q15->fetch(PDO::FETCH_ASSOC)){
+                            
+                            ?>
+                            
+                            <div class="col-md-4">
+                                <div class="full blog_img_popular" style="width: 390px; height: 300px;">
+                                <a href="DetalleCurso.php?id=<?php echo $dato['idCurso']; ?>">
+                                <img style="height: 100%; width: 100%;" class="img-responsive" src="data:image/*;base64,<?php echo base64_encode($dato['imagenDestacadaCurso'])?>" alt="#" />
+                                <h4><?php echo $dato['nombreCurso']; ?></h4>
+                                </div>
+                            </div>
+                            
+                            <?php
+                            
+                        }
+                        
+                        if($cont==3){
+                            
+                            break ;
+                        
+                        }
+                    
+                    }
+                    
+                    ?>
+                </div>
+            </div>
+        </div> -->
     </div>
-  </div>
 </div>
-</div>
-    <!-- end section -->
+</div></div></div></div>
+<!-- end section -->
 
 
 
@@ -444,3 +520,5 @@ jQuery(function ($) {
                 header('Location:iniciosesion.php');
     }
 ?>
+</body>
+</html>

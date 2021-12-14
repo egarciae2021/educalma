@@ -1,91 +1,77 @@
-<!-- Start Footer -->
-<footer class="footer-box">
-    <div class="container">
-
+<footer class="footer--light">
+    <div class="footer-big">
+      <div class="container">
         <div class="row">
-            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-1">
+          <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
+            <div class="footer-widget">
+              <div class="widget-about">
+                <img src="assets/images/Logo.svg" alt="" class="img-fluid">
+              </div>
             </div>
-            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-1">
+          </div>
+          <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
+            <div class="footer-widget">
+              <div class="footer-menu">
+                <h4 class="footer-widget-title">Nosotros</h4>
+                <ul>
+                  <li>
+                    <a href="https://fundacioncalma.org/%C2%BFqui%C3%A9nes-somos%3F">Qui&eacute;nes Somos</a>
+                  </li>
+                  <li>
+                    <a href="https://fundacioncalma.org/contacto">Cont&aacute;ctanos</a>
+                  </li>
+                  <li>
+                    <a href="https://fundacioncalma.org/%C2%BFc%C3%B3mo-ayudo%3F">Ay&uacute;danos</a>
+                  </li>
+                </ul>
+              </div>
             </div>
-            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-2">
-                <br>
-                <div class="footer_blog">
-                    <div class="full white_fonts">
-                        <img src="./assets/images/LogoWhite.PNG" class="img-fluid" alt="Logo" style="width: 90%;">
-
-                    </div>
-                </div>
+          </div>
+          <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
+            <div class="footer-widget">
+              <div class="footer-menu">
+                <h4 class="footer-widget-title">Blog</h4>
+                <ul>
+                  <li>
+                    <a href="certi.php">Validaci&oacute;n de Certificado</a>
+                  </li>
+                  <li>
+                    <a href="recursos1.php">Presentaci&oacute;n</a>
+                  </li>
+                </ul>
+              </div>
             </div>
-
-
-            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-2">
-                <div class="footer_blog footer_menu white_fonts">
-                    <h3 style="font-size: 17px;">Nosotros</h3>
-                    <ul>
-                        <li><a href="https://fundacioncalma.org/%C2%BFqui%C3%A9nes-somos%3F" style="font-size: 12px;" target="_blank">Quiénes Somos</a></li>
-                        <li><a href="https://fundacioncalma.org/contacto" style="font-size: 12px;" target="_blank">Contáctanos</a></li>
-                        <li><a href="https://fundacioncalma.org/%C2%BFc%C3%B3mo-ayudo%3F" style="font-size: 12px;" target="_blank">Ayúdanos</a></li>
-                    </ul>
-                </div>
-            </div>
-
-
-            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-2">
-                <div class="footer_blog footer_menu white_fonts">
-                    <h3 style="font-size: 17px;">Blog</h3>
-                    <ul>
-                        <li><a href="certi.php" style="font-size: 12px;"><b>Validación de Certificado</b></a></li>
-                        <li><a href="recursos1.php" style="font-size: 12px;">Presentación</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
-                <div class="footer_blog footer_menu white_fonts">
-                    <h3 style="font-size: 17px;">Redes Sociales</h3>
-                    <div style="margin: 50px;">
-                        <ul class="d-flex flex-row ms-n3 nav">
-                            <li class="nav-item">
-                                <a href="https://www.facebook.com/fundacioncalma.org/" target="_blank">
-                                <img src="./assets/images/FBicono_48.png" alt="">
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="https://www.instagram.com/fundacioncalma/?hl=es" target="_blank">
-                                <img src="./assets/images/Instaicono_48.png" alt="">
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="mailto:contacto@fundacioncalma.org" target="_blank">
-                                <img src="./assets/images/Mailicono_48.png" alt="">
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="https://www.youtube.com/channel/UCsEmW0is_Q-d_IMfux0pfEw" target="_blank">
-                                    <img src="./assets/images/youtube.png" alt="">
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
+      </div>
     </div>
-</footer>
-
-
-<!-- End Footer -->
-
-<div class="footer_bottom">
-    <div class="container">
+    <div class="site-footer">
+      <div class="container">
+        <hr class="small">
+      </div>
+      <div class="container">
         <div class="row">
-            <div class="col-12">
-                <p class="crp">© Fundación Calma - Copyright 2021</p>
-            </div>
-        </div>
-    </div>
-</div>
+          <div class="col-md-8 col-sm-6 col-12">
+            <p class="copyright-text">Copyright © 2021 All Rights Reserved by
+              <a href="#">EduCalma</a>
+            </p>
+          </div>
 
-<a href="#" id="scroll-to-top" class="hvr-radial-out"><i class="fa fa-angle-up"></i></a>
+          <div class="col-md-4 col-sm-6 col-12">
+            <ul class="social-icons">
+              <li><a class="facebook" href="https://www.facebook.com/fundacioncalma.org/"><i class="fab fa-facebook-f"></i></a></li>
+              <li><a class="twitter" href="https://www.youtube.com/channel/UCsEmW0is_Q-d_IMfux0pfEw"><i class="fab fa-twitter"></i></a></li>
+              <li><a class="instagram" href="https://www.instagram.com/fundacioncalma/?hl=es"><i class="fab fa-instagram"></i></a></li>
+              <li><a class="envelope" href="mailto:contacto@fundacioncalma.org"><i class="far fa-envelope"></i></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+  </footer>
+
+
+
+<!-- <a href="#" id="scroll-to-top" class="hvr-radial-out"><i class="fa fa-angle-up"></i></a> -->
 
 <!-- ALL JS FILES -->
 <script src="assets/js/plugins/jquery.min.js"></script>

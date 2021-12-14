@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detalle Curso</title>
+    <title>Detalle Cursos</title>
     <link rel="stylesheet" href="././assets/css/styledetcurso.css">
 </head>
 <body>
@@ -40,12 +40,12 @@
             <div class="detboxinfo">
            <!-- Cursos prevención de bullying-->
                 <h1><?php echo $dato4['nombreCurso'];?> </h1>
-                <p><?php echo $dato4['descripcionCurso'];?></p>
+                <!-- <p><?php echo $dato4['descripcionCurso'];?></p> -->
                 
                 
             </div>
 
-            <div class="detboxinfo2">
+            <!-- <div class="detboxinfo2">
                 
                 <?php 
                     $ProfesorID = $dato4['id_userprofesor'];
@@ -65,7 +65,7 @@
                 </form>
                 <h1><?php echo $nombreP ?></h1>
                 <p><?php echo $correoP ?></p>
-            </div>
+            </div> -->
 
             <div class="detboxinfo3">
                 <h1>Porttitor feugiat</h1>
@@ -109,7 +109,7 @@
         <div class="contboxinfo">
             <div class="detbox">
                 <img src="data:image/*;base64,<?php echo base64_encode($dato4['imagenDestacadaCurso'])?>">
-                     <a href="./includes/Cursos_crud/inscribeteCurso.php?id=<?php echo $id;?>">Inscribete ahora</a>
+                     <a href="./includes/Cursos_crud/inscribeteCurso.php?id=<?php echo $id;?>">Inscríbete ahora</a>
     
                 <h1>Detalles del curso</h1>
                 <?php
@@ -128,18 +128,18 @@
                     Database::disconnect();
 
                     if($dato10!=1){
-                        echo "<p>Este curso cuenta con <strong>".$dato10."</strong> usuarios incritos<p>";
+                        echo "<p>Este curso cuenta con <strong>".$dato10."</strong> usuarios inscritos<p>";
                     }else{
-                        echo "<p>Este curso cuenta con <strong>".$dato10."</strong> usuario incrito<p>";
+                        echo "<p>Este curso cuenta con <strong>".$dato10."</strong> usuario inscrito<p>";
                     }
 
                     if ($dato11!=1){
-                        echo "<p>Contiene <strong>".$dato11."</strong> Modulos<p>";
+                        echo "<p>Contiene <strong>".$dato11."</strong> Módulos<p>";
                     }else{
-                        echo "<p>Contiene <strong>".$dato11."</strong> Modulo<p>";
+                        echo "<p>Contiene <strong>".$dato11."</strong> Módulo<p>";
                     }
                     
-                    echo '<p>Contiene un Centificado</p>';
+                    echo '<p>Contiene un Certificado</p>';
                    
                 ?>
                 

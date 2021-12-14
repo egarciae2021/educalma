@@ -21,8 +21,8 @@
             <div class="navbar-header">
                 <a class="btn btn-light btn-sm" href="curso.php" role="button">Curso</a>
                 <a class="btn btn-light btn-sm" href="foro.php">Foro</a>
-                <a class="btn btn-light btn-sm" href="descargas.php">Descargables</a>
-                <a class="btn btn-light btn-sm" href="progreso.php">Progreso</a>
+                <!-- <a class="btn btn-light btn-sm" href="descargas.php">Descargables</a>
+                <a class="btn btn-light btn-sm" href="progreso.php">Progreso</a> -->
             </div>
         </div>
     </nav>
@@ -56,9 +56,17 @@
     <div class="comments-container">
         <h1>Foro Educalma <?php echo $_SESSION['iduser']?></h1>
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Comentar</button>
-        <button type="button" class="btn btn-danger" onClick="AlertEliminaTodo(<?php echo $idCurso;?>)">
-            <i class="fas fa-trash-alt"></i>
-        </button>
+
+        <?php
+            if($_SESSION['privilegio']==1 || $_SESSION['privilegio']==2){
+                echo '
+                    <button type="button" class="btn btn-danger" onClick="AlertEliminaTodo(<?php echo $idCurso;?>)">
+                        <i class="fas fa-trash-alt"></i>
+                    </button>
+                ';
+            }
+        ?>
+        
         <ul id="comments-list" class="comments-list">
             <li>
                 <?php

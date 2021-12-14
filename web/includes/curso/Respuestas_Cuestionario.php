@@ -110,27 +110,27 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr style="text-align: center;">
+                        <!-- <tr style="text-align: center;">
                             <td><?php echo $pregunta;?></td>
-                        </tr>
+                        </tr> -->
                         <?php while($registro1 = $q1->fetch(PDO::FETCH_ASSOC)){?>
-                        <tr>
-                            <td><?php echo $registro1['respuesta'];?></td>
-                            <td style="text-align: center;">
-                                <!--editar-->
-                                <a
-                                    href="Editar_respue_cuestionario.php?id_respuesta=<?php echo $registro1['idRespuesta'];?>&respuesta=<?php echo $registro1['respuesta']?>&id_modulo=<?php echo $idmodulo;?>&pregunta=<?php echo $pregunta?>&idpregunta=<?php echo $id_pregunta;?>">
-                                    <button type="button" class="btn btn-outline-primary"><i
-                                            class="far fa-edit"></i></button>
-                                </a>
-                                <!--eliminar-->
-                                <a
-                                    href="includes/Pregunta_Respuesta/Respuesta_CRUD.php?id_resp=<?php echo $registro1['idRespuesta'];?>&id_modulo=<?php echo $idmodulo;?>&id_pregunta=<?php echo $id_pregunta?>&pregunta=<?php echo $pregunta;?>">
-                                    <button type="button" class="btn btn-outline-danger"><i
-                                            class="fas fa-trash-alt"></i></button>
-                                </a>
-                            </td>
-                        </tr>
+                            <tr>
+                                <td><?php echo $registro1['respuesta'];?></td>
+                                <td style="text-align: center;">
+                                    <!--editar-->
+                                    <a
+                                        href="Editar_respue_cuestionario.php?id_respuesta=<?php echo $registro1['idRespuesta'];?>&respuesta=<?php echo $registro1['respuesta']?>&id_modulo=<?php echo $idmodulo;?>&pregunta=<?php echo $pregunta?>&idpregunta=<?php echo $id_pregunta;?>">
+                                        <button type="button" class="btn btn-outline-primary"><i
+                                                class="far fa-edit"></i></button>
+                                    </a>
+                                    <!--eliminar-->
+                                    <a
+                                        href="includes/Pregunta_Respuesta/Respuesta_CRUD.php?id_resp=<?php echo $registro1['idRespuesta'];?>&id_modulo=<?php echo $idmodulo;?>&id_pregunta=<?php echo $id_pregunta?>&pregunta=<?php echo $pregunta;?>">
+                                        <button type="button" class="btn btn-outline-danger"><i
+                                                class="fas fa-trash-alt"></i></button>
+                                    </a>
+                                </td>
+                            </tr>
                         <?php }?>
                     </tbody>
                 </table>

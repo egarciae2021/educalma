@@ -1,9 +1,12 @@
 <?php 
+    //ob_start();
+    //@session_start();
     require_once '../../database/databaseConection.php';
     $id=$_GET['id'];
     $c_modulo=$_GET['c_modulo'];
     $c_tema=$_GET['c_tema'];
     $idmodulo=$_GET['idmodulo'];
+    
 
     $pdo1 = Database::connect(); 
     $sql1 = "SELECT * FROM modulo WHERE id_curso='$id'";
@@ -50,7 +53,7 @@
         echo'
             <script>
                 //alert("pasaste");
-                window.location = "../../video.php?id='.$id.'&c_tema='.$c_tema.'&validar=1&c_modulo='.$c_modulo.'";
+                window.location = "../../video.php?id='.$id.'&idtema='.($idtema+1).'&id_modulo='.$idmodulo.'";
             </script>
         ';
         exit();

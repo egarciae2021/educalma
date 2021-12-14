@@ -17,7 +17,7 @@
             Database::disconnect();
             echo'
                 <script>
-                    alert("respuesta agregada");
+                    // alert("respuesta agregada");
                     window.location = "../../Form_respue_cuestionario.php?id_modulo='.$id_modulo.'&id_pregunta='.$id_pregunta.'&pregunta='.$pregunta.'";
                 </script>
             ';
@@ -45,10 +45,11 @@
 
         echo'
             <script>
-                alert ("Actualizado exitosamente");
+                // alert ("Actualizado exitosamente");
                 window.location = "../../Form_respue_cuestionario.php?id_modulo='.$id_modulo.'&id_pregunta='.$id_pregunta.'&pregunta='.$pregunta.'";
             </script>
         ';
+
         exit();
     }
     /*=====================

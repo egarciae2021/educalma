@@ -66,7 +66,7 @@
             
             echo'
             <script>
-                alert ("inscrito exitosamente");
+                // alert ("inscrito exitosamente");
                 window.location = "../../agregarModulos.php?id='.$dato2['idCurso'].'";
             </script>
             ';
@@ -100,7 +100,7 @@
         echo'
             <script>
                 alert ("ocultado exitosamente");
-                window.location = "../../agregarcurso.php";
+                window.location = "../../publicarcursos.php";
             </script>
         ';
     }
@@ -115,24 +115,35 @@
         $nomb=$_POST['nomb_actu_cursos'];
         $descr=$_POST['desc_curso'];
         $prec=$_POST['prec_curso'];
-        $nombreimagenes=$_FILES['txtimagenAct']['tmp_name'];
-        $nombreimagen=addslashes(file_get_contents($nombreimagenes));
-   
+	
+	    if(($_FILES['txtimagenAct']['size'])>0){
+            $nombreimagenes=$_FILES['txtimagenAct']['tmp_name'];
+        	$nombreimagen=addslashes(file_get_contents($nombreimagenes));
+            $pdo = Database::connect();
+            $consulta= $pdo->prepare("UPDATE cursos SET imagenDestacadaCurso='$nombreimagen' WHERE idCurso='$id'");
+            $consulta->execute();
+            Database::disconnect(); 
+        }
 
-        $pdo2 = Database::connect();  
-        $veri2="UPDATE cursos SET nombreCurso='$nomb', descripcionCurso='$descr',   costoCurso='$prec', imagenDestacadaCurso='$nombreimagen' WHERE idCurso = '$id' ";
-        $q2 = $pdo2->prepare($veri2);
-        $q2->execute(array());
-        $dato2=$q2->fetch(PDO::FETCH_ASSOC);
+        if($_POST['prec_curso']<=0){
+            $prec = 'Gratis';
+        }else{
+            $prec=$_POST['prec_curso'];
+        }
+        
+        $pdo2 = Database::connect();
+        $consult1=$pdo2->prepare("UPDATE cursos SET nombreCurso='$nomb', descripcionCurso='$descr', costoCurso='$prec' WHERE idCurso = '$id' ");
+        $consult1->execute();
         Database::disconnect();
 
         echo'
             <script>
-                alert ("Actualizado exitosamente");
-                window.location = "../../agregarcurso.php";
+                // alert ("Actualizado exitosamente");
+                window.location = "../../publicarcursos.php";
             </script>
         ';
-
+    
+        
     }
     
 

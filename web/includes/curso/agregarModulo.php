@@ -5,11 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/agretemas.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous">
-    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
@@ -65,14 +60,7 @@
     ?>
 
 <div class="container-fluid">
-        <h2 class="mb-4" style="text-align: center; color:#4F52D6; font-size: 300%;font-family: 'Oswald', sans-serif;">
-                <center>Bienvenido a EduCalma</center>
-        </h2>
         <div class="title">
-            <div class="mb-4">
-                <center><i class="fas fa-plus-circle"></i> Agrega Módulos a un Curso <i class="fas fa-plus-circle"></i></center>
-            </div>
-            <h2><a href="agregarcurso.php">Atras <-</a></h2>
             <?php
                     $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                     $envio=substr($url, strrpos($url, '=') + 1);
@@ -84,30 +72,41 @@
 <div class="container-contformulario">
     <div class="contformulario" id="contformulario">
         <div class="row">
-            <div class="image">
-                <img src="./assets/images/donar01.png" alt="">
-            </div>
              <!--
                                         ======================================
                                                     Agregar Módulo
                                         ======================================
                                          
             -->
-            <form name="formulario" id="form-agretemas" method="POST" action="includes/modulo/Modulo_CRUD.php?id=<?php echo $dato['idCurso'];?>" target="dummyframe" style="background:#F7F7F7;">   
+            <form name="formulario" id="form-agretemas" method="POST" action="includes/modulo/Modulo_CRUD.php?id=<?php echo $dato['idCurso'];?>" style="background:#F7F7F7;">   
+
+                    <a href="agregarcurso.php" class="boton2" style="padding: .3rem; width: 20%;">Atras <-</a>
+                <div class="container-fluid">
+                    <div class="title">
+                        <div class="mb-4">
+                            <center>Agrega Módulos a un Curso</center>
+                        </div>
+                    </div>
+                </div>
                 <div class="inputBox">
-                    <h3>Nombre del Módulo:</h3>
+                    <h3 class="cambio-enlinea">Nombre del Módulo:</h3>
+                    <div class="btn-ver" style="text-align: right;">
+                        <button type="button" class="btn btn-outline-secondary boton-ver"  data-toggle="modal" data-target="#staticBackdrop">
+                            <i class="fas fa-eye"></i> Ver</button>
+                    </div>
                     <input type="text" name="modulo_agregar" id="modulo-agregar" placeholder="" aria-label="ModuloAgr" aria-describedby="ModuloAgr" aria-describedby="moduloAgr-addon" required>
                 </div>
                 <div class="inputBox">
                     <button class="boton1"><i class="fas fa-plus"></i> Añadir</buton>
-                </div>
-                <div class="inputBox">
-                    <div style="text-align: right;">
-                    <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                        <i class="fas fa-eye"></i> Ver</button>
-                    </div>
+                    <button type="button" id="salir_agregar" class="boton2"><i class="fas fa-sign-out-alt"></i> Finalizar</buton>
                 </div>
             </form>
+            <div class="image">
+                <img src="./assets/images/card_02.jpg" alt="">
+            </div>
+            <div class="image2">
+                <img src="./assets/images/card_01.jpg" alt="">
+            </div>
         </div>
     </div>
 </div>
@@ -118,15 +117,16 @@
 
               <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
                    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                    <div class="modal-dialog">
+                    <div class="modal-dialog modal-dialog-centered modal-lg">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="staticBackdropLabel">Listado de Módulos</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                                <h5 class="modal-title" id="staticBackdropLabel">LISTADO DE MÓDULOS</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
                             <div class="modal-body">
-                                <div style="height: 400px;" class="overflow-auto">
+                                <div style="height: 400px;">
                                     <div>
                                         <?php
 
@@ -151,31 +151,31 @@
                                             <input type="text" class="form-control" value="Módulo: <?php echo $dato2['nombreModulo']?>" aria-label="Recipient's username with two button addons" disabled>
 
                                             <!--agregar temas-->
-                                         <div style="display:flex; margin-top:4px;">
-                                            <a
-                                                href="agregartema.php?id_mo=<?php echo $dato2['idModulo']?>&idCurso=<?php echo $_GET['id']?>">
-                                                <button style="font-size: 11px;" class="btn btn-outline-secondary" type="submit">
-                                                <i class="fas fa-plus"></i> Agregar Tema</button>
+                                         <div class="caja-opciones">
+                                                <a
+                                                    href="agregartema.php?id_mo=<?php echo $dato2['idModulo']?>&idCurso=<?php echo $_GET['id']?>">
+                                                    <button style="font-size: 10px;" class="btn btn-outline-secondary btn-modulos" type="submit">
+                                                    <i class="fas fa-plus"></i> Agregar Tema</button>
+                                                </a>
+                                                <!--quitar modulos-->
+                                                <a
+                                                    href="includes/modulo/Modulo_CRUD.php?id_modulo=<?php echo $dato2['idModulo']?>&id_curso=<?php echo $_GET['id']?>">
+                                                    <button style="font-size: 10px;" class="btn btn-outline-secondary btn-modulos" type="button">
+                                                    <i class="fas fa-trash"></i> Quitar Módulo</button>
+                                                </a>
+                                                <!--editar modulo-->
+                                                <a
+                                                    href="editarModulo.php?id_modulo=<?php echo $dato2['idModulo']?>&id_curso=<?php echo $_GET['id']?>">
+                                                    <button style="font-size: 10px;" class="btn btn-outline-secondary btn-modulos" type="button">
+                                                    <i class="fas fa-edit"></i> Editar Módulo</button>
+                                                </a>
+                                                <!--agregar cuestionario-->
+                                                <a
+                                                    href="Form_pregun_cuestionario.php?id_modulo=<?php echo $dato2['idModulo']?>">
+                                                    <button style="font-size: 10px;" class="btn btn-outline-secondary btn-modulos" type="button">
+                                                    <i class="fas fa-plus"></i> Agregar Cuestionario</button>
                                             </a>
-                                            <!--quitar modulos-->
-                                          <a
-                                                href="includes/modulo/Modulo_CRUD.php?id_modulo=<?php echo $dato2['idModulo']?>&id_curso=<?php echo $_GET['id']?>">
-                                                <button style="font-size: 11px;" class="btn btn-outline-secondary" type="button">
-                                                <i class="fas fa-trash"></i> Quitar Módulo</button>
-                                            </a>
-                                            <!--editar modulo-->
-                                        <a
-                                                href="editarModulo.php?id_modulo=<?php echo $dato2['idModulo']?>&id_curso=<?php echo $_GET['id']?>">
-                                                <button style="font-size: 11px;" class="btn btn-outline-secondary" type="button">
-                                                <i class="fas fa-edit"></i> Editar Módulo</button>
-                                            </a>
-                                            <!--agregar cuestionario-->
-                                         <a
-                                                href="Form_pregun_cuestionario.php?id_modulo=<?php echo $dato2['idModulo']?>">
-                                                <button style="font-size: 11px;" class="btn btn-outline-secondary" type="button">
-                                                <i class="fas fa-plus"></i> Agregar Cuestionario</button>
-                                            </a>
-                                    </div>
+                                         </div>
                                         </div>
 
                                         <?php 
@@ -186,7 +186,7 @@
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                <button type="button" class="btn btn-secondary cerrar-modal" data-dismiss="modal">Cerrar</button>
                             </div>
                         </div>
                     </div>
@@ -202,6 +202,8 @@
 ?>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.js"></script>
+<script src="assets/js/plugins/sweetalert2.all.min.js"></script>
 <script src="assets/js/validarCategoria.js"></script>
+<script src="assets/js/validarModulo.js"></script>
 </body>
 </html>

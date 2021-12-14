@@ -1,9 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
 
 html{
     font-family: 'Poppins', sans-serif;
-    font-size: 10px;
+    overflow-x: hidden;
 }
 
 *{
@@ -15,46 +16,7 @@ html{
   font-size: 12pts;
     }
 
-.cont_text{
-    background: #ffffff;
-    width: 50%;
-    height: 100%;
-    margin: auto;
-    border: 1px solid #dfdfdf;
-}
-.cont_text h2{
-    background: #f7f7f7;
-    height: 10%;
-    text-align: center;
-    padding-top: 2.5%;
-}
-.cont_text h3{
-    background: #f7f7f7;
-    height: 10%;
-    padding: 2.5% 0px 3% 3%;
-    border-bottom: 1px solid #dfdfdf;
-}
-.cont_formu{
-    background: cornflowerblue;
-    
-    height: 80%;
-    padding: 15px 20px 0px 20px ;
-}
-.cont_formu input{
-    font-size: 20px;
-}
-.cont_formu textarea{
-    font-size: 20px;
-    margin-bottom: 10px;
-}
-.boton{
-    border: none;
-    padding: 1% 5%;
-    cursor: pointer;
-    background: rgb(239, 239, 239);
-    border-radius: 5px;
-    font-size: 20px;
-}
+
 
 /* CODIGO SIDEBAR */
 body{
@@ -62,7 +24,7 @@ body{
 }
 
 :root{
-  --orange:#9494fc ;
+  --orange:#4F52D6; 
 }
 
 .container-contformulario{
@@ -70,21 +32,46 @@ body{
 }
 
 .boton1{
-  display: inline-block;
-  margin-top: 1rem;
+  margin-top: .5rem;
   background:var(--orange);
   color:#fff;
-  padding:.8rem 3rem;
+  float: left;
+  text-align: center;
+  padding:.4rem 2rem;
   border:.2rem solid var(--orange);
+  border-radius: 30px;
   cursor: pointer;
-  font-size: 1rem;
+  font-size: .8rem;
   width: 100%;
 }
 
+.boton-nuevo{
+  background:#fff ;
+  color:#4F52D6; ;
+  border:.1rem solid var(--orange);
+  padding:.4rem 2rem;
+  margin: 0 .2rem;
+  border-radius: 30px;
+  text-align: center;
+  float: left;
+  transition: 0.3s ease-in-out all;
+  cursor: pointer;
+  font-size: .8rem;
+  width: 120px;
+}
+.boton-nuevo:hover{
+  background:var(--orange);
+  color:#fff;
+  text-decoration: none;
+  padding:.4rem 2rem;
+  border:.2rem solid var(--orange);
+  border-radius: 30px;
+  cursor: pointer;
+}
 .boton1:hover{
-  background:#d6d6fd ;
-  border-color: #d6d6fd ;
-  color:#a9a9af ;
+  background:#fff ;
+  color:#4F52D6; ;
+  border:.1rem solid var(--orange);
   font-weight: bold;
   transition: 0.3s ease-in-out all;
 }
@@ -94,38 +81,118 @@ body{
   flex-wrap: wrap;
   gap:1.5rem;
   align-items: center;
+  position: relative;
 }
 
 .contformulario .row .image{
   flex:1 1 25rem;
+  position: absolute;
+  top: -8%;
+  left: 550px;
+  z-index: 1;
+}
+
+.contformulario .row .image2{
+  flex:1 1 25rem;
+  position: absolute;
+  top: -5%;
+  left: 700px;
+  z-index: -1;
 }
 
 .contformulario .row .image img{
-  width:100%;
+  width:500px;
 }
+
+.contformulario .row .image2 img{
+  width:460px;
+}
+
+/*botones*/
+
+.col-12 .card .card-body .table-responsive table tbody tr td a .btn {
+    display: inline-block;
+    font-size: 0.8rem;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    margin: 0.2rem;
+    padding: 1rem;
+    color: #ffffff;
+    border: none;
+    background: gray;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: medium;
+    text-transform: none;
+}
+
+.col-12 .card .card-body .table-responsive table tbody tr td a .btn:hover {
+    color: black;
+    background: transparent;
+    transition: 0.3s ease-in-out all;
+    text-decoration: none;
+}
+
+.col-12 .card .card-body .table-responsive table tbody tr td a .boton_add {
+    color: #fff;
+    border: 1px solid red;
+    background: red;
+    cursor: pointer;
+}
+
+.col-12 .card .card-body .table-responsive table tbody tr td a .boton_add:hover {
+    color: red;
+}
+
+.col-12 .card .card-body .table-responsive table tbody tr td a .boton_edit {
+    color: #fff;
+    border: 1px solid blue;
+    background: blue;
+    cursor: pointer;
+}
+
+.col-12 .card .card-body .table-responsive table tbody tr td a .boton_edit:hover {
+    color: blue;
+}
+
+.col-12 .card .card-body .table-responsive table tbody tr td a .boton_upload {
+    color: #fff;
+    border: 1px solid green;
+    background: green;
+    cursor: pointer;
+}
+
+.col-12 .card .card-body .table-responsive table tbody tr td a .boton_upload:hover {
+    color: darkgreen;
+}
+
+
+/*fin botones*/
+
 .contformulario .row form{
   flex:1 1 25rem;
-  padding:2rem;
+  margin: 0 46rem 0 15rem;
+  padding:1rem 2rem;
   box-shadow: 0 1rem 2rem rgba(0,0,0,.1);
-  border-radius: .5em;
-  display: grid;
+  display: block;
   grid-template-columns: auto auto ;
   gap: 10px;
+  background-color: #fff;
+  width: 100%;
+  z-index: 2;
 }
 
 .contformulario .row form .inputBox{
-  padding:.5rem 0;
-}
-.contformulario .row form .boton1{
-  grid-column: 1 / 3;
+  padding:.2rem 0;
 }
 
 .contformulario .row form .inputBox input, select, textarea{
   font-family: 'Nunito', sans-serif;
-  width:95%;
-  padding:.5rem 0 .5rem .5rem;
+  width:100%;
+  padding:.1rem 0 .1rem .4rem;
   border:.1rem solid rgba(0,0,0,.1);
-  font-size: 1em;
+  font-size: .8em;
   color:#333;
   text-transform: none;
 }
@@ -137,59 +204,152 @@ body{
 
 .contformulario .row form .inputBox h3{
   /*font-size: 1em;*/
-  color:#666;
-  margin: 0.5rem 0;
-  font-weight: bold;
-}
-
-.title{
-    font-family: 'Satisfy', cursive;
-    font-size: 3em;
-    color: #27ae60;
-}
-
-.about .content {
-    -webkit-box-flex: 1;
-    -ms-flex: 1 1 30rem;
-    flex: 1 1 30rem;
-  }
+  color:#262631;
+  margin: 0.2rem 0;
+  font-size: .9em;
   
-  .about .content span {
-    font-family: "Satisfy", cursive;
-    font-size: 3rem;
-    color: #27ae60;
-  }
-
-  .boton_personalizado{
+}
+.container-fluid{
+  grid-column: 1 / 3;
+}
+.title{
     display: inline-block;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
-    padding: 5px;
-    margin: 5px;
-    color: #ffffff;
-    border: none;
-    background: gray;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size:medium;
-  }
-  .boton_personalizado:hover{
-    background: black;
-    transition: 0.3s ease-in-out all;
-  }
-
-@media (max-width:967px){
-  .contformulario .row .image img{
+    font-family: 'Poppins', cursive;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 1.6em;
+    width: 100%;
+    color:#4F52D6;
+}
+@media (max-width:1300px){
+  .contformulario .row .image2{
     display: none;
   }
+
 }
-@media (max-width:580px){
+@media (max-width:1300px){
+  .contformulario .row form{
+    display: block;
+    margin: 0 32rem 0 20rem;
+  }
+  .contformulario .row .image{
+    left: 500px;
+  }
+}
+
+@media (max-width:1140px){
+  .contformulario .row form{
+    display: block;
+    margin: 0 30rem 0 16rem;
+  }
+  .contformulario .row .image{
+    left: 500px;
+  }
+}
+
+@media (max-width:980px){
   .contformulario .row form .inputBox input, select, textarea{
     width:100%;
   }
+  .contformulario .row .image{
+    left: 280px;
+  }
+
+  .contformulario .row .image img{
+    width: 570px;
+  }
+
   .contformulario .row form{
     display: block;
+    margin: 0 16rem 0 5rem;
   }
+}
+@media (max-width:850px){
+  .contformulario .row .image{
+    display: none;
+  }
+  .contformulario .row form{
+    display: block;
+    margin: 0 4rem;
+  }
+}
+@media (max-width:640px){
+  .boton1, .boton-nuevo,.boton-nuevo:hover,.boton1:hover{
+    padding:.6rem .5rem;
+  }
+}
+/* Paginas distintas a agregar cursos*/
+.boton{
+  border: none;
+  padding: 1% 5%;
+  cursor: pointer;
+  background: rgb(239, 239, 239);
+  border-radius: 5px;
+  font-size: 20px;
+}
+
+.cont_formu{
+  background: cornflowerblue;
+  
+  height: 80%;
+  padding: 15px 20px 0px 20px ;
+}
+.cont_formu input{
+  font-size: 20px;
+}
+.cont_formu textarea{
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.cont_text{
+  background: #ffffff;
+  width: 50%;
+  height: 100%;
+  margin: auto;
+  border: 1px solid #dfdfdf;
+}
+.cont_text h2{
+  background: #f7f7f7;
+  height: 10%;
+  text-align: center;
+  padding-top: 2.5%;
+}
+.cont_text h3{
+  background: #f7f7f7;
+  height: 10%;
+  padding: 2.5% 0px 3% 3%;
+  border-bottom: 1px solid #dfdfdf;
+}
+
+.about .content {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 30rem;
+  flex: 1 1 30rem;
+}
+
+.about .content span {
+  font-family: "Satisfy", cursive;
+  font-size: 3rem;
+  color: #27ae60;
+}
+
+.boton_personalizado{
+  display: inline-block;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  padding: 5px;
+  margin: 5px;
+  color: #ffffff;
+  border: none;
+  background: gray;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size:medium;
+}
+.boton_personalizado:hover{
+  background: black;
+  transition: 0.3s ease-in-out all;
 }

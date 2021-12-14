@@ -1,5 +1,8 @@
 <?php 
 require_once '../../database/databaseConection.php';
+    /*=====================
+        AGREGAR CATEGORIAS
+    =======================*/
     if(isset($_POST['categoria_agregar'])){
         $nomb=$_POST['categoria_agregar'];
 
@@ -10,35 +13,36 @@ require_once '../../database/databaseConection.php';
         $dato=$q->fetch(PDO::FETCH_ASSOC);
         Database::disconnect();
     
-        if($dato['nombreCategoria']!=$nomb){
-            $pdo = Database::connect();  
-            $verif=$pdo->prepare("INSERT INTO categorias (nombreCategoria) VALUES ('$nomb') ");
-    
+        if(empty($dato)){
+            $pdo = Database::connect();
+            $verif=$pdo->prepare("INSERT INTO categorias (nombreCategoria) VALUES ('$nomb')");
             $verif->execute();
             Database::disconnect();
-            echo'
-            <script>
-                alert ("Categoria Agregada ");
-                window.location = "../../agregarCategorias.php?idCateg='.$dato['idCategoria'].'";
-            </script>
-            ';
+            echo 0;
+        }else{
+            echo 1;
         }
-        else{
-            echo'
+
+    }
+
+    /*=====================
+        ELIMINAR CATEGORIA
+    =======================*/
+    else if (isset($_POST['id'])){
+        
+        $id=$_POST['id'];
+        $pdo = Database::connect();  
+        $veri="DELETE FROM categorias WHERE idCategoria = '$id' ";
+        $q = $pdo->prepare($veri);
+        $q->execute(array());
+        $dato=$q->fetch(PDO::FETCH_ASSOC);
+        Database::disconnect();
+        echo'
             <script>
-                alert ("No se pudo agregar");
+                alert ("Eliminado exitosamente");
                 window.location = "../../agregarCategorias.php";
             </script>
-            ';
-        }
-
-    }else if (isset($_POST['categoria_editar'])){
-
-        /*
-        
-        */
-    }else if (isset($_POST['categoria_eliminar'])){
-
+        ';
         
     }
     

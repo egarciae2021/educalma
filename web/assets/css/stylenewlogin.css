@@ -1,0 +1,77 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,600;1,100&family=Zen+Antique+Soft&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;300;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Poppins:wght@400;700&family=Work+Sans&display=swap");
+
+* {
+  font-family: "Poppins", sans-serif;
+}
+.container{
+  display: flex;
+  align-items: center;
+}
+.container .container-formulario{
+  align-items: center;
+  margin: auto 0;
+  padding-left: 5rem;
+}
+.container .container-formulario h1{
+  text-transform: uppercase;
+  color: #7c83fd;
+}
+.row{
+  margin: auto 0;
+}
+a {
+  font-size: 15px;
+}
+.parr {
+  font-size: 15px;
+  display: inline-block;
+}
+.btn1 {
+  border: none;
+  outline: none;
+  height: 50px;
+  width: 100%;
+  background-color: black;
+  color: white;
+  border-radius: 4px;
+  font-weight: bold;
+}
+.btn1:hover {
+  background-color: white;
+  border: 1px solid;
+  color: #000;
+}
+
+/*Validacion*/
+
+label.error {
+  color: red;
+  font-size: 13px;
+  max-width: 300px;
+  padding: 4px;
+  margin: 0;
+}
+.logo-img {
+  width: 150px;
+}
+.cajita {
+  width: 450px;
+}
+@media (max-width: 992px) {
+  .col-lg-6 .img-fluid {
+    display: none;
+  }
+}
+@media (max-width: 767px) {
+  .container .container-formulario{
+    padding-left: 0rem;
+  }
+}
+@media (max-width: 580px) {
+  .cajita {
+    max-width: 300px;
+  }
+}

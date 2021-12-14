@@ -69,7 +69,7 @@
                     <img src="./assets/images/donar09.png" alt="">
                 </div>
                 
-                <form name="formulario" method="POST" id="editando_preguntas" action="includes/Pregunta_Respuesta/Pregunta_CRUD.php?id_modulo=<?php echo $idmodulo;?>" target="dummyframe" style="background:#F7F7F7;">
+                <form name="formulario" method="POST" id="editando_preguntas" action="includes/Pregunta_Respuesta/Pregunta_CRUD.php?id_modulo=<?php echo $idmodulo;?>"  style="background:#F7F7F7;">
                 <div class="inputBox">
                     <h3>
                         <i class="fas fa-edit"></i> Edita la Pregunta: <strong>"<?php echo $nombre_pregunta;?>"</strong>

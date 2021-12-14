@@ -19,6 +19,7 @@
         .subir {
             padding: 5px 10px;
             background: #5451D6;
+            font-size: .8rem;
             color: #fff;
             border: 0px solid #fff;
             border-radius: 8px;
@@ -61,17 +62,7 @@
     <br>
     <br>
     <!--contenido-->
-    <div class="container-fluid">
-        <h2 class="mb-4" style="text-align: center; color:#4F52D6; font-size: 300%;font-family: 'Oswald', sans-serif;">
-                <center>Bienvenido a EduCalma</center>
-        </h2>
-        <div class="title">
-            <div class="mb-4">
-                <center><i class="fas fa-book"></i> Dona un Curso</center>
-            </div>
-        </div>
-        <h2><a href="sidebarCursos.php" class="btn-before-custom">Volver</a></h2>
- </div>
+    
         <!--contenido de los cursos -->
 
         <!-- 
@@ -190,16 +181,23 @@
 <div class="container-contformulario">
     <div class="contformulario" id="contformulario">
         <div class="row">
-            <div class="image">
-                <img src="./assets/images/donar02.png" alt="">
-            </div>
              <!--
                                         ======================================
                                                     Agregar Curso
                                         ======================================
                                          
             -->
-            <form name="formulario" id="newUserForm" method="POST" action="includes/Cursos_crud/Cursos_CRUD.php" target="dummyframe" onsubmit="return comprobarDatosFormulario()" enctype="multipart/form-data">   
+            <form name="formulario" id="newUserForm" method="POST" action="includes/Cursos_crud/Cursos_CRUD.php"  onsubmit="return comprobarDatosFormulario()" enctype="multipart/form-data"> 
+                <div class="col-auto2">
+                    <a href="sidebarCursos.php" class="boton-nuevo">VOLVER</a>
+                </div>
+                <div class="container-fluid">
+                    <div class="title">
+                        <div class="mb-1">
+                            <center></i> Dona un Curso</center>
+                        </div>
+                    </div>
+                </div>
                 <div class="inputBox">
                     <h3>Nombre del Curso</h3>
                 <input type="text" name="nombres_agrecursos" id="names-agrecursos" placeholder="" aria-label="Nombrecurso" aria-describedby="names-addon">      
@@ -254,116 +252,18 @@
                         <div id="info"></div>
                     </div>
                 </div>
-                <input type="submit" class="boton1" style="font-size:medium;" value="Agregar">
+                <input type="submit" class="boton1"  value="Agregar">
             </form>
+            <div class="image">
+                <img src="./assets/images/card_04.jpg" alt="">
+            </div>
+            <div class="image2">
+                <img src="./assets/images/card_03.jpg" alt="">
+            </div>
         </div>
     </div>
 </div>
 
-            <!--tabla de curso -->
-            <div class="col-12 mt-5 text-center">
-                <div class="card">
-                    <div class="card-header">
-                        <h3 class="card-title">Listado de Cursos</h3>
-                    </div>
-                    <!-- /.card-header -->
-                    <div class="card-body">
-                        <?php
-                        require_once 'database/databaseConection.php';
-                        $pdo3 = Database::connect();
-
-                        if ($_SESSION['privilegio'] == 2) {
-                            $idProfe = $_SESSION['codUsuario'];
-                            $sql3 = "SELECT * FROM cursos WHERE id_userprofesor='$idProfe' order by idCurso DESC";
-                        } else {
-                            $idProfe = $_SESSION['codUsuario'];
-                            $sql3 = "SELECT * FROM cursos WHERE permisoCurso=0 order by idCurso DESC";
-                        }
-
-                        $q3 = $pdo3->prepare($sql3);
-                        $q3->execute();
-                        $curso = $q3->fetchAll(PDO::FETCH_ASSOC);
-
-                        ?>
-                        <div class="table-responsive">
-                            <table id="example1" class="table table-striped table-bordered" cellspacing="0" width="100%">
-                                <thead>
-
-                                    <tr>
-                                        <th>Nombre</th>
-                                        <th>Categoría</th>
-                                        <th>Público dirigido</th>
-                                        <th>Imagen</th>
-                                        <th>Descripción</th>
-                                        <th>Acciones</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <?php
-
-                                    foreach ($curso as $curso) {
-                                        $idCate = $curso['categoriaCurso'];
-                                        $sql4 = "SELECT * FROM categorias WHERE idCategoria = '$idCate'";
-                                        $q4 = $pdo4->prepare($sql4);
-                                        $q4->execute(array());
-                                        $datoCate = $q4->fetch(PDO::FETCH_ASSOC)
-                                    ?>
-                                        <tr>
-                                            <td><?php echo $curso['nombreCurso']; ?></td>
-                                            <td><?php echo $datoCate['nombreCategoria']; ?></td>
-                                            <td><?php echo $curso['dirigido']; ?></td>
-                                            <td><img height="50px" src="data:image/*;base64,<?php echo base64_encode($curso['imagenDestacadaCurso']) ?>"></td>
-                                            <td><?php echo $curso['descripcionCurso']; ?></td>
-                                            <td>
-                                                <?php
-
-                    
-                                                ?>
-                                                    <!--para agregar modulo-->
-                                                    <a href="agregarModulos.php?id=<?php echo $curso['idCurso']; ?>">
-                                                        <button class="boton_personalizado" type="button"><i class="far fa-plus-square  fa-2x"></i> </button>
-                                                    </a>
-                                                    <!--para editar curso-->
-                                                    <a href="editarcurso.php?id_curso=<?php echo $curso['idCurso']; ?>">
-                                                        <button class="boton_personalizado" type="button"><i class="far fa-edit fa-2x"></i></button>
-                                                    </a>
-                                                    <!--para quitar curso-->
-                                                    <a href="includes/Cursos_crud/Cursos_CRUD.php?id_curso=<?php echo $curso['idCurso']; ?>">
-                                                        <button class="boton_personalizado" type="button"><i class="far fa-bell-slash fa-2x"></i></button>
-                                                    </a>
-                                                <?php
-                                                 if($_SESSION['privilegio'] == 1) {
-                                                ?>
-                                                    <!--para quitar curso-->
-                                                    <a href="includes/Cursos_crud/aceptarCurso.php?id_curso=<?php echo $curso['idCurso']; ?>">
-                                                        <button class="boton_personalizado" type="button">Publicar</button>
-                                                    </a>
-
-                                                <?php
-
-                                                }
-                                                ?>
-
-                                                <!--ver curso-->
-                                                <a href="curso.php?id=<?php echo $curso['idCurso']; ?>">
-                                                    <i class="far fa-eye fa-2x"></i>
-                                                </a>
-                                            </td>
-
-                                        </tr>
-                                    <?php }
-                                    Database::disconnect();
-                                    ?>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                    <!-- /.card-body -->
-                </div>
-            </div>
-            <!-- /.card -->
-        </div>
-    </div>
     <!--
                     ======================================
                                 Lista Curso
@@ -609,10 +509,6 @@
     </div>
     <?php Database::disconnect(); ?>
 
-    <br>
-    <br>
-    <br>
-    <br>
     <br>
 
     <script>
