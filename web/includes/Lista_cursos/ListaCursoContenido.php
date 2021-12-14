@@ -8,7 +8,7 @@ require_once 'database/databaseConection.php';
 ?>
 
 <div class="container-fluid" >
-    
+
 <!-- CURSOS DESTACADOS -->
     <div class="row">
         <div class="col-12">
@@ -18,7 +18,10 @@ require_once 'database/databaseConection.php';
                     <hr>
                 </div>
             </div>
-                        <?php
+            
+            <div class="row container" style="margin: 0 auto;">
+            
+                <?php
                         $sql2 = "SELECT * FROM cursos WHERE permisoCurso=1 ORDER BY cursos.idCurso DESC";
                         $query2 = $pdo->prepare($sql2);
                         $query2->execute();
@@ -58,33 +61,39 @@ require_once 'database/databaseConection.php';
                             } else {
                                 $paginaRed = "detallecurso";
                             }
-                        ?>
-                            <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
-                                <div class="card">
-                                    <div class="row">
-                                        <div class="col-5">
-                                            <div class="container-image">
-                                                <img src="data:image/*;base64,<?php echo base64_encode($dato['imagenDestacadaCurso']); ?>" alt="">
-                                            </div>
-                                        </div>
-                                        <div class="col-7">
-                                            <div class="container-title">
-                                                <a  style="font-size:18px; color: #4F52D6"> <center><strong><?php echo $dato['nombreCurso']; ?></strong> </center></a>
-                                            </div>
-                                            <div class="container-descrition">
-                                                <p><?php echo $dato['descripcionCurso']; ?>'</p>
-                                            </div>
-                                            <div class="container-link">
-                                                <a href= "<?php echo $paginaRed ?>.php?id=<?php echo $dato['idCurso']; ?>">Ver informaci&oacute;n ></a>
-                                            </div>
-                                        </div>
-                                    </div>
+                ?>
+            
+                <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                    <div class="card">
+                        <div class="row">
+                            <div class="col-5">
+                                <div class="container-image">
+                                    <img src="data:image/*;base64,<?php echo base64_encode($dato['imagenDestacadaCurso']); ?>" alt="">
                                 </div>
                             </div>
-                        <?php
-                        }
-                        ?>
+                            <div class="col-7">
+                                <div class="container-title">
+                                    <a><strong><?php echo $dato['nombreCurso']; ?></strong></a>
+                                </div>
+                                <div class="container-descrition">
+                                    <p><?php echo $dato['descripcionCurso']; ?>'</p>
+                                </div>
+                                <div class="container-link">
+                                    <a href= "<?php echo $paginaRed ?>.php?id=<?php echo $dato['idCurso']; ?>">Ver informaci&oacute;n ></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+                <?php
+                }
+                ?>
+                
+            </div>
+
                         
+            <!-- CURSOS EN FILA -->
             <div class="row container" style="margin: 0 auto;">
                 <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
                     <div class="card">
@@ -109,7 +118,7 @@ require_once 'database/databaseConection.php';
                     </div>
                 </div>
 
-                <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                <!-- <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
                     <div class="card">
                         <div class="row">
                             <div class="col-5">
@@ -153,42 +162,46 @@ require_once 'database/databaseConection.php';
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
+
+                <!-- FIN CURSOS EN FILA-->
 
                 <!-- Búsqueda -->
                 <div class="col-12">
                     <div class="row">
                         <div class="col-12 col-sm-12 col-md-4 col-lg-4"></div>
                         <div class="col-12 col-sm-12 col-md-4 col-lg-4"></div>
-                    <!-- <form class="form-inline">
+                    
+                        <!-- <form class="form-inline">
                             <input type="text" class="form-control" placeholder="Buscar..." id="buscar" name="buscar">
                             <button  type="button" class="btn btn-outline-primary " onClick="location.reload()">
                                 <i class="fas fa-times "></i>
                             </button>
-                        </form>  --><div class="col-12 col-sm-12 col-md-4 col-lg-4">
-                        <div class="input-group justify-content-right mb-2">
-                            <input type="text" class="form-control" id="buscar" name="buscar" placeholder="Buscar..." aria-label="Recipient's username" aria-describedby="basic-addon2">
-                            <div class="input-group-append">
-                                <button type="button" class="btn btn-outline-primary m-0" onClick="location.reload()" id="basic-addon2">
-                                    <i class="fas fa-times"></i>
-                                </button>
+                        </form>  -->
+                        
+                        <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                            <div class="input-group justify-content-right mb-2">
+                                <input type="text" class="form-control" id="buscar" name="buscar" placeholder="Buscar...">
+                                <div class="input-group-append">
+                                    <button type="button" class="btn btn-outline-primary m-0" onClick="location.reload()" id="">
+                                        <i class="fas fa-times"></i>
+                                </div>
                             </div>
-                        </div></div>
+                        </div>
+                        
                     </div>
-                </div>
+                </div> 
                 <!--Fin de Búsqueda-->
-            
             </div>
         </div>
     </div>
     <!-- FIN CURSOS DESTACADOS -->
     
     
-    <!-- CURSOS -->
+    <!-- SECCIÓN CURSOS -->
     <div class="container-fluid px-0" id="result">
-        <div class="row">
-            <!-- <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4"> -->
-                <div class="col-12">
+        <div class="row"><!-- <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4"> -->
+            <div class="col-12">
                 <div class="row">
                     <div class="section-title-course">
                         Cursos
@@ -197,7 +210,7 @@ require_once 'database/databaseConection.php';
                 </div>
             </div>
         </div>
-
+        
         <div class="container-card-course">
             <div class="row pt-1 container" style="margin: 0 auto;" >
                 
@@ -244,7 +257,8 @@ require_once 'database/databaseConection.php';
                                 $paginaRed = "curso";
                             }
                         } else {
-                            $paginaRed = "detallecurso";
+                            $paginaRed =
+                             "detallecurso";
                         }
                         
                 ?>
@@ -255,7 +269,7 @@ require_once 'database/databaseConection.php';
                             <img heigth="10px"; src="data:image/*;base64,<?php echo base64_encode($dato['imagenDestacadaCurso']); ?>" alt="">
                         </div>
                         <div class="container-card-title">
-                            <a style="font-size:18px; color: black">
+                            <a>
                             <center><strong><?php echo $dato['nombreCurso']; ?></strong></center>
                             </a>
                         </div>
@@ -275,7 +289,7 @@ require_once 'database/databaseConection.php';
             </div>
             
             <!-- Muestras de como tenia que quedar -->
-            <div class="row pt-1 container" style="margin:0 auto;">
+            <!-- <div class="row pt-1 container" style="margin:0 auto;">
             <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 ">
                 <div class="card">
                     <div class="container-card-image">
@@ -291,7 +305,7 @@ require_once 'database/databaseConection.php';
                         <a href="">Ver informaci&oacute;n ></a>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
             <!-- <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3">
                 <div class="card">
@@ -371,6 +385,7 @@ require_once 'database/databaseConection.php';
         </div>
     </div>
     <!--FIN DE PAGINADOR-->
+
 </div>   
 </div>
 </div>

@@ -50,6 +50,11 @@
     color: #000000;
 }
 
+.container-fluid .row .col-12 .card .col-7 .container-title a {
+    font-size: 18px;
+    color: #4F52D6;
+}
+
 .container-fluid .row .col-12 .card .col-7 .container-descrition {
     font-family: "Inter", sans-serif;
     font-weight: normal;
