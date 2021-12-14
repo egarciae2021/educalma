@@ -16,17 +16,17 @@ require_once 'database/databaseConection.php';
                         <a href="nosotros.php">Nosotros</a>
                     </li>
                     <li class="nav-link" style="--i: .6s">
-                    <?php
-                    if(isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)){
-                    ?>
+                    <!-- <?php
+                    //if(isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)){
+                    ?> -->
                         <a href="ListaCursos.php?pag=1">Cursos</a>
-                    <?php
-                    }else{
+                    <!-- <?php
+                    //}else{
                     ?>
                         <a href="login.php">Cursos</a>
                     <?php
-                    }   
-                    ?>
+                    //}   
+                    ?> -->
                     </li>
                 </ul>
             </div>
