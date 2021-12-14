@@ -8,12 +8,13 @@
     ?>
         <br>
         <div class="title_miscursos">
-            <h3>Mis Cursos</h2>
+            <h3>Mis Cursos</h3>
         </div>
         <br>
-        <div class="container-fluid px-0 ">
+        <div class="container-fluid px-0">
             <div class="container-card-course">
                 <div class="row pt-1 container" style="margin:0 auto;">
+
                     <?php
                     error_reporting(0);
                     require_once '././database/databaseConection.php';
@@ -47,13 +48,13 @@
                     <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 ">
                         <div class="card"  style="border: 1px solid #c5c5c5;">
                             <div class="container-card-image">
-                            <img src="data:image/*;base64,' . base64_encode($dato3['imagenDestacadaCurso']) . '" alt="foto_curso" >
+                                <img src="data:image/*;base64,' . base64_encode($dato3['imagenDestacadaCurso']) . '" alt="foto_curso" >
                             </div>
                             <div class="container-card-title" style="text-align:center;">
-                            ' . $dato3['nombreCurso'] . '
+                                ' . $dato3['nombreCurso'] . '
                             </div>
                             <div class="container-card-description" style="margin-top: 1rem;">
-                            ' . $dato3['descripcionCurso'] . '
+                                 ' . $dato3['descripcionCurso'] . '
                             </div>
                             <div class="container-card-link">
                                 <a href="curso.php?id=' . $cursoID . '" >Ver más ></a>
@@ -73,9 +74,8 @@
                     ?>
 
                 <?php
-            } else {
-                header('Location:iniciosesion.php');
-            }
+                } else {
+                    header('Location:iniciosesion.php');
+                }
                 ?>
-
 </body>
