@@ -42,12 +42,13 @@ require_once 'database/databaseConection.php';
                 $q->execute(array());
                 $dato = $q->fetch(PDO::FETCH_ASSOC);
                 Database::disconnect();
+                $nom=$dato['nombres'];
             ?>
                 <!-- LOGUEADO -->
                 <div class="log-sign" style="--i: 1.8s">
                     <ul>
                         <li class="nav-link" style="--i: .85s">
-                            <a href="#">NOMBREUSER<i class="fas fa-caret-down"></i></a>
+                            <a href="#"><?php echo $nom ?><i class="fas fa-caret-down"></i></a>
                             <div class="dropdown">
                                 <ul>
                                     <li class="dropdown-link">
@@ -67,7 +68,6 @@ require_once 'database/databaseConection.php';
                             </div>
                         </li>
                     </ul>
-
                 </div>
             <?php
             } else {

@@ -25,51 +25,43 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     }
 
-    // function enviar(evento){
-    //     evento.preventDefault();
-    //     var datos = new FormData($("#formEnviarEmail")[0]);
-        
-    //     $.ajax({
-    //         url: './includes/Login/checkenviar.php',
-    //         type: 'POST',
-    //         data: datos,
-    //         contentType: false,
-    //         processData: false,
-            
-    //         success: function(data){
-    //             alert(data);
-    //             console.log(data);
-    //             if(data==1){                    
-    //                 Swal.fire({
-    //                     title: 'Enlace de recuperacion enviado!',
-    //                     text: 'Revise su bandeja de entrada',
-    //                     icon: 'success',
-    //                 }).then(()=>{
-    //                     //window.location.href = "../../agregarCategorias.php";                    
-    //                 })
-                                       
-    //             }else if(data == 2){                    
-    //                 Swal.fire({
-    //                     icon: 'error',
-    //                     title: 'Error al enviar!!',
-    //                     text: 'Ocurrio un problema al enviar el email',
-    //                 }) 
-    //             }else if(data == 0){                    
-    //                 Swal.fire({
-    //                     icon: 'error',
-    //                     title: 'Error al enviar!!',
-    //                     text: 'No hay una cuenta con el correo proporcionado',
-    //                 }) 
-    //             }else{
-    //                 alert(data);
-    //             }
-
-    //         }
-    //     })
-
-    // }
-
-
-
-
 });
+
+$(document).ready(function(){
+    $("#form_login").submit(loguear);
+    
+    function loguear(evento){
+        evento.preventDefault();
+        var datos = new FormData($("#form_login")[0]);
+        
+        $.ajax({
+            url: 'includes/login/checklogin.php',
+            type: 'POST',
+            data: datos,
+            contentType: false,
+            processData: false,
+            
+            success: function(data){
+
+                if(data==0){
+                    Swal.fire({
+                        title: 'Ingreso Exitoso!',
+                        icon: 'success',
+                        timer: 900,
+                        showConfirmButton: false,
+                    }).then(()=>{
+                        window.location.href = "index.php";
+                    })
+                }else{
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Fallo al Iniciar Sesión!!',
+                        text: 'Correo o Contraseña incorrectos',
+                        timer: 1000,
+                        showConfirmButton: false,
+                    })
+                }
+            }
+        })
+    }
+})
