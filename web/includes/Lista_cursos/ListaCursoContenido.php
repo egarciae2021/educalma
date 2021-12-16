@@ -4,7 +4,7 @@
 <br><br><br>
 
 <?php
-require_once 'database/databaseConection.php';
+//require_once 'database/databaseConection.php';
 ?>
 
 <div class="container-fluid" >
@@ -22,6 +22,7 @@ require_once 'database/databaseConection.php';
             <div class="row container" style="margin: 0 auto;">
             
                 <?php
+                        $pdo = Database::connect();
                         $sql2 = "SELECT * FROM cursos WHERE permisoCurso=1 ORDER BY cursos.idCurso DESC";
                         $query2 = $pdo->prepare($sql2);
                         $query2->execute();
