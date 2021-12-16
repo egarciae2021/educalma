@@ -6,6 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="././assets/css/cont_curso.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="./assets/js/plugins/sweetalert2.min.css">
 </head>
 
 <body>
@@ -73,7 +74,7 @@
                 <a class="button" data-filter=".design">CURSO</a>
                 <a class="button" data-filter=".development" href="foro.php?id=<?php echo $id;?>">FORO</a>
                <!--  <a class="button" data-filter=".marketing" href="descargas.php">DESCARGABLE</a>-->
-               <!--  <a class="button" data-filter=".seo" href="progreso.php?id=<?php echo $id ?>">PROGRESO</a>-->
+               <!--  <a class="button" data-filter=".seo" href="progreso.php?id=<?php //echo $id ?>">PROGRESO</a>-->
                 
                 <?php
                 /*
@@ -117,6 +118,7 @@
                     echo '<a class="button" data-filter=".seo" href="plugins/ejemplo.php?idCurso='.$id.'">CERTIFICADO</a>';
                     $validar=1;
                 }else {
+                    echo '<a class="button" onclick="sin_certificado()">CERTIFICADO</a>';
                     $validar=0;
                 }
                 
@@ -412,8 +414,16 @@
     <script src="assets/js/plugins/isotope.min.js"></script>
     <script src="assets/js/plugins/images-loded.min.js"></script>
     <script src="assets/js/plugins/custom.js"></script>
+    <script src="./assets/js/plugins/sweetalert2.all.min.js"></script>
     <script>
     /* counter js */
+    function sin_certificado(){
+        Swal.fire({
+            icon: 'error',
+            title: 'Terminar el curso',
+            text: 'Todavia no ha completado el curso!'
+        })
+    }
 
 (function ($) {
     $.fn.countTo = function (options) {
