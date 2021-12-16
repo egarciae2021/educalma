@@ -183,9 +183,7 @@
                     $idd = $dato2['idModulo'];
                     $sql3 = "SELECT * FROM tema WHERE id_modulo='$idd'";
                     $q3 = $pdo3->prepare($sql3);
-                    $q3->execute(array());
-
-                while($dato3=$q3->fetch(PDO::FETCH_ASSOC)){
+                    $q3->execute(array());                
             ?>
 
         </div>
@@ -211,30 +209,39 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                <tr>
-                                    <td>
-                                        <input type="text" class="form-control-sm" value="<?php echo $dato3['nombreTema']?>" aria-label="Recipient's username with two button addons" disabled>
-                                    </td>
-                                    <td></td>
-                                    <td></td>
-                                    <td>
-                                        <!--para editar tema-->
-                                        <a href="editartema.php?id_modulo=<?php echo $idd; ?>&id_curso=<?php echo $idCurso;?>&id_tema=<?php echo $dato3['idTema'];?>">
-                                            <button class="btn btn-outline-success" type="button"><i class="fas fa-edit"></i> Editar tema</button>
-                                        </a>
-                                        <!--para borrar tema-->
-                                        <a href="includes/tema/quitartemas.php?id_modulo=<?php echo $idd; ?>&id_curso=<?php echo $idCurso;?>&id_tema=<?php echo $dato3['idTema'];?>">
-                                            <button class="btn btn-outline-danger" type="button"><i class="fas fa-trash"></i> Quitar tema</button>
-                                        </a>
-                                    </td>
-                                </tr>
+                                <?php
+                                while($dato3=$q3->fetch(PDO::FETCH_ASSOC)){
+                                ?>
+                                    <tr>
+                                        <td>
+                                            <input type="text" class="form-control-sm" value="<?php echo $dato3['nombreTema']?>" aria-label="Recipient's username with two button addons" disabled>
+                                        </td>
+                                        <td>
+                                            <?php echo $dato3['link_video']?>
+                                        </td>
+                                        <td>
+                                            <?php echo $dato3['descripcionTema']?>
+                                        </td>
+
+                                        <td>
+                                            <!--para editar tema-->
+                                            <a href="editartema.php?id_modulo=<?php echo $idd; ?>&id_curso=<?php echo $idCurso;?>&id_tema=<?php echo $dato3['idTema'];?>">
+                                                <button class="btn btn-outline-success" type="button"><i class="fas fa-edit"></i> Editar tema</button>
+                                            </a>
+                                            <!--para borrar tema-->
+                                            <a href="includes/tema/quitartemas.php?id_modulo=<?php echo $idd; ?>&id_curso=<?php echo $idCurso;?>&id_tema=<?php echo $dato3['idTema'];?>">
+                                                <button class="btn btn-outline-danger" type="button"><i class="fas fa-trash"></i> Quitar tema</button>
+                                            </a>
+                                        </td>
+                                    </tr>
+
+                                <?php 
+                                }
+                                Database::disconnect();
+                                ?>
                             </tbody>
                             </table>
-                        
-                            <?php }
-                                    Database::disconnect();
-                                    ?>
-                                    
+   
                         </div>
                     </div>
                     <!-- /.card-body -->

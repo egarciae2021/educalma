@@ -9,20 +9,18 @@ $idtema= $_GET['id_tema'];
 
 /* Eliminar todos los temas del modulo*/
     $pdo1 = Database::connect();  
-    $verif1=$pdo1->prepare("DELETE FROM tema where idTema = '$idtema'");
+    $verif1=$pdo1->prepare("DELETE FROM tema where idTema = :idTema");
 
     $verif1->execute(array(
-    ':idTema' => $idtema,
+        ':idTema' => $idtema,  
+    ));
 
-    
-));
-Database::disconnect();
+    Database::disconnect();
 
         echo'
-        <script>
-            window.location = "../../agregartema.php?idCurso='.$idCurso.'&id_mo='.$idModulo.'";
-        </script>
-        
+            <script>
+                window.location = "../../agregartema.php?idCurso='.$idCurso.'&id_mo='.$idModulo.'";
+            </script>
         ';
 
 //https://www.youtube.com/watch?v=BjC0KUxiMhc&ab_channel=thestrokesVEVO
