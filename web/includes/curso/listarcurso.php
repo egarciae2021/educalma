@@ -116,7 +116,7 @@
                                             <td><?php echo $datoCate['nombreCategoria']; ?></td>
                                             <td><?php echo $curso['dirigido']; ?></td>
                                             <td><img height="50px" src="data:image/*;base64,<?php echo base64_encode($curso['imagenDestacadaCurso']) ?>"></td>
-                                            <td><?php echo $curso['descripcionCurso']; ?></td>
+                                            <td><?php echo substr($curso['descripcionCurso'],0,100)."..."; ?></td>
                                             <td><?php echo $curso['costoCurso'];?></td>
                                             <td>
                                                 <?php
