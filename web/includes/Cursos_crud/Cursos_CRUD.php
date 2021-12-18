@@ -40,11 +40,10 @@
             //moviendo imagen temporal a una carpeta
             //$ruta="../../assets/images/imagenes_cursos/".$nombreimagen;
             //$resultado=move_uploaded_file($_FILES['txtimagen']['tmp_name'],$ruta);
-    
+            
             $pdo = Database::connect();
             $verif=$pdo->prepare(" INSERT INTO cursos (nombreCurso,descripcionCurso,categoriaCurso
-            ,dirigido,costoCurso,imagenDestacadaCurso,permisoCurso,introduccion,id_userprofesor) VALUES ('$nombreCur','$descripcionCur'
-            ,'$categoriaCur','$dirigido','$precio','$nombreimagen',0,'$intro','$idProfe') ");
+            ,dirigido,costoCurso,imagenDestacadaCurso,permisoCurso,introduccion,id_userprofesor) VALUES ('$nombreCur','$descripcionCur',$categoriaCur,'$dirigido','$precio','$nombreimagen',0,'$intro',$idProfe) ");
     /*
             $verif->execute(array(
                 ':nombres_agrecursos'=>$nombreCur,

@@ -275,7 +275,7 @@
                             </a>
                         </div>
                         <div class="container-card-description">
-                            <p><?php echo $dato['descripcionCurso']; ?>'</p>
+                        <p><?php echo substr($dato['descripcionCurso'],0,80)."..."; ?></p>
                         </div>
                         <div class="container-card-link">
                             <a href= "<?php echo $paginaRed ?>.php?id=<?php echo $dato['idCurso']; ?>"> <center><strong>Ver Informaci&oacute;n > </strong> </center></a>
