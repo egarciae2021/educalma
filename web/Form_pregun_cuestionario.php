@@ -10,5 +10,6 @@
 
 <?php include_once 'includes/curso/Preguntas_Cuestionar.php' ?>
 <?php include_once 'includes/Inicio/Footer.php' ?>
+<script src="assets/js/home.js"></script>
 
 </body>
