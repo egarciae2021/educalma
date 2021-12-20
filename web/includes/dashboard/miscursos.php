@@ -80,8 +80,9 @@
                                 ' . $dato3['nombreCurso'] . '
                             </div>
                             <div class="container-card-description" style="margin-top: 1rem;">
-                                 ' . $dato3['descripcionCurso'] . '
+                                 ' . substr($dato3['descripcionCurso'],0,90)."...". '
                             </div>
+                            
                             <div class="container-card-link">
                                 <a href="curso.php?id=' . $cursoID . '" >Ver más ></a>
                             </div>
@@ -89,6 +90,7 @@
                     </div>
                     
             ';
+
                         }
                     }
                     echo ' </div>
