@@ -115,10 +115,10 @@
 
                 if($contador==$cuenta2){
             ?>
-            <h6 style="text-align: center;">fin de cuestionario</h6>
-            <div style="text-align: center;">
-                <a href="curso.php?id=<?php echo $id;?>"><button type="button" class="btn btn-outline-secondary">Terminar</button></a>
-                <?php
+                    <h6 style="text-align: center;">fin de cuestionario</h6>
+                    <div style="text-align: center;">
+                        <a href="curso.php?id=<?php echo $id;?>"><button type="button" class="btn btn-outline-secondary">Terminar</button></a>
+                        <?php
                             // $pdow = Database::connect(); 
                             // $sqli = "SELECT * FROM modulo WHERE id_curso='$id'";
                             // $qi = $pdow->prepare($sqli);
@@ -139,29 +139,37 @@
                             // $idtemat=$resultado1t[intval($_GET['idtema'])-1]['idTema'];
 
                             // echo $nuevat;
-                            ?>
-                <a href="video.php?id=<?php echo $id;?>&c_tema=<?php echo $c_tema;?>&validar=1&c_modulo=<?php echo $c_modulo;?>"><button type="button" class="btn btn-outline-secondary">Siguiente</button></a>
-                
-                
-            </div>
-            <div style="padding: 10px 20%;">
-                <div class="accordion" id="accordionExample">
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingTwo">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                Resultado de las <?php echo $cuenta2;?> preguntas.
-                            </button>
-                        </h2>
-                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                            data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                <h5>Respuestas Correctas: <?php echo $c;?></h5>
+                            $pdo19 = Database::connect(); 
+                            $q19=$pdo19->query("SELECT count(*) FROM modulo WHERE id_curso='$id'");
+                            $moduloC= $q19->fetchColumn();
+
+                            if($c_modulo<=$moduloC){
+                        ?>
+                                <a href="video.php?id=<?php echo $id;?>&c_tema=<?php echo $c_tema;?>&validar=1&c_modulo=<?php echo $c_modulo;?>"><button type="button" class="btn btn-outline-secondary">Siguiente</button></a>
+                        <?php
+                            }
+                        ?>
+                        
+                        
+                    </div>
+                    <div style="padding: 10px 20%;">
+                        <div class="accordion" id="accordionExample">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingTwo">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        Resultado de las <?php echo $cuenta2;?> preguntas.
+                                    </button>
+                                </h2>
+                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                                    data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <h5>Respuestas Correctas: <?php echo $c;?></h5>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
             <?php } ?>
             <?php 
                 if($fila1=$q1->fetch(PDO::FETCH_ASSOC)){

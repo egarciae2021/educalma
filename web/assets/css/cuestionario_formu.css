@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap');
 body{
     font-size: 10px;
     margin: 0%;
@@ -53,10 +54,10 @@ body{
 
 /*listado de las preguntas*/
 .formu02{
-    padding: 15px 50px;
-    text-align: left;
-    background: rgb(192, 207, 214);
-    font-size: 2em;
+    padding: 10px 50px;
+    text-align: center;
+    font-size: 1.5em;
+    width: 100%;
 }
 
 /*codigo sidebar*/
@@ -106,6 +107,14 @@ body{
   flex:1 1 25rem;
 }
 
+.contformulario .row .image2{
+  flex:1 1 25rem;
+}
+
+.contformulario .row .image2 img{
+  width:100%;
+}
+
 .contformulario .row .image img{
   width:100%;
 }
@@ -120,9 +129,15 @@ body{
   gap: 10px;
 }
 
+.table{
+  font-size: 1.2rem;
+  font-family: 'Nunito', sans-serif;
+}
+
 .contformulario .row form .inputBox{
   padding:.5rem 0;
 }
+
 .contformulario .row form .boton1{
   grid-column: 1 / 3;
 }
@@ -132,7 +147,7 @@ body{
   width:100%;
   padding:.5rem 0 .5rem .5rem;
   border:.1rem solid rgba(0,0,0,.1);
-  font-size: 1em;
+  font-size: 1.6em;
   color:#333;
   text-transform: none;
 }
@@ -193,6 +208,12 @@ body{
     display: none;
   }
 }
+@media (max-width:916px){
+  .contformulario .row .image2 img{
+    display: none;
+  }
+}
+
 @media (max-width:580px){
   .contformulario .row form .inputBox input, select, textarea{
     width:100%;

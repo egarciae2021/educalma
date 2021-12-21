@@ -4,7 +4,7 @@
 <br><br><br>
 
 <?php
-require_once 'database/databaseConection.php';
+//require_once 'database/databaseConection.php';
 ?>
 
 <div class="container-fluid" >
@@ -22,6 +22,7 @@ require_once 'database/databaseConection.php';
             <div class="row container" style="margin: 0 auto;">
             
                 <?php
+                        $pdo = Database::connect();
                         $sql2 = "SELECT * FROM cursos WHERE permisoCurso=1 ORDER BY cursos.idCurso DESC";
                         $query2 = $pdo->prepare($sql2);
                         $query2->execute();
@@ -76,10 +77,10 @@ require_once 'database/databaseConection.php';
                                     <a><strong><?php echo $dato['nombreCurso']; ?></strong></a>
                                 </div>
                                 <div class="container-descrition">
-                                    <p><?php echo $dato['descripcionCurso']; ?>'</p>
+                                    <p><?php echo substr($dato['descripcionCurso'],0,60)."..."; ?></p>
                                 </div>
                                 <div class="container-link">
-                                    <a href= "<?php echo $paginaRed ?>.php?id=<?php echo $dato['idCurso']; ?>">Ver informaci&oacute;n ></a>
+                                    <a href= "<?php echo $paginaRed ?>.php?id=<?php echo $dato['idCurso']; ?>">Ver informaci&oacute;n -></a>
                                 </div>
                             </div>
                         </div>
@@ -93,8 +94,8 @@ require_once 'database/databaseConection.php';
             </div>
 
                         
-            <!-- CURSOS EN FILA -->
-            <div class="row container" style="margin: 0 auto;">
+            <!-- CURSOS EN FILA
+          <div class="row container" style="margin: 0 auto;">
                 <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
                     <div class="card">
                         <div class="row">
@@ -116,7 +117,7 @@ require_once 'database/databaseConection.php';
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>-->
 
                 <!-- <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
                     <div class="card">
@@ -274,10 +275,10 @@ require_once 'database/databaseConection.php';
                             </a>
                         </div>
                         <div class="container-card-description">
-                            <p><?php echo $dato['descripcionCurso']; ?>'</p>
+                        <p><?php echo substr($dato['descripcionCurso'],0,80)."..."; ?></p>
                         </div>
                         <div class="container-card-link">
-                            <a href= "<?php echo $paginaRed ?>.php?id=<?php echo $dato['idCurso']; ?>"> <center><strong>Ver Informaci&oacute;n > </strong> </center></a>
+                            <a href= "<?php echo $paginaRed ?>.php?id=<?php echo $dato['idCurso']; ?>"> <center><strong>Ver Informaci&oacute;n -> </strong> </center></a>
                         </div>
                     </div>
                 </div>

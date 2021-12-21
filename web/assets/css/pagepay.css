@@ -1,0 +1,96 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;300;500&family=Raleway:wght@100;200;300;400;500;600;700&display=swap");
+
+body{
+    background-image: url('../images/Azul\ Degradado1.jpg');
+    background-size: cover;
+    background-position-y: 50%;
+    color: #000000;
+}
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Inter", sans-serif;
+  font-family: "Raleway", sans-serif;
+}
+.contenedor-nextpage {
+  text-align: center;
+}
+.image-cont{
+    max-width: 100px;
+}
+.contenedor-nextpage h3 {
+  font-size: 18px;
+  font-weight: normal;
+}
+.contenedor-nextpage span {
+  font-size: 20px;
+  font-weight: bold;
+}
+.contenedor-nextpage a {
+  border-radius: 20px;
+  width: 100%;
+}
+.contenedor-nextpage .visa {
+    background-color: #fff;
+}
+.contenedor-nextpage .paypal {
+    background-color:  #f9c835 ;
+}
+.contenedor-nextpage .credit i{
+    color: #ffffff;
+    font-size: 1.5rem;
+    /* position: absolute; */
+}
+.contenedor-nextpage .credit {
+    background-color: #313131;
+    font-size: 12px;
+    font-weight: bold;
+    color: #ffffff;
+}
+.contenedor-nextpage a img {
+  height: 1.5rem;
+}
+.contenedor-nextpage h5 {
+  font-size: 12px;
+  font-weight: bold;
+}
+.contenedor-nextpage h4 {
+  font-size: 15px;
+  font-weight: normal;
+}
+@media (max-width: 570px) {
+  .contenedor-nextpage {
+    padding: 0 1rem;
+  }
+  .contenedor-nextpage h3 {
+    font-size: 15px;
+  }
+  .contenedor-nextpage span {
+    font-size: 25px;
+  }
+  .contenedor-nextpage h5 {
+    font-size: 12px;
+  }
+  .contenedor-nextpage h4 {
+    font-size: 14px;
+  }
+}
+@media (max-width: 400px) {
+  .contenedor-nextpage h1 {
+    font-size: 28px;
+  }
+  .contenedor-nextpage h3 {
+    font-size: 13px;
+  }
+  .contenedor-nextpage span {
+    font-size: 15px;
+  }
+  .contenedor-nextpage h5 {
+    font-size: 10px;
+  }
+  .contenedor-nextpage h4 {
+    font-size: 13px;
+  }
+}

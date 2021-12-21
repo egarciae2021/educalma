@@ -3,10 +3,16 @@ require_once '../../database/databaseConection.php';
 ?>
 <div class="container-fluid px-0" id="result">
 
-<div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4 section-title-courses">
-    <br>
-    <a style="font-size:18px; color: #4F52D6"> <h2><strong>Cursos</strong></h2></a>
-</div>
+<div class="row"><!-- <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4"> -->
+            <div class="col-12">
+                <div class="row">
+                    <div class="section-title-course">
+                        Cursos
+                        <hr>
+                    </div>
+                </div>
+            </div>
+        </div>
 <?php
 function buscar(){ 
     ?>
@@ -59,7 +65,7 @@ function buscar(){
                          <p><?php echo $dato['descripcionCurso']; ?>'</p>
                          </div> 
                          <div class="container-card-link">
-                         <a href= "<?php echo $paginaRed ?>.php?id=<?php echo $dato['idCurso']; ?>"> <center><strong>Ver Informaci&oacute;n > </strong> </center></a>
+                         <a href= "<?php echo $paginaRed ?>.php?id=<?php echo $dato['idCurso']; ?>"> <center><strong>Ver Informaci&oacute;n -> </strong> </center></a>
                         </div>
                 </div>
             </div>

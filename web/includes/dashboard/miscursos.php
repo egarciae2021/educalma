@@ -1,5 +1,31 @@
-<head>
+<head></head>
     <link rel="stylesheet" href="assets/css/cursos.css">
+
+    <style>
+        .order-card-custom {
+            display: grid;
+            grid-template-columns: 1fr;
+            max-width: 1800px;
+        }
+
+        @media (min-width: 768px) {
+            .order-card-custom {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 992px) {
+            .order-card-custom {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (min-width: 1300px) {
+            .order-card-custom {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+    </style>
 </head>
 
 <body style="background-color: #fff;">
@@ -13,7 +39,7 @@
         <br>
         <div class="container-fluid px-0">
             <div class="container-card-course">
-                <div class="row pt-1 container" style="margin:0 auto;">
+                <div class="row pt-1 container order-card-custom" style="margin:0 auto;">
 
                     <?php
                     error_reporting(0);
@@ -45,7 +71,7 @@
                             $dato3 = $q3->fetch(PDO::FETCH_ASSOC);
 
                             echo '
-                    <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 ">
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3">
                         <div class="card"  style="border: 1px solid #c5c5c5;">
                             <div class="container-card-image">
                                 <img src="data:image/*;base64,' . base64_encode($dato3['imagenDestacadaCurso']) . '" alt="foto_curso" >
@@ -54,15 +80,17 @@
                                 ' . $dato3['nombreCurso'] . '
                             </div>
                             <div class="container-card-description" style="margin-top: 1rem;">
-                                 ' . $dato3['descripcionCurso'] . '
+                                 ' . substr($dato3['descripcionCurso'],0,90)."...". '
                             </div>
+                            
                             <div class="container-card-link">
-                                <a href="curso.php?id=' . $cursoID . '" >Ver más ></a>
+                                <a href="curso.php?id=' . $cursoID . '" >Ver más -></a>
                             </div>
                         </div>
                     </div>
                     
             ';
+
                         }
                     }
                     echo ' </div>
@@ -74,8 +102,8 @@
                     ?>
 
                 <?php
-                } else {
-                    header('Location:iniciosesion.php');
-                }
+            } else {
+                header('Location:iniciosesion.php');
+            }
                 ?>
 </body>
