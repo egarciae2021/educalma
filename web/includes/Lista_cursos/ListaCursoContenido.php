@@ -80,7 +80,7 @@
                                     <p><?php echo substr($dato['descripcionCurso'],0,60)."..."; ?></p>
                                 </div>
                                 <div class="container-link">
-                                    <a href= "<?php echo $paginaRed ?>.php?id=<?php echo $dato['idCurso']; ?>">Ver informaci&oacute;n ></a>
+                                    <a href= "<?php echo $paginaRed ?>.php?id=<?php echo $dato['idCurso']; ?>">Ver informaci&oacute;n -></a>
                                 </div>
                             </div>
                         </div>
@@ -94,8 +94,8 @@
             </div>
 
                         
-            <!-- CURSOS EN FILA -->
-            <div class="row container" style="margin: 0 auto;">
+            <!-- CURSOS EN FILA
+          <div class="row container" style="margin: 0 auto;">
                 <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
                     <div class="card">
                         <div class="row">
@@ -117,7 +117,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>-->
 
                 <!-- <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
                     <div class="card">
@@ -278,7 +278,7 @@
                         <p><?php echo substr($dato['descripcionCurso'],0,80)."..."; ?></p>
                         </div>
                         <div class="container-card-link">
-                            <a href= "<?php echo $paginaRed ?>.php?id=<?php echo $dato['idCurso']; ?>"> <center><strong>Ver Informaci&oacute;n > </strong> </center></a>
+                            <a href= "<?php echo $paginaRed ?>.php?id=<?php echo $dato['idCurso']; ?>"> <center><strong>Ver Informaci&oacute;n -> </strong> </center></a>
                         </div>
                     </div>
                 </div>

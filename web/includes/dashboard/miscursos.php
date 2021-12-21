@@ -84,7 +84,7 @@
                             </div>
                             
                             <div class="container-card-link">
-                                <a href="curso.php?id=' . $cursoID . '" >Ver más ></a>
+                                <a href="curso.php?id=' . $cursoID . '" >Ver más -></a>
                             </div>
                         </div>
                     </div>

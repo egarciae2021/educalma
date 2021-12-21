@@ -65,7 +65,7 @@ function buscar(){
                          <p><?php echo $dato['descripcionCurso']; ?>'</p>
                          </div> 
                          <div class="container-card-link">
-                         <a href= "<?php echo $paginaRed ?>.php?id=<?php echo $dato['idCurso']; ?>"> <center><strong>Ver Informaci&oacute;n > </strong> </center></a>
+                         <a href= "<?php echo $paginaRed ?>.php?id=<?php echo $dato['idCurso']; ?>"> <center><strong>Ver Informaci&oacute;n -> </strong> </center></a>
                         </div>
                 </div>
             </div>
