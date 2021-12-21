@@ -101,7 +101,8 @@ CREATE TABLE cursos (
     imagenDestacadaCurso longblob,
     permisoCurso int(1) not null,
     introduccion varchar(500) not null,
-    id_userprofesor int(10) not null
+    id_userprofesor int(10) not null,
+    fechaPulicacion date DEFAULT NULL
 );
 
 

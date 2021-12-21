@@ -16,13 +16,78 @@
     $q4 = $pdo4->prepare($sql4);
     $q4->execute(array());
     $dato4 = $q4->fetch(PDO::FETCH_ASSOC);
+
+     //Cantidad de modulos del curso
+     $pdo13 = Database::connect(); 
+     $q13=$pdo13->query("SELECT count(*) FROM modulo WHERE id_curso='$id'");
+     $modulos= $q13->fetchColumn();
+
+     //Cantidad de temas
+     $pdo14 = Database::connect(); 
+     $q14 =$pdo14 ->query("SELECT  COUNT(tema.idTema) AS 'TEMA' from tema 
+                                                 INNER JOIN modulo ON tema.id_modulo = modulo.idModulo
+                                                 INNER JOIN  cursos ON cursos.idCurso = modulo.id_curso
+                                                 WHERE cursos.idCurso = '$id'
+                                                 GROUP BY cursos.idCurso");
+     $temas= $q14 ->fetchColumn();
+
+     //Cantidad de Cuestionarios
+     $pdo15 = Database::connect(); 
+     $q15 =$pdo15 ->query("SELECT  COUNT(cuestionario.idCuestionario) AS 'Cuestionario'  from cursos 
+                                                 INNER JOIN modulo ON cursos.idCurso = modulo.id_curso
+                                                 INNER JOIN  cuestionario ON cuestionario.id_modulo = modulo.idModulo
+                                                 WHERE cursos.idCurso = '$id'
+                                                 GROUP BY cursos.idCurso");
+     $cuestionarios= $q15 ->fetchColumn();
+
+     //Cantidad de preguntas
+     $pdo16 = Database::connect(); 
+     $q16 =$pdo16 ->query("SELECT COUNT(preguntas.idPregunta) AS 'preguntas'  from cursos 
+                                                 INNER JOIN modulo ON cursos.idCurso = modulo.id_curso
+                                                 INNER JOIN cuestionario ON cuestionario.id_modulo = modulo.idModulo
+                                                 INNER JOIN preguntas on cuestionario.idcuestionario = preguntas.id_cuestionario
+                                                 WHERE cursos.idCurso = '$id'
+                                                 GROUP BY cursos.idCurso");
+     $preguntas= $q16 ->fetchColumn();
+
+     //cantidad respuestas para aprobar
+     $pdo5 = Database::connect();
+     $q5=$pdo5->query("SELECT count(*) FROM respuestas res INNER JOIN preguntas pre ON res.id_Pregunta=pre.idPregunta
+                                                                                    INNER JOIN cuestionario cues ON cues.idCuestionario=pre.id_cuestionario
+                                                                                    INNER JOIN modulo mo ON mo.idModulo=cues.id_modulo
+                                                                                    INNER JOIN cursos cur ON cur.idCurso= mo.id_curso
+                                                                                    where cur.idCurso=$id and res.estado=1");
+                                                                                    
+    $cantidad_respuestas_validas= $q5->fetchColumn();
+    
+    if($cantidad_respuestas_validas<=9){
+        $minimo_respuestas_para_aprobar=$cantidad_respuestas_validas;
+    }else{
+        $minimo_respuestas_para_aprobar=$cantidad_respuestas_validas-2;
+    }
+
+    //Nombre del modulo
+    $pdo6 = Database::connect();
+    $sql6 = "SELECT idModulo, nombreModulo FROM modulo WHERE id_curso='$id'";
+    $q6 = $pdo6->prepare($sql6);
+    $q6->execute(array());
+
     Database::disconnect();
+    
     ?>
+
+
+
+
+
     <!-- <div class="bg-dark1">
         <div class="row py-4">
             <br>
         </div>
     </div> -->
+
+
+
     <div class="bg-dark1">
         <div class="row py-5">
             <div class="col-12 col-sm-12 col-md-7 col-lg-8 col-xl-8 ">
@@ -32,7 +97,7 @@
                 <span>nombre del curso</span>
                 <h2 class="my-2 font-weight-bold"><?php echo $dato4['nombreCurso'];?></h2>
                 <p><?php echo $dato4['descripcionCurso'];?></p>
-                <i class="fas fa-stopwatch mr-2"></i><span>Fecha: Lorem ipsum dolor sit amet.</span>
+                <i class="fas fa-stopwatch mr-2"></i><span>Fecha: <?php echo $dato4['fechaPulicacion'];?></span>
                 <i class="fas fa-globe ml-4 mr-2"></i><span>Español</span>
                 <i class="fas fa-closed-captioning ml-4 mr-2"></i><span>Español [automático]</span>
             </div>
@@ -41,25 +106,42 @@
                 <div class="card" style="position: absolute;width: 90%; ">
                     <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAPars5s2FQzySbkUpPjtBlvPlANAFDLP7x38q8nOqcke_Lrf_if34Y-kTjGQgS6pRvuQ&usqp=CAU" alt="Card image" style="width:100%">
                     <div class="card-body">
-                        <h4 class="card-title font-weight-bold" style="font-size: 30px;">s/ 49,90</h4>
+                        <h4 class="card-title font-weight-bold" style="font-size: 30px;"><?php echo (is_numeric($dato4['costoCurso']))? 'S/ '.$dato4['costoCurso']: $dato4['costoCurso']  ?></h4>
                         <a href="pagepay.php" type="button" class="btn btn-outline-dark my-3">Comprar ahora</a>
                         <p class="font-weight-bold mb-0">Este curso incluye:</p>
                         <div class="my-1" style="font-size: 13px;">
-                            <div><i class="fab fa-youtube text-center" style="width: 1.5rem;"></i><span class="ml-3">Lorem
-                                    ipsum dolor sit.</span></div>
-                            <div><i class="far fa-file text-center" style="width: 1.5rem;"></i><span class="ml-3">Lorem
-                                    ipsum
-                                    dolor sit.</span></div>
-                            <div><i class="far fa-folder-open text-center" style="width: 1.5rem;"></i><span class="ml-3">Lorem
-                                    ipsum dolor sit.</span></div>
-                            <div><i class="fas fa-infinity text-center" style="width: 1.5rem;"></i><span class="ml-3">Lorem
-                                    ipsum dolor sit.</span></div>
-                            <div><i class="fas fa-mobile-alt text-center" style="width: 1.5rem;"></i><span class="ml-3">Lorem
-                                    ipsum dolor sit.</span></div>
-                            <div><i class="fas fa-clipboard-check text-center" style="width: 1.5rem;"></i><span class="ml-3">Lorem ipsum dolor sit.</span>
+
+                            <div>
+                                <i class="far fa-file text-center" style="width: 1.5rem;"></i>
+                                <span class="ml-3"><?php echo $modulos; ?> Módulos</span>
                             </div>
-                            <div><i class="fas fa-trophy text-center" style="width: 1.5rem;"></i><span class="ml-3">Lorem ipsum
-                                    dolor sit.</span></div>
+
+                            <div>
+                                <i class="far fa-folder text-center" style="width: 1.5rem;"></i>
+                                <span class="ml-3"><?php echo $temas; ?> Temas</span>
+                            </div>
+
+                            <div>
+                                <i class="fas fa-infinity text-center" style="width: 1.5rem;"></i>
+                                <span class="ml-3"><?php echo $cuestionarios; ?> Cuestionarios</span>
+                            </div>
+
+                            <div>
+                                <i class="fas fa-mobile-alt text-center" style="width: 1.5rem;"></i>
+                                <span class="ml-3">La nota mínima para aprobar el curso es <?php echo $minimo_respuestas_para_aprobar; ?></span>
+                            </div>
+
+                            <div>
+                                <i class="fas fa-list-ol text-center" style="width: 1.5rem;"></i>
+                                <span class="ml-3">Cantidad de preguntas: <?php echo $preguntas; ?></span>
+                            </div>
+
+
+                            <div>
+                                <i class="fas fa-trophy text-center" style="width: 1.5rem;"></i>
+                                <span class="ml-3">Certificado de Finalización</span>
+                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -75,26 +157,53 @@
                 <h4 class="font-weight-bold">Contenido del curso</h4>
                 <div class="d-flex">
                     <div class="mr-auto p-2">
-                        <span class="mr-1">47</span>secciones <i class="fas fa-circle mx-2" style="font-size: 5px;"></i>
-                        <span class="mr-1">313</span>secciones <i class="fas fa-circle mx-2" style="font-size: 5px;"></i>
-                        <span class="mr-1">30 h 21 m</span>Lorem, ipsum dolor.
+                        <span class="mr-1"><?php echo $modulos; ?></span>Módulos <i class="fas fa-circle mx-2" style="font-size: 5px;"></i>
+                        <span class="mr-1"><?php echo $temas; ?></span>Temas <i class="fas fa-circle mx-2" style="font-size: 5px;"></i>
+                        <span class="mr-1"><?php echo $cuestionarios; ?></span>Cuestionarios
                     </div>
                     <div class="p-2">
                         <h6>Ampliar todas las secciones</h6>
                     </div>
                 </div>
                 <div id="accordion">
-                    <div class="card">
-                        <a class="card-header card-link" data-toggle="collapse" href="#collapseOne">
-                            <span><i class="fas fa-sort-down mr-3"></i> Lorem ipsum dolor sit amet.</span>
-                        </a>
-                        <div id="collapseOne" class="collapse show" data-parent="#accordion">
-                            <div class="card-body">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, saepe?
+                <?php
+                    while($modulosC=$q6->fetch(PDO::FETCH_ASSOC)){
+                ?>
+                        <div class="card">
+                            <a class="card-header card-link" data-toggle="collapse" href="#collapseOne">
+                                <span><i class="fas fa-sort-down mr-3"></i><?php echo $modulosC['nombreModulo']?></span>
+                            </a>
+
+                            <?php
+
+                            $idModuloC = $modulosC['idModulo'];
+
+                            //Nombre del modulo
+                            $pdo7 = Database::connect();
+                            $sql7 = "SELECT nombreTema FROM tema WHERE id_modulo='$idModuloC'";
+                            $q7 = $pdo7->prepare($sql7);
+                            $q7->execute(array());
+
+                            while($temasC=$q7->fetch(PDO::FETCH_ASSOC)){
+                            ?>
+                                <div id="collapseOne" class="collapse show" data-parent="#accordion">
+                                    <div class="card-body">
+                                        <?php echo $temasC['nombreTema']?>
+                                    </div>
+                                </div>
+                            <?php
+                                }
+                            ?>
+                            <div id="collapseOne" class="collapse show" data-parent="#accordion">
+                                <div class="card-body">
+                                    Cuestionario
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="card">
+                <?php
+                    }
+                ?>
+                    <!-- <div class="card">
                         <a class="card-header collapsed card-link" data-toggle="collapse" href="#collapseTwo">
                             <span><i class="fas fa-sort-down mr-3"></i> Lorem ipsum dolor sit amet.</span>
                         </a>
@@ -133,7 +242,7 @@
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, saepe?
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
