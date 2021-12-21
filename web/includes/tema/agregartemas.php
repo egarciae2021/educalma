@@ -167,14 +167,14 @@
                     <textarea maxlength="250" placeholder="" id="descripcio-tema" name="descripcio_tema" required></textarea> 
                 </div>
                 <div class="inputBox">
-                <button type="submit" class="boton1">
+                <button type="submit" class="boton1" style="width:100%;">
                     <i class="fas fa-plus"></i> Agregar</button></button>
             </div>
-            <div class="inputBox">
+            <!-- <div class="inputBox">
             <a href="agregarModulos.php?id=<?php echo $_GET['idCurso'];?>">    
             <button type="submit" class="boton1" style="background: gray; border-color: transparent;">
                 <i class="fas fa-window-close"></i> Salir</button>
-            </div>
+            </div> -->
             </div>
                 </form>
 

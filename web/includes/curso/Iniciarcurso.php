@@ -78,8 +78,8 @@
             <div class="col-md-1"></div>
             <div class="col-md-10">
                 <div class="buttonfaq">
-                    <!-- <a style="pointer-events: none;" href="video.php?id=<?php echo $id;?>&validar=1&idtema=<?php echo $dato3['idTema'];?>&id_modulo=<?php echo $dato2['idModulo']?>">Siguiente</a> -->
-                    <a href="video.php?id=<?php echo $id;?>&idtema=<?php echo $dato3['idTema'];?>&validar=<?php echo $validacion;?>&id_modulo=<?php echo $dato2['idModulo']?>">Siguiente</a>
+                    <!--&validar=<?php //echo $validacion;?>  <a style="pointer-events: none;" href="video.php?id=<?php echo $id;?>&validar=1&idtema=<?php echo $dato3['idTema'];?>&id_modulo=<?php echo $dato2['idModulo']?>">Siguiente</a> -->
+                    <a href="video.php?id=<?php echo $id;?>&idtema=<?php echo $dato3['idTema'];?>&id_modulo=<?php echo $dato2['idModulo']?>">Siguiente</a>
                 </div>
             </div>
             <div class="col-md-1"></div>
