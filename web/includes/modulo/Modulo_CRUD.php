@@ -34,9 +34,14 @@ require_once '../../database/databaseConection.php';
 
         $verif->execute(array());
         Database::disconnect();
+
+        //echo
+        //$idModu=$_SESSION['iddelmodulo'];
+        //echo 
+        //$idCurs=$_SESSION['iddelcurso']; //id_modulo=4&id_curso=7
         echo'
             <script>
-                window.location = "../../agregarModulos.php?id='.$idCurso.'";
+                window.location = "../../editarModulo.php?id_modulo='.$idmodulo.'&id_curso='.$idCurso.'";
             </script>
         ';
     }

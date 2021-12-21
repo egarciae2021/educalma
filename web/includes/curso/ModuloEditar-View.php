@@ -38,8 +38,6 @@
     <br>
     <br>
     <br>
-    <br>
-    <br>
     <?php
         require_once '././database/databaseConection.php';
         $_GET['id_curso'];
@@ -51,8 +49,12 @@
         $dato=$q->fetch(PDO::FETCH_ASSOC);
         Database::disconnect();
     ?>
+    <br>
+    <br>
+        <a href="agregarModulos.php?id=<?php echo $dato['id_curso']; ?>" class="boton2" style="padding: 5px; width: 5%;">Atras <-</a>
 
 <div class="container-fluid">
+                        
         <h2 class="mb-4" style="text-align: center; color:#4F52D6; font-size: 300%;font-family: 'Oswald', sans-serif;">
                 <center>Bienvenido a EduCalma</center>
         </h2>
@@ -81,6 +83,18 @@
                     <i class="fas fa-redo"></i> Actualizar</button>
             </div>
             </form>
+            <?php
+            // $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+            // $idC=substr($url, strrpos($url, '=') + 1);
+            // $enviar=substr($url, strrpos($url, '&') - 1);
+            // $idM=substr($enviar,0,1);
+            // 
+            // $_SESSION['iddelmodulo']=$idM;
+            // $_SESSION['iddelcurso']=$idC;
+// 
+            // echo $idC."<br>";
+            // echo $idM;
+            ?>
         </div>
     </div>
 </div>
