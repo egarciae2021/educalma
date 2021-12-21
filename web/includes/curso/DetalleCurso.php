@@ -86,51 +86,51 @@
                 <div id="accordion">
                     <div class="card">
                         <a class="card-header card-link" data-toggle="collapse" href="#collapseOne">
-                            <span><i class="fas fa-sort-down mr-3"></i> aaaaaaaaaaaaa</span>
+                            <span><i class="fas fa-sort-down mr-3"></i> Lorem ipsum dolor sit amet.</span>
                         </a>
                         <div id="collapseOne" class="collapse show" data-parent="#accordion">
                             <div class="card-body">
-                                Lorem ipsum..
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, saepe?
                             </div>
                         </div>
                     </div>
                     <div class="card">
                         <a class="card-header collapsed card-link" data-toggle="collapse" href="#collapseTwo">
-                            <span><i class="fas fa-sort-down mr-3"></i> aaaaaaaaaaaaa</span>
+                            <span><i class="fas fa-sort-down mr-3"></i> Lorem ipsum dolor sit amet.</span>
                         </a>
                         <div id="collapseTwo" class="collapse" data-parent="#accordion">
                             <div class="card-body">
-                                Lorem ipsum..
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, saepe?
                             </div>
                         </div>
                     </div>
                     <div class="card">
                         <a class="card-header collapsed card-link" data-toggle="collapse" href="#collapseThree">
-                            <span><i class="fas fa-sort-down mr-3"></i> aaaaaaaaaaaaa</span>
+                            <span><i class="fas fa-sort-down mr-3"></i> Lorem ipsum dolor sit amet.</span>
                         </a>
                         <div id="collapseThree" class="collapse" data-parent="#accordion">
                             <div class="card-body">
-                                Lorem ipsum..
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, saepe?
                             </div>
                         </div>
                     </div>
                     <div class="card">
                         <a class="card-header collapsed card-link" data-toggle="collapse" href="#collapsefour">
-                            <span><i class="fas fa-sort-down mr-3"></i> aaaaaaaaaaaaa</span>
+                            <span><i class="fas fa-sort-down mr-3"></i> Lorem ipsum dolor sit amet.</span>
                         </a>
                         <div id="collapsefour" class="collapse" data-parent="#accordion">
                             <div class="card-body">
-                                Lorem ipsum..
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, saepe?
                             </div>
                         </div>
                     </div>
                     <div class="card">
                         <a class="card-header collapsed card-link" data-toggle="collapse" href="#collapsefifth">
-                            <span><i class="fas fa-sort-down mr-3"></i> aaaaaaaaaaaaa</span>
+                            <span><i class="fas fa-sort-down mr-3"></i> Lorem ipsum dolor sit amet.</span>
                         </a>
                         <div id="collapsefifth" class="collapse" data-parent="#accordion">
                             <div class="card-body">
-                                Lorem ipsum..
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, saepe?
                             </div>
                         </div>
                     </div>
