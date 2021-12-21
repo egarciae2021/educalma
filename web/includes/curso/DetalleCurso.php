@@ -18,31 +18,31 @@
     $dato4 = $q4->fetch(PDO::FETCH_ASSOC);
     Database::disconnect();
     ?>
-    <div class="bg-dark1">
+    <!-- <div class="bg-dark1">
         <div class="row py-4">
             <br>
         </div>
-    </div>
+    </div> -->
     <div class="bg-dark1">
         <div class="row py-5">
             <div class="col-12 col-sm-12 col-md-7 col-lg-8 col-xl-8 ">
-                <span>Desarrollo</span><i class="fas fa-angle-right mx-2"></i>
-                <span>Desarrollo web</span><i class="fas fa-angle-right mx-2"></i>
-                <span>Desarrollo web</span>
-                <h2 class="my-2 font-weight-bold">Universidad Desarrollo Web 2021 - FrontEnd Web Developer !</h2>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Neque recusandae quod culpa maxime commodi
-                    dolor eaque fugit delectus provident optio deleniti quae, soluta voluptates repellat saepe nostrum
-                    dolore doloribus omnis.</p>
+                <br><br><br><br>
+                <span>Cursos</span><i class="fas fa-angle-right mx-2"></i>
+                <span>Categoria</span><i class="fas fa-angle-right mx-2"></i>
+                <span>nombre del curso</span>
+                <h2 class="my-2 font-weight-bold"><?php echo $dato4['nombreCurso'];?></h2>
+                <p><?php echo $dato4['descripcionCurso'];?></p>
                 <i class="fas fa-stopwatch mr-2"></i><span>Fecha: Lorem ipsum dolor sit amet.</span>
                 <i class="fas fa-globe ml-4 mr-2"></i><span>Español</span>
                 <i class="fas fa-closed-captioning ml-4 mr-2"></i><span>Español [automático]</span>
             </div>
             <div class="col-12 col-sm-12 col-md-5 col-lg-4 col-xl-4 info-course-right">
+            <br><br><br><br>
                 <div class="card" style="position: absolute;width: 90%; ">
                     <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAPars5s2FQzySbkUpPjtBlvPlANAFDLP7x38q8nOqcke_Lrf_if34Y-kTjGQgS6pRvuQ&usqp=CAU" alt="Card image" style="width:100%">
                     <div class="card-body">
                         <h4 class="card-title font-weight-bold" style="font-size: 30px;">s/ 49,90</h4>
-                        <button type="button" class="btn btn-outline-dark my-3">Comprar ahora</button>
+                        <a href="pagepay.php" type="button" class="btn btn-outline-dark my-3">Comprar ahora</a>
                         <p class="font-weight-bold mb-0">Este curso incluye:</p>
                         <div class="my-1" style="font-size: 13px;">
                             <div><i class="fab fa-youtube text-center" style="width: 1.5rem;"></i><span class="ml-3">Lorem
