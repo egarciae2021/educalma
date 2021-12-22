@@ -20,6 +20,8 @@
     <link rel="stylesheet" href="assets/css/plugins/pogo-slider.min.css" />
     <!-- Site CSS -->
     <!-- <link rel="stylesheet" href="assets/css/style.css" />  -->
+    <!-- Preloader style -->
+    <link rel="stylesheet" href="assets/css/preloader.css" /> 
     <link rel="stylesheet" href="assets/css/header.css" /> 
     <link rel="stylesheet" href="assets/css/footer.css" /> 
     <!-- Responsive CSS -->
