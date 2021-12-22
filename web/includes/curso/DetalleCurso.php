@@ -107,7 +107,7 @@
                     <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAPars5s2FQzySbkUpPjtBlvPlANAFDLP7x38q8nOqcke_Lrf_if34Y-kTjGQgS6pRvuQ&usqp=CAU" alt="Card image" style="width:100%">
                     <div class="card-body">
                         <h4 class="card-title font-weight-bold" style="font-size: 30px;"><?php echo (is_numeric($dato4['costoCurso']))? 'S/ '.$dato4['costoCurso']: $dato4['costoCurso']  ?></h4>
-                        <a href="pagepay.php" type="button" class="btn btn-outline-dark my-3">Comprar ahora</a>
+                        <a href="pagepay.php?id=<?php echo $dato4["idCurso"]; ?>" class="btn btn-outline-dark my-3">Comprar ahora</a>
                         <p class="font-weight-bold mb-0">Este curso incluye:</p>
                         <div class="my-1" style="font-size: 13px;">
 
@@ -203,46 +203,6 @@
                 <?php
                     }
                 ?>
-                    <!-- <div class="card">
-                        <a class="card-header collapsed card-link" data-toggle="collapse" href="#collapseTwo">
-                            <span><i class="fas fa-sort-down mr-3"></i> Lorem ipsum dolor sit amet.</span>
-                        </a>
-                        <div id="collapseTwo" class="collapse" data-parent="#accordion">
-                            <div class="card-body">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, saepe?
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <a class="card-header collapsed card-link" data-toggle="collapse" href="#collapseThree">
-                            <span><i class="fas fa-sort-down mr-3"></i> Lorem ipsum dolor sit amet.</span>
-                        </a>
-                        <div id="collapseThree" class="collapse" data-parent="#accordion">
-                            <div class="card-body">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, saepe?
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <a class="card-header collapsed card-link" data-toggle="collapse" href="#collapsefour">
-                            <span><i class="fas fa-sort-down mr-3"></i> Lorem ipsum dolor sit amet.</span>
-                        </a>
-                        <div id="collapsefour" class="collapse" data-parent="#accordion">
-                            <div class="card-body">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, saepe?
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <a class="card-header collapsed card-link" data-toggle="collapse" href="#collapsefifth">
-                            <span><i class="fas fa-sort-down mr-3"></i> Lorem ipsum dolor sit amet.</span>
-                        </a>
-                        <div id="collapsefifth" class="collapse" data-parent="#accordion">
-                            <div class="card-body">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, saepe?
-                            </div>
-                        </div>
-                    </div> -->
                 </div>
             </div>
         </div>

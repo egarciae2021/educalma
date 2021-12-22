@@ -7,15 +7,21 @@ session_start();
     /*=============================================
                  PARA Inscribirse en un curso
     ===============================================*/
+    $json= file_get_contents('php://input');
+    $datos = json_decode($json,true);
 
     error_reporting(0);
 
+    if(is_array($datos)){
+
+        $id_trans = $datos['details']['id'];
+        $status = $datos['details']['status'];
         $idCurso= $_GET['id'];
         $idUser = $_SESSION['codUsuario'];
 
-        if(isset($idUser)){
+        if(isset($idUser) && $status == 'COMPLETED'){
             $pdo = Database::connect();  
-            $veri="INSERT INTO cursoinscrito (curso_id,usuario_id) values ('$idCurso','$idUser') ";
+            $veri="INSERT INTO cursoinscrito (curso_id, usuario_id, cod_curso, curso_obt, cantidad_respuestas) VALUES ($idCurso, $idUser, '', 1, 0)";
             $q = $pdo->prepare($veri);
             $q->execute(array());
             Database::disconnect();
@@ -33,7 +39,6 @@ session_start();
                 </script>
             ';
         }
-
-
+    }
  ?>   
    
