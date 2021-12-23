@@ -86,7 +86,7 @@
                 actions.order.capture().then(function(details) {
                     alert('pago exitoso');
                     //     window.location.href = 'sidebarCursos.php';
-                    window.location = "../../curso.php?id= <?php echo $dato["idCurso"];?>";
+                    window.location = "../web/curso.php?id= <?php echo $dato["idCurso"];?>";
                     console.log(details);
                     
                     return fetch(url, {
