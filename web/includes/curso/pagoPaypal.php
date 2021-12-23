@@ -24,9 +24,18 @@
         $q = $pdo->prepare($sql);
         $q->execute(array());
         $dato = $q->fetch(PDO::FETCH_ASSOC);
-        Database::disconnect();
         
+
+        $idUserr = $_SESSION['codUsuario'];
+        $veriS="SELECT * FROM cursoinscrito WHERE curso_id = $id AND usuario_id='$idUserr'";
+        $qS = $pdo->prepare($veriS);
+        $qS->execute(array());
+        $datoS=$qS->fetch(PDO::FETCH_ASSOC);
+        Database::disconnect();
+
+        if (empty($datoS['id_cursoInscrito'])){        
     ?>
+    
 
     <div class="container">
         <div class="contenedor-nextpage">
@@ -48,6 +57,17 @@
             <h5>(Para aclaraciones :uputoamoestuvoaqui@gmail.com)</h5>
         </div>
     </div>
+
+    <?php
+        }else{
+            echo'
+                <script>
+                    window.location = "../../curso.php?id='.$id.'";
+                    
+                </script>
+            ';
+        }
+    ?>
 
     <!-- CLIENTE REAL 
     <script src="https://www.paypal.com/sdk/js?client-id=AbnJTS6i2adyvJS6ZQxGXFyk7aAsytmqwwOAFy-SEHVZ39rHIfC6LUOf8B9o-y-vd9RkjkdgCNVfGNBC&currency=USD" data-sdk-integration-source="button-factory"></script> -->
