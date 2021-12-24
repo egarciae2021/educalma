@@ -83,30 +83,6 @@
                 }
                 ?>
             </div>
-            <!-- CURSOS EN FILA -->
-            <div class="row container" style="margin: 0 auto;">
-                <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
-                    <div class="card">
-                        <div class="row">
-                            <div class="col-5">
-                                <div class="container-image">
-                                    <img src="./assets/images/_111437543_197389d9-800f-4763-8654-aa30c04220e4.png" alt="">
-                                </div>
-                            </div>
-                            <div class="col-7">
-                                <div class="container-title">
-                                    Curso 1
-                                </div>
-                                <div class="container-descrition">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit...
-                                </div>
-                                <div class="container-link">
-                                    <a href="#">Ver informaci&oacute;n ></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 <!-- FIN CURSOS EN FILA-->
 
             </div>
@@ -156,42 +132,6 @@
                             <div class="px-2">subcategoria 5</div>
                         </div>
                         <hr> -->
-                    <nav>
-                        <ul class="pt-2 pb-5">
-                            <li><a href="#"><span>Categoria</span></a>
-                                <ul class="py-3">
-                                    <li><a href="#"><span>subcategoria 1</span></a></li>
-                                    <li><a href="#"><span>subcategoria 1</span></a></li>
-                                    <li><a href="#"><span>subcategoria 1</span></a></li>
-                                    <li><a href="#"><span>subcategoria 1</span></a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#"><span>Categoria</span></a>
-                                <ul class="py-3">
-                                    <li><a href="#"><span>subcategoria 2</span></a></li>
-                                    <li><a href="#"><span>subcategoria 2</span></a></li>
-                                    <li><a href="#"><span>subcategoria 2</span></a></li>
-                                    <li><a href="#"><span>subcategoria 2</span></a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#"><span>Categoria</span></a>
-                                <ul class="py-3">
-                                    <li><a href="#"><span>subcategoria 3</span></a></li>
-                                    <li><a href="#"><span>subcategoria 3</span></a></li>
-                                    <li><a href="#"><span>subcategoria 3</span></a></li>
-                                    <li><a href="#"><span>subcategoria 3</span></a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#"><span>Categoria</span></a>
-                                <ul class="py-3">
-                                    <li><a href="#"><span>subcategoria 3</span></a></li>
-                                    <li><a href="#"><span>subcategoria 3</span></a></li>
-                                    <li><a href="#"><span>subcategoria 3</span></a></li>
-                                    <li><a href="#"><span>subcategoria 3</span></a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </nav>
                     <!-- </div> -->
                 </div>
             </div>
