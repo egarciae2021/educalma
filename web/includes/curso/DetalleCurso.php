@@ -18,61 +18,61 @@
     $dato4 = $q4->fetch(PDO::FETCH_ASSOC);
 
     $idUserr = $_SESSION['codUsuario'];
-    $veriS="SELECT * FROM cursoinscrito WHERE curso_id = $id AND usuario_id='$idUserr'";
+    $veriS = "SELECT * FROM cursoinscrito WHERE curso_id = $id AND usuario_id='$idUserr'";
     $qS = $pdo->prepare($veriS);
     $qS->execute(array());
-    $datoS=$qS->fetch(PDO::FETCH_ASSOC);
+    $datoS = $qS->fetch(PDO::FETCH_ASSOC);
     Database::disconnect();
 
-    if (empty($datoS['id_cursoInscrito'])){
+    if (empty($datoS['id_cursoInscrito'])) {
 
         //Cantidad de modulos del curso
-        $pdo13 = Database::connect(); 
-        $q13=$pdo13->query("SELECT count(*) FROM modulo WHERE id_curso='$id'");
-        $modulos= $q13->fetchColumn();
+        $pdo13 = Database::connect();
+        $q13 = $pdo13->query("SELECT count(*) FROM modulo WHERE id_curso='$id'");
+        $modulos = $q13->fetchColumn();
 
         //Cantidad de temas
-        $pdo14 = Database::connect(); 
-        $q14 =$pdo14 ->query("SELECT  COUNT(tema.idTema) AS 'TEMA' from tema 
+        $pdo14 = Database::connect();
+        $q14 = $pdo14->query("SELECT  COUNT(tema.idTema) AS 'TEMA' from tema 
                                                     INNER JOIN modulo ON tema.id_modulo = modulo.idModulo
                                                     INNER JOIN  cursos ON cursos.idCurso = modulo.id_curso
                                                     WHERE cursos.idCurso = '$id'
                                                     GROUP BY cursos.idCurso");
-        $temas= $q14 ->fetchColumn();
+        $temas = $q14->fetchColumn();
 
         //Cantidad de Cuestionarios
-        $pdo15 = Database::connect(); 
-        $q15 =$pdo15 ->query("SELECT  COUNT(cuestionario.idCuestionario) AS 'Cuestionario'  from cursos 
+        $pdo15 = Database::connect();
+        $q15 = $pdo15->query("SELECT  COUNT(cuestionario.idCuestionario) AS 'Cuestionario'  from cursos 
                                                     INNER JOIN modulo ON cursos.idCurso = modulo.id_curso
                                                     INNER JOIN  cuestionario ON cuestionario.id_modulo = modulo.idModulo
                                                     WHERE cursos.idCurso = '$id'
                                                     GROUP BY cursos.idCurso");
-        $cuestionarios= $q15 ->fetchColumn();
+        $cuestionarios = $q15->fetchColumn();
 
         //Cantidad de preguntas
-        $pdo16 = Database::connect(); 
-        $q16 =$pdo16 ->query("SELECT COUNT(preguntas.idPregunta) AS 'preguntas'  from cursos 
+        $pdo16 = Database::connect();
+        $q16 = $pdo16->query("SELECT COUNT(preguntas.idPregunta) AS 'preguntas'  from cursos 
                                                     INNER JOIN modulo ON cursos.idCurso = modulo.id_curso
                                                     INNER JOIN cuestionario ON cuestionario.id_modulo = modulo.idModulo
                                                     INNER JOIN preguntas on cuestionario.idcuestionario = preguntas.id_cuestionario
                                                     WHERE cursos.idCurso = '$id'
                                                     GROUP BY cursos.idCurso");
-        $preguntas= $q16 ->fetchColumn();
+        $preguntas = $q16->fetchColumn();
 
         //cantidad respuestas para aprobar
         $pdo5 = Database::connect();
-        $q5=$pdo5->query("SELECT count(*) FROM respuestas res INNER JOIN preguntas pre ON res.id_Pregunta=pre.idPregunta
+        $q5 = $pdo5->query("SELECT count(*) FROM respuestas res INNER JOIN preguntas pre ON res.id_Pregunta=pre.idPregunta
                                                                                         INNER JOIN cuestionario cues ON cues.idCuestionario=pre.id_cuestionario
                                                                                         INNER JOIN modulo mo ON mo.idModulo=cues.id_modulo
                                                                                         INNER JOIN cursos cur ON cur.idCurso= mo.id_curso
                                                                                         where cur.idCurso=$id and res.estado=1");
-                                                                                        
-        $cantidad_respuestas_validas= $q5->fetchColumn();
-        
-        if($cantidad_respuestas_validas<=9){
-            $minimo_respuestas_para_aprobar=$cantidad_respuestas_validas;
-        }else{
-            $minimo_respuestas_para_aprobar=$cantidad_respuestas_validas-2;
+
+        $cantidad_respuestas_validas = $q5->fetchColumn();
+
+        if ($cantidad_respuestas_validas <= 9) {
+            $minimo_respuestas_para_aprobar = $cantidad_respuestas_validas;
+        } else {
+            $minimo_respuestas_para_aprobar = $cantidad_respuestas_validas - 2;
         }
 
         //Nombre del modulo
@@ -82,9 +82,10 @@
         $q6->execute(array());
 
         Database::disconnect();
-        
-        ?>
 
+    ?>
+
+        <div class="container-course" style="height: 100vh;">
         <div class="bg-dark1">
             <div class="row py-5">
                 <div class="col-12 col-sm-12 col-md-7 col-lg-8 col-xl-8 ">
@@ -92,18 +93,18 @@
                     <span>Cursos</span><i class="fas fa-angle-right mx-2"></i>
                     <span>Categoria</span><i class="fas fa-angle-right mx-2"></i>
                     <span>nombre del curso</span>
-                    <h2 class="my-2 font-weight-bold"><?php echo $dato4['nombreCurso'];?></h2>
-                    <p><?php echo $dato4['descripcionCurso'];?></p>
-                    <i class="fas fa-stopwatch mr-2"></i><span>Fecha: <?php echo $dato4['fechaPulicacion'];?></span>
+                    <h2 class="my-2 font-weight-bold"><?php echo $dato4['nombreCurso']; ?></h2>
+                    <p><?php echo $dato4['descripcionCurso']; ?></p>
+                    <i class="fas fa-stopwatch mr-2"></i><span>Fecha: <?php echo $dato4['fechaPulicacion']; ?></span>
                     <i class="fas fa-globe ml-4 mr-2"></i><span>Español</span>
                     <i class="fas fa-closed-captioning ml-4 mr-2"></i><span>Español [automático]</span>
                 </div>
                 <div class="col-12 col-sm-12 col-md-5 col-lg-4 col-xl-4 info-course-right">
-                <br><br><br><br>
+                    <br><br><br><br>
                     <div class="card" style="position: absolute;width: 90%; ">
                         <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAPars5s2FQzySbkUpPjtBlvPlANAFDLP7x38q8nOqcke_Lrf_if34Y-kTjGQgS6pRvuQ&usqp=CAU" alt="Card image" style="width:100%">
                         <div class="card-body">
-                            <h4 class="card-title font-weight-bold" style="font-size: 30px;"><?php echo (is_numeric($dato4['costoCurso']))? 'S/ '.$dato4['costoCurso']: $dato4['costoCurso']  ?></h4>
+                            <h4 class="card-title font-weight-bold" style="font-size: 30px;"><?php echo (is_numeric($dato4['costoCurso'])) ? 'S/ ' . $dato4['costoCurso'] : $dato4['costoCurso']  ?></h4>
                             <a href="pagepay.php?id=<?php echo $dato4["idCurso"]; ?>" class="btn btn-outline-dark my-3">Comprar ahora</a>
                             <p class="font-weight-bold mb-0">Este curso incluye:</p>
                             <div class="my-1" style="font-size: 13px;">
@@ -145,7 +146,7 @@
                 </div>
             </div>
         </div>
-        <div class="bg-light">
+        <div class="bg-light" style="height: 100%;">
             <div class="row py-5">
                 <div class="col-12 col-sm-12 col-md-5 col-lg-4 col-xl-4 info-course-left" style="border: 1px solid red;">
                     <h4>Contenido del curso</h4>
@@ -163,12 +164,12 @@
                         </div>
                     </div>
                     <div id="accordion">
-                    <?php
-                        while($modulosC=$q6->fetch(PDO::FETCH_ASSOC)){
-                    ?>
+                        <?php
+                        while ($modulosC = $q6->fetch(PDO::FETCH_ASSOC)) {
+                        ?>
                             <div class="card">
                                 <a class="card-header card-link" data-toggle="collapse" href="#collapseOne">
-                                    <span><i class="fas fa-sort-down mr-3"></i><?php echo $modulosC['nombreModulo']?></span>
+                                    <span><i class="fas fa-sort-down mr-3"></i><?php echo $modulosC['nombreModulo'] ?></span>
                                 </a>
 
                                 <?php
@@ -181,15 +182,15 @@
                                 $q7 = $pdo7->prepare($sql7);
                                 $q7->execute(array());
 
-                                while($temasC=$q7->fetch(PDO::FETCH_ASSOC)){
+                                while ($temasC = $q7->fetch(PDO::FETCH_ASSOC)) {
                                 ?>
                                     <div id="collapseOne" class="collapse show" data-parent="#accordion">
                                         <div class="card-body">
-                                            <?php echo $temasC['nombreTema']?>
+                                            <?php echo $temasC['nombreTema'] ?>
                                         </div>
                                     </div>
                                 <?php
-                                    }
+                                }
                                 ?>
                                 <div id="collapseOne" class="collapse show" data-parent="#accordion">
                                     <div class="card-body">
@@ -197,22 +198,23 @@
                                     </div>
                                 </div>
                             </div>
-                    <?php
+                        <?php
                         }
-                    ?>
+                        ?>
                     </div>
                 </div>
             </div>
         </div>
-        <?php
-    }else{
-        echo'
+        </div>
+    <?php
+    } else {
+        echo '
             <script>
-                window.location = "../../curso.php?id='.$id.'";
+                window.location = "../../curso.php?id=' . $id . '";
             </script>
         ';
     }
-        ?>
+    ?>
 </body>
 
 </html>
