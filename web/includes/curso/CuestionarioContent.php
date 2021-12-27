@@ -24,6 +24,17 @@
 // Este codigo hace validacion para que no se pueda acceder a cualquier pagina sin estar logueado__Pablo Loyola
 
  if(isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)){
+    $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+    $envi=substr($url, strrpos($url, '=') + 1);
+    //$envi."<br>";
+    $en=substr($url, strrpos($url, '&') - 1);
+    $ens=substr($en,0,1);
+    $up=substr($url, strrpos($url, 'p') + 2);
+    $up=substr($up,0,1);
+    // echo $up."<br>";
+    // echo $ens."<br>";
+    // echo $envi."<br>";
+
 ?>
     <div class="container">
         <div class="row">
@@ -51,7 +62,7 @@
         if(!isset($_GET['c'])){
             $_GET['c']=0;
         }
-        $c=$_GET['c'];
+        $correcta=$_GET['c'];
         //contador de las preguntas respondidas
         if(!isset($_GET['contador'])){
             $_GET['contador']=0;
@@ -65,6 +76,7 @@
         $q = $pdo->prepare($sql);
         $q->execute(array());
         $fila=$q->fetch(PDO::FETCH_ASSOC);
+        //echo $resul = $q->fetchAll();
 
         
         //saber cantidad de preguntas existen
@@ -79,9 +91,15 @@
         $sql1 = "SELECT * FROM preguntas WHERE id_cuestionario='$fila[idCuestionario]'";
         $q1 = $pdo1->prepare($sql1);
         $q1->execute(array());
+        // $resul = $q1->fetchAll();
+        // $i=0;
+        // while($i<$cuenta2){
+        //     echo $resul[$i]['idPregunta'];
+        //     $i++;
+        // }
         $reco=0;
         while($reco<$contador){
-            $fila1=$q1->fetch(PDO::FETCH_ASSOC);
+            $fila1=$q1->fetchAll(PDO::FETCH_ASSOC);
             $reco++;
         }
     ?>
@@ -113,7 +131,7 @@
                 
                 
 
-                if($contador==$cuenta2){
+                if($envi==$cuenta2){
             ?>
                     <h6 style="text-align: center;">fin de cuestionario</h6>
                     <div style="text-align: center;">
@@ -140,12 +158,15 @@
 
                             // echo $nuevat;
                             $pdo19 = Database::connect(); 
-                            $q19=$pdo19->query("SELECT count(*) FROM modulo WHERE id_curso='$id'");
-                            $moduloC= $q19->fetchColumn();
+                            $sqlit="SELECT idModulo FROM modulo where id_curso=$id order by idModulo DESC LIMIT 1";
+                            $qi = $pdo19->prepare($sqlit);
+                            $qi->execute();
+                            $datoi = $qi->fetch(PDO::FETCH_ASSOC);
+                            $idmodu=$datoi['idModulo'];
 
-                            if($c_modulo<=$moduloC){
+                            if($idModulo<$idmodu){
                         ?>
-                                <a href="video.php?id=<?php echo $id;?>&c_tema=<?php echo $c_tema;?>&validar=1&c_modulo=<?php echo $c_modulo;?>"><button type="button" class="btn btn-outline-secondary">Siguiente</button></a>
+                                <a href="video.php?id=<?php echo $id?>&idtema=1&id_modulo=<?php echo ($idModulo+1)?>"><button type="button" class="btn btn-outline-secondary">Siguiente</button></a>
                         <?php
                             }
                         ?>
@@ -164,38 +185,40 @@
                                 <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
                                     data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
-                                        <h5>Respuestas Correctas: <?php echo $c;?></h5>
+                                        <h5>Respuestas Correctas: <?php echo $correcta;?></h5>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
             <?php } ?>
-            <?php 
-                if($fila1=$q1->fetch(PDO::FETCH_ASSOC)){
+            <?php
+            if($envi<$cuenta2){
+                if($fila1=$q1->fetchAll()){
                     
                     $pdo2 = Database::connect();
-                    $sql2 = "SELECT * FROM respuestas WHERE id_Pregunta='$fila1[idPregunta]'";
+                    $idpregunta=$fila1[$up]['idPregunta'];
+                    //echo $idpregunta;
+                    $sql2 = "SELECT * FROM respuestas WHERE id_Pregunta='$idpregunta'";
                     $q2 = $pdo2->prepare($sql2);
                     $q2->execute(array());
-                    $idpregunta=$fila1['idPregunta'];
+                    
             ?>
-            <h5 style="background: #CFE8FE; padding: 20px 35px; color: #4F52D6"><?php echo $fila1['pregunta'];?>?</h5>
+            <h5 style="background: #CFE8FE; padding: 20px 35px; color: #4F52D6"><?php echo $fila1[$envi]['pregunta'];?></h5>
 
             
             <form style="padding: 30px;"
-                action="includes/cuestionarioCRUD/cuestion.php?contador=<?php echo $contador;?>&id=<?php echo $id;?>&idModulo=<?php echo $idModulo;?>&c_tema=<?php echo $c_tema;?>&validar=1&c_modulo=<?php echo $c_modulo;?>&id_pregunta=<?php echo $idpregunta ?>"
-                method="POST">
-                <?php while($fila2=$q2->fetch(PDO::FETCH_ASSOC)){
+                action="includes/cuestionarioCRUD/cuestion.php?contador=<?php echo $contador;?>&id=<?php echo $id;?>&c=<?php $correcta ?>&idModulo=<?php echo $idModulo;?>&validar=<?php echo 0; ?>&up=<?php echo $up ?>&cuen=<?php echo $ens ?>&nro=<?php echo $envi?>&id_pregunta=<?php echo $idpregunta ?>"
+                method="POST" id="formcito">
+                <?php while($fila2=$q2->fetch(PDO::FETCH_ASSOC)){ 
                           //checked
                     ?>
                 <div
                     style="padding: 10px; border-radius: 5px; background: #ffff; border-bottom: 1px solid slategray; margin-bottom: 20px;">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="verif_resp"
-                      
                             value="<?php echo $fila2['respuesta'];?>">
-                        <input type="hidden" name="c" value="<?php echo $c;?>">
+                        <input type="hidden" name="correcta" value="<?php echo $correcta;?>">
                         <label class="form-check-label" for="exampleRadios1">
                             <?php echo $fila2['respuesta'];?>
                         </label>
@@ -203,14 +226,46 @@
                 </div>
                 <?php }?>
                 <div style="text-align: right;">
-                <?php // echo "bueno";?>
-                    <button type="submit" class="btn btn-outline-primary">Siguiente</button>
+                <?php 
+                    $pdo8 = Database::connect();
+                    $sqlit="SELECT idModulo FROM modulo where id_curso=$id order by idModulo DESC LIMIT 1";
+                    $qi = $pdo8->prepare($sqlit);
+                    $qi->execute();
+                    $datoi = $qi->fetch(PDO::FETCH_ASSOC);
+                    $idmodu=$datoi['idModulo'];
+                    //echo $idModulo;
+                    if($envi<$cuenta2 && $ens<=$cuenta2){
+                        ?>
+                        <button type="submit" id="env" class="btn btn-outline-primary" >Siguiente</button>
+                        <?php
+                    }
+                //     else if($idModulo==$idmodu){
+                //         
+                //         <button type="submit" id="env" class="btn btn-outline-primary" onclick="parent.location='curso.php?id=<?php echo $id'">Siguiente</button> -->
+                //         
+                //     }
+                //     else{
+                
+                //     <button type="submit" id="env" class="btn btn-outline-primary" onclick="parent.location='video.php?id=<?php echo $id&idtema=1&id_modulo=<?php echo ($idModulo+1)'">Siguiente</button> -->
+                
+                    // }
+                ?>
                 </div>
 
             </form>
             <?php }?>
         </div>
+            <!-- <script>
+                var form = document.getElementById('formcito');
+                form.onsubmit = function() {
+                    if (form.verif_resp.value != "") {
+                        // alert('Respuesta guardada');	
+                        return false;
+                    }
+                }
 
+                
+            </script> -->
     </div>
 
     <br><br>
@@ -218,6 +273,7 @@
     <br>
     <br>
     <?php
+    }
     }
     else{
                 header('Location:iniciosesion.php');

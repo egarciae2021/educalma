@@ -1,18 +1,23 @@
-<?php 
-    session_start();
+<?php
+    ob_start();
+    @session_start();
     require_once '../../database/databaseConection.php';
     $id=$_GET['id'];
     $idModulo=$_GET['idModulo'];
     $contador=$_GET['contador'];
-    $id_pregunta=$_GET['id_pregunta'];
+    $id_pregunta=$_GET['id_pregunta'];//idcues?
     $validar=$_SESSION['validar'];
+    $up=$_GET['up'];
+    $ens=$_GET['cuen'];
+    $envi=$_GET['nro'];
+    
     //para el boton siguientes necesita estas variables
     if(isset($_GET['c_tema']) && isset($_GET['c_modulo'])){
-        $c_tema=$_GET['c_tema'];
+        $c_tema=$_GET['c_tema'];//idTema?
         $c_modulo=$_GET['c_modulo'];
     }
     //respuestas correctas
-    $c=$_POST['c'];
+    $correcta=$_POST['correcta'];
     $verif_resp=$_POST['verif_resp'];
 
     $pdo = Database::connect();
@@ -47,7 +52,7 @@
         echo'
             <script>
                 //alert("respuesta correcta");
-                window.location = "../../cuestionario.php?idModulo='.$idModulo.'&id='.$id.'&contador='.($contador+1).'&c='.($c+1).'&c_tema='.$c_tema.'&c_modulo='.$c_modulo.'";
+                window.location = "../../cuestionario.php?id='.$id.'&c='.($correcta+1).'&idModulo='.$idModulo.'&up='.($up+1).'&idcues='.$_SESSION['idcue'].'&cuen='.($ens+1).'&nro='.($envi+1).'";
             </script>
         ';
        
@@ -58,7 +63,7 @@
         echo'
             <script>
                 //alert("respuesta incorrecta");
-                window.location = "../../cuestionario.php?idModulo='.$idModulo.'&id='.$id.'&contador='.($contador+1).'&c='.$c.'&c_tema='.$c_tema.'&c_modulo='.$c_modulo.'";
+                window.location = "../../cuestionario.php?id='.$id.'&c='.$correcta.'&idModulo='.$idModulo.'&up='.($up+1).'&idcues='.$_SESSION['idcue'].'&cuen='.($ens+1).'&nro='.($envi+1).'";
             </script>
         ';
         
