@@ -75,6 +75,7 @@ body {
     grid-template-columns: auto auto auto auto;
     width: 100%;
     gap: 10px;
+    padding: .5rem 0;
 }
 
 .boton1:hover {
@@ -114,7 +115,6 @@ body {
 .btn-modulos {
     width: 100%;
     border: 2px solid var(--orange);
-    padding: .4rem 2rem;
     background-color: #fff;
     color: var(--orange);
 }
@@ -429,6 +429,11 @@ textarea {
     height: 100%;
 }
 
+.container-fluid .container .seccion .row .col-9 .container {
+    padding: 0;
+    margin: 0;
+}
+
 .container-fluid .container .seccion .row .col-3 .list-group-flush .list-group-item {
     color: #4F52D6;
     text-transform: uppercase;
@@ -494,4 +499,10 @@ textarea {
     background: #3c3ea5;
     color: white;
     border: 1px solid #3c3ea5;
+}
+
+.container-fluid .container .seccion .row .col-9 .scroll .form-row {
+    width: auto;
+    height: 10.2rem;
+    overflow: auto;
 }

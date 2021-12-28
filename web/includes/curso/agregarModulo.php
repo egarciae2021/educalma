@@ -167,7 +167,7 @@
                                 </button>
                             </div>
                             <div class="modal-body">
-                                <div style="height: 400px;">
+                                <div style="height: 400px; overflow:auto;">
                                     <div>
                                         <?php
 
@@ -188,7 +188,7 @@
 
                                     ?>
 
-                                        <div class="mb-3">
+                                        <div>
                                             <input type="text" class="form-control" value="Módulo: <?php echo $dato2['nombreModulo']?>" aria-label="Recipient's username with two button addons" disabled>
 
                                             <!--agregar temas-->

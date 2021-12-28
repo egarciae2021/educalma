@@ -375,7 +375,7 @@ textarea {
 }
 
 .container-fluid .container .seccion .row .col-9 .scroll .form-row {
-    width: 100%;
+    width: auto;
     height: 10rem;
     overflow: auto;
 }
