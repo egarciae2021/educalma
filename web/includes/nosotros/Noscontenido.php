@@ -86,9 +86,9 @@
                     <div id="collapseOne" class="collapse" data-parent="#accordion">
                         <div class="card-body py-0">
                             <ul class="px-0">
-                                <li class="card-body pb-3"><i class="far fa-check-circle mr-5"></i>Dirigete hacia el
+                                <ul class="card-body pb-3" ><i class="far fa-check-circle mr-2"></i>Dirigete hacia el
                                     icono Registrate y haciendo eso podras eleguir el abanico de cursos que tenemos
-                                    para ofrecerte.</li>
+                                    para ofrecerte.</ul>
                             </ul>
                         </div>
                     </div>
@@ -104,7 +104,7 @@
                     <div id="collapseTwo" class="collapse mt-0" data-parent="#accordion">
                         <div class="card-body py-0">
                             <ul class="px-0">
-                                <li class="card-body pb-3"><i class="far fa-check-circle mr-5"></i>No todo los
+                                <li class="card-body pb-3"><i class="far fa-check-circle mr-2"></i>No todo los
                                     cursos tienen la misma cantida de sesiones pero lo maximo de sesiones son 9 o 12
                                     y cada una tiene un test para completar.</li>
                             </ul>
@@ -122,7 +122,7 @@
                     <div id="collapseThree" class="collapse" data-parent="#accordion">
                         <div class="card-body py-0">
                             <ul class="px-0">
-                                <li class="card-body pb-3"><i class="far fa-check-circle mr-5"></i>Cada test tiene
+                                <li class="card-body pb-3"><i class="far fa-check-circle mr-2"></i>Cada test tiene
                                     entre 10 a 15 preguntas laboradas por el profesor o especialista de acuerdo a la
                                     sesion aprendida.</li>
                             </ul>
@@ -140,7 +140,7 @@
                     <div id="collapseFour" class="collapse" data-parent="#accordion">
                         <div class="card-body py-0">
                             <ul class="px-0">
-                                <li class="card-body pb-3"><i class="far fa-check-circle mr-5"></i>Los cursos de los
+                                <li class="card-body pb-3"><i class="far fa-check-circle mr-2"></i>Los cursos de los
                                     cuales tenemos por ahora lo puedes acceder de manera gratuita con todo los
                                     beneficios.</li>
                             </ul>
@@ -158,7 +158,7 @@
                     <div id="collapseFive" class="collapse" data-parent="#accordion">
                         <div class="card-body py-0">
                             <ul class="px-0">
-                                <li class="card-body pb-3"><i class="far fa-check-circle mr-5"></i>Cada curso tiene
+                                <li class="card-body pb-3"><i class="far fa-check-circle mr-2"></i>Cada curso tiene
                                     Certificados reconocidos por el Ministerio de Eduacion, las cuales cada curso
                                     han sido evaluadas ya aprobadas</li>
                             </ul>

@@ -8,9 +8,10 @@
  <div class="nav" id="navbar">
      <nav class="nav__container">
          <div>
-             <a href="#" class="nav__link nav__logo">
+             <a href="index.php" class="nav__link nav__logo">
                  <img src="./assets/images/imagen_2021-10-28_233347.png" alt="" class="header__img__logo">
-                 <span class="nav__logo-name"> EduCalma</span>
+                 <span class="nav__logo-name"> Educalma</span>
+                 
                  <!-- <i style="margin-left: 9rem; display: none;" class='bx bx-menu' id="header-toggle"></i> -->
              </a>
              <div class="nav__list">

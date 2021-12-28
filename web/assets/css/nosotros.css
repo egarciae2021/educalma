@@ -277,20 +277,4 @@
   cursor: pointer;
 }
 
-.container .row .col-md-12 .accordion .card .collapse {
-  font-family: "Work Sans", sans-serif;
-  color: #56a4d0;
-  background: #cce4fc;
-  text-align: justify;
-  font-style: normal;
-  font-weight: normal;
-  padding-right: 2rem;
-  transition-duration: 0s;
-}
 
-.container .row .col-md-12 .accordion .card .collapse .card-body {
-  color: #56a4d0;
-  background: #cce4fc;
-  text-align: justify;
-  padding: 0rem;
-}
