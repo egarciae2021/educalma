@@ -8,7 +8,14 @@ ob_start();
     <?php include_once 'includes/dashboard/header1.php' ?>
 
     <?php include_once 'includes/dashboard/body1.php' ?>
-    <?php include_once 'includes/dashboard/contenido.php' ?>
+
+    <?php 
+        if ($_SESSION['privilegio'] == 1){
+            include_once 'includes/dashboard/contenidoAdmin.php';
+        }else{
+            include_once 'includes/dashboard/contenido.php';
+        }
+    ?>
     <script src="./assets/js/main.js"></script>
 </body>
 
