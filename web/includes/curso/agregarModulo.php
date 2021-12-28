@@ -5,48 +5,38 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/agretemas.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link rel="stylesheet" href="assets/js/plugins/sweetalert2.min.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous">
-    </script>
+
     <style>
-         label.error{
-    	color: red;
-        font-style: italic;
-        font-size: 13px;    
-        max-width:400px;
-        padding: 10px;
+        label.error{
+    	color: crimson;
+        font-style: normal;
+        font-size: 16px;
+        padding-top: 5px;
+        /* max-width:300px; 
+        padding: 10px;*/
         margin:0;
         }
     </style>
-    <title>Módulo</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous">
+    </script>
+
+    <title>Agregar Módulo</title>
 </head>
 
 <body>
-<?php
-// Este codigo hace validacion para que no se pueda acceder a cualquier pagina sin estar logueado
 
- if(isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)){
-?>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-1"></div>
-            <div class="col-md-10">
-                <div class="titlemc">
-                </div>
-            </div>
-            <div class="col-md-1"></div>
-        </div>
-    </div>
-
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
+    <?php
+    // Este codigo hace validacion para que no se pueda acceder a cualquier pagina sin estar logueado
+    if(isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)){
+    ?>
 
     <?php
     require_once '././database/databaseConection.php';
@@ -58,62 +48,113 @@
     $dato=$q->fetch(PDO::FETCH_ASSOC);
     Database::disconnect();
     ?>
-
-<div class="container-fluid">
-        <div class="title">
+    
+    <div>
             <?php
                     $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                     $envio=substr($url, strrpos($url, '=') + 1);
                     $_SESSION['ids']=$envio;
-                    ?>
-        </div>
- </div>
+            ?>
+    </div>
 
-<div class="container-contformulario">
-    <div class="contformulario" id="contformulario">
-        <div class="row">
-             <!--
-                                        ======================================
-                                                    Agregar Módulo
-                                        ======================================
-                                         
-            -->
-            <form name="formulario" id="form-agretemas" method="POST" action="includes/modulo/Modulo_CRUD.php?id=<?php echo $dato['idCurso'];?>" style="background:#F7F7F7;">   
+<!-- Nuevo form -->
+    <div class="container-fluid">
+        <div class="container" id="contformulario">
+            <div class="seccion">
+                <div class="row">
 
-                    <a href="agregarcurso.php" class="boton2" style="padding: .3rem; width: 20%;">Atras <-</a>
-                <div class="container-fluid">
-                    <div class="title">
-                        <div class="mb-4">
-                            <center>Agrega Módulos a un Curso</center>
+                     <!-- primera columna -->
+                     <div class="col-3 pr-0 border-right">
+                        <ul class="list-group list-group-flush ">
+                            <li class="list-group-item border-bottom ">Curso</li>
+                        </ul>
+                        <!-- seccion agregar modulo -->
+                        <div class="list-group py-3">
+                            <button type="button" class="list-group-item list-group-item-action active">
+                                Agregar un Módulo
+                            </button>
+                            <!-- seccion otros -->
+                            <ul class="list-group list-group-flush py-3">
+                                <li class="list-group-item border-top-0" style="color:#495057;">Otros</li>
+                            </ul>
+
+                            <div class="list-group lista2 text-left">
+                                <a href="sidebarCursos.php" class="list-group-item list-group-item-action">
+                                    <i class="fas fa-book"></i> Mis Cursos
+                                </a>
+                                <a href="ListaCursos.php?pag=1" class="list-group-item list-group-item-action">
+                                    <i class="fas fa-eye"></i> Ver todos los Cursos
+                                </a>
+                                <a href="publicarcursos.php?pag=1" class="list-group-item list-group-item-action">
+                                    <i class="fad fa-books"></i> Publicar cursos
+                                </a>
+                                <a class="btn btn-outline-secondary btn-back btn-sm" href="agregarcurso.php" role="button">
+                                    <i class="fas fa-arrow-left"></i> Atrás
+                                </a>
+                            </div>
+
+                            <!-- fin seccion otros -->
                         </div>
                     </div>
-                </div>
-                <div class="inputBox">
-                    <h3 class="cambio-enlinea">Nombre del Módulo:</h3>
-                    <div class="btn-ver" style="text-align: right;">
-                        <button type="button" class="btn btn-outline-secondary boton-ver"  data-toggle="modal" data-target="#staticBackdrop">
-                            <i class="fas fa-eye"></i> Ver</button>
+                    <!-- fin primera columna -->
+
+                    <!-- segunda columna -->
+                    <div class="col-9 pl-0">
+                        
+                        <!--                        =====================================
+                                                                Agregar Módulo
+                                                    =====================================
+                        -->
+                        <form name="formulario" id="form-agretemas" method="POST" action="includes/modulo/Modulo_CRUD.php?id=<?php echo $dato['idCurso'];?>" style="background:#F7F7F7;">
+                            <div class="form-row">
+                                <div class="form-group col-md-12">
+                                    <h5 class="font-weight-light" style="color:#495057;">
+                                    Agregue módulos a su Curso
+                                    </h5>
+                                </div>
+                            </div>
+
+                            <div class="form-row pb-3">
+                                <div class="form-group col-8 col-xl-10 col-lg-10">
+                                    <label class="form-label">Nombre del módulo</label>
+                                    <input type="text" class="form-control" name="modulo_agregar" id="modulo-agregar" placeholder="Ingrese un nombre" aria-label="ModuloAgr" aria-describedby="ModuloAgr" aria-describedby="moduloAgr-addon" minlength="2" required>
+                                </div>
+                                
+                                <div class="form-group col-4 col-xl-2 col-lg-2" >
+                                    <label class="form-label" style="color:transparent;">-</label>
+                                    <br>
+                                    <a class="btn btn-block btn-primary text-white" type="button" role="button" data-toggle="modal" data-target="#staticBackdrop">
+                                        <i class="fas fa-eye"></i> Ver
+                                    </a>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row ">
+                                <div class="form-group col-6 col-md-6 ">
+                                    <button class="btn btn-block btn-add">
+                                    <i class="fas fa-plus"></i> Añadir
+                                    </button>
+                                </div>
+
+                                <div class="form-group col-6 col-md-6 ">
+                                    <button type="button" id="salir_agregar" class="btn btn-block btn-dark">
+                                    <i class="fas fa-sign-out-alt"></i> Finalizar
+                                    </button>
+                                </div>
+                            </div>
+
+                        </form>
                     </div>
-                    <input type="text" name="modulo_agregar" id="modulo-agregar" placeholder="" aria-label="ModuloAgr" aria-describedby="ModuloAgr" aria-describedby="moduloAgr-addon" required>
+                    <!-- fin segunda columna -->
                 </div>
-                <div class="inputBox">
-                    <button class="boton1"><i class="fas fa-plus"></i> Añadir</buton>
-                    <button type="button" id="salir_agregar" class="boton2"><i class="fas fa-sign-out-alt"></i> Finalizar</buton>
-                </div>
-            </form>
-            <div class="image">
-                <img src="./assets/images/card_02.jpg" alt="">
-            </div>
-            <div class="image2">
-                <img src="./assets/images/card_01.jpg" alt="">
             </div>
         </div>
     </div>
-</div>
-</div>
-                <!--
-                Modal listado de modulo
-                -->
+<!-- FIN Nuevo form -->
+
+
+
+<!-- Modal listado de modulo -->
 
               <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
                    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -194,16 +235,19 @@
             </div>
         </div>
     </div>
+
     <?php
     }
     else{
                 header('Location:iniciosesion.php');
     }
-?>
+    ?>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.js"></script>
 <script src="assets/js/plugins/sweetalert2.all.min.js"></script>
 <script src="assets/js/validarCategoria.js"></script>
 <script src="assets/js/validarModulo.js"></script>
+
 </body>
 </html>

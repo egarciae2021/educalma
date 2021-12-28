@@ -399,6 +399,7 @@ textarea {
     width: 100%;
     background: white;
     border: lightgray 1px solid;
+    font-family: 'Poppins', serif;
     -webkit-box-shadow: 6px 2px 8px -3px rgba(212, 212, 212, 1);
     -moz-box-shadow: 6px 2px 8px -3px rgba(212, 212, 212, 1);
     box-shadow: 6px 2px 8px -3px rgba(212, 212, 212, 1);
@@ -442,6 +443,8 @@ textarea {
     background: whitesmoke;
     padding: 3.1rem 1rem;
     margin: 0 auto;
+    width: 100%;
+    height: 100%;
 }
 
 .container-fluid .container .seccion .row .col-3 .list-group-flush .list-group-item {

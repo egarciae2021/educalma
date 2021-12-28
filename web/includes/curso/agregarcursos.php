@@ -34,11 +34,12 @@
         }
         /*label*/
   	    .form-group .error{
-    	color: red;
-        font-style: italic;
-        font-size: 13px;
-        /* max-width:300px;
-        padding: 10px; */
+    	color: crimson;
+        font-style: normal;
+        font-size: 16px;
+        padding-top: 5px;
+        /* max-width:300px; 
+        padding: 10px;*/
         margin:0;
         }
     </style>
@@ -100,7 +101,7 @@
                             <div class="form-row ">
                                 <div class="form-group col-md-6 ">
                                     <label class="form-label">Nombre del curso</label>
-                                    <input type="text" name="nombres_agrecursos" id="names-agrecursos" class="form-control "  placeholder="Ingrese su nombre" aria-label="Nombrecurso" aria-describedby="names-addon">
+                                    <input type="text" name="nombres_agrecursos" id="names-agrecursos" class="form-control "  placeholder="Ingrese un nombre" aria-label="Nombrecurso" aria-describedby="names-addon">
                                 </div>
                                 <div class="form-group col-md-6 ">
                                     <label class="form-label">Categoría</label>
@@ -188,7 +189,7 @@
             </div>
         </div>
     </div>
-<!-- fin formulario leidy -->
+<!-- fin formulario -->
 
 
 
