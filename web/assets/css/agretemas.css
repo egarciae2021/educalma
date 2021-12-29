@@ -395,7 +395,7 @@ textarea {
     background: #5c5dc4;
     border: none;
     border-radius: 0px;
-    font-size: .9rem;
+    font-size: .8rem;
 }
 
 .container-fluid .container .seccion .row .col-3 .list-group .active:focus {
@@ -502,7 +502,7 @@ textarea {
 }
 
 .container-fluid .container .seccion .row .col-9 .scroll .form-row {
-    width: auto;
+    width: 100%;
     height: 10.2rem;
     overflow: auto;
 }

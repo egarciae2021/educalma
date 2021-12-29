@@ -5,53 +5,35 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link rel="stylesheet" href="assets/css/agretemas.css">
-    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+
     <style>
-         label.error{
-    	color: red;
-        font-style: italic;
-        font-size: 13px;    
-        max-width:400px;
-        padding: 10px;
+        label.error{
+        color: crimson;
+        font-style: normal;
+        font-size: 16px;
+        padding-top: 5px;
+        /* max-width:300px; 
+        padding: 10px;*/
         margin:0;
         }
     </style>
+
     <title>Agregar Temas</title>
 </head>
 
 <body>
+
 <?php
 // Este codigo hace validacion para que no se pueda acceder a cualquier pagina sin estar logueado
-
- if(isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)){
+    if(isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)){
 ?>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-1"></div>
-            <div class="col-md-10">
-                <div class="titlemc">
-                </div>
-            </div>
-            <div class="col-md-1"></div>
-        </div>
-    </div>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <div class="container-fluid">
-        <h2 class="mb-4" style="text-align: center; color:#4F52D6; font-size: 300%;font-family: 'Oswald', sans-serif;">
-                <center>Bienvenido a EduCalma</center>
-        </h2>
-        <div class="title">
-            <div class="mb-4">
-                <center><i class="fas fa-plus-square"></i> Agrega Temas a un Módulo</center>
-            </div>
-            <h1><a href="agregarModulos.php?id=<?php echo $idCurso=$_GET['idCurso'];?>">Atras <-</a></h1>
-        </div>
-    </div>
+
             <?php
                 require_once '././database/databaseConection.php';
                 $idModulo=$_GET['id_mo'];
@@ -67,189 +49,141 @@
                 //hacer un array y traer el nombre
             ?>
 
-<!-- CODIGO ANTERIOR
-            <h3 style="color:white; background:#53F5ED; border-radius:15px 15px 0 0;">
-            <i class="fas fa-plus-square"></i> Agregue los <strong>Temas</strong> del módulo: <strong>
-                <?php echo $dato2['nombreModulo'];?></strong>
-            </h3>
-            <div class="cont_formu">
-                <form id="form-agretemas"
-                    action="includes/tema/checkAgrTema.php?id_mo=<?php echo $idModulo?>&idCurso=<?php echo $idCurso?>"
-                    target="dummyframe" method="POST" onsubmit="registrar_nuevo_usuario();">
-                    <div class="mb-3">
-                        <input type="text" name="temas_agregar" id="tema-agregar" class="form-control form-control-lg "
-                            placeholder="Nombre del Tema" aria-label="TemaAgr" aria-describedby="temaAgr-addon"
-                        style="border-color:#53F5ED; border-radius:15px; font-size:15px;" required>
-                    </div>
-                    <div class="mb-3">
-                        <div class="form-floating">
-                            <textarea class="form-control" placeholder="Descripción del Tema" id="descripcio-tema"
-                                name="descripcio_tema" style="height: 100px; border-color:#53F5ED ; border-radius:15px;font-size:15px;" required></textarea>
+<!-- Nuevo diseño de formulario -->
+<div class="container-fluid">
+        <!--                    ======================================
+                                            Agregar Temas
+                                ====================================== 
+        -->
+        <div class="container" id="contformulario">
+            <div class="seccion">
+                <div class="row">
+
+                    <!-- primera columna -->
+                    <div class="col-3 pr-0 border-right">
+                        <ul class="list-group list-group-flush ">
+                            <li class="list-group-item border-bottom ">Curso</li>
+                        </ul>
+                        <!-- seccion agregar temas a un modulo -->
+                        <div class="list-group py-3">
+                            <button type="button" class="list-group-item list-group-item-action active">
+                                Agrega Temas a un Módulo
+                            </button>
+                            <!-- seccion otros -->
+                            <ul class="list-group list-group-flush py-3">
+                                <li class="list-group-item border-top-0" style="color:#495057;">Otros</li>
+                            </ul>
+                            <div class="list-group lista2 text-left">
+                                <a href="sidebarCursos.php" class="list-group-item list-group-item-action">
+                                    <i class="fas fa-book"></i> Mis Cursos
+                                </a>
+                                <a href="ListaCursos.php?pag=1" class="list-group-item list-group-item-action">
+                                    <i class="fas fa-eye"></i> Ver todos los Cursos
+                                </a>
+                                <a href="publicarcursos.php?pag=1" class="list-group-item list-group-item-action">
+                                    <i class="fad fa-books"></i> Publicar cursos
+                                </a>
+                                <a class="btn btn-outline-secondary btn-back btn-sm" href="agregarModulos.php?id=<?php echo $idCurso=$_GET['idCurso'];?>" role="button">
+                                    <i class="fas fa-arrow-left"></i> Atrás
+                                </a>
+                            </div>
+                            <!-- fin seccion otros -->
                         </div>
                     </div>
-                    <div class="mb-3">
-                        <input type="text" name="link" id="apellidoMat-registro" class="form-control form-control-lg "
-                            placeholder="Link del Vídeo" aria-label="ApellidosMat" aria-describedby="apellidoMat-addon"
-                        style=" border-color:#53F5ED; border-radius:15px;font-size:15px;"  required>
-                    </div>
-                    <div style="text-align: center; padding: 5% 0px; width: 50%; float: left;">
-                        <button type="submit" class="boton"  style="background:#FA5CCA;color:#FFFFFF;font-size:18px;">
-                        <i class="fas fa-plus"></i> Añadir</button>
-                    </div>
-                    <div style="text-align: center; padding: 5% 0px; width: 50%;float: left;">
-                        <a href="agregarModulos.php?id=<?php echo $_GET['idCurso'];?>">
-                            <button type="button" class="boton" style="background:#ED0A0A;color:#FFFFFF;font-size:18px;">
-                            <i class="fas fa-window-close"></i> Salir</button></a>
-                    </div>
-                </form>
-                <?php
-                $pdo3 = Database::connect();
-                    $idd = $dato2['idModulo'];
-                    $sql3 = "SELECT * FROM tema WHERE id_modulo='$idd'";
-                    $q3 = $pdo3->prepare($sql3);
-                    $q3->execute(array());
+                    <!-- fin primera columna -->
 
+                    <!-- Segunda columna -->
+                    <div class="col-9 pl-0">
+                        <!-- form temas -->
+                        <form name="formulario" id="form-agretemas2" method="POST" action="">
+                    
+                            <div class="form-row ">
+                                <div class="form-group col-md-12">
+                                    <h6 class="font-weight-light text-justify" style="color:#495057;">
+                                    Agregue Temas al Módulo: "<strong><?php echo $dato2['nombreModulo'];?></strong>"
+                                    </h6>
+                                </div>
+                            </div>
 
-                while($dato3=$q3->fetch(PDO::FETCH_ASSOC)){
-            ?>
+                            <div class="form-row ">
 
-            <div class="mb-3">
-                <input type="text" class="form-control" value="<?php echo $dato3['nombreTema']?>"
-                    aria-label="Recipient's username with two button addons" disabled>
-                <a href="editartema.php?id_modulo=<?php echo $idd; ?>&id_curso=<?php echo $idCurso;?>&id_tema=<?php echo $dato3['idTema'];?>">
-                    <button class="btn btn-outline-secondary" type="button">Editar Tema</button>
-                </a>
-                <a href="includes/tema/quitartemas.php?id_modulo=<?php echo $idd; ?>&id_curso=<?php echo $idCurso;?>&id_tema=<?php echo $dato3['idTema'];?>">
-                    <button class="btn btn-outline-secondary" type="button">Quitar Tema</button>
-                </a>
-            </div>
-            <?php
-                }
-                Database::disconnect();
-            ?>
+                                <div class="form-group col-md-6 ">
+                                    <label class="form-label">Nombre del tema</label>
+                                    <input type="text" class="form-control" name="temas_agregar" id="tema-agregar" placeholder="Ingrese un nombre" aria-label="TemaAgr" aria-describedby="temaAgr-addon" required>
+                                </div>
+
+                                <div class="form-group col-md-6 ">
+                                    <label class="form-label">Link del vídeo</label>
+                                    <input type="text" class="form-control" name="link" id="apellidoMat-registro" placeholder="Ingrese un link" aria-label="ApellidosMat" aria-describedby="apellidoMat-addon" required>
+                                </div>
+
+                            </div>
+
+                            <div class="form-row">
+
+                                <div class="form-group col-12">
+                                    <label class="form-label">Descripción del tema</label>
+                                    <textarea class="form-control" placeholder="Añadir descripción" rows="3" id="descripcio-tema" name="descripcio_tema" required></textarea>
+                                </div>
+                                
+                            </div>
+
+                            <div class="form-row">
+                                <button type="submit" class="btn btn-block btn-add">
+                                    <i class="fas fa-plus"></i> Agregar
+                                </button>
+                            </div>
+
+                            <div class="form-row pt-3">
+                                <div class="form-group col-12">
+                                    <label class="form-label">Listado de Temas</label>
+                                </div>
+                            </div>
+
+                            <!-- Listado de Temas -->
+                            
+                            <div class="scroll">
+                                <div class="form-row">
+
+                                    
+
+                                    <div class="form-group col-8 col-md-10 col-sm-8 col-lg-10 col-xl-10">
+                                        <input type="text" class="form-control" value="" aria-label="Recipient's username with two button addons" disabled>
+                                    </div>
+
+                                    <!-- boton editar pregunta -->
+                                    <div class="form-group col-2 col-md-1 col-sm-2 col-lg-1 col-xl-1">
+                                        <a class="btn btn-block btn-outline-success" href="">
+                                            <i class="far fa-edit"></i>
+                                        </a>
+                                    </div>
+
+                                    <!-- boton borrar pregunta -->              
+                                    <div class="form-group col-2 col-md-1 col-sm-2 col-lg-1 col-xl-1">
+                                        <a class="btn btn-block btn-outline-danger" href="">
+                                            <i class="fas fa-trash-alt"></i>
+                                        </a>
+                                    </div>
+
+                                </div>
+                                
+                            </div>
+                            <!-- fin de Listado de temas -->
+                        </form>
+
+                        <!-- fin form temas -->
+
+                        
+                    </div>
+                    
+                    <!-- fin segunda columna -->
+                </div>
             </div>
         </div>
     </div>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br> 
--->
+<!-- fin nuevo formulario -->
 
-<!-- FORMULARIO -->
-    <div class="container-contformulario">
-    <div class="contformulario" id="contformulario">
-        <div class="row">
-            <div class="image">
-                <img src="./assets/images/donar06.png" alt="">
-            </div>
-             <!--
-                                        ======================================
-                                                    Agregar Temas
-                                        ======================================
 
-            -->
-            <form name="formulario" id="form-agretemas2" method="POST" action="includes/tema/checkAgrTema.php?id_mo=<?php echo $idModulo?>&idCurso=<?php echo $idCurso?>" onsubmit="registrar_nuevo_usuario();">
-            <div class="inputBox">
-                    <h3>Agregue temas del módulo: "<strong><?php echo $dato2['nombreModulo'];?>"</strong></h3>
-            </div>
-            <div class="inputBox">
-                    <h3>Nombre del Tema</h3>
-                <input type="text" name="temas_agregar" id="tema-agregar" placeholder="" aria-label="TemaAgr" aria-describedby="temaAgr-addon" required>      
-                </div>
-                <div class="inputBox">
-                <h3>Link del Vídeo</h3>
-                    <input type="text" name="link" id="apellidoMat-registro" placeholder="" aria-label="ApellidosMat" aria-describedby="apellidoMat-addon" required>      
-                </div>
-                <div class="inputBox">
-                    <h3>Descripción del Tema</h3>
-                    <textarea maxlength="250" placeholder="" id="descripcio-tema" name="descripcio_tema" required></textarea> 
-                </div>
-                <div class="inputBox">
-                <button type="submit" class="boton1" style="width:100%;">
-                    <i class="fas fa-plus"></i> Agregar</button></button>
-            </div>
-            <!-- <div class="inputBox">
-            <a href="agregarModulos.php?id=<?php echo $_GET['idCurso'];?>">    
-            <button type="submit" class="boton1" style="background: gray; border-color: transparent;">
-                <i class="fas fa-window-close"></i> Salir</button>
-            </div> -->
-            </div>
-                </form>
-
-            <?php
-                $pdo3 = Database::connect();
-                    $idd = $dato2['idModulo'];
-                    $sql3 = "SELECT * FROM tema WHERE id_modulo='$idd'";
-                    $q3 = $pdo3->prepare($sql3);
-                    $q3->execute(array());                
-            ?>
-
-        </div>
-    </div>
-</div>
-
-<!--    Barra que muestra los temas añadidos   -->
-<div class="col-12 mt-5 text-center">
-                <div class="card">
-                    <div class="card-header">
-                        <h3 class="card-title">Listado de Temas</h3>
-                    </div>
-                    <!-- /.card-header -->
-                    <div class="card-body">
-                    <div class="table-responsive">
-                            <table id="" class="table table-striped table-bordered" cellspacing="0" width="100%">
-                                <thead>
-                                    <tr>
-                                        <th>Nombre</th>
-                                        <th>Link del vídeo</th>
-                                        <th>Descripción</th>
-                                        <th>Acciones</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                <?php
-                                while($dato3=$q3->fetch(PDO::FETCH_ASSOC)){
-                                ?>
-                                    <tr>
-                                        <td>
-                                            <input type="text" class="form-control-sm" value="<?php echo $dato3['nombreTema']?>" aria-label="Recipient's username with two button addons" disabled>
-                                        </td>
-                                        <td>
-                                            <?php echo $dato3['link_video']?>
-                                        </td>
-                                        <td>
-                                            <?php echo $dato3['descripcionTema']?>
-                                        </td>
-
-                                        <td>
-                                            <!--para editar tema-->
-                                            <a href="editartema.php?id_modulo=<?php echo $idd; ?>&id_curso=<?php echo $idCurso;?>&id_tema=<?php echo $dato3['idTema'];?>">
-                                                <button class="btn btn-outline-success" type="button"><i class="fas fa-edit"></i> Editar tema</button>
-                                            </a>
-                                            <!--para borrar tema-->
-                                            <a href="includes/tema/quitartemas.php?id_modulo=<?php echo $idd; ?>&id_curso=<?php echo $idCurso;?>&id_tema=<?php echo $dato3['idTema'];?>">
-                                                <button class="btn btn-outline-danger" type="button"><i class="fas fa-trash"></i> Quitar tema</button>
-                                            </a>
-                                        </td>
-                                    </tr>
-
-                                <?php 
-                                }
-                                Database::disconnect();
-                                ?>
-                            </tbody>
-                            </table>
-   
-                        </div>
-                    </div>
-                    <!-- /.card-body -->
-                </div>
-            </div>
-            <!-- /.card -->
-        </div>
-        <br>
 
     <?php
     }
