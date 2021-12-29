@@ -71,15 +71,15 @@
             imagettftext($image,25,0,1250,1465,$color,$font,$fechaActual);
             imagettftext($image,60,0,900,898,$color,$font,$nomcurso);
             imagettftext($image,60,0,900,630,$color,$font,$nomalumno);
-
             
-            imagejpeg($image,"certificate/".$nomalumno.".jpg");
+            
+            //imagejpeg($image,"certificate/".$nomalumno.".jpg");
 
             require('fpdf.php');
             $pdf = new FPDF('L','in',[11.7,8.27]);
             $pdf->Addpage();
-            $pdf->Image("certificate/".$nomalumno.".jpg",0,0,11.7,8.27);
-            $pdf->Output("certificate/".$nomalumno.".pdf","F");
+            //$pdf->Image("certificate/".$nomalumno.".jpg",0,0,11.7,8.27);
+            //$pdf->Output("certificate/".$nomalumno.".pdf","F");
             $pdf->Output("certificate/".$nomalumno.".pdf","D");
 
             imagedestroy($image);
