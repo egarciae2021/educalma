@@ -62,7 +62,7 @@
             $q2->execute(array());
             $dato2=$q2->fetch(PDO::FETCH_ASSOC);
             
-            
+            echo "funciona";
             echo'
             <script>
                 // alert ("inscrito exitosamente");
@@ -138,7 +138,7 @@
         echo'
             <script>
                 // alert ("Actualizado exitosamente");
-                window.location = "../../publicarcursos.php";
+                window.location = "../../editarcurso.php?id='.$id.'";
             </script>
         ';
     

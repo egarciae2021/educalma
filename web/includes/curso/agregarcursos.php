@@ -74,14 +74,17 @@
                             </button>
                             <!-- seccion otros -->
                             <ul class="list-group list-group-flush py-3">
-                                <li class="list-group-item border-top-0" style="color:#495057;">Otros</li>
+                                <li class="list-group-item border-top-0" style="color:#495057;">Componentes del Curso</li>
                             </ul>
                             <div class="list-group lista2 text-left">
+                            <!-- <a href="sidebarCursos.php" class="list-group-item list-group-item-action">
+                                <i class="fas fa-pencil-alt"></i> Editar curso
+                                </a> -->
                                 <a href="sidebarCursos.php" class="list-group-item list-group-item-action">
                                     <i class="fas fa-book"></i> Mis Cursos
                                 </a>
                                 <a href="ListaCursos.php?pag=1" class="list-group-item list-group-item-action">
-                                    <i class="fas fa-eye"></i> Ver todos los Cursos
+                                    <i class="fas fa-eye"></i> Ver los modulos del curso
                                 </a>
                                 <a href="publicarcursos.php?pag=1" class="list-group-item list-group-item-action">
                                     <i class="fad fa-books"></i> Publicar cursos

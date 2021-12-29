@@ -20,3 +20,22 @@ window.onclick = function(event) {
 function onload(){
   swal({title: "Iniciando Sesión...",allowEscapeKey: false,allowOutsideClick:false,text: "Espere unos segundos por favor.",showConfirmButton: false,timer: 25000});
 }
+
+$("#actucurso").click(function(){
+  // var param = $('#form-leditcursos').serialize();
+  var param= new FormData($('#form-leditcursos')[0]);
+  // var ft= document.getElementById('#file-upload');
+  alert(param);
+  $.ajax({
+    data: param,
+    url:"includes/Cursos_crud/Cursos_CRUD.php", 
+    type: 'POST',
+    contentType: false,
+    processData: false,
+    success: function(){
+        alert("funcion");
+        //swal({title: "Curso Actualizado",allowEscapeKey: false,allowOutsideClick:false,text: "El curso se actualizó correctamente.",showConfirmButton: false,timer: 1000});
+        
+    }
+  });
+});

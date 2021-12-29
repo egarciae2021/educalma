@@ -116,6 +116,7 @@
                 
                 if($cantidad_respuesta_acertadas>=$minimo_respuestas_para_aprobar){
                     echo '<a class="button" data-filter=".seo" href="plugins/ejemplo.php?idCurso='.$id.'">CERTIFICADO</a>';
+                    // echo '<a href="plugins/certificate.jpg" class="button" download>CERTIFICADO</a>';
                     $validar=1;
                 }else {
                     echo '<a class="button" onclick="sin_certificado()">CERTIFICADO</a>';

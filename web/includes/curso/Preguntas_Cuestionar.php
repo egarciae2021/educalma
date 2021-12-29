@@ -54,10 +54,13 @@
                             </button>
                             <!-- seccion otros -->
                             <ul class="list-group list-group-flush py-3">
-                                <li class="list-group-item border-top-0" style="color:#495057;">Otros</li>
+                                <li class="list-group-item border-top-0" style="color:#495057;">Componentes del curso</li>
                             </ul>
 
                             <div class="list-group lista2 text-left">
+                            <a href="sidebarCursos.php" class="list-group-item list-group-item-action">
+                                <i class="fas fa-pencil-alt"></i> Editar curso
+                                </a>
                                 <a href="sidebarCursos.php" class="list-group-item list-group-item-action">
                                     <i class="fas fa-book"></i> Mis Cursos
                                 </a>
