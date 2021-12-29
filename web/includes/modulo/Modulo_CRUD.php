@@ -41,7 +41,7 @@ require_once '../../database/databaseConection.php';
         //$idCurs=$_SESSION['iddelcurso']; //id_modulo=4&id_curso=7
         echo'
             <script>
-                window.location = "../../editarModulo.php?id_modulo='.$idmodulo.'&id_curso='.$idCurso.'";
+                window.location = "../../agregarModulos.php?id='.$idCurso.'";
             </script>
         ';
     }

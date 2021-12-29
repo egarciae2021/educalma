@@ -199,17 +199,82 @@
                                                     <i class="fas fa-plus"></i> Agregar Tema</button>
                                                 </a>
                                                 <!--quitar modulos-->
-                                                <a
-                                                    href="includes/modulo/Modulo_CRUD.php?id_modulo=<?php echo $dato2['idModulo']?>&id_curso=<?php echo $_GET['id']?>">
-                                                    <button style="font-size: 10px;" class="btn btn-outline-secondary btn-modulos" type="button">
-                                                    <i class="fas fa-trash"></i> Quitar Módulo</button>
+                                                
+                                                <a>
+                                                    <button style="font-size: 10px;" class="btn btn-outline-secondary btn-modulos" type="button" data-toggle="modal" data-target="#ModalquitarModulo<?php echo $dato2['idModulo'];?>">
+                                                    <i class="fas fa-edit"></i> Quitar Módulo</button>
                                                 </a>
+                                                <div class="modal fade" id="ModalquitarModulo<?php echo $dato2['idModulo'];?>" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                                    <div class="modal-dialog modal-dialog-centered">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h6 class= "modal-title">QUITAR MÓDULO</h6>
+                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                    <span aria-hidden="true">&times;</span>
+                                                                </button>
+                                                            </div>
+                                                            <form name="formulario" id="form-agretemas5" action="includes/modulo/Modulo_CRUD.php?id_modulo=<?php echo $dato2['idModulo']?>&id_curso=<?php echo $_GET['id']?>" target="dummyframe" method="POST">   
+                                                                <div class="modal-body">
+                                                                        <div>
+                                                                            <div>
+                                                                            
+                                                                                <div class="inputBox">
+                                                                                    <center><h4>¿Estas seguro de eliminar este modulo?</h4></center>
+                                                                                    <input type="text" class="form-control" value="<?php echo $dato2['nombreModulo'];?>" aria-label="ModuloAgr" disabled>
+                                                                                    <input type="hidden" name="idmodulo" value="<?php echo $dato2['idModulo'];?>">
+                                                                                </div>
+                                                                            
+                                                                            </div>
+                                                                        </div>
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                    <button type="submit" class="btn btn-secondary cerrar-modal"><i class="fas fa-trash-alt"></i> Si, Eliminar</button>
+                                                                    <button type="button" class="btn btn-secondary cerrar-modal" data-dismiss="modal">Cerrar</button>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
                                                 <!--editar modulo-->
-                                                <a
-                                                    href="editarModulo.php?id_modulo=<?php echo $dato2['idModulo']?>&id_curso=<?php echo $_GET['id']?>">
-                                                    <button style="font-size: 10px;" class="btn btn-outline-secondary btn-modulos" type="button">
+                                                
+                                                <a>
+                                                    <button style="font-size: 10px;" class="btn btn-outline-secondary btn-modulos" type="button" data-toggle="modal" data-target="#ModalEditarModulo<?php echo $dato2['idModulo'];?>">
                                                     <i class="fas fa-edit"></i> Editar Módulo</button>
                                                 </a>
+                                                <div class="modal fade" id="ModalEditarModulo<?php echo $dato2['idModulo'];?>" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                                    <div class="modal-dialog modal-dialog-centered">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h6 class= "modal-title">EDITAR MÓDULO</h6>
+                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                    <span aria-hidden="true">&times;</span>
+                                                                </button>
+                                                            </div>
+                                                            <form name="formulario" id="form-agretemas3" action="includes/modulo/Modulo_CRUD.php?id=<?php echo $dato2['id_curso'];?>" target="dummyframe" method="POST">   
+                                                                <div class="modal-body">
+                                                                        <div>
+                                                                            <div>
+                                                                            
+                                                                                <div class="inputBox">
+                                                                                    <center><h4>Renombrar Módulo:</h4></center>
+                                                                                    <input type="text" class="form-control" name="actu_nomb_agregar" id="actu-nomb-agregar" value="<?php echo $dato2['nombreModulo'];?>" 
+                                                                                    placeholder="" aria-label="ModuloAgr" aria-describedby="moduloAgr-addon" required>
+                                                                                    <input type="hidden" name="idmodulo" value="<?php echo $dato2['idModulo'];?>">
+                                                                                </div>
+                                                                            
+                                                                            </div>
+                                                                        </div>
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                    <button type="submit" class="btn btn-secondary cerrar-modal"><i class="fas fa-redo"></i> Actualizar</button>
+                                                                    <button type="button" class="btn btn-secondary cerrar-modal" data-dismiss="modal">Cerrar</button>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
                                                 <!--agregar cuestionario-->
                                                 <a
                                                     href="Form_pregun_cuestionario.php?id_modulo=<?php echo $dato2['idModulo']?>">
