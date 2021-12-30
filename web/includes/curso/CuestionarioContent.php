@@ -135,7 +135,10 @@
 
                             if($c_modulo<=$moduloC){
                         ?>
-                                <a href="video.php?id=<?php echo $id;?>&c_tema=<?php echo $c_tema;?>&validar=1&c_modulo=<?php echo $c_modulo;?>"><button type="button" class="btn btn-outline-secondary">Siguiente</button></a>
+                                <a href="video.php?id=<?php echo $id;?>
+                                                    &c_tema=<?php echo $c_tema;?>
+                                                    &validar=1
+                                                    &c_modulo=<?php echo $c_modulo;?>"><button type="button" class="btn btn-outline-secondary">Siguiente</button></a>
                         <?php
                             }
                         ?>
@@ -174,7 +177,13 @@
 
             
             <form style="padding: 30px;"
-                action="includes/cuestionarioCRUD/cuestion.php?contador=<?php echo $contador;?>&id=<?php echo $id;?>&idModulo=<?php echo $idModulo;?>&c_tema=<?php echo $c_tema;?>&validar=1&c_modulo=<?php echo $c_modulo;?>&id_pregunta=<?php echo $idpregunta ?>"
+                action="includes/cuestionarioCRUD/cuestion.php?contador=<?php echo $contador?>
+                                                               &id=<?php echo $id;?>
+                                                               &idModulo=<?php echo $idModulo?>
+                                                               &c_tema=<?php echo $c_tema?>
+                                                               &validar=1
+                                                               &c_modulo=<?php echo $c_modulo?>
+                                                               &id_pregunta=<?php echo $idpregunta?>"
                 method="POST">
                 <?php while($fila2=$q2->fetch(PDO::FETCH_ASSOC)){
                           //checked
