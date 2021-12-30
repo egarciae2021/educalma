@@ -7,6 +7,7 @@ require_once 'database/databaseConection.php';
 </head>
 
 <body>
+<<<<<<< HEAD
     <header style="background-color: #ffffff77;">
         <div class="container-header navbar-fixed-top" style="max-width: 95rem;">
             <input type="checkbox" name="" id="check">
@@ -127,6 +128,41 @@ require_once 'database/databaseConection.php';
                             <h5 class="font-weight-bold" style="font-size: 8px;">(Para aclaraciones giancarlosuggardaddy@gmail.com)</h5>
                         </div>
                     </div>
+=======
+
+    <?php
+        $id = $_GET['id'];
+        $pdo = Database::connect();
+        $sql = "SELECT * FROM cursos WHERE idCurso='$id'";
+        $q = $pdo->prepare($sql);
+        $q->execute(array());
+        $dato = $q->fetch(PDO::FETCH_ASSOC);
+        
+
+        $idUserr = $_SESSION['codUsuario'];
+        $veriS="SELECT * FROM cursoinscrito WHERE curso_id = $id AND usuario_id='$idUserr'";
+        $qS = $pdo->prepare($veriS);
+        $qS->execute(array());
+        $datoS=$qS->fetch(PDO::FETCH_ASSOC);
+        Database::disconnect();
+
+        if (empty($datoS['id_cursoInscrito'])){        
+    ?>
+    
+
+    <div class="container">
+        <div class="contenedor-nextpage">
+            <img class="image-cont" src="assets/images/online-payment.png" alt="">
+            <h1 class="mt-4">¡Paso Final!</h1>
+            <hr>
+            <h3>Estas a punto de pagar con paypal la cantidad de:</h3>
+            <div class="my-3 mx-auto" style="max-width: 350px;">
+                <span>$.<?php echo $dato['costoCurso'];?></span><br>
+                <div class> <!-- VISA -->
+                    <a href="" class="btn my-1 visa"><img src="assets/images/visa.png" alt="" style="border-radius: 23px;"></a><br>
+                    <!-- <a href="" class="btn my-1 paypal"><img src="assets/images/paypal (1).png" alt=""></a><br>
+                    <a href="" class="btn my-1 credit"><i class="fas fa-credit-card mr-2"></i>Debit or Credit Card</a><br><br> -->
+>>>>>>> 8f6b452 (Cambios en certificados y arreglo de compra de un curso)
                 </div>
             </div>
         </div>

@@ -13,7 +13,7 @@
         $descripcionCur=$_POST['descripcio_curso'];
         $intro = $_POST['intro_curso'];
         $categoriaCur = $_POST['categoria'];
-        $precio="Gratis";
+        $precio=0.00;
         $nombreimagen=$_FILES['txtimagen']['tmp_name'];
         $dirigido =$_POST['publico_dirigido'];
         $idProfe = $_SESSION['codUsuario'];
@@ -62,7 +62,7 @@
             $q2->execute(array());
             $dato2=$q2->fetch(PDO::FETCH_ASSOC);
             
-            echo "funciona";
+            // echo "funciona";
             echo'
             <script>
                 // alert ("inscrito exitosamente");

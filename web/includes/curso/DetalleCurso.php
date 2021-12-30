@@ -102,10 +102,25 @@
                 <div class="col-12 col-sm-12 col-md-5 col-lg-4 col-xl-4 info-course-right">
                     <br><br><br><br>
                     <div class="card" style="position: absolute;width: 90%; ">
-                        <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAPars5s2FQzySbkUpPjtBlvPlANAFDLP7x38q8nOqcke_Lrf_if34Y-kTjGQgS6pRvuQ&usqp=CAU" alt="Card image" style="width:100%">
+                        <img class="card-img-top" src="data:image/*;base64,<?php echo base64_encode($dato4['imagenDestacadaCurso']) ?>" alt="Card image" style="width:100%">
                         <div class="card-body">
-                            <h4 class="card-title font-weight-bold" style="font-size: 30px;"><?php echo (is_numeric($dato4['costoCurso'])) ? 'S/ ' . $dato4['costoCurso'] : $dato4['costoCurso']  ?></h4>
-                            <a href="pagepay.php?id=<?php echo $dato4["idCurso"]; ?>" class="btn btn-outline-dark my-3">Comprar ahora</a>
+                            <h4 class="card-title font-weight-bold" style="font-size: 30px;"><?php 
+                            if($dato4['costoCurso']!=0){
+                            echo 'S/ ' . $dato4['costoCurso'];
+                            }else{
+                                echo 'Gratis';
+                            }
+                            ?></h4>
+                            <?php if($dato4['costoCurso']!=0){
+                                ?>
+                                <a href="pagepay.php?id=<?php echo $dato4["idCurso"]; ?>" class="btn btn-outline-dark my-3">Comprar ahora</a>
+                                <?php 
+                                }else{
+                                    ?>
+                                    <a href="includes/Cursos_crud/inscribirseGratis.php?id=<?php echo $dato4["idCurso"]; ?>" class="btn btn-outline-dark my-3">Comprar ahora</a>
+                                    <?php
+                                }
+                                ?>
                             <p class="font-weight-bold mb-0">Este curso incluye:</p>
                             <div class="my-1" style="font-size: 13px;">
 
