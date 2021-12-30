@@ -96,9 +96,9 @@
             $nomcurso= $dato['nombreCurso'];  
 
             
-            imagettftext($image,30,0,1300,190,$color,$font,$fechaActual);
+            imagettftext($image,20,0,1300,190,$color,$font,$fechaActual);
             imagettftext($image,40,0,260,730,$color,$font,$nomcurso);
-            imagettftext($image,40,0,260,920,$color,$font,$ale);
+            imagettftext($image,20,0,1600,1200,$color,$font,$ale);
             imagettftext($image,40,0,260,520,$color,$font,$nomalumno);
             
             

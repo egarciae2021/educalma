@@ -98,7 +98,7 @@ CREATE TABLE cursos (
     descripcionCurso char(250),
     categoriaCurso int(10) not null,
     dirigido varchar(250) not null,
-    costoCurso varchar(250) not null,
+    costoCurso double(10,2) not null,
     imagenDestacadaCurso longblob,
     permisoCurso int(1) not null,
     introduccion varchar(500) not null,
