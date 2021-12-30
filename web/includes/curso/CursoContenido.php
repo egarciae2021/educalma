@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="././assets/css/cont_curso.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="./assets/js/plugins/sweetalert2.min.css">
+    <!-- <link rel="stylesheet" href="./assets/js/plugins/sweetalert2.min.css"> -->
 </head>
 
 <body>
