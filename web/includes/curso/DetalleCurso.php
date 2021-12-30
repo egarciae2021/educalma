@@ -225,7 +225,7 @@
     } else {
         echo '
             <script>
-                window.location = "../../curso.php?id=' . $id . '";
+                window.location = "sidebarCursos.php";
             </script>
         ';
     }
