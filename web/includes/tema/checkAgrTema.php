@@ -12,7 +12,7 @@ if(isset($_GET['idCurso'])){
     $link = $_POST['link'];
 
     $pdo = Database::connect();  
-    $verif=$pdo->prepare("INSERT INTO tema (id_Modulo, nombreTema, descripcionTema, link_video, encuestaTema) VALUES ('$idModulo','$nombreTema','$descripcionTema','$link','activo') ");
+    $verif=$pdo->prepare("INSERT INTO tema (id_modulo, nombreTema, descripcionTema, link_video, encuestaTema) VALUES ('$idModulo','$nombreTema','$descripcionTema','$link','activo')");
 
     $verif->execute();
     Database::disconnect();

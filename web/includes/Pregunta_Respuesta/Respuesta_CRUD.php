@@ -69,7 +69,7 @@
         Database::disconnect();
         echo'
             <script>
-                window.location = "../../Form_respue_cuestionario.php?id_modulo='.$id_modulo.'&id_pregunta='.$id_pregunta.'&pregunta='.$pregunta.'";
+                window.location = "../../Form_respue_cuestionario.php?id_pregunta='.$id_pregunta.'&id_modulo='.$id_modulo.'&pregunta='.$pregunta.'";
             </script>
         ';
     }

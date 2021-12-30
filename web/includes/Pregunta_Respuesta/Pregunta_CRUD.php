@@ -62,7 +62,6 @@
 
         echo'
             <script>
-                alert ("Actualizado exitosamente");
                 window.location = "../../Form_pregun_cuestionario.php?id_modulo='.$id_modulo.'";
             </script>
         ';

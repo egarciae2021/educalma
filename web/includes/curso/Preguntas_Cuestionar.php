@@ -107,14 +107,15 @@
                                 </div>
                             </div>
                         </form>
-
+                    
+                    
                         <form class="pt-0">
-                            <div class="form-row ">
+                            <div class="form-row">
                                 <div class="form-group col-12">
                                     <label class="form-label">Listado de Preguntas</label>
                                 </div>
                             </div>
-
+                    
                             <!-- lista de preguntas - codigo php -->
                             <!-- <div class="overflow-auto"> -->
                             <div class="scroll">
@@ -148,27 +149,84 @@
                                             <i class="fas fa-plus-square"></i> Respuesta
                                         </a>
                                     </div>
-
+                            </form>
+                            
                                     <!-- boton editar pregunta -->
-                                    <div class="form-group col-1 col-md-1 col-sm-1 col-lg-1 col-xl-1">
-                                        <a class="btn btn-block btn-outline-success " href="Editar_pregun_Cuestionario.php?id_pregunta=<?php echo $registro1['idPregunta']?>&pregunta=<?php echo $registro1['pregunta']?>&id_modulo=<?php echo $idmodulo;?>">
-                                            <i class="far fa-edit"></i>
-                                        </a>
-                                    </div>
+                                    <a class="form-group col-1 col-md-1 col-sm-1 col-lg-1 col-xl-1">
+                                        <button class="btn btn-block btn-outline-success" type="button" data-toggle="modal" data-target="#ModaleditarPregun<?php echo $registro1['idPregunta']?>">
+                                        <i class="far fa-edit"></i></button>
+                                    </a>
+                            
 
+                                <div class="modal fade" id="ModaleditarPregun<?php echo $registro1['idPregunta']?>" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h6 class= "modal-title">EDITAR PREGUNTA</h6>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                                <div class="modal-body">
+                                                    <div>
+                                                        <div class="inputBox">
+                                                            <h4>Edita la pregunta: </h4>
+                                            <form name="formulario" id="editando_preguntas" method="POST" action="includes/Pregunta_Respuesta/Pregunta_CRUD.php?id_modulo=<?php echo $registro['id_modulo'];?>" >
+                                                            <input type="text" name="actuali_pregunta" class="form-control" value="<?php echo $registro1['pregunta'];?>">
+                                                            <input type="hidden" name="id_pregunta" value="<?php echo $registro1['idPregunta'];?>">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="submit" class="btn btn-secondary cerrar-modal"><i class="fas fa-redo"></i> Actualizar</button>
+                                                    <button type="button" class="btn btn-secondary cerrar-modal" data-dismiss="modal">Cerrar</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- boton borrar pregunta -->              
                                     <!-- boton borrar pregunta -->              
-                                    <div class="form-group col-1 col-md-1 col-sm-1 col-lg-1 col-xl-1">
-                                        <a class="btn btn-block btn-outline-danger" href="includes/Pregunta_Respuesta/Pregunta_CRUD.php?id_modulo=<?php echo $idmodulo;?>&id_pregunta=<?php echo $registro1['idPregunta']?>">
-                                            <i class="fas fa-trash-alt"></i>
-                                        </a>
+                                <!-- boton borrar pregunta -->              
+                                    <!-- boton borrar pregunta -->              
+                                <!-- boton borrar pregunta -->              
+                                <a class="form-group col-1 col-md-1 col-sm-1 col-lg-1 col-xl-1">
+                                    <button class="btn btn-block btn-outline-danger" type="button" data-toggle="modal" data-target="#ModalquitarPregun<?php echo $registro1['idPregunta']?>">
+                                    <i class="fas fa-trash-alt"></i></button>
+                                </a>
+                                <div class="modal fade" id="ModalquitarPregun<?php echo $registro1['idPregunta']?>" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h6 class= "modal-title">ELIMINAR PREGUNTA</h6>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            
+                                            <div class="modal-body"> 
+                                                <center><h4>¿Estas seguro de eliminar esta pregunta?</h4></center>
+                                                <form name="formulario" id="elimando_pregunta" method="POST" action="includes/Pregunta_Respuesta/Pregunta_CRUD.php?id_modulo=<?php echo $idmodulo;?>&id_pregunta=<?php echo $registro1['idPregunta']?>" >   
+                                                    <input type="text" name="actuali_pregunta" class="form-control" value="<?php echo $registro1['pregunta'];?>" disabled>
+                                                    <input type="hidden" name="id_pregunta" value="<?php echo $registro1['idPregunta'];?>">
+                                                        
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="submit" class="btn btn-secondary cerrar-modal"><i class="fas fa-trash-alt"></i> Si, Eliminar</button>
+                                                <button type="button" class="btn btn-secondary cerrar-modal" data-dismiss="modal">Cerrar</button>
+                                            </div>
+                                                </form>
+                                        </div>
                                     </div>
-
+                                </div>
+                    
                                     <?php }?>
 
                                 </div>
                             </div>
                             <!-- fin lista de preguntas -->
-                        </form>
+                        
                     </div>
                     <!-- fin segunda columna -->
                 </div>
