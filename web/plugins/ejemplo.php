@@ -46,7 +46,7 @@
                 $fecha2 = 'Diciembre';
             }
             $fecha3 = date('d');
-            $fechaActual = $fecha3.' de '.$fecha2.' del '.$fecha1;
+            $fechaActual = $fecha3.' '.$fecha2.' '.$fecha1;
             
             //*
              /*CONDICIONAL PARA QUE DESCARGUE EL MISMO (Aún no lo hago)
@@ -87,16 +87,16 @@
             *METODO PARA CREAR CERTIFICADO
             *@AUTOR: GONZALO
             */
-            $font = "C:\Windows\Fonts\GOTHIC.TTF"; 
+            $font = "C:\Windows\Fonts\cambriab.ttf"; 
             $image= imagecreatefromjpeg("certificate.jpg");
-            $color= imagecolorallocate($image,19,21,22);
+            $color= imagecolorallocate($image,25,39,175);
         
 
             $nomalumno = $dato['nombres'].' '.$dato['apellido_pat'].' '.$dato['apellido_mat'];
             $nomcurso= $dato['nombreCurso'];  
 
             
-            imagettftext($image,20,0,1300,190,$color,$font,$fechaActual);
+            imagettftext($image,20,0,1530,190,$color,$font,$fechaActual);
             imagettftext($image,40,0,260,730,$color,$font,$nomcurso);
             imagettftext($image,20,0,1600,1200,$color,$font,$ale);
             imagettftext($image,40,0,260,520,$color,$font,$nomalumno);
