@@ -26,7 +26,13 @@
             }
         }
 
-        @media (min-width: 1880px) {
+        @media (min-width: 1600px) {
+            .order-card-custom {
+                grid-template-columns: repeat(5, 1fr);
+            }
+        }
+
+        @media (min-width: 1800px) {
             .order-card-custom {
                 grid-template-columns: repeat(5, 1fr);
             }
