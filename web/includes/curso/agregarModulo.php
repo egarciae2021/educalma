@@ -280,7 +280,7 @@
 
                                                 <!--agregar cuestionario-->
                                                 <a
-                                                    href="Form_pregun_cuestionario.php?id_modulo=<?php echo $dato2['idModulo']?>">
+                                                    href="Form_pregun_cuestionario.php?id=<?php echo $_GET['id']?>&id_modulo=<?php echo $dato2['idModulo']?>">
                                                     <button style="font-size: 10px;" class="btn btn-outline-secondary btn-modulos" type="button">
                                                     <i class="fas fa-plus"></i> Agregar Cuestionario</button>
                                             </a>

@@ -87,7 +87,8 @@
             *METODO PARA CREAR CERTIFICADO
             *@AUTOR: GONZALO
             */
-            $font = "C:\Windows\Fonts\cambriab.ttf"; 
+            $font = "C:\Windows\Fonts\LSANSD.TTF"; 
+            $fonti = "C:\Windows\Fonts\seguihis.ttf"; 
             $image= imagecreatefromjpeg("certificate.jpg");
             $color= imagecolorallocate($image,25,39,175);
         
@@ -96,9 +97,9 @@
             $nomcurso= $dato['nombreCurso'];  
 
             
-            imagettftext($image,20,0,1530,190,$color,$font,$fechaActual);
+            imagettftext($image,20,0,1530,190,$color,$fonti,$fechaActual);
             imagettftext($image,40,0,260,730,$color,$font,$nomcurso);
-            imagettftext($image,20,0,1600,1200,$color,$font,$ale);
+            imagettftext($image,20,0,1600,1200,$color,$fonti,$ale);
             imagettftext($image,40,0,260,520,$color,$font,$nomalumno);
             
             

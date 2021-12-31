@@ -60,10 +60,10 @@
                              <div class="nav__dropdown-content">
                                  <a href="sidebarCursos.php" class="nav__dropdown-item nav__link">Mis Cursos</a>
                                  <a href="ListaCursos.php?pag=1" class="nav__dropdown-item nav__link">Ver todos los Cursos</a>
-                                 <a href="agregarcurso.php" class="nav__dropdown-item nav__link">Donar Curso</a>
-                                <?php
+                                 <?php
                                     if($_SESSION['privilegio']==1 ||$_SESSION['privilegio']==6 ){
                                 ?>
+                                 <a href="agregarcurso.php" class="nav__dropdown-item nav__link">Donar Curso</a>
                                  <a href="publicarcursos.php?pag=1" class="nav__dropdown-item nav__link">Publicar cursos</a>
                                  <?php
                                   }

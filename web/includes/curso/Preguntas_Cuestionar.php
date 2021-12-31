@@ -58,8 +58,11 @@
                             </ul>
 
                             <div class="list-group lista2 text-left">
-                            <a href="sidebarCursos.php" class="list-group-item list-group-item-action">
+                            <a href="editarcurso.php?id=<?php echo $_GET['id']?>" class="list-group-item list-group-item-action">
                                 <i class="fas fa-pencil-alt"></i> Editar curso
+                                </a>
+                                <a href="agregarModulos.php?id=<?php echo $_GET['id_modulo'] ?>" class="list-group-item list-group-item-action">
+                                    <i class="fas fa-plus-square"></i> Agregar Modulos
                                 </a>
                                 <a href="sidebarCursos.php" class="list-group-item list-group-item-action">
                                     <i class="fas fa-book"></i> Mis Cursos
@@ -145,7 +148,7 @@
 
                                     <!-- boton agregar respuesta -->
                                     <div class="form-group col-2 col-md-3 col-sm-1 col-lg-3 col-xl-2">
-                                        <a class="btn btn-block btn-add" href="Form_respue_cuestionario.php?id_pregunta=<?php echo $registro1['idPregunta']?>&id_modulo=<?php echo $idmodulo;?>&pregunta=<?php echo $registro1['pregunta']?>">
+                                        <a class="btn btn-block btn-add" href="Form_respue_cuestionario.php?id=<?php echo $_GET['id']; ?>&id_pregunta=<?php echo $registro1['idPregunta']?>&id_modulo=<?php echo $idmodulo;?>&pregunta=<?php echo $registro1['pregunta']?>">
                                             <i class="fas fa-plus-square"></i> Respuesta
                                         </a>
                                     </div>

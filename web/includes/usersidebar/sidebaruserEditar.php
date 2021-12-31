@@ -111,7 +111,7 @@ $dato12 = $q12->fetch(PDO::FETCH_ASSOC)
                         </a>-->
 
                         <?php
-                         if($_SESSION['privilegio']==2 ||$_SESSION['privilegio']==3 ){
+                         if($_SESSION['privilegio']==1 ||$_SESSION['privilegio']==6 ){
                          ?>
                         <a href="agregarcurso.php" class="nav__link">
                             <i class='nav__icon'><img

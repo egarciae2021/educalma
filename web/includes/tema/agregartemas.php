@@ -78,6 +78,13 @@
                                 <a href="sidebarCursos.php" class="list-group-item list-group-item-action">
                                     <i class="fas fa-book"></i> Mis Cursos
                                 </a>
+                                <a href="editarcurso.php?id=<?php echo $_GET['idCurso']; ?>" class="list-group-item list-group-item-action">
+                                    <i class="fas fa-pencil-alt"></i> Editar curso
+                                </a>
+
+                                <a href="agregarModulos.php?id=<?php echo $_GET['idCurso']; ?>" class="list-group-item list-group-item-action">
+                                    <i class="fas fa-plus-square"></i> Agregar Modulos
+                                </a>
                                 <a href="ListaCursos.php?pag=1" class="list-group-item list-group-item-action">
                                     <i class="fas fa-eye"></i> Ver todos los Cursos
                                 </a>

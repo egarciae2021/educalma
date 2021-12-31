@@ -64,10 +64,16 @@
                             <ul class="list-group list-group-flush py-3">
                                 <li class="list-group-item border-top-0" style="color:#495057;">Otros</li>
                             </ul>
-
                             <div class="list-group lista2 text-left">
                                 <a href="sidebarCursos.php" class="list-group-item list-group-item-action">
                                     <i class="fas fa-book"></i> Mis Cursos
+                                </a>
+                                <a href="editarcurso.php?id=<?php echo $_GET['id'] ?>" class="list-group-item list-group-item-action">
+                                <i class="fas fa-pencil-alt"></i> Editar curso
+                                </a>
+
+                        <a href="agregarModulos.php?id=<?php echo $_GET['id_modulo']; ?>" class="list-group-item list-group-item-action">
+                                    <i class="fas fa-plus-square"></i> Agregar Modulos
                                 </a>
                                 <a href="ListaCursos.php?pag=1" class="list-group-item list-group-item-action">
                                     <i class="fas fa-eye"></i> Ver todos los Cursos
@@ -75,7 +81,7 @@
                                 <a href="publicarcursos.php?pag=1" class="list-group-item list-group-item-action">
                                     <i class="fad fa-books"></i> Publicar cursos
                                 </a>
-                                <a class="btn btn-outline-secondary btn-back btn-sm" href="Form_pregun_cuestionario.php?id_modulo=<?php echo $idmodulo=$_GET['id_modulo'];?>" role="button">
+                                <a class="btn btn-outline-secondary btn-back btn-sm" href="Form_pregun_cuestionario.php?id=<?php echo $_GET['id']; ?>&id_modulo=<?php echo $idmodulo=$_GET['id_modulo'];?>" role="button">
                                     <i class="fas fa-arrow-left"></i> Atrás
                                 </a>
                             </div>
