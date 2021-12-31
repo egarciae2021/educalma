@@ -8,7 +8,7 @@
             max-width: 1800px;
         }
 
-        @media (min-width: 768px) {
+        @media (min-width: 660px) {
             .order-card-custom {
                 grid-template-columns: repeat(2, 1fr);
             }
@@ -23,6 +23,12 @@
         @media (min-width: 1300px) {
             .order-card-custom {
                 grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        @media (min-width: 1880px) {
+            .order-card-custom {
+                grid-template-columns: repeat(5, 1fr);
             }
         }
     </style>
