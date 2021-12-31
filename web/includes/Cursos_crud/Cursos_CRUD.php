@@ -22,7 +22,7 @@
         if($_FILES['txtimagen']['size']>0){
             $nombreimagen = addslashes(file_get_contents($nombreimagen));
         }else{
-            $aux = "../../assets/images/CursoxDefecto.png";
+            $aux = "../../assets/images/curso_educalma.png";
             $nombreimagen = addslashes(file_get_contents($aux));
 
         }
