@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link rel="stylesheet" href="assets/css/agretemas.css">
+    <link rel="stylesheet" href="assets/css/cuestionario_formu.css">
 
     <style>
         label.error{
@@ -23,7 +23,7 @@
         margin:0;
         }
     </style>
-
+    <script src="https://kit.fontawesome.com/f9e5248491.js" crossorigin="anonymous"></script>
     <title>Agregar Temas</title>
 </head>
 
@@ -32,12 +32,13 @@
 <?php
 // Este codigo hace validacion para que no se pueda acceder a cualquier pagina sin estar logueado
     if(isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)){
+        $idModulo=$_GET['id_mo'];
+        $idCurso=$_GET['idCurso'];
 ?>
 
             <?php
                 require_once '././database/databaseConection.php';
-                $idModulo=$_GET['id_mo'];
-                $idCurso=$_GET['idCurso'];
+                
 
                 $pdo2 = Database::connect();
                 $sql2 = "SELECT * FROM modulo WHERE idModulo='$idModulo'";
@@ -95,7 +96,7 @@
                     <!-- Segunda columna -->
                     <div class="col-9 pl-0">
                         <!-- form temas -->
-                        <form name="formulario" id="form-agretemas2" method="POST" action="">
+                        <form name="formulario" id="form-agretemas2" method="POST" action="includes/tema/checkAgrTema.php?idCurso=<?php echo $idCurso;?>&id_mo=<?php echo $idModulo;?>">
                     
                             <div class="form-row ">
                                 <div class="form-group col-md-12">
@@ -125,16 +126,22 @@
                                     <label class="form-label">Descripción del tema</label>
                                     <textarea class="form-control" placeholder="Añadir descripción" rows="3" id="descripcio-tema" name="descripcio_tema" required></textarea>
                                 </div>
-                                
                             </div>
 
                             <div class="form-row">
-                                <button type="submit" class="btn btn-block btn-add">
-                                    <i class="fas fa-plus"></i> Agregar
-                                </button>
+                                <div class="form-group col-12">
+                                    <a>
+                                        <button type="submit" class="btn btn-block btn-add">
+                                            <i class="fas fa-plus"></i> Agregar
+                                        </button>
+                                    </a>
+                                </div>
                             </div>
+                        </form>
 
-                            <div class="form-row pt-3">
+                        <form class="pt-0">
+
+                            <div class="form-row">
                                 <div class="form-group col-12">
                                     <label class="form-label">Listado de Temas</label>
                                 </div>
@@ -145,31 +152,105 @@
                             <div class="scroll">
                                 <div class="form-row">
 
-                                    
+                                    <?php
+                                        error_reporting(0);
+                                        require_once 'database/databaseConection.php';
+                                        $pdo3 = Database::connect();
+                                        $sql3= "SELECT *FROM tema WHERE id_modulo= '$idModulo'";
+                                        $q3 = $pdo3->prepare($sql3);
+                                        $q3 -> execute(array());
+                                        Database::disconnect(); 
+
+                                        while($dato3=$q3->fetch(PDO::FETCH_ASSOC)){                                        
+                                    ?>
 
                                     <div class="form-group col-8 col-md-10 col-sm-8 col-lg-10 col-xl-10">
-                                        <input type="text" class="form-control" value="" aria-label="Recipient's username with two button addons" disabled>
+                                        <input type="text" class="form-control" value="<?php echo $dato3['nombreTema'] ?>" aria-label="Recipient's username with two button addons" disabled>
                                     </div>
+                                    </form><!--  -->
 
                                     <!-- boton editar pregunta -->
                                     <div class="form-group col-2 col-md-1 col-sm-2 col-lg-1 col-xl-1">
-                                        <a class="btn btn-block btn-outline-success" href="">
-                                            <i class="far fa-edit"></i>
+                                        <a>
+                                            <button class="btn btn-block btn-outline-success" type="button" data-toggle="modal" data-target="#ModaleditarTema<?php echo $dato3['idTema']?>">
+                                                <i class="far fa-edit"></i>
+                                            </button>
                                         </a>
+
+                                        <div class="modal fade" id="ModaleditarTema<?php echo $dato3['idTema']?>" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-centered">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h6 class= "modal-title">EDITAR TEMA</h6>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    
+                                                        <div class="modal-body">
+                                                            <div>
+                                                                <div class="inputBox">
+                                                                    <h4>Edita el Tema: </h4>
+                                                    <form name="formulario" id="editando_preguntas" method="POST" action="includes/tema/checkAgrTema.php?idCur=<?php echo $idCurso;?>&id_mod=<?php echo $idModulo;?>" style="background:#F7F7F7;">
+                                                                    <input type="text" name="actu_tema" class="form-control" value="<?php echo $dato3['nombreTema'];?>">
+                                                                    <input type="text" name="descripcionT" class="form-control" value="<?php echo $dato3['descripcionTema'];?>">
+                                                                    <input type="text" name="linkT" class="form-control" value="<?php echo $dato3['link_video'];?>">
+                                                                    <input type="hidden" name="idTema" value="<?php echo $dato3['idTema'];?>">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="submit" class="btn btn-secondary cerrar-modal"><i class="fas fa-redo"></i> Actualizar</button>
+                                                            <button type="button" class="btn btn-secondary cerrar-modal" data-dismiss="modal">Cerrar</button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
 
                                     <!-- boton borrar pregunta -->              
                                     <div class="form-group col-2 col-md-1 col-sm-2 col-lg-1 col-xl-1">
-                                        <a class="btn btn-block btn-outline-danger" href="">
-                                            <i class="fas fa-trash-alt"></i>
+                                        <a>
+                                            <button class="btn btn-block btn-outline-danger" type="button" data-toggle="modal" data-target="#ModalquitarTema<?php echo $dato3['idTema']?>">
+                                            <i class="fas fa-trash-alt"></i></button>
                                         </a>
-                                    </div>
 
+                                        <div class="modal fade" id="ModalquitarTema<?php echo $dato3['idTema']?>" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-centered">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h6 class= "modal-title">ELIMINAR TEMA</h6>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    
+                                                    <div class="modal-body"> 
+                                                        <center><h4>¿Estas seguro de eliminar este Tema?</h4></center>
+                                                        <form name="formulario" id="eliminando_temas" method="POST" action="includes/tema/checkAgrTema.php?idCurs=<?php echo $idCurso;?>&id_mod=<?php echo $idModulo;?>" style="background:#F7F7F7;">
+                                                            <input type="text" name="actuali_pregunta" class="form-control" value="<?php echo $dato3['nombreTema'];?>" disabled>
+                                                            <input type="hidden" name="idTemas" value="<?php echo $dato3['idTema'];?>">
+                                                                
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="submit" class="btn btn-secondary cerrar-modal"><i class="fas fa-trash-alt"></i> Si, Eliminar</button>
+                                                        <button type="button" class="btn btn-secondary cerrar-modal" data-dismiss="modal">Cerrar</button>
+                                                    </div>
+                                                        </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                        <?php 
+                                            }
+                                        ?>
                                 </div>
                                 
                             </div>
+                            <hr>
                             <!-- fin de Listado de temas -->
-                        </form>
+                            
 
                         <!-- fin form temas -->
 
