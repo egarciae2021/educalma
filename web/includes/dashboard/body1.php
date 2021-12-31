@@ -106,10 +106,10 @@
                          <i class="fas fa-cog nav__icon"></i>
                          <span class="nav__name">Ajustes</span>
                      </a>
-                     <a href="#" class="nav__link">
+                     <!-- <a href="#" class="nav__link">
                          <i class="fas fa-question-circle nav__icon"></i>
                          <span class="nav__name">Ayuda</span>
-                     </a>
+                     </a> -->
 
                      <a href="includes/login/logout.php" class="nav__link nav__logout">
                          <!-- <i class='bx bx-log-out nav__icon'></i> -->

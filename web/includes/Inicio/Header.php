@@ -57,9 +57,9 @@ require_once 'database/databaseConection.php';
                                     <li class="dropdown-link">
                                         <a href="sidebarCursos.php">Ir a Cursos</a>
                                     </li>
-                                    <li class="dropdown-link">
+                                    <!-- <li class="dropdown-link">
                                         <a href="InfoCurso.php?pag=1">Información Cursos</a>
-                                    </li>
+                                    </li> -->
                                     <li class="dropdown-link">
                                         <a href="includes/login/logout.php">Cerrar Sesión</a>
                                     </li>
