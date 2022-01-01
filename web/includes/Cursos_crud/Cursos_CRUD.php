@@ -144,6 +144,28 @@
     
         
     }
+
+    /*=============================================
+                 PARA OCULTAR CURSO (Elimina)
+    ===============================================*/
+
+    if(isset($_GET['id_eliminar'])){
+        $id=$_GET['id_eliminar'];
+
+        $pdo = Database::connect();  
+        $veri="UPDATE cursos SET permisoCurso='0' WHERE idCurso = '$id' ";
+        $q = $pdo->prepare($veri);
+        $q->execute(array());
+        $dato=$q->fetch(PDO::FETCH_ASSOC);
+        Database::disconnect();
+        
+        echo'
+            <script>
+                //alert ("ocultado exitosamente");
+                window.location = "../../user-sidebar.php";
+            </script>
+        ';
+    }
     
 
 ?>

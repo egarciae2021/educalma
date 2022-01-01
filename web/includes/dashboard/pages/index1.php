@@ -16,7 +16,9 @@ ob_start();
             include_once 'includes/dashboard/contenido.php';
         }
     ?>
+    <script src="./assets/js/plugins/jquery.min.js"></script>
     <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/buscarLista.js"></script>
 </body>
 
 </html>
