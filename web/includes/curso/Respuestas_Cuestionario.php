@@ -72,7 +72,7 @@
                                 <i class="fas fa-pencil-alt"></i> Editar curso
                                 </a>
 
-                        <a href="agregarModulos.php?id=<?php echo $_GET['id_modulo']; ?>" class="list-group-item list-group-item-action">
+                        <a href="agregarModulos.php?id=<?php echo $_GET['id']; ?>" class="list-group-item list-group-item-action">
                                     <i class="fas fa-plus-square"></i> Agregar Modulos
                                 </a>
                                 <!-- <a href="ListaCursos.php?pag=1" class="list-group-item list-group-item-action">
