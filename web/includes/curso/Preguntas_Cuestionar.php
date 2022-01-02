@@ -64,12 +64,12 @@
                                 <a href="agregarModulos.php?id=<?php echo $_GET['id_modulo'] ?>" class="list-group-item list-group-item-action">
                                     <i class="fas fa-plus-square"></i> Agregar Modulos
                                 </a>
-                                <a href="sidebarCursos.php" class="list-group-item list-group-item-action">
+                                <!-- <a href="sidebarCursos.php" class="list-group-item list-group-item-action">
                                     <i class="fas fa-book"></i> Mis Cursos
-                                </a>
-                                <a href="ListaCursos.php?pag=1" class="list-group-item list-group-item-action">
+                                </a> -->
+                                <!-- <a href="ListaCursos.php?pag=1" class="list-group-item list-group-item-action">
                                     <i class="fas fa-eye"></i> Ver todos los Cursos
-                                </a>
+                                </a> -->
                                 <button typer="button" id="salir_public" class="list-group-item list-group-item-action" style="cursor: pointer">
                                     <i class="fad fa-books"></i> Publicar cursos
                                 </button>

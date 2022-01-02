@@ -65,9 +65,9 @@
                                 <li class="list-group-item border-top-0" style="color:#495057;">Otros</li>
                             </ul>
                             <div class="list-group lista2 text-left">
-                                <a href="sidebarCursos.php" class="list-group-item list-group-item-action">
+                                <!-- <a href="sidebarCursos.php" class="list-group-item list-group-item-action">
                                     <i class="fas fa-book"></i> Mis Cursos
-                                </a>
+                                </a> -->
                                 <a href="editarcurso.php?id=<?php echo $_GET['id'] ?>" class="list-group-item list-group-item-action">
                                 <i class="fas fa-pencil-alt"></i> Editar curso
                                 </a>
@@ -75,9 +75,9 @@
                         <a href="agregarModulos.php?id=<?php echo $_GET['id_modulo']; ?>" class="list-group-item list-group-item-action">
                                     <i class="fas fa-plus-square"></i> Agregar Modulos
                                 </a>
-                                <a href="ListaCursos.php?pag=1" class="list-group-item list-group-item-action">
+                                <!-- <a href="ListaCursos.php?pag=1" class="list-group-item list-group-item-action">
                                     <i class="fas fa-eye"></i> Ver todos los Cursos
-                                </a>
+                                </a> -->
                                 <button typer="button" id="salir_public" class="list-group-item list-group-item-action" style="cursor: pointer">
                                     <i class="fad fa-books"></i> Publicar cursos
                                 </button>
@@ -257,7 +257,7 @@
                         
                         <div class="row">
                             <div class="col-12">
-                                <form action="includes/tema/checkAgrTema.php?idpregunta=<?php echo $id_pregunta;?>&id_modulo=<?php echo $idmodulo;?>&pregunta=<?php echo $pregunta;?>" class="pt-0" method="POST">
+                                <form action="includes/tema/checkAgrTema.php?id=<?php echo $_GET['id']?>&idpregunta=<?php echo $id_pregunta;?>&id_modulo=<?php echo $idmodulo;?>&pregunta=<?php echo $pregunta;?>" class="pt-0" method="POST">
                             
                                     <div class="form-row">
                                         <div class="form-group col-md-12">

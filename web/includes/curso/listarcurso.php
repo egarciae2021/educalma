@@ -128,7 +128,7 @@
                                                         <button class="btn btn-outline-secondary boton_add" type="button"><i class="far fa-plus-square"></i> </button>
                                                     </a>
                                                     <!--para editar curso-->
-                                                    <a href="editarcurso.php?id_curso=<?php echo $curso['idCurso']; ?>">
+                                                    <a href="editarcurso.php?id=<?php echo $curso['idCurso']; ?>">
                                                         <button class="btn boton_edit" type="button"><i class="far fa-edit"></i></button>
                                                     </a>
                                                     <!--para quitar curso-->

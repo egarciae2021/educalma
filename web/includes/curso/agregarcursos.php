@@ -84,7 +84,7 @@
                                     <i class="fas fa-book"></i> Mis Cursos
                                 </a>
                                 <a href="ListaCursos.php?pag=1" class="list-group-item list-group-item-action">
-                                    <i class="fas fa-eye"></i> Ver los modulos del curso
+                                    <i class="fas fa-eye"></i> Ver los cursos
                                 </a>
                                 <a href="publicarcursos.php?pag=1" class="list-group-item list-group-item-action">
                                     <i class="fad fa-books"></i> Publicar cursos

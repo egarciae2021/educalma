@@ -105,7 +105,7 @@ if(isset($_POST['respu_correcta'])){
     echo'
         <script>
             // alert ("respuesta correcta -- escogida");
-            window.location = "../../Form_respue_cuestionario.php?id_pregunta='.$idpregunta.'&id_modulo='.$id_modulo.'&pregunta='.$pregunta.'";
+            window.location = "../../Form_respue_cuestionario.php?id='.$_GET['id'].'&id_pregunta='.$idpregunta.'&id_modulo='.$id_modulo.'&pregunta='.$pregunta.'";
         </script>
     ';
 }
