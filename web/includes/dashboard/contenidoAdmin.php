@@ -89,7 +89,8 @@ ob_start();
                                 $sql4 = "SELECT * FROM categorias WHERE idCategoria = '$idCate'";
                                 $q4 = $pdo4->prepare($sql4);
                                 $q4->execute(array());
-                                $datoCate = $q4->fetch(PDO::FETCH_ASSOC)
+                                $datoCate = $q4->fetch(PDO::FETCH_ASSOC);
+                                $dotocoto= $q4->fetchAll();
                             ?>
                                 <tr class="h-100 justify-content-center align-items-center">
                                     <td><?php echo $curso['nombreCurso']; ?></td>
@@ -101,7 +102,7 @@ ob_start();
                                     <td><?php echo $curso['costoCurso'];?></td>
                                     <td>
                                         <!--para editar curso-->
-                                        <a href="editarcurso.php?id_curso=<?php echo $curso['idCurso']; ?>">
+                                        <a href="editarcurso.php?id=<?php echo $curso['idCurso']; ?>">
                                             <button  class=" boton_edit" type="button"><i class="far fa-edit"></i></button>
                                         </a>
                                         <!-- para quitar curso -->

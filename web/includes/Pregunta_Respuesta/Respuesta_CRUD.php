@@ -18,7 +18,7 @@
             echo'
                 <script>
                     // alert("respuesta agregada");
-                    window.location = "../../Form_respue_cuestionario.php?id_modulo='.$id_modulo.'&id_pregunta='.$id_pregunta.'&pregunta='.$pregunta.'";
+                    window.location = "../../Form_respue_cuestionario.php?id='.$_GET['id'].'&id_modulo='.$id_modulo.'&id_pregunta='.$id_pregunta.'&pregunta='.$pregunta.'";
                 </script>
             ';
             exit();
@@ -46,7 +46,7 @@
         echo'
             <script>
                 // alert ("Actualizado exitosamente");
-                window.location = "../../Form_respue_cuestionario.php?id_modulo='.$id_modulo.'&id_pregunta='.$id_pregunta.'&pregunta='.$pregunta.'";
+                window.location = "../../Form_respue_cuestionario.php?id='.$_GET['id'].'&id_modulo='.$id_modulo.'&id_pregunta='.$id_pregunta.'&pregunta='.$pregunta.'";
             </script>
         ';
 
@@ -69,7 +69,7 @@
         Database::disconnect();
         echo'
             <script>
-                window.location = "../../Form_respue_cuestionario.php?id_pregunta='.$id_pregunta.'&id_modulo='.$id_modulo.'&pregunta='.$pregunta.'";
+                window.location = "../../Form_respue_cuestionario.php?id='.$_GET['id'].'&id_pregunta='.$id_pregunta.'&id_modulo='.$id_modulo.'&pregunta='.$pregunta.'";
             </script>
         ';
     }

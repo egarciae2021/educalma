@@ -88,9 +88,10 @@
                                 <a href="ListaCursos.php?pag=1" class="list-group-item list-group-item-action">
                                     <i class="fas fa-eye"></i> Ver todos los Cursos
                                 </a>
-                                <a href="publicarcursos.php?pag=1" class="list-group-item list-group-item-action">
+                                <button typer="button" id="salir_public" class="list-group-item list-group-item-action" style="cursor: pointer">
                                     <i class="fad fa-books"></i> Publicar cursos
-                                </a>
+                                </button>
+
                                 <a class="btn btn-outline-secondary btn-back btn-sm" href="agregarcurso.php" role="button">
                                     <i class="fas fa-arrow-left"></i> Atrás
                                 </a>

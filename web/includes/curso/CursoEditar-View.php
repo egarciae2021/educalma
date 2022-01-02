@@ -50,7 +50,7 @@
 // Este codigo hace validacion para que no se pueda acceder a cualquier pagina sin estar logueado
 
  if(isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)){
-    $id=$_SESSION['ids'];
+    $id=$_GET['id'];
 ?>
   
 <!-- formulario -->
@@ -87,12 +87,15 @@
                                 <a href="agregarModulos.php?id=<?php echo $id ?>" class="list-group-item list-group-item-action">
                                     <i class="fas fa-plus-square"></i> Agregar Modulos
                                 </a>
+                                <button typer="button" id="salir_public" class="list-group-item list-group-item-action" style="cursor: pointer">
+                                    <i class="fad fa-books"></i> Publicar cursos
+                                </button>
                                 <!-- <a href="publicarcursos.php?pag=1" class="list-group-item list-group-item-action">
                                     <i class="fad fa-books"></i> Publicar cursos
                                 </a> -->
-                                <a class="btn btn-outline-secondary btn-back btn-sm" href="agregarcurso.php" role="button">
+                                <!-- <a class="btn btn-outline-secondary btn-back btn-sm" href="agregarcurso.php" role="button">
                                     <i class="fas fa-arrow-left"></i> Atrás
-                                </a>
+                                </a> -->
                             </div>
                             <!-- fin seccion otros -->
                         </div>
@@ -178,6 +181,7 @@
     <script src="assets/js/funciones.js"></script>
     <script src="assets/js/plugins/sweetalert2.all.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="assets/js/validarModulo.js"></script>
     
     <?php
     }

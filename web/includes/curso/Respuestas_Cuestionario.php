@@ -78,9 +78,9 @@
                                 <a href="ListaCursos.php?pag=1" class="list-group-item list-group-item-action">
                                     <i class="fas fa-eye"></i> Ver todos los Cursos
                                 </a>
-                                <a href="publicarcursos.php?pag=1" class="list-group-item list-group-item-action">
+                                <button typer="button" id="salir_public" class="list-group-item list-group-item-action" style="cursor: pointer">
                                     <i class="fad fa-books"></i> Publicar cursos
-                                </a>
+                                </button>
                                 <a class="btn btn-outline-secondary btn-back btn-sm" href="Form_pregun_cuestionario.php?id=<?php echo $_GET['id']; ?>&id_modulo=<?php echo $idmodulo=$_GET['id_modulo'];?>" role="button">
                                     <i class="fas fa-arrow-left"></i> Atrás
                                 </a>
@@ -93,7 +93,7 @@
 
                     <!-- segunda columna -->
                     <div class="col-9 pl-0">
-                        <form id="respuestas_cuestionario" action="includes/Pregunta_Respuesta/Respuesta_CRUD.php?id_modulo=<?php echo $idmodulo;?>" method="POST" enctype="multipart/form-data">
+                        <form id="respuestas_cuestionario" action="includes/Pregunta_Respuesta/Respuesta_CRUD.php?id=<?php echo $_GET['id'] ?>&id_modulo=<?php echo $idmodulo;?>" method="POST" enctype="multipart/form-data">
                     
                             <div class="form-row ">
                                 <div class="form-group col-md-12">
@@ -185,7 +185,7 @@
                                                             <div>
                                                                 <div class="inputBox">
                                                                     <h4>Edita la respuesta: </h4>
-                                                    <form name="formulario" id="editando_preguntas" method="POST" action="includes/Pregunta_Respuesta/Respuesta_CRUD.php?id_modulo=<?php echo $idmodulo;?>" style="background:#F7F7F7;">
+                                                    <form name="formulario" id="editando_preguntas" method="POST" action="includes/Pregunta_Respuesta/Respuesta_CRUD.php?id=<?php echo $_GET['id'] ?>&id_modulo=<?php echo $idmodulo;?>" style="background:#F7F7F7;">
                                                                     <input type="text" name="actu_respuesta" class="form-control" id="" value="<?php echo $registro1['respuesta'];?>">
                                                                     <input type="hidden" name="idrespuesta" value="<?php echo $registro1['idRespuesta'];?>">
                                                                     <input type="hidden" name="pregunta" value="<?php echo $pregunta;?>">
@@ -228,7 +228,7 @@
                                                             <div>
                                                                 <div class="inputBox">
                                                                     <center><h4>¿Estas seguro de eliminar esta respuesta? </h4></center>
-                                                    <form name="formulario" id="eliminando_respuestas" method="POST" action="includes/Pregunta_Respuesta/Respuesta_CRUD.php?id_resp=<?php echo $registro1['idRespuesta'];?>&id_modulo=<?php echo $idmodulo;?>&id_pregunta=<?php echo $id_pregunta?>&pregunta=<?php echo $pregunta;?>">
+                                                    <form name="formulario" id="eliminando_respuestas" method="POST" action="includes/Pregunta_Respuesta/Respuesta_CRUD.php?id=<?php echo $_GET['id'] ?>&id_resp=<?php echo $registro1['idRespuesta'];?>&id_modulo=<?php echo $idmodulo;?>&id_pregunta=<?php echo $id_pregunta?>&pregunta=<?php echo $pregunta;?>">
                                                                     <input type="text" name="actu_respuesta" class="form-control" id="" value="<?php echo $registro1['respuesta'];?>" disabled>
                                                                     <input type="hidden" name="id_resp" value="<?php echo $registro1['idRespuesta'];?>">
                                                                     <input type="hidden" name="pregunta" value="<?php echo $pregunta;?>">
@@ -323,5 +323,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.js"></script>
 <script src="assets/js/validarCategoria.js"></script>
+<script src="assets/js/plugins/sweetalert2.all.min.js"></script>
+<script src="assets/js/validarModulo.js"></script>
 </body>
 </html>

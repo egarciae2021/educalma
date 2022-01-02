@@ -39,7 +39,7 @@
             echo'
                 <script>
                     // alert("pregunta agregada");
-                    window.location = "../../Form_pregun_cuestionario.php?id_modulo='.$id_modulo.'";
+                    window.location = "../../Form_pregun_cuestionario.php?id='.$_GET['id'].'&id_modulo='.$id_modulo.'";
                 </script>
             ';
     }
@@ -51,6 +51,7 @@
         $id_modulo=$_GET['id_modulo'];
         $preg_actu=$_POST['actuali_pregunta'];
         $idPreg=$_POST['id_pregunta'];
+        $id=$_GET['id'];
    
 
         $pdo = Database::connect();  
@@ -62,7 +63,7 @@
 
         echo'
             <script>
-                window.location = "../../Form_pregun_cuestionario.php?id_modulo='.$id_modulo.'";
+                window.location = "../../Form_pregun_cuestionario.php?id='.$id.'&id_modulo='.$id_modulo.'";
             </script>
         ';
     }
@@ -89,7 +90,7 @@
         Database::disconnect();
         echo'
             <script>
-                window.location = "../../Form_pregun_cuestionario.php?id_modulo='.$id_modulo.'";
+                window.location = "../../Form_pregun_cuestionario.php?id='.$_GET['id'].'&id_modulo='.$id_modulo.'";
             </script>
         ';
     }

@@ -70,9 +70,9 @@
                                 <a href="ListaCursos.php?pag=1" class="list-group-item list-group-item-action">
                                     <i class="fas fa-eye"></i> Ver todos los Cursos
                                 </a>
-                                <a href="publicarcursos.php?pag=1" class="list-group-item list-group-item-action">
+                                <button typer="button" id="salir_public" class="list-group-item list-group-item-action" style="cursor: pointer">
                                     <i class="fad fa-books"></i> Publicar cursos
-                                </a>
+                                </button>
                                 <a class="btn btn-outline-secondary btn-back btn-sm" href="agregarModulos.php?id=<?php echo $id=$_SESSION['ids'];?>" role="button">
                                     <i class="fas fa-arrow-left"></i> Atrás
                                 </a>
@@ -85,7 +85,7 @@
 
                     <!-- segunda columna -->
                     <div class="col-9 pl-0">
-                        <form id="preguntas_cuestionario" action="includes/Pregunta_Respuesta/Pregunta_CRUD.php?id_modulo=<?php echo $idmodulo;?>" method="POST">
+                        <form id="preguntas_cuestionario" action="includes/Pregunta_Respuesta/Pregunta_CRUD.php?id=<?php echo $_GET['id']; ?>&id_modulo=<?php echo $idmodulo;?>" method="POST">
             
                             <div class="form-row ">
                                 <div class="form-group col-md-12">
@@ -174,7 +174,7 @@
                                                     <div>
                                                         <div class="inputBox">
                                                             <h4>Edita la pregunta: </h4>
-                                            <form name="formulario" id="editando_preguntas" method="POST" action="includes/Pregunta_Respuesta/Pregunta_CRUD.php?id_modulo=<?php echo $registro['id_modulo'];?>" >
+                                            <form name="formulario" id="editando_preguntas" method="POST" action="includes/Pregunta_Respuesta/Pregunta_CRUD.php?id=<?php echo $_GET['id']; ?>&id_modulo=<?php echo $registro['id_modulo'];?>" >
                                                             <input type="text" name="actuali_pregunta" class="form-control" value="<?php echo $registro1['pregunta'];?>">
                                                             <input type="hidden" name="id_pregunta" value="<?php echo $registro1['idPregunta'];?>">
                                                         </div>
@@ -210,7 +210,7 @@
                                             
                                             <div class="modal-body"> 
                                                 <center><h4>¿Estas seguro de eliminar esta pregunta?</h4></center>
-                                                <form name="formulario" id="elimando_pregunta" method="POST" action="includes/Pregunta_Respuesta/Pregunta_CRUD.php?id_modulo=<?php echo $idmodulo;?>&id_pregunta=<?php echo $registro1['idPregunta']?>" >   
+                                                <form name="formulario" id="elimando_pregunta" method="POST" action="includes/Pregunta_Respuesta/Pregunta_CRUD.php?id=<?php echo $_GET['id']?>&id_modulo=<?php echo $idmodulo;?>&id_pregunta=<?php echo $registro1['idPregunta']?>" >   
                                                     <input type="text" name="actuali_pregunta" class="form-control" value="<?php echo $registro1['pregunta'];?>" disabled>
                                                     <input type="hidden" name="id_pregunta" value="<?php echo $registro1['idPregunta'];?>">
                                                         
@@ -249,6 +249,8 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.js"></script>
 <script src="assets/js/validarCategoria.js"></script>
+<script src="assets/js/plugins/sweetalert2.all.min.js"></script>
+<script src="assets/js/validarModulo.js"></script>
 
 </body>
 

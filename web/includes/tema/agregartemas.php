@@ -88,9 +88,9 @@
                                 <a href="ListaCursos.php?pag=1" class="list-group-item list-group-item-action">
                                     <i class="fas fa-eye"></i> Ver todos los Cursos
                                 </a>
-                                <a href="publicarcursos.php?pag=1" class="list-group-item list-group-item-action">
+                                <button typer="button" id="salir_public" class="list-group-item list-group-item-action" style="cursor: pointer">
                                     <i class="fad fa-books"></i> Publicar cursos
-                                </a>
+                                </button>
                                 <a class="btn btn-outline-secondary btn-back btn-sm" href="agregarModulos.php?id=<?php echo $idCurso=$_GET['idCurso'];?>" role="button">
                                     <i class="fas fa-arrow-left"></i> Atrás
                                 </a>
@@ -283,5 +283,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.js"></script>
 <script src="assets/js/validarCategoria.js"></script>
+<script src="assets/js/plugins/sweetalert2.all.min.js"></script>
+<script src="assets/js/validarModulo.js"></script>
 </body>
 </html>
