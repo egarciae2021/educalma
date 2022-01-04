@@ -326,7 +326,7 @@ border-radius: 10px;
 }
 
 
-/*codigo de cartillas*/
+/*cartillas*/
 
 .container-fluid .row .section-title-courses {
     font-family: "Inter", sans-serif;
@@ -352,6 +352,8 @@ border-radius: 10px;
 .container-fluid .container-card-course .row .col-12 .card {
     max-width: 320px;
     max-height: 400px;
+    height: 100%;
+    width: 100%;
     border-radius: 0;
     margin: 0 auto;
     border: 1px solid lightgray;
@@ -388,6 +390,13 @@ border-radius: 10px;
     font-family: "Inter", sans-serif;
     font-size: .8rem;
     padding: 0 .5rem;
+    /*texto en dos lineas*/
+    /* white-space: nowrap; */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
 }
 
 .container-fluid .container-card-course .row .col-12 .card .container-card-link {
@@ -406,4 +415,4 @@ border-radius: 10px;
 }
 
 
-/*fin codigo de cartillas*/
+/*fin de cartillas*/
