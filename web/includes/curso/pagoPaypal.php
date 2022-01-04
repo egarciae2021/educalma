@@ -57,34 +57,35 @@ require_once 'database/databaseConection.php';
                                 </div>
                             </div>
                         </div>
-                        <div class="container-pay-card my-3">
-                            <a href="#">
-                                <div class="col-12 my-2">
-                                    <div class="py-3">
-                                        <i class="far fa-dot-circle mr-2"></i>Tarjeta <img src="assets/images/visa.png" alt="" height="13px">
-                                        <!-- <div></div> -->
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="container-pay-card my-3">
-                            <div class="col-12 my-2">
-                                <div class="py-3">
-                                    <div class="form-check">
-                                        <label class="form-check-label">
-                                            <input type="radio" class="form-check-input" name="optradio">Tarjeta <img class="ml-1" src="assets/images/paypal (1).png" alt="" height="13px">
-                                        </label>
+                        <div id="accordion">
+                            <div class="card mb-3">
+                                <a class="card-header" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    <i class="fas fa-chevron-down mr-2"></i>Tarjeta <img src="assets/images/visa.png" alt="" height="13px">
+                                </a>
+
+                                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                                    <div class="card-body">
+                                        Lorem ipsum dolor sit amet.
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="container-pay-card my-3">
-                            <div class="col-12 my-2">
-                                <div class="py-3">
-                                    <div class="form-check">
-                                        <label class="form-check-label">
-                                            <input type="radio" class="form-check-input" name="optradio">Tarjeta de débito
-                                        </label>
+                            <div class="card mb-3">
+                                <a class="card-header" id="headingTwo" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    <i class="fas fa-chevron-down mr-2"></i>Tarjeta <img class="ml-1" src="assets/images/paypal (1).png" alt="" height="13px">
+                                </a>
+                                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                                    <div class="card-body">
+                                        Lorem ipsum dolor sit amet.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card mb-3">
+                                <a class="card-header" id="headingThree" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    <i class="fas fa-chevron-down mr-2"></i>Tarjeta de débito
+                                </a>
+                                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                                    <div class="card-body">
+                                        Lorem ipsum dolor sit amet.
                                     </div>
                                 </div>
                             </div>
@@ -128,6 +129,10 @@ require_once 'database/databaseConection.php';
                             <h5 class="font-weight-bold" style="font-size: 8px;">(Para aclaraciones giancarlosuggardaddy@gmail.com)</h5>
                         </div>
                     </div>
+
+                    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+                    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 
 </html>
