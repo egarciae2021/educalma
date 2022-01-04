@@ -35,15 +35,15 @@
     <br>
     <br>
     <br>
-    <br>
-    <br>
+    <!-- <br>
+    <br> -->
     <!--contenido-->
-    <div class="container-fluid">
-        <h2><a href="user-sidebar.php" class="btn-before-custom">Volver</a></h2>
-        <h2 class="mb-4" style="text-align: center; color:#4F52D6; font-size: 300%;font-family: 'Oswald', sans-serif;">
+    <!-- <div class="container-fluid">
+        <h2><a href="user-sidebar.php" class="btn-before-custom">Volver</a></h2> -->
+        <!-- <h2 class="mb-4" style="text-align: center; color:#4F52D6; font-size: 300%;font-family: 'Oswald', sans-serif;">
                 <center>Publicación de cursos</center>
         </h2>
-    </div>
+    </div> -->
         <!--contenido de los cursos -->
 
     <!--tabla de curso -->

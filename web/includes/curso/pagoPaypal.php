@@ -1,5 +1,6 @@
 <?php
 require_once 'database/databaseConection.php';
+$id = $_GET['id'];
 ?>
 
 <head>
@@ -20,7 +21,7 @@ require_once 'database/databaseConection.php';
                 <div class="log-sign" style="--i: 1.8s">
                     <ul>
                         <li class="nav-link" style="--i: .6s">
-                            <a href="#">Cerrar</a>
+                            <a href="detallecurso.php?id=<?php echo $id; ?>">Cerrar</a>
                         </li>
                     </ul>
                 </div>

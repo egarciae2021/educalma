@@ -133,8 +133,8 @@ if($registrationForm4.length){
       messages:{
         actu_nomb_agregar: {
               //error message for the required field
-              required: 'Por favor, Ingrese el Nombre Nuevo del Tema!',
-              minlength: "Nombre del Tema debe ser de por lo menos 2 caracteres"
+              required: 'Por favor, Ingrese el Nombre Nuevo del Modulo!',
+              minlength: "Nombre del Modulo debe ser de por lo menos 2 caracteres"
           }
       },
   });
