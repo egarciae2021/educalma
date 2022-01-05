@@ -31,11 +31,12 @@
                 }
 
                 $inicio = ($_GET['pag'] - 1) * $cantidad_paginas;
-                $sql3 = "SELECT * FROM cursos WHERE permisoCurso=1 LIMIT :iniciar,:narticulos";
+                $sql3 = "SELECT * FROM cursos order by idCurso desc LIMIT 3";
+                // SELECT * FROM `cursos`order by idCurso DESC LIMIT 3 
 
                 $query3 = $pdo->prepare($sql3);
-                $query3->bindParam('iniciar', $inicio, PDO::PARAM_INT);
-                $query3->bindParam('narticulos', $cantidad_paginas, PDO::PARAM_INT);
+                // $query3->bindParam('iniciar', $inicio, PDO::PARAM_INT);
+                // $query3->bindParam('narticulos', $cantidad_paginas, PDO::PARAM_INT);
                 $query3->execute();
                 $conteo = 0;
                 while ($dato = $query3->fetch(PDO::FETCH_ASSOC)) {
@@ -69,7 +70,7 @@
                                         <a><strong><?php echo $dato['nombreCurso']; ?></strong></a>
                                     </div>
                                     <div class="container-descrition">
-                                        <p><?php echo $dato['descripcionCurso']; ?>'</p>
+                                        <p><?php echo substr($dato['descripcionCurso'], 0, 30) . "..."; ?></p>
                                     </div>
                                     <div class="container-link">
                                         <a href="<?php echo $paginaRed ?>.php?id=<?php echo $dato['idCurso']; ?>">Ver informaci&oacute;n -></a>

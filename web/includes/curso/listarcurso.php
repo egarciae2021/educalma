@@ -68,7 +68,7 @@
                     $page=ceil($page);
                     if ($contar>0) {
                         if($_GET['pag']>$page||$_GET['pag']<1){
-                            header('Location:InfoCurso.php?pag=1');
+                            header('Location:publicarcursos.php?pag=1');
                         }
                     }
                     $inicio=($_GET['pag']-1)*$cantidad_paginas;
@@ -139,7 +139,7 @@
                                                  if($_SESSION['privilegio'] == 1) {
                                                 ?>
                                                     <!--para quitar curso-->
-                                                    <a href="includes/Cursos_crud/aceptarCurso.php?id_curso=<?php echo $curso['idCurso']; ?>">
+                                                    <a href="includes/Cursos_crud/aceptarCurso.php?id_curso=<?php echo $curso['idCurso']; ?>&pag=<?php echo $_GET['pag'];?>">
                                                         <button class="btn boton_upload" type="button">Publicar</button>
                                                     </a>
 

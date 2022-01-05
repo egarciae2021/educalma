@@ -34,40 +34,7 @@ if (!isset($_GET['pag'])) {
     </div>
   </div>
 </div>
-<!-- MODAL -->
-<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered  modal-xl">
-    <div class="modal-content">
-      <div class="modal-body">
-        <div class="row">
-          <div class="col-12">
-            <img src="./assets/images/2232688.png" alt="" width="28px">
-            <span class="title-modal">Cursos > Categoría ></span>
-            <span class="title-modal">Nombre-Categoría</span>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span class="button_close" aria-hidden="true">&times;</span>
-          </div>
-          <!-- col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6"> -->
-          <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
-            <div class="cont_titulos">
-              <h3 class="titulo">LLOREM IPSUM DOLOR</h3>
-              <span class="descripcion">Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit
-                amet, consectetur adipiscing elit</span>
-              <br><br>
-              <button type="button" class="btn btn-outline-info btn_registrar">
-                <i class="far fa-play-circle"></i>
-                Comienza este curso
-              </button>
-            </div>
-          </div>
-          <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
-            <img class="img_nueva" src="./assets/images/_111437543_197389d9-800f-4763-8654-aa30c04220e4.png" alt="" style="max-width: 100%;">
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+
 <!-- CARDS BRINDA -->
 <div class="container container-fluid-brida">
   <div class="row">
@@ -147,7 +114,93 @@ if (!isset($_GET['pag'])) {
         </div>
       </div>
       <div class="row">
+        <?php
+          $pdo= Database::connect();
+          $sql = 'SELECT * FROM cursos c inner join categorias a on a.idCategoria=c.categoriaCurso ORDER BY idCurso DESC LIMIT 3';
+          $query = $pdo->prepare($sql);
+          $query->execute();
+          $conteo=0;
+
+          while($dato=$query->fetch(PDO::FETCH_ASSOC)){
+            if (isset($_SESSION['codUsuario'])) {
+              $cursoID = $dato['idCurso'];
+              $userID = $_SESSION['codUsuario'];
+
+
+
+              $sql4 = "SELECT * FROM cursoinscrito where curso_id='$cursoID' and usuario_id = '$userID' ";
+              $query4 = $pdo->prepare($sql4);
+              $query4->execute(array());
+              $dato2 = $query4->fetch(PDO::FETCH_ASSOC);
+              if (empty($dato2)) {
+                  $paginaRed = "detallecurso";
+              } else {
+                  $paginaRed = "curso";
+              }
+          } else {
+              $paginaRed =
+                  "detallecurso";
+          }
+              
+        ?>
         <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 mb-4">
+          <div class="card">
+            <div class="row">
+              <div class="col-4 col-sm-4 col-md-12 col-lg-4 col-xl-4">
+                <div class="container-image-course">
+                  <img src="./assets/images/2232688.png" alt="" />
+                </div>
+              </div>
+              <div class="col-8 col-sm-8 col-md-12 col-lg-8 col-xl-8">
+
+                <h4><?php echo $dato['nombreCurso'];?></h4>
+                <h5><?php echo substr($dato['descripcionCurso'], 0, 80) . "..."; ?></h5>
+                <a href="#" class="btn btn-success mt-2" data-toggle="modal" data-target=".bd-example-modal-lg<?php echo $dato['idCurso'];?>">ver
+                  informaci&oacute;n ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- MODAL -->
+<div class="modal fade bd-example-modal-lg<?php echo $dato['idCurso'];?>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered  modal-xl">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-12">
+            <img src="./assets/images/2232688.png" alt="" width="28px">
+            <span class="title-modal">Cursos > Categoría ></span>
+            <!-- <h5><?php //echo $dato['nombreCurso'];?></h5> -->
+            <span class="title-modal"><?php echo $dato['nombreCategoria']; ?></span>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span class="button_close" aria-hidden="true">&times;</span>
+          </div>
+          <!-- col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6"> -->
+          <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+            <div class="cont_titulos">
+              <h4 class="titulo"><?php echo substr($dato['nombreCurso'], 0, 9) . "...";?></h4>
+              <span class="descripcion"><?php echo substr($dato['descripcionCurso'], 0, 100) . "..."; ?></span>
+              <br><br>
+              <a href="<?php echo $paginaRed ?>.php?id=<?php echo $dato['idCurso']; ?>" type="button" class="btn btn-outline-info btn_registrar">
+                <i class="far fa-play-circle"></i>
+                Comienza este curso
+              </a>
+            </div>
+          </div>
+          <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+            <img class="img_nueva" src="data:image/*;base64,<?php echo base64_encode($dato['imagenDestacadaCurso']); ?>" alt="" style="max-width: 100%;">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+        <?php
+          }
+          Database::disconnect();
+        ?>
+        <!-- <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 mb-4">
           <div class="card">
             <div class="row">
               <div class="col-4 col-sm-4 col-md-12 col-lg-4 col-xl-4">
@@ -163,8 +216,8 @@ if (!isset($_GET['pag'])) {
               </div>
             </div>
           </div>
-        </div>
-        <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 mb-4">
+        </div> -->
+        <!-- <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 mb-4">
           <div class="card">
             <div class="row">
               <div class="col-4 col-sm-4 col-md-12 col-lg-4 col-xl-4">
@@ -180,24 +233,7 @@ if (!isset($_GET['pag'])) {
               </div>
             </div>
           </div>
-        </div>
-        <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 mb-4">
-          <div class="card">
-            <div class="row">
-              <div class="col-4 col-sm-4 col-md-12 col-lg-4 col-xl-4">
-                <div class="container-image-course">
-                  <img src="./assets/images/2232688.png" alt="" />
-                </div>
-              </div>
-              <div class="col-8 col-sm-8 col-md-12 col-lg-8 col-xl-8">
-                <h4>CURSO DESTACADO1</h4>
-                <h5>Lorem ipsum dolor sit amet, consectetur adipiscing ... </h5>
-                <a href="#" class="btn btn-success mt-2" data-toggle="modal" data-target=".bd-example-modal-lg">ver
-                  informaci&oacute;n ></a>
-              </div>
-            </div>
-          </div>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>

@@ -3,6 +3,7 @@
 
 
     $id=$_GET['id_curso'];
+    $pag=$_GET['pag'];
 
     $pdo2 = Database::connect();  
     $veri2="UPDATE cursos SET permisoCurso='1', fechaPulicacion = now()  WHERE idCurso = '$id' ";
@@ -13,7 +14,7 @@
 
     echo'
         <script>
-            window.location = "../../publicarcursos.php";
+            window.location = "../../publicarcursos.php?pag='.$pag.'";
         </script>
     ';
 
