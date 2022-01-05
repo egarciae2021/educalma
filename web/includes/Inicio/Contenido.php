@@ -181,10 +181,23 @@ if (!isset($_GET['pag'])) {
               <h4 class="titulo"><?php echo substr($dato['nombreCurso'], 0, 9) . "...";?></h4>
               <span class="descripcion"><?php echo substr($dato['descripcionCurso'], 0, 100) . "..."; ?></span>
               <br><br>
+              <?php
+               if(isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)){
+                 ?>
               <a href="<?php echo $paginaRed ?>.php?id=<?php echo $dato['idCurso']; ?>" type="button" class="btn btn-outline-info btn_registrar">
                 <i class="far fa-play-circle"></i>
                 Comienza este curso
               </a>
+              <?php
+               }else{
+                ?>
+                <a href="iniciosesion.php" type="button" class="btn btn-outline-info btn_registrar">
+                  <i class="far fa-play-circle"></i>
+                  Comienza este curso
+                </a>
+                <?php
+               }
+              ?>
             </div>
           </div>
           <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
