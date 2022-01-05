@@ -1,3 +1,4 @@
+<html lang="en">
 <?php
 require_once 'database/databaseConection.php';
 $id = $_GET['id'];
@@ -8,6 +9,25 @@ $id = $_GET['id'];
 </head>
 
 <body>
+
+    <?php
+        $id = $_GET['id'];
+        $pdo = Database::connect();
+        $sql = "SELECT * FROM cursos WHERE idCurso='$id'";
+        $q = $pdo->prepare($sql);
+        $q->execute(array());
+        $dato = $q->fetch(PDO::FETCH_ASSOC);
+        
+
+        $idUserr = $_SESSION['codUsuario'];
+        $veriS="SELECT * FROM cursoinscrito WHERE curso_id = $id AND usuario_id='$idUserr'";
+        $qS = $pdo->prepare($veriS);
+        $qS->execute(array());
+        $datoS=$qS->fetch(PDO::FETCH_ASSOC);
+        Database::disconnect();
+
+        if (empty($datoS['id_cursoInscrito'])){        
+    ?>
 
     <header style="background-color: #ffffff77;">
         <div class="container-header navbar-fixed-top" style="max-width: 95rem;">
@@ -76,20 +96,11 @@ $id = $_GET['id'];
                                 </a>
                                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
                                     <div class="card-body">
-                                        Lorem ipsum dolor sit amet.
+                                        <div id="paypal-button-container"></div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="card mb-3">
-                                <a class="card-header" id="headingThree" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                    <i class="fas fa-chevron-down mr-2"></i>Tarjeta de débito
-                                </a>
-                                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-                                    <div class="card-body">
-                                        Lorem ipsum dolor sit amet.
-                                    </div>
-                                </div>
-                            </div>
+                            
                         </div>
                     </div>
                 </form>
@@ -100,9 +111,9 @@ $id = $_GET['id'];
                         <h5>Detalles del pedido</h5>
                         <!-- <p class="m-0">Curso:</p> -->
                         <div class="d-flex flex-column">
-                            <span>Nombre del curso</span>
-                            <span>Descripción del curso</span>
-                            <span>Nombre del curso</span>
+                            <span>Nombre del curso: <?php echo $dato['nombreCurso'];?></span>
+                            <span>Descripción del curso: <?php echo $dato['descripcionCurso'];?></span>
+                            <!-- <span>Nombre del curso</span> -->
                         </div>
                     </div>
                 </div>
@@ -112,16 +123,18 @@ $id = $_GET['id'];
                         <!-- <p class="m-0">Curso:</p> -->
                         <div class="row">
                             <div class="col-6">Producto</div>
-                            <div class="col-6 text-right"><span>s/99.90</span></div>
+                            <div class="col-6 text-right"><span>$.<?php echo $dato['costoCurso'];?>.00</span></div>
                         </div>
                         <div class="row mt-3">
                             <div class="col-5 col-lg-6 col-xl-5">
                                 <div class="container-image-detalle" style="width:100px; height:100px">
-                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAPars5s2FQzySbkUpPjtBlvPlANAFDLP7x38q8nOqcke_Lrf_if34Y-kTjGQgS6pRvuQ&usqp=CAU" alt="">
+                                    <!-- <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAPars5s2FQzySbkUpPjtBlvPlANAFDLP7x38q8nOqcke_Lrf_if34Y-kTjGQgS6pRvuQ&usqp=CAU" alt=""> -->
+                                    <img height="50px" src="data:image/*;base64,<?php echo base64_encode($dato['imagenDestacadaCurso']) ?>">
+                                    
                                 </div>
                             </div>
-                            <div class="col-7 col-lg-6 col-xl-7 text-leftt"><span>nombre de curso</span>
-                                <p class="font-weight-bold text-danger">s/99.90</p>
+                            <div class="col-7 col-lg-6 col-xl-7 text-leftt"><span><?php echo $dato['nombreCurso'];?></span>
+                                <p class="font-weight-bold text-danger">$.<?php echo $dato['costoCurso'];?>.00</p>
                             </div>
                         </div>
                         <hr>
@@ -134,6 +147,76 @@ $id = $_GET['id'];
                     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
                     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
                     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+                </div> 
+            </div>
+        </div>
+    </div>
+    <!-- CLIENTE REAL 
+    <script src="https://www.paypal.com/sdk/js?client-id=AbnJTS6i2adyvJS6ZQxGXFyk7aAsytmqwwOAFy-SEHVZ39rHIfC6LUOf8B9o-y-vd9RkjkdgCNVfGNBC&currency=USD" data-sdk-integration-source="button-factory"></script> -->
+                
+    <!-- SANDBOX -->
+    <script src="https://www.paypal.com/sdk/js?client-id=AVnkZnDaKvFAocz7KIUYvfvpw4DcrqR5DK0dMdD4-BaisXfbd0eKi2qG2hBDv5wkLbc52alNaMqW4s3j&currency=USD" data-sdk-integration-source="button-factory"></script> 
+
+    <script>
+        paypal.Buttons({
+
+            style: {
+                color: 'gold',
+                shape: 'pill',
+                label: 'pay'
+            },
+
+            createOrder: function(data, actions) {
+                return actions.order.create({
+                    purchase_units: [{
+                        amount: {
+                            value: <?php echo $dato['costoCurso'];?>
+                        }
+                        
+                    }]
+                });
+            },
+            onApprove: function(data, actions) {
+                
+                let url = 'includes/Cursos_crud/inscribeteCurso.php?id=<?php echo $dato["idCurso"];?>';
+                actions.order.capture().then(function(details) {
+                    alert('pago exitoso');
+                    //     window.location.href = 'sidebarCursos.php';
+                    window.location = "curso.php?id= <?php echo $dato["idCurso"];?>";
+                    console.log(details);
+                    
+                    return fetch(url, {
+                        method: 'post',
+                        headers: {
+                            'content-type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            details: details
+                        })
+                    })
+
+                });
+            },
+
+            onCancel: function(data) {
+                alert('cancelaste tu pago');
+                console.log(data);
+            }
+
+
+        }).render('#paypal-button-container');
+    </script>
+
+    <?php
+        }else{
+            echo'
+                <script>
+                    window.location = "../../curso.php?id='.$id.'";
+                    
+                </script>
+            ';
+        }
+    ?>
 </body>
 
 </html>

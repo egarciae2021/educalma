@@ -106,7 +106,7 @@
                             <div class="form-row ">
                                 <div class="form-group col-md-12">
                                     <label class="form-label">Respuesta</label>
-                                    <textarea type="text"  class="form-control" name="respuesta" placeholder="Ingrese una respuesta" minlength="2" rows="3" required></textarea>
+                                    <textarea type="text"  class="form-control" name="respuesta" placeholder="Ingrese una respuesta" minlength="3" rows="3" required></textarea>
                                         <div>
                                             <input type="hidden" class="form-control" name="idpregunta" value="<?php echo $id_pregunta;?>">
                                         </div>
@@ -266,29 +266,36 @@
                                             </h5>
                                         </div>
                                     </div>
-
+                                    <?php 
+                                        $pdo2 = Database::connect();
+                                        $sql2 = "SELECT * FROM respuestas WHERE id_Pregunta='$id_pregunta'";
+                                        $q2 = $pdo2->prepare($sql2);
+                                        $q2->execute(array());
+                                        Database::disconnect();
+                                    ?>
                                     <div class="form-row">
                                         <div class="form-group col-8 col-xs-8 col-md-9 col-sm-8 col-lg-10 col-xl-10">
                                             <select class="form-control" name="respu_correcta" id="inputGroupSelect04" aria-label="Example select with button addon">
-                                                <option value="" selected="" disabled="">Seleccionar</option>
+                                                <option value="" disabled="">Seleccionar</option>
 
                                                 <?php
-                                                $pdo2 = Database::connect();
-                                                $sql2 = "SELECT * FROM respuestas WHERE id_Pregunta='$id_pregunta'";
-                                                $q2 = $pdo2->prepare($sql2);
-                                                $q2->execute(array());
-                                                Database::disconnect();
-                                                while($registro2 = $q2->fetch(PDO::FETCH_ASSOC)){
+                                                    while($registro2 = $q2->fetch(PDO::FETCH_ASSOC)){
+                                                      if ($registro2["estado"]==1){
                                                 ?>
 
-                                                
-                                                <option value="<?php echo $registro2['idRespuesta'];?>">
-                                                
+                                                <option selected="true" value="<?php echo $registro2['idRespuesta'];?>">
                                                 <?php echo $registro2['respuesta'];?>
-                                            
                                                 </option>
 
-                                                <?php }?>
+                                                <?php 
+                                                      }else{
+                                                          ?>
+                                                <option value="<?php echo $registro2['idRespuesta'];?>">
+                                                <?php echo $registro2['respuesta'];?>
+                                                </option>
+                                                        <?php
+                                                      }
+                                                    }?>
 
                                             </select>
                                         </div>
