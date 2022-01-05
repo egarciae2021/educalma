@@ -106,7 +106,7 @@
                             <div class="form-row ">
                                 <div class="form-group col-md-12">
                                     <label class="form-label">Respuesta</label>
-                                    <textarea type="text"  class="form-control" name="respuesta" placeholder="Ingrese una respuesta" minlength="3" rows="3" required></textarea>
+                                    <textarea type="text"  class="form-control" name="respuesta" placeholder="Ingrese una respuesta" minlength="2" rows="3" required></textarea>
                                         <div>
                                             <input type="hidden" class="form-control" name="idpregunta" value="<?php echo $id_pregunta;?>">
                                         </div>

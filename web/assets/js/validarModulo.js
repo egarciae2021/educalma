@@ -17,7 +17,7 @@ $("#salir_agregar").click(function () {
 $("#salir_public").click(function () {
 
   Swal.fire({
-      title: '¿Seguro que quieres salir de la pagina actual?',
+      title: '¿Seguro que quieres finalizar la edición del curso?',
       icon: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#3085d6',
