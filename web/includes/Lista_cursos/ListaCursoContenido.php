@@ -72,7 +72,7 @@
                                         <p><?php echo $dato['descripcionCurso']; ?>'</p>
                                     </div>
                                     <div class="container-link">
-                                        <a href="<?php echo $paginaRed ?>.php?id=<?php echo $dato['idCurso']; ?>">Ver informaci&oacute;n ></a>
+                                        <a href="<?php echo $paginaRed ?>.php?id=<?php echo $dato['idCurso']; ?>">Ver informaci&oacute;n -></a>
                                     </div>
                                 </div>
                             </div>
@@ -224,7 +224,7 @@
                             </div>
                             <div class="container-card-link">
                                 <a href="<?php echo $paginaRed ?>.php?id=<?php echo $dato['idCurso']; ?>">
-                                    <center><strong>Ver Informaci&oacute;n > </strong> </center>
+                                    <center><strong>Ver Informaci&oacute;n -> </strong> </center>
                                 </a>
                             </div>
                         </div>

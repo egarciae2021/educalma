@@ -180,10 +180,12 @@
                     </div>
                     <div id="accordion">
                         <?php
-                        while ($modulosC = $q6->fetch(PDO::FETCH_ASSOC)) {
-                        ?>
-                            <div class="card">
-                                <a class="card-header card-link" data-toggle="collapse" href="#collapseOne">
+                         $i=0;
+                        while ($modulosC = $q6->fetch(PDO::FETCH_ASSOC)) {                    
+                                 $i++;
+                             echo '<div class="card">
+                                <a class="card-header card-link" data-toggle="collapse" href="#collapseOne'.$i.'">';
+                                ?>
                                     <span><i class="fas fa-sort-down mr-3"></i><?php echo $modulosC['nombreModulo'] ?></span>
                                 </a>
 
@@ -198,16 +200,18 @@
                                 $q7->execute(array());
 
                                 while ($temasC = $q7->fetch(PDO::FETCH_ASSOC)) {
-                                ?>
-                                    <div id="collapseOne" class="collapse show" data-parent="#accordion">
+
+                                  echo  '<div id="collapseOne'.$i.'" class="collapse show" data-parent="#accordion">';
+                                    ?>
                                         <div class="card-body">
                                             <?php echo $temasC['nombreTema'] ?>
                                         </div>
                                     </div>
                                 <?php
                                 }
+                                
+                                echo  '<div id="collapseOne'.$i.'" class="collapse show" data-parent="#accordion">';
                                 ?>
-                                <div id="collapseOne" class="collapse show" data-parent="#accordion">
                                     <div class="card-body">
                                         Cuestionario
                                     </div>
