@@ -70,6 +70,16 @@
         $q->execute(array());
         $fila=$q->fetch(PDO::FETCH_ASSOC);
 
+        //nombre del curso
+       $nombre_curso = Database::connect()->query("SELECT nombreCurso FROM cursos WHERE idCurso='$id'")->fetch(PDO::FETCH_ASSOC);
+       Database::disconnect();
+       //nombre del modulo
+       $nombre_modulo = Database::connect()->query("SELECT nombreModulo FROM modulo WHERE idModulo='$idModulo'")->fetch(PDO::FETCH_ASSOC);
+       Database::disconnect();
+
+        //nombre del modulo 
+        
+
         
         //saber cantidad de preguntas existen
             $pdo2 = Database::connect();
@@ -98,8 +108,9 @@
                 <div class="col-md-1"></div>
                 <div class="col-md-10">
                     <div class="infoMin">
-                        <a href="curso.php">Curso</a> <label> > </label> <a href="progreso.php"> Modulo 1 </a><label> >
-                        </label><a href="cuestionario.php"> Cuestionario </a>
+                        <a href="">  <?php echo $nombre_curso['nombreCurso']?>   </a> <label> > </label> 
+                        <a href="">  <?php echo $nombre_modulo['nombreModulo']?> </a> <label> > </label>
+                        <a href=""> Cuestionario </a>
                     </div>
                 </div>
                 <div class="col-md-1"></div>
