@@ -80,7 +80,11 @@
         $sql6 = "SELECT idModulo, nombreModulo FROM modulo WHERE id_curso='$id'";
         $q6 = $pdo6->prepare($sql6);
         $q6->execute(array());
-
+        Database::disconnect();
+        
+        //nombre de la categoria
+        //$idCategoria=$dato4['categoriaCurso'];
+        $categoria  = Database::connect()->query("SELECT nombreCategoria FROM categorias WHERE idCategoria ='".$dato4['categoriaCurso']."'")->fetch(PDO::FETCH_ASSOC);
         Database::disconnect();
 
     ?>
@@ -92,7 +96,11 @@
                     <br><br><br><br>
                     <span>Cursos</span><i class="fas fa-angle-right mx-2"></i>
                     <span>Categoria</span><i class="fas fa-angle-right mx-2"></i>
-                    <span>nombre del curso</span>
+                    <span>
+                    <?php 
+                     echo $categoria['nombreCategoria'];
+                    ?>
+                    </span>
                     <h2 class="my-2 font-weight-bold"><?php echo $dato4['nombreCurso']; ?></h2>
                     <p><?php echo $dato4['descripcionCurso']; ?></p>
                     <i class="fas fa-stopwatch mr-2"></i><span>Fecha: <?php echo $dato4['fechaPulicacion']; ?></span>
