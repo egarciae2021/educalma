@@ -252,10 +252,10 @@ if (!isset($_GET['pag'])) {
   </div>
 </div>
 <!-- EMPRESAS -->
-<div class="container-bussines container row" id="test">
-  <div class="col-12 col-xl-6 my-auto px-5">
+<div class="container-bussines container">
+  <div class="info col-12 my-auto mb-2">
     <div class="line"></div>
-    <h2 class="">Educalma para empresas</h2>
+    <h2 class="text-center">Educalma para empresas</h2>
     <ul>
       <li><i class="fas fa-check-circle mr-3"></i>Mide y analiza los resultados de tu equipo con nuestro servicio.
       </li>
@@ -264,19 +264,18 @@ if (!isset($_GET['pag'])) {
     </ul>
     <div class="box-email">
       <span>Recibe informaci&oacute;n específica para tu empresa</span>
-      <div class="d-flex w-100">
+      <div class="input-data">
         <input type="email" placeholder="Escribe tu correo empresarial" id="txtEmail" />
         <button id="btnAction">CONOCE MÁS</button>
       </div>
       <span class="msg-error">Debe ser un correo corporativo.</span>
     </div>
   </div>
-  <div class="col-12 col-xl-6 my-3 px-5">
-    <div class="box-rotate" id="boxRotate">
+  <div class="send-data col-12 my-auto">
+    <div class="box-rotate my-5" id="boxRotate">
       <div class="front d-flex w-100">
         <div class="box-image d-flex align-items-center justify-content-center w-100">
           <img class="img-fluid" src="./assets/images/—Pngtree—people make puzzles concept team_5356575.png" alt="" />
-          <!-- <img class="img-fluid" src="./assets/images/empresas.jpg" alt="" /> -->
         </div>
       </div>
       <div class="back">
@@ -331,7 +330,7 @@ if (!isset($_GET['pag'])) {
               <span class="title">Tamaño de la empresa</span><input type="text" name="" id="" />
             </div>
             <div class="group-control">
-              <span class="title">Número de suscripciones</span>
+              <span class="title">N° de suscripciones</span>
               <div class="row-three">
                 <div class="icon" id="quitNumber">-</div>
                 <input type="number" min="0" value="0" name="" id="numSusc" />
