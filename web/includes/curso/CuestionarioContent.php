@@ -111,137 +111,115 @@
                 <strong>Cuestionario</strong>
             </h1>
             <?php
-                
-                
-
                 if($envi==$cuenta2){
             ?>
-                    <h6 style="text-align: center;">fin de cuestionario</h6>
-                    <div style="text-align: center;">
-                        <a href="curso.php?id=<?php echo $id;?>"><button type="button" class="btn btn-outline-secondary">Terminar</button></a>
-                        <?php
-                            // $pdow = Database::connect(); 
-                            // $sqli = "SELECT * FROM modulo WHERE id_curso='$id'";
-                            // $qi = $pdow->prepare($sqli);
-                            // $qi->execute(array());
-                            // $datoi = $qi->fetch(PDO::FETCH_ASSOC);
-                            // Database::disconnect();
-                            // $di=$datoi['idModulo'];
-                            // $pdodi = Database::connect(); 
-                            
-                            // $sqli="SELECT c.idModulo,p.idTema,l.idCurso FROM tema p INNER JOIN modulo c ON c.idModulo=p.id_modulo INNER JOIN cursos l ON idCurso= c.id_curso WHERE c.idModulo='$di' AND l.idCurso='$id'";
-                            // $qst = $pdow->prepare($sqlt);
-                            // $qst->execute(array());
-                            // echo "<br>";
-                            // $resultado1t=$qst->fetchAll();
-                            // echo $resultado1t[1]['idTema'];
-                            // // $idtema=$_GET['idtema'];
-                            // $nuevat=$_GET['idtema'];
-                            // $idtemat=$resultado1t[intval($_GET['idtema'])-1]['idTema'];
+            <h6 style="text-align: center; font-weight: bolder;">Fin de cuestionario</h6>
+                <div style="text-align: center;">
+                    <a href="curso.php?id=<?php echo $id;?>"><button type="button" class="btn btn-outline-secondary">Terminar</button></a>
+                    <?php
+                        // $pdow = Database::connect(); 
+                        // $sqli = "SELECT * FROM modulo WHERE id_curso='$id'";
+                        // $qi = $pdow->prepare($sqli);
+                        // $qi->execute(array());
+                        // $datoi = $qi->fetch(PDO::FETCH_ASSOC);
+                        // Database::disconnect();
+                        // $di=$datoi['idModulo'];
+                        // $pdodi = Database::connect(); 
+                        
+                        // $sqli="SELECT c.idModulo,p.idTema,l.idCurso FROM tema p INNER JOIN modulo c ON c.idModulo=p.id_modulo INNER JOIN cursos l ON idCurso= c.id_curso WHERE c.idModulo='$di' AND l.idCurso='$id'";
+                        // $qst = $pdow->prepare($sqlt);
+                        // $qst->execute(array());
+                        // echo "<br>";
+                        // $resultado1t=$qst->fetchAll();
+                        // echo $resultado1t[1]['idTema'];
+                        // // $idtema=$_GET['idtema'];
+                        // $nuevat=$_GET['idtema'];
+                        // $idtemat=$resultado1t[intval($_GET['idtema'])-1]['idTema'];
 
-                            // echo $nuevat;
-                            $pdo19 = Database::connect(); 
+                        // echo $nuevat;
+                        $pdo19 = Database::connect(); 
+                        $sqlit="SELECT idModulo FROM modulo where id_curso=$id order by idModulo DESC LIMIT 1";
+                        $qi = $pdo19->prepare($sqlit);
+                        $qi->execute();
+                        $datoi = $qi->fetch(PDO::FETCH_ASSOC);
+                        $idmodu=$datoi['idModulo'];
+
+
+                        if($idModulo<$idmodu){
+                    ?>
+                    <a href="video.php?id=<?php echo $id?>&idtema=1&id_modulo=<?php echo ($idModulo+1)?>"><button type="button" class="btn btn-outline-secondary">Siguiente</button></a>
+                    <?php
+                        }
+                    ?>        
+                </div>
+                <div class="card text-center muestras">
+                    <div class="card-header">
+                        Resultado de las <?php echo $cuenta2;?> preguntas.
+                    </div>
+                    <div class="card-body" style="background-color: #fff;">
+                        <h5 style="font-size: large; margin-left: 10px; color:black; background-color: #fff;">Respuestas Correctas: <?php echo $correcta;?></h5> 
+                    </div>
+                </div>
+            </div>
+                <?php } ?>
+                <?php 
+                    if($envi<$cuenta2){
+                            if($fila1=$q1->fetchAll()){
+                                
+                                $pdo2 = Database::connect();
+                                $idpregunta=$fila1[$up]['idPregunta'];
+                                //echo $idpregunta;
+                                $sql2 = "SELECT * FROM respuestas WHERE id_Pregunta='$idpregunta'";
+
+                                $q2 = $pdo2->prepare($sql2);
+                                $q2->execute(array());
+                    ?>
+                    <h5 style="background: #CFE8FE; padding: 20px 35px; color: #4F52D6"><?php echo $fila1[$envi]['pregunta'];?></h5>
+                    <form style="padding: 30px;" 
+                    action="includes/cuestionarioCRUD/cuestion.php?contador=<?php echo $contador;?>&id=<?php echo $id;?>&c=<?php $correcta ?>&idModulo=<?php echo $idModulo;?>&validar=<?php echo 0; ?>&up=<?php echo $up ?>&cuen=<?php echo $ens ?>&nro=<?php echo $envi?>&id_pregunta=<?php echo $idpregunta ?>"
+                    method="POST" id="formcito">
+                        <?php while($fila2=$q2->fetch(PDO::FETCH_ASSOC)){ 
+                            //checked
+                        ?>
+                            <div style="padding: 10px; border-radius: 5px; background: #ffff; border-bottom: 1px solid slategray; margin-bottom: 20px;">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="verif_resp" value="<?php echo $fila2['respuesta'];?>">
+                                    <input type="hidden" name="correcta" value="<?php echo $correcta;?>">
+                                    <label class="form-check-label" for="exampleRadios1"> <?php echo $fila2['respuesta'];?> </label>
+                                </div>
+                            </div>
+                        <?php }?>
+                        <div style="text-align: right;">
+                        <?php 
+                            $pdo8 = Database::connect();
                             $sqlit="SELECT idModulo FROM modulo where id_curso=$id order by idModulo DESC LIMIT 1";
-                            $qi = $pdo19->prepare($sqlit);
+                            $qi = $pdo8->prepare($sqlit);
                             $qi->execute();
                             $datoi = $qi->fetch(PDO::FETCH_ASSOC);
                             $idmodu=$datoi['idModulo'];
-
-
-                            if($idModulo<$idmodu){
+                            //echo $idModulo;
+                            if($envi<$cuenta2 && $ens<=$cuenta2){
                         ?>
-                                <a href="video.php?id=<?php echo $id?>&idtema=1&id_modulo=<?php echo ($idModulo+1)?>"><button type="button" class="btn btn-outline-secondary">Siguiente</button></a>
+                            <button type="submit" id="env" class="btn btn-outline-primary" >Siguiente</button>
                         <?php
                             }
+                            //     else if($idModulo==$idmodu){
+                            //         
+                            //         <button type="submit" id="env" class="btn btn-outline-primary" onclick="parent.location='curso.php?id=<?php echo $id'">Siguiente</button> -->
+                            //         
+                            //     }
+                            //     else{
+                            
+                            //     <button type="submit" id="env" class="btn btn-outline-primary" onclick="parent.location='video.php?id=<?php echo $id&idtema=1&id_modulo=<?php echo ($idModulo+1)'">Siguiente</button> -->
+                            
+                                // }
                         ?>
-                        
-                        
-                    </div>
-                    <div style="padding: 10px 20%;">
-                        <div class="accordion" id="accordionExample">
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingTwo">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                        Resultado de las <?php echo $cuenta2;?> preguntas.
-                                    </button>
-                                </h2>
-                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                                    data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                    <h5>Respuestas Correctas: <?php echo $correcta;?></h5>                                    </div>
-                                </div>
-                            </div>
+
                         </div>
-                    </div>
-            <?php } ?>
-            <?php 
-            if($envi<$cuenta2){
-                if($fila1=$q1->fetchAll()){
 
-                    
-                    $pdo2 = Database::connect();
-                    $idpregunta=$fila1[$up]['idPregunta'];
-                    //echo $idpregunta;
-                    $sql2 = "SELECT * FROM respuestas WHERE id_Pregunta='$idpregunta'";
-
-                    $q2 = $pdo2->prepare($sql2);
-                    $q2->execute(array());
-            ?>
-            <h5 style="background: #CFE8FE; padding: 20px 35px; color: #4F52D6"><?php echo $fila1[$envi]['pregunta'];?></h5>
-
-            
-            <form style="padding: 30px;"
-            action="includes/cuestionarioCRUD/cuestion.php?contador=<?php echo $contador;?>&id=<?php echo $id;?>&c=<?php $correcta ?>&idModulo=<?php echo $idModulo;?>&validar=<?php echo 0; ?>&up=<?php echo $up ?>&cuen=<?php echo $ens ?>&nro=<?php echo $envi?>&id_pregunta=<?php echo $idpregunta ?>"
-                method="POST" id="formcito">
-                <?php while($fila2=$q2->fetch(PDO::FETCH_ASSOC)){ 
-
-                          //checked
-                    ?>
-                <div
-                    style="padding: 10px; border-radius: 5px; background: #ffff; border-bottom: 1px solid slategray; margin-bottom: 20px;">
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="verif_resp"
-                      
-                            value="<?php echo $fila2['respuesta'];?>">
-                            <input type="hidden" name="correcta" value="<?php echo $correcta;?>">
-                        <label class="form-check-label" for="exampleRadios1">
-                            <?php echo $fila2['respuesta'];?>
-                        </label>
-                    </div>
+                    </form>
+                    <?php }?>
                 </div>
-                <?php }?>
-                <div style="text-align: right;">
-                <?php 
-                    $pdo8 = Database::connect();
-                    $sqlit="SELECT idModulo FROM modulo where id_curso=$id order by idModulo DESC LIMIT 1";
-                    $qi = $pdo8->prepare($sqlit);
-                    $qi->execute();
-                    $datoi = $qi->fetch(PDO::FETCH_ASSOC);
-                    $idmodu=$datoi['idModulo'];
-                    //echo $idModulo;
-                    if($envi<$cuenta2 && $ens<=$cuenta2){
-                        ?>
-                        <button type="submit" id="env" class="btn btn-outline-primary" >Siguiente</button>
-                        <?php
-                    }
-                //     else if($idModulo==$idmodu){
-                //         
-                //         <button type="submit" id="env" class="btn btn-outline-primary" onclick="parent.location='curso.php?id=<?php echo $id'">Siguiente</button> -->
-                //         
-                //     }
-                //     else{
-                
-                //     <button type="submit" id="env" class="btn btn-outline-primary" onclick="parent.location='video.php?id=<?php echo $id&idtema=1&id_modulo=<?php echo ($idModulo+1)'">Siguiente</button> -->
-                
-                    // }
-                ?>
-
-                </div>
-
-            </form>
-            <?php }?>
-        </div>
                                 <!-- <script>
                 var form = document.getElementById('formcito');
                 form.onsubmit = function() {
