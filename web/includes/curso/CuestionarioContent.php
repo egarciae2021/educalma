@@ -154,7 +154,7 @@
                 </div>
                 <div class="card text-center muestras">
                     <div class="card-header">
-                        Resultado de las <?php echo $cuenta2;?> preguntas.
+                        Resultado de las <?php echo $cuenta2;?> preguntas
                     </div>
                     <div class="card-body" style="background-color: #fff;">
                         <h5 style="font-size: large; margin-left: 10px; color:black; background-color: #fff;">Respuestas Correctas: <?php echo $correcta;?></h5> 
