@@ -28,9 +28,16 @@ session_start();
             $datoS=$qS->fetch(PDO::FETCH_ASSOC);
 
             if (empty($datoS['id_cursoInscrito'])){
-                $veri="INSERT INTO cursoinscrito (curso_id, usuario_id, cod_curso, curso_obt, cantidad_respuestas) VALUES ($idCurso, $idUser, '', 1, 0)";
-                $q = $pdo->prepare($veri);
-                $q->execute(array());
+                try{
+                    // $veri="INSERT INTO cursoinscrito (curso_id, usuario_id, cod_curso, curso_obt, cantidad_respuestas) VALUES ($idCurso, $idUser, '', 1, 0)";
+                    $veri="INSERT INTO `cursoinscrito` (`curso_id`, `usuario_id`, cod_curso, curso_obt, cantidad_respuestas) VALUES (:idCurso, :idUser, '', 1, 0)";
+                    $q = $pdo->prepare($veri);
+                    $q->bindParam(":idCurso", $idCurso, PDO::PARAM_INT);
+                    $q->bindParam(":idUser", $idUser, PDO::PARAM_INT);
+                    $q->execute();
+                }catch(PDOException $e){
+                    echo $e->getMessage();
+                }
                 Database::disconnect();
             }
         }else{
