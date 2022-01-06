@@ -17,7 +17,7 @@ if(isset($_GET['idCurso'])){
         $verif=$pdo->prepare("INSERT INTO `tema` (`id_modulo`, `nombreTema`, `descripcionTema`, `link_video`, encuestaTema) VALUES (:idModulo,:nombreTema,:descripcionTema,:link,'activo')");
         $verif->bindParam(":idModulo",$idModulo,PDO::PARAM_INT);
         $verif->bindParam(":nombreTema",$nombreTema,PDO::PARAM_STR);
-        $verif->bindParam(":descripcionTema",$descripcionTema);
+        $verif->bindParam(":descripcionTema",$descripcionTema,PDO::PARAM_STR);
         $verif->bindParam(":link",$link,PDO::PARAM_STR);
         $verif->execute();
     }catch(PDOException $e){

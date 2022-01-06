@@ -26,7 +26,7 @@ try{
     $verif->bindParam(":password",$password,PDO::PARAM_STR);
     $verif->bindParam(":telefono",$telefono,PDO::PARAM_STR);
     $verif->bindParam(":tipo_docu",$tipo_docu,PDO::PARAM_INT);
-    $verif->bindParam(":num_docume",$num_docume);
+    $verif->bindParam(":num_docume",$num_docume,PDO::PARAM_STR);
     $verif->bindParam(":sexo",$sexo,PDO::PARAM_INT);
     $verif->bindParam(":fecha",$fecha);
     $verif->bindParam(":pais",$pais,PDO::PARAM_STR);

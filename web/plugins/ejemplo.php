@@ -76,13 +76,13 @@
             $pdo4 = Database::connect();
             try{
                 // $sql4 = "INSERT INTO certificados (idCurso_certif, idUser_certif, fechaCurso_terminado,codigo) values ('$cursoid','$userid','$fechaActual','$ale')";
-                $sql4 = "INSERT INTO `certificados` (`idCurso_certif`, `idUser_certif`, `fechaCurso_terminado`,`codigo`) values (:cursoid,:userid,:fechaActual,:ale)";
+                $sql4 = "INSERT INTO `certificados` (`idCurso_certif`, `idUser_certif`, `fechaCurso_terminado`,`codigo`) values (:cursoid,:userid,:fechaActual,:codigo)";
                 // WHERE NOT EXISTS (SELECT 1 FROM certificados WHERE codigo<>'$ale')";
                 $q4 = $pdo4->prepare($sql4);
                 $q4->bindParam(":cursoid",$cursoid,PDO::PARAM_INT);
                 $q4->bindParam(":userid",$userid,PDO::PARAM_INT);
                 $q4->bindParam(":fechaActual",$fechaActual);
-                $q4->bindParam(":ale",$ale,PDO::PARAM_STR);
+                $q4->bindParam(":codigo",$ale,PDO::PARAM_STR);
                 $q4->execute();
             }catch(PDOException $e){
                 echo $e->getMessage();

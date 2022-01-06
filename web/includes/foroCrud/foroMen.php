@@ -21,7 +21,7 @@ if(isset($_POST['mensaje']))
         $q = $pdo->prepare($veri);
         $q->bindParam(":mensaje",$mensaje,PDO::PARAM_STR);
         $q->bindParam(":idcurso",$idcurso,PDO::PARAM_INT);
-        $q->bindParam(":nombre",$nombre,PDO::PARAM_INT);
+        $q->bindParam(":nombre",$nombre,PDO::PARAM_STR);
         $q->bindParam(":idUser",$idUser,PDO::PARAM_INT);
         $q->execute();         
     }catch(PDOException $e){
