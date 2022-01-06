@@ -31,7 +31,7 @@
                 }
 
                 $inicio = ($_GET['pag'] - 1) * $cantidad_paginas;
-                $sql3 = "SELECT * FROM cursos order by idCurso desc LIMIT 3";
+                $sql3 = "SELECT * FROM cursos where permisoCurso=1 order by idCurso desc LIMIT 3";
                 // SELECT * FROM `cursos`order by idCurso DESC LIMIT 3 
 
                 $query3 = $pdo->prepare($sql3);
