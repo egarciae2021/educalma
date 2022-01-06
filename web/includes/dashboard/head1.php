@@ -20,6 +20,9 @@
     <link rel="stylesheet" href="assets/css/plugins/responsive.css" />
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/plugins/custom.css" />
+    <!-- sweetAlert2 -->
+    <!-- <script src="assets/js/plugins/sweetalert2.min.all.js"></script> Importar SweetAlert2 -->
+    <!-- <link href="assets/css/plugins/sweetalert2.min.css" rel="stylesheet"/> Importar SweetAlert2 -->
 
     <link rel="stylesheet" href="includes/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" href="includes/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
