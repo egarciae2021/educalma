@@ -11,10 +11,18 @@ if(isset($_GET['idCurso'])){
     $descripcionTema = $_POST['descripcio_tema'];
     $link = $_POST['link'];
 
-    $pdo = Database::connect();  
-    $verif=$pdo->prepare("INSERT INTO tema (id_modulo, nombreTema, descripcionTema, link_video, encuestaTema) VALUES ('$idModulo','$nombreTema','$descripcionTema','$link','activo')");
-
-    $verif->execute(array());
+    $pdo = Database::connect();
+    try{
+        // $verif=$pdo->prepare("INSERT INTO tema (id_modulo, nombreTema, descripcionTema, link_video, encuestaTema) VALUES ('$idModulo','$nombreTema','$descripcionTema','$link','activo')");
+        $verif=$pdo->prepare("INSERT INTO `tema` (`id_modulo`, `nombreTema`, `descripcionTema`, `link_video`, encuestaTema) VALUES (:idModulo,:nombreTema,:descripcionTema,:link,'activo')");
+        $verif->bindParam(":idModulo",$idModulo,PDO::PARAM_INT);
+        $verif->bindParam(":nombreTema",$nombreTema,PDO::PARAM_STR);
+        $verif->bindParam(":descripcionTema",$descripcionTema);
+        $verif->bindParam(":link",$link,PDO::PARAM_STR);
+        $verif->execute();
+    }catch(PDOException $e){
+        echo $e->getMessage();
+    }
     Database::disconnect();
     echo'
             <script>
