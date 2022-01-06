@@ -51,7 +51,68 @@
                                                     GROUP BY cursos.idCurso");
         $preguntas = $q16->fetchColumn();
 
+        $pdo5 = Database::connect();
+        $q5=$pdo5->query("SELECT count(*) FROM respuestas res INNER JOIN preguntas pre ON res.id_Pregunta=pre.idPregunta
+                                                    INNER JOIN cuestionario cues ON cues.idCuestionario=pre.id_cuestionario
+                                                    INNER JOIN modulo mo ON mo.idModulo=cues.id_modulo
+                                                    INNER JOIN cursos cur ON cur.idCurso= mo.id_curso
+                                                    where cur.idCurso=$id and res.estado=1");
+                                                    
+        $cantidad_respuestas_validas= $q5->fetchColumn();
+        
+        if($cantidad_respuestas_validas<=9){
+            $minimo_respuestas_para_aprobar=$cantidad_respuestas_validas;
+        }else{
+            $minimo_respuestas_para_aprobar=$cantidad_respuestas_validas-2;
+        }
+        
+        
+        $pdo6 = Database::connect();
+        $sql6 = "SELECT cantidad_respuestas FROM cursoinscrito WHERE curso_id = '$id' ";
+        $q6 = $pdo6->prepare($sql6);
+        $q6->execute(array());
+        $dato=$q6->fetch(PDO::FETCH_ASSOC);
+        
+        $cantidad_respuesta_acertadas=$dato['cantidad_respuestas'];
+
+        // ******//
+
+        //Nombre del modulo
+        $pdo6 = Database::connect();
+        $sql6 = "SELECT idModulo, nombreModulo FROM modulo WHERE id_curso='$id'";
+        $q6 = $pdo6->prepare($sql6);
+        $q6->execute(array());
+
+
+        //********************* *//
+        $con = Database::connect();
+        $idusuario=$_SESSION['iduser'];
+        $ver = "SELECT curso_obt FROM cursoinscrito WHERE curso_id=$id AND usuario_id=$idusuario";
+        $veremos = $con->prepare($ver);
+        $veremos->setFetchMode(PDO::FETCH_ASSOC);
+        $veremos->execute();
+        $vere=$veremos->fetchColumn();
+        $query=1;
+        if ($vere==false || $vere==0) {
+            if(isset($_POST['vali'])){
+                $codi=$_POST['codi'];
+                $conn = Database::connect(); 
+                $squery = "SELECT COUNT(*) FROM cursoinscrito WHERE cod_curso='$codi' AND curso_id=$id AND usuario_id=$idusuario";
+                $querys = $conn->prepare($squery);
+                $querys->setFetchMode(PDO::FETCH_ASSOC);
+                $querys->execute();
+                $query=$querys->fetchColumn();
+                if ($query==1||$query==true) {
+                    $cop="UPDATE cursoinscrito SET curso_obt=1 WHERE curso_id=$id AND usuario_id=$idusuario";
+                    $cops = $conn->prepare($cop);
+                    $cops->execute();
+                    $vere=1;
+                }
+            }
+        }
+
         Database::disconnect();
+
         ?>
 
 <br><br>
@@ -66,7 +127,7 @@
                             <img src="assets/images/curso-por-internet.png" class="mr-2" alt="" style="height: 100px;">
                         </div>
                         <div class="col title-course">
-                            Lorem ipsum dolor sit amet.
+                            <?php echo $dato4['nombreCurso']; ?>
                         </div>
                     </div>
                     <div class="rankin-course my-3">
@@ -74,9 +135,8 @@
                             class="fas fa-star m-1"></i><i class="fas fa-star m-1"></i>
                         <span class="ml-4">20</span> Opiniones
                     </div>
-                    <div class="description-course">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis molestiae exercitationem, iste
-                        fugiat sint?
+                    <div class="description-course puntos-suspensivos">
+                        <?php echo $dato4['descripcionCurso']; ?>
                     </div>
                     <div class="start-course mt-5">
                         <div class="row container-start-course py-2 ml-1 my-3">
@@ -84,7 +144,12 @@
                                 <h5 class="m-0">Mira la primera clase de este curso!</h5>
                             </div>
                             <div class="col-6">
-                                <button type="button" class="btn container-button">COMIENZA AHORA</button>
+                                <a class="hvr-radial-out button-theme" href="Cursoiniciar.php?id=<?php echo $id;?>"<?php if ($query==0 || $vere==false) {
+                                    echo 'style="pointer-events: none;"';}?> >
+                                    <button type="button" class="btn container-button">
+                                        COMIENZA AHORA
+                                    </button>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -108,7 +173,15 @@
                 </div>
                 <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
                     Costo
-                    <h5>Gratis</h5>
+                    <h5>
+                        <?php
+                            if($dato4['costoCurso']!=0 && $dato4['costoCurso'] != "Gratis"){
+                                echo 'S/ ' . $dato4['costoCurso'];
+                            }else{
+                                echo 'Gratis';
+                            }
+                        ?>
+                    </h5>
                 </div>
             </div>
         </div>
@@ -120,7 +193,18 @@
                     <a href="#informacion">Información</a>
                 </div>
                 <div class="nav-link-course">
-                    <a href="#certificado-temario">Certificado</a>
+                <?php 
+                    // PONER EN EL BOTON DEL CERTIFICADO
+                    if($cantidad_respuesta_acertadas>=$minimo_respuestas_para_aprobar){
+                        echo '<a data-filter=".seo" href="plugins/ejemplo.php?idCurso='.$id.'">Certificado</a>';
+                        $validar=1;
+                    }else {
+                        echo '<a onclick="sin_certificado()">Certificado</a>';
+                        $validar=0;
+                    }
+                    $_SESSION['validar']=$validar;
+                ?>
+                    <!-- <a href="#certificado-temario">Certificado</a> -->
                 </div>
                 <div class="nav-link-course">
                     <a href="#certificado-temario">Temario</a>
@@ -144,19 +228,19 @@
                             <h5>Tabla de contenido del curso</h5>
                             <div class="row pt-2">
                                 <div class="col-12 col-sm-6 col-lg-6">
-                                    <div><i class="far fa-file"></i></div> Modulos
+                                    <div><i class="far fa-file"></i></div><?php echo $modulos; ?> Modulos
                                 </div>
                                 <div class="col-12 col-sm-6 col-lg-6">
-                                    <div><i class="fas fa-folder"></i></div> Temas
+                                    <div><i class="fas fa-folder"></i></div><?php echo $temas; ?> Temas
                                 </div>
                                 <div class="col-12 col-sm-6 col-lg-6">
-                                    <div><i class="fas fa-infinity"></i></div> Cuestionarios
+                                    <div><i class="fas fa-infinity"></i></div><?php echo $cuestionarios; ?> Cuestionarios
                                 </div>
                                 <div class="col-12 col-sm-6 col-lg-6">
-                                    <div><i class="fas fa-mobile-alt"></i></div> Nota mínima
+                                    <div><i class="fas fa-mobile-alt"></i></div> Nota mínima <?php echo $minimo_respuestas_para_aprobar; ?>
                                 </div>
                                 <div class="col-12 col-sm-6 col-lg-6">
-                                    <div><i class="fas fa-list-ol"></i></div> Cant. de preguntas
+                                    <div><i class="fas fa-list-ol"></i></div> Cant. de preguntas <?php echo $preguntas; ?>
                                 </div>
                                 <div class="col-12 col-sm-6 col-lg-6">
                                     <div><i class="fas fa-trophy"></i></div> Certificado de Finalización
@@ -180,34 +264,32 @@
             </div>
             <div class="col-8">
                 <h5>Temario del curso</h5>
-                <div class="w-100">
-                    <a href="#" class="btn w-100 px-4 mb-2">
-                        <i class="fas fa-play mr-3"></i>
-                        <span>Lorem ipsum dolor sit dolor sit amet.</span>
-                    </a>
-                </div>
-                <div class="w-100">
-                    <a href="#" class="btn w-100 px-4 mb-2">
-                        <i class="fas fa-play mr-3"></i>
-                        <span>Lorem ipsum dolor sit dolor sit amet.</span>
-                    </a>
-                </div>
-                <div class="w-100">
-                    <a href="#" class="btn w-100 px-4 mb-2">
-                        <i class="fas fa-play mr-3"></i>
-                        <span>Lorem ipsum dolor sit dolor sit amet.</span>
-                    </a>
-                </div>
-                <div class="w-100">
-                    <a href="#" class="btn w-100 px-4 ">
-                        <i class="fas fa-play mr-3"></i>
-                        <span>Lorem ipsum dolor sit dolor sit amet.</span>
-                    </a>
-                </div>
+                <?php 
+                    while ($modulosC = $q6->fetch(PDO::FETCH_ASSOC)) {
+                ?>    
+                    <div class="w-100">
+                        <a href="#" class="btn w-100 px-4 mb-2">
+                            <i class="fas fa-play mr-3"></i>
+                            <span><?php echo $modulosC['nombreModulo'] ?></span>
+                        </a>
+                    </div>
+                
+                <?php 
+                    }
+                ?>
             </div>
         </div>
     </div>
 
+    <style>
+        .puntos-suspensivos{
+            overflow:hidden; 
+            text-overflow:ellipsis;
+            display:-webkit-box; 
+            -webkit-box-orient:vertical;
+            -webkit-line-clamp:2;
+        }
+    </style>
 
 
 
