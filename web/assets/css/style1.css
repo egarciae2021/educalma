@@ -95,13 +95,13 @@ a {
     border-radius: 50%;
 }
 
-.header__img__side {
+.header__img__side-dashboard {
     width: 40%;
     align-items: center;
     border-radius: 50%;
 }
 
-.header__img__logo-dashboard {
+.header__img__logo {
     height: 50px;
 }
 
@@ -109,6 +109,10 @@ a {
     color: var(--title-color);
     font-weight: var(--font-medium);
     display: none;
+}
+
+.header__logo:hover {
+    color: var(--title-color);
 }
 
 .header__search {

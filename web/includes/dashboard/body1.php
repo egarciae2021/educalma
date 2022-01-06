@@ -9,10 +9,9 @@
      <nav class="nav__container-dashboard">
          <div>
              <a href="index.php" class="nav__link-dashboard nav__logo-dashboard">
-                 <img src="./assets/images/imagen_2021-10-28_233347.png" alt="" class="header__img__logo-dashboard">
+                 <img src="./assets/images/imagen_2021-10-28_233347.png" alt="" class="header__img__logo">
                  <span class="nav__logo-name-dashboard"> Educalma</span>
-                 
-                 <!-- <i style="margin-left: 9rem; display: none;" class='bx bx-menu' id="header-toggle"></i> -->
+                 <i style="margin-left: 9rem; display: none;" class='bx bx-menu' id="header-toggle"></i>
              </a>
              <div class="nav__list-dashboard">
                  <div class="nav__items-dashboard">
@@ -111,7 +110,7 @@
                          <span class="nav__name">Ayuda</span>
                      </a> -->
 
-                     <a href="includes/login/logout.php" class="nav__link nav__logout-dashboard">
+                     <a href="includes/login/logout.php" class="nav__link-dashboard nav__logout-dashboard">
                          <!-- <i class='bx bx-log-out nav__icon'></i> -->
                          <i class="fas fa-sign-out-alt nav__icon-dashboard"></i>
                          <span class="nav__name-dashboard">Salir</span>
