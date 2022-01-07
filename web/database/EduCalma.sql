@@ -212,6 +212,19 @@ INSERT INTO sexo VALUES ('2', 'FEMENINO');
 INSERT INTO sexo VALUES ('3', 'NO BINARIO');
 INSERT INTO sexo VALUES ('4', 'PREFIERO NO DECIR');
 
+ -- Tabla de Pago de Transacciones
+CREATE TABLE transaccion_paypal ( 
+    id INT(10) auto_increment primary key, , 
+    idTran VARCHAR(20) NOT NULL , 
+    idCliente INT(10) NOT NULL,
+    idCurso INT(10) NOT NULL,
+    monto DOUBLE NOT NULL , 
+    status VARCHAR(15) NOT NULL , 
+    fecha DATE NOT NULL , 
+    email VARCHAR(100) NOT NULL , 
+    idClientPay VARCHAR(20) NOT NULL 
+);
+
 -- Tabla Tipo Documento de Identidad
 CREATE TABLE tipoDocumentoIdentidad (
 	id_tipoDoc int(5) auto_increment primary key,

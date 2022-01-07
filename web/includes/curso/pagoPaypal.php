@@ -6,9 +6,13 @@ $id = $_GET['id'];
 
 <head>
     <link rel="stylesheet" href="assets/css/pagepay.css" />
+    <link rel="stylesheet" href="assets/js/plugins/sweetalert2.min.css">
 </head>
 
 <body>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="assets/js/plugins/sweetalert2.all.min.js"></script>
 
     <?php
         $id = $_GET['id'];
@@ -180,9 +184,9 @@ $id = $_GET['id'];
                 
                 let url = 'includes/Cursos_crud/inscribeteCurso.php?id=<?php echo $dato["idCurso"];?>';
                 actions.order.capture().then(function(details) {
-                    alert('pago exitoso');
+                    // alert('pago exitoso');
                     //     window.location.href = 'sidebarCursos.php';
-                    window.location = "curso.php?id= <?php echo $dato["idCurso"];?>";
+                    // window.location = "curso.php?id= ?php echo $dato["idCurso"];?>";
                     console.log(details);
                     
                     return fetch(url, {
@@ -193,8 +197,16 @@ $id = $_GET['id'];
                         body: JSON.stringify({
                             details: details
                         })
+                    }).then(function(response){
+                        Swal.fire({
+                            title: 'Compra exitosa',
+                            icon: 'success',                            
+                            timer: 1000,
+                            showConfirmButton: false,
+                        }).then(()=>{
+                            window.location = "curso.php?id= <?php echo $dato["idCurso"];?>";
+                        })
                     })
-
                 });
             },
 
