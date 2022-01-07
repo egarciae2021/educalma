@@ -214,7 +214,7 @@ INSERT INTO sexo VALUES ('4', 'PREFIERO NO DECIR');
 
  -- Tabla de Pago de Transacciones
 CREATE TABLE transaccion_paypal ( 
-    id INT(10) auto_increment primary key, , 
+    id INT(10) auto_increment primary key,  
     idTran VARCHAR(20) NOT NULL , 
     idCliente INT(10) NOT NULL,
     idCurso INT(10) NOT NULL,
