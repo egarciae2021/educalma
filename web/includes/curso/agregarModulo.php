@@ -188,8 +188,8 @@
                                                     <!--agregar temas-->
                                                     <div class="caja-opciones">
                                                         <!-- boton agregar tema -->
-                                                        <a href="agregartema.php?id_mo=<?php echo $dato2['idModulo']?>&idCurso=<?php echo $_GET['id']?>">
-                                                            <button class="btn btn-modulos" type="submit">
+                                                        <a href="agregartema.php?idCurso=<?php echo $_GET['id']?>&id_mo=<?php echo $dato2['idModulo']?>">
+                                                            <button class="btn btn-modulos" type="button">
                                                                 <i class="fas fa-plus"></i> Agregar Tema
                                                             </button>
                                                         </a>
@@ -223,7 +223,8 @@
                                                                         </div>
 
                                                                         <div class="modal-footer">
-                                                                            <button type="submit" class="btn btn-add"><i class="fas fa-trash-alt"></i> Si, Eliminar</button>
+                                                                            <!-- <button type="submit" class="btn btn-add"><i class="fas fa-trash-alt"></i> Si, Eliminar</button> -->
+                                                                            <a href="includes/modulo/Modulo_CRUD.php?id_modulo=<?php echo base64_encode($dato2['idModulo'])?>&id_curso=<?php echo base64_encode($_GET['id'])?>" type="button" class="btn btn-add"><i class="fas fa-trash-alt"></i>Si, Eliminar</a>
                                                                             <button type="button" class="btn btn-light" data-dismiss="modal">Cerrar</button>
                                                                         </div>
                                                                     </form>

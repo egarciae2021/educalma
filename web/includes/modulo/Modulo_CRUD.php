@@ -55,8 +55,8 @@ require_once '../../database/databaseConection.php';
                  PARA Eliminar MODULO 
     ===============================================*/
     if(isset($_GET['id_curso'])){
-        $idCurso= $_GET['id_curso'];
-        $idModulo = $_GET['id_modulo'];
+        $idCurso= base64_decode($_GET['id_curso']);
+        $idModulo = base64_decode($_GET['id_modulo']);
 
         /* Eliminar todos los temas del modulo*/
         $pdo1 = Database::connect();  
