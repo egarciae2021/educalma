@@ -11,8 +11,16 @@
 
         //insertar pregunta 
             $pdo4 = Database::connect(); 
-            $verif4=$pdo4->prepare("INSERT INTO respuestas (respuesta, id_Pregunta,estado)VALUES ('$respuesta','$id_pregunta',0) ");
-            $verif4->execute(array());
+            try{
+                // $verif4=$pdo4->prepare("INSERT INTO respuestas (respuesta, id_Pregunta,estado)VALUES ('$respuesta','$id_pregunta',0) ");
+                $verif4=$pdo4->prepare("INSERT INTO `respuestas` (`respuesta`, `id_Pregunta`,estado)VALUES (:respuesta,:id_pregunta,0) ");
+                $verif4->bindParam(":respuesta",$respuesta,PDO::PARAM_STR);
+                $verif4->bindParam(":id_pregunta",$id_pregunta,PDO::PARAM_INT);
+                $verif4->execute();
+            }catch(PDOException $e){
+                echo $e->getMessage();
+            }
+            
 
             Database::disconnect();
             echo'

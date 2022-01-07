@@ -50,8 +50,7 @@
                 //hacer un array y traer el nombre
             ?>
 
-<!-- Nuevo diseño de formulario -->
-<div class="container-fluid">
+    <div class="container-fluid">
         <!--                    ======================================
                                             Agregar Temas
                                 ====================================== 
@@ -65,7 +64,7 @@
                         <ul class="list-group list-group-flush ">
                             <li class="list-group-item border-bottom ">Curso</li>
                         </ul>
-                        <!-- seccion agregar temas a un modulo -->
+                        <!-- seccion agregar temas a un módulo -->
                         <div class="list-group py-3">
                             <button type="button" class="list-group-item list-group-item-action active">
                                 Agrega Temas a un Módulo
@@ -83,7 +82,7 @@
                                 </a>
 
                                 <a href="agregarModulos.php?id=<?php echo $_GET['idCurso']; ?>" class="list-group-item list-group-item-action">
-                                    <i class="fas fa-plus-square"></i> Agregar Modulos
+                                    <i class="fas fa-plus-square"></i> Agregar Módulos
                                 </a>
                                 <!-- <a href="ListaCursos.php?pag=1" class="list-group-item list-group-item-action">
                                     <i class="fas fa-eye"></i> Ver todos los Cursos
@@ -155,7 +154,6 @@
                             </div>
 
                             <!-- Listado de Temas -->
-                            
                             <div class="scroll">
                                 <div class="form-row">
 
@@ -174,104 +172,104 @@
                                     <div class="form-group col-8 col-md-10 col-sm-8 col-lg-10 col-xl-10">
                                         <input type="text" class="form-control" value="<?php echo $dato3['nombreTema'] ?>" aria-label="Recipient's username with two button addons" disabled>
                                     </div>
-                                    </form><!--  -->
 
-                                    <!-- boton editar pregunta -->
+                                    <!-- boton editar tema -->
                                     <div class="form-group col-2 col-md-1 col-sm-2 col-lg-1 col-xl-1">
                                         <a>
                                             <button class="btn btn-block btn-outline-success" type="button" data-toggle="modal" data-target="#ModaleditarTema<?php echo $dato3['idTema']?>">
                                                 <i class="far fa-edit"></i>
                                             </button>
                                         </a>
-
-                                        <div class="modal fade" id="ModaleditarTema<?php echo $dato3['idTema']?>" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                            <div class="modal-dialog modal-dialog-centered">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <h6 class= "modal-title">EDITAR TEMA</h6>
-                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                            <span aria-hidden="true">&times;</span>
-                                                        </button>
-                                                    </div>
-                                                    
-                                                        <div class="modal-body">
-                                                            <div>
-                                                                <div class="inputBox">
-                                                                    <h4>Edita el Tema: </h4>
-                                                    <form name="formulario" id="editando_preguntas" method="POST" action="includes/tema/checkAgrTema.php?idCur=<?php echo $idCurso;?>&id_mod=<?php echo $idModulo;?>" style="background:#F7F7F7;">
-                                                                    <input type="text" name="actu_tema" class="form-control" value="<?php echo $dato3['nombreTema'];?>">
-                                                                    <input type="text" name="descripcionT" class="form-control" value="<?php echo $dato3['descripcionTema'];?>">
-                                                                    <input type="text" name="linkT" class="form-control" value="<?php echo $dato3['link_video'];?>">
-                                                                    <input type="hidden" name="idTema" value="<?php echo $dato3['idTema'];?>">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            <button type="submit" class="btn btn-secondary cerrar-modal"><i class="fas fa-redo"></i> Actualizar</button>
-                                                            <button type="button" class="btn btn-secondary cerrar-modal" data-dismiss="modal">Cerrar</button>
-                                                        </div>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                        </div>
                                     </div>
 
-                                    <!-- boton borrar pregunta -->              
+                                    <!-- boton borrar tema -->              
                                     <div class="form-group col-2 col-md-1 col-sm-2 col-lg-1 col-xl-1">
                                         <a>
                                             <button class="btn btn-block btn-outline-danger" type="button" data-toggle="modal" data-target="#ModalquitarTema<?php echo $dato3['idTema']?>">
                                             <i class="fas fa-trash-alt"></i></button>
                                         </a>
-
-                                        <div class="modal fade" id="ModalquitarTema<?php echo $dato3['idTema']?>" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                            <div class="modal-dialog modal-dialog-centered">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <h6 class= "modal-title">ELIMINAR TEMA</h6>
-                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                            <span aria-hidden="true">&times;</span>
-                                                        </button>
-                                                    </div>
-                                                    
-                                                    <div class="modal-body"> 
-                                                        <center><h4>¿Estas seguro de eliminar este Tema?</h4></center>
-                                                        <form name="formulario" id="eliminando_temas" method="POST" action="includes/tema/checkAgrTema.php?idCurs=<?php echo $idCurso;?>&id_mod=<?php echo $idModulo;?>" style="background:#F7F7F7;">
-                                                            <input type="text" name="actuali_pregunta" class="form-control" value="<?php echo $dato3['nombreTema'];?>" disabled>
-                                                            <input type="hidden" name="idTemas" value="<?php echo $dato3['idTema'];?>">
-                                                                
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="submit" class="btn btn-secondary cerrar-modal"><i class="fas fa-trash-alt"></i> Si, Eliminar</button>
-                                                        <button type="button" class="btn btn-secondary cerrar-modal" data-dismiss="modal">Cerrar</button>
-                                                    </div>
-                                                        </form>
-                                                </div>
-                                            </div>
-                                        </div>
                                     </div>
-                                        <?php 
-                                            }
-                                        ?>
-                                </div>
+                        </form>
+
+                        <!-- Modal Editar tema --> 
+                        <div class="modal fade" id="ModaleditarTema<?php echo $dato3['idTema']?>" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+
+                                    <div class="modal-header">
+                                        <h6 class= "modal-title">EDITAR TEMA</h6>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+
+                                    <form name="formulario" class="p-0 bg-0" style="background: transparent;" id="editando_preguntas" method="POST" action="includes/tema/checkAgrTema.php?idCur=<?php echo $idCurso;?>&id_mod=<?php echo $idModulo;?>">
+                                        <div class="modal-body px-4">
+                                            <h6>Nombre del Tema:</h6>
+                                            <input type="text" name="actu_tema" class="form-control" value="<?php echo $dato3['nombreTema'];?>">
+                                            
+                                            <h6 class="pt-3">Descripción:</h6>
+                                            <textarea class="form-control" rows="3" name="descripcionT" value="<?php echo $dato3['descripcionTema'];?>"></textarea>
                                 
+                                            <h6 class="pt-3">Link del vídeo:</h6>
+                                            <input type="text" name="linkT" class="form-control" value="<?php echo $dato3['link_video'];?>">
+                                            
+                                            <input type="hidden" name="idTema" value="<?php echo $dato3['idTema'];?>">
+                                        </div>
+
+                                        <div class="modal-footer">
+                                            <button type="submit" class="btn btn-add"><i class="fas fa-redo"></i> Actualizar</button>
+                                            <button type="button" class="btn btn-light" data-dismiss="modal">Cerrar</button>
+                                        </div>
+                                    </form>
+                                </div>
                             </div>
-                            <hr>
-                            <!-- fin de Listado de temas -->
-                            
+                        </div>
 
-                        <!-- fin form temas -->
+                        <!-- Modal Borrar tema --> 
+                        <div class="modal fade" id="ModalquitarTema<?php echo $dato3['idTema']?>" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
 
+                                    <div class="modal-header">
+                                        <h6 class= "modal-title">ELIMINAR TEMA</h6>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    
+                                    <form name="formulario" class="p-0" id="eliminando_temas" style="background: transparent;" method="POST" action="includes/tema/checkAgrTema.php?idCurs=<?php echo $idCurso;?>&id_mod=<?php echo $idModulo;?>">
+                                        <div class="modal-body px-4">
+                                            <center><h6>¿Estás seguro de eliminar este Tema?</h6></center>
+                                            <input type="text" name="actuali_pregunta" class="form-control" value="<?php echo $dato3['nombreTema'];?>" disabled>
+                                            <input type="hidden" name="idTemas" value="<?php echo $dato3['idTema'];?>">
+                                            </div>
+
+                                        <div class="modal-footer">
+                                            <button type="submit" class="btn btn-add"><i class="fas fa-trash-alt"></i> Sí, Eliminar</button>
+                                            <button type="button" class="btn btn-light" data-dismiss="modal">Cerrar</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
                         
-                    </div>
-                    
-                    <!-- fin segunda columna -->
+                        <?php
+                        }
+                        ?>
+                        
+                    </div> 
+                    <hr>
                 </div>
+               
+                <!-- fin de Listado de temas -->
+                <!-- fin form temas -->
             </div>
+            <!-- fin segunda columna -->
         </div>
     </div>
-<!-- fin nuevo formulario -->
-
-
+</div>
+</div>
 
     <?php
     }

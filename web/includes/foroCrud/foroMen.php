@@ -14,11 +14,20 @@ if(isset($_POST['mensaje']))
 
     $idcurso = $_POST['id'];
 
-    $pdo = Database::connect();  
-    $veri="INSERT INTO comentarioforo (comentario,idcurso,nombreUser,fecha_ingreso,estado,iduser) 
-    VALUES ('$mensaje','$idcurso','$nombre',now(),1,'$idUser')";
-    $q = $pdo->prepare($veri);
-    $q->execute(array());
+    $pdo = Database::connect();
+    try{
+        // $veri="INSERT INTO comentarioforo (comentario,idcurso,nombreUser,fecha_ingreso,estado,iduser) VALUES ('$mensaje','$idcurso','$nombre',now(),1,'$idUser')";
+        $veri="INSERT INTO `comentarioforo`(`comentario`,`idcurso`,`nombreUser`,fecha_ingreso,estado,`iduser`) VALUES (:mensaje,:idcurso,:nombre,now(),1,:idUser)";
+        $q = $pdo->prepare($veri);
+        $q->bindParam(":mensaje",$mensaje,PDO::PARAM_STR);
+        $q->bindParam(":idcurso",$idcurso,PDO::PARAM_INT);
+        $q->bindParam(":nombre",$nombre,PDO::PARAM_STR);
+        $q->bindParam(":idUser",$idUser,PDO::PARAM_INT);
+        $q->execute();         
+    }catch(PDOException $e){
+        echo $e->getMessage();
+    }
+    Database::disconnect();
     
     echo'
     <script>
@@ -34,11 +43,21 @@ if(isset($_POST['submensaje'])){
     $nombre = $_SESSION['nombres'];
     $idUser = $_SESSION['codUsuario'];
 
-    $pdo = Database::connect();  
-    $veri="INSERT INTO sub_come_foro (subcomentario,id_curso,user_men,idcomentario,fecha_ingreso,estado,iduser) 
-    VALUES ('$submensaje','$idcurso','$nombre','$idcomen',now(),1,'$idUser')";
-    $q = $pdo->prepare($veri);
-    $q->execute(array());
+    
+    try{
+        $pdo = Database::connect();  
+        $veri="INSERT INTO `sub_come_foro`(`subcomentario`,`id_curso`,`user_men`,`idcomentario`,fecha_ingreso,estado,`iduser`) VALUES (:submensaje,:idcurso,:nombre,:idcomen,now(),1,:idUser)";
+        $q = $pdo->prepare($veri);
+        $q->bindParam(":submensaje",$submensaje,PDO::PARAM_STR);
+        $q->bindParam(":idcurso",$idcurso,PDO::PARAM_INT);
+        $q->bindParam(":nombre",$nombre,PDO::PARAM_STR);
+        $q->bindParam(":idcomen",$idcomen,PDO::PARAM_INT);
+        $q->bindParam(":idUser",$idUser,PDO::PARAM_INT);
+        $q->execute();   
+    }catch(PDOException $e){
+        echo $e->getMessage();
+    }
+    Database::disconnect();
 
     echo'
     <script>

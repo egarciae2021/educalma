@@ -9,10 +9,16 @@ require_once '../../database/databaseConection.php';
         $nombreModulo=$_POST['modulo_agregar'];
         $idCurso= $_GET['id'];
 
-        $pdo = Database::connect();  
-        $verif=$pdo->prepare("INSERT INTO modulo (id_curso,nombreModulo, estado)VALUES ('$idCurso','$nombreModulo',1) ");
-
-        $verif->execute();
+        $pdo = Database::connect();
+        try{
+            // $verif=$pdo->prepare("INSERT INTO modulo (id_curso,nombreModulo, estado)VALUES ('$idCurso','$nombreModulo',1) ");
+            $verif=$pdo->prepare("INSERT INTO `modulo` (`id_curso`,`nombreModulo`, estado)VALUES (:idCurso,:nombreModulo,1)");
+            $verif->bindParam(":idCurso",$idCurso,PDO::PARAM_INT);
+            $verif->bindParam(":nombreModulo",$nombreModulo,PDO::PARAM_STR);
+            $verif->execute();
+        }catch(PDOException $e){
+            echo $e->getMessage();
+        }
         Database::disconnect();
         echo'
             <script>
@@ -49,8 +55,8 @@ require_once '../../database/databaseConection.php';
                  PARA Eliminar MODULO 
     ===============================================*/
     if(isset($_GET['id_curso'])){
-        $idCurso= $_GET['id_curso'];
-        $idModulo = $_GET['id_modulo'];
+        $idCurso= base64_decode($_GET['id_curso']);
+        $idModulo = base64_decode($_GET['id_modulo']);
 
         /* Eliminar todos los temas del modulo*/
         $pdo1 = Database::connect();  
