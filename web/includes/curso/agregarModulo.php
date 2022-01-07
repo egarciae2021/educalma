@@ -216,7 +216,7 @@
                                                                     <form name="formulario" id="form-agretemas5" action="includes/modulo/Modulo_CRUD.php?id_modulo=<?php echo $dato2['idModulo']?>&id_curso=<?php echo $_GET['id']?>" target="dummyframe" method="POST">
                                                                         <div class="modal-body px-4">
                                                                             <center>
-                                                                                <h4>¿Estás seguro de eliminar este modulo?</h4>
+                                                                                <h6>¿Estás seguro de eliminar este módulo?</h6>
                                                                             </center>
                                                                             <input type="text" class="form-control" value="<?php echo $dato2['nombreModulo'];?>" aria-label="ModuloAgr" disabled>
                                                                             <input type="hidden" name="idmodulo" value="<?php echo $dato2['idModulo'];?>">
@@ -250,7 +250,7 @@
                                                                     </button>
                                                                     </div>
 
-                                                                    <form name="formulario" id="form-agretemas3" action="includes/modulo/Modulo_CRUD.php?id=<?php echo $dato2['id_curso'];?>" target="dummyframe" method="POST">
+                                                                    <form name="formulario" class="bg-transparent" id="form-agretemas3" action="includes/modulo/Modulo_CRUD.php?id=<?php echo $dato2['id_curso'];?>" target="dummyframe" method="POST">
                                                                         <div class="modal-body px-4">
                                                                             <h6>Renombrar Módulo:</h6>
                                                                             <input type="text" class="form-control" name="actu_nomb_agregar" id="actu-nomb-agregar" value="<?php echo $dato2['nombreModulo'];?>" placeholder="" aria-label="ModuloAgr" aria-describedby="moduloAgr-addon" required>
