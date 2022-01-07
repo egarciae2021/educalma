@@ -80,11 +80,7 @@
         $sql6 = "SELECT idModulo, nombreModulo FROM modulo WHERE id_curso='$id'";
         $q6 = $pdo6->prepare($sql6);
         $q6->execute(array());
-        Database::disconnect();
-        
-        //nombre de la categoria
-        //$idCategoria=$dato4['categoriaCurso'];
-        $categoria  = Database::connect()->query("SELECT nombreCategoria FROM categorias WHERE idCategoria ='".$dato4['categoriaCurso']."'")->fetch(PDO::FETCH_ASSOC);
+
         Database::disconnect();
 
     ?>
@@ -95,12 +91,8 @@
                 <div class="col-12 col-sm-12 col-md-7 col-lg-8 col-xl-8 ">
                     <br><br><br><br>
                     <span>Cursos</span><i class="fas fa-angle-right mx-2"></i>
-                    <span>Categoria</span><i class="fas fa-angle-right mx-2"></i>
-                    <span>
-                    <?php 
-                     echo $categoria['nombreCategoria'];
-                    ?>
-                    </span>
+                    <span>Categoría</span><i class="fas fa-angle-right mx-2"></i>
+                    <span>nombre del curso</span>
                     <h2 class="my-2 font-weight-bold"><?php echo $dato4['nombreCurso']; ?></h2>
                     <p><?php echo $dato4['descripcionCurso']; ?></p>
                     <i class="fas fa-stopwatch mr-2"></i><span>Fecha: <?php echo $dato4['fechaPulicacion']; ?></span>
@@ -143,12 +135,12 @@
                                 </div>
 
                                 <div>
-                                    <i class="fas fa-infinity text-center" style="width: 1.5rem;"></i>
+                                    <i class="far fa-list-alt text-center" style="width: 1.5rem;"></i>
                                     <span class="ml-3"><?php echo $cuestionarios; ?> Cuestionarios</span>
                                 </div>
 
                                 <div>
-                                    <i class="fas fa-mobile-alt text-center" style="width: 1.5rem;"></i>
+                                    <i class="fas fa-graduation-cap text-center" style="width: 1.5rem;"></i>
                                     <span class="ml-3">La nota mínima para aprobar el curso es <?php echo $minimo_respuestas_para_aprobar; ?></span>
                                 </div>
 
@@ -188,12 +180,10 @@
                     </div>
                     <div id="accordion">
                         <?php
-                         $i=0;
-                        while ($modulosC = $q6->fetch(PDO::FETCH_ASSOC)) {                    
-                                 $i++;
-                             echo '<div class="card">
-                                <a class="card-header card-link" data-toggle="collapse" href="#collapseOne'.$i.'">';
-                                ?>
+                        while ($modulosC = $q6->fetch(PDO::FETCH_ASSOC)) {
+                        ?>
+                            <div class="card">
+                                <a class="card-header card-link" data-toggle="collapse" href="#collapseOne">
                                     <span><i class="fas fa-sort-down mr-3"></i><?php echo $modulosC['nombreModulo'] ?></span>
                                 </a>
 
@@ -208,18 +198,16 @@
                                 $q7->execute(array());
 
                                 while ($temasC = $q7->fetch(PDO::FETCH_ASSOC)) {
-
-                                  echo  '<div id="collapseOne'.$i.'" class="collapse show" data-parent="#accordion">';
-                                    ?>
+                                ?>
+                                    <div id="collapseOne" class="collapse show" data-parent="#accordion">
                                         <div class="card-body">
                                             <?php echo $temasC['nombreTema'] ?>
                                         </div>
                                     </div>
                                 <?php
                                 }
-                                
-                                echo  '<div id="collapseOne'.$i.'" class="collapse show" data-parent="#accordion">';
                                 ?>
+                                <div id="collapseOne" class="collapse show" data-parent="#accordion">
                                     <div class="card-body">
                                         Cuestionario
                                     </div>
