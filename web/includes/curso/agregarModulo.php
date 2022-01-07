@@ -212,8 +212,8 @@
                                                                             <span aria-hidden="true">&times;</span>
                                                                         </button>
                                                                     </div>
-
-                                                                    <form name="formulario" id="form-agretemas5" action="includes/modulo/Modulo_CRUD.php?id_modulo=<?php echo $dato2['idModulo']?>&id_curso=<?php echo $_GET['id']?>" target="dummyframe" method="POST">
+                                                                        <!-- action="includes/modulo/Modulo_CRUD.php?id_modulo=<?php echo $dato2['idModulo']?>&id_curso=<?php echo $_GET['id']?>"  -->
+                                                                    <form name="formulario" id="form-agretemas5"  target="dummyframe" method="POST">
                                                                         <div class="modal-body px-4">
                                                                             <center>
                                                                                 <h6>¿Estás seguro de eliminar este módulo?</h6>
