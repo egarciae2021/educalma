@@ -3,27 +3,27 @@ USE educalma;
 
 -- Tabla Usuarios
 CREATE TABLE usuarios (
-    id_user int(10) auto_increment primary key,
-    privilegio int(1) not NULL, -- 1:administrador, 2: prof./mod, 3:user normal, 4:empresa(padre),5:user(hijo),superadmin:6
-    padreEmpresa int(10) not NULL, -- solo para empresas
-    hijoEmpresa int(10) not NULL, -- solo para empleados
-    nombres varchar(250) not null,
+	id_user int(10) auto_increment primary key,
+	privilegio int(1) not NULL, -- 1:administrador, 2: prof./mod, 3:user normal, 4:empresa(padre),5:user(hijo),superadmin:6
+	padreEmpresa int(10) not NULL, -- solo para empresas
+	hijoEmpresa int(10) not NULL, -- solo para empleados
+	nombres varchar(250) not null,
 	apellido_pat varchar(100) not null,
 	apellido_mat varchar(100) not null,
-    email varchar(100) not null,
-    pass varchar(100) not null,
-    telefono varchar(50) not null,
-    tipo_doc int(5) not null, -- 1=DNI, 2=Pasaporte, 3=carné extranjería, 4=RUC
+	email varchar(100) not null,
+	pass varchar(100) not null,
+	telefono varchar(50) not null,
+	tipo_doc int(5) not null, -- 1=DNI, 2=Pasaporte, 3=carné extranjería, 4=RUC
 	nro_doc char(20) not null,
-    sexo int(1) not null, -- 1 = Masculino, 2 = Femenino, 3=No binario, 4=prefiero no decir, 5=empresa
-    fecha_nacimiento date not null,
-    pais varchar(100) not null,
-    cod_tipoDonador int(10),
-    estado boolean not null, -- 0 = Inactivo, 1 = Activo
-    fecha_registro datetime not null,
-    mifoto longblob,
-    token_password varchar(100) DEFAULT NULL,
-    password_request int(11) NOT NULL DEFAULT '0' 
+	sexo int(1) not null, -- 1 = Masculino, 2 = Femenino, 3=No binario, 4=prefiero no decir, 5=empresa
+	fecha_nacimiento date not null,
+	pais varchar(100) not null,
+	cod_tipoDonador int(10),
+	estado boolean not null, -- 0 = Inactivo, 1 = Activo
+	fecha_registro datetime not null,
+	mifoto longblob,
+	token_password varchar(100) DEFAULT NULL,
+	password_request int(11) NOT NULL DEFAULT '0' 
 );
 
 SELECT * FROM usuarios;
@@ -48,8 +48,8 @@ INSERT INTO usuarios VALUES (6, 1, 0, 1, 'MATA', 'MATA', 'MATOS','educalma@calma
 
 -- Tabla Privilegio
 CREATE TABLE privilegio (
-    id_privilegio int(10) auto_increment primary key,
-    nombre_privilegio varchar(100)
+	id_privilegio int(10) auto_increment primary key,
+	nombre_privilegio varchar(100)
 );
 
 INSERT INTO privilegio VALUES (1,"ADMINISTRADOR");
@@ -61,23 +61,23 @@ INSERT INTO privilegio VALUES  (6, "SUPERADMIN");
 
 -- Tabla Curso inscrito
 CREATE TABLE cursoInscrito (
-    id_cursoInscrito int(10) auto_increment primary key,
-    curso_id int(10) not null,
-    usuario_id int(10) not null,
-    cod_curso varchar(50) not null,
-    curso_obt boolean not null,
-    cantidad_respuestas int(11) not null
+	id_cursoInscrito int(10) auto_increment primary key,
+	curso_id int(10) not null,
+	usuario_id int(10) not null,
+	cod_curso varchar(50) not null,
+	curso_obt boolean not null,
+	cantidad_respuestas int(11) not null
 );
 
 INSERT INTO cursoInscrito VALUES (1, 1, 3,'P 001',0,0);
 
 -- Tabla de empresa
 CREATE TABLE padreEmpresa (
-    id_padreEmpresa int(10) auto_increment primary key,
-    nombreEmpresa varchar(250) not null,
-    cantidadHijos int(10) not null,
-    nroRuc char(20) not null,
-    direccion_fiscal varchar(250) not null
+	id_padreEmpresa int(10) auto_increment primary key,
+	nombreEmpresa varchar(250) not null,
+	cantidadHijos int(10) not null,
+	nroRuc char(20) not null,
+	direccion_fiscal varchar(250) not null
 );
 
 INSERT INTO padreEmpresa VALUES (1, 'GLORIA SAC', 150, '10554878920', 'Avenida Arequipa 2205 - La Molina');
@@ -85,120 +85,119 @@ INSERT INTO padreEmpresa VALUES (1, 'GLORIA SAC', 150, '10554878920', 'Avenida A
 
 -- Tabla Categorías
 CREATE TABLE categorias (
-    idCategoria int(10) auto_increment primary key,
-    nombreCategoria varchar(250) not null
+	idCategoria int(10) auto_increment primary key,
+	nombreCategoria varchar(250) not null
 );
 
 INSERT INTO categorias VALUES (1, 'Bullying');
 
 -- Tabla Cursos
 CREATE TABLE cursos (
-    idCurso int(10) auto_increment primary key,
-    nombreCurso varchar(250) not null,
-    descripcionCurso char(250),
-    categoriaCurso int(10) not null,
-    dirigido varchar(250) not null,
-    costoCurso double(10,2) not null,
-    imagenDestacadaCurso longblob,
-    permisoCurso int(1) not null,
-    introduccion varchar(500) not null,
-    id_userprofesor int(10) not null,
-    fechaPulicacion date DEFAULT NULL
+	idCurso int(10) auto_increment primary key,
+	nombreCurso varchar(250) not null,
+	descripcionCurso char(250),
+	categoriaCurso int(10) not null,
+	dirigido varchar(250) not null,
+	costoCurso double(10,2) not null,
+	imagenDestacadaCurso longblob,
+	permisoCurso int(1) not null,
+	introduccion varchar(500) not null,
+	id_userprofesor int(10) not null,
+	fechaPulicacion date DEFAULT NULL
 );
 
 
 -- Tabla Modulos 
 CREATE TABLE modulo (
-    idModulo int(10) auto_increment primary key,
-    id_curso int(10) not null,
-    nombreModulo varchar(250) not null,
-    estado boolean not null
-    
+	idModulo int(10) auto_increment primary key,
+	id_curso int(10) not null,
+	nombreModulo varchar(250) not null,
+	estado boolean not null
 );
 
 
 -- Tabla Temas
 CREATE TABLE tema (
-    idTema int(10) auto_increment primary key,
-    id_modulo int(10) not null,
-    nombreTema varchar(250) not null,
-    descripcionTema text,
-    link_video varchar(250) not null,
-    encuestaTema varchar(250)
+	idTema int(10) auto_increment primary key,
+	id_modulo int(10) not null,
+	nombreTema varchar(250) not null,
+	descripcionTema text,
+	link_video varchar(250) not null,
+	encuestaTema varchar(250)
 );
 
 
 -- Tabla de Progreso de curso
 CREATE TABLE progresoCurso (
-    idProgresoCurso int(10) auto_increment primary key,
-    cursoId_progreso int(10) not null,
-    userId_progreso int(10) not null,
-    porcentaje_progreso varchar(250),
-    encuestaProgreso varchar(250)
+	idProgresoCurso int(10) auto_increment primary key,
+	cursoId_progreso int(10) not null,
+	userId_progreso int(10) not null,
+	porcentaje_progreso varchar(250),
+	encuestaProgreso varchar(250)
 );
 
 INSERT INTO progresoCurso VALUES (1, 1, 3, '', '');
 
 -- Tabla archivos descargables
 CREATE TABLE descargables (
-    idDescargable int(10) auto_increment primary key,
-    idCurso_descargable int(10) not null,
-    link_descargable varchar(250)
+	idDescargable int(10) auto_increment primary key,
+	idCurso_descargable int(10) not null,
+	link_descargable varchar(250)
 );
 
 
 -- Tabla de Foro
 CREATE TABLE comentarioforo (
-    idcomentario int(10) auto_increment primary key,
-    comentario varchar(500) not null,
-    idcurso int(10) not null,
-    nombreUser varchar(150) not null,
-    fecha_ingreso datetime not null,
-    estado int(1) not null,
-    iduser int(10)
+	idcomentario int(10) auto_increment primary key,
+	comentario varchar(500) not null,
+	idcurso int(10) not null,
+	nombreUser varchar(150) not null,
+	fecha_ingreso datetime not null,
+	estado int(1) not null,
+	iduser int(10)
 );
 CREATE TABLE sub_come_foro (
-    idsubcomentario int(10) auto_increment primary key,
-    subcomentario varchar(500) not null,
-    id_curso  int(10) not null,    
-    user_men varchar(150) not null,
-    idcomentario int(10) not null,
-    fecha_ingreso datetime not null,
-    estado int(1) not null,
-    iduser int(10)
+	idsubcomentario int(10) auto_increment primary key,
+	subcomentario varchar(500) not null,
+	id_curso  int(10) not null,    
+	user_men varchar(150) not null,
+	idcomentario int(10) not null,
+	fecha_ingreso datetime not null,
+	estado int(1) not null,
+	iduser int(10)
 );
 
 
 -- Tabla de Certificados
 CREATE TABLE certificados (
-    idCertificado int(10) auto_increment primary key,
-    idCurso_certif int(10) not null,
-    idUser_certif int(10) not null,
-    fechaCurso_terminado date not null,
-    codigo varchar(10)
+	idCertificado int(10) auto_increment primary key,
+	idCurso_certif int(10) not null,
+	idUser_certif int(10) not null,
+	fechaCurso_terminado date not null,
+	codigo varchar(10)
 );
 
 -- Tabla Cuestionario curso
 CREATE TABLE cuestionario (
-    idCuestionario int(10) auto_increment primary key,
-    id_modulo int(10) not null,
-    puntaje int(10) not null,
-    estado boolean not null
+	idCuestionario int(10) auto_increment primary key,
+	id_modulo int(10) not null,
+	puntaje int(10) not null,
+	estado boolean not null
 );
 
 -- Tabla pregunta 
 CREATE TABLE preguntas (
-    idPregunta int(10) auto_increment primary key,
-    pregunta varchar(250) not null,
-    id_cuestionario int(10) not null
+	idPregunta int(10) auto_increment primary key,
+	pregunta varchar(250) not null,
+	id_cuestionario int(10) not null
 );
 
 -- Tabla Respuesta 
 CREATE TABLE respuestas (
-    idRespuesta int(10) auto_increment primary key,
-    respuesta varchar(250) not null,
-    id_Pregunta int(10) not null,
-    estado int(1) not null
+	idRespuesta int(10) auto_increment primary key,
+	respuesta varchar(250) not null,
+	id_Pregunta int(10) not null,
+	estado int(1) not null
 );
 
 
@@ -224,10 +223,83 @@ INSERT INTO tipoDocumentoIdentidad VALUES ('1', 'DNI', 8);
 INSERT INTO tipoDocumentoIdentidad VALUES ('2', 'PASAPORTE', 11);
 INSERT INTO tipoDocumentoIdentidad VALUES ('3', 'CARNE DE EXTRANJERIA', 8);
 
+-- PARA GUARDAR SOLICITUDES DE EMPRESAS
+CREATE TABLE SOLICITUD (
+	id_solicitud INT AUTO_INCREMENT PRIMARY KEY,
+	correo_corporativo VARCHAR(320) NOT NULL,
+	nombre_completo VARCHAR(100) NOT NULL,
+	correo_personal VARCHAR(320),
+	nombre_empresa VARCHAR(150) NOT NULL,
+	codigo_pais VARCHAR(5),
+	telefono_movil VARCHAR(20),
+	tamanio_empresa INT NOT NULL,
+	num_suscripcion INT NOT NULL,
+	obj_equipo VARCHAR(300)
+);
+
+DELIMITER $$
+CREATE PROCEDURE PROC_NUEVA_SOLICITUD (
+	IN p_correo_corporativo varchar(320),
+	IN p_nombre_completo VARCHAR(100),
+	IN p_correo_personal VARCHAR(320),
+	IN p_nombre_empresa VARCHAR(150),
+	IN p_codigo_pais VARCHAR(5),
+	IN p_telefono_movil VARCHAR(20),
+	IN p_tamanio_empresa INT,
+	IN p_num_suscripcion INT,
+	IN p_obj_equipo VARCHAR(300)
+) BEGIN
+	-- RESPONSE
+	DECLARE type_resp VARCHAR(15);
+	DECLARE title_resp VARCHAR(50);
+	DECLARE text_resp VARCHAR(100);
+	DECLARE refrest_resp BIT;
+
+	DECLARE repeat_data INT;
+
+	SET repeat_data := (SELECT COUNT(*) FROM SOLICITUD WHERE correo_corporativo = p_correo_corporativo);
+
+		-- CONSULTAR SI EL CORREO PERSONAL
+		-- YA ENVIO UNA CONSULTA ANTERIORMENTE
+	IF repeat_data <> 0 THEN
+		SET type_resp := 'warning';
+		SET title_resp := 'DATO REPETIDO';
+		SET text_resp := 'YA SE ENCUENTRA REGISTRADO UNA SOLICITUD CON SU CORREO CORPORATIVO. MUY PRONTO ESTAREMOS EN COMUNICACIÓN CON USTED, GRACIAS.';
+		SET refrest_resp := 1;
+	ELSE
+	-- INSERCION DE SOLICITUD
+		INSERT INTO SOLICITUD
+		(	
+			correo_corporativo,
+			nombre_completo, correo_personal,
+			nombre_empresa, codigo_pais,
+			telefono_movil, tamanio_empresa,
+			num_suscripcion, obj_equipo
+		)
+		VALUES
+		(
+			p_correo_corporativo,
+			p_nombre_completo, p_correo_personal,
+			p_nombre_empresa, p_codigo_pais,
+			p_telefono_movil, p_tamanio_empresa,
+			p_num_suscripcion, p_obj_equipo
+		);
+
+		SET type_resp := 'success';
+		SET title_resp := 'REGISTRO EXITOSO';
+		SET text_resp := 'SU SOLICITUD HA SIDO INGRESADO CON ÉXITO, MUY PRONTO ESTAREMOS EN COMUNICACIÓN CON USTED, GRACIAS.';
+		SET refrest_resp := 1;
+	END IF;
+
+	SELECT type_resp AS 'TYPE_RESP', title_resp AS 'TITLE_RESP', text_resp AS 'TEXT_RESP', refrest_resp AS 'REFREST_RESP';
+END
+$$
+DELIMITER ;
+
 delimiter |
 create trigger generar_codigo before insert on cursoinscrito for each row
-    begin
-        declare siguiente_codigo int;
-        set siguiente_codigo =(Select ifnull(max(convert(substring(cod_curso, 3), signed integer)),0) from cursoinscrito)+1;
-    set new.cod_curso=concat('P ',LPAD(siguiente_codigo,3,'0'));
+	begin
+			declare siguiente_codigo int;
+			set siguiente_codigo =(Select ifnull(max(convert(substring(cod_curso, 3), signed integer)),0) from cursoinscrito)+1;
+	set new.cod_curso=concat('P ',LPAD(siguiente_codigo,3,'0'));
 end |

@@ -292,15 +292,15 @@ if (!isset($_GET['pag'])) {
         <div class="formu">
           <div class="row">
             <div class="group-control">
-              <span class="title">Nombre Completo</span><input type="text" name="" id="" />
+              <span class="title">Nombre Completo</span><input type="text" id="nomCompleto" />
             </div>
             <div class="group-control">
-              <span class="title">Correo electrónico</span><input type="text" name="" id="" />
+              <span class="title">Correo electrónico</span><input type="text" id="txtCorreo" />
             </div>
           </div>
           <div class="row">
             <div class="group-control">
-              <span class="title">Empresa</span><input type="text" name="" id="" />
+              <span class="title">Empresa</span><input type="text" id="txtEmpresa" />
             </div>
             <div class="group-control">
               <span class="title">Teléfono móvil</span>
@@ -321,13 +321,13 @@ if (!isset($_GET['pag'])) {
                     </li>
                   </ul>
                 </div>
-                <input type="tel" name="" id="" />
+                <input type="tel" id="txtTelMovil" />
               </div>
             </div>
           </div>
           <div class="row">
             <div class="group-control">
-              <span class="title">Tamaño de la empresa</span><input type="text" name="" id="" />
+              <span class="title">Tamaño de la empresa</span><input type="text" id="txtTamEmpresa" />
             </div>
             <div class="group-control">
               <span class="title">N° de suscripciones</span>
@@ -340,10 +340,10 @@ if (!isset($_GET['pag'])) {
           </div>
           <div class="group-control">
             <span>¿Qué objetivo tiene tu equipo?</span>
-            <textarea rows="2"></textarea>
+            <textarea rows="2" id="objEmpresa"></textarea>
           </div>
           <div class="box-btn">
-            <button>COMENZAR</button>
+            <button id="btnSendRequest">COMENZAR</button>
           </div>
         </div>
       </div>
