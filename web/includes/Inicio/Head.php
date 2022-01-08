@@ -47,6 +47,8 @@
     <!-- sweetAlert2 -->
     <!-- <script src="./assets/js/plugins/sweetalert2.min.js"></script> Importar SweetAlert2 -->
     <!-- <link href="./assets/css/plugins/sweetalert2.min.css" rel="stylesheet"/> Importar SweetAlert2 -->
+    <link rel="stylesheet" href="assets/lib/sweetalert2/sweetalert2.min.css">
+    <script src="assets/lib/sweetalert2/sweetalert2.all.min.js"></script>
 
     <!-- Script de funciones para SweetAlert y Dropdown -->
     <script src="assets/js/validarCategoria.js"></script>

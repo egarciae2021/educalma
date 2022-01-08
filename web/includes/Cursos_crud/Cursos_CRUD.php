@@ -40,23 +40,28 @@
             //moviendo imagen temporal a una carpeta
             //$ruta="../../assets/images/imagenes_cursos/".$nombreimagen;
             //$resultado=move_uploaded_file($_FILES['txtimagen']['tmp_name'],$ruta);
+
+            $verif=$pdo->prepare(" INSERT INTO cursos (nombreCurso,descripcionCurso,categoriaCurso ,dirigido,costoCurso,imagenDestacadaCurso,permisoCurso,introduccion,id_userprofesor) 
+                                            VALUES ('$nombreCur','$descripcionCur',$categoriaCur,'$dirigido','$precio','$nombreimagen',0,'$intro',$idProfe) ");
+            $verif->execute();
+
             
-            $pdo = Database::connect();
-            try{
-                $verif=$pdo->prepare(" INSERT INTO `cursos` (`nombreCurso`,`descripcionCurso`,`categoriaCurso`,`dirigido`,`costoCurso`,`imagenDestacadaCurso`,permisoCurso,`introduccion`,`id_userprofesor`) 
-                VALUES (:nombreCur,:descripcionCur,:categoriaCur,:dirigido,:precio,:nombreimagen,0,:intro,:idProfe)");
-                $verif->bindParam(":nombreCur",$nombreCur,PDO::PARAM_STR);
-                $verif->bindParam(":descripcionCur",$descripcionCur,PDO::PARAM_STR);
-                $verif->bindParam(":categoriaCur",$categoriaCur,PDO::PARAM_INT);
-                $verif->bindParam(":dirigido",$dirigido,PDO::PARAM_STR);
-                $verif->bindParam(":precio",$precio,PDO::PARAM_INT);
-                $verif->bindParam(":nombreimagen",$nombreimagen);
-                $verif->bindParam(":intro",$intro,PDO::PARAM_STR);
-                $verif->bindParam(":idProfe",$idProfe,PDO::PARAM_INT);
-                $verif->execute();
-            }catch(PDOException $e){
-                echo $e->getMessage();
-            }
+            // $pdo = Database::connect();
+            // try{
+            //     $verif=$pdo->prepare(" INSERT INTO `cursos` (`nombreCurso`,`descripcionCurso`,`categoriaCurso`,`dirigido`,`costoCurso`,`imagenDestacadaCurso`,permisoCurso,`introduccion`,`id_userprofesor`) 
+            //     VALUES (:nombreCur,:descripcionCur,:categoriaCur,:dirigido,:precio,:nombreimagen,0,:intro,:idProfe)");
+            //     $verif->bindParam(":nombreCur",$nombreCur,PDO::PARAM_STR);
+            //     $verif->bindParam(":descripcionCur",$descripcionCur,PDO::PARAM_STR);
+            //     $verif->bindParam(":categoriaCur",$categoriaCur,PDO::PARAM_INT);
+            //     $verif->bindParam(":dirigido",$dirigido,PDO::PARAM_STR);
+            //     $verif->bindParam(":precio",$precio,PDO::PARAM_INT);
+            //     $verif->bindParam(":nombreimagen",$nombreimagen);
+            //     $verif->bindParam(":intro",$intro,PDO::PARAM_STR);
+            //     $verif->bindParam(":idProfe",$idProfe,PDO::PARAM_INT);
+            //     $verif->execute();
+            // }catch(PDOException $e){
+            //     echo $e->getMessage();
+            // }
     /*
             $verif->execute(array(
                 ':nombres_agrecursos'=>$nombreCur,

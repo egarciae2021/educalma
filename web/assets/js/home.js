@@ -75,6 +75,26 @@ document.addEventListener("DOMContentLoaded", () => {
     $("#numSusc").val(numberSus > 0 ? numberSus - 1 : 0)
   })
 
+  const error_catch = { "TITLE_RESP": "¡ERROR!", "TEXT_RESP": "EL SERVIDOR NO HA RETORNADO RESPUESTA.", "TYPE_RESP": "error", "REFREST_RESP": 1 };
+
+  const ShowMessage = (resp) => {
+    // Si no retorna la respuesta esperada
+    if (resp !== undefined) {
+      Swal.fire({
+        title: resp["TITLE_RESP"],
+        text: resp["TEXT_RESP"],
+        icon: resp["TYPE_RESP"]
+      }).then(() => { if (resp["REFREST_RESP"] == "1") location.href = "."; });
+    }
+    else {
+      Swal.fire({
+        title: error_catch["TITLE_RESP"],
+        text: error_catch["TEXT_RESP"],
+        icon: error_catch["TYPE_RESP"]
+      })
+    }
+
+  };
 
   $('#btnSendRequest').click(() => {
     if (!validEmail()) {
@@ -99,15 +119,23 @@ document.addEventListener("DOMContentLoaded", () => {
       // Objetivo
       frmData.append("objEmpresa", $("#objEmpresa").val());
 
-      fetch("./includes/Inicio/sendRequest.php", {
+      // Hacer peticion
+      fetch("includes/Inicio/sendRequest.php", {
         method: 'POST',
-        body: frmData,
-      }).then((resp) => resp.ok ? resp.json() : [])
-        .catch((err) => console.error(err))
-        .then((resp) => { alert(resp.TEXT_RESP); });
+        body: frmData
+      })
+        .then((resp) => resp.ok ? resp.json() : error_catch)
+        .catch(() => error_catch)
+        .then(ShowMessage);
     }
     else {
-      alert("¡El correo debe ser corporativo!");
+      $($(".box-email > .msg-error")[0]).addClass("show");
+      $("#txtEmail").focus();
+      Swal.fire({
+        title: "¡CORREO INVÁLIDO!",
+        text: "EL CORREO NO ES CORPORATIVO.",
+        icon: "warning",
+      })
     }
   })
 

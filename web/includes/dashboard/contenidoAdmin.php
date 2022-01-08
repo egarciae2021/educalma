@@ -38,15 +38,7 @@ ob_start();
 <!-- para listar y la paginacion de usuarios -->
 <?php
     $pdo4 = Database::connect();
-
-    $sqlU = "SELECT * FROM usuarios where estado=1 order by id_user DESC ";
-    $qu = $pdo4->prepare($sqlU);
-    $qu->execute();
-
-    $contar1=$qu->rowCount();
-   
     $sql3 = "SELECT * FROM usuarios where estado=1 order by id_user DESC";
-    
     $q3 = $pdo4->prepare($sql3);
     $q3->execute();
     $usuarios = $q3->fetchAll(PDO::FETCH_ASSOC);
@@ -198,149 +190,6 @@ ob_start();
     </div>
 
     <!-- --MODAL USER -->
-    <!-- <div class="modal fade" id="modalAdmin1" style="overflow:hidden;">
-        <div class="modal-dialog modal-dialog-scrollable modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Información de Usuario</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                
-                    <div class="row form-group">
-                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-0"></div>
-                        <label class="col-lg-2 col-md-3 col-sm-3 col-xs-4 control-label">Nombre:</label>
-                        <div class="col-lg-7 col-md-5 col-sm-5 col-xs-6">
-                            <input class="form-control input-md"
-                                onKeyUp="document.getElementById(this.id).value=document.getElementById(this.id).value.toUpperCase()"
-                                name="nombre-user" type="text" id="nombre_user" readonly>
-                        </div>
-                    </div>
-                    <div class="row form-group">
-                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-0"></div>
-                        <label class="col-lg-2 col-md-3 col-sm-3 col-xs-4 control-label">Apellido Paterno:</label>
-                        <div class="col-lg-7 col-md-5 col-sm-5 col-xs-6">
-                            <input class="form-control input-md"
-                                onKeyUp="document.getElementById(this.id).value=document.getElementById(this.id).value.toUpperCase()"
-                                name="apellido_p_user" type="text" id="paterno_user" readonly>
-                        </div>
-                    </div>
-                    <div class="row form-group">
-                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-0"></div>
-                        <label class="col-lg-2 col-md-3 col-sm-3 col-xs-4 control-label">Apellido Materno:</label>
-                        <div class="col-lg-7 col-md-5 col-sm-5 col-xs-6">
-                            <input class="form-control input-md"
-                                onKeyUp="document.getElementById(this.id).value=document.getElementById(this.id).value.toUpperCase()"
-                                name="apellido_m_user" type="text" id="materno_user" readonly>
-                        </div>
-                    </div>
-                    <div class="row form-group">
-                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-0"></div>
-                        <label class="col-lg-2 col-md-3 col-sm-3 col-xs-4 control-label">Correo:</label>
-                        <div class="col-lg-7 col-md-5 col-sm-5 col-xs-6">
-                            <input class="form-control input-md" name="correoUser" type="email" id="correo_user" readonly>
-                        </div>
-                    </div>
-
-                    <input type="hidden" name="cod_user" id="codigo_user" value="">
-                    <div class="row form-group">
-                        <div class="col-lg-2 col-md-2 col-sm-2 col-0"></div>
-                        <label class="col-lg-2 col-md-3 col-sm-3 col-4 control-label">Tipo de Documento:</label>
-                        <div class="col-lg-7 col-md-5 col-sm-5 col-6">
-                            <select class="form-control" required name="select_tip_doc" id="select_tipo_doc">
-                                <option value="1">DNI</option>
-                                <option value="2">PASAPORTE</option>
-                                <option value="3">CARNÉ EXTRANJERIA</option>
-                                <option value="4">RUC</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="row form-group">
-                        <div class="col-lg-2 col-md-2 col-sm-2 col-0"></div>
-                        <label class="col-lg-2 col-md-3 col-sm-3 col-4 control-label">Nro Documento:</label>
-                        <div class="col-lg-7 col-md-5 col-sm-5 col-6">
-                            <input class="form-control input-md" name="num_doc-user" type="text" id="numdocUser" readonly>
-                        </div>
-                    </div>
-                    
-                    <div class="row form-group">
-                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-0"></div>
-                        <label class="col-lg-2 col-md-3 col-sm-3 col-xs-4 control-label">Fecha Nacimiento:</label>
-                        <div class="col-lg-7 col-md-5 col-sm-5 col-xs-6">
-                            <input class="form-control input-md" type="date" id="Fecha" name="fecha_naci" value="<?php echo $dato2['fecha_nacimiento']; ?>">
-                        </div>
-                    </div>
-
-                    <div class="row form-group">
-                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-0"></div>
-                        <label class="col-lg-2 col-md-3 col-sm-3 col-xs-4 control-label">Sexo:</label>
-                        <div class="col-lg-7 col-md-5 col-sm-5 col-xs-6">
-                            <select class="form-control" required name="sexo_select_user" id="select_sexoUser">
-                                <option value="1">Masculino</option>
-                                <option value="2">Femenino</option>
-                                <option value="3">No Binario</option>
-                                <option value="4">Prefiero No Decir</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="row form-group">
-                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-0"></div>
-                        <label class="col-lg-2 col-md-3 col-sm-3 col-xs-4 control-label">Teléfono:</label>
-                        <div class="col-lg-7 col-md-5 col-sm-5 col-xs-6">
-                            <input class="form-control input-md" name="telfUser" type="text" id="telf_user" readonly>
-                        </div>
-                    </div>
-                    <div class="row form-group">
-                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-0"></div>
-                        <label class="col-lg-2 col-md-3 col-sm-3 col-xs-4 control-label">País:</label>
-                        <div class="col-lg-7 col-md-5 col-sm-5 col-xs-6">
-                            <input class="form-control input-md"
-                                onKeyUp="document.getElementById(this.id).value=document.getElementById(this.id).value.toUpperCase()"
-                                name="paisUser" type="text" id="pais_user" readonly>
-                        </div>
-                    </div>
-
-                    <div class="row form-group">
-                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-0"></div>
-                        <label class="col-lg-2 col-md-3 col-sm-3 col-xs-4 control-label">Inserta tu foto:</label>
-                        <div class="col-lg-7 col-md-5 col-sm-5 col-xs-6">
-                        <div class="column" style="margin:auto;">
-                            <label for="inputGroupFile04" class="subir">
-                                <i class="fas fa-cloud-upload-alt" aria-hidden="true"></i>
-                                Inserta tu Foto
-                            </label>
-                            <input type="file" name="imagen" accept="image/*" id="inputGroupFile04" onchange="cambiarImg()" aria-describedby="inputGroupFileAddon04" style="display: none;" aria-label="Upload" ; multiple>
-
-                        </div>
-                        <div class="column" style="margin:auto;">
-                            <div id="infoImg"></div>
-                        </div>
-                        </div>
-                    </div>
-                    
-                    <br>
-                    <center>
-                        <div class="col-lg-4 col-md-5 col-sm-5 col-xs-6">
-                            <button type="button" class="btn btn-blue" onclick="editUser(false);"
-                                style="color: #FFFFFF; background: #0093E9; background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);">
-                                Editar <i class="far fa-edit"></i>
-                            </button>
-                        </div>
-                    </center>
-                    <br>
-
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                </div>
-            </div>
-        </div>
-    </div> -->
-    <!-- --FIN MODAL USERS -->
-
     <div class="modal fade" id="modalAdmin" style="overflow:hidden;">
         <div class="modal-dialog modal-dialog-scrollable modal-lg">
             <div class="modal-content">
@@ -392,14 +241,6 @@ ob_start();
                         <label class="col-lg-2 col-md-3 col-sm-3 col-xs-4 control-label">Correo:</label>
                         <div class="col-lg-7 col-md-5 col-sm-5 col-xs-6">
                             <input class="form-control input-md" type="email" id="Correo" name="Correo">
-                        </div>
-                    </div>
-
-                    <div class="row form-group">
-                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-0"></div>
-                        <label class="col-lg-2 col-md-3 col-sm-3 col-xs-4 control-label">Password:</label>
-                        <div class="col-lg-7 col-md-5 col-sm-5 col-xs-6">
-                            <input class="form-control input-md" type="password" id="Password" name="pass">
                         </div>
                     </div>
 
@@ -460,7 +301,7 @@ ob_start();
                         <div class="column" style="margin:auto;">
                             <label for="inputGroupFile04" class="subir">
                                 <i class="fas fa-cloud-upload-alt" aria-hidden="true"></i>
-                                Inserta tu Foto
+                                Selecciona la foto
                             </label>
                             <input type="file" name="imagen" accept="image/*" id="inputGroupFile04" onchange="cambiarImg()" aria-describedby="inputGroupFileAddon04" style="display: none;" aria-label="Upload" ; multiple>
 
@@ -471,21 +312,15 @@ ob_start();
                         </div>
                     </div>
 
-                    <br>
-                    <center>
-                        <div class="col-lg-4 col-md-5 col-sm-5 col-xs-6">
-                            <button type="submit" class="btn btn-blue" onclick="actualizarUser();"
-                                style="color: #FFFFFF; background: #0093E9; background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);">
-                                Editar <i class="far fa-edit"></i>
-                            </button>
-                        </div>
-                    </center>
-                    <br>
                 <!-- </form> -->
                 </div>
                 <!-- fin contenido modal -->
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                        <button type="submit" class="btn btn-blue" onclick="actualizarUser();"
+                            style="color: #FFFFFF; background: #0093E9; background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);">
+                            Editar <i class="far fa-edit"></i>
+                        </button>
+                    <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button> -->
                 </div>
             </div>
         </div>
@@ -503,13 +338,17 @@ ob_start();
 <script src="./assets/js/sidebarEditar.js"></script> -->
 
 <script>
+    function cambiarImg() {
+        var pdrs = document.getElementById('inputGroupFile04').files[0].name;
+        document.getElementById('infoImg').innerHTML = pdrs;
+    }
+
     function masInfoUser(x){
         document.getElementById("Nombre").value="";
         document.getElementById("Apellidop").value="";
         document.getElementById("Apellidom").value="";
         document.getElementById("Pais").value="";
         document.getElementById("Correo").value="";
-        document.getElementById("Password").value="";
         document.getElementById("Telefono").value="";
         document.getElementById("Tipod").value="";
         document.getElementById("Numero").value="";
@@ -531,13 +370,12 @@ ob_start();
                 document.getElementById("Apellidom").value=arr[2];
                 document.getElementById("Pais").value=arr[3];
                 document.getElementById("Correo").value=arr[4];
-                document.getElementById("Password").value=arr[5];
-                document.getElementById("Telefono").value=arr[6];
-                document.getElementById("Tipod").value=arr[7];
-                document.getElementById("Numero").value=arr[8];
-                document.getElementById("Tipos").value=arr[9];
-                document.getElementById("Fecha").value=arr[10];
-                document.getElementById("id_userV").value=arr[11];
+                document.getElementById("Telefono").value=arr[5];
+                document.getElementById("Tipod").value=arr[6];
+                document.getElementById("Numero").value=arr[7];
+                document.getElementById("Tipos").value=arr[8];
+                document.getElementById("Fecha").value=arr[9];
+                document.getElementById("id_userV").value=arr[10];
             },
             
         });
@@ -550,12 +388,15 @@ ob_start();
         var userMaterno = document.getElementById('Apellidom').value;
         var userPais = document.getElementById('Pais').value;
         var correoUser = document.getElementById('Correo').value;
-        var passUser = document.getElementById('Password').value;
         var telefUser = document.getElementById('Telefono').value;
         var tipo_doc_user = document.getElementById("Tipod").value;
         var num_docUser = document.getElementById("Numero").value;
         var sexoUser = document.getElementById('Tipos').value;
         var nacimientoUser = document.getElementById('Fecha').value;
+        // var imagenUser = document.getElementById('inputGroupFile04').value;
+        // var fileToUpload = $('#inputGroupFile04').prop('files')[0];
+        // var fileToUpload = document.getElementById('inputGroupFile04').prop('files')[0];
+
         
         Swal.fire({
             title: '¿SEGURO QUE DESEA ACTUALIZAR ESTE REGISTRO?',
@@ -582,21 +423,27 @@ ob_start();
                     fecha_nac_user:nacimientoUser,
                     sexo_user:sexoUser,
                     telefono_user:telefUser,
-                    pais_user:userPais,
-                    pass_user: passUser
+                    pais_user:userPais
                 },
-                cache: false,
-                success: function(arr){
-                    Swal.fire(
-                        'Actualizado',
-                        'Se actualizo correctamente',
-                        'success'
-                    ).then(function(){ 
-                        // location.reload();
-                    });
-                }
+                cache: false
+            }).done( function() {
+                Swal.fire({
+                    title: 'Usuario Actualizado',
+                    text: 'Se han actualizado los datos satisfactoriamente.',
+                    icon: 'success',
+                }).then(function(){ 
+                    location.reload();
+                });
+                
+            }).fail( function() {
+                Swal.fire({
+                    title: 'Error',
+                    text: 'Ocurrio un problama al actualizar el usuario',
+                    icon: 'error',
+                }).then(function(){ 
+                    location.reload();
+                });
             })
-            location.reload();
         }, function (dismiss) {
             if (dismiss === 'cancel') {
             }
