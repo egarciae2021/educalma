@@ -86,6 +86,7 @@
                                 <div class="nav__dropdown-content-dashboard">
                                     
                                     <a href="agregarCategorias.php" class="nav__dropdown-item-dashboard nav__link-dashboard">Nueva Categoria</a>
+                                    <a href="aagregarCategorias.php" class="nav__dropdown-item-dashboard nav__link-dashboard">Nueva Categoria impl</a>
                                     
                                 </div>
                             </div>
