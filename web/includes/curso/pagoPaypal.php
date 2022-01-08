@@ -211,7 +211,13 @@ $id = $_GET['id'];
             },
 
             onCancel: function(data) {
-                alert('cancelaste tu pago');
+                // alert('cancelaste tu pago');
+                Swal.fire({
+                    title: 'Cancelaste tu pago!!',
+                    icon: 'error',
+                    showConfirmButton: false,
+                    timer: 1000,
+                })
                 console.log(data);
             }
 
