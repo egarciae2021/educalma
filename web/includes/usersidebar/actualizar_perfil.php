@@ -79,20 +79,12 @@ require_once '../../database/databaseConection.php';
                 $row['apellido_mat'], //2
                 $row['pais'], //3
                 $row['email'], //4
-                $row['pass'], //5
-                $row['telefono'], //6
-                $row['tipo_doc'], //7
-                $row['nro_doc'], //8
-                $row['sexo'], //9
-                $row['fecha_nacimiento'], //10
-                $row['id_user'], //11
-                // $row['pais'], //12
-                // $row['estado_lugar'], //13
-                // $row['id_convenio'], //14
-                // $row['nombre_convenio'], //15
-                // $row['cod_recurrenteDona'], //16
-                // $row['nombre_donaRecurrente'], //17
-                // $row['actividad'] //18
+                $row['telefono'], //5
+                $row['tipo_doc'], //6
+                $row['nro_doc'], //7
+                $row['sexo'], //8
+                $row['fecha_nacimiento'], //9
+                $row['id_user'], //10
             );
 		}
 
@@ -106,7 +98,7 @@ require_once '../../database/databaseConection.php';
         $ape_pater=$_POST['apellido_p_user'];
         $ape_mater=$_POST['apellido_m_user'];
         $correo=$_POST['correo_user'];
-        $pass=$_POST['pass_user'];
+        // $pass=$_POST['pass_user'];
         $telefono=$_POST['telefono_user'];
         $tipo_docu=$_POST['tipo_docUser'];
         $num_docume=$_POST['numdoc_user'];
@@ -114,24 +106,21 @@ require_once '../../database/databaseConection.php';
         $fecha=$_POST['fecha_nac_user'];
         $pais=$_POST['pais_user'];
 
+        // if($_FILES['imagen_user']['size']>0){
+        //     $imga=$_FILES['imagen_user']['tmp_name'];
+        //     $imagen = addslashes(file_get_contents($imga));
 
-        $password = password_hash($pass, PASSWORD_BCRYPT);
-
-        if($_FILES['imagen']['size']>0){
-            $imga=$_FILES['imagen']['tmp_name'];
-            $imagen = addslashes(file_get_contents($imga));
-
+        //     $pdo2 = Database::connect();  
+        //     $veri2="UPDATE usuarios SET nombres='$nombre', apellido_pat='$ape_pater', apellido_mat='$ape_mater', email='$correo', telefono='$telefono', tipo_doc='$tipo_docu',nro_doc='$num_docume',sexo='$sexo',fecha_nacimiento	='$fecha',pais ='$pais',mifoto = '$imagen' WHERE id_user = '$id' ";
+        //     $q2 = $pdo2->prepare($veri2);
+        //     $q2->execute(array());
+        // }else{
             $pdo2 = Database::connect();  
-            $veri2="UPDATE usuarios SET nombres='$nombre', apellido_pat='$ape_pater', apellido_mat='$ape_mater', email='$correo', pass='$password', telefono='$telefono', tipo_doc='$tipo_docu',nro_doc='$num_docume',sexo='$sexo',fecha_nacimiento	='$fecha',pais ='$pais',mifoto = '$imagen' WHERE id_user = '$id' ";
-            $q2 = $pdo2->prepare($veri2);
-            $q2->execute(array());
-        }else{
-            $pdo2 = Database::connect();  
-            $veri2="UPDATE usuarios SET nombres='$nombre', apellido_pat='$ape_pater', apellido_mat='$ape_mater', email='$correo', pass='$password', telefono='$telefono', tipo_doc='$tipo_docu',nro_doc='$num_docume',sexo='$sexo',fecha_nacimiento	='$fecha',pais ='$pais' WHERE id_user = '$id' ";
+            $veri2="UPDATE usuarios SET nombres='$nombre', apellido_pat='$ape_pater', apellido_mat='$ape_mater', email='$correo', telefono='$telefono', tipo_doc='$tipo_docu',nro_doc='$num_docume',sexo='$sexo',fecha_nacimiento	='$fecha',pais ='$pais' WHERE id_user = '$id' ";
             $q2 = $pdo2->prepare($veri2);
             $q2->execute(array());    
 
-        }
+        // }
 
         $arr='Usuario_actualizado';
 

@@ -246,14 +246,6 @@ ob_start();
 
                     <div class="row form-group">
                         <div class="col-lg-2 col-md-2 col-sm-2 col-xs-0"></div>
-                        <label class="col-lg-2 col-md-3 col-sm-3 col-xs-4 control-label">Password:</label>
-                        <div class="col-lg-7 col-md-5 col-sm-5 col-xs-6">
-                            <input class="form-control input-md" type="password" id="Password" name="pass">
-                        </div>
-                    </div>
-
-                    <div class="row form-group">
-                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-0"></div>
                         <label class="col-lg-2 col-md-3 col-sm-3 col-xs-4 control-label">Teléfono:</label>
                         <div class="col-lg-7 col-md-5 col-sm-5 col-xs-6">
                             <input class="form-control input-md" type="tel" id="Telefono" name="telefono">
@@ -309,7 +301,7 @@ ob_start();
                         <div class="column" style="margin:auto;">
                             <label for="inputGroupFile04" class="subir">
                                 <i class="fas fa-cloud-upload-alt" aria-hidden="true"></i>
-                                Inserta tu Foto
+                                Selecciona la foto
                             </label>
                             <input type="file" name="imagen" accept="image/*" id="inputGroupFile04" onchange="cambiarImg()" aria-describedby="inputGroupFileAddon04" style="display: none;" aria-label="Upload" ; multiple>
 
@@ -320,21 +312,15 @@ ob_start();
                         </div>
                     </div>
 
-                    <br>
-                    <center>
-                        <div class="col-lg-4 col-md-5 col-sm-5 col-xs-6">
-                            <button type="submit" class="btn btn-blue" onclick="actualizarUser();"
-                                style="color: #FFFFFF; background: #0093E9; background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);">
-                                Editar <i class="far fa-edit"></i>
-                            </button>
-                        </div>
-                    </center>
-                    <br>
                 <!-- </form> -->
                 </div>
                 <!-- fin contenido modal -->
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                        <button type="submit" class="btn btn-blue" onclick="actualizarUser();"
+                            style="color: #FFFFFF; background: #0093E9; background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);">
+                            Editar <i class="far fa-edit"></i>
+                        </button>
+                    <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button> -->
                 </div>
             </div>
         </div>
@@ -352,13 +338,17 @@ ob_start();
 <script src="./assets/js/sidebarEditar.js"></script> -->
 
 <script>
+    function cambiarImg() {
+        var pdrs = document.getElementById('inputGroupFile04').files[0].name;
+        document.getElementById('infoImg').innerHTML = pdrs;
+    }
+
     function masInfoUser(x){
         document.getElementById("Nombre").value="";
         document.getElementById("Apellidop").value="";
         document.getElementById("Apellidom").value="";
         document.getElementById("Pais").value="";
         document.getElementById("Correo").value="";
-        document.getElementById("Password").value="";
         document.getElementById("Telefono").value="";
         document.getElementById("Tipod").value="";
         document.getElementById("Numero").value="";
@@ -380,13 +370,12 @@ ob_start();
                 document.getElementById("Apellidom").value=arr[2];
                 document.getElementById("Pais").value=arr[3];
                 document.getElementById("Correo").value=arr[4];
-                document.getElementById("Password").value=arr[5];
-                document.getElementById("Telefono").value=arr[6];
-                document.getElementById("Tipod").value=arr[7];
-                document.getElementById("Numero").value=arr[8];
-                document.getElementById("Tipos").value=arr[9];
-                document.getElementById("Fecha").value=arr[10];
-                document.getElementById("id_userV").value=arr[11];
+                document.getElementById("Telefono").value=arr[5];
+                document.getElementById("Tipod").value=arr[6];
+                document.getElementById("Numero").value=arr[7];
+                document.getElementById("Tipos").value=arr[8];
+                document.getElementById("Fecha").value=arr[9];
+                document.getElementById("id_userV").value=arr[10];
             },
             
         });
@@ -399,12 +388,15 @@ ob_start();
         var userMaterno = document.getElementById('Apellidom').value;
         var userPais = document.getElementById('Pais').value;
         var correoUser = document.getElementById('Correo').value;
-        var passUser = document.getElementById('Password').value;
         var telefUser = document.getElementById('Telefono').value;
         var tipo_doc_user = document.getElementById("Tipod").value;
         var num_docUser = document.getElementById("Numero").value;
         var sexoUser = document.getElementById('Tipos').value;
         var nacimientoUser = document.getElementById('Fecha').value;
+        // var imagenUser = document.getElementById('inputGroupFile04').value;
+        // var fileToUpload = $('#inputGroupFile04').prop('files')[0];
+        // var fileToUpload = document.getElementById('inputGroupFile04').prop('files')[0];
+
         
         Swal.fire({
             title: '¿SEGURO QUE DESEA ACTUALIZAR ESTE REGISTRO?',
@@ -431,21 +423,27 @@ ob_start();
                     fecha_nac_user:nacimientoUser,
                     sexo_user:sexoUser,
                     telefono_user:telefUser,
-                    pais_user:userPais,
-                    pass_user: passUser
+                    pais_user:userPais
                 },
-                cache: false,
-                success: function(arr){
-                    Swal.fire(
-                        'Actualizado',
-                        'Se actualizo correctamente',
-                        'success'
-                    ).then(function(){ 
-                        // location.reload();
-                    });
-                }
+                cache: false
+            }).done( function() {
+                Swal.fire({
+                    title: 'Usuario Actualizado',
+                    text: 'Se han actualizado los datos satisfactoriamente.',
+                    icon: 'success',
+                }).then(function(){ 
+                    location.reload();
+                });
+                
+            }).fail( function() {
+                Swal.fire({
+                    title: 'Error',
+                    text: 'Ocurrio un problama al actualizar el usuario',
+                    icon: 'error',
+                }).then(function(){ 
+                    location.reload();
+                });
             })
-            location.reload();
         }, function (dismiss) {
             if (dismiss === 'cancel') {
             }
