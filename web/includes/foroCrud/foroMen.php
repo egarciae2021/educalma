@@ -32,7 +32,7 @@ if(isset($_POST['mensaje']))
     echo'
     <script>
         //alert ("guardado exitosamente");
-       window.location = "../../foro.php?id='.$idcurso.'";
+        window.location = "../../curso.php?id='.$idcurso.'";
     </script>
     ';
 }
@@ -62,7 +62,7 @@ if(isset($_POST['submensaje'])){
     echo'
     <script>
         //alert ("subcomentario guardado exitosamente");
-       window.location = "../../foro.php?id='.$idcurso.'";
+       window.location = "../../curso.php?id='.$idcurso.'";
     </script>
     ';
 }
