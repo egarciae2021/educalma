@@ -573,6 +573,7 @@
 .container-bussines > .send-data .box-rotate.active .front {
   transition: opacity 1.5s;
   opacity: 0;
+  display: none;
 }
 .container-bussines > .send-data .back {
   width: 100%;

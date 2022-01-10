@@ -33,7 +33,8 @@ document.addEventListener("DOMContentLoaded", () => {
         window.location.href = "./#boxRotate";
         scrollTo(scrollX, scrollY - 100);
         $(".back input").first().focus();
-        $("#boxRotate").addClass("active")
+        $("#boxRotate").addClass("active");
+        $("#boxRotate .front").remove();
         $($(".box-email > .msg-error")[0]).removeClass("show")
       }
     } else

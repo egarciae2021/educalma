@@ -273,7 +273,7 @@ if (!isset($_GET['pag'])) {
   </div>
   <div class="send-data col-12 my-auto">
     <div class="box-rotate my-5" id="boxRotate">
-      <div class="front d-flex w-100">
+      <div class="front w-100">
         <div class="box-image d-flex align-items-center justify-content-center w-100">
           <img class="img-fluid" src="./assets/images/—Pngtree—people make puzzles concept team_5356575.png" alt="" />
         </div>
