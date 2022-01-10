@@ -85,7 +85,7 @@
 
     ?>
 
-        <div class="container-course" style="height: 100vh;">
+        <div class="container-course">
         <div class="bg-dark1">
             <div class="row py-5">
                 <div class="col-12 col-sm-12 col-md-7 col-lg-8 col-xl-8 ">
@@ -102,7 +102,7 @@
                 <div class="col-12 col-sm-12 col-md-5 col-lg-4 col-xl-4 info-course-right">
                     <br><br><br><br>
                     <div class="card" style="position: absolute;width: 90%; ">
-                        <img class="card-img-top" src="data:image/*;base64,<?php echo base64_encode($dato4['imagenDestacadaCurso']) ?>" alt="Card image" style="width:100%">
+                        <img class="card-img-top" src="data:image/*;base64,<?php echo base64_encode($dato4['imagenDestacadaCurso']) ?>" alt="Card image" style="width:100%; height: 250px;">
                         <div class="card-body">
                             <h4 class="card-title font-weight-bold" style="font-size: 30px;"><?php 
                             if($dato4['costoCurso']!=0){
