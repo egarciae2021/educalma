@@ -26,31 +26,18 @@ document.addEventListener("DOMContentLoaded", () => {
     return exists;
   }
 
-  // Funcion asincrona
-  const giroAsync = () => {
-    return new Promise((resolve, reject) => {
-      try {
+  // Verificar si es correo corporativo
+  $("#btnAction").click(() => {
+    if (!validEmail()) {
+      if (validarEmail($("#txtEmail").val())) {
         window.location.href = "./#boxRotate";
         scrollTo(scrollX, scrollY - 100);
         $(".back input").first().focus();
         $("#boxRotate").addClass("active");
         $($(".box-email > .msg-error")[0]).removeClass("show")
-        resolve(true);
-      } catch {
-        reject(false);
-      }
-    })
-  }
-
-  // Verificar si es correo corporativo
-  $("#btnAction").click(() => {
-    if (!validEmail()) {
-      if (validarEmail($("#txtEmail").val())) {
-        giroAsync().resolve().then((v) => {
-          if (v) {
-            $("#boxRotate .front").remove();
-          }
-        })
+        setTimeout(function () {
+          $("#boxRotate > .front").remove();
+        }, 2000);
       }
     } else
       $($(".box-email > .msg-error")[0]).addClass("show")
