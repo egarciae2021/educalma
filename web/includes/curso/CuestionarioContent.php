@@ -95,7 +95,7 @@
         $q1->execute(array());
         $reco=0;
         while($reco<$contador){
-            $fila1=$q1->fetchAll();
+            $fila1=$q1->fetchAll(PDO::FETCH_ASSOC);
             $reco++;
         }
     ?>
@@ -103,21 +103,16 @@
     <br>
 
     <div>
-        <div class="container" style="margin-top: 120px;">
-            <div class="row">
-                <div class="col-md-1"></div>
-                <div class="col-md-10">
-                    <div class="infoMin">
-                        <a href="">  <?php echo $nombre_curso['nombreCurso']?>   </a> <label> > </label> 
-                        <a href="">  <?php echo $nombre_modulo['nombreModulo']?> </a> <label> > </label>
-                        <a href=""> Cuestionario </a>
-                    </div>
-                </div>
-                <div class="col-md-1"></div>
-            </div>
-        </div>
+        <div class="container" style="margin-top: 120px;"></div>
 
         <div style="background: #ECFCFE; width: 80%; margin: auto;">
+            <div class="col-md-12" style="background-color: white; padding-bottom: 40px;">
+                <div class="infoMin">
+                    <a href="">  <?php echo $nombre_curso['nombreCurso']?>   </a> <label> > </label> 
+                    <a href="">  <?php echo $nombre_modulo['nombreModulo']?> </a> <label> > </label>
+                    <a href=""> Cuestionario </a>
+                </div>
+            </div>
             <h1 style="color: #4F52D6; font-size: 30px; padding: 15px; text-align: center;">
                 <strong>Cuestionario</strong>
             </h1>
@@ -163,74 +158,12 @@
                         }
                     ?>        
                 </div>
-                <div class="card muestras">
+                <div class="card text-center muestras">
                     <div class="card-header">
                         Resultado de las <?php echo $cuenta2;?> preguntas
                     </div>
                     <div class="card-body" style="background-color: #fff;">
-                        <h5 style="font-size: large; margin-left: 10px; color:black; background-color: #fff;" class="text-center">
-                            Respuestas Correctas: <?php echo $correcta;?>
-                        </h5> 
-                        <!-- nuevo -->
-                            <div class="card mx-4 mt-3">
-                                <div class="card-header">
-                                    <div class="col-12">
-                                        <div class="row">
-                                            <div class="col-6">Pregunta n° 1</div>
-                                            <div class="col-6 text-right text-muted">0/2 pts</div>
-                                        </div>
-                                    </div>
-                                </div> 
-                                    <div class="list-group list-group-flush small text-center text-secondary font-weight-normal my-3">
-                                        Enunciado de la pregunta
-                                    <?php /*
-                                    $pdo1 = Database::connect();
-                                    $sql1 = "SELECT * FROM preguntas WHERE id_cuestionario='$fila[idCuestionario]'";
-                                    $q1 = $pdo1->prepare($sql1);
-                                    $q1->execute(array());
-                                    $reco=0;
-                                    
-                                        $fila1=$q1->fetchAll();
-                                        Database::disconnect();
-
-                                    $pdo2 = Database::connect();
-                                    $idpregunta=$fila1[0]['idPregunta'];
-                                    //echo $idpregunta;
-                                    $sql2 = "SELECT * FROM respuestas WHERE estado=1 and id_Pregunta='$idpregunta'";
-    
-                                    $q2 = $pdo2->prepare($sql2);
-                                    $q2->execute(array());
-
-                                    while($fila2=$q2->fetch(PDO::FETCH_ASSOC)){
-                                        echo $fila2['respuesta'];
-                                        echo "<br>";
-                                    }*/
-                                    ?>
-                                    </div>
-                                    <ul class="list-group list-group-flush text-left">
-                                        
-                                    <!-- respuesta correcta debe llevar verde y respuesta incorrecta debe llevar rojo -->
-                                        <label class="list-group-item small">
-                                            <div class="form-check" style="color:green;">
-                                                
-                                                <input type="radio" name="verif_resp" value="<?php /*echo $fila2['respuesta'];*/?>"> Primera respuesta
-                                                <input type="hidden" name="correcta" value="<?php /*echo $correcta;*/?>"> 
-                                                <label class="form-check-label" for="exampleRadios1"> <?php /*echo $fila2[0]['respuesta'];*/?> </label>
-                                            </div>
-                                        </label> 
-
-                                        <label class="list-group-item small">
-                                            <div class="form-check"  style="color:red;">
-                                                <input type="radio" name="verif_resp" value="<?php /*echo $fila2['respuesta'];*/?>"> Segunda respuesta
-                                                <input type="hidden" name="correcta" value="<?php /*echo $correcta;*/?>">
-                                                <label class="form-check-label" for="exampleRadios1"> <?php /*echo $fila2[0]['respuesta'];*/?> </label>
-                                            </div>
-                                        </label> 
-
-                                    </ul>
-                                </div>
-                            </div>
-                        <!-- fin nuevo -->
+                        <h5 style="font-size: large; margin-left: 10px; color:black; background-color: #fff;">Respuestas Correctas: <?php echo $correcta;?></h5> 
                     </div>
                 </div>
             </div>

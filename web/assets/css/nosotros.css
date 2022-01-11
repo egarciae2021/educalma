@@ -3,10 +3,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap");
 
-html{
-  overflow-x: hidden;
-}
-
 .div-container-panel-nosotros {
   background-image: url(../images/fondo1.png);
   background-repeat: no-repeat;
@@ -22,7 +18,7 @@ html{
   margin: auto 0;
 }
 .div-container-panel-nosotros .row .container-title-panel-nosotros {
-  padding-left: 10rem;
+  padding-right: 10rem;
 }
 .title-panel {
   font-family: "Inter", sans-serif;
@@ -62,7 +58,7 @@ html{
   position: absolute;
 }
 .container-panel-image-nosotros img {
-  width: 750px;
+  width: 800px;
 }
 
 @media (max-width: 1458px) {
@@ -79,24 +75,37 @@ html{
 }
 @media (max-width: 1199px) {
   .container-panel-image-nosotros img {
-    width: 680px;
+    width: 700px;
     transition: all 0.3s ease;
   }
   .div-container-panel-nosotros .row .container-title-panel-nosotros {
-    padding-left: 1rem;
     padding-right: 1rem;
   }
 }
-@media (max-width: 1039px) {
+@media (max-width: 992px) {
   .container-panel-image-nosotros img {
-    width: 630px;
+    width: 550px;
     transition: all 0.3s ease;
   }
   .div-container-panel-nosotros .row .container-title-panel-nosotros {
-    padding-right: 0rem;
+    padding-right: 1rem;
   }
 }
-@media (max-width: 980px) {
+@media (max-width: 830px) {
+  .title-panel {
+    font-size: 52px;
+    transition: all 0.3s ease;
+  }
+  .description-panel {
+    font-size: 16px;
+    transition: all 0.3s ease;
+  }
+  .button-panel {
+    font-size: 16px;
+    transition: all 0.3s ease;
+  }
+}
+@media (max-width: 767px) {
   .container-panel-image-nosotros {
     display: none;
   }
@@ -112,14 +121,12 @@ html{
     font-size: 18px;
     transition: all 0.3s ease;
   }
-  .row{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  .container-panel-nosotros {
+    padding-left: 10rem;
   }
 }
 @media (max-width: 613px) {
-  .div-container-panel-nosotros {
+  .container-panel-nosotros {
     padding-left: 5rem;
   }
 }
@@ -136,7 +143,7 @@ html{
     font-size: 18px;
     transition: all 0.3s ease;
   }
-  .div-container-panel-nosotros {
+  .container-panel-nosotros {
     padding-left: 0rem;
   }
 }
