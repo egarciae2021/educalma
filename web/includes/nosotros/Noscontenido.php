@@ -5,14 +5,14 @@
 <!-- PANEL -->
 <div class="container-fluid div-container-panel-nosotros">
     <div class="row">
-        <div class="col-12 col-sm-12 col-md-6 col-lg-7 col-xl-6 container-panel-image-nosotros">
-            <div class="container-image-panel ">
+        <div class="col-12 col-sm-12 col-md-7 col-lg-7 col-xl-6 container-panel-image-nosotros">
+            <div class="container-image-panel">
                 <div class="image-panel">
                     <img src="./assets/images/mundo-nosotros.png" alt="">
                 </div>
             </div>
         </div>
-        <div class="col-12 col-sm-12 col-md-6 col-lg-5 col-xl-6 container-panel-nosotros">
+        <div class="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-6 container-panel-nosotros">
             <div class="container-title-panel-nosotros">
                 <div class="title-panel">
                     Una nueva red de educación
