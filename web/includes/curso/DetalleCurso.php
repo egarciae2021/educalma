@@ -85,10 +85,10 @@
 
     ?>
 
-        <div class="container-course">
+        <div class="container-course bg-light"style="min-height: 100vh;">
         <div class="bg-dark1">
             <div class="row py-5">
-                <div class="col-12 col-sm-12 col-md-7 col-lg-8 col-xl-8 ">
+                <div class="col-12 col-sm-12 col-md-7 col-lg-8 col-xl-9 ">
                     <br><br><br><br>
                     <span>Cursos</span><i class="fas fa-angle-right mx-2"></i>
                     <span>Categoría</span><i class="fas fa-angle-right mx-2"></i>
@@ -99,10 +99,14 @@
                     <i class="fas fa-globe ml-4 mr-2"></i><span>Español</span>
                     <i class="fas fa-closed-captioning ml-4 mr-2"></i><span>Español [automático]</span>
                 </div>
-                <div class="col-12 col-sm-12 col-md-5 col-lg-4 col-xl-4 info-course-right">
-                    <br><br><br><br>
-                    <div class="card" style="position: absolute;width: 90%; ">
-                        <img class="card-img-top" src="data:image/*;base64,<?php echo base64_encode($dato4['imagenDestacadaCurso']) ?>" alt="Card image" style="width:100%; height: 250px;">
+                <div class="col-12 col-sm-12 col-md-5 col-lg-4 col-xl-3 info-course-right pt-3">
+                    <!-- <br><br><br><br> -->
+                    <div class="card ">
+                        <div class="content-img">
+                        <img class="card-img-top1" src="data:image/*;base64,<?php echo base64_encode($dato4['imagenDestacadaCurso']) ?>" alt="Card image" >
+                        </div>
+
+
                         <div class="card-body">
                             <h4 class="card-title font-weight-bold" style="font-size: 30px;"><?php 
                             if($dato4['costoCurso']!=0){
@@ -162,11 +166,11 @@
             </div>
         </div>
         <div class="bg-light" style="height: 100%;">
-            <div class="row py-5">
-                <div class="col-12 col-sm-12 col-md-5 col-lg-4 col-xl-4 info-course-left" style="border: 1px solid red;">
+            <div class="row py-5" style="height: 100%;">
+                <div class="col-12 col-sm-12 col-md-5 col-lg-4 col-xl-3 info-course-left" style="border: 1px solid red;">
                     <h4>Contenido del curso</h4>
                 </div>
-                <div class="col-12 col-sm-12 col-md-7 col-lg-8 col-xl-8 text-dark">
+                <div class="col-12 col-sm-12 col-md-7 col-lg-8 col-xl-9 text-dark">
                     <h4 class="font-weight-bold">Contenido del curso</h4>
                     <div class="d-flex">
                         <div class="mr-auto p-2">
@@ -218,6 +222,8 @@
                         ?>
                     </div>
                 </div>
+
+                
             </div>
         </div>
         </div>

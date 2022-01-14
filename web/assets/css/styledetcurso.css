@@ -1,9 +1,9 @@
 :root {
-    --main-bg-color: 'assets/images/fondo1.png' ;
-  }
-.bg-dark1{
-    background: url('../images/fondo1.png');
-    background-size: cover;
+  --main-bg-color: "assets/images/fondo1.png";
+}
+.bg-dark1 {
+  background: url("../images/fondo1.png");
+  background-size: cover;
 }
 .row {
   margin: 0 auto;
@@ -21,11 +21,50 @@
   color: #000000;
   font-weight: bold;
 }
+.info-course-right {
+  margin-top: 3rem;
+}
+.bg-dark1 .row .info-course-right .card {
+  position: absolute;
+  width: 90%;
+}
+.content-img {
+  width: 100%;
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.card-img-top1 {
+  height: 100%;
+}
+.btn-outline-dark {
+  width: 100%;
+}
 @media (max-width: 767px) {
-  .bg-dark1 .row .info-course-right {
-    display: none;
+  .info-course-right {
+    margin-top: 0;
   }
-  /* .bg-light .row .info-course-left {
-      display: block;
-  } */
+  .content-img {
+    height: 150px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+  .card-img-top1 {
+    flex-shrink: 0;
+    min-width: 100%;
+    object-fit: cover;
+  }
+  .info-course-right {
+    height: 450px;
+  }
+  .bg-dark1 .row .info-course-right .card {
+    position: relative;
+    display: block;
+    width: 100%;
+  }
 }

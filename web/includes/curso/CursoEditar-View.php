@@ -116,31 +116,29 @@
                     <!-- segunda columna -->
                     <div class="col-9 pl-0">
                         <form name="formulario" id="form-leditcursos" method="POST"  enctype="multipart/form-data" action="includes/Cursos_crud/Cursos_CRUD.php?id=<?php echo $dato2['idCurso'];?>">
-                            <div class="form-row ">
-                                <div class="form-group col-md-6 ">
+
+                        <div class="row">
+                            <div class="col-12 col-lg-6">
+                            <div class="form-group col-md-12 col-lg-12">
                                     <label class="form-label">Nombre del curso: <?php echo $dato2['nombreCurso'];?></label>
                                     <input type="text" name="nomb_actu_cursos" id="names-agrecursos" class="form-control " value="<?php echo $dato2['nombreCurso'];?>"  aria-label="Nombrecurso" aria-describedby="names-addon">
                                 </div>
-                                <div class="form-group col-md-6 ">
+                                
+                                <div class="form-group col-md-12 col-lg-12">
                                     <label class="form-label">Costo del curso</label>
                                     <input type="number" step="any" id="precio-curso" name="prec_curso"  class="form-control" value="<?php echo $dato2['costoCurso'];?>" aria-label="Dirigido" aria-describedby="names-addon">
                                 </div>
-                            </div>
-
-                            <div class="form-row ">
-
-                                <div class="form-group col-md-6">
+                                
+                                <div class="form-group col-md-12">
                                     <label class="form-label">Descripción del curso</label>
                                     <textarea class="form-control" id="desc-curso" name="desc_curso" rows="5"><?php echo $dato2['descripcionCurso'];?></textarea>
                                 </div>
 
-                                <div class="form-group col-md-6 ">
+                            </div>
+                            <div class="col-12 col-lg-6">
+                                <div class="form-group col-md-12 ">
                                     <label class="form-label">*Agregar imagen del curso</label>
                                     <br>
-                                    <!-- <button type="button " class="btn btn-outline-danger  ">
-                                        <i class="fas fa-cloud-upload-alt " aria-hidden="true "></i>
-                                        Insertar imagen
-                                    </button> -->
 
                                     <div class="column" style="margin:auto;">
                                         <label for="file-upload" class="btn btn-outline-danger">
@@ -150,7 +148,9 @@
                                         <input  type="file" id="file-upload" name="txtimagenAct" onchange='cambiar()' style='display: none;' 
                                         aria-label="Upload" aria-describedby="inputGroupFileAddon04" accept="image/*"; multiple/>
                                         
-                                        <img align="right" height="130px" style="margin-right:20px;" src="data:image/*;base64,<?php echo base64_encode($dato2['imagenDestacadaCurso'])?>">
+                                        <div class="content-imagen">
+                                        <img class="content-img" src="data:image/*;base64,<?php echo base64_encode($dato2['imagenDestacadaCurso'])?>">
+                                        </div>
                                     </div>
 
                                     <div class="column" style="margin:auto;">
@@ -159,6 +159,10 @@
 
                                 </div>
                             </div>
+
+                                
+                                
+                        </div>
 
                             <div class="form-row ">
                             <input type="hidden" name="idcurso" value="<?php echo $dato2['idCurso'];?>">
