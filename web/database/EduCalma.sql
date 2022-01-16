@@ -23,28 +23,29 @@ CREATE TABLE usuarios (
 	fecha_registro datetime not null,
 	mifoto longblob,
 	token_password varchar(100) DEFAULT NULL,
-	password_request int(11) NOT NULL DEFAULT '0' 
+	password_request int(11) NOT NULL DEFAULT '0',
+	cod_Emp varchar(10) DEFAULT NULL
 );
 
 SELECT * FROM usuarios;
 -- USUARIO 
 -- pass: July123456
-INSERT INTO usuarios VALUES (1, 3, 0, 0, 'JULY', 'CASTILLO', 'BARRERA','j@gmail.com', '$2y$10$eC0Uu2bWV/Gqm1rjuB3oL.DnA8FaDkLpjF/.Wi8604GaLu1aN2/xG', '965478456', 1, '89475632', 2, '1992-07-28', 'PERÚ', 1, 1, now(), null, '', 0);
+INSERT INTO usuarios VALUES (1, 3, 0, 0, 'JULY', 'CASTILLO', 'BARRERA','j@gmail.com', '$2y$10$eC0Uu2bWV/Gqm1rjuB3oL.DnA8FaDkLpjF/.Wi8604GaLu1aN2/xG', '965478456', 1, '89475632', 2, '1992-07-28', 'PERÚ', 1, 1, now(), null, '', 0, null);
 -- ADMINISTRADOR 
 -- pass: Julio123456
-INSERT INTO usuarios VALUES (2, 1, 0, 0, 'JULIO', 'CESAR', 'TELLO','tello@gmail.com', '$2y$10$tyWFJ1bWHdciAaxbGAk7uu.HIPoZw3uDKJJ4Rv7914wh6Hai9iroi', '954555784', 1, '55784952', 1, '1989-04-02', 'PERÚ', 1, 1, now(), null, '', 0);
+INSERT INTO usuarios VALUES (2, 1, 0, 0, 'JULIO', 'CESAR', 'TELLO','tello@gmail.com', '$2y$10$tyWFJ1bWHdciAaxbGAk7uu.HIPoZw3uDKJJ4Rv7914wh6Hai9iroi', '954555784', 1, '55784952', 1, '1989-04-02', 'PERÚ', 1, 1, now(), null, '', 0, null);
 --  USUARIO
 -- pass: Marleni123456
-INSERT INTO usuarios VALUES (3, 3, 0, 0, 'MARLENE', 'VASQUEZ', 'VERA','marlene@gmail.com', '$2y$10$apc7Qxi7dW5FRo0Ki9BOue2FRp/yfBWhiCeVnRAQGoNgxkMpvlMhy', '989874852', 1, '05554874', 2, '1980-03-18', 'PERÚ', 3, 1, now(), null, '', 0);
+INSERT INTO usuarios VALUES (3, 3, 0, 0, 'MARLENE', 'VASQUEZ', 'VERA','marlene@gmail.com', '$2y$10$apc7Qxi7dW5FRo0Ki9BOue2FRp/yfBWhiCeVnRAQGoNgxkMpvlMhy', '989874852', 1, '05554874', 2, '1980-03-18', 'PERÚ', 3, 1, now(), null, '', 0, null);
 -- USUARIO 
 -- pass: Gloria123456
-INSERT INTO usuarios VALUES (4, 3, 1, 0, 'GLORIA', 'SAC', 'LECHE','gloria@gloria.com', '$2y$10$4X1m7wnrbbuuOvqYRkd7gu26Xik2WpYZVQ/OVFvRC05gEp13yFQSa', '999874520', 4, '10554878920', 5, '1900-03-18', 'PERÚ', 1, 1, now(), null, '', 0);
+INSERT INTO usuarios VALUES (4, 3, 1, 0, 'GLORIA', 'SAC', 'LECHE','gloria@gloria.com', '$2y$10$4X1m7wnrbbuuOvqYRkd7gu26Xik2WpYZVQ/OVFvRC05gEp13yFQSa', '999874520', 4, '10554878920', 5, '1900-03-18', 'PERÚ', 1, 1, now(), null, '', 0, null);
 -- ADMINISTRADOR 
 -- pass: Estefany123456
-INSERT INTO usuarios VALUES (5, 1, 0, 1, 'ESTEFANY', 'MATA', 'MATOS','estefany@gloria.com', '$2y$10$OGIZkqniYZsz1HQfcKdzfuNa0pyjYFGPB1K71uXrigk4ITw5xFJxW', '963259658', 1, '02698974', 2, '1990-01-05', 'PERÚ', 1, 1, now(), null, '', 0);
+INSERT INTO usuarios VALUES (5, 1, 0, 1, 'ESTEFANY', 'MATA', 'MATOS','estefany@gloria.com', '$2y$10$OGIZkqniYZsz1HQfcKdzfuNa0pyjYFGPB1K71uXrigk4ITw5xFJxW', '963259658', 1, '02698974', 2, '1990-01-05', 'PERÚ', 1, 1, now(), null, '', 0, null);
 -- ADMINISTRADOR 
 -- pass: nose XD
-INSERT INTO usuarios VALUES (6, 1, 0, 1, 'MATA', 'MATA', 'MATOS','educalma@calma.com', '$2y$10$ZCyPSbUMoUa9C2vA3CNfR.caGn8Q2cc3Z1OFgH4rssGJu3JatBVGG', '963259658', 1, '02698974', 2, '1990-01-05', 'PERÚ', 1, 1, now(), null, '', 0);
+INSERT INTO usuarios VALUES (6, 1, 0, 1, 'MATA', 'MATA', 'MATOS','educalma@calma.com', '$2y$10$ZCyPSbUMoUa9C2vA3CNfR.caGn8Q2cc3Z1OFgH4rssGJu3JatBVGG', '963259658', 1, '02698974', 2, '1990-01-05', 'PERÚ', 1, 1, now(), null, '', 0, null);
 
 -- Tabla Privilegio
 CREATE TABLE privilegio (
@@ -239,6 +240,7 @@ INSERT INTO tipoDocumentoIdentidad VALUES ('3', 'CARNE DE EXTRANJERIA', 8);
 -- PARA GUARDAR SOLICITUDES DE EMPRESAS
 CREATE TABLE SOLICITUD (
 	id_solicitud INT AUTO_INCREMENT PRIMARY KEY,
+	id_usuario INT(10) NOT NULL,
 	correo_corporativo VARCHAR(320) NOT NULL,
 	nombre_completo VARCHAR(100) NOT NULL,
 	correo_personal VARCHAR(320),
@@ -260,7 +262,8 @@ CREATE PROCEDURE PROC_NUEVA_SOLICITUD (
 	IN p_telefono_movil VARCHAR(20),
 	IN p_tamanio_empresa INT,
 	IN p_num_suscripcion INT,
-	IN p_obj_equipo VARCHAR(300)
+	IN p_obj_equipo VARCHAR(300),
+	IN p_idUsuario INT(10)
 ) BEGIN
 	-- RESPONSE
 	DECLARE type_resp VARCHAR(15);
@@ -282,7 +285,7 @@ CREATE PROCEDURE PROC_NUEVA_SOLICITUD (
 	ELSE
 	-- INSERCION DE SOLICITUD
 		INSERT INTO SOLICITUD
-		(	
+		(	id_usuario,
 			correo_corporativo,
 			nombre_completo, correo_personal,
 			nombre_empresa, codigo_pais,
@@ -290,7 +293,7 @@ CREATE PROCEDURE PROC_NUEVA_SOLICITUD (
 			num_suscripcion, obj_equipo
 		)
 		VALUES
-		(
+		(	p_idUsuario,
 			p_correo_corporativo,
 			p_nombre_completo, p_correo_personal,
 			p_nombre_empresa, p_codigo_pais,
