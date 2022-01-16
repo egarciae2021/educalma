@@ -1,6 +1,7 @@
 <?php
 ob_start();
 @session_start();
+    if(($_SESSION['privilegio']==4)){
 ?>
 <?php include_once 'includes/dashboard/head1.php' ?>
 
@@ -9,14 +10,7 @@ ob_start();
 
     <?php include_once 'includes/dashboard/body1.php' ?>
 
-    <?php 
-        if ($_SESSION['privilegio'] == 1){
-            include_once 'includes/dashboard/contenidoAdmin.php';
-        }
-        else{
-            include_once 'includes/dashboard/contenido.php';
-        }
-    ?>
+    <?php include_once 'includes/Business/jobs.php' ?>
     <!-- <script src="./assets/js/plugins/jquery.min.js"></script> -->
     <!-- ALL JS FILES -->
     <script src="./assets/js/plugins/jquery.min.js"></script>
@@ -57,5 +51,9 @@ ob_start();
     <script src="./assets/js/datatableFunctions.js"></script>
 
 </body>
-
+<?php
+    }else{
+        header('Location: iniciosesion.php');
+    }
+?>
 </html>

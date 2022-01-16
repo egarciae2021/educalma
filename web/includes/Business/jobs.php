@@ -37,8 +37,22 @@ ob_start();
 
 <!-- para listar y la paginacion de usuarios -->
 <?php
+    $idad= $_SESSION['codUsuario'];
     $pdo4 = Database::connect();
-    $sql3 = "SELECT * FROM usuarios where estado=1 order by id_user DESC";
+    $sql1 = "SELECT id_solicitud FROM solicitud where id_usuario=$idad";
+    $q1 = $pdo4->prepare($sql1);
+    $q1->execute();
+    $datos=$q1->fetch(PDO::FETCH_ASSOC);
+    echo $idd=$datos['id_solicitud'];
+
+    $sql2 = "SELECT codigo_curse FROM empresascursos where id_Empresa='$idd' LIMIT 1";
+    $q2 = $pdo4->prepare($sql2);
+    $q2->execute();
+    $datos=$q2->fetch(PDO::FETCH_ASSOC);
+    echo $iddad=$datos['codigo_curse'];
+
+
+    $sql3 = "SELECT * FROM usuarios where cod_Emp='$iddad' AND estado=1 order by id_user DESC";
     $q3 = $pdo4->prepare($sql3);
     $q3->execute();
     $usuarios = $q3->fetchAll(PDO::FETCH_ASSOC);
@@ -48,12 +62,12 @@ ob_start();
 
 <main>
     <!--tabla de curso -->
-    <div class="col-12 mt-5 text-center">
+    <!-- <div class="col-12 mt-5 text-center">
         <div class="card">
             <div class="card-header">
                 <h3 class="card-title">Listado de Cursos</h3>
             </div>
-            <!-- /.card-header -->
+             /.card-header 
             <div class="card-body">
                 
                 <div class="table-responsive">
@@ -70,48 +84,48 @@ ob_start();
                             </tr>
                         </thead>
                         
-                        <tbody>
+                        <tbody> -->
                             
                             <?php
-                            foreach ($curso as $curso) {
-                                $pdo4 = Database::connect();
-                                $idCate = $curso['categoriaCurso'];
-                                $sql4 = "SELECT * FROM categorias WHERE idCategoria = '$idCate'";
-                                $q4 = $pdo4->prepare($sql4);
-                                $q4->execute(array());
-                                $datoCate = $q4->fetch(PDO::FETCH_ASSOC);
-                                $dotocoto= $q4->fetchAll();
+                            // foreach ($curso as $curso) {
+                            //     $pdo4 = Database::connect();
+                            //     $idCate = $curso['categoriaCurso'];
+                            //     $sql4 = "SELECT * FROM categorias WHERE idCategoria = '$idCate'";
+                            //     $q4 = $pdo4->prepare($sql4);
+                            //     $q4->execute(array());
+                            //     $datoCate = $q4->fetch(PDO::FETCH_ASSOC);
+                            //     $dotocoto= $q4->fetchAll();
                             ?>
-                                <tr>
-                                    <td><?php echo $curso['nombreCurso']; ?></td>
-                                    <td><?php echo $datoCate['nombreCategoria']; ?></td>
-                                    <td><?php echo $curso['dirigido']; ?></td>
-                                    <td><img style="height: 50px;" src="data:image/*;base64,<?php echo base64_encode($curso['imagenDestacadaCurso']) ?>"></td>
-                                    <!-- <td>imagen</td> -->
-                                    <td><?php echo substr($curso['descripcionCurso'],0,100)."..."; ?></td>
-                                    <td><?php echo $curso['costoCurso'];?></td>
+                                <!-- <tr>
+                                    <td><?php //echo $curso['nombreCurso']; ?></td>
+                                    <td><?php //echo $datoCate['nombreCategoria']; ?></td>
+                                    <td><?php //echo $curso['dirigido']; ?></td>
+                                    <td><img style="height: 50px;" src="data:image/*;base64,<?php //echo base64_encode($curso['imagenDestacadaCurso']) ?>"></td>
+                                    <td>imagen</td> 
+                                    <td><?php //echo substr($curso['descripcionCurso'],0,100)."..."; ?></td>
+                                    <td><?php //echo $curso['costoCurso'];?></td>
                                     <td>
-                                        <!--para editar curso-->
-                                        <a href="editarcurso.php?id=<?php echo $curso['idCurso']; ?>">
+                                        para editar curso
+                                        <a href="editarcurso.php?id=<?php //echo $curso['idCurso']; ?>">
                                             <button  class=" boton_edit" type="button"><i class="far fa-edit"></i></button>
                                         </a>
-                                        <!-- para quitar curso -->
-                                        <a href="includes/Cursos_crud/Cursos_CRUD.php?id_eliminar=<?php echo $curso['idCurso']; ?>">
+                                        para quitar curso 
+                                        <a href="includes/Cursos_crud/Cursos_CRUD.php?id_eliminar=<?php //echo $curso['idCurso']; ?>">
                                             <button type="button"><i class="fas fa-trash-alt"></i></button>
                                         </a>
-                                    </td>
+                                    </td> -->
                                 </tr>
-                            <?php }
-                            Database::disconnect();
+                            <?php //}
+                            // Database::disconnect();
                             ?>
-                        </tbody>
+                        <!-- </tbody>
                     </table>
                 </div>
 
             </div>
-            <!-- /.card-body -->
+             /.card-body 
         </div>
-    </div>
+    </div> -->
     
     <!--tabla de usuarios -->
     <div class="col-12 mt-5 text-center">
@@ -170,9 +184,9 @@ ob_start();
                                         <?php $idUsu = $usuarios['id_user']?>
                                         <?php //echo $_SESSION['passSinHash'];?>
                                         <!--para editar curso-->
-                                        <a href="#" data-toggle="modal" data-target="#modalAdmin" <?php echo "onclick='masInfoUser( $idUsu )'" ?>>
+                                        <!-- <a href="#" data-toggle="modal" data-target="#modalAdmin" <?php echo "onclick='masInfoUser( $idUsu )'" ?>>
                                             <button  class=" boton_edit" type="button"><i class="far fa-edit"></i></button>
-                                        </a>
+                                        </a> -->
                                         <!-- para quitar curso -->
                                         <a href="includes/usersidebar/actualizar_perfil.php?id_eliminar=<?php echo $usuarios['id_user']; ?>">
                                             <button type="button"><i class="fas fa-trash-alt"></i></button>

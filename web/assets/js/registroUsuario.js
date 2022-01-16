@@ -155,6 +155,7 @@ $(document).ready(() => {
   var cel = "";
   var pais = "";
   var gen = "";
+  var code = "";
 
   const Reset_data = () => {
     partAction = 0;
@@ -200,6 +201,8 @@ $(document).ready(() => {
     $("#cmbPais").val("").removeClass("is-invalid").removeClass("is-valid");
     gen = "";
     $("#cmbGenero").val("").removeClass("is-invalid").removeClass("is-valid");
+    code = "";
+    $("#txtcode").val("");
   };
 
   // Validar correo
@@ -272,12 +275,14 @@ $(document).ready(() => {
         document.getElementById("txtNacimiento").validity.valid &&
         document.getElementById("txtCelular").validity.valid &&
         document.getElementById("cmbPais").validity.valid &&
-        document.getElementById("cmbGenero").validity.valid
+        document.getElementById("cmbGenero").validity.valid &&
+        document.getElementById("txtcode") 
       ) {
         fnac = $("#txtNacimiento").val();
         cel = $("#txtCelular").val();
         pais = $("#cmbPais").val();
         gen = $("#cmbGenero").val();
+        code = $("#txtcode").val();
 
         var formData = new FormData();
         formData.append("nombres_registrar", firstname);
@@ -291,6 +296,7 @@ $(document).ready(() => {
         formData.append("sexo", gen);
         formData.append("fecha_registrar", fnac);
         formData.append("pais_registrar", pais);
+        formData.append("codigo_registrar", code);
 
         fetch("./register.php", {
           method: "POST",
