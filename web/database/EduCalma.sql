@@ -72,17 +72,6 @@ CREATE TABLE cursoInscrito (
 
 INSERT INTO cursoInscrito VALUES (1, 1, 3,'P 001',0,0);
 
--- Tabla de empresa
-CREATE TABLE padreEmpresa (
-	id_padreEmpresa int(10) auto_increment primary key,
-	nombreEmpresa varchar(250) not null,
-	cantidadHijos int(10) not null,
-	nroRuc char(20) not null,
-	direccion_fiscal varchar(250) not null
-);
-
-INSERT INTO padreEmpresa VALUES (1, 'GLORIA SAC', 150, '10554878920', 'Avenida Arequipa 2205 - La Molina');
-
 
 -- Tabla Categorías
 CREATE TABLE categorias (
@@ -150,7 +139,7 @@ CREATE TABLE empresascursos (
 	id_CursosEmpre int(11) auto_increment primary key,
 	id_Empresa int(11) not null,
 	id_Curso int(10) not null,
-	codigo_curse varchar(10) not null,
+	codigo_curse varchar(10) not null
 );
 
 -- Tabla de Foro
