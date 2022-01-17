@@ -145,7 +145,13 @@ CREATE TABLE descargables (
 	idCurso_descargable int(10) not null,
 	link_descargable varchar(250)
 );
-
+--Tabla de cursos de empresas
+CREATE TABLE empresascursos (
+	id_CursosEmpre int(11) auto_increment primary key,
+	id_Empresa int(11) not null,
+	id_Curso int(10) not null,
+	codigo_curse varchar(10) not null,
+);
 
 -- Tabla de Foro
 CREATE TABLE comentarioforo (
