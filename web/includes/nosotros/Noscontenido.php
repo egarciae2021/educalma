@@ -21,7 +21,7 @@
                     Sigamos creciendo juntos y ayudando a más personas desde el corazón.
                 </div>
                 <div class="button-panel">
-                    <button type="button" class="btn btn_registrar_panel">Ver presentación!</button>
+                    <a type="button" class="btn btn_registrar_panel " href="#video" >Ver presentación!</a>
                 </div>
             </div>
         </div>
@@ -30,7 +30,7 @@
 <!-- VIDEO -->
 <div class="container-fluid container-video">
     <div class="container">
-        <h1 class="text-center mb-4 title-video" style="color: #7c83fd">
+        <h1 class="text-center mb-4 title-video" style="color: #7c83fd" id="video">
             ¡EduCalma desarrollo para el tiempo!
         </h1>
         <p class="col-12 text-center px-5 text-title-video" style="font-family: 'Poppins', sans-serif; color: #a2a2a2">
@@ -38,7 +38,7 @@
             violencia, el mañana pertenece a las personas que se preparan para hoy.
         </p>
         <div class="row">
-            <div class="col-12 col-md-8 my-2 container-video-educalma">
+            <div class="col-12 col-md-8 my-2 container-video-educalma"  >
                 <div class="video-youtube">
                     <iframe width="560" height="315" src="https://www.youtube.com/embed/ipm0g7LRT5Y?autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
