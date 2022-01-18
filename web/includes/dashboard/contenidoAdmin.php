@@ -8,6 +8,7 @@ ob_start();
 <head>
     <link rel="stylesheet" href="assets/css/plugins/bootstrap.min.css" />
     <link rel="stylesheet" href="includes/dist/css/adminlte.min.css">
+    <link rel="stylesheet" href="assets/css/styledash.css">
 </head>
 
 <!-- para listar y la paginacion de cursos -->
@@ -34,7 +35,6 @@ ob_start();
 
 ?>
 
-
 <!-- para listar y la paginacion de usuarios -->
 <?php
     $pdo4 = Database::connect();
@@ -42,154 +42,514 @@ ob_start();
     $q3 = $pdo4->prepare($sql3);
     $q3->execute();
     $usuarios = $q3->fetchAll(PDO::FETCH_ASSOC);
-
 ?>
 
 
+<!-- CODIGO NUEVO -->
 <main>
-    <!--tabla de curso -->
-    <div class="col-12 mt-5 text-center">
-        <div class="card">
-            <div class="card-header">
-                <h3 class="card-title">Listado de Cursos</h3>
-            </div>
-            <!-- /.card-header -->
-            <div class="card-body">
-                
-                <div class="table-responsive">
-                    <table id="tablaCursos" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
-                        <thead>
-                            <tr>
-                                <th>Nombre</th>
-                                <th>Categoría</th>
-                                <th>Público dirigido</th>
-                                <th>Imagen</th>
-                                <th>Descripción</th>
-                                <th>Precio</th>
-                                <th>Acciones</th>
-                            </tr>
-                        </thead>
-                        
-                        <tbody>
-                            
-                            <?php
-                            foreach ($curso as $curso) {
-                                $pdo4 = Database::connect();
-                                $idCate = $curso['categoriaCurso'];
-                                $sql4 = "SELECT * FROM categorias WHERE idCategoria = '$idCate'";
-                                $q4 = $pdo4->prepare($sql4);
-                                $q4->execute(array());
-                                $datoCate = $q4->fetch(PDO::FETCH_ASSOC);
-                                $dotocoto= $q4->fetchAll();
-                            ?>
-                                <tr>
-                                    <td><?php echo $curso['nombreCurso']; ?></td>
-                                    <td><?php echo $datoCate['nombreCategoria']; ?></td>
-                                    <td><?php echo $curso['dirigido']; ?></td>
-                                    <td><img style="height: 50px;" src="data:image/*;base64,<?php echo base64_encode($curso['imagenDestacadaCurso']) ?>"></td>
-                                    <!-- <td>imagen</td> -->
-                                    <td><?php echo substr($curso['descripcionCurso'],0,100)."..."; ?></td>
-                                    <td><?php echo $curso['costoCurso'];?></td>
-                                    <td>
-                                        <!--para editar curso-->
-                                        <a href="editarcurso.php?id=<?php echo $curso['idCurso']; ?>">
-                                            <button  class=" boton_edit" type="button"><i class="far fa-edit"></i></button>
-                                        </a>
-                                        <!-- para quitar curso -->
-                                        <a href="includes/Cursos_crud/Cursos_CRUD.php?id_eliminar=<?php echo $curso['idCurso']; ?>">
-                                            <button type="button"><i class="fas fa-trash-alt"></i></button>
-                                        </a>
-                                    </td>
-                                </tr>
-                            <?php }
-                            Database::disconnect();
-                            ?>
-                        </tbody>
-                    </table>
-                </div>
+        <!--tabla de curso -->
+        <div class="container-fluid">
+            <!-- sin container -->
+            <div class="row mt-5">
+                <div class="col-12">
+                    <div class="title">Administrar</div>
+                    <div id="accordion">
+                        <div class="row">
+                            <div class="col-12">
+                                <nav class="navbar navbar-expand">
+                                    <ul class="navbar-nav">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                por cursos
+                                            </a>
+                                        </li>
+                                        <li class="nav-item ">
+                                            <a class="nav-link " href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                por usuarios
+                                            </a>
+                                        </li>
+                                        <li class="nav-item ">
+                                            <a class="nav-link " href="#" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                                por empresas
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
 
-            </div>
-            <!-- /.card-body -->
-        </div>
-    </div>
-    
-    <!--tabla de usuarios -->
-    <div class="col-12 mt-5 text-center">
-        <div class="card">
-            <div class="card-header">
-                <h3 class="card-title">Listado de usuarios</h3>
-            </div>
-            <!-- /.card-header -->
-            <div class="card-body">
-                
-                <div class="table-responsive">
-                    <table id="tableUsuarios" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
-                        <thead>
-                            <tr>
-                                <th>Privilegio</th>
-                                <th>Nombres</th>
-                                <th>Apellidos</th>
-                                <th>Email</th>
-                                <th>Telefono</th>
-                                <th>N° documento</th>
-                                <th>Sexo</th>
-                                <th>Acciones</th>
-                            </tr>
-                        </thead>
-                        
-                        <tbody>
-                            
-                            <?php
-                            foreach ($usuarios as $usuarios) {
-                                $pdo4 = Database::connect();
-                                // para el privilegio
-                                $idPri = $usuarios['privilegio'];
-                                $sql6 = "SELECT * FROM privilegio WHERE id_privilegio = '$idPri'";
-                                $q6 = $pdo4->prepare($sql6);
-                                $q6->execute(array());
-                                $datoPrivi = $q6->fetch(PDO::FETCH_ASSOC);
-                                $dotoPrivilegio= $q6->fetchAll();
-                                // para el sexo
-                                $idSexo = $usuarios['sexo'];
-                                $sql7 = "SELECT * FROM sexo WHERE id_genero = '$idSexo'";
-                                $q7 = $pdo4->prepare($sql7);
-                                $q7->execute(array());
-                                $datoSexo = $q7->fetch(PDO::FETCH_ASSOC);
-                            ?>
-                                <tr>
-                                    <td><?php echo $datoPrivi['nombre_privilegio']; ?></td>
-                                    <td><?php echo $usuarios['nombres']; ?></td>
-                                    <td><?php echo $usuarios['apellido_pat']." ".$usuarios['apellido_mat']; ?></td>
-                                    <td><?php echo $usuarios['email']; ?></td>
-                                    <td><?php echo $usuarios['telefono']; ?></td>
-                                    <td><?php echo $usuarios['nro_doc']; ?></td>
-                                    <td><?php echo $datoSexo['nombre_genero']; ?></td>
-                                    <!-- <td><img style="height: 50px;" src="data:image/*;base64,<php echo base64_encode($usuarios['mifoto']) ?>"></td> -->
+                        <div class="col-12" id="headingOne">
+                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                                <div class="card mt-2">
+                                    <div class="card-header">
+                                        <div class="row mb-2">
+                                            <div class="col-12">
+                                                <h3 class="card-title">Cantidad de cursos
+                                                    <span style="color:#C1E1EE;">(20)</span>
+                                                </h3>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-12 col-md-7"></div>
+                                            <div class="col-12 col-md-5">
+                                                <div id="tablaCursos_filter" class="dataTables_filter">
+
+                                                    <!-- <input type="search " class="form-control form-control-sm " placeholder=" " aria-controls="tablaCursos "> -->
+
+                                                    <div class="input-group mb-3">
+                                                        <input type="search" class="form-control buscador" placeholder="Buscar" aria-controls="tablaCursos" aria-describedby="basic-addon2">
+                                                        <div class="input-group-append">
+                                                            <button type="button" class="btn btn-outline-dark border-left-0" style="border-color: #ced4da;border-radius: 0 50px 50px 0;">
+                                                                <i class="fas fa-search"></i>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- /.card-header -->
+                                    <div class="card-body"><div class="container">
+                                        <div class="table-responsive">
+                                            <table id="tablaCursos" class="table table-borderless dt-responsive text-center" cellspacing="0" width="100%">
+                                                <thead>
+                                                    <tr>
+                                                        <th style="border-radius: 10px 0 0 10px;">
+                                                            Imagen
+                                                        </th>
+                                                        <th scope="col">Nombre</th>
+                                                        <th>Descripción</th>
+                                                        <th>Categoría</th>
+                                                        <th>Dirigido</th>
+                                                        <th>Costo</th>
+                                                        <th>Publicado</th>
+                                                        <th style="border-radius: 0 10px 10px 0;">
+                                                            Acción
+                                                        </th>
+                                                    </tr>
+                                                </thead>
+
+                                                <tbody>
+
+                                                    <?php
+                                                    foreach ($curso as $curso) {
+                                                        $pdo4 = Database::connect();
+                                                        $idCate = $curso['categoriaCurso'];
+                                                        $sql4 = "SELECT * FROM categorias WHERE idCategoria = '$idCate'";
+                                                        $q4 = $pdo4->prepare($sql4);
+                                                        $q4->execute(array());
+                                                        $datoCate = $q4->fetch(PDO::FETCH_ASSOC);
+                                                        $dotocoto= $q4->fetchAll();
+                                                    ?>
+
+                                                    <tr>
+                                                        <td>
+                                                            <img style="height: 40px;" class="rounded-circle" src="data:image/*;base64,<?php echo base64_encode($curso['imagenDestacadaCurso']) ?>">
+                                                        </td>
+                                                        <td>
+                                                            <?php echo $curso['nombreCurso'];?>
+                                                        </td>
+                                                        <td>
+                                                            <?php echo substr($curso['descripcionCurso'],0,100)."..."; ?>
+                                                        </td>
+                                                        <td>
+                                                            <?php echo $datoCate['nombreCategoria'];?>-
+                                                        </td>
+                                                        <td>
+                                                            <?php echo $curso['dirigido'];?>
+                                                        </td>
+                                                        <td>
+                                                            <?php echo $curso['costoCurso'];?>
+                                                        </td>
+                                                        <td>lorem ipsum</td>
+                                                        <td>
+                                                            <!--para editar curso-->
+                                                            <div class="btn-group" role="group">
+                                                                <a href="editarcurso.php?id=<?php echo $curso['idCurso'];?>">
+                                                                    <button type="button" class="btn btn-edit">
+                                                                        <i class="far fa-edit"></i>
+                                                                    </button>
+                                                                </a>
+                                                            </div>
+                                                            <!-- para quitar curso -->
+                                                            <div class="btn-group" role="group">
+                                                                <a href="includes/Cursos_crud/Cursos_CRUD.php?id_eliminar=<?php echo $curso['idCurso'];?>">
+                                                                    <button type="button" class="btn btn-quitar">
+                                                                        <i class="fas fa-trash-alt"></i>
+                                                                    </button>
+                                                                </a>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+
+                                                    <?php }
+                                                    Database::disconnect();
+                                                    ?>
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <!-- /.card-body -->
+                                </div>
+                                <!-- fin tabla cursos -->
+
+                                <!-- paginador de cursos-->
+                                <div class="col-12">
+                                    <div class="row pag">
+                                        <nav>
+                                            <ul class="pagination mt-3">
+                                                <li class="page-item"><a class="page-link text-info" href="#">Anterior</a></li>
+                                                <li class="page-item"><a class="page-link text-info num" href="#">1</a></li>
+                                                <li class="page-item"><a class="page-link text-info" href="#">Siguiente</a></li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </div>
+                                <!--fin paginador -->
+
+                                    <!-- tablas (2) categorias  -->
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <h3 class="card-title mb-3">Cantidad de categorías
+                                                <span style="color:#C1E1EE;">(20)</span>
+                                            </h3>
+                                        </div>
+                                    </div>
                                     
-                                    <td>
-                                        <?php $idUsu = $usuarios['id_user']?>
-                                        <?php //echo $_SESSION['passSinHash'];?>
-                                        <!--para editar curso-->
-                                        <a href="#" data-toggle="modal" data-target="#modalAdmin" <?php echo "onclick='masInfoUser( $idUsu )'" ?>>
-                                            <button  class=" boton_edit" type="button"><i class="far fa-edit"></i></button>
-                                        </a>
-                                        <!-- para quitar curso -->
-                                        <a href="includes/usersidebar/actualizar_perfil.php?id_eliminar=<?php echo $usuarios['id_user']; ?>">
-                                            <button type="button"><i class="fas fa-trash-alt"></i></button>
-                                        </a>
-                                    </td>
-                                </tr>
-                            <?php }
-                            Database::disconnect();
-                            ?>
-                        </tbody>
-                    </table>
+                                    <div class="row">
+                                        <!-- tabla añadir categorias -->
+                                        <div class="col-12 col-md-6">
+                                            <div class="card t-categ">
+                                                <div class="card-body">
+                                                    <div class="table-responsive">
+                                                        <table id="" class="table table-borderless text-center dt-responsive text-center" cellspacing="0 " width="100%">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th style="border-radius:10px;">
+                                                                        nombre de categoría
+                                                                    </th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>
+                                                                        <input class="form-control" placeholder="Ingrese nombre de categoría">
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>
+                                                                        <input class="btn btn-block btn-categ" type="button" value="añadir">
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>
+                                                                        <input class="btn btn-block btn-categ" type="reset" value="limpiar">
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                                <!-- /.card-body -->
+                                            </div>
+                                        </div>
+                                        <!-- tabla fin añadir categorias -->
+
+                                        <!-- tabla accion categorias -->
+                                        <div class="col-12 col-md-6">
+                                            <div class="card pt-0">
+                                                <div class="card-body">
+                                                    <div class="table-responsive">
+                                                        <table id="" class="table table-borderless text-center dt-responsive text-center" cellspacing="0" width="100%">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th style="border-radius: 10px 0 0 10px;">
+                                                                        nombre de categoría
+                                                                    </th>
+                                                                    <th style="border-radius:0 10px 10px 0;">
+                                                                        acción
+                                                                    </th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>
+                                                                        LOREM IPSUM
+                                                                    </td>
+                                                                    <td>
+                                                                        <!--para editar categoría-->
+                                                                        <div class="btn-group" role="group">
+                                                                            <a href="">
+                                                                                <button type="button" class="btn btn-edit">
+                                                                                    <i class="far fa-edit"></i>
+                                                                                </button>
+                                                                            </a>
+                                                                        </div>
+                                                                        <!-- para quitar categoría -->
+                                                                        <div class="btn-group" role="group">
+                                                                            <a href="">
+                                                                                <button type="button" class="btn btn-quitar">
+                                                                                    <i class="fas fa-trash-alt"></i>
+                                                                                </button>
+                                                                            </a>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                                <!-- /.card-body -->
+                                            </div>
+                                        </div>
+                                        <!-- tabla fin accion categorias -->
+
+                                    </div>
+                                    <!-- paginador de categorías-->
+                                    <div class="col-12">
+                                        <div class="row pag">
+                                            <nav>
+                                                <ul class="pagination mt-3">
+                                                    <li class="page-item"><a class="page-link text-info" href="#">Anterior</a></li>
+                                                    <li class="page-item"><a class="page-link text-info num" href="#">1</a></li>
+                                                    <li class="page-item"><a class="page-link text-info" href="#">Siguiente</a></li>
+                                                </ul>
+                                            </nav>
+                                        </div>
+                                    </div>
+                                    <!--fin paginador -->
+                                </div>
+                            </div>
+                            <!-- fin tablas categorias -->
+
+                            <!-- TABLA DE USUARIOS  -->
+                            <div id="headingTwo">
+                                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <div class="row mb-2">
+                                                <div class="col-12">
+                                                    <h3 class="card-title">Cantidad de usuarios
+                                                        <span style="color:#C1E1EE;">(20)</span>
+                                                    </h3>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-12 col-md-7"></div>
+                                                <div class="col-12 col-md-5">
+                                                    <div id="" class="">
+                                                        <div class="input-group mb-3">
+                                                            <input type="search" class="form-control buscador" placeholder="Buscar" aria-controls="" aria-describedby="basic-addon2">
+                                                            <div class="input-group-append">
+                                                                <button type="button" class="btn btn-outline-dark border-left-0" style="border-color: #ced4da;border-radius: 0 50px 50px 0;">
+                                                                    <i class="fas fa-search"></i>
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="table-responsive">
+                                                <table id="tableUsuarios" class="table table-borderless dt-responsive nowrap text-center" cellspacing="0" width="100%">
+                                                    <thead>
+                                                        <tr>
+                                                            <th style="border-radius: 10px 0 0 10px;">
+                                                                Privilegio
+                                                            </th>
+                                                            <th>Nombres</th>
+                                                            <th>Apellidos</th>
+                                                            <th>email</th>
+                                                            <th>teléfono</th>
+                                                            <th>n° documento</th>
+                                                            <th>sexo</th>
+                                                            <th style="border-radius: 0 10px 10px 0;">
+                                                                Acción
+                                                            </th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+
+                                                        <?php
+                                                        foreach ($usuarios as $usuarios) {
+                                                            $pdo4 = Database::connect();
+                                                            // para el privilegio
+                                                            $idPri = $usuarios['privilegio'];
+                                                            $sql6 = "SELECT * FROM privilegio WHERE id_privilegio = '$idPri'";
+                                                            $q6 = $pdo4->prepare($sql6);
+                                                            $q6->execute(array());
+                                                            $datoPrivi = $q6->fetch(PDO::FETCH_ASSOC);
+                                                            $dotoPrivilegio= $q6->fetchAll();
+                                                            // para el sexo
+                                                            $idSexo = $usuarios['sexo'];
+                                                            $sql7 = "SELECT * FROM sexo WHERE id_genero = '$idSexo'";
+                                                            $q7 = $pdo4->prepare($sql7);
+                                                            $q7->execute(array());
+                                                            $datoSexo = $q7->fetch(PDO::FETCH_ASSOC);
+                                                        ?>
+
+                                                        <tr>
+                                                            <td><?php echo $datoPrivi['nombre_privilegio']; ?></td>
+                                                            <td><?php echo $usuarios['nombres']; ?></td>
+                                                            <td><?php echo $usuarios['apellido_pat']." ".$usuarios['apellido_mat']; ?></td>
+                                                            <td><?php echo $usuarios['email']; ?></td>
+                                                            <td ><?php echo $usuarios['telefono']; ?></td>
+                                                            <td><?php echo $usuarios['nro_doc']; ?></td>
+                                                            <td><?php echo $datoSexo['nombre_genero']; ?></td>
+                                                            <!-- <td><img style="height: 50px;" src="data:image/*;base64,<php echo base64_encode($usuarios[ 'mifoto']) ?>"></td> -->
+                                                            <td>
+                                                                <?php $idUsu = $usuarios['id_user']?>
+                                                                <!--para editar usuario-->
+                                                                <div class="btn-group" role="group">
+                                                                    <a href="#" data-toggle="modal" data-target="#modalAdmin" <?php echo "onclick='masInfoUser( $idUsu )'"?>>
+                                                                        <button type="button" class="btn btn-edit">
+                                                                            <i class="far fa-edit"></i>
+                                                                        </button>
+                                                                    </a>
+                                                                </div>
+                                                                <!-- para quitar usuario -->
+                                                                <div class="btn-group" role="group">
+                                                                    <a href="includes/usersidebar/actualizar_perfil.php?id_eliminar=<?php echo $usuarios['id_user'];?>">
+                                                                        <button type="button" class="btn btn-quitar">
+                                                                            <i class="fas fa-trash-alt"></i>
+                                                                        </button>
+                                                                    </a>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+
+                                                        <?php }
+                                                        Database::disconnect();
+                                                        ?>
+
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <!-- /.card-body -->
+                                    </div>
+                                    <!-- paginador de usuarios-->
+                                    <div class="col-12">
+                                        <div class="row pag">
+                                            <nav>
+                                                <ul class="pagination mt-3">
+                                                    <li class="page-item"><a class="page-link text-info" href="#">Anterior</a></li>
+                                                    <li class="page-item"><a class="page-link text-info num" href="#">1</a></li>
+                                                    <li class="page-item"><a class="page-link text-info" href="#">Siguiente</a></li>
+                                                </ul>
+                                            </nav>
+                                        </div>
+                                    </div>
+                                    <!--fin paginador -->
+                                </div>
+                            </div>
+                            <!-- FIN NUEVA TABLA USUARIO -->
+
+                            <!-- Tabla empresas -->
+                            <div id="headingThree">
+                                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <div class="row mb-2">
+                                                <div class="col-12">
+                                                    <h3 class="card-title">Cantidad de empresas
+                                                        <span style="color:#C1E1EE;">(20)</span>
+                                                    </h3>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-12 col-md-7"></div>
+                                                <div class="col-12 col-md-5">
+                                                    <div id="" class="">
+                                                        <div class="input-group mb-3">
+                                                            <input type="search" class="form-control buscador" placeholder="Buscar" aria-controls="" aria-describedby="basic-addon2">
+                                                            <div class="input-group-append">
+                                                                <button type="button" class="btn btn-outline-dark border-left-0" style="border-color: #ced4da;border-radius: 0 50px 50px 0;">
+                                                                    <i class="fas fa-search"></i>
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- /.card-header -->
+                                        <div class="card-body">
+                                            <div class="table-responsive">
+                                                <table id="" class="table table-borderless dt-responsive text-center" cellspacing="0" width="100%">
+                                                    <thead>
+                                                        <tr>
+                                                            <th style="border-radius: 10px 0 0 10px;">
+                                                                lorem
+                                                            </th>
+                                                            <th>lorem</th>
+                                                            <th>lorem</th>
+                                                            <th>lorem</th>
+                                                            <th>lorem</th>
+                                                            <th>lorem</th>
+                                                            <th style="border-radius: 0 10px 10px 0;">
+                                                                lorem
+                                                            </th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>lorem ipsum</td>
+                                                            <td>lorem ipsum</td>
+                                                            <td>lorem ipsum</td>
+                                                            <td>lorem ipsum</td>
+                                                            <td>lorem ipsum</td>
+                                                            <td>lorem ipsum</td>
+                                                            <td>
+                                                                <!--para editar empresa-->
+                                                                <div class="btn-group" role="group">
+                                                                    <a href="#">
+                                                                        <button type="button" class="btn btn-edit">
+                                                                            <i class="far fa-edit"></i>
+                                                                        </button>
+                                                                    </a>
+                                                                </div>
+                                                                <!-- para quitar empresa -->
+                                                                <div class="btn-group" role="group">
+                                                                    <a href="#">
+                                                                        <button type="button" class="btn btn-quitar">
+                                                                            <i class="fas fa-trash-alt"></i>
+                                                                        </button>
+                                                                    </a>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <!-- /.card-body -->
+                                    </div>
+                                    <!-- paginador de empresas-->
+                                    <div class="col-12">
+                                        <div class="row pag">
+                                            <nav>
+                                                <ul class="pagination mt-3">
+                                                    <li class="page-item"><a class="page-link text-info" href="#">Anterior</a></li>
+                                                    <li class="page-item"><a class="page-link text-info num" href="#">1</a></li>
+                                                    <li class="page-item"><a class="page-link text-info" href="#">Siguiente</a></li>
+                                                </ul>
+                                            </nav>
+                                        </div>
+                                    </div>
+                                    <!--fin paginador -->
+                                </div>
+                                <!-- fin tabla empresas -->
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <!-- /.card-body -->
-        </div>
-    </div>
 
+            
     <!-- --MODAL USER -->
     <div class="modal fade" id="modalAdmin" style="overflow:hidden;">
         <div class="modal-dialog modal-dialog-scrollable modal-lg">
@@ -326,14 +686,14 @@ ob_start();
             </div>
         </div>
     </div>
+    <!-- fin modal -->
 
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
+            <br>
+            <br>
+            <br>
 
-</main>
+    </main>
+<!-- FIN CODIGO NUEVO -->
 
 <!-- <script src="./assets/js/Validator.js"></script>
 <script src="./assets/js/sidebarEditar.js"></script> -->
