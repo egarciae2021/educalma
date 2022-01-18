@@ -383,6 +383,7 @@ border-radius: 10px;
     font-weight: bold;
     font-size: .8rem;
     padding: .5rem;
+    height: 55px;
 }
 
 .container-fluid .container-card-course .row .col-12 .card .container-card-description {
@@ -397,6 +398,7 @@ border-radius: 10px;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
+    height: 39px;
 }
 
 .container-fluid .container-card-course .row .col-12 .card .container-card-link {
