@@ -23,6 +23,8 @@ ob_start();
     <script src="./assets/js/plugins//popper.min.js"></script>
     <script src="./assets/js/plugins/bootstrap.min.js"></script>
     <script src="./assets/js/plugins/sweetalert2.all.min.js"></script>
+    <script src="./assets/js/validarRegisCateg.js"></script>
+    <script src="./assets/js/home.js"></script>
 
     <script src="./assets/js/main.js"></script>
     <!-- DataTables  & Plugins -->

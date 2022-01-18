@@ -18,7 +18,7 @@ require_once '../../database/databaseConection.php';
     echo'
         <script>
             
-            window.location = "../../agregarCategorias.php";
+            window.location = "../../user-sidebar.php";
         </script>
     ';
 

@@ -11,7 +11,7 @@ ob_start();
     <link rel="stylesheet" href="assets/css/styledash.css">
 </head>
 
-<!-- para listar y la paginacion de cursos -->
+<!-- para lista de cursos -->
 <?php
     $pdo3 = Database::connect();
 
@@ -35,7 +35,7 @@ ob_start();
 
 ?>
 
-<!-- para listar y la paginacion de usuarios -->
+<!-- para lista de usuarios -->
 <?php
     $pdo4 = Database::connect();
     $sql3 = "SELECT * FROM usuarios where estado=1 order by id_user DESC";
@@ -78,6 +78,15 @@ ob_start();
                             </div>
                         </div>
 
+                        <?php
+                        $pdo3 = Database::connect();
+
+                        $sqlCur = "SELECT COUNT(*) AS cantidad FROM cursos WHERE permisoCurso = 1;";
+                        $qCur = $pdo3->prepare($sqlCur);
+                        $qCur->execute(array());
+                        $resultCurs = $qCur->fetch(PDO::FETCH_ASSOC);
+                        ?>
+
                         <div class="col-12" id="headingOne">
                             <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
                                 <div class="card mt-2">
@@ -85,7 +94,7 @@ ob_start();
                                         <div class="row mb-2">
                                             <div class="col-12">
                                                 <h3 class="card-title">Cantidad de cursos
-                                                    <span style="color:#C1E1EE;">(20)</span>
+                                                    <span style="color:#C1E1EE;">(<?php echo $resultCurs['cantidad']; ?>))</span>
                                                 </h3>
                                             </div>
                                         </div>
@@ -162,7 +171,9 @@ ob_start();
                                                         <td>
                                                             <?php echo $curso['costoCurso'];?>
                                                         </td>
-                                                        <td>lorem ipsum</td>
+                                                        <td>
+                                                            <?php echo $curso['fechaPulicacion'];?>
+                                                        </td>
                                                         <td>
                                                             <!--para editar curso-->
                                                             <div class="btn-group" role="group">
@@ -208,12 +219,21 @@ ob_start();
                                     </div>
                                 </div>
                                 <!--fin paginador -->
+                                    <?php
+                                    $pdo3 = Database::connect();
+
+                                    $sql3 = "SELECT COUNT(*) AS cantidad FROM categorias";
+                                    $q3 = $pdo3->prepare($sql3);
+                                    $q3->execute(array());
+                                    $resultCa = $q3->fetch(PDO::FETCH_ASSOC);
+
+                                    ?>
 
                                     <!-- tablas (2) categorias  -->
                                     <div class="row">
                                         <div class="col-12">
                                             <h3 class="card-title mb-3">Cantidad de categorías
-                                                <span style="color:#C1E1EE;">(20)</span>
+                                                <span style="color:#C1E1EE;">(<?php echo $resultCa['cantidad']; ?>)</span>
                                             </h3>
                                         </div>
                                     </div>
@@ -224,32 +244,34 @@ ob_start();
                                             <div class="card t-categ">
                                                 <div class="card-body">
                                                     <div class="table-responsive">
-                                                        <table id="" class="table table-borderless text-center dt-responsive text-center" cellspacing="0 " width="100%">
-                                                            <thead>
-                                                                <tr>
-                                                                    <th style="border-radius:10px;">
-                                                                        nombre de categoría
-                                                                    </th>
-                                                                </tr>
-                                                            </thead>
-                                                            <tbody>
-                                                                <tr>
-                                                                    <td>
-                                                                        <input class="form-control" placeholder="Ingrese nombre de categoría">
-                                                                    </td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>
-                                                                        <input class="btn btn-block btn-categ" type="button" value="añadir">
-                                                                    </td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>
-                                                                        <input class="btn btn-block btn-categ" type="reset" value="limpiar">
-                                                                    </td>
-                                                                </tr>
-                                                            </tbody>
-                                                        </table>
+                                                        <form id="formRegis" action="includes/categorias/checkAgrCateg.php" target="dummyframe" method="POST" onsubmit="return comprobarCategoria()" style="padding:0;"> 
+                                                            <table id="" class="table table-borderless text-center dt-responsive text-center" cellspacing="0 " width="100%">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th style="border-radius:10px;">
+                                                                            nombre de categoría
+                                                                        </th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <input class="form-control" type="text" id="categoria_agregar" name="categoria_agregar"   aria-describedby="temaAgr-addon" placeholder="Ingrese nombre de categoría" required>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <button type="submit" id="categoria_agregar" class="btn btn-block btn-categ"> Agregar</button>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <input class="btn btn-block btn-categ" type="reset" value="limpiar">
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </form>
                                                     </div>
                                                 </div>
                                                 <!-- /.card-body -->
@@ -274,29 +296,71 @@ ob_start();
                                                                 </tr>
                                                             </thead>
                                                             <tbody>
-                                                                <tr>
-                                                                    <td>
-                                                                        LOREM IPSUM
-                                                                    </td>
-                                                                    <td>
-                                                                        <!--para editar categoría-->
-                                                                        <div class="btn-group" role="group">
-                                                                            <a href="">
-                                                                                <button type="button" class="btn btn-edit">
-                                                                                    <i class="far fa-edit"></i>
-                                                                                </button>
-                                                                            </a>
-                                                                        </div>
-                                                                        <!-- para quitar categoría -->
-                                                                        <div class="btn-group" role="group">
-                                                                            <a href="">
-                                                                                <button type="button" class="btn btn-quitar">
-                                                                                    <i class="fas fa-trash-alt"></i>
-                                                                                </button>
-                                                                            </a>
-                                                                        </div>
-                                                                    </td>
-                                                                </tr>
+                                                                <?php
+                                                                $pdo3 = Database::connect();
+
+                                                                $sql3 = "SELECT * FROM categorias ";
+                                                                $q3 = $pdo3->prepare($sql3);
+                                                                $q3->execute();
+                                                                while ($dato3 = $q3->fetch(PDO::FETCH_ASSOC)) {
+                                                                ?>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <input type="text" value="<?php echo $dato3['nombreCategoria'] ?>" aria-label="Recipient's username with two button addons" style="text-align:center;border:0;background:none;" disabled>
+                                                                        </td>
+                                                                        <td>
+                                                                            <!--para editar categoría-->
+                                                                            <div class="btn-group" role="group">
+                                                                                <a>
+                                                                                    <button class="btn btn-edit" nombre="categoria_editar" type="button" data-toggle="modal" data-target="#ModalCategoria<?php echo $dato3['idCategoria']; ?>">
+                                                                                    <i class='fas fa-edit'></i></button>
+                                                                                </a>  
+                                                                            </div>
+                                                                            <!-- para quitar categoría -->
+                                                                            <div class="btn-group" role="group">
+                                                                                <a id="eliminar_categoria" href="#" data-id="<?php echo $dato3['idCategoria'] ?>">
+                                                                                    <button class="btn btn-quitar" type="button">
+                                                                                    <i class="fas fa-trash-alt"></i></button>
+                                                                                </a>
+                                                                            </div>
+
+                                                                            <!--/----------------------------------------MODAL EDITAR ---------------------------------------------------->
+                                                                            <div class="modal fade" id="ModalCategoria<?php echo $dato3['idCategoria']; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                                                <div class="modal-dialog">
+                                                                                    <div class="modal-content">
+                                                                                        <div class="modal-header">
+                                                                                            <h4>Editar Categoria</h4>
+                                                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                                            <span aria-hidden="true">&times;</span>
+                                                                                            </button>
+                                                                                        </div>
+                                                                                        <div>
+                                                                                            <form id="formCatEditar" method="post" action="includes/categorias/checkEditCateg.php">
+                                                                                                
+                                                                                                    <div class="modal-body ">
+                                                                                                        
+                                                                                                        <input type="text" id="idCategoria" name="idCategoria" class="form-control" value="<?php echo $dato3['idCategoria']; ?>" style="display: none;" />
+                                                                                                        <div class="form-group" style="padding: 0px;">
+                                                                                                            <label class="col-form-label">CATEGORIA</label>
+                                                                                                            <input type="text" placeholder="Categoria" id="nombreCategoria" name="nombreCategoria" class="form-control" value="<?php echo $dato3['nombreCategoria']; ?>" required />
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                    <div class="modal-footer">
+                                                                                                        <button type="submit"  class="btn btn-primary">Guardar</button>
+                                                                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                                                                                                    </div>
+                                                                                            </form>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+
+                                                                        </td>
+                                                                    </tr>
+                                                                <?php
+                                                                }
+                                                                Database::disconnect();
+                                                                ?>
                                                             </tbody>
                                                         </table>
                                                     </div>
@@ -324,6 +388,16 @@ ob_start();
                             </div>
                             <!-- fin tablas categorias -->
 
+                            <?php
+                            $pdo3 = Database::connect();
+
+                            $sqlUsu = "SELECT COUNT(*) AS cantidad FROM usuarios WHERE estado = 1";
+                            $qUsua = $pdo3->prepare($sqlUsu);
+                            $qUsua->execute(array());
+                            $resultUsu = $qUsua->fetch(PDO::FETCH_ASSOC);
+
+                            ?>
+
                             <!-- TABLA DE USUARIOS  -->
                             <div id="headingTwo">
                                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
@@ -332,7 +406,7 @@ ob_start();
                                             <div class="row mb-2">
                                                 <div class="col-12">
                                                     <h3 class="card-title">Cantidad de usuarios
-                                                        <span style="color:#C1E1EE;">(20)</span>
+                                                        <span style="color:#C1E1EE;">(<?php echo $resultUsu['cantidad']; ?>)</span>
                                                     </h3>
                                                 </div>
                                             </div>
