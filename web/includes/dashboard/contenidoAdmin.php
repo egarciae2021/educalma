@@ -119,9 +119,9 @@ ob_start();
                                         </div>
                                     </div>
                                     <!-- /.card-header -->
-                                    <div class="card-body"><div class="container">
+                                    <div class="card-body"><div class=" ">
                                         <div class="table-responsive">
-                                            <table id="tablaCursos" class="table table-borderless dt-responsive text-center" cellspacing="0" width="100%">
+                                            <table id="tablaCursos" class="table table-borderless dt-responsive text-left" cellspacing="0" width="100%">
                                                 <thead>
                                                     <tr>
                                                         <th style="border-radius: 10px 0 0 10px;">
