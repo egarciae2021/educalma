@@ -78,15 +78,15 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
               </div>
             </div>
 
+            
             <?php
             $pdo3 = Database::connect();
-
             $sqlCur = "SELECT COUNT(*) AS cantidad FROM cursos WHERE permisoCurso = 1;";
             $qCur = $pdo3->prepare($sqlCur);
             $qCur->execute(array());
             $resultCurs = $qCur->fetch(PDO::FETCH_ASSOC);
             ?>
-
+            <!-- TABLA DE CURSOS  -->
             <div class="col-12" id="headingOne">
               <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
                 <div class="card mt-2">
@@ -205,8 +205,7 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                     </div>
                     <!-- /.card-body -->
                   </div>
-                  <!-- fin tabla cursos -->
-
+                  <!-- fin tabla cursos --> 
                   <!-- paginador de cursos-->
                   <div class="col-12">
                     <div class="row pag">
@@ -219,17 +218,14 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                       </nav>
                     </div>
                   </div>
-                  <!--fin paginador -->
+                  <!--fin paginador --> 
                   <?php
-                  $pdo3 = Database::connect();
-
+                  $pdo3 = Database::connect(); 
                   $sql3 = "SELECT COUNT(*) AS cantidad FROM categorias";
                   $q3 = $pdo3->prepare($sql3);
                   $q3->execute(array());
-                  $resultCa = $q3->fetch(PDO::FETCH_ASSOC);
-
-                  ?>
-
+                  $resultCa = $q3->fetch(PDO::FETCH_ASSOC); 
+                  ?> 
                   <!-- tablas (2) categorias  -->
                   <div class="row">
                     <div class="col-12">
@@ -237,8 +233,7 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                         <span style="color:#C1E1EE;">(<?php echo $resultCa['cantidad']; ?>)</span>
                       </h3>
                     </div>
-                  </div>
-
+                  </div> 
                   <div class="row">
                     <!-- tabla añadir categorias -->
                     <div class="col-12 col-md-6">
@@ -386,56 +381,60 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                   </div>
                   <!--fin paginador -->
                 </div>
+                
               </div>
-              <!-- fin tablas categorias -->
+            </div>
+            <!-- FIN DE TABLA DE CURSOS -->
 
-              <?php
-              $pdo3 = Database::connect();
 
-              $sqlUsu = "SELECT COUNT(*) AS cantidad FROM usuarios WHERE estado = 1";
-              $qUsua = $pdo3->prepare($sqlUsu);
-              $qUsua->execute(array());
-              $resultUsu = $qUsua->fetch(PDO::FETCH_ASSOC);
 
-              ?>
 
-              <!-- TABLA DE USUARIOS  -->
-              <div id="headingTwo">
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-                  <div class="card">
-                    <div class="card-header">
-                      <div class="row mb-2">
-                        <div class="col-12">
-                          <h3 class="card-title">Cantidad de usuarios
-                            <span style="color:#C1E1EE;">(<?php echo $resultUsu['cantidad']; ?>)</span>
-                          </h3>
-                        </div>
+            <?php
+            $pdo3 = Database::connect();
+            $sqlUsu = "SELECT COUNT(*) AS cantidad FROM usuarios WHERE estado = 1";
+            $qUsua = $pdo3->prepare($sqlUsu);
+            $qUsua->execute(array());
+            $resultUsu = $qUsua->fetch(PDO::FETCH_ASSOC);
+            ?>
+            <!-- TABLA DE USUARIOS  -->
+            <div id="headingTwo" class="col-12">
+              <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                <div class="card mt-2">
+                  <div class="card-header">
+                    <div class="row mb-2">
+                      <div class="col-12">
+                        <h3 class="card-title">Cantidad de usuarios
+                          <span style="color:#C1E1EE;">(<?php echo $resultUsu['cantidad']; ?>)</span>
+                        </h3>
                       </div>
-                      <div class="row">
-                        <div class="col-12 col-md-7"></div>
-                        <div class="col-12 col-md-5">
-                          <div id="" class="">
-                            <div class="input-group mb-3">
-                              <input type="search" class="form-control buscador" placeholder="Buscar" aria-controls="" aria-describedby="basic-addon2">
-                              <div class="input-group-append">
-                                <button type="button" class="btn btn-outline-dark border-left-0" style="border-color: #ced4da;border-radius: 0 50px 50px 0;">
-                                  <i class="fas fa-search"></i>
-                                </button>
-                              </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12 col-md-7"></div>
+                      <div class="col-12 col-md-5">
+                        <div id="tableUsuarios_filter" class="dataTables_filter">
+                          <div class="input-group mb-3">
+                            <input type="search" class="form-control buscador" placeholder="Buscar" aria-controls="tableUsuarios" aria-describedby="basic-addon2">
+                            <div class="input-group-append">
+                              <button type="button" class="btn btn-outline-dark border-left-0" style="border-color: #ced4da;border-radius: 0 50px 50px 0;">
+                                <i class="fas fa-search"></i>
+                              </button>
                             </div>
                           </div>
                         </div>
                       </div>
                     </div>
-                    <div class="card-body">
+                  </div>
+
+                  <div class="card-body">
+                    <div>
                       <div class="table-responsive">
-                        <table id="tableUsuarios" class="table table-borderless dt-responsive nowrap text-center" cellspacing="0" width="100%">
+                        <table id="tableUsuarios" class="table table-borderless dt-responsive  text-left" cellspacing="0" width="100%">
                           <thead>
                             <tr>
                               <th style="border-radius: 10px 0 0 10px;">
                                 Privilegio
                               </th>
-                              <th>Nombres</th>
+                              <th scope="col">Nombres</th>
                               <th>Apellidos</th>
                               <th>email</th>
                               <th>teléfono</th>
@@ -479,11 +478,21 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                                   <?php $idUsu = $usuarios['id_user'] ?>
                                   <!--para editar usuario-->
                                   <div class="btn-group" role="group">
-                                    <a href="#" data-toggle="modal" data-target="#modalAdmin" <?php echo "onclick='masInfoUser( $idUsu )'" ?>>
+                                    <!-- <a href="#" data-toggle="modal" data-target="#modalAdmin"
+                                     <?php // echo "onclick='masInfoUser( $idUsu )'" 
+                                      ?>>
+                                      <button type="button" class="btn btn-edit">
+                                        <i class="far fa-edit"></i>
+                                      </button>
+                                    </a> -->
+
+                                    <a href="">
                                       <button type="button" class="btn btn-edit">
                                         <i class="far fa-edit"></i>
                                       </button>
                                     </a>
+
+
                                   </div>
                                   <!-- para quitar usuario -->
                                   <div class="btn-group" role="group">
@@ -504,6 +513,7 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                         </table>
                       </div>
                     </div>
+
                     <!-- /.card-body -->
                   </div>
                   <!-- paginador de usuarios-->
@@ -521,105 +531,109 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                   <!--fin paginador -->
                 </div>
               </div>
-              <!-- FIN NUEVA TABLA USUARIO -->
+            </div>
+            <!-- FIN DE TABLA DE USUARIO -->
 
-              <!-- Tabla empresas -->
-              <div id="headingThree">
-                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-                  <div class="card">
-                    <div class="card-header">
-                      <div class="row mb-2">
-                        <div class="col-12">
-                          <h3 class="card-title">Cantidad de empresas
-                            <span style="color:#C1E1EE;">(20)</span>
-                          </h3>
-                        </div>
+
+
+
+            <!-- TABLA DE EMPRESAS -->
+            <div id="headingThree">
+              <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                <div class="card">
+                  <div class="card-header">
+                    <div class="row mb-2">
+                      <div class="col-12">
+                        <h3 class="card-title">Cantidad de empresas
+                          <span style="color:#C1E1EE;">(20)</span>
+                        </h3>
                       </div>
-                      <div class="row">
-                        <div class="col-12 col-md-7"></div>
-                        <div class="col-12 col-md-5">
-                          <div id="" class="">
-                            <div class="input-group mb-3">
-                              <input type="search" class="form-control buscador" placeholder="Buscar" aria-controls="" aria-describedby="basic-addon2">
-                              <div class="input-group-append">
-                                <button type="button" class="btn btn-outline-dark border-left-0" style="border-color: #ced4da;border-radius: 0 50px 50px 0;">
-                                  <i class="fas fa-search"></i>
-                                </button>
-                              </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12 col-md-7"></div>
+                      <div class="col-12 col-md-5">
+                        <div id="" class="">
+                          <div class="input-group mb-3">
+                            <input type="search" class="form-control buscador" placeholder="Buscar" aria-controls="" aria-describedby="basic-addon2">
+                            <div class="input-group-append">
+                              <button type="button" class="btn btn-outline-dark border-left-0" style="border-color: #ced4da;border-radius: 0 50px 50px 0;">
+                                <i class="fas fa-search"></i>
+                              </button>
                             </div>
                           </div>
                         </div>
                       </div>
                     </div>
-                    <!-- /.card-header -->
-                    <div class="card-body">
-                      <div class="table-responsive">
-                        <table id="" class="table table-borderless dt-responsive text-center" cellspacing="0" width="100%">
-                          <thead>
-                            <tr>
-                              <th style="border-radius: 10px 0 0 10px;">
-                                lorem
-                              </th>
-                              <th>lorem</th>
-                              <th>lorem</th>
-                              <th>lorem</th>
-                              <th>lorem</th>
-                              <th>lorem</th>
-                              <th style="border-radius: 0 10px 10px 0;">
-                                lorem
-                              </th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <td>lorem ipsum</td>
-                              <td>lorem ipsum</td>
-                              <td>lorem ipsum</td>
-                              <td>lorem ipsum</td>
-                              <td>lorem ipsum</td>
-                              <td>lorem ipsum</td>
-                              <td>
-                                <!--para editar empresa-->
-                                <div class="btn-group" role="group">
-                                  <a href="#">
-                                    <button type="button" class="btn btn-edit">
-                                      <i class="far fa-edit"></i>
-                                    </button>
-                                  </a>
-                                </div>
-                                <!-- para quitar empresa -->
-                                <div class="btn-group" role="group">
-                                  <a href="#">
-                                    <button type="button" class="btn btn-quitar">
-                                      <i class="fas fa-trash-alt"></i>
-                                    </button>
-                                  </a>
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                    </div>
-                    <!-- /.card-body -->
                   </div>
-                  <!-- paginador de empresas-->
-                  <div class="col-12">
-                    <div class="row pag">
-                      <nav>
-                        <ul class="pagination mt-3">
-                          <li class="page-item"><a class="page-link text-info" href="#">Anterior</a></li>
-                          <li class="page-item"><a class="page-link text-info num" href="#">1</a></li>
-                          <li class="page-item"><a class="page-link text-info" href="#">Siguiente</a></li>
-                        </ul>
-                      </nav>
+                  <!-- /.card-header -->
+                  <div class="card-body">
+                    <div class="table-responsive">
+                      <table id="" class="table table-borderless dt-responsive text-center" cellspacing="0" width="100%">
+                        <thead>
+                          <tr>
+                            <th style="border-radius: 10px 0 0 10px;">
+                              lorem
+                            </th>
+                            <th>lorem</th>
+                            <th>lorem</th>
+                            <th>lorem</th>
+                            <th>lorem</th>
+                            <th>lorem</th>
+                            <th style="border-radius: 0 10px 10px 0;">
+                              lorem
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>lorem ipsum</td>
+                            <td>lorem ipsum</td>
+                            <td>lorem ipsum</td>
+                            <td>lorem ipsum</td>
+                            <td>lorem ipsum</td>
+                            <td>lorem ipsum</td>
+                            <td>
+                              <!--para editar empresa-->
+                              <div class="btn-group" role="group">
+                                <a href="#">
+                                  <button type="button" class="btn btn-edit">
+                                    <i class="far fa-edit"></i>
+                                  </button>
+                                </a>
+                              </div>
+                              <!-- para quitar empresa -->
+                              <div class="btn-group" role="group">
+                                <a href="#">
+                                  <button type="button" class="btn btn-quitar">
+                                    <i class="fas fa-trash-alt"></i>
+                                  </button>
+                                </a>
+                              </div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
                     </div>
                   </div>
-                  <!--fin paginador -->
+                  <!-- /.card-body -->
                 </div>
-                <!-- fin tabla empresas -->
+                <!-- paginador de empresas-->
+                <div class="col-12">
+                  <div class="row pag">
+                    <nav>
+                      <ul class="pagination mt-3">
+                        <li class="page-item"><a class="page-link text-info" href="#">Anterior</a></li>
+                        <li class="page-item"><a class="page-link text-info num" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link text-info" href="#">Siguiente</a></li>
+                      </ul>
+                    </nav>
+                  </div>
+                </div>
+                <!--fin paginador -->
               </div>
+              <!-- fin tabla empresas -->
             </div>
+            <!-- FIN DE TABLA DE EMPRESAS -->
           </div>
         </div>
       </div>
