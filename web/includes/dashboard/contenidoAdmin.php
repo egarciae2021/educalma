@@ -94,7 +94,7 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                     <div class="row mb-2">
                       <div class="col-12">
                         <h3 class="card-title">Cantidad de cursos
-                          <span style="color:#C1E1EE;">(<?php echo $resultCurs['cantidad']; ?>))</span>
+                          <span style="color:#C1E1EE;">(<?php echo $resultCurs['cantidad']; ?>)</span>
                         </h3>
                       </div>
                     </div>
@@ -292,12 +292,37 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                                 </tr>
                               </thead>
                               <tbody>
-                                <?php
+
+                              <?php
                                 $pdo3 = Database::connect();
 
-                                $sql3 = "SELECT * FROM categorias ";
+                                $sqlz = "SELECT * FROM categorias order by idCategoria DESC";
+                                $qz = $pdo3->prepare($sqlz);
+                                $qz->execute();
+
+                                $contar=$qz->rowCount();
+                                $cantidad_paginas=4;
+                                $page=$contar/$cantidad_paginas;
+                                $page=ceil($page);
+
+                                if(isset($_GET['pag'])){
+                                    $pagina = $_GET['pag'];
+                                }else{
+                                    $pagina = 1;
+                                }
+
+                                if ($contar>0) {
+                                    if($pagina>$page||$pagina<1){
+                                        header('Location:user-sidebar.php?pag=1');
+                                    }
+                                }
+                                $inicio=($pagina-1)*$cantidad_paginas;
+
+                                $sql3 = "SELECT * FROM categorias order by idCategoria DESC LIMIT $inicio,$cantidad_paginas";
                                 $q3 = $pdo3->prepare($sql3);
                                 $q3->execute();
+
+
                                 while ($dato3 = $q3->fetch(PDO::FETCH_ASSOC)) {
                                 ?>
                                   <tr>
@@ -372,9 +397,22 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                     <div class="row pag">
                       <nav>
                         <ul class="pagination mt-3">
-                          <li class="page-item"><a class="page-link text-info" href="#">Anterior</a></li>
-                          <li class="page-item"><a class="page-link text-info num" href="#">1</a></li>
-                          <li class="page-item"><a class="page-link text-info" href="#">Siguiente</a></li>
+                          <li class="page-item <?php if($pagina<=1)echo 'disabled'?>">
+                                <a class="page-link text-info" href="user-sidebar.php?pag=<?php echo $pagina-1;?>">
+                                    Anterior
+                                </a>
+                            </li>
+
+                            <?php for($i=0;$i<$page;$i++):?>
+                                <li class="page-item  <?php echo $pagina==$i+1?'activate':''?>" >
+                                    <a class="page-link text-info num" href="user-sidebar.php?pag=<?php echo $i+1;?>"><?php echo $i+1;?></a>
+                                </li>
+                            <?php endfor?>
+
+                            <li class="page-item <?php if($pagina>=$page) echo 'disabled'?>">
+                                <a class="page-link text-info" href="user-sidebar.php?pag=<?php echo $pagina+1;?>">Siguiente</a>
+                            </li>
+
                         </ul>
                       </nav>
                     </div>
