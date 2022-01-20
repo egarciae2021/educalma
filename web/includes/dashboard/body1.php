@@ -101,12 +101,12 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                                     <i class="fas fa-caret-down nav__icon-dashboard nav__dropdown-icon-dashboard"></i>
                                 </a>
                                 <div class="nav__dropdown-collapse-dashboard">
-                                    <div class="nav__dropdown-content-dashboard">
+                                    <!-- <div class="nav__dropdown-content-dashboard">
 
                                         <a href="Enterprise.php" class="nav__dropdown-item-dashboard nav__link-dashboard">Control de Empresas</a>
-                                        <!-- <a href="#" class="nav__dropdown-item-dashboard nav__link-dashboard">Control de Empleados</a> -->
+                                        <a href="#" class="nav__dropdown-item-dashboard nav__link-dashboard">Control de Empleados</a>
 
-                                    </div>
+                                    </div> -->
                                     <div class="nav__dropdown-content-dashboard">
 
                                         <a href="curseEmp.php" class="nav__dropdown-item-dashboard nav__link-dashboard">Cursos para Empresas</a>

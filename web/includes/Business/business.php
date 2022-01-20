@@ -40,7 +40,7 @@ else if(isset($_GET['id_eliminar'])){
     echo'
             <script>
                 //alert ("eliminado perfectamente");
-                window.location = "../../Enterprise.php";
+                window.location = "../../user-sidebar.php";
             </script>
         ';
 
@@ -90,7 +90,7 @@ $q3->execute();
 // }
 
 // echo '<script>window.location="../../pageEnterprice.php?id='.base64_encode($curseIns).'&subs='.base64_encode($subs).'&us='.base64_encode($id).'";</script>'; 
-echo '<script>window.location="../../Enterprise.php";</script>'; 
+echo '<script>window.location="../../user-sidebar.php";</script>'; 
 
 // $arr='Empresa Actualizada';
 // echo json_encode($arr);

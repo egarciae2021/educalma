@@ -572,7 +572,32 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
             </div>
             <!-- FIN DE TABLA DE USUARIO -->
 
+            <?php
+            $pdo10 = Database::connect();
 
+            $sqlw = "SELECT * FROM usuarios as c inner join solicitud as a on a.id_usuario=c.id_user where privilegio=4";
+            $qw = $pdo10->prepare($sqlw);
+            $qw->execute();
+
+            $contar = $qw->rowCount();
+
+            $idProfesor = $_SESSION['codUsuario'];
+            $sql10 = "SELECT * FROM usuarios as c inner join solicitud as a on a.id_usuario=c.id_user where privilegio=4";
+            $q10 = $pdo10->prepare($sql10);
+            $q10->execute();
+            $curso = $q10->fetchAll(PDO::FETCH_ASSOC);
+
+            ?>
+
+
+            <!-- para listar y la paginacion de usuarios -->
+            <?php
+            $pdo11 = Database::connect();
+            $sql10 = "SELECT * FROM usuarios as c inner join solicitud as a on a.id_usuario=c.id_user where privilegio=4 order by id_user DESC";
+            $q10 = $pdo11->prepare($sql10);
+            $q10->execute();
+            $usuarios = $q10->fetchAll(PDO::FETCH_ASSOC);
+            ?>
 
 
             <!-- TABLA DE EMPRESAS -->
@@ -609,31 +634,81 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                       <table id="" class="table table-borderless dt-responsive text-center" cellspacing="0" width="100%">
                         <thead>
                           <tr>
-                            <th style="border-radius: 10px 0 0 10px;">
-                              lorem
-                            </th>
-                            <th>lorem</th>
-                            <th>lorem</th>
-                            <th>lorem</th>
-                            <th>lorem</th>
-                            <th>lorem</th>
+                            <th>Privilegio</th>
+                            <th>Nombres-Contacto</th>
+                            <th>Nombre-Empresa</th>
+                            <th>Email-Contacto</th>
+                            <th>Email-Empresa</th>
+                            <th>Telef-Contacto</th>
+                            <th>Nro° Subs</th>
+                            <th>Estado: </th>
+                            <th>Fecha de Solicitud: </th>
+                            <th>Contraseña:</th>
+                            <th>CODIGO: </th>
                             <th style="border-radius: 0 10px 10px 0;">
-                              lorem
+                              Acciones
                             </th>
                           </tr>
                         </thead>
                         <tbody>
+                          <?php
+                              foreach ($usuarios as $usuarios) {
+                                  $pdo11 = Database::connect();
+                                  // para el privilegio
+                                  $idPriv = $usuarios['privilegio'];
+                                  $sql11 = "SELECT * FROM privilegio WHERE id_privilegio = '$idPriv'";
+                                  $q11 = $pdo11->prepare($sql11);
+                                  $q11->execute(array());
+                                  $datoPrivi = $q11->fetch(PDO::FETCH_ASSOC);
+                                  $dotoPrivilegio = $q11->fetchAll();
+                                  // para el sexo
+                                  $idSex = $usuarios['sexo'];
+                                  $sql12 = "SELECT * FROM sexo WHERE id_genero = '$idSex'";
+                                  $q12 = $pdo11->prepare($sql12);
+                                  $q12->execute(array());
+                                  $datoSexo = $q12->fetch(PDO::FETCH_ASSOC);
+                              ?>
                           <tr>
-                            <td>lorem ipsum</td>
-                            <td>lorem ipsum</td>
-                            <td>lorem ipsum</td>
-                            <td>lorem ipsum</td>
-                            <td>lorem ipsum</td>
-                            <td>lorem ipsum</td>
+                          <td><?php echo $datoPrivi['nombre_privilegio']; ?></td>
+                          <td><?php echo $usuarios['nombres']; ?></td>
+                          <td><?php echo $usuarios['nombre_empresa']; ?></td>
+                          <td><?php echo $usuarios['correo_personal']; ?></td>
+                          <td><?php echo $usuarios['correo_corporativo']; ?></td>
+                          <td><?php echo $usuarios['telefono_movil']; ?></td>
+                          <td><?php echo $usuarios['num_suscripcion']; ?></td>
+                          <td><?php if ($usuarios['estado'] == 0) {
+                                  echo "Pendiente";
+                              } else {
+                                  echo "Aprobado";
+                              } ?></td>
+                          <td><?php echo $usuarios['fecha_registro']; ?></td>
+                          <td><?php $userr = "123";
+
+                              if (password_verify($userr, $usuarios['pass']) === true) {
+                                  echo "Vacio";
+                              } else {
+                                  echo $usuarios['pass'];
+                              } ?></td>
+                          <!-- <td><img style="height: 50px;" src="data:image/*;base64,<php echo base64_encode($usuarios['mifoto']) ?>"></td> -->
+                          <td><?php 
+                              $idemp = $usuarios['id_solicitud'];
+                              $pdo12 = Database::connect();
+                              $id_usa = $pdo12->prepare("SELECT * FROM `empresascursos` WHERE id_Empresa = '$idemp' LIMIT 1");
+                              $id_usa->execute();
+                              $id_usa = $id_usa->fetch(PDO::FETCH_ASSOC);
+                              // $id_use = $id_usa['id_Empresa'];
+                              
+                              if (empty($id_usa)) {
+                                  echo "No tiene";
+                              } else {
+                                  echo $id_usa['codigo_curse'];
+                              }
+                          ?></td>
                             <td>
+                              <?php $idUsu = $usuarios['id_user'] ?>
                               <!--para editar empresa-->
                               <div class="btn-group" role="group">
-                                <a href="#">
+                                <a href="#" data-toggle="modal" data-target="#modalAdminEmp" <?php echo "onclick='masInfoUser($idUsu)'" ?>>
                                   <button type="button" class="btn btn-edit">
                                     <i class="far fa-edit"></i>
                                   </button>
@@ -641,7 +716,7 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                               </div>
                               <!-- para quitar empresa -->
                               <div class="btn-group" role="group">
-                                <a href="#">
+                                <a href="includes\Business\business.php?id_eliminar=<?php echo $usuarios['id_user']; ?>&id_delete=<?php echo $usuarios['id_solicitud']; ?>">
                                   <button type="button" class="btn btn-quitar">
                                     <i class="fas fa-trash-alt"></i>
                                   </button>
@@ -649,6 +724,9 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                               </div>
                             </td>
                           </tr>
+                          <?php }
+                            Database::disconnect();
+                            ?>
                         </tbody>
                       </table>
                     </div>
@@ -675,6 +753,108 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
           </div>
         </div>
       </div>
+
+      <!-- --MODAL USER -->
+    <div class="modal fade" id="modalAdminEmp" style="overflow:hidden;">
+        <div class="modal-dialog modal-dialog-scrollable modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Información de Usuario</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <!-- contenido modal -->
+                <div class="modal-body">
+                    <form action="includes/Business/business.php" method="POST" >
+                    <div class="row form-group">
+                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-0"></div>
+                        <label class="col-lg-2 col-md-3 col-sm-3 col-xs-4 control-label">Nombre-Contacto:</label>
+                        <div class="col-lg-7 col-md-5 col-sm-5 col-xs-6">
+                            <!-- <input class="form-control input-md" type="text" value="<?php //echo $usuarios['nombres']; ?>" id="nameC" name="nameC"> -->
+                            <input class="form-control input-md" type="text" id="nameC" name="nameC">
+                        </div>
+                    </div>
+                    <input type="hidden" id="id_user"  name="id_user" />
+                <input type="hidden" id="id_sol" name="id_sol" />
+                <input type="hidden" id="status" name="status"/>
+                    <div class="row form-group">
+                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-0"></div>
+                        <label class="col-lg-2 col-md-3 col-sm-3 col-xs-4 control-label">Nombre de la Empresa:</label>
+                        <div class="col-lg-7 col-md-5 col-sm-5 col-xs-6">
+                            <!-- <input class="form-control input-md" type="text" value="<?php //echo $usuarios['nombre_empresa']; ?>" id="nameE" name="nameE"> -->
+                            <input class="form-control input-md" type="text" id="nameE" name="nameE">
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-0"></div>
+                        <label class="col-lg-2 col-md-3 col-sm-3 col-xs-4 control-label">Email-Contacto:</label>
+                        <div class="col-lg-7 col-md-5 col-sm-5 col-xs-6">
+                            <!-- <input class="form-control input-md" type="email" value="<?php //echo $usuarios['correo_personal']; ?>" id="E-C" name="Apellido_Materno"> -->
+                            <input class="form-control input-md" type="email" id="E-C" name="E-C">
+                        </div>
+                    </div>
+
+                    <div class="row form-group">
+                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-0"></div>
+                        <label class="col-lg-2 col-md-3 col-sm-3 col-xs-4 control-label">Email-Empresa</label>
+                        <div class="col-lg-7 col-md-5 col-sm-5 col-xs-6">
+                            <!-- <input class="form-control input-md" type="email" value="<?php //echo $usuarios['correo_corporativo']; ?>" id="E-E" name="E-E"> -->
+                            <input class="form-control input-md" type="email" id="E-E" name="E-E">
+                        </div>
+                    </div>
+
+                    <div class="row form-group">
+                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-0"></div>
+                        <label class="col-lg-2 col-md-3 col-sm-3 col-xs-4 control-label">Telefono-Contacto:</label>
+                        <div class="col-lg-7 col-md-5 col-sm-5 col-xs-6">
+                            <!-- <input class="form-control input-md" type="tel" value="<?php //echo $usuarios['telefono_movil']; ?>" id="T-C" name="Correo"> -->
+                            <input class="form-control input-md" type="tel" id="T-C" name="T-C">
+                        </div>
+                    </div>
+
+                    <div class="row form-group">
+                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-0"></div>
+                        <label class="col-lg-2 col-md-3 col-sm-3 col-xs-4 control-label">Número de subscripciones:</label>
+                        <div class="col-lg-7 col-md-5 col-sm-5 col-xs-6">
+                            <!-- <input class="form-control input-md" type="number" value="<?php //echo $usuarios['num_suscripcion']; ?>" id="N-S" name="N-S"> -->
+                            <input class="form-control input-md" type="number" id="N-S" name="N-S">
+                        </div>
+                    </div>
+
+                    </div>
+
+                    <div class="row form-group">
+                        <div class="col-lg-2 col-md-2 col-sm-2 col-0"></div>
+                        <label class="col-lg-2 col-md-3 col-sm-3 col-4 control-label">Fecha de solicitud:</label>
+                        <div class="col-lg-7 col-md-5 col-sm-5 col-6">
+                            <!-- <input class="form-control input-md" type="text" id="F-S" value="<?php //echo $usuarios['fecha_registro']; ?>" readonly name="nume_documento"> -->
+                            <input class="form-control input-md" type="text" id="F-S" readonly name="F-S">
+                        </div>
+                    </div>
+
+                    <div class="row form-group">
+                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-0"></div>
+                        <label class="col-lg-2 col-md-3 col-sm-3 col-xs-4 control-label">Contraseña:</label>
+                        <div class="col-lg-7 col-md-5 col-sm-5 col-xs-6">
+                            <input class="form-control input-md" type="text" id="Pass" name="Pass">
+                        </div>
+                    </div>
+                        
+                    <?php
+                    // }?>
+                    <!-- fin contenido modal -->
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-blue"  style="color: #FFFFFF; background: #0093E9; background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);">
+                            Guardar <i class="fas fa-save"></i>
+                        </button>
+                        <!-- <button type="button" class="btn btn-secondary" onclick="actu();" data-dismiss="modal">Cerrar</button> -->
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
 
 
       <!-- --MODAL USER -->
@@ -936,6 +1116,121 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
       })
     }
   </script>
+
+<script>
+
+function masInfoUser(x) {
+    document.getElementById("id_sol").value = "";
+    document.getElementById("status").value = "";
+    document.getElementById("nameC").value = "";
+    document.getElementById("nameE").value = "";
+    document.getElementById("E-C").value = "";
+    document.getElementById("E-E").value = "";
+    document.getElementById("T-C").value = "";
+    document.getElementById("N-S").value = "";
+    // document.getElementById("Pass").value = "";
+    document.getElementById("F-S").value = "";
+    // document.getElementById("Code").value = "";
+    
+
+    //mensaje de espera
+
+    $.ajax({
+        url: "includes/Business/business.php",
+        type: "POST",
+        data: "cod_user=" + x,
+        dataType: 'json',
+        cache: false,
+        success: function(arr) {
+
+            document.getElementById("id_sol").value = arr[0];
+            document.getElementById("status").value = arr[1];
+            document.getElementById("nameC").value = arr[2];
+            document.getElementById("nameE").value = arr[3];
+            document.getElementById("E-C").value = arr[4];
+            document.getElementById("E-E").value = arr[5];
+            document.getElementById("T-C").value = arr[6];
+            document.getElementById("N-S").value = arr[7];
+            // document.getElementById("Pass").value = arr[8];
+            document.getElementById("F-S").value = arr[8];
+            // document.getElementById("Code").value = arr[10];
+            document.getElementById("id_user").value = arr[9];
+        },
+
+    });
+}
+
+function actu() {
+
+    var cod_user = document.getElementById('id_user').value;
+    var nameC = document.getElementById('nameC').value;
+    var nameE = document.getElementById('nameE').value;
+    var EmailC = document.getElementById('E-C').value;
+    var EmailE = document.getElementById('E-E').value;
+    var TelfC = document.getElementById('T-C').value;
+    var subs = document.getElementById('N-S').value;
+    var curseIns = document.getElementById('C-i').value;
+    // var  = document.getElementById('F-S').value;
+    var Pass = document.getElementById('Pass').value;
+    var id_sol = document.getElementById('id_sol').value;
+    // var PassC = document.getElementById('PassC').value;
+    var codeCurse = document.getElementById('Code').value;
+    var status = document.getElementById('status').value;
+
+    // alert(cod_user+" "+nameC+" "+nameE+" "+EmailC+" "+EmailE+" "+TelfC+" "+subs+" "+curseIns+" "+Pass+" "+id_sol+" "+codeCurse+" "+status+" ");
+    Swal.fire({
+        title: '¿SEGURO QUE DESEA ACTUALIZAR ESTE REGISTRO DE EMPRESA?',
+        text: "Se actualizarán los datos de esta empresa",
+        icon: 'question',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Actualizar',
+        cancelButtonText: 'Cancelar !'
+    })
+    .then(function() {
+        $.ajax({
+            url: "includes\Business\business.php",
+            method: "POST",
+            dataType: 'json',
+            data: {
+                id_usuario: cod_user,
+                id_sol: id_sol,
+                nameC: nameC,
+                nameE: nameE,
+                EmailC: EmailC,
+                EmailE: EmailE,
+                TelfC: TelfC,
+                subs: subs,
+                curseIns: curseIns,
+                Pass: Pass,
+                status: status,
+                codeCurse: codeCurse
+            },
+            cache: false
+        }).done(function() {
+            Swal.fire({
+                title: 'Usuario Actualizado',
+                text: 'Se han actualizado los datos satisfactoriamente.',
+                icon: 'success',
+            }).then(function() {
+                location.reload();
+            });
+
+        }).fail(function() {
+            Swal.fire({
+                title: 'Error',
+                text: 'Ocurrio un problema al actualizar el usuario',
+                icon: 'error',
+            }).then(function() {
+                location.reload();
+            });
+        })
+    }, function(dismiss) {
+        if (dismiss === 'cancel') {}
+    })
+}
+</script>
 
 <?php
 } else {
