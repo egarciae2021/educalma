@@ -220,6 +220,12 @@ CREATE TABLE transaccion_paypal (
     email VARCHAR(100) NOT NULL , 
     idClientPay VARCHAR(20) NOT NULL 
 );
+--Tabla Temporal de empresas
+CREATE TABLE temp ( 
+    cod_temp INT(11) auto_increment primary key,  
+	cod_empre INT(11) NOT NULL ,
+	cod_curse INT(11) NOT NULL
+);
 
 -- Tabla Tipo Documento de Identidad
 CREATE TABLE tipoDocumentoIdentidad (
