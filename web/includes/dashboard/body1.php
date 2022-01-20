@@ -106,6 +106,12 @@
                                     <!-- <a href="#" class="nav__dropdown-item-dashboard nav__link-dashboard">Control de Empleados</a> -->
                                     
                                 </div>
+                                <div class="nav__dropdown-content-dashboard">
+                                    
+                                    <a href="curseEmp.php" class="nav__dropdown-item-dashboard nav__link-dashboard">Cursos para Empresas</a>
+                                    <!-- <a href="#" class="nav__dropdown-item-dashboard nav__link-dashboard">Control de Empleados</a> -->
+                                    
+                                </div>
                             </div>
                         </div>
                     <?php

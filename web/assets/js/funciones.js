@@ -39,3 +39,29 @@ function onload(){
 //     }
 //   });
 // });
+// function agregarDatos(curso,usuario){
+//   cadena="curso="+curso+"&usuario="+usuario;
+//   $.ajax({
+//     type:"POST",
+//     url:"includes/Business/addcurso.php",
+//     data:cadena,
+//     success:function(r){
+//       if(r==1){
+//         $('#tabla').load('includes/Business/cursosEmp.php');
+//         // swal({title: "Curso Agregado",allowEscapeKey: false,allowOutsideClick:false,text: "El curso se agregó correctamente.",showConfirmButton: false,timer: 1000});
+//         alert("Curso Agregado");
+//         // $('#form-leditcursos')[0].reset();
+//       }else{
+//         // swal({title: "Curso No Agregado",allowEscapeKey: false,allowOutsideClick:false,text: "El curso no se agregó correctamente.",showConfirmButton: false,timer: 1000});
+//         alert("Curso No Agregado");
+//       }
+//     }
+//   })
+// }
+var clipboard = new ClipboardJS('.portapapeles');
+clipboard.on('success',function(e){
+  // alert("Copiado al portapapeles");
+})
+clipboard.on('error',function(e){
+  alert("No se pudo copiar al portapapeles");
+})

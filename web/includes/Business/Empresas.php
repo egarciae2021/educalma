@@ -221,26 +221,26 @@ $usuarios = $q3->fetchAll(PDO::FETCH_ASSOC);
                         </div>
                     </div>
 
-                    <div class="row form-group">
+                    <!-- <div class="row form-group">
                         <div class="col-lg-2 col-md-2 col-sm-2 col-0"></div>
                         <label class="col-lg-2 col-md-3 col-sm-3 col-4 control-label">Cursos a inscribir:</label>
                         <div class="col-lg-7 col-md-5 col-sm-5 col-6">
                             <select class="form-control seleccionador" id="C-i" name="C-i">
                                 <option value="" selected disabled>Seleccionar</option>
                                 <?php
-                                $pdo5 = Database::connect();
-                                $sql5 = 'SELECT * FROM cursos where permisoCurso=1';
-                                $q5 = $pdo5->prepare($sql5);
-                                $q5->execute(array());
-                                while ($registro = $q5->fetch(PDO::FETCH_ASSOC)) {
+                                //$pdo5 = Database::connect();
+                                // $sql5 = 'SELECT * FROM cursos where permisoCurso=1';
+                                // $q5 = $pdo5->prepare($sql5);
+                                // $q5->execute(array());
+                                // while ($registro = $q5->fetch(PDO::FETCH_ASSOC)) {
                                 ?>
-                                    <option value="<?php echo $registro['idCurso']; ?>"><?php echo $registro['nombreCurso']; ?></option>
+                                    <option value="<?php //echo $registro['idCurso']; ?>"><?php //echo $registro['nombreCurso']; ?></option>
                                 <?php
-                                }
-                                Database::disconnect();
+                                // }
+                                // Database::disconnect();
                                 ?>
                             </select>
-                        </div>
+                        </div> -->
                         <!-- <button onclick="agregar()" style="background-color: #FFFFFF;">
                             <i class="fas fa-plus-circle"></i>
                         </button> -->
@@ -255,13 +255,13 @@ $usuarios = $q3->fetchAll(PDO::FETCH_ASSOC);
                         </div>
                     </div>
 
-                    <div class="row form-group">
+                    <!-- <div class="row form-group">
                             <div class="col-lg-2 col-md-2 col-sm-2 col-xs-0"></div>
                             <label class="col-lg-2 col-md-3 col-sm-3 col-xs-4 control-label">Crear codigo:</label>
                             <div class="col-lg-7 col-md-5 col-sm-5 col-xs-6">
                                 <input class="form-control input-md" id="Code" name="Code" type="text">
                             </div>
-                        </div>
+                        </div> -->
 
                     <div class="row form-group">
                         <div class="col-lg-2 col-md-2 col-sm-2 col-xs-0"></div>

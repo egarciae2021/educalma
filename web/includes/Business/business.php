@@ -55,10 +55,10 @@ $EmailC=$_POST['E-C'];#
 $EmailE=$_POST['E-E'];#
 $TelfC=$_POST['T-C'];#
 $subs=$_POST['N-S'];
-$curseIns=$_POST['C-i'];
+// $curseIns=$_POST['C-i'];
 $pass=$_POST['Pass'];
 $password = password_hash($pass, PASSWORD_BCRYPT);
-$codeCurse=$_POST['Code'];#codigo
+// $codeCurse=$_POST['Code'];#codigo
 $status=$_POST['status'];
 
 $veri2="UPDATE usuarios SET nombres='$nombreC', email='$EmailE',pass='$password',telefono=$TelfC,estado=1 WHERE id_user = $id ";
@@ -69,27 +69,28 @@ $veri3="UPDATE solicitud SET correo_corporativo='$EmailE', nombre_completo='$nom
 $q3 = $pdo->prepare($veri3);
 $q3->execute();
 
-$veri=$pdo->prepare("SELECT codigo_curse FROM empresascursos where id_Empresa=$id_sol");
-$veri->execute();
-$verl=$veri->fetch(PDO::FETCH_ASSOC);
+// $veri=$pdo->prepare("SELECT codigo_curse FROM empresascursos where id_Empresa=$id_sol");
+// $veri->execute();
+// $verl=$veri->fetch(PDO::FETCH_ASSOC);
 
 
-if(empty($verl['codigo_curse'])){
-    $veri4=$pdo->prepare("INSERT INTO `empresascursos`(id_Empresa, id_Curso,codigo_curse)VALUES($id_sol,$curseIns,'$codeCurse')");
-    // $veri4->bindParam(":idEmp",$id_sol,PDO::PARAM_INT);
-    // $veri4->bindParam(":idCur",$curseIns,PDO::PARAM_INT);
-    // $veri4->bindParam(":idCode",$codeCurse,PDO::PARAM_STR);
-    $veri4->execute();    
-}else{
-    $code=$verl['codigo_curse'];
-    $veri4=$pdo->prepare("INSERT INTO `empresascursos`(id_Empresa, id_Curso,codigo_curse)VALUES($id_sol,$curseIns,'$code')");
-    // $veri4->bindParam(":idEmp",$id_sol,PDO::PARAM_INT);
-    // $veri4->bindParam(":idCur",$curseIns,PDO::PARAM_INT);
-    // $veri4->bindParam(":idCode",$codeCurse,PDO::PARAM_STR);
-    $veri4->execute();    
-}
+// if(empty($verl['codigo_curse'])){
+//     $veri4=$pdo->prepare("INSERT INTO `empresascursos`(id_Empresa, id_Curso,codigo_curse)VALUES($id_sol,$curseIns,'$codeCurse')");
+//     // $veri4->bindParam(":idEmp",$id_sol,PDO::PARAM_INT);
+//     // $veri4->bindParam(":idCur",$curseIns,PDO::PARAM_INT);
+//     // $veri4->bindParam(":idCode",$codeCurse,PDO::PARAM_STR);
+//     $veri4->execute();    
+// }else{
+//     $code=$verl['codigo_curse'];
+//     $veri4=$pdo->prepare("INSERT INTO `empresascursos`(id_Empresa, id_Curso,codigo_curse)VALUES($id_sol,$curseIns,'$code')");
+//     // $veri4->bindParam(":idEmp",$id_sol,PDO::PARAM_INT);
+//     // $veri4->bindParam(":idCur",$curseIns,PDO::PARAM_INT);
+//     // $veri4->bindParam(":idCode",$codeCurse,PDO::PARAM_STR);
+//     $veri4->execute();    
+// }
 
-echo '<script>window.location="../../pageEnterprice.php?id='.base64_encode($curseIns).'&subs='.base64_encode($subs).'&us='.base64_encode($id).'";</script>'; 
+// echo '<script>window.location="../../pageEnterprice.php?id='.base64_encode($curseIns).'&subs='.base64_encode($subs).'&us='.base64_encode($id).'";</script>'; 
+echo '<script>window.location="../../Enterprise.php";</script>'; 
 
 // $arr='Empresa Actualizada';
 // echo json_encode($arr);
