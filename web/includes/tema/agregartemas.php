@@ -209,7 +209,7 @@
                                             <input type="text" name="actu_tema" class="form-control" value="<?php echo $dato3['nombreTema'];?>">
                                             
                                             <h6 class="pt-3">Descripción:</h6>
-                                            <textarea class="form-control" rows="3" name="descripcionT" value="<?php echo $dato3['descripcionTema'];?>"></textarea>
+                                            <textarea class="form-control" rows="3" name="descripcionT"><?php echo $dato3['descripcionTema'];?></textarea>
                                 
                                             <h6 class="pt-3">Link del vídeo:</h6>
                                             <input type="text" name="linkT" class="form-control" value="<?php echo $dato3['link_video'];?>">

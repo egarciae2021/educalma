@@ -257,7 +257,7 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                                 $qz->execute();
 
                                 $contar=$qz->rowCount();
-                                $cantidad_paginas=4;
+                                $cantidad_paginas=3;
                                 $page=$contar/$cantidad_paginas;
                                 $page=ceil($page);
 
@@ -340,6 +340,32 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                                 ?>
                               </tbody>
                             </table>
+                             <!-- paginador de categorías-->
+                            <div class="col-12">
+                              <div class="row pag">
+                                <nav>
+                                  <ul class="pagination mt-3">
+                                    <li class="page-item <?php if($pagina<=1)echo 'disabled'?>">
+                                          <a class="page-link text-info" href="user-sidebar.php?pag=<?php echo $pagina-1;?>">
+                                              Anterior
+                                          </a>
+                                      </li>
+
+                                      <?php for($i=0;$i<$page;$i++):?>
+                                          <li class="page-item  <?php echo $pagina==$i+1?'activate':''?>" >
+                                              <a class="page-link text-info num" href="user-sidebar.php?pag=<?php echo $i+1;?>"><?php echo $i+1;?></a>
+                                          </li>
+                                      <?php endfor?>
+
+                                      <li class="page-item <?php if($pagina>=$page) echo 'disabled'?>">
+                                          <a class="page-link text-info" href="user-sidebar.php?pag=<?php echo $pagina+1;?>">Siguiente</a>
+                                      </li>
+
+                                  </ul>
+                                </nav>
+                              </div>
+                            </div>
+                            <!--fin paginador -->
                           </div>
                         </div>
                         <!-- /.card-body -->
@@ -348,32 +374,7 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                     <!-- tabla fin accion categorias -->
 
                   </div>
-                  <!-- paginador de categorías-->
-                  <div class="col-12">
-                    <div class="row pag">
-                      <nav>
-                        <ul class="pagination mt-3">
-                          <li class="page-item <?php if($pagina<=1)echo 'disabled'?>">
-                                <a class="page-link text-info" href="user-sidebar.php?pag=<?php echo $pagina-1;?>">
-                                    Anterior
-                                </a>
-                            </li>
-
-                            <?php for($i=0;$i<$page;$i++):?>
-                                <li class="page-item  <?php echo $pagina==$i+1?'activate':''?>" >
-                                    <a class="page-link text-info num" href="user-sidebar.php?pag=<?php echo $i+1;?>"><?php echo $i+1;?></a>
-                                </li>
-                            <?php endfor?>
-
-                            <li class="page-item <?php if($pagina>=$page) echo 'disabled'?>">
-                                <a class="page-link text-info" href="user-sidebar.php?pag=<?php echo $pagina+1;?>">Siguiente</a>
-                            </li>
-
-                        </ul>
-                      </nav>
-                    </div>
-                  </div>
-                  <!--fin paginador -->
+                 
                 </div>
             </div>
             <!-- FIN DE TABLA DE CURSOS -->
