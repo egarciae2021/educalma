@@ -134,7 +134,7 @@ CREATE TABLE descargables (
 	idCurso_descargable int(10) not null,
 	link_descargable varchar(250)
 );
---Tabla de cursos de empresas
+-- Tabla de cursos de empresas
 CREATE TABLE empresascursos (
 	id_CursosEmpre int(11) auto_increment primary key,
 	id_Empresa int(11) not null,
@@ -220,7 +220,7 @@ CREATE TABLE transaccion_paypal (
     email VARCHAR(100) NOT NULL , 
     idClientPay VARCHAR(20) NOT NULL 
 );
---Tabla Temporal de empresas
+-- Tabla Temporal de empresas
 CREATE TABLE temp ( 
     cod_temp INT(11) auto_increment primary key,  
 	cod_empre INT(11) NOT NULL ,

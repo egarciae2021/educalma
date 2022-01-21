@@ -13,35 +13,25 @@
 </head>
 
 <body>
-<?php
-// Este codigo hace validacion para que no se pueda acceder a cualquier pagina sin estar logueado__Pablo Loyola
-
- if(isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)){
-    $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-    $envi=substr($url, strrpos($url, '=') + 1);
-    //$envi."<br>";
-    $en=substr($url, strrpos($url, '&') - 1);
-    $ens=substr($en,0,1);
-    $up=substr($url, strrpos($url, 'p') + 2);
-    $up=substr($up,0,1);
-    // echo $up."<br>";
-    // echo $ens."<br>";
-    // echo $envi."<br>";
-
-?>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-1"></div>
-            <div class="col-md-10">
-                <div class="titlemc">
-                </div>
-            </div>
-            <div class="col-md-1"></div>
-        </div>
-    </div>
-
-    <!--contenido de cuestionario-->
     <?php
+    // Este codigo hace validacion para que no se pueda acceder a cualquier pagina sin estar logueado__Pablo Loyola
+
+    if(isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)){
+        $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+        $envi=substr($url, strrpos($url, '=') + 1);
+        //$envi."<br>";
+        $en=substr($url, strrpos($url, '&') - 1);
+        $ens=substr($en,0,1);
+        $up=substr($url, strrpos($url, 'p') + 2);
+        $up=substr($up,0,1);
+        // echo $up."<br>";
+        // echo $ens."<br>";
+        // echo $envi."<br>";
+
+    ?>
+    
+        <!--contenido de cuestionario-->
+        <?php
         require_once '././database/databaseConection.php';
         $id=$_GET['id'];
         $idModulo=$_GET['idModulo'];
@@ -99,76 +89,119 @@
             $reco++;
         }
     ?>
-    <br>
-    <br>
+            <br>
+            <br>
 
-    <div>
-        <div class="container" style="margin-top: 120px;"></div>
+            <div>
+                <div class="container" style="margin-top: 120px;"></div>
 
-        <div style="background: #ECFCFE; width: 80%; margin: auto;">
-            <div class="col-md-12" style="background-color: white; padding-bottom: 40px;">
-                <div class="infoMin">
-                    <a href="">  <?php echo $nombre_curso['nombreCurso']?>   </a> <label> > </label> 
-                    <a href="">  <?php echo $nombre_modulo['nombreModulo']?> </a> <label> > </label>
-                    <a href=""> Cuestionario </a>
-                </div>
-            </div>
-            <h1 style="color: #4F52D6; font-size: 30px; padding: 15px; text-align: center;">
-                <strong>Cuestionario</strong>
-            </h1>
-            <?php
-                if($envi==$cuenta2){
-            ?>
-            <h6 style="text-align: center; font-weight: bolder;">Fin de cuestionario</h6>
-                <div style="text-align: center;">
-                    <a href="curso.php?id=<?php echo $id;?>"><button type="button" class="btn btn-outline-secondary">Terminar</button></a>
+                <div style="background: #ECFCFE; width: 80%; margin: auto;">
+                    <div class="col-md-12" style="background-color: white; padding-bottom: 40px;">
+                        <div class="infoMin">
+                            <a href="">
+                                <?php echo $nombre_curso['nombreCurso']?> </a> <label> > </label>
+                            <a href="">
+                                <?php echo $nombre_modulo['nombreModulo']?> </a> <label> > </label>
+                            <a href=""> Cuestionario </a>
+                        </div>
+                    </div>
+                    <h1 style="color: #4F52D6; font-size: 30px; padding: 15px; text-align: center;">
+                        <strong>Cuestionario</strong>
+                    </h1>
                     <?php
-                        // $pdow = Database::connect(); 
-                        // $sqli = "SELECT * FROM modulo WHERE id_curso='$id'";
-                        // $qi = $pdow->prepare($sqli);
-                        // $qi->execute(array());
-                        // $datoi = $qi->fetch(PDO::FETCH_ASSOC);
-                        // Database::disconnect();
-                        // $di=$datoi['idModulo'];
-                        // $pdodi = Database::connect(); 
-                        
-                        // $sqli="SELECT c.idModulo,p.idTema,l.idCurso FROM tema p INNER JOIN modulo c ON c.idModulo=p.id_modulo INNER JOIN cursos l ON idCurso= c.id_curso WHERE c.idModulo='$di' AND l.idCurso='$id'";
-                        // $qst = $pdow->prepare($sqlt);
-                        // $qst->execute(array());
-                        // echo "<br>";
-                        // $resultado1t=$qst->fetchAll();
-                        // echo $resultado1t[1]['idTema'];
-                        // // $idtema=$_GET['idtema'];
-                        // $nuevat=$_GET['idtema'];
-                        // $idtemat=$resultado1t[intval($_GET['idtema'])-1]['idTema'];
-
-                        // echo $nuevat;
-                        $pdo19 = Database::connect(); 
-                        $sqlit="SELECT idModulo FROM modulo where id_curso=$id order by idModulo DESC LIMIT 1";
-                        $qi = $pdo19->prepare($sqlit);
-                        $qi->execute();
-                        $datoi = $qi->fetch(PDO::FETCH_ASSOC);
-                        $idmodu=$datoi['idModulo'];
-
-
-                        if($idModulo<$idmodu){
+                        if($envi==$cuenta2){
                     ?>
-                    <a href="video.php?id=<?php echo $id?>&idtema=1&id_modulo=<?php echo ($idModulo+1)?>"><button type="button" class="btn btn-outline-secondary">Siguiente</button></a>
-                    <?php
-                        }
-                    ?>        
-                </div>
-                <div class="card text-center muestras">
-                    <div class="card-header">
-                        Resultado de las <?php echo $cuenta2;?> preguntas
+                        <h6 style="text-align: center; font-weight: bolder;">Fin de cuestionario</h6>
+                        <div style="text-align: center;">
+                            <a href="curso.php?id=<?php echo $id;?>"><button type="button" class="btn btn-outline-secondary">Terminar</button></a>
+                            
+                            <?php
+                                // $pdow = Database::connect(); 
+                                // $sqli = "SELECT * FROM modulo WHERE id_curso='$id'";
+                                // $qi = $pdow->prepare($sqli);
+                                // $qi->execute(array());
+                                // $datoi = $qi->fetch(PDO::FETCH_ASSOC);
+                                // Database::disconnect();
+                                // $di=$datoi['idModulo'];
+                                // $pdodi = Database::connect(); 
+                                
+                                // $sqli="SELECT c.idModulo,p.idTema,l.idCurso FROM tema p INNER JOIN modulo c ON c.idModulo=p.id_modulo INNER JOIN cursos l ON idCurso= c.id_curso WHERE c.idModulo='$di' AND l.idCurso='$id'";
+                                // $qst = $pdow->prepare($sqlt);
+                                // $qst->execute(array());
+                                // echo "<br>";
+                                // $resultado1t=$qst->fetchAll();
+                                // echo $resultado1t[1]['idTema'];
+                                // // $idtema=$_GET['idtema'];
+                                // $nuevat=$_GET['idtema'];
+                                // $idtemat=$resultado1t[intval($_GET['idtema'])-1]['idTema'];
+
+                                // echo $nuevat;
+                                $pdo19 = Database::connect(); 
+                                $sqlit="SELECT idModulo FROM modulo where id_curso=$id order by idModulo DESC LIMIT 1";
+                                $qi = $pdo19->prepare($sqlit);
+                                $qi->execute();
+                                $datoi = $qi->fetch(PDO::FETCH_ASSOC);
+                                $idmodu=$datoi['idModulo'];
+
+
+                                if($idModulo<$idmodu){
+                            ?>
+                                        <a href="video.php?id=<?php echo $id?>&idtema=1&id_modulo=<?php echo ($idModulo+1)?>"><button type="button" class="btn btn-outline-secondary">Siguiente</button></a>
+                                        <?php
+                                }
+                            ?>
+
+                        </div>
+                        <div class="card text-center muestras">
+                            <div class="card-header">
+                                Resultado de las
+                                <?php echo $cuenta2;?> preguntas
+                            </div>
+                            <div class="card-body" style="background-color: #fff;">
+                                <h5 style="font-size: large; margin-left: 10px; color:black; background-color: #fff;">Respuestas Correctas:
+                                    <?php echo $correcta;?>
+                                </h5>
+                                <!-- nuevo -->
+                                <div class="card c-rpta mx-4 mt-3">
+                                    <div class="card-header">
+                                            <div class="row">
+                                                <div class="col-sm-6 text-left">Pregunta n° 1</div>
+                                                <div class="col-sm-6 text-right" style="color:#768EE8;">0/2 pts</div>
+                                            </div>
+                                    </div>
+                                    <div class="list-group list-group-flush small text-center text-secondary font-weight-normal my-3">
+                                        Enunciado de la pregunta
+                                    </div>
+                                    <ul class="list-group list-group-flush text-justify">
+
+                                        <!-- respuesta correcta debe llevar verde y respuesta incorrecta debe llevar rojo -->
+                                        <label class="list-group-item small">
+                                                <div class="form-check" style="color:green;">
+                                                    <input type="radio" name="verif_resp" value="<?php /*echo $fila2['respuesta'];*/?>">Primera respuesta
+                                                    <input type="hidden" name="correcta" value="<?php /*echo $correcta;*/?>"> 
+                                                    <label class="form-check-label" for="exampleRadios1"> <?php /*echo $fila2[0]['respuesta'];*/?> </label>
+                                                </div>
+                                        </label>
+
+                                        <label class="list-group-item small">
+                                            <div class="form-check"  style="color:red;">
+                                                <input type="radio" name="verif_resp" value="<?php /*echo $fila2['respuesta'];*/?>">Segunda respuesta
+                                                <input type="hidden" name="correcta" value="<?php /*echo $correcta;*/?>">
+                                                <label class="form-check-label" for="exampleRadios1"> <?php /*echo $fila2[0]['respuesta'];*/?> </label>
+                                            </div>
+                                        </label>
+                                    </ul>
+                                </div>
+                                <!-- fin nuevo -->
+                            </div>
+                        </div>
                     </div>
-                    <div class="card-body" style="background-color: #fff;">
-                        <h5 style="font-size: large; margin-left: 10px; color:black; background-color: #fff;">Respuestas Correctas: <?php echo $correcta;?></h5> 
-                    </div>
-                </div>
-            </div>
-                <?php } ?>
-                <?php 
+                    
+                    <?php 
+                    } 
+                    ?>
+                    
+                    <?php 
                     if($envi<$cuenta2){
                             if($fila1=$q1->fetchAll()){
                                 
@@ -180,23 +213,25 @@
                                 $q2 = $pdo2->prepare($sql2);
                                 $q2->execute(array());
                     ?>
-                    <h5 style="background: #CFE8FE; padding: 20px 35px; color: #4F52D6"><?php echo $fila1[$envi]['pregunta'];?></h5>
-                    <form style="padding: 30px;" 
-                    action="includes/cuestionarioCRUD/cuestion.php?contador=<?php echo $contador;?>&id=<?php echo $id;?>&c=<?php $correcta ?>&idModulo=<?php echo $idModulo;?>&validar=<?php echo 0; ?>&up=<?php echo $up ?>&cuen=<?php echo $ens ?>&nro=<?php echo $envi?>&id_pregunta=<?php echo $idpregunta ?>"
-                    method="POST" id="formcito">
-                        <?php while($fila2=$q2->fetch(PDO::FETCH_ASSOC)){ 
+
+            <h5 style="background: #CFE8FE; padding: 20px 35px; color: #4F52D6">
+                <?php echo $fila1[$envi]['pregunta'];?>
+            </h5>
+            <form style="padding: 30px;" action="includes/cuestionarioCRUD/cuestion.php?contador=<?php echo $contador;?>&id=<?php echo $id;?>&c=<?php $correcta ?>&idModulo=<?php echo $idModulo;?>&validar=<?php echo 0; ?>&up=<?php echo $up ?>&cuen=<?php echo $ens ?>&nro=<?php echo $envi?>&id_pregunta=<?php echo $idpregunta ?>"
+                method="POST" id="formcito">
+                <?php while($fila2=$q2->fetch(PDO::FETCH_ASSOC)){ 
                             //checked
                         ?>
-                            <div style="padding: 10px; border-radius: 5px; background: #ffff; border-bottom: 1px solid slategray; margin-bottom: 20px;">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="verif_resp" value="<?php echo $fila2['respuesta'];?>">
-                                    <input type="hidden" name="correcta" value="<?php echo $correcta;?>">
-                                    <label class="form-check-label" for="exampleRadios1"> <?php echo $fila2['respuesta'];?> </label>
-                                </div>
-                            </div>
-                        <?php }?>
-                        <div style="text-align: right;">
-                        <?php 
+                <div style="padding: 10px; border-radius: 5px; background: #ffff; border-bottom: 1px solid slategray; margin-bottom: 20px;">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="verif_resp" value="<?php echo $fila2['respuesta'];?>">
+                        <input type="hidden" name="correcta" value="<?php echo $correcta;?>">
+                        <label class="form-check-label" for="exampleRadios1"> <?php echo $fila2['respuesta'];?> </label>
+                    </div>
+                </div>
+                <?php }?>
+                <div style="text-align: right;">
+                    <?php 
                             $pdo8 = Database::connect();
                             $sqlit="SELECT idModulo FROM modulo where id_curso=$id order by idModulo DESC LIMIT 1";
                             $qi = $pdo8->prepare($sqlit);
@@ -206,8 +241,8 @@
                             //echo $idModulo;
                             if($envi<$cuenta2 && $ens<=$cuenta2){
                         ?>
-                            <button type="submit" id="env" class="btn btn-outline-primary" >Siguiente</button>
-                        <?php
+                    <button type="submit" id="env" class="btn btn-outline-primary">Siguiente</button>
+                    <?php
                             }
                             //     else if($idModulo==$idmodu){
                             //         
@@ -220,13 +255,15 @@
                             
                                 // }
                         ?>
-
-                        </div>
-
-                    </form>
-                    <?php }?>
                 </div>
-                                <!-- <script>
+            </form>
+
+            <?php 
+                }
+            ?>
+
+            </div>
+            <!-- <script>
                 var form = document.getElementById('formcito');
                 form.onsubmit = function() {
                     if (form.verif_resp.value != "") {
@@ -238,19 +275,22 @@
                 
             </script> -->
 
-    </div>
+            </div>
 
-    <br><br>
-    <br>
-    <br>
-    <br>
-    <?php
-    }
-    }
-    else{
-                header('Location:iniciosesion.php');
-    }
-?>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+
+            <?php
+                }
+                }
+                else{
+                            header('Location:iniciosesion.php');
+                }
+            ?>
+
 </body>
 
 </html>

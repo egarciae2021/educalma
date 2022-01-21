@@ -35,41 +35,28 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
 
   ?>
 
-  <!-- para lista de usuarios -->
-  <?php
-  $pdo4 = Database::connect();
-  $sql3 = "SELECT * FROM usuarios where estado=1 order by id_user DESC";
-  $q3 = $pdo4->prepare($sql3);
-  $q3->execute();
-  $usuarios = $q3->fetchAll(PDO::FETCH_ASSOC);
-  ?>
-
-
-  <!-- CODIGO NUEVO -->
   <main>
-    <!--tabla de curso -->
+    <!-- Por cursos -->
     <div class="container-fluid">
-      <!-- sin container -->
       <div class="row mt-5">
         <div class="col-12">
           <div class="title">Administrar</div>
-          <div id="accordion">
             <div class="row">
               <div class="col-12">
                 <nav class="navbar navbar-expand">
                   <ul class="navbar-nav">
                     <li class="nav-item">
-                      <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      <a class="nav-link active" href="user-sidebar.php">
                         por cursos
                       </a>
                     </li>
-                    <li class="nav-item ">
-                      <a class="nav-link " href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    <li class="nav-item">
+                      <a class="nav-link" href="userdash.php">
                         por usuarios
                       </a>
                     </li>
                     <li class="nav-item ">
-                      <a class="nav-link " href="#" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                      <a class="nav-link" href="empredash.php">
                         por empresas
                       </a>
                     </li>
@@ -77,7 +64,6 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                 </nav>
               </div>
             </div>
-
             
             <?php
             $pdo3 = Database::connect();
@@ -86,35 +72,16 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
             $qCur->execute(array());
             $resultCurs = $qCur->fetch(PDO::FETCH_ASSOC);
             ?>
-            <!-- TABLA DE CURSOS  -->
-            <div class="col-12" id="headingOne">
-              <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-                <div class="card mt-2">
+
+            <!-- TABLA DE CURSOS -->
+            <div class="col-12">
+              <div class="card mt-2">
                   <div class="card-header">
                     <div class="row mb-2">
                       <div class="col-12">
                         <h3 class="card-title">Cantidad de cursos
                           <span style="color:#C1E1EE;">(<?php echo $resultCurs['cantidad']; ?>)</span>
                         </h3>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-12 col-md-7"></div>
-                      <div class="col-12 col-md-5">
-                        <div id="tablaCursos_filter" class="dataTables_filter">
-
-                          <!-- <input type="search " class="form-control form-control-sm " placeholder=" " aria-controls="tablaCursos "> -->
-
-                          <div class="input-group mb-3">
-                            <input type="search" class="form-control buscador" placeholder="Buscar" aria-controls="tablaCursos" aria-describedby="basic-addon2">
-                            <div class="input-group-append">
-                              <button type="button" class="btn btn-outline-dark border-left-0" style="border-color: #ced4da;border-radius: 0 50px 50px 0;">
-                                <i class="fas fa-search"></i>
-                              </button>
-                            </div>
-                          </div>
-
-                        </div>
                       </div>
                     </div>
                   </div>
@@ -164,7 +131,7 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                                   <?php echo substr($curso['descripcionCurso'], 0, 100) . "..."; ?>
                                 </td>
                                 <td>
-                                  <?php echo $datoCate['nombreCategoria']; ?>-
+                                  <?php echo $datoCate['nombreCategoria']; ?>
                                 </td>
                                 <td>
                                   <?php echo $curso['dirigido']; ?>
@@ -205,20 +172,8 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                     </div>
                     <!-- /.card-body -->
                   </div>
-                  <!-- fin tabla cursos --> 
-                  <!-- paginador de cursos-->
-                  <div class="col-12">
-                    <div class="row pag">
-                      <nav>
-                        <ul class="pagination mt-3">
-                          <li class="page-item"><a class="page-link text-info" href="#">Anterior</a></li>
-                          <li class="page-item"><a class="page-link text-info num" href="#">1</a></li>
-                          <li class="page-item"><a class="page-link text-info" href="#">Siguiente</a></li>
-                        </ul>
-                      </nav>
-                    </div>
-                  </div>
-                  <!--fin paginador --> 
+                  <!-- fin tabla cursos -->
+
                   <?php
                   $pdo3 = Database::connect(); 
                   $sql3 = "SELECT COUNT(*) AS cantidad FROM categorias";
@@ -226,10 +181,11 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                   $q3->execute(array());
                   $resultCa = $q3->fetch(PDO::FETCH_ASSOC); 
                   ?> 
+
                   <!-- tablas (2) categorias  -->
                   <div class="row">
                     <div class="col-12">
-                      <h3 class="card-title mb-3">Cantidad de categorías
+                      <h3 class="card-title my-3">Cantidad de categorías
                         <span style="color:#C1E1EE;">(<?php echo $resultCa['cantidad']; ?>)</span>
                       </h3>
                     </div>
@@ -273,7 +229,7 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                         <!-- /.card-body -->
                       </div>
                     </div>
-                    <!-- tabla fin añadir categorias -->
+                    <!-- fin tabla añadir categorias -->
 
                     <!-- tabla accion categorias -->
                     <div class="col-12 col-md-6">
@@ -350,7 +306,7 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                                         <div class="modal-dialog">
                                           <div class="modal-content">
                                             <div class="modal-header">
-                                              <h4>Editar Categoria</h4>
+                                              <h4>Editar Categoría</h4>
                                               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                 <span aria-hidden="true">&times;</span>
                                               </button>
@@ -362,7 +318,7 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
 
                                                   <input type="text" id="idCategoria" name="idCategoria" class="form-control" value="<?php echo $dato3['idCategoria']; ?>" style="display: none;" />
                                                   <div class="form-group" style="padding: 0px;">
-                                                    <label class="col-form-label">CATEGORIA</label>
+                                                    <label class="col-form-label">CATEGORÍA</label>
                                                     <input type="text" placeholder="Categoria" id="nombreCategoria" name="nombreCategoria" class="form-control" value="<?php echo $dato3['nombreCategoria']; ?>" required />
                                                   </div>
                                                 </div>
@@ -419,159 +375,10 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                   </div>
                   <!--fin paginador -->
                 </div>
-                
-              </div>
             </div>
             <!-- FIN DE TABLA DE CURSOS -->
-
-
-
-
-            <?php
-            $pdo3 = Database::connect();
-            $sqlUsu = "SELECT COUNT(*) AS cantidad FROM usuarios WHERE estado = 1";
-            $qUsua = $pdo3->prepare($sqlUsu);
-            $qUsua->execute(array());
-            $resultUsu = $qUsua->fetch(PDO::FETCH_ASSOC);
-            ?>
-            <!-- TABLA DE USUARIOS  -->
-            <div id="headingTwo" class="col-12">
-              <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-                <div class="card mt-2">
-                  <div class="card-header">
-                    <div class="row mb-2">
-                      <div class="col-12">
-                        <h3 class="card-title">Cantidad de usuarios
-                          <span style="color:#C1E1EE;">(<?php echo $resultUsu['cantidad']; ?>)</span>
-                        </h3>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-12 col-md-7"></div>
-                      <div class="col-12 col-md-5">
-                        <div id="tableUsuarios_filter" class="dataTables_filter">
-                          <div class="input-group mb-3">
-                            <input type="search" class="form-control buscador" placeholder="Buscar" aria-controls="tableUsuarios" aria-describedby="basic-addon2">
-                            <div class="input-group-append">
-                              <button type="button" class="btn btn-outline-dark border-left-0" style="border-color: #ced4da;border-radius: 0 50px 50px 0;">
-                                <i class="fas fa-search"></i>
-                              </button>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="card-body">
-                    <div>
-                      <div class="table-responsive">
-                        <table id="tableUsuarios" class="table table-borderless dt-responsive  text-left" cellspacing="0" width="100%">
-                          <thead>
-                            <tr>
-                              <th style="border-radius: 10px 0 0 10px;">
-                                Privilegio
-                              </th>
-                              <th scope="col">Nombres</th>
-                              <th>Apellidos</th>
-                              <th>email</th>
-                              <th>teléfono</th>
-                              <th>n° documento</th>
-                              <th>sexo</th>
-                              <th style="border-radius: 0 10px 10px 0;">
-                                Acción
-                              </th>
-                            </tr>
-                          </thead>
-                          <tbody>
-
-                            <?php
-                            foreach ($usuarios as $usuarios) {
-                              $pdo4 = Database::connect();
-                              // para el privilegio
-                              $idPri = $usuarios['privilegio'];
-                              $sql6 = "SELECT * FROM privilegio WHERE id_privilegio = '$idPri'";
-                              $q6 = $pdo4->prepare($sql6);
-                              $q6->execute(array());
-                              $datoPrivi = $q6->fetch(PDO::FETCH_ASSOC);
-                              $dotoPrivilegio = $q6->fetchAll();
-                              // para el sexo
-                              $idSexo = $usuarios['sexo'];
-                              $sql7 = "SELECT * FROM sexo WHERE id_genero = '$idSexo'";
-                              $q7 = $pdo4->prepare($sql7);
-                              $q7->execute(array());
-                              $datoSexo = $q7->fetch(PDO::FETCH_ASSOC);
-                            ?>
-
-                              <tr>
-                                <td><?php echo $datoPrivi['nombre_privilegio']; ?></td>
-                                <td><?php echo $usuarios['nombres']; ?></td>
-                                <td><?php echo $usuarios['apellido_pat'] . " " . $usuarios['apellido_mat']; ?></td>
-                                <td><?php echo $usuarios['email']; ?></td>
-                                <td><?php echo $usuarios['telefono']; ?></td>
-                                <td><?php echo $usuarios['nro_doc']; ?></td>
-                                <td><?php echo $datoSexo['nombre_genero']; ?></td>
-                                <!-- <td><img style="height: 50px;" src="data:image/*;base64,<php echo base64_encode($usuarios[ 'mifoto']) ?>"></td> -->
-                                <td>
-                                  <?php $idUsu = $usuarios['id_user'] ?>
-                                  <!--para editar usuario-->
-                                  <div class="btn-group" role="group">
-                                    <!-- <a href="#" data-toggle="modal" data-target="#modalAdmin"
-                                     <?php // echo "onclick='masInfoUser( $idUsu )'" 
-                                      ?>>
-                                      <button type="button" class="btn btn-edit">
-                                        <i class="far fa-edit"></i>
-                                      </button>
-                                    </a> -->
-
-                                    <a href="">
-                                      <button type="button" class="btn btn-edit">
-                                        <i class="far fa-edit"></i>
-                                      </button>
-                                    </a>
-
-
-                                  </div>
-                                  <!-- para quitar usuario -->
-                                  <div class="btn-group" role="group">
-                                    <a href="includes/usersidebar/actualizar_perfil.php?id_eliminar=<?php echo $usuarios['id_user']; ?>">
-                                      <button type="button" class="btn btn-quitar">
-                                        <i class="fas fa-trash-alt"></i>
-                                      </button>
-                                    </a>
-                                  </div>
-                                </td>
-                              </tr>
-
-                            <?php }
-                            Database::disconnect();
-                            ?>
-
-                          </tbody>
-                        </table>
-                      </div>
-                    </div>
-
-                    <!-- /.card-body -->
-                  </div>
-                  <!-- paginador de usuarios-->
-                  <div class="col-12">
-                    <div class="row pag">
-                      <nav>
-                        <ul class="pagination mt-3">
-                          <li class="page-item"><a class="page-link text-info" href="#">Anterior</a></li>
-                          <li class="page-item"><a class="page-link text-info num" href="#">1</a></li>
-                          <li class="page-item"><a class="page-link text-info" href="#">Siguiente</a></li>
-                        </ul>
-                      </nav>
-                    </div>
-                  </div>
-                  <!--fin paginador -->
-                </div>
-              </div>
-            </div>
-            <!-- FIN DE TABLA DE USUARIO -->
-
+            
+           
             <?php
             $pdo10 = Database::connect();
 
@@ -599,407 +406,15 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
             $usuarios = $q10->fetchAll(PDO::FETCH_ASSOC);
             ?>
 
-
-            <!-- TABLA DE EMPRESAS -->
-            <div id="headingThree">
-              <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-                <div class="card">
-                  <div class="card-header">
-                    <div class="row mb-2">
-                      <div class="col-12">
-                        <h3 class="card-title">Cantidad de empresas
-                          <span style="color:#C1E1EE;">(20)</span>
-                        </h3>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-12 col-md-7"></div>
-                      <div class="col-12 col-md-5">
-                        <div id="" class="">
-                          <div class="input-group mb-3">
-                            <input type="search" class="form-control buscador" placeholder="Buscar" aria-controls="" aria-describedby="basic-addon2">
-                            <div class="input-group-append">
-                              <button type="button" class="btn btn-outline-dark border-left-0" style="border-color: #ced4da;border-radius: 0 50px 50px 0;">
-                                <i class="fas fa-search"></i>
-                              </button>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- /.card-header -->
-                  <div class="card-body">
-                    <div class="table-responsive">
-                      <table id="" class="table table-borderless dt-responsive text-center" cellspacing="0" width="100%">
-                        <thead>
-                          <tr>
-                            <th>Privilegio</th>
-                            <th>Nombres-Contacto</th>
-                            <th>Nombre-Empresa</th>
-                            <th>Email-Contacto</th>
-                            <th>Email-Empresa</th>
-                            <th>Telef-Contacto</th>
-                            <th>Nro° Subs</th>
-                            <th>Estado: </th>
-                            <th>Fecha de Solicitud: </th>
-                            <th>Contraseña:</th>
-                            <th>CODIGO: </th>
-                            <th style="border-radius: 0 10px 10px 0;">
-                              Acciones
-                            </th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <?php
-                              foreach ($usuarios as $usuarios) {
-                                  $pdo11 = Database::connect();
-                                  // para el privilegio
-                                  $idPriv = $usuarios['privilegio'];
-                                  $sql11 = "SELECT * FROM privilegio WHERE id_privilegio = '$idPriv'";
-                                  $q11 = $pdo11->prepare($sql11);
-                                  $q11->execute(array());
-                                  $datoPrivi = $q11->fetch(PDO::FETCH_ASSOC);
-                                  $dotoPrivilegio = $q11->fetchAll();
-                                  // para el sexo
-                                  $idSex = $usuarios['sexo'];
-                                  $sql12 = "SELECT * FROM sexo WHERE id_genero = '$idSex'";
-                                  $q12 = $pdo11->prepare($sql12);
-                                  $q12->execute(array());
-                                  $datoSexo = $q12->fetch(PDO::FETCH_ASSOC);
-                              ?>
-                          <tr>
-                          <td><?php echo $datoPrivi['nombre_privilegio']; ?></td>
-                          <td><?php echo $usuarios['nombres']; ?></td>
-                          <td><?php echo $usuarios['nombre_empresa']; ?></td>
-                          <td><?php echo $usuarios['correo_personal']; ?></td>
-                          <td><?php echo $usuarios['correo_corporativo']; ?></td>
-                          <td><?php echo $usuarios['telefono_movil']; ?></td>
-                          <td><?php echo $usuarios['num_suscripcion']; ?></td>
-                          <td><?php if ($usuarios['estado'] == 0) {
-                                  echo "Pendiente";
-                              } else {
-                                  echo "Aprobado";
-                              } ?></td>
-                          <td><?php echo $usuarios['fecha_registro']; ?></td>
-                          <td><?php $userr = "123";
-
-                              if (password_verify($userr, $usuarios['pass']) === true) {
-                                  echo "Vacio";
-                              } else {
-                                  echo $usuarios['pass'];
-                              } ?></td>
-                          <!-- <td><img style="height: 50px;" src="data:image/*;base64,<php echo base64_encode($usuarios['mifoto']) ?>"></td> -->
-                          <td><?php 
-                              $idemp = $usuarios['id_solicitud'];
-                              $pdo12 = Database::connect();
-                              $id_usa = $pdo12->prepare("SELECT * FROM `empresascursos` WHERE id_Empresa = '$idemp' LIMIT 1");
-                              $id_usa->execute();
-                              $id_usa = $id_usa->fetch(PDO::FETCH_ASSOC);
-                              // $id_use = $id_usa['id_Empresa'];
-                              
-                              if (empty($id_usa)) {
-                                  echo "No tiene";
-                              } else {
-                                  echo $id_usa['codigo_curse'];
-                              }
-                          ?></td>
-                            <td>
-                              <?php $idUsu = $usuarios['id_user'] ?>
-                              <!--para editar empresa-->
-                              <div class="btn-group" role="group">
-                                <a href="#" data-toggle="modal" data-target="#modalAdminEmp" <?php echo "onclick='masInfoUser($idUsu)'" ?>>
-                                  <button type="button" class="btn btn-edit">
-                                    <i class="far fa-edit"></i>
-                                  </button>
-                                </a>
-                              </div>
-                              <!-- para quitar empresa -->
-                              <div class="btn-group" role="group">
-                                <a href="includes\Business\business.php?id_eliminar=<?php echo $usuarios['id_user']; ?>&id_delete=<?php echo $usuarios['id_solicitud']; ?>">
-                                  <button type="button" class="btn btn-quitar">
-                                    <i class="fas fa-trash-alt"></i>
-                                  </button>
-                                </a>
-                              </div>
-                            </td>
-                          </tr>
-                          <?php }
-                            Database::disconnect();
-                            ?>
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
-                  <!-- /.card-body -->
-                </div>
-                <!-- paginador de empresas-->
-                <div class="col-12">
-                  <div class="row pag">
-                    <nav>
-                      <ul class="pagination mt-3">
-                        <li class="page-item"><a class="page-link text-info" href="#">Anterior</a></li>
-                        <li class="page-item"><a class="page-link text-info num" href="#">1</a></li>
-                        <li class="page-item"><a class="page-link text-info" href="#">Siguiente</a></li>
-                      </ul>
-                    </nav>
-                  </div>
-                </div>
-                <!--fin paginador -->
-              </div>
-              <!-- fin tabla empresas -->
-            </div>
-            <!-- FIN DE TABLA DE EMPRESAS -->
-          </div>
         </div>
       </div>
-
-      <!-- --MODAL USER -->
-    <div class="modal fade" id="modalAdminEmp" style="overflow:hidden;">
-        <div class="modal-dialog modal-dialog-scrollable modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Información de Usuario</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-
-                <!-- contenido modal -->
-                <div class="modal-body">
-                    <form action="includes/Business/business.php" method="POST" >
-                    <div class="row form-group">
-                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-0"></div>
-                        <label class="col-lg-2 col-md-3 col-sm-3 col-xs-4 control-label">Nombre-Contacto:</label>
-                        <div class="col-lg-7 col-md-5 col-sm-5 col-xs-6">
-                            <!-- <input class="form-control input-md" type="text" value="<?php //echo $usuarios['nombres']; ?>" id="nameC" name="nameC"> -->
-                            <input class="form-control input-md" type="text" id="nameC" name="nameC">
-                        </div>
-                    </div>
-                    <input type="hidden" id="id_user"  name="id_user" />
-                <input type="hidden" id="id_sol" name="id_sol" />
-                <input type="hidden" id="status" name="status"/>
-                    <div class="row form-group">
-                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-0"></div>
-                        <label class="col-lg-2 col-md-3 col-sm-3 col-xs-4 control-label">Nombre de la Empresa:</label>
-                        <div class="col-lg-7 col-md-5 col-sm-5 col-xs-6">
-                            <!-- <input class="form-control input-md" type="text" value="<?php //echo $usuarios['nombre_empresa']; ?>" id="nameE" name="nameE"> -->
-                            <input class="form-control input-md" type="text" id="nameE" name="nameE">
-                        </div>
-                    </div>
-                    <div class="row form-group">
-                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-0"></div>
-                        <label class="col-lg-2 col-md-3 col-sm-3 col-xs-4 control-label">Email-Contacto:</label>
-                        <div class="col-lg-7 col-md-5 col-sm-5 col-xs-6">
-                            <!-- <input class="form-control input-md" type="email" value="<?php //echo $usuarios['correo_personal']; ?>" id="E-C" name="Apellido_Materno"> -->
-                            <input class="form-control input-md" type="email" id="E-C" name="E-C">
-                        </div>
-                    </div>
-
-                    <div class="row form-group">
-                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-0"></div>
-                        <label class="col-lg-2 col-md-3 col-sm-3 col-xs-4 control-label">Email-Empresa</label>
-                        <div class="col-lg-7 col-md-5 col-sm-5 col-xs-6">
-                            <!-- <input class="form-control input-md" type="email" value="<?php //echo $usuarios['correo_corporativo']; ?>" id="E-E" name="E-E"> -->
-                            <input class="form-control input-md" type="email" id="E-E" name="E-E">
-                        </div>
-                    </div>
-
-                    <div class="row form-group">
-                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-0"></div>
-                        <label class="col-lg-2 col-md-3 col-sm-3 col-xs-4 control-label">Telefono-Contacto:</label>
-                        <div class="col-lg-7 col-md-5 col-sm-5 col-xs-6">
-                            <!-- <input class="form-control input-md" type="tel" value="<?php //echo $usuarios['telefono_movil']; ?>" id="T-C" name="Correo"> -->
-                            <input class="form-control input-md" type="tel" id="T-C" name="T-C">
-                        </div>
-                    </div>
-
-                    <div class="row form-group">
-                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-0"></div>
-                        <label class="col-lg-2 col-md-3 col-sm-3 col-xs-4 control-label">Número de subscripciones:</label>
-                        <div class="col-lg-7 col-md-5 col-sm-5 col-xs-6">
-                            <!-- <input class="form-control input-md" type="number" value="<?php //echo $usuarios['num_suscripcion']; ?>" id="N-S" name="N-S"> -->
-                            <input class="form-control input-md" type="number" id="N-S" name="N-S">
-                        </div>
-                    </div>
-
-                    </div>
-
-                    <div class="row form-group">
-                        <div class="col-lg-2 col-md-2 col-sm-2 col-0"></div>
-                        <label class="col-lg-2 col-md-3 col-sm-3 col-4 control-label">Fecha de solicitud:</label>
-                        <div class="col-lg-7 col-md-5 col-sm-5 col-6">
-                            <!-- <input class="form-control input-md" type="text" id="F-S" value="<?php //echo $usuarios['fecha_registro']; ?>" readonly name="nume_documento"> -->
-                            <input class="form-control input-md" type="text" id="F-S" readonly name="F-S">
-                        </div>
-                    </div>
-
-                    <div class="row form-group">
-                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-0"></div>
-                        <label class="col-lg-2 col-md-3 col-sm-3 col-xs-4 control-label">Contraseña:</label>
-                        <div class="col-lg-7 col-md-5 col-sm-5 col-xs-6">
-                            <input class="form-control input-md" type="text" id="Pass" name="Pass">
-                        </div>
-                    </div>
-                        
-                    <?php
-                    // }?>
-                    <!-- fin contenido modal -->
-                    <div class="modal-footer">
-                        <button type="submit" class="btn btn-blue"  style="color: #FFFFFF; background: #0093E9; background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);">
-                            Guardar <i class="fas fa-save"></i>
-                        </button>
-                        <!-- <button type="button" class="btn btn-secondary" onclick="actu();" data-dismiss="modal">Cerrar</button> -->
-                    </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-
-
-      <!-- --MODAL USER -->
-      <div class="modal fade" id="modalAdmin" style="overflow:hidden;">
-        <div class="modal-dialog modal-dialog-scrollable modal-lg">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title">Información de Usuario</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-
-            <!-- contenido modal -->
-            <div class="modal-body">
-              <!-- <form action="includes/usersidebar/actualizar_perfil.php?id=<php echo $id; ?>" method="POST" enctype="multipart/form-data"> -->
-              <input type="hidden" id="id_userV" name="id_userV" />
-              <div class="row form-group">
-                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-0"></div>
-                <label class="col-lg-2 col-md-3 col-sm-3 col-xs-4 control-label">Nombre:</label>
-                <div class="col-lg-7 col-md-5 col-sm-5 col-xs-6">
-                  <input class="form-control input-md" type="text" id="Nombre" name="Nombre">
-                </div>
-              </div>
-
-              <div class="row form-group">
-                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-0"></div>
-                <label class="col-lg-2 col-md-3 col-sm-3 col-xs-4 control-label">Apellido Paterno:</label>
-                <div class="col-lg-7 col-md-5 col-sm-5 col-xs-6">
-                  <input class="form-control input-md" type="text" id="Apellidop" name="Apellido_Paterno">
-                </div>
-              </div>
-
-              <div class="row form-group">
-                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-0"></div>
-                <label class="col-lg-2 col-md-3 col-sm-3 col-xs-4 control-label">Apellido Materno:</label>
-                <div class="col-lg-7 col-md-5 col-sm-5 col-xs-6">
-                  <input class="form-control input-md" type="text" id="Apellidom" name="Apellido_Materno">
-                </div>
-              </div>
-
-              <div class="row form-group">
-                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-0"></div>
-                <label class="col-lg-2 col-md-3 col-sm-3 col-xs-4 control-label">País:</label>
-                <div class="col-lg-7 col-md-5 col-sm-5 col-xs-6">
-                  <input class="form-control input-md" type="text" id="Pais" name="pais">
-                </div>
-              </div>
-
-              <div class="row form-group">
-                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-0"></div>
-                <label class="col-lg-2 col-md-3 col-sm-3 col-xs-4 control-label">Correo:</label>
-                <div class="col-lg-7 col-md-5 col-sm-5 col-xs-6">
-                  <input class="form-control input-md" type="email" id="Correo" name="Correo">
-                </div>
-              </div>
-
-              <div class="row form-group">
-                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-0"></div>
-                <label class="col-lg-2 col-md-3 col-sm-3 col-xs-4 control-label">Teléfono:</label>
-                <div class="col-lg-7 col-md-5 col-sm-5 col-xs-6">
-                  <input class="form-control input-md" type="tel" id="Telefono" name="telefono">
-                </div>
-              </div>
-
-              <div class="row form-group">
-                <div class="col-lg-2 col-md-2 col-sm-2 col-0"></div>
-                <label class="col-lg-2 col-md-3 col-sm-3 col-4 control-label">Tipo de Documento:</label>
-                <div class="col-lg-7 col-md-5 col-sm-5 col-6">
-                  <select class="form-control seleccionador" name="tipo_doc" id="Tipod">
-                    <option value="1">DNI</option>
-                    <option value="2">PASAPORTE</option>
-                    <option value="3">CARNÉ EXTRANJERIA</option>
-                    <option value="4">RUC</option>
-                  </select>
-                </div>
-              </div>
-
-              <div class="row form-group">
-                <div class="col-lg-2 col-md-2 col-sm-2 col-0"></div>
-                <label class="col-lg-2 col-md-3 col-sm-3 col-4 control-label">Nro Documento:</label>
-                <div class="col-lg-7 col-md-5 col-sm-5 col-6">
-                  <input class="form-control input-md" type="text" id="Numero" name="nume_documento">
-                </div>
-              </div>
-
-              <div class="row form-group">
-                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-0"></div>
-                <label class="col-lg-2 col-md-3 col-sm-3 col-xs-4 control-label">Sexo:</label>
-                <div class="col-lg-7 col-md-5 col-sm-5 col-xs-6">
-                  <select class="form-control" class="seleccionador" name="sexo" id="Tipos">
-                    <option value="1">Masculino</option>
-                    <option value="2">Femenino</option>
-                    <option value="3">No Binario</option>
-                    <option value="4">Prefiero No Decir</option>
-                  </select>
-                </div>
-              </div>
-
-              <div class="row form-group">
-                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-0"></div>
-                <label class="col-lg-2 col-md-3 col-sm-3 col-xs-4 control-label">Fecha Nacimiento:</label>
-                <div class="col-lg-7 col-md-5 col-sm-5 col-xs-6">
-                  <input class="form-control input-md" type="date" id="Fecha" name="fecha_naci">
-                </div>
-              </div>
-
-              <div class="row form-group">
-                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-0"></div>
-                <label class="col-lg-2 col-md-3 col-sm-3 col-xs-4 control-label">Inserta tu foto:</label>
-                <div class="col-lg-7 col-md-5 col-sm-5 col-xs-6">
-                  <div class="column" style="margin:auto;">
-                    <label for="inputGroupFile04" class="subir">
-                      <i class="fas fa-cloud-upload-alt" aria-hidden="true"></i>
-                      Selecciona la foto
-                    </label>
-                    <input type="file" name="imagen" accept="image/*" id="inputGroupFile04" onchange="cambiarImg()" aria-describedby="inputGroupFileAddon04" style="display: none;" aria-label="Upload" ; multiple>
-
-                  </div>
-                  <div class="column" style="margin:auto;">
-                    <div id="infoImg"></div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- </form> -->
-            </div>
-            <!-- fin contenido modal -->
-            <div class="modal-footer">
-              <button type="submit" class="btn btn-blue" onclick="actualizarUser();" style="color: #FFFFFF; background: #0093E9; background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);">
-                Editar <i class="far fa-edit"></i>
-              </button>
-              <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button> -->
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- fin modal -->
+    </div>
 
       <br>
       <br>
       <br>
 
   </main>
-  <!-- FIN CODIGO NUEVO -->
 
   <!-- <script src="./assets/js/Validator.js"></script>
 <script src="./assets/js/sidebarEditar.js"></script> -->
