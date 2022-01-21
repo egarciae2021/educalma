@@ -253,6 +253,9 @@ CREATE TABLE SOLICITUD (
 	obj_equipo VARCHAR(300)
 );
 
+INSERT INTO `solicitud` (`id_solicitud`, `id_usuario`, `correo_corporativo`, `nombre_completo`, `correo_personal`, `nombre_empresa`, `codigo_pais`, `telefono_movil`, `tamanio_empresa`, `num_suscripcion`, `obj_equipo`) VALUES
+(1, 13, 'microsoft@microsoft.com', 'Bill Gates', 'microsoft@microsoft.com', 'microsoft', '+51', '123456789', 100, 30, 'queremos cursos ');
+
 DELIMITER $$
 CREATE PROCEDURE PROC_NUEVA_SOLICITUD (
 	IN p_correo_corporativo varchar(320),
@@ -311,7 +314,6 @@ CREATE PROCEDURE PROC_NUEVA_SOLICITUD (
 	SELECT type_resp AS 'TYPE_RESP', title_resp AS 'TITLE_RESP', text_resp AS 'TEXT_RESP', refrest_resp AS 'REFREST_RESP';
 END
 $$
-DELIMITER ;
 
 delimiter |
 create trigger generar_codigo before insert on cursoinscrito for each row
