@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
   $("#btnAction").click(() => {
     if (!validEmail()) {
       if (validarEmail($("#txtEmail").val())) {
-        window.location.href = "./#boxRotate";
+        //window.location.href = "./#boxRotate";
         scrollTo(scrollX, scrollY - 100);
         $(".back input").first().focus();
         $("#boxRotate").addClass("active");
