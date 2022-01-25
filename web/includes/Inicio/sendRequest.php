@@ -21,7 +21,7 @@ $password = password_hash($pass, PASSWORD_BCRYPT);
 
 try{
     $verif = $pdo4->prepare(" INSERT INTO `usuarios` (privilegio,padreEmpresa,hijoEmpresa,`nombres`,`apellido_pat`,`apellido_mat`,`email`,`pass`,`telefono`,`tipo_doc`,`nro_doc`,`sexo`,`fecha_nacimiento`,`pais`,cod_tipoDonador,estado,fecha_registro,mifoto) 
-    VALUES('4','0','1',:nombre,'','',:correo,:password,:telefono,'','','','','','1','0',now(),'')");
+    VALUES('4','0','1',:nombre,'','',:correo,:password,:telefono,'','',1,'','','1','0',now(),'')");
     $verif->bindParam(":nombre",$nombre,PDO::PARAM_STR);
     // $verif->bindParam(":ape_pater",$ape_pater,PDO::PARAM_STR);
     // $verif->bindParam(":ape_mater",$ape_mater,PDO::PARAM_STR);
