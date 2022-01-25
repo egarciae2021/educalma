@@ -1,14 +1,13 @@
 <head>
     <link rel="stylesheet" href="assets/css/nosotros.css" />
 </head>
-
 <!-- PANEL -->
 <div class="container-fluid div-container-panel-nosotros">
     <div class="row">
         <div class="col-12 col-sm-12 col-md-6 col-lg-7 col-xl-6 container-panel-image-nosotros">
             <div class="container-image-panel ">
                 <div class="image-panel">
-                    <img src="./assets/images/mundo-nosotros.png" alt="">
+                    <img src="./assets/images/gou.png" alt="">
                 </div>
             </div>
         </div>
