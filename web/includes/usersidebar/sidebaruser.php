@@ -63,7 +63,18 @@ $dato12 = $q12->fetch(PDO::FETCH_ASSOC)
 
             <div style="text-align: right;">
 
-<img src="data:image/*;base64,<?php echo base64_encode($dato12['mifoto']);?>" alt="foto_curso" style="width: 50px;height:45px;border-radius: 50%;">
+
+<?php    
+    if($dato12['mifoto']!=null){
+?>
+        <img src="data:image/*;base64,<?php echo base64_encode($dato12['mifoto']);?>" alt="foto_curso" style="width: 50px;height:45px;border-radius: 50%;">
+<?php
+    }else{
+?>
+        <img src="./assets/images/user.png" alt="foto_curso" style="width: 50px;height:45px;border-radius: 50%;">
+<?php
+    }
+?>
 
 </div>
 
@@ -272,7 +283,19 @@ $dato12 = $q12->fetch(PDO::FETCH_ASSOC)
                                     <tr style="position:center;">
                                       
                                         <td >
-                                            <div class="imgbx"><img src="data:image/*;base64,<?php echo base64_encode($dato11['mifoto']);?>" alt="foto_curso" style="width: 50px;"></div>
+                                            <div class="imgbx">
+                                                <?php    
+                                                    if($dato11['mifoto']!=null){
+                                                ?>
+                                                        <img src="data:image/*;base64,<?php echo base64_encode($dato11['mifoto']);?>" alt="foto_curso" style="width: 50px;">
+                                                <?php
+                                                    }else{
+                                                ?>
+                                                        <img src="./assets/images/user.png" alt="foto_curso" style="width: 50px;">
+                                                <?php
+                                                    }
+                                                ?> 
+                                            </div>
                                             <span>⠀⠀</span>
                                         </td>
                                         <td>

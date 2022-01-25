@@ -65,7 +65,18 @@ $dato12 = $q12->fetch(PDO::FETCH_ASSOC)
 
             <div style="text-align: right;">
 
-                <img src="data:image/*;base64,<?php echo base64_encode($dato12['mifoto']); ?>" alt="foto_curso" style="width: 50px;height:45px;border-radius: 50%;">
+
+                <?php    
+                    if($dato12['mifoto']!=null){
+                ?>
+                        <img src="data:image/*;base64,<?php echo base64_encode($dato12['mifoto']); ?>" alt="foto_curso" style="width: 50px;height:45px;border-radius: 50%;">
+                <?php
+                    }else{
+                ?>
+                        <img src="./assets/images/user.png" alt="foto_curso" style="width: 50px;height:45px;border-radius: 50%;">
+                <?php
+                    }
+                ?>
 
             </div>
 

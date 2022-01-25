@@ -18,7 +18,18 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                         <h3 class="nav__subtitle__img-dashboard">
 
                             <!-- <img src="./assets/images/imagen_2021-10-29_000020.png" alt="" class="header__img__side"></h3> -->
-                            <img src="data:image/*;base64,<?php echo base64_encode($dato['mifoto']); ?>" alt="foto_curso" class="header__img__side-dashboard">
+                            
+                            <?php    
+                                if($dato['mifoto']!=null){
+                            ?>
+                                    <img src="data:image/*;base64,<?php echo base64_encode($dato['mifoto']); ?>" alt="foto_curso" class="header__img__side-dashboard">
+                            <?php
+                                }else{
+                            ?>
+                                    <img src="./assets/images/user.png" alt="foto_curso" class="header__img__side-dashboard">
+                            <?php
+                                }
+                            ?>
                         </h3>
 
                         <h4 class="nav__subtitle-dashboard">

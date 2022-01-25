@@ -19,13 +19,13 @@ $fecha=$_POST['fecha_registrar'];
 $pais=$_POST['pais_registrar'];
 $imga=$_FILES['imagen']['tmp_name'];
 
-        if($_FILES['imagen']['size']>0){
-            $imga = addslashes(file_get_contents($imga));
-        }else{
-            $aux = "../../assets/images/user.png";
-            $imga = addslashes(file_get_contents($aux));
+if($_FILES['imagen']['size']>0){
+    $imga = addslashes(file_get_contents($imga));
+}else{
+    //$aux = "../../assets/images/user.png";
+    $imga = null;
 
-        }
+}
 
 $pdo = Database::connect();
 $veri="SELECT * FROM usuarios WHERE email = '$correo' ";
@@ -42,8 +42,8 @@ Database::disconnect();
 
         $pdo = Database::connect();
         // $verif=$pdo->prepare(" INSERT INTO usuarios (privilegio,padreEmpresa,hijoEmpresa,nombres,apellido_pat,apellido_mat,email,pass,telefono,tipo_doc,nro_doc,sexo,fecha_nacimiento,pais,cod_tipoDonador,estado,fecha_registro,mifoto) 
-        $verif=$pdo->prepare(" INSERT INTO `usuarios` (privilegio,padreEmpresa,hijoEmpresa,`nombres`,`apellido_pat`,`apellido_mat`,`email`,`pass`,`telefono`,`tipo_doc`,`nro_doc`,`sexo`,`fecha_nacimiento`,`pais`,cod_tipoDonador,estado,fecha_registro,`mifoto`) 
-        VALUES('3','0','1',:nombre,:ape_pater,:ape_mater,:correo,:password,:telefono,:tipo_docu,:num_docume,:sexo,:fecha,:pais,'1','1',now(),:imga)");
+        $verif=$pdo->prepare(" INSERT INTO `usuarios` (privilegio,padreEmpresa,hijoEmpresa,`nombres`,`apellido_pat`,`apellido_mat`,`email`,`pass`,`telefono`,`tipo_doc`,`nro_doc`,`sexo`,`fecha_nacimiento`,`pais`,cod_tipoDonador,estado,fecha_registro) 
+        VALUES('3','0','1',:nombre,:ape_pater,:ape_mater,:correo,:password,:telefono,:tipo_docu,:num_docume,:sexo,:fecha,:pais,'1','1',now())");
         $verif->bindParam(":nombre",$nombre,PDO::PARAM_STR);
         $verif->bindParam(":ape_pater",$ape_pater,PDO::PARAM_STR);
         $verif->bindParam(":ape_mater",$ape_mater,PDO::PARAM_STR);
@@ -55,8 +55,23 @@ Database::disconnect();
         $verif->bindParam(":sexo",$sexo,PDO::PARAM_INT);
         $verif->bindParam(":fecha",$fecha);
         $verif->bindParam(":pais",$pais,PDO::PARAM_STR);
-        $verif->bindParam(":imga",$imga);
         $verif->execute();
+
+
+        if($_FILES['imagen']['size']>0){
+          //traer el id del insert que se agregado
+          $veri2="SELECT * FROM usuarios  WHERE email = '$correo' ";
+          $q2 = $pdo->prepare($veri2);
+          $q2->execute(array());
+          $dato2=$q2->fetch(PDO::FETCH_ASSOC);
+
+          $idUsuarioA = $dato2['id_user'];
+
+          //actualizar imagen
+          $consulta_e = "UPDATE usuarios SET mifoto='$imga' WHERE id_user='$idUsuarioA'";
+          $stm_e = $pdo->prepare($consulta_e);
+          $stm_e->execute();
+        }
 
         Database::disconnect();
        
