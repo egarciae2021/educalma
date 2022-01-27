@@ -48,7 +48,6 @@ body {
 .boton-nuevo {
     background: #fff;
     color: #4F52D6;
-    ;
     border: .1rem solid var(--orange);
     padding: .4rem 2rem;
     margin: 0 .2rem;
@@ -113,67 +112,6 @@ body {
 }
 
 
-/*botones*/
-
-.col-12 .card .card-body .table-responsive table tbody tr td a .btn {
-    display: inline-block;
-    font-size: 0.8rem;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
-    margin: 0.2rem;
-    padding: 1rem;
-    color: #ffffff;
-    border: none;
-    background: gray;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: medium;
-    text-transform: none;
-}
-
-.col-12 .card .card-body .table-responsive table tbody tr td a .btn:hover {
-    color: black;
-    background: transparent;
-    transition: 0.3s ease-in-out all;
-    text-decoration: none;
-}
-
-.col-12 .card .card-body .table-responsive table tbody tr td a .boton_add {
-    color: #fff;
-    border: 1px solid red;
-    background: red;
-    cursor: pointer;
-}
-
-.col-12 .card .card-body .table-responsive table tbody tr td a .boton_add:hover {
-    color: red;
-}
-
-.col-12 .card .card-body .table-responsive table tbody tr td a .boton_edit {
-    color: #fff;
-    border: 1px solid blue;
-    background: blue;
-    cursor: pointer;
-}
-
-.col-12 .card .card-body .table-responsive table tbody tr td a .boton_edit:hover {
-    color: blue;
-}
-
-.col-12 .card .card-body .table-responsive table tbody tr td a .boton_upload {
-    color: #fff;
-    border: 1px solid green;
-    background: green;
-    cursor: pointer;
-}
-
-.col-12 .card .card-body .table-responsive table tbody tr td a .boton_upload:hover {
-    color: darkgreen;
-}
-
-
-/*fin botones*/
 
 .contformulario .row form {
     flex: 1 1 25rem;
@@ -420,25 +358,6 @@ textarea {
     outline: none;
 }
 
-.btn-back {
-    margin-top: 5rem;
-    color: #4F52D6;
-    border: 2px solid #4F52D6;
-    /* margin: 2.5rem 2rem 0 2rem; */
-    margin: 2rem 1rem;
-}
-
-.btn-back:hover {
-    color: white;
-    background: #4F52D6;
-    border: 2px solid #4F52D6;
-    transition: .7s;
-}
-
-.btn-back:focus {
-    box-shadow: none;
-}
-
 form {
     background: whitesmoke;
     padding: 3.1rem 1rem;
@@ -477,6 +396,37 @@ form {
     box-shadow: none;
     border: 1px solid #4F52D6;
 }
+/*BOTONES*/
+.btn {
+    margin-top: 0;
+}
+.btn-add {
+    background: #56A4D0;
+    border-radius: 10px;
+    font-size: 14px;
+}
+.btn-add:hover {
+    background: #4a8db4;
+}
+.btn-edit {
+    background: #A9E2F9;
+    border-radius: 10px;
+    color: black;
+    font-size: 14px;
+}
+.btn-edit:hover {
+    background: #97d2e9;
+}
+.btn-upload {
+    background: #5bcaf7;
+    color: black;
+    font-size: 14px;
+    border-radius: 10px;
+}
+.btn-upload:hover {
+    background: #bce5f5;
+    color: #fff;
+}
 
 .btn-outline-danger {
     background: #4F52D6;
@@ -491,17 +441,25 @@ form {
     border: 1px solid #3c3ea5;
 }
 
-.btn-add {
-    background: #4F52D6;
-    color: white;
-    border: 1px solid #4F52D6;
+.btn-back {
+    margin-top: 5rem;
+    color: #4F52D6;
+    border: 2px solid #4F52D6;
+    /* margin: 2.5rem 2rem 0 2rem; */
+    margin: 2rem 1rem;
 }
 
-.btn-add:hover {
-    background: #3c3ea5;
+.btn-back:hover {
     color: white;
-    border: 1px solid #3c3ea5;
+    background: #4F52D6;
+    border: 2px solid #4F52D6;
+    transition: .7s;
 }
+
+.btn-back:focus {
+    box-shadow: none;
+}
+
 .content-imagen{
     /* border: 1px solid red; */
     width: 100%;
