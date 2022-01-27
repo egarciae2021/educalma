@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/styledash.css">
     <link rel="stylesheet" href="assets/css/agrecursos.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -88,16 +89,17 @@
 
                         ?>
                         <div class="table-responsive">
-                            <table id="example1" class="table table-striped table-bordered" cellspacing="0" width="100%">
-                                <thead>
-                                    <tr>
-                                        <th>Nombre</th>
+                
+                             <table id="example1" class="table table-borderless text-center dt-responsive text-center" cellspacing="0" width="100%">
+                                <thead >
+                                    <tr >
+                                        <th style="border-radius: 10px 0 0  10px;">Nombre</th>
                                         <th>Categoría</th>
                                         <th>Público dirigido</th>
                                         <th>Imagen</th>
                                         <th>Descripción</th>
                                         <th>Precio</th>
-                                        <th>Acciones</th>
+                                        <th style="border-radius: 0 10px 10px 0;">Acciones</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -125,11 +127,11 @@
                                                 ?>
                                                     <!--para agregar modulo-->
                                                     <a href="agregarModulos.php?id=<?php echo $curso['idCurso']; ?>">
-                                                        <button class="btn btn-outline-secondary boton_add" type="button"><i class="far fa-plus-square"></i> </button>
+                                                        <button class="btn btn-add" type="button"><i class="far fa-plus-square"></i> </button>
                                                     </a>
                                                     <!--para editar curso-->
                                                     <a href="editarcurso.php?id=<?php echo $curso['idCurso']; ?>">
-                                                        <button class="btn boton_edit" type="button"><i class="far fa-edit"></i></button>
+                                                        <button class="btn btn-edit" type="button"><i class="far fa-edit"></i></button>
                                                     </a>
                                                     <!--para quitar curso-->
                                                     <!-- <a href="includes/Cursos_crud/Cursos_CRUD.php?id_curso=<?php echo $curso['idCurso']; ?>">
@@ -140,7 +142,7 @@
                                                 ?>
                                                     <!--para quitar curso-->
                                                     <a href="includes/Cursos_crud/aceptarCurso.php?id_curso=<?php echo $curso['idCurso']; ?>&pag=<?php echo $_GET['pag'];?>">
-                                                        <button class="btn boton_upload" type="button">Publicar</button>
+                                                        <button class="btn btn-upload" type="button">Publicar</button>
                                                     </a>
 
                                                 <?php
