@@ -75,7 +75,8 @@ elseif(isset($_GET['ent'])){
     //echo '<script>window.location="../../pageEnterprice.php?id='.base64_encode($id).'&sol='.base64_encode($id_sol).'&val='.base64_encode($prube).'&subs='.base64_encode($subs).'"</script>';
     // $veri2=$pdo2->prepare("DELETE FROM `temp` WHERE cod_empre=$id");
     // $veri2->execute();
-    echo '<script>window.location="../../curseEmp.php?if='.base64_encode($id).'&ent='.base64_encode($id_sol).'&pag='.base64_encode($prube).'&cnt='.base64_encode($subs).'"</script>';
+    // echo '<script>window.location="../../curseEmp.php?if='.base64_encode($id).'&ent='.base64_encode($id_sol).'&pag='.base64_encode($prube).'&cnt='.base64_encode($subs).'"</script>';
+    echo '<script>window.location="../../curseEmp.php"</script>';
     // echo $prube;
 }
 else{

@@ -53,7 +53,7 @@ require_once 'database/databaseConection.php';
                 <div class="log-sign" style="--i: 1.8s">
                     <ul>
                         <li class="nav-link" style="--i: .6s">
-                            <a href="Enterprise.php">Cerrar</a>
+                            <a href="empleados.php">Cerrar</a>
                         </li>
                     </ul>
                 </div>
@@ -250,7 +250,7 @@ require_once 'database/databaseConection.php';
                             timer: 1000,
                             showConfirmButton: false,
                         }).then(() => {
-                            window.location = "curseEmp.php";
+                            window.location = "empleados.php";
                         })
                     })
                 });

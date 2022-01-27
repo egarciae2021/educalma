@@ -302,7 +302,7 @@ if (isset($_GET['sol'])) {
         </div>
     </div>
 </main>
-<main>
+<!-- <main>
     <div class="col-12 text-center">
 
         <div class="card">
@@ -316,18 +316,18 @@ if (isset($_GET['sol'])) {
                         //echo '<script>window.location="../../pageEnterprice.php?id='.base64_encode($id).'&sol='.base64_encode($id_sol).'&val='.base64_encode($prube).'&subs='.base64_encode($subs).'"</script>';
 
                         //window.location="../../curseEmp.php?if='.base64_encode($id).'&ent='.base64_encode($id_sol).'&pag='.base64_encode($prube).'&cnt='.base64_encode($subs).'"</script>'
-                        if(isset($_GET['if']) && isset($_GET['ent']) && isset($_GET['pag']) && isset($_GET['cnt'])){
-                        $ide=base64_decode($_GET['if']);
-                        $ente=base64_decode($_GET['ent']);
-                        $pag=base64_decode($_GET['pag']);
-                        $cnt=base64_decode($_GET['cnt']);
+                        //if(isset($_GET['if']) && isset($_GET['ent']) && isset($_GET['pag']) && isset($_GET['cnt'])){
+                        //$ide=base64_decode($_GET['if']);
+                        //$ente=base64_decode($_GET['ent']);
+                        //$pag=base64_decode($_GET['pag']);
+                        //$cnt=base64_decode($_GET['cnt']);
 
                         //https://educalma.fundacioncalma.org/ se pone esta url en produccion
                         ?>
                         
-                        value="http://localhost/EDUCALM/test-educalma/web/pageEnterprice.php?id=<?php echo base64_encode($ide); ?>&sol=<?php echo base64_encode($ente); ?>&val=<?php echo base64_encode($pag); ?>&subs=<?php echo base64_encode($cnt);?>"
+                        value="http://localhost/EDUCALM/test-educalma/web/pageEnterprice.php?id=<?php //echo base64_encode($ide); ?>&sol=<?php //echo base64_encode($ente); ?>&val=<?php //echo base64_encode($pag); ?>&subs=<?php //echo base64_encode($cnt);?>"
                         <?php
-                        }
+                        //}
                         ?> type="text">
                     </div>
                     <div class="col-12 col-md-4 col-lg-4 text-right pb-3 ">
@@ -337,7 +337,7 @@ if (isset($_GET['sol'])) {
             </div>
         </div>
     </div>
-</main>
+</main> -->
 <!-- <script type="text/javascript">
     $(document).ready(function(){
         $('#tabla').load('cursosEmp.php');

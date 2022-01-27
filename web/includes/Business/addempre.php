@@ -6,7 +6,7 @@ require_once '../../database/databaseConection.php';
 
 /*=============================================
                  PARA Inscribirse en un curso de EMPRESA
-    ===============================================*/
+    =============================================== */
 $json = file_get_contents('php://input');
 $datos = json_decode($json, true);
 
@@ -40,19 +40,19 @@ if (is_array($datos)) {
                 $q2 = $pdo->prepare($veri2);
                 $q2->execute();
 
-                $veri2=$pdo2->prepare("DELETE FROM `temp` WHERE cod_empre=$id");
-                $veri2->execute();
+                $veri3=$pdo->prepare("DELETE FROM temp WHERE cod_empre=$id");
+                $veri3->execute();
 
                 $veriT = "INSERT INTO `transaccion_paypal` (`idTran`,`monto`,`status`,`fecha`,`email`,`idClientPay`,`idCliente`, `idCurso`) 
-                    VALUES (:id_trans,:monto,:status,:fecha_nueva,:email,null,:idUser,null)";
+                    VALUES (:id_trans,:monto,:status,:fecha_nueva,:email,:id_cliente,:idUser,null)";
                 $qT = $pdo->prepare($veriT);
                 $qT->bindParam(":id_trans", $id_trans, PDO::PARAM_STR);
                 $qT->bindParam(":monto", $monto);
                 $qT->bindParam(":status", $status, PDO::PARAM_STR);
                 $qT->bindParam(":fecha_nueva", $fecha_nueva);
                 $qT->bindParam(":email", $email, PDO::PARAM_STR);
-                // $qT->bindParam(":id_cliente", $id, PDO::PARAM_STR);
-                $qT->bindParam(":idUser", $idUser, PDO::PARAM_INT);
+                $qT->bindParam(":id_cliente", $id_cliente, PDO::PARAM_STR);
+                $qT->bindParam(":idUser", $id, PDO::PARAM_INT);
                 // $qT->bindParam(":idCurso", $idCurso, PDO::PARAM_INT);
                 $qT->execute();
             } catch (PDOException $e) {
