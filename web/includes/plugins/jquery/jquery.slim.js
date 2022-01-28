@@ -4114,21 +4114,30 @@ jQuery.extend( {
 jQuery.ready.then = readyList.then;
 
 // The ready event handler and self cleanup method
-]
+function completed() {
+	document.removeEventListener( "DOMContentLoaded", completed );
+	window.removeEventListener( "load", completed );
+	jQuery.ready();
+}
 
 // Catch cases where $(document).ready() is called
 // after the browser event has already occurred.
 // Support: IE <=9 - 10 only
 // Older IE sometimes signals "interactive" too soon
-// if ( document.readyState === "complete" ||
-// 	( document.readyState !== "loading" && !document.documentElement.doScroll ) ) {
+if ( document.readyState === "complete" ||
+	( document.readyState !== "loading" && !document.documentElement.doScroll ) ) {
 
-// 	// Handle it asynchronously to allow scripts the opportunity to delay ready
-// 	window.setTimeout( jQuery.ready );
+	// Handle it asynchronously to allow scripts the opportunity to delay ready
+	window.setTimeout( jQuery.ready );
 
-// 	// A fallback to window.onload, that will always work
-// 	window.addEventListener( "load", completed );
-// }
+} else {
+
+	// Use the handy event callback
+	document.addEventListener( "DOMContentLoaded", completed );
+
+	// A fallback to window.onload, that will always work
+	window.addEventListener( "load", completed );
+}
 
 
 
