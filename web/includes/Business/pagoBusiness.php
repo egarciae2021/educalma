@@ -146,7 +146,7 @@ require_once 'database/databaseConection.php';
                                                             $q1->execute();
                                                             $nombre = $q1->fetch(PDO::FETCH_ASSOC);
                                                         
-                                                        ?><span><?php echo $nombre['nombreCurso']."<br>";?></span>
+                                                        ?><span><?php echo $nombre['nombreCurso']."&nbsp;"." "." ".$nombre['costoCurso']."<br>";?></span>
                                                         <?php }?>
                             <!-- PABLOOO PON LOS NOMBRES DE LOS CURSOS -->
                             <!-- <span>Descripción del curso: <?php //echo $dato['descripcionCurso']; 
