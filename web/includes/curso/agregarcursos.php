@@ -134,7 +134,6 @@
                             </div>
 
                             <div class="form-row ">
-
                                 <div class="form-group col-md-6">
                                     <label class="form-label">Descripción del curso</label>
                                     <textarea class="form-control" placeholder="Añadir descripción" id="descripcio-curso" name="descripcio_curso" rows="3"></textarea>
@@ -146,11 +145,9 @@
                                         <textarea class="form-control " placeholder="Añadir introducción" id="intro-curso" name="intro_curso" rows="3"></textarea>
                                     </div>
                                 </div>
-                                
                             </div>
 
                             <div class="form-row ">
-
                                 <div class="form-group col-md-6 ">
                                     <label class="form-label">Público Dirigido</label>
                                     <input type="text " id="publico_dirigidoo" name="publico_dirigido" placeholder="Ingrese público dirigido" class="form-control" aria-label="Dirigido" aria-describedby="names-addon">
@@ -163,9 +160,8 @@
                                         <i class="fas fa-cloud-upload-alt " aria-hidden="true "></i>
                                         Insertar imagen
                                     </button> -->
-
                                     <div class="column" style="margin:auto;">
-                                        <label for="file-upload" class="btn btn-outline-danger">
+                                        <label for="file-upload" class="btn btn-block btn-agregar">
                                             <i class="fas fa-cloud-upload-alt" aria-hidden="true"></i>
                                             Insertar imagen
                                         </label>
@@ -176,13 +172,13 @@
                                     <div class="column" style="margin:auto;">
                                         <div id="info"></div>
                                     </div>
-
                                 </div>
-
                             </div>
 
-                            <div class="form-row ">
-                                <input type="submit" class="btn btn-block btn-add"  value="Agregar">
+                            <div class="form-row">
+                                <div class="form-group col-12">
+                                    <input type="submit" class="btn btn-block btn-agregar" value="Agregar">
+                                </div>
                             </div>
 
                         </form>

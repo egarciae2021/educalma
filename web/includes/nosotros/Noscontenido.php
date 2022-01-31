@@ -4,23 +4,23 @@
 <!-- PANEL -->
 <div class="container-fluid div-container-panel-nosotros">
     <div class="row">
-        <div class="col-12 col-sm-12 col-md-6 col-lg-7 col-xl-6 container-panel-image-nosotros">
-            <div class="container-image-panel ">
+        <div class="col-12 col-md-6 col-lg-7 col-xl-6 container-panel-image-nosotros">
+            <div class="container-image-panel">
                 <div class="image-panel">
-                    <img src="./assets/images/gou.png" alt="">
+                    <img class="my-auto d-block" src="./assets/images/gou.png" alt="">
                 </div>
             </div>
         </div>
-        <div class="col-12 col-sm-12 col-md-6 col-lg-5 col-xl-6 container-panel-nosotros">
+        <div class="col-12 col-md-6 col-lg-5 col-xl-6 container-panel-nosotros">
             <div class="container-title-panel-nosotros">
                 <div class="title-panel">
                     Una nueva red de educación
                 </div>
                 <div class="description-panel">
-                    Sigamos creciendo juntos y ayudando a más personas desde el corazón.
+                    Sigamos creciendo juntos y ayudando a más personas desde el corazón
                 </div>
                 <div class="button-panel">
-                    <a type="button" class="btn btn_registrar_panel " href="#video" >Ver presentación!</a>
+                    <a type="button" class="btn btn_registrar_panel " href="#video" >¡Ver presentación!</a>
                 </div>
             </div>
         </div>
@@ -33,7 +33,7 @@
             ¡EduCalma desarrollo para el tiempo!
         </h1>
         <p class="col-12 text-center px-5 text-title-video" style="font-family: 'Poppins', sans-serif; color: #a2a2a2">
-            Construimos en las personas un carácter solido para mitigar la
+            Construimos en las personas un carácter sólido para mitigar la
             violencia, el mañana pertenece a las personas que se preparan para hoy.
         </p>
         <div class="row">
@@ -85,8 +85,8 @@
                     <div id="collapseOne" class="collapse" data-parent="#accordion">
                         <div class="card-body py-0">
                             <ul class="px-0">
-                                <ul class="card-body pb-3" ><i class="far fa-check-circle mr-2"></i>Dirigete hacia el
-                                    icono Registrate y haciendo eso podras eleguir el abanico de cursos que tenemos
+                                <ul class="card-body pb-3" ><i class="far fa-check-circle mr-2"></i>Dirígete hacia el
+                                    ícono Regístrate y haciendo eso podrás elegir el abanico de cursos que tenemos
                                     para ofrecerte.</ul>
                             </ul>
                         </div>
@@ -104,7 +104,7 @@
                         <div class="card-body py-0">
                             <ul class="px-0">
                                 <li class="card-body pb-3"><i class="far fa-check-circle mr-2"></i>No todo los
-                                    cursos tienen la misma cantida de sesiones pero lo maximo de sesiones son 9 o 12
+                                    cursos tienen la misma cantidad de sesiones pero lo máximo de sesiones son 9 o 12
                                     y cada una tiene un test para completar.</li>
                             </ul>
                         </div>
@@ -123,7 +123,7 @@
                             <ul class="px-0">
                                 <li class="card-body pb-3"><i class="far fa-check-circle mr-2"></i>Cada test tiene
                                     entre 10 a 15 preguntas laboradas por el profesor o especialista de acuerdo a la
-                                    sesion aprendida.</li>
+                                    sesión aprendida.</li>
                             </ul>
                         </div>
                     </div>
@@ -132,7 +132,7 @@
                 <div class="card border-0 rounded mb-4 card-questions-box">
                     <div class="card-header border-0" data-toggle="collapse" href="#collapseFour">
                         <a class="collapsed card-text">
-                            ¿Tiene un pago para inscribise?
+                            ¿Tiene un pago para inscribirse?
                             <i class="fas fa-angle-down rotate-icon fa-2x" style="float:right;"></i>
                         </a>
                     </div>
@@ -140,7 +140,7 @@
                         <div class="card-body py-0">
                             <ul class="px-0">
                                 <li class="card-body pb-3"><i class="far fa-check-circle mr-2"></i>Los cursos de los
-                                    cuales tenemos por ahora lo puedes acceder de manera gratuita con todo los
+                                    cuales tenemos por ahora los puedes obtener de manera gratuita con todo los
                                     beneficios.</li>
                             </ul>
                         </div>
@@ -150,7 +150,7 @@
                 <div class="card border-0 rounded mb-4 card-questions-box">
                     <div class="card-header border-0" data-toggle="collapse" href="#collapseFive">
                         <a class="collapsed card-text">
-                            ¿Los Certificados estan reconocidos?
+                            ¿Los Certificados están reconocidos?
                             <i class="fas fa-angle-down rotate-icon fa-2x" style="float:right;"></i>
                         </a>
                     </div>
@@ -158,8 +158,8 @@
                         <div class="card-body py-0">
                             <ul class="px-0">
                                 <li class="card-body pb-3"><i class="far fa-check-circle mr-2"></i>Cada curso tiene
-                                    Certificados reconocidos por el Ministerio de Eduacion, las cuales cada curso
-                                    han sido evaluadas ya aprobadas</li>
+                                    Certificados reconocidos por el Ministerio de Educación, los cuales cada curso
+                                    han sido evaluados y aprobados.</li>
                             </ul>
                         </div>
                     </div>

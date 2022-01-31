@@ -13,6 +13,9 @@ ob_start();
         if ($_SESSION['privilegio'] == 1){
             include_once 'includes/dashboard/contenidoAdmin.php';
         }
+        elseif ($_SESSION['privilegio'] == 4){
+            include_once 'empleados.php';
+        }
         else{
             include_once 'includes/dashboard/contenido.php';
         }

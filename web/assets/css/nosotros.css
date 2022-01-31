@@ -1,347 +1,336 @@
-        @import url("https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap");
-        @import url("https://fonts.googleapis.com/css2?family=Old+Standard+TT&display=swap");
-        @import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap");
-        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap");
-        .div-container-panel-nosotros {
-            background-image: url(../images/fondo1.png);
-            background-repeat: no-repeat;
-            background-position: center center;
-            min-height: 100vh;
-            background-size: cover;
-            max-width: 100%;
-        }
-        
-        .div-container-panel-nosotros .row {
-            height: 100vh;
-        }
-        
-        .div-container-panel-nosotros .row .container-panel-nosotros {
-            margin: auto 0;
-        }
-        
-        .div-container-panel-nosotros .row .container-title-panel-nosotros {
-            padding-right: 8rem;
-        }
-        
-        .title-panel {
-            font-family: "Inter", sans-serif;
-            font-weight: bolder;
-            font-size: 92px;
-            text-transform: uppercase;
-            text-align: right;
-        }
-        
-        .description-panel {
-            font-family: "Inter", sans-serif;
-            font-style: normal;
-            font-weight: normal;
-            font-size: 18px;
-            /* padding-right: 20rem; */
-            text-align: right;
-        }
-        
-        .button-panel {
-            margin: 2rem 0 0 0;
-            text-align: right;
-        }
-        
-        .btn_registrar_panel {
-            font-size: 16px;
-            padding: 1rem 3rem;
-            background-color: #7c83fd;
-            color: #ffffff;
-            transition: all 0.3s ease;
-        }
-        
-        .btn_registrar_panel:hover {
-            background-color: transparent;
-            color: #7c83fd;
-        }
-        
-        .container-panel-image-nosotros {
-            height: 100%;
-        }
-        
+    @import url("https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap");
+    @import url("https://fonts.googleapis.com/css2?family=Old+Standard+TT&display=swap");
+    @import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap");
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap");
+    .div-container-panel-nosotros {
+        background-image: url(../images/fondo1.png);
+        background-repeat: no-repeat;
+        background-position: center center;
+        min-height: 100vh;
+        background-size: cover;
+        max-width: 100%;
+        width: 100%;
+    }
+    
+    .div-container-panel-nosotros .row {
+        height: 100vh;
+    }
+    
+    .div-container-panel-nosotros .row .container-panel-nosotros {
+        margin: auto 0;
+    }
+    
+    .div-container-panel-nosotros .row .container-title-panel-nosotros {
+        padding-right: 8rem;
+    }
+    
+    .title-panel {
+        font-family: "Inter", sans-serif;
+        font-weight: bolder;
+        font-size: 92px;
+        text-transform: uppercase;
+        text-align: right;
+    }
+    
+    .description-panel {
+        font-family: "Inter", sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        /* padding-right: 20rem; */
+        text-align: right;
+    }
+    
+    .button-panel {
+        margin: 2rem 0 0 0;
+        text-align: right;
+    }
+    
+    .btn_registrar_panel {
+        font-size: 16px;
+        padding: 1rem 3rem;
+        background-color: #7c83fd;
+        color: #ffffff;
+        transition: all 0.3s ease;
+    }
+    
+    .btn_registrar_panel:hover {
+        background-color: transparent;
+        color: #7c83fd;
+        border: 1px solid #7c83fd;
+    }
+    
+    .container-panel-image-nosotros {
+        height: 100%;
+        margin: auto 0;
+    }
+    
+    .image-panel {
+        bottom: 0;
+        position: absolute;
+    }
+    
+    .container-panel-image-nosotros img {
+        width: 800px;
+    }
+    
+    @media screen and (min-width: 768px) and (max-width: 1280px) {
         .image-panel {
-            bottom: 0;
-            position: absolute;
-        }
-        
-        .container-panel-image-nosotros img {
-            width: 800px;
-        }
-        
-        @media only screen and (max-width: 1458px) {
-            .container-panel-image-nosotros img {
-                width: 880px;
-                transition: all 0.3s ease;
-            }
-            .title-panel {
-                font-size: 82px;
-                transition: all 0.3s ease;
-            }
-        }
-        /*@media (max-width: 1458px) {
-            .title-panel {
-                font-size: 82px;
-                transition: all 0.3s ease;
-            }
-            .image-panel {
-                top: 100px;
-            }
-        }*/
-        
-        @media (max-width: 1341px) {
-            .title-panel {
-                font-size: 62px;
-                transition: all 0.3s ease;
-            }
-            .image-panel {
-                top: 290px;
-            }
-        }
-        
-        @media (max-width: 1199px) {
-            .container-panel-image-nosotros img {
-                width: 750px;
-                transition: all 0.3s ease;
-            }
-            .div-container-panel-nosotros .row .container-title-panel-nosotros {
-                padding-right: 1rem;
-            }
-            .image-panel {
-                top: 300px;
-            }
-        }
-        
-        @media (max-width: 1024px) {
-            .container-panel-image-nosotros img {
-                width: 700px;
-                transition: all 0.3s ease;
-            }
-            .image-panel {
-                top: 300px;
-            }
-        }
-        
-        @media (max-width: 992px) {
-            .container-panel-image-nosotros img {
-                width: 500px;
-                transition: all 0.3s ease;
-            }
-            .div-container-panel-nosotros .row .container-title-panel-nosotros {
-                padding-right: 1rem;
-            }
-            .image-panel {
-                top: 130px;
-            }
-        }
-        
-        @media (max-width: 830px) {
-            .container-panel-image-nosotros img {
-                width: 480px;
-                transition: all 0.3s ease;
-            }
-            .title-panel {
-                font-size: 52px;
-                transition: all 0.3s ease;
-            }
-            .description-panel {
-                font-size: 16px;
-                transition: all 0.3s ease;
-            }
-            .button-panel {
-                font-size: 16px;
-                transition: all 0.3s ease;
-            }
-        }
-        
-        @media (max-width: 767px) {
-            .container-panel-image-nosotros {
-                display: none;
-            }
-            .title-panel {
-                font-size: 72px;
-                transition: all 0.3s ease;
-            }
-            .description-panel {
-                font-size: 18px;
-                transition: all 0.3s ease;
-            }
-            .button-panel {
-                font-size: 18px;
-                transition: all 0.3s ease;
-            }
-            .container-panel-nosotros {
-                padding-left: 10rem;
-            }
-        }
-        
-        @media (max-width: 613px) {
-            .container-panel-nosotros {
-                padding-left: 5rem;
-            }
-        }
-        
-        @media (max-width: 533px) {
-            .title-panel {
-                font-size: 62px;
-                transition: all 0.3s ease;
-            }
-            .description-panel {
-                font-size: 18px;
-                transition: all 0.3s ease;
-            }
-            .button-panel {
-                font-size: 18px;
-                transition: all 0.3s ease;
-            }
-            .container-panel-nosotros {
-                padding-left: 0rem;
-            }
-        }
-        
-        @media (max-width: 440px) {
-            .title-panel {
-                font-size: 52px;
-                transition: all 0.3s ease;
-            }
-            .description-panel {
-                padding-left: 5rem;
-                font-size: 14px;
-                transition: all 0.3s ease;
-            }
-            .button-panel {
-                font-size: 14px;
-                transition: all 0.3s ease;
-            }
-        }
-        
-        @media (max-width: 360px) {
-            .title-panel {
-                font-size: 42px;
-                transition: all 0.3s ease;
-            }
-        }
-        
-        .container-video {
-            background-image: url(../images/nosotros.png);
-            background-repeat: no-repeat;
-            background-position: center center;
-            background-size: cover;
-            max-width: 100%;
-            padding: 4rem 0;
-        }
-        
-        .container-video-educalma {
-            width: 100%;
-        }
-        
-        .video-youtube {
-            height: 0px;
-            padding-bottom: 56.25%;
+            margin: 20rem 0;
             position: relative;
         }
-        
-        .video-youtube iframe {
-            position: absolute;
-            height: 100%;
-            width: 100%;
-            border-radius: 6px;
+    }
+    
+    @media only screen and (max-width: 1458px) {
+        .container-panel-image-nosotros img {
+            width: 880px;
+            transition: all 0.3s ease;
         }
-        
-        .title-video {
-            text-transform: uppercase;
-            font-weight: bold;
-            font-size: 36px;
-            font-family: "Inter", sans-serif;
+        .title-panel {
+            font-size: 82px;
+            transition: all 0.3s ease;
         }
-        
-        .cards-video {
-            border: 2px solid transparent;
-            box-shadow: 0px 4px 2px 2px rgba(0, 0, 0, 0.1);
-            border-radius: 6px;
+    }
+    
+    @media (max-width: 1341px) {
+        .title-panel {
+            font-size: 62px;
+            transition: all 0.3s ease;
         }
-        
-        .text-cards-video {
-            font-weight: bold;
+    }
+    
+    @media (max-width: 1199px) {
+        .container-panel-image-nosotros img {
+            width: 750px;
+            transition: all 0.3s ease;
+        }
+        .div-container-panel-nosotros .row .container-title-panel-nosotros {
+            padding-right: 1rem;
+        }
+    }
+    
+    @media (max-width: 1024px) {
+        .container-panel-image-nosotros img {
+            width: 700px;
+            transition: all 0.3s ease;
+        }
+    }
+    
+    @media (max-width: 992px) {
+        .container-panel-image-nosotros img {
+            width: 650px;
+            transition: all 0.3s ease;
+        }
+        .div-container-panel-nosotros .row .container-title-panel-nosotros {
+            padding-right: 1rem;
+        }
+    }
+    
+    @media (max-width: 830px) {
+        .container-panel-image-nosotros img {
+            width: 480px;
+            transition: all 0.3s ease;
+        }
+        .title-panel {
+            font-size: 52px;
+            transition: all 0.3s ease;
+        }
+        .description-panel {
             font-size: 16px;
+            transition: all 0.3s ease;
         }
-        
-        @media (max-width: 991px) {
-            .cards-video img {
-                width: 30px;
-            }
-            .text-cards-video {
-                font-size: 13px;
-            }
-            .title-video {
-                font-size: 26px;
-            }
-            .text-title-video {
-                font-size: 13px;
-            }
+        .button-panel {
+            font-size: 16px;
+            transition: all 0.3s ease;
         }
-        
-        .container-questions {
-            background-image: url(../images/preguntas.png);
-            background-repeat: no-repeat;
-            background-position: center center;
-            background-size: cover;
-            max-width: 100%;
-            padding: .1rem 0 4rem 0;
+    }
+    
+    @media (max-width: 767px) {
+        .container-panel-image-nosotros {
+            display: none;
         }
-        
-        .container-questions .row .col-md-12 {
-            margin: 0 auto;
-            text-align: center;
+        .title-panel {
+            font-size: 72px;
+            transition: all 0.3s ease;
         }
-        
-        .container-questions .col-md-12 {
-            max-width: 924px;
+        .description-panel {
+            font-size: 18px;
+            transition: all 0.3s ease;
         }
-        
-        .container .row .col-md-12 .section-title-course {
-            text-transform: uppercase;
-            font-weight: bold;
-            font-size: 36px;
-            font-family: "Inter", sans-serif;
-            text-align: center;
-            justify-content: center;
-            color: #7c83fd;
-            width: 100%;
+        .button-panel {
+            font-size: 18px;
+            transition: all 0.3s ease;
         }
-        
-        .container .row .col-md-12 .accordion {
-            font-family: "Work Sans", sans-serif;
-            font-style: normal;
-            font-weight: normal;
+        .container-panel-nosotros {
+            padding-left: 10rem;
         }
-        
-        .container .row .col-md-12 .accordion .card {
-            text-align: justify;
-            background: #cce4fc;
-            color: #56a4d0;
-            padding-left: 2rem;
+    }
+    
+    @media (max-width: 613px) {
+        .container-panel-nosotros {
+            padding-left: 5rem;
+        }
+    }
+    
+    @media (max-width: 533px) {
+        .title-panel {
+            font-size: 62px;
+            transition: all 0.3s ease;
+        }
+        .description-panel {
+            font-size: 18px;
+            transition: all 0.3s ease;
+        }
+        .button-panel {
+            font-size: 18px;
+            transition: all 0.3s ease;
+        }
+        .container-panel-nosotros {
+            padding-left: 0rem;
+        }
+    }
+    
+    @media (max-width: 440px) {
+        .title-panel {
+            font-size: 52px;
+            transition: all 0.3s ease;
+        }
+        .description-panel {
+            padding-left: 5rem;
             font-size: 14px;
+            transition: all 0.3s ease;
         }
-        
-        .card-questions-box {
-            border: 2px solid transparent;
-            box-shadow: 0px 4px 2px 2px rgba(0, 0, 0, 0.1);
-            border-radius: 6px;
+        .button-panel {
+            font-size: 14px;
+            transition: all 0.3s ease;
         }
-        
-        .container .row .col-md-12 .accordion .card .card-header {
-            background: #cce4fc;
+    }
+    
+    @media (max-width: 360px) {
+        .title-panel {
+            font-size: 42px;
+            transition: all 0.3s ease;
         }
-        
-        .container .row .col-md-12 .accordion .card .card-header .card-text {
-            font-family: "Work Sans", sans-serif;
-            font-style: normal;
-            font-weight: normal;
-            font-size: 16px;
-            color: #56a4d0;
-            text-decoration: none;
-            cursor: pointer;
+    }
+    
+    .container-video {
+        background-image: url(../images/nosotros.png);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        max-width: 100%;
+        padding: 4rem 0;
+    }
+    
+    .container-video-educalma {
+        width: 100%;
+    }
+    
+    .video-youtube {
+        height: 0px;
+        padding-bottom: 56.25%;
+        position: relative;
+    }
+    
+    .video-youtube iframe {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        border-radius: 6px;
+    }
+    
+    .title-video {
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 36px;
+        font-family: "Inter", sans-serif;
+    }
+    
+    .cards-video {
+        border: 2px solid transparent;
+        box-shadow: 0px 4px 2px 2px rgba(0, 0, 0, 0.1);
+        border-radius: 6px;
+    }
+    
+    .text-cards-video {
+        font-weight: bold;
+        font-size: 16px;
+    }
+    
+    @media (max-width: 991px) {
+        .cards-video img {
+            width: 30px;
         }
+        .text-cards-video {
+            font-size: 13px;
+        }
+        .title-video {
+            font-size: 26px;
+        }
+        .text-title-video {
+            font-size: 13px;
+        }
+    }
+    
+    .container-questions {
+        background-image: url(../images/preguntas.png);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        max-width: 100%;
+        padding: .1rem 0 4rem 0;
+    }
+    
+    .container-questions .row .col-md-12 {
+        margin: 0 auto;
+        text-align: center;
+    }
+    
+    .container-questions .col-md-12 {
+        max-width: 924px;
+    }
+    
+    .container .row .col-md-12 .section-title-course {
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 36px;
+        font-family: "Inter", sans-serif;
+        text-align: center;
+        justify-content: center;
+        color: #7c83fd;
+        width: 100%;
+    }
+    
+    .container .row .col-md-12 .accordion {
+        font-family: "Work Sans", sans-serif;
+        font-style: normal;
+        font-weight: normal;
+    }
+    
+    .container .row .col-md-12 .accordion .card {
+        text-align: justify;
+        background: #cce4fc;
+        color: #56a4d0;
+        padding-left: 2rem;
+        font-size: 14px;
+    }
+    
+    .card-questions-box {
+        border: 2px solid transparent;
+        box-shadow: 0px 4px 2px 2px rgba(0, 0, 0, 0.1);
+        border-radius: 6px;
+    }
+    
+    .container .row .col-md-12 .accordion .card .card-header {
+        background: #cce4fc;
+    }
+    
+    .container .row .col-md-12 .accordion .card .card-header .card-text {
+        font-family: "Work Sans", sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        color: #56a4d0;
+        text-decoration: none;
+        cursor: pointer;
+    }

@@ -14,7 +14,7 @@ ob_start();
     <!-- <script src="./assets/js/plugins/jquery.min.js"></script> -->
     <!-- ALL JS FILES -->
     <script src="./assets/js/plugins/jquery.min.js"></script>
-    <script src="./assets/js/plugins//popper.min.js"></script>
+    <script src="./assets/js/plugins/popper.min.js"></script>
     <script src="./assets/js/plugins/bootstrap.min.js"></script>
     <script src="./assets/js/plugins/sweetalert2.all.min.js"></script>
 

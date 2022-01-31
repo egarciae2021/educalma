@@ -111,8 +111,6 @@ body {
     width: 460px;
 }
 
-
-
 .contformulario .row form {
     flex: 1 1 25rem;
     margin: 0 46rem 0 15rem;
@@ -396,46 +394,54 @@ form {
     box-shadow: none;
     border: 1px solid #4F52D6;
 }
+
+
 /*BOTONES*/
+
 .btn {
     margin-top: 0;
 }
+
 .btn-add {
     background: #56A4D0;
     border-radius: 10px;
     font-size: 14px;
 }
+
 .btn-add:hover {
     background: #4a8db4;
 }
+
 .btn-edit {
     background: #A9E2F9;
     border-radius: 10px;
     color: black;
     font-size: 14px;
 }
+
 .btn-edit:hover {
     background: #97d2e9;
 }
+
 .btn-upload {
     background: #5bcaf7;
     color: black;
     font-size: 14px;
     border-radius: 10px;
 }
+
 .btn-upload:hover {
     background: #bce5f5;
     color: #fff;
 }
 
-.btn-outline-danger {
+.btn-agregar {
     background: #4F52D6;
     color: white;
     border: 1px solid #4F52D6;
-    width: 100%;
 }
 
-.btn-outline-danger:hover {
+.btn-agregar:hover {
     background: #3c3ea5;
     color: white;
     border: 1px solid #3c3ea5;
@@ -459,20 +465,23 @@ form {
 .btn-back:focus {
     box-shadow: none;
 }
+
+
 /*Fin Botones*/
 
-.content-imagen{
+.content-imagen {
     /* border: 1px solid red; */
     width: 100%;
     height: 150px;
-    position:relative;
-    border:1px solid #4F52D6;
-    display:flex;
-    justify-content:center;
-    overflow:hidden;
+    position: relative;
+    border: 1px solid #4F52D6;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
     border-radius: 0.25rem;
 }
-.content-imagen img{
-    flex-shrink:0;
-    min-height:100%;
+
+.content-imagen img {
+    flex-shrink: 0;
+    min-height: 100%;
 }

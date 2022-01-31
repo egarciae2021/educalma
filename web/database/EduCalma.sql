@@ -44,7 +44,7 @@ INSERT INTO usuarios VALUES (4, 3, 1, 0, 'GLORIA', 'SAC', 'LECHE','gloria@gloria
 -- pass: Estefany123456
 INSERT INTO usuarios VALUES (5, 1, 0, 1, 'ESTEFANY', 'MATA', 'MATOS','estefany@gloria.com', '$2y$10$OGIZkqniYZsz1HQfcKdzfuNa0pyjYFGPB1K71uXrigk4ITw5xFJxW', '963259658', 1, '02698974', 2, '1990-01-05', 'PERÚ', 1, 1, now(), null, '', 0, null);
 -- ADMINISTRADOR 
--- pass: nose XD
+-- pass: Calma123
 INSERT INTO usuarios VALUES (6, 1, 0, 1, 'MATA', 'MATA', 'MATOS','educalma@calma.com', '$2y$10$ZCyPSbUMoUa9C2vA3CNfR.caGn8Q2cc3Z1OFgH4rssGJu3JatBVGG', '963259658', 1, '02698974', 2, '1990-01-05', 'PERÚ', 1, 1, now(), null, '', 0, null);
 
 -- Tabla Privilegio

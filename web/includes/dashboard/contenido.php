@@ -13,12 +13,12 @@ ob_start();
 
         <div class="content col">
             <span>Tu tablero</span>
-            <h3 class="title">El secreto real del éxito es el entusiasmo !</h3>
+            <h3 class="title">¡El secreto real del éxito es el entusiasmo!</h3>
 
             <div class="icons-container">
                 <a class="icons" id="open-modal">
                     <img src="./assets/images/serv-3.png" alt="">
-                    <h3>Tus ultimos cursos</h3>
+                    <h3>Tus últimos cursos</h3>
                 </a>
 
                 <a class="icons" id="open-modal1">
@@ -165,7 +165,7 @@ ob_start();
                 </tbody>
             </table>
             <button class="modal__button-link close-modal3">
-                Close
+                Cerrar
             </button>
         </div>
     </div>

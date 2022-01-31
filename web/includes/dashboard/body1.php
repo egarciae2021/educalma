@@ -129,27 +129,28 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                         <?php
                         }
                         ?>
-                        <?php
+                        <?/*php
                         if ($_SESSION['privilegio'] == 4) {
-                        ?>
-                            <div class="nav__dropdown-dashboard">
+                        */?>
+                            <!-- <div class="nav__dropdown-dashboard">
                                 <a alt="Empresas" class="nav__link-dashboard" style="cursor:pointer;">
                                     <i class="fas fa-building" style="color:0x272735;"> </i>
-                                    <span class="nav__name-dashboard">&nbsp;&nbsp; Empresa</span>
+                                    <span class="nav__name-dashboard">&nbsp;&nbsp; Empresa</span> -->
                                     <!-- <i class='bx bx-chevron-down nav__icon nav__dropdown-icon'></i> -->
-                                    <i class="fas fa-caret-down nav__icon-dashboard nav__dropdown-icon-dashboard"></i>
+                                    <!-- <i class="fas fa-caret-down nav__icon-dashboard nav__dropdown-icon-dashboard"></i>
                                 </a>
                                 <div class="nav__dropdown-collapse-dashboard">
                                     <div class="nav__dropdown-content-dashboard">
 
-                                        <a href="empleados.php" class="nav__dropdown-item-dashboard nav__link-dashboard">Control de Empresas</a>
+                                        <a href="empleados.php" class="nav__dropdown-item-dashboard nav__link-dashboard">Control de Empresas</a> -->
                                         <!-- <a href="#" class="nav__dropdown-item-dashboard nav__link-dashboard">Control de Empleados</a> -->
 
-                                    </div>
+                                    <!-- </div>
                                 </div>
-                            </div>
-                        <?php
+                            </div> -->
+                        <?/*php
                         }
+                        */
                         ?>
                         <a href="index.php" class="nav__link-dashboard">
                             <!-- <i class='bx bx-home nav__icon'></i> -->

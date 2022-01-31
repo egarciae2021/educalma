@@ -136,12 +136,12 @@
 
                             </div>
                             <div class="col-12 col-lg-6">
-                                <div class="form-group col-md-12 ">
+                                <div class="form-group col-12 ">
                                     <label class="form-label">*Agregar imagen del curso</label>
                                     <br>
 
                                     <div class="column" style="margin:auto;">
-                                        <label for="file-upload" class="btn btn-outline-danger">
+                                        <label for="file-upload" class="btn btn-block btn-agregar">
                                             <i class="fas fa-cloud-upload-alt" aria-hidden="true"></i>
                                             Insertar imagen
                                         </label>
@@ -164,9 +164,9 @@
                                 
                         </div>
 
-                            <div class="form-row ">
+                            <div class="form-group col-12">
                             <input type="hidden" name="idcurso" value="<?php echo $dato2['idCurso'];?>">
-                                <button type="submit" id="actucurso" class="btn btn-block btn-add"><i class="fas fa-redo"></i> Actualizar curso</button>
+                                <button type="submit" id="actucurso" class="btn btn-block btn-agregar"><i class="fas fa-redo"></i> Actualizar curso</button>
                             </div>
 
                         </form>
