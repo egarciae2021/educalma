@@ -139,7 +139,7 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
         <div class="col-12 mt-5 text-center">
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">Listado de usuarios</h3>
+                    <h3 class="card-title">Listado de usuarios registrados</h3>
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
@@ -373,8 +373,8 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                         <table id="tabla" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
                             <thead>
                                 <tr>
-                                    <th class="col-lg-6">Curso(s)</th>
-                                    <th class="col-lg-1">Pagos</th>
+                                    <th class="col-lg-6">Estado de Cuenta - Pagos</th>
+                                    <th class="col-lg-1">Estado</th>
                                 </tr>
                             </thead>
 
@@ -389,7 +389,7 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                                     $suma = $q8->fetchColumn();
 
                                     if($suma==0){
-                                        echo '<td colspan="2" class="text-center">No hay cursos registrados</td>';
+                                        echo '<td colspan="2" class="text-center">No hay pagos pendientes</td>';
                                     }else{
                                     ?>
                                     <td><?php
