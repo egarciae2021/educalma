@@ -155,7 +155,9 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                                     <th>Telefono</th>
                                     <th>N° documento</th>
                                     <th>Sexo</th>
+                                    <th>Certificado</th>
                                     <th>Acciones</th>
+                                    
                                 </tr>
                             </thead>
 
@@ -187,7 +189,9 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                                         <td><?php echo $usuarios['nro_doc']; ?></td>
                                         <td><?php echo $datoSexo['nombre_genero']; ?></td>
                                         <!-- <td><img style="height: 50px;" src="data:image/*;base64,<php echo base64_encode($usuarios['mifoto']) ?>"></td> -->
-
+                                        <td>
+                                          <label style="color: #C71C64;">  NO COMPLETADO</label>
+                                        </td>
                                         <td>
                                             <?php $idUsu = $usuarios['id_user'] ?>
                                             <?php //echo $_SESSION['passSinHash'];
@@ -201,6 +205,7 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                                                 <button type="button"><i class="fas fa-trash-alt"></i></button>
                                             </a>
                                         </td>
+                                        
                                     </tr>
                                 <?php }
                                 Database::disconnect();
