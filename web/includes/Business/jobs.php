@@ -145,7 +145,7 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                 <div class="card-body">
 
                     <div class="table-responsive">
-                        <table id="tableUsuarios" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
+                        <table id="tablaEmpleados" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
                             <thead>
                                 <tr>
                                     <th>Privilegio</th>
