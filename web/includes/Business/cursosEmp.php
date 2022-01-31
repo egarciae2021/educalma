@@ -251,7 +251,7 @@ if (isset($_GET['sol'])) {
                             ?>
                         </div>
                     </div>
-                    <div class="col-12 col-md-4 col-lg-4 pb-3 ">
+                    <div class="col-12 col-md-4 col-lg-5 pb-3 ">
                         <?php
                         if (isset($_GET['sol'])) {
                         ?>
@@ -285,12 +285,12 @@ if (isset($_GET['sol'])) {
                         }
                         ?>
                     </div>
-                    <div class="col-12 col-md-4 col-lg-4 text-right pb-3 ">
-                        <a href="includes/Business/addcurso.php?ent=<?php echo $ent; ?>" <?php
+                    <div class="col-12 col-md-4 col-lg-3 pb-3 " style="display: flex; align-items: center; justify-content: center;">
+                        <a  href="includes/Business/addcurso.php?ent=<?php echo $ent; ?>" <?php
                                                                                             if (!isset($_GET['sol'])) {
-                                                                                                echo 'style="height: 100%; width:80%;cursor: not-allowed;pointer-events: none;"';
+                                                                                                echo 'style="width:100%;cursor: not-allowed;pointer-events: none;"';
                                                                                             } else {
-                                                                                                echo 'style="height: 100%; width:80%;"';
+                                                                                                echo 'style="width:100%;"';
                                                                                             }
                                                                                             ?> class="btn btn-primary m-0 ">GENERAR PAGO</a>
                     </div>
