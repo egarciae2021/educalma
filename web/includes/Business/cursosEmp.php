@@ -167,7 +167,7 @@ if (isset($_GET['sol'])) {
                                     $q6 = $pdo1->prepare($sql6);
                                     $q6->execute();
                                     $Empresa = $q6->fetch(PDO::FETCH_ASSOC);
-                                    
+
                             ?>
                                     <tr><?php
 
@@ -219,19 +219,16 @@ if (isset($_GET['sol'])) {
                             ?>
                                 <div class="card-body">
                                     <?php
-                                    foreach ($users as $user) {
-                                        $sql2 = "SELECT nombreCurso FROM cursos where idCurso=" . $user['cod_curse'];
-                                        $q2 = $pdo1->prepare($sql2);
-                                        $q2->execute();
-                                        $name = $q2->fetch(PDO::FETCH_ASSOC);
-                                        echo $name['nombreCurso']. "<br>";
+
+                                    $sql2 = $pdo1->query("SELECT COUNT(*) FROM temp where cod_empre=$ent");
+                                    $name = $sql2->fetchColumn();
+                                    echo $name . " curso(s)";
                                     ?>
-                                    
                                 </div>
-                        <?php
-                                    }
-                                }
-                        ?>
+                            <?php
+
+                            }
+                            ?>
                         </div>
                         <div class="card">
                             <div class="card-header">
@@ -255,47 +252,47 @@ if (isset($_GET['sol'])) {
                         </div>
                     </div>
                     <div class="col-12 col-md-4 col-lg-4 pb-3 ">
-                    <?php
-                            if (isset($_GET['sol'])) {
-                            ?>
-                                <!-- <div class="card-body"> -->
-                                    <?php
-                                    $sql2 = "SELECT num_suscripcion FROM solicitud where id_usuario=" . $_GET['sol'];
-                                    $q2 = $pdo1->prepare($sql2);
-                                    $q2->execute();
-                                    $cur = $q2->fetch(PDO::FETCH_ASSOC);
-                                    echo "EL N°".$cur['num_suscripcion'] . " ES EL NÚMERO DE SUSCRIPCIONES TOTALES";
-                                    ?>
-                                <!-- </div> -->
+                        <?php
+                        if (isset($_GET['sol'])) {
+                        ?>
+                            <!-- <div class="card-body"> -->
                             <?php
-                            }
+                            $sql2 = "SELECT num_suscripcion FROM solicitud where id_usuario=" . $_GET['sol'];
+                            $q2 = $pdo1->prepare($sql2);
+                            $q2->execute();
+                            $cur = $q2->fetch(PDO::FETCH_ASSOC);
+                            echo "EL N°" . $cur['num_suscripcion'] . " ES EL NÚMERO DE SUSCRIPCIONES TOTALES";
                             ?>
+                            <!-- </div> -->
+                        <?php
+                        }
+                        ?>
                         <hr>
                         <?php
-                            if (isset($_GET['sol'])) {
-                            ?>
-                                <!-- <div class="card-body"> -->
-                                    <?php
-                                    $sql3 = $pdo1->query("SELECT COUNT(*) FROM temp where cod_empre=$ent");
-                                    $q4 = $sql3->fetchColumn();
-                                    // $q2 = $pdo1->prepare($sql2);
-                                    // $q2->execute();
-                                    // $cur = $q2->fetch(PDO::FETCH_ASSOC);
-                                    echo "ESTA PROXIMO A COMPRAR ".$q4. " CURSO(S)";
-                                    ?>
-                                <!-- </div> -->
+                        if (isset($_GET['sol'])) {
+                        ?>
+                            <!-- <div class="card-body"> -->
                             <?php
-                            }
+                            $sql3 = $pdo1->query("SELECT COUNT(*) FROM temp where cod_empre=$ent");
+                            $q4 = $sql3->fetchColumn();
+                            // $q2 = $pdo1->prepare($sql2);
+                            // $q2->execute();
+                            // $cur = $q2->fetch(PDO::FETCH_ASSOC);
+                            echo "ESTA PROXIMO A COMPRAR " . $q4 . " CURSO(S)";
                             ?>
+                            <!-- </div> -->
+                        <?php
+                        }
+                        ?>
                     </div>
                     <div class="col-12 col-md-4 col-lg-4 text-right pb-3 ">
-                        <a href="includes/Business/addcurso.php?ent=<?php echo $ent; ?>"<?php
-                            if (!isset($_GET['sol'])) {
-                                echo 'style="height: 100%; width:80%;cursor: not-allowed;pointer-events: none;"';
-                            }else{
-                                echo 'style="height: 100%; width:80%;"';
-                            }
-                            ?>  class="btn btn-primary m-0 ">GENERAR PAGO</a>
+                        <a href="includes/Business/addcurso.php?ent=<?php echo $ent; ?>" <?php
+                                                                                            if (!isset($_GET['sol'])) {
+                                                                                                echo 'style="height: 100%; width:80%;cursor: not-allowed;pointer-events: none;"';
+                                                                                            } else {
+                                                                                                echo 'style="height: 100%; width:80%;"';
+                                                                                            }
+                                                                                            ?> class="btn btn-primary m-0 ">GENERAR PAGO</a>
                     </div>
                 </div>
             </div>
@@ -313,19 +310,23 @@ if (isset($_GET['sol'])) {
                 <div class="row">
                     <div class="col-12 col-md-4 col-lg-8 pb-3 ">
                         <input style="border-radius: 6px; width: 100%;" id="foo" <?php
-                        //echo '<script>window.location="../../pageEnterprice.php?id='.base64_encode($id).'&sol='.base64_encode($id_sol).'&val='.base64_encode($prube).'&subs='.base64_encode($subs).'"</script>';
+                                                                                    //echo '<script>window.location="../../pageEnterprice.php?id='.base64_encode($id).'&sol='.base64_encode($id_sol).'&val='.base64_encode($prube).'&subs='.base64_encode($subs).'"</script>';
 
-                        //window.location="../../curseEmp.php?if='.base64_encode($id).'&ent='.base64_encode($id_sol).'&pag='.base64_encode($prube).'&cnt='.base64_encode($subs).'"</script>'
-                        //if(isset($_GET['if']) && isset($_GET['ent']) && isset($_GET['pag']) && isset($_GET['cnt'])){
-                        //$ide=base64_decode($_GET['if']);
-                        //$ente=base64_decode($_GET['ent']);
-                        //$pag=base64_decode($_GET['pag']);
-                        //$cnt=base64_decode($_GET['cnt']);
+                                                                                    //window.location="../../curseEmp.php?if='.base64_encode($id).'&ent='.base64_encode($id_sol).'&pag='.base64_encode($prube).'&cnt='.base64_encode($subs).'"</script>'
+                                                                                    //if(isset($_GET['if']) && isset($_GET['ent']) && isset($_GET['pag']) && isset($_GET['cnt'])){
+                                                                                    //$ide=base64_decode($_GET['if']);
+                                                                                    //$ente=base64_decode($_GET['ent']);
+                                                                                    //$pag=base64_decode($_GET['pag']);
+                                                                                    //$cnt=base64_decode($_GET['cnt']);
 
-                        //https://educalma.fundacioncalma.org/ se pone esta url en produccion
-                        ?>
+                                                                                    //https://educalma.fundacioncalma.org/ se pone esta url en produccion
+                                                                                    ?>
                         
-                        value="http://localhost/EDUCALM/test-educalma/web/pageEnterprice.php?id=<?php //echo base64_encode($ide); ?>&sol=<?php //echo base64_encode($ente); ?>&val=<?php //echo base64_encode($pag); ?>&subs=<?php //echo base64_encode($cnt);?>"
+                        value="http://localhost/EDUCALM/test-educalma/web/pageEnterprice.php?id=<?php //echo base64_encode($ide); 
+                                                                                                ?>&sol=<?php //echo base64_encode($ente); 
+                                                                                                        ?>&val=<?php //echo base64_encode($pag); 
+                                                                                                                                                    ?>&subs=<?php //echo base64_encode($cnt);
+                                                                                                                                                                                            ?>"
                         <?php
                         //}
                         ?> type="text">
