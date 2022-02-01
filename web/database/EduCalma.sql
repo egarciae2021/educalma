@@ -96,6 +96,10 @@ CREATE TABLE cursos (
 	fechaPulicacion date DEFAULT NULL
 );
 
+INSERT INTO cursos VALUES (1, 'MULTI CURSOS XA', 'aaaaaa aaaaaa aaaaaa aaaaaa aaaaaa aaaaaa aaaaaa aaaaaa aaaaaa aaaaaa aaaaaa aaaaaa aaaaaa aaaaaa aaaaaa aaaaaa aaaaaa aaaaaa aaaaaa aaaaaa aaaaaa', 1, 'todos', 51, null, 0, 'aaaaaa aaaaaa aaaaaa aaaaaa aaaaaa aaaaaa aaaaaa aaaaaa aaaaaa aaaaaa aaaaaa aaaaaa aaaaaa aaaaaa aaaaaa aaaaaa aaaaaa', 7, '2022-01-04');
+INSERT INTO cursos VALUES (2, 'llamada call', 'n publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.', 1, 'TODOS', 16, null, 1, 'n publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.', 7, '2022-01-06');
+
+
 
 -- Tabla Modulos 
 CREATE TABLE modulo (
