@@ -182,14 +182,13 @@
                                 <h6>Ampliar todas las secciones</h6>
                             </div>
                         </div>
-                        <div id="accordion">
-                            <?php
-                            $i = 0;
-                            while ($modulosC = $q6->fetch(PDO::FETCH_ASSOC)) {
-                            ?>
 
+                        <?php
+                        $i = 0;
+                        while ($modulosC = $q6->fetch(PDO::FETCH_ASSOC)) {
+                        ?>
+                            <div id="accordion">
                                 <div class="card">
-
                                     <a class="card-header card-link" data-toggle="collapse" href="<?php echo '#collapseOne' . $i  ?>">
                                         <span><i class="fas fa-sort-down mr-3"></i><?php echo $modulosC['nombreModulo'] ?></span>
                                     </a>
@@ -220,18 +219,19 @@
                                         </div>
                                     </div>
                                 </div>
-                            <?php
-                                $i++;
-                            }
-                            ?>
-                        </div>
+                            </div>
+                        <?php
+                            $i++;
+                        }
+                        ?>
+
+
+
+
                     </div>
-
-
                 </div>
             </div>
-        </div>
-    <?php
+        <?php
     } else {
         echo '
             <script>
@@ -239,7 +239,7 @@
             </script>
         ';
     }
-    ?>
+        ?>
 </body>
 
 </html>
