@@ -21,7 +21,7 @@ if (!isset($_GET['pag'])) {
           ¡Impulsa tu aprendizaje junto a los mejores especialistas en EduCalma desde hoy!
         </div>
         <div class="button-panel">
-          <a href="registroUsuario.php" type="button" class="btn btn_registrar_panel">Registrate!</a>
+          <a href="registroUsuario.php" type="button" class="btn btn_registrar_panel">Regístrate!</a>
         </div>
       </div>
     </div>
@@ -71,7 +71,7 @@ if (!isset($_GET['pag'])) {
             </div>
             <div class="card-descripti">
               <p>
-                Cada tema enseñado será de buena ayuda en los test de cada sesion.
+                Cada tema enseñado será de buena ayuda en los test de cada sesión.
               </p>
             </div>
           </div>
@@ -86,7 +86,7 @@ if (!isset($_GET['pag'])) {
             </div>
             <div class="card-descripti">
               <p>
-                Al concluir el curso se les entregará un certificado por todo lo aprendido en cada sesion.
+                Al concluir el curso se les entregará un certificado por todo lo aprendido en cada sesión.
               </p>
             </div>
           </div>
@@ -260,7 +260,7 @@ if (!isset($_GET['pag'])) {
       <li><i class="fas fa-check-circle mr-3"></i>Mide y analiza los resultados de tu equipo con nuestro servicio.
       </li>
       <li><i class="fas fa-check-circle mr-3"></i>Acompañamiento y seguimiento por un Ejecutivo de Cuenta.</li>
-      <li><i class="fas fa-check-circle mr-3"></i>Certificaciones por cada curso de plan compleado.</li>
+      <li><i class="fas fa-check-circle mr-3"></i>Certificaciones por cada curso del plan completado.</li>
     </ul>
     <div class="box-email">
       <span>Recibe informaci&oacute;n específica para tu empresa</span>

@@ -2,6 +2,11 @@
     @import url("https://fonts.googleapis.com/css2?family=Old+Standard+TT&display=swap");
     @import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap");
     @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap");
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
     .div-container-panel-nosotros {
         background-image: url(../images/fondo1.png);
         background-repeat: no-repeat;
@@ -37,6 +42,7 @@
         font-style: normal;
         font-weight: normal;
         font-size: 18px;
+        text-shadow: -1px -1px 0px #fff, 1px -1px 0px #fff, -1px 1px 0px #fff, 1px 1px 0px #fff;
         /* padding-right: 20rem; */
         text-align: right;
     }
@@ -66,19 +72,12 @@
     }
     
     .image-panel {
-        bottom: 0;
-        position: absolute;
+        /* bottom: 0;
+    position: absolute; */
     }
     
     .container-panel-image-nosotros img {
         width: 800px;
-    }
-    
-    @media screen and (min-width: 768px) and (max-width: 1280px) {
-        .image-panel {
-            margin: 20rem 0;
-            position: relative;
-        }
     }
     
     @media only screen and (max-width: 1458px) {

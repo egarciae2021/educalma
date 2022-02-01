@@ -4,10 +4,12 @@
 <!-- PANEL -->
 <div class="container-fluid div-container-panel-nosotros">
     <div class="row">
-        <div class="col-12 col-md-6 col-lg-7 col-xl-6 container-panel-image-nosotros">
-            <div class="container-image-panel">
-                <div class="image-panel">
-                    <img class="my-auto d-block" src="./assets/images/gou.png" alt="">
+        <div class="col-12 col-md-6 col-lg-7 col-xl-6 m-auto">
+            <div class="container-panel-image-nosotros">
+                <div class="container-image-panel">
+                    <div class="image-panel">
+                        <img src="./assets/images/gou.png" alt="">
+                    </div>
                 </div>
             </div>
         </div>
