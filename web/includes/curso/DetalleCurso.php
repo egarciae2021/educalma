@@ -85,147 +85,151 @@
 
     ?>
 
-        <div class="container-course bg-light"style="min-height: 100vh;">
-        <div class="bg-dark1">
-            <div class="row py-5">
-                <div class="col-12 col-sm-12 col-md-7 col-lg-8 col-xl-9 ">
-                    <br><br><br><br>
-                    <span>Cursos</span><i class="fas fa-angle-right mx-2"></i>
-                    <span>Categoría</span><i class="fas fa-angle-right mx-2"></i>
-                    <span>nombre del curso</span>
-                    <h2 class="my-2 font-weight-bold"><?php echo $dato4['nombreCurso']; ?></h2>
-                    <p><?php echo $dato4['descripcionCurso']; ?></p>
-                    <i class="fas fa-stopwatch mr-2"></i><span>Fecha: <?php echo $dato4['fechaPulicacion']; ?></span>
-                    <i class="fas fa-globe ml-4 mr-2"></i><span>Español</span>
-                    <i class="fas fa-closed-captioning ml-4 mr-2"></i><span>Español [automático]</span>
-                </div>
-                <div class="col-12 col-sm-12 col-md-5 col-lg-4 col-xl-3 info-course-right pt-3">
-                    <!-- <br><br><br><br> -->
-                    <div class="card ">
-                        <div class="content-img">
-                        <img class="card-img-top1" src="data:image/*;base64,<?php echo base64_encode($dato4['imagenDestacadaCurso']) ?>" alt="Card image" >
-                        </div>
+        <div class="container-course bg-light" style="min-height: 100vh;">
+            <div class="bg-dark1">
+                <div class="row py-5">
+                    <div class="col-12 col-sm-12 col-md-7 col-lg-8 col-xl-9 ">
+                        <br><br><br><br>
+                        <span>Cursos</span><i class="fas fa-angle-right mx-2"></i>
+                        <span>Categoría</span><i class="fas fa-angle-right mx-2"></i>
+                        <span>nombre del curso</span>
+                        <h2 class="my-2 font-weight-bold"><?php echo $dato4['nombreCurso']; ?></h2>
+                        <p><?php echo $dato4['descripcionCurso']; ?></p>
+                        <i class="fas fa-stopwatch mr-2"></i><span>Fecha: <?php echo $dato4['fechaPulicacion']; ?></span>
+                        <i class="fas fa-globe ml-4 mr-2"></i><span>Español</span>
+                        <i class="fas fa-closed-captioning ml-4 mr-2"></i><span>Español [automático]</span>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-5 col-lg-4 col-xl-3 info-course-right pt-3">
+                        <!-- <br><br><br><br> -->
+                        <div class="card ">
+                            <div class="content-img">
+                                <img class="card-img-top1" src="data:image/*;base64,<?php echo base64_encode($dato4['imagenDestacadaCurso']) ?>" alt="Card image">
+                            </div>
 
 
-                        <div class="card-body">
-                            <h4 class="card-title font-weight-bold" style="font-size: 30px;"><?php 
-                            if($dato4['costoCurso']!=0){
-                            echo 'S/ ' . $dato4['costoCurso'];
-                            }else{
-                                echo 'Gratis';
-                            }
-                            ?></h4>
-                            <?php if($dato4['costoCurso']!=0){
+                            <div class="card-body">
+                                <h4 class="card-title font-weight-bold" style="font-size: 30px;"><?php
+                                                                                                    if ($dato4['costoCurso'] != 0) {
+                                                                                                        echo 'S/ ' . $dato4['costoCurso'];
+                                                                                                    } else {
+                                                                                                        echo 'Gratis';
+                                                                                                    }
+                                                                                                    ?></h4>
+                                <?php if ($dato4['costoCurso'] != 0) {
                                 ?>
-                                <a href="pagepay.php?id=<?php echo $dato4["idCurso"]; ?>" class="btn btn-outline-dark my-3">Comprar ahora</a>
-                                <?php 
-                                }else{
-                                    ?>
+                                    <a href="pagepay.php?id=<?php echo $dato4["idCurso"]; ?>" class="btn btn-outline-dark my-3">Comprar ahora</a>
+                                <?php
+                                } else {
+                                ?>
                                     <a href="includes/Cursos_crud/inscribirseGratis.php?id=<?php echo $dato4["idCurso"]; ?>" class="btn btn-outline-dark my-3">Comprar ahora</a>
-                                    <?php
+                                <?php
                                 }
                                 ?>
-                            <p class="font-weight-bold mb-0">Este curso incluye:</p>
-                            <div class="my-1" style="font-size: 13px;">
+                                <p class="font-weight-bold mb-0">Este curso incluye:</p>
+                                <div class="my-1" style="font-size: 13px;">
 
-                                <div>
-                                    <i class="far fa-file text-center" style="width: 1.5rem;"></i>
-                                    <span class="ml-3"><?php echo $modulos; ?> Módulos</span>
+                                    <div>
+                                        <i class="far fa-file text-center" style="width: 1.5rem;"></i>
+                                        <span class="ml-3"><?php echo $modulos; ?> Módulos</span>
+                                    </div>
+
+                                    <div>
+                                        <i class="far fa-folder text-center" style="width: 1.5rem;"></i>
+                                        <span class="ml-3"><?php echo $temas; ?> Temas</span>
+                                    </div>
+
+                                    <div>
+                                        <i class="far fa-list-alt text-center" style="width: 1.5rem;"></i>
+                                        <span class="ml-3"><?php echo $cuestionarios; ?> Cuestionarios</span>
+                                    </div>
+
+                                    <div>
+                                        <i class="fas fa-graduation-cap text-center" style="width: 1.5rem;"></i>
+                                        <span class="ml-3">La nota mínima para aprobar el curso es <?php echo $minimo_respuestas_para_aprobar; ?></span>
+                                    </div>
+
+                                    <div>
+                                        <i class="fas fa-list-ol text-center" style="width: 1.5rem;"></i>
+                                        <span class="ml-3">Cantidad de preguntas: <?php echo $preguntas; ?></span>
+                                    </div>
+
+
+                                    <div>
+                                        <i class="fas fa-trophy text-center" style="width: 1.5rem;"></i>
+                                        <span class="ml-3">Certificado de Finalización</span>
+                                    </div>
+
                                 </div>
-
-                                <div>
-                                    <i class="far fa-folder text-center" style="width: 1.5rem;"></i>
-                                    <span class="ml-3"><?php echo $temas; ?> Temas</span>
-                                </div>
-
-                                <div>
-                                    <i class="far fa-list-alt text-center" style="width: 1.5rem;"></i>
-                                    <span class="ml-3"><?php echo $cuestionarios; ?> Cuestionarios</span>
-                                </div>
-
-                                <div>
-                                    <i class="fas fa-graduation-cap text-center" style="width: 1.5rem;"></i>
-                                    <span class="ml-3">La nota mínima para aprobar el curso es <?php echo $minimo_respuestas_para_aprobar; ?></span>
-                                </div>
-
-                                <div>
-                                    <i class="fas fa-list-ol text-center" style="width: 1.5rem;"></i>
-                                    <span class="ml-3">Cantidad de preguntas: <?php echo $preguntas; ?></span>
-                                </div>
-
-
-                                <div>
-                                    <i class="fas fa-trophy text-center" style="width: 1.5rem;"></i>
-                                    <span class="ml-3">Certificado de Finalización</span>
-                                </div>
-
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="bg-light" style="height: 100%;">
-            <div class="row py-5" style="height: 100%;">
-                <div class="col-12 col-sm-12 col-md-5 col-lg-4 col-xl-3 info-course-left" style="border: 1px solid red;">
-                    <h4>Contenido del curso</h4>
-                </div>
-                <div class="col-12 col-sm-12 col-md-7 col-lg-8 col-xl-9 text-dark">
-                    <h4 class="font-weight-bold">Contenido del curso</h4>
-                    <div class="d-flex">
-                        <div class="mr-auto p-2">
-                            <span class="mr-1"><?php echo $modulos; ?></span>Módulos <i class="fas fa-circle mx-2" style="font-size: 5px;"></i>
-                            <span class="mr-1"><?php echo $temas; ?></span>Temas <i class="fas fa-circle mx-2" style="font-size: 5px;"></i>
-                            <span class="mr-1"><?php echo $cuestionarios; ?></span>Cuestionarios
-                        </div>
-                        <div class="p-2">
-                            <h6>Ampliar todas las secciones</h6>
-                        </div>
+            <div class="bg-light" style="height: 100%;">
+                <div class="row py-5" style="height: 100%;">
+                    <div class="col-12 col-sm-12 col-md-5 col-lg-4 col-xl-3 info-course-left" style="border: 1px solid red;">
+                        <h4>Contenido del curso</h4>
                     </div>
-                    <div id="accordion">
-                        <?php
-                        while ($modulosC = $q6->fetch(PDO::FETCH_ASSOC)) {
-                        ?>
-                            <div class="card">
-                                <a class="card-header card-link" data-toggle="collapse" href="#collapseOne">
-                                    <span><i class="fas fa-sort-down mr-3"></i><?php echo $modulosC['nombreModulo'] ?></span>
-                                </a>
+                    <div class="col-12 col-sm-12 col-md-7 col-lg-8 col-xl-9 text-dark">
+                        <h4 class="font-weight-bold">Contenido del curso</h4>
+                        <div class="d-flex">
+                            <div class="mr-auto p-2">
+                                <span class="mr-1"><?php echo $modulos; ?></span>Módulos <i class="fas fa-circle mx-2" style="font-size: 5px;"></i>
+                                <span class="mr-1"><?php echo $temas; ?></span>Temas <i class="fas fa-circle mx-2" style="font-size: 5px;"></i>
+                                <span class="mr-1"><?php echo $cuestionarios; ?></span>Cuestionarios
+                            </div>
+                            <div class="p-2">
+                                <h6>Ampliar todas las secciones</h6>
+                            </div>
+                        </div>
+                        <div id="accordion">
+                            <?php
+                            $i = 0;
+                            while ($modulosC = $q6->fetch(PDO::FETCH_ASSOC)) {
+                            ?>
 
-                                <?php
+                                <div class="card">
 
-                                $idModuloC = $modulosC['idModulo'];
+                                    <a class="card-header card-link" data-toggle="collapse" href="<?php echo '#collapseOne' . $i  ?>">
+                                        <span><i class="fas fa-sort-down mr-3"></i><?php echo $modulosC['nombreModulo'] ?></span>
+                                    </a>
 
-                                //Nombre del modulo
-                                $pdo7 = Database::connect();
-                                $sql7 = "SELECT nombreTema FROM tema WHERE id_modulo='$idModuloC'";
-                                $q7 = $pdo7->prepare($sql7);
-                                $q7->execute(array());
+                                    <?php
 
-                                while ($temasC = $q7->fetch(PDO::FETCH_ASSOC)) {
-                                ?>
-                                    <div id="collapseOne" class="collapse show" data-parent="#accordion">
+                                    $idModuloC = $modulosC['idModulo'];
+
+                                    //Nombre del modulo
+                                    $pdo7 = Database::connect();
+                                    $sql7 = "SELECT nombreTema FROM tema WHERE id_modulo='$idModuloC'";
+                                    $q7 = $pdo7->prepare($sql7);
+                                    $q7->execute(array());
+
+                                    while ($temasC = $q7->fetch(PDO::FETCH_ASSOC)) {
+                                    ?>
+                                        <div id="<?php echo 'collapseOne' . $i ?>" class="collapse show" data-parent="#accordion">
+                                            <div class="card-body">
+                                                <?php echo $temasC['nombreTema'] ?>
+                                            </div>
+                                        </div>
+                                    <?php
+                                    }
+                                    ?>
+                                    <div id="<?php echo 'collapseOne' . $i  ?>" class="collapse show" data-parent="#accordion">
                                         <div class="card-body">
-                                            <?php echo $temasC['nombreTema'] ?>
+                                            Cuestionario
                                         </div>
                                     </div>
-                                <?php
-                                }
-                                ?>
-                                <div id="collapseOne" class="collapse show" data-parent="#accordion">
-                                    <div class="card-body">
-                                        Cuestionario
-                                    </div>
                                 </div>
-                            </div>
-                        <?php
-                        }
-                        ?>
+                            <?php
+                                $i++;
+                            }
+                            ?>
+                        </div>
                     </div>
-                </div>
 
-                
+
+                </div>
             </div>
-        </div>
         </div>
     <?php
     } else {
