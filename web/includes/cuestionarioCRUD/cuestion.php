@@ -20,12 +20,23 @@
     $correcta=$_POST['correcta'];
     $verif_resp=$_POST['verif_resp'];
 
+    $contadorP=$_POST['contadorP'];
+
     $pdo = Database::connect();
     $sql = "SELECT * FROM respuestas WHERE respuesta='$verif_resp' AND estado=1 AND id_Pregunta='$id_pregunta'";
     $q = $pdo->prepare($sql);
     $q->execute();
     $cuenta = $q->rowCount();
     Database::disconnect();
+
+    $pdo = Database::connect();
+    $sql23 = "SELECT * FROM respuestas WHERE respuesta='$verif_resp' AND id_Pregunta='$id_pregunta'";
+    $q23 = $pdo->prepare($sql23);
+    $q23->execute();
+    $datoRes=$q23->fetch(PDO::FETCH_ASSOC);
+    Database::disconnect();
+
+    $respuesta1 = $datoRes['idRespuesta'];
 
     if($cuenta==1){
         // CALCULAR LA CANTIDAD DE RESPUESTS ACERTADAS 
@@ -52,7 +63,7 @@
         echo'
             <script>
                 //alert("respuesta correcta");
-                window.location = "../../cuestionario.php?id='.$id.'&c='.($correcta+1).'&idModulo='.$idModulo.'&up='.($up+1).'&idcues='.$_SESSION['idcue'].'&cuen='.($ens+1).'&nro='.($envi+1).'";
+                window.location = "../../cuestionario.php?id='.$id.'&c='.($correcta+1).'&contadorP='.($contadorP.','.$id_pregunta.'-'.$respuesta1).'&idModulo='.$idModulo.'&up='.($up+1).'&idcues='.$_SESSION['idcue'].'&cuen='.($ens+1).'&nro='.($envi+1).'";
             </script>
         ';
        
@@ -63,7 +74,7 @@
         echo'
             <script>
                 //alert("respuesta incorrecta");
-                window.location = "../../cuestionario.php?id='.$id.'&c='.$correcta.'&idModulo='.$idModulo.'&up='.($up+1).'&idcues='.$_SESSION['idcue'].'&cuen='.($ens+1).'&nro='.($envi+1).'";
+                window.location = "../../cuestionario.php?id='.$id.'&c='.$correcta.'&contadorP='.($contadorP.','.$id_pregunta.'-'.$respuesta1).'&idModulo='.$idModulo.'&up='.($up+1).'&idcues='.$_SESSION['idcue'].'&cuen='.($ens+1).'&nro='.($envi+1).'";
             </script>
         ';
         

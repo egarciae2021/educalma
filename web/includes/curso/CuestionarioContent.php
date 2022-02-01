@@ -52,6 +52,14 @@
         }
         $contador=$_GET['contador'];
 
+        // *****************************************************************//
+        if(!isset($_GET['contadorP'])){
+            $_GET['contadorP']=null;
+        }
+        $contadorP=$_GET['contadorP'];
+
+        // *****************************************************************//
+
         //selectionamos el id del cuestionario del modulo 1
 
         $pdo = Database::connect();
@@ -165,18 +173,21 @@
                                 
                                 
                                 <?php
+                                $porciones = explode(",", $contadorP);
+                                $cont = 1;
                                 foreach ($filaCor as $filaCor) {
                                     
+                                    $separado = $porciones[$cont];
+                                    $separado1 = explode("-", $separado);
                                     
+                                    $idpregunta = $separado1[0];
+                                    $idrespuesta = $separado1[1];
 
                                     $pdo23 = Database::connect();
-                                    $idpregunta=$filaCor['idPregunta'];
                                     //echo $idpregunta;
                                     $sql23 = "SELECT * FROM respuestas WHERE id_Pregunta='$idpregunta'";
-
                                     $q23 = $pdo23->prepare($sql23);
                                     $q23->execute(array());
-
 
                                 ?>
                                     <!-- nuevo -->
@@ -201,14 +212,18 @@
                                                     </div>
                                             </label> -->
 
-                                            <?php while($fila23=$q23->fetch(PDO::FETCH_ASSOC)){ 
+                                            <?php while($fila23=$q23->fetch(PDO::FETCH_ASSOC)){
                                             ?>
 
-                                                <label class="list-group-item small">
-                                                    <div class="form-check"  style="color:green;">
-                                                        <input type="radio" name="verif_resp" value="<?php echo $fila23['respuesta'];?>">
-                                                        <input type="hidden" name="correcta" value="<?php echo $correcta;?>">
-                                                        <label class="form-check-label" for="exampleRadios1"> <?php echo $fila23['respuesta'];?> </label>
+                                                <label class="list-group-item small form-control">
+                                                    <div class="form-check">
+                                                        <?php if($fila23['idRespuesta'] == $idrespuesta){?>
+                                                            <input type="checkbox" name="verif_resp" disabled  checked value="<?php echo $fila23['idRespuesta'];?>">
+                                                            <label class="form-check-label" for="exampleRadios1" <?php echo (($fila23['estado']==1)?'style="color:green;"':'style="color:red;"')?>> <?php echo  $fila23['respuesta'];?> </label>
+                                                        <?php }else{?>
+                                                            <input type="checkbox" name="verif_resp" disabled  value="<?php echo $fila23['idRespuesta'];?>">
+                                                            <label class="form-check-label" for="exampleRadios1" <?php echo (($fila23['estado']==1)?'style="color:green;"':'style="color:black;"')?>> <?php echo  $fila23['respuesta'];?> </label>
+                                                        <?php }?>
                                                     </div>
                                                 </label>
                                             <?php }?>
@@ -217,6 +232,7 @@
                                     <!-- fin nuevo -->
 
                                 <?php
+                                    $cont++;
                                 }
                                 ?>
                                 
@@ -253,6 +269,7 @@
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" name="verif_resp" value="<?php echo $fila2['respuesta'];?>">
                                         <input type="hidden" name="correcta" value="<?php echo $correcta;?>">
+                                        <input type="hidden" name="contadorP" value="<?php echo $contadorP;?>">
                                         <label class="form-check-label" for="exampleRadios1"> <?php echo $fila2['respuesta'];?> </label>
                                     </div>
                                 </div>
