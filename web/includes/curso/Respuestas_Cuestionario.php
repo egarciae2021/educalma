@@ -261,7 +261,7 @@
 
                                 <div class="row">
                                     <div class="col-12">
-                                        <form action="includes/tema/checkAgrTema.php?id=<?php echo $_GET['id']?>&idpregunta=<?php echo $id_pregunta;?>&id_modulo=<?php echo $idmodulo;?>&pregunta=<?php echo $pregunta;?>" class="pt-0" method="POST">
+                                        <form id= "form_respuesta" action="includes/tema/checkAgrTema.php?id=<?php echo $_GET['id']?>&idpregunta=<?php echo $id_pregunta;?>&id_modulo=<?php echo $idmodulo;?>&pregunta=<?php echo $pregunta;?>" class="pt-0" method="POST">
 
                                             <div class="form-row">
                                                 <div class="form-group col-md-12">
@@ -338,6 +338,7 @@
                 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
                 <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.js"></script>
                 <script src="assets/js/validarCategoria.js"></script>
+                <script src="assets/js/validarRegistro.js"></script>
                 <script src="assets/js/plugins/sweetalert2.all.min.js"></script>
                 <script src="assets/js/validarModulo.js"></script>
 </body>
