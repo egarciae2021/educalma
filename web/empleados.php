@@ -18,7 +18,7 @@ ob_start();
     <script src="./assets/js/plugins/bootstrap.min.js"></script>
     <script src="./assets/js/plugins/sweetalert2.all.min.js"></script>
 
-    <script src="./assets/js/main.js"></script>
+    <!-- <script src="./assets/js/main.js"></script> -->
     <!-- DataTables  & Plugins -->
     <script src="includes/plugins/datatables/jquery.dataTables.min.js"></script>
     <script src="includes/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
