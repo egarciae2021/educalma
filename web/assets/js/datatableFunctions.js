@@ -66,7 +66,7 @@ $(document).ready(function () {
       },
       "search": "Buscar: "
     }
-  }).buttons().container().appendTo('#tableAdminMedico_wrapper .col-md-6:eq(0)');
+  }).buttons().container().appendTo('#tablaEmpleados_wrapper .col-md-6:eq(0)');
 });
 
 //Tabla para administrar usuarios
