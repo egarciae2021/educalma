@@ -463,10 +463,10 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
 <script src="./assets/js/sidebarEditar.js"></script> -->
 
     <script>
-        function cambiarImg() {
-            var pdrs = document.getElementById('inputGroupFile04').files[0].name;
-            document.getElementById('infoImg').innerHTML = pdrs;
-        }
+        // function cambiarImg() {
+        //     var pdrs = document.getElementById('inputGroupFile04').files[0].name;
+        //     document.getElementById('infoImg').innerHTML = pdrs;
+        // }
 
         function masInfoUser(x) {
             document.getElementById("Nombre").value = "";
