@@ -189,28 +189,31 @@
                                     $q23 = $pdo23->prepare($sql23);
                                     $q23->execute(array());
 
+                                    $sql24 = "SELECT * FROM respuestas WHERE id_Pregunta='$idpregunta'";
+                                    $q24 = $pdo23->prepare($sql24);
+                                    $q24->execute(array());
+
+                                    $puntaje = false;
+
+                                    while($fila24=$q24->fetch(PDO::FETCH_ASSOC)){
+                                        if($fila24['idRespuesta'] == $idrespuesta && $fila24['estado']==1){
+                                            $puntaje = true;
+                                        }
+                                    }
+
                                 ?>
                                     <!-- nuevo -->
                                     <div class="card c-rpta mx-4 mt-3">
                                         <div class="card-header">
                                                 <div class="row">
                                                     <div class="col-sm-6 text-left">Pregunta n° 1</div>
-                                                    <div class="col-sm-6 text-right" style="color:#768EE8;">0/2 pts</div>
+                                                    <div class="col-sm-6 text-right" style="color:#768EE8;"><?php echo (($puntaje)?'1/1 pts':'0/1 pts')?> </div>
                                                 </div>
                                         </div>
                                         <div class="list-group list-group-flush small text-center text-secondary font-weight-normal my-3">
                                             <?php echo $filaCor['pregunta'];?>
                                         </div>
                                         <ul class="list-group list-group-flush text-justify">
-
-                                            <!-- respuesta correcta debe llevar verde y respuesta incorrecta debe llevar rojo -->
-                                            <!-- <label class="list-group-item small">
-                                                    <div class="form-check" style="color:green;">
-                                                        <input type="radio" name="verif_resp" value="<php echo $filaCor['respuesta'];?>">
-                                                        <input type="hidden" name="correcta" value="<php echo $correcta;?>"> 
-                                                        <label class="form-check-label" for="exampleRadios1"> <php echo $filaCor[0]['respuesta'];?> </label>
-                                                    </div>
-                                            </label> -->
 
                                             <?php while($fila23=$q23->fetch(PDO::FETCH_ASSOC)){
                                             ?>
