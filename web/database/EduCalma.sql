@@ -36,10 +36,10 @@ INSERT INTO usuarios VALUES (1, 3, 0, 0, 'JULY', 'CASTILLO', 'BARRERA', 'j@gmail
 INSERT INTO usuarios VALUES (2, 1, 0, 0, 'JULIO', 'CESAR', 'TELLO', 'tello@gmail.com', '$2y$10$tyWFJ1bWHdciAaxbGAk7uu.HIPoZw3uDKJJ4Rv7914wh6Hai9iroi', '954555784', 1, '55784952', 1, '1989-04-02', 'PERÚ', 1, 1, '2021-11-09 19:25:45', NULL, '', 0, '');
 --  USUARIO
 -- pass: Marleni123456
-INSERT INTO usuarios VALUES (3, 3, 0, 0, 'MARLENE', 'VASQUEZ', 'VERA', 'marlene@gmail.com', '$2y$10$apc7Qxi7dW5FRo0Ki9BOue2FRp/yfBWhiCeVnRAQGoNgxkMpvlMhy', '989874852', 1, '05554874', 2, '1980-03-18', 'PERÚ', 3, 1, '2021-11-09 19:25:45', NULL, '', 0, ''),
+INSERT INTO usuarios VALUES (3, 3, 0, 0, 'MARLENE', 'VASQUEZ', 'VERA', 'marlene@gmail.com', '$2y$10$apc7Qxi7dW5FRo0Ki9BOue2FRp/yfBWhiCeVnRAQGoNgxkMpvlMhy', '989874852', 1, '05554874', 2, '1980-03-18', 'PERÚ', 3, 1, '2021-11-09 19:25:45', NULL, '', 0, '');
 -- ADMINISTRADOR 
 -- pass: Estefany123456
-INSERT INTO usuarios VALUES (4, 1, 0, 1, 'ESTEFANY', 'MATA', 'MATOS', 'estefany@gloria.com', '$2y$10$OGIZkqniYZsz1HQfcKdzfuNa0pyjYFGPB1K71uXrigk4ITw5xFJxW', '963259658', 1, '02698974', 2, '1990-01-05', 'PERÚ', 1, 1, '2021-11-09 19:25:45', NULL, '', 0, ''),
+INSERT INTO usuarios VALUES (4, 1, 0, 1, 'ESTEFANY', 'MATA', 'MATOS', 'estefany@gloria.com', '$2y$10$OGIZkqniYZsz1HQfcKdzfuNa0pyjYFGPB1K71uXrigk4ITw5xFJxW', '963259658', 1, '02698974', 2, '1990-01-05', 'PERÚ', 1, 1, '2021-11-09 19:25:45', NULL, '', 0, '');
 -- ADMINISTRADOR 
 -- pass: Calma123
 INSERT INTO usuarios VALUES (5, 1, 0, 1, 'MATA', 'MATA', 'MATOS', 'educalma@calma.com', '$2y$10$ZCyPSbUMoUa9C2vA3CNfR.caGn8Q2cc3Z1OFgH4rssGJu3JatBVGG', '963259658', 1, '02698974', 2, '1990-01-05', 'PERÚ', 1, 1, '2021-11-09 19:25:45', NULL, '', 0, '');
