@@ -122,7 +122,11 @@ $usuarios = $q3->fetchAll(PDO::FETCH_ASSOC);
                                                 <?php echo $usuarios['nro_doc']; ?>
                                             </td>
                                             <td>
-                                                <?php echo $datoSexo['nombre_genero']; ?>
+                                                <?php if(!empty($datoSexo['nombre_genero'])){
+                                                    echo $datoSexo['nombre_genero']; 
+                                                    }else{
+                                                    echo "Empresa";
+                                                    }?>
                                             </td>
                                             <!-- <td><img style="height: 50px;" src="data:image/*;base64,<php echo base64_encode($usuarios[ 'mifoto']) ?>"></td> -->
                                             <td>

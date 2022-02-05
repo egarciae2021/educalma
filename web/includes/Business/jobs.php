@@ -178,6 +178,18 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                                     $q7 = $pdo4->prepare($sql7);
                                     $q7->execute(array());
                                     $datoSexo = $q7->fetch(PDO::FETCH_ASSOC);
+
+                                    $sql5 = "SELECT COUNT(DISTINCT id_Curso) FROM empresascursos WHERE id_Empresa=$idd  ";
+                                    $q8 = $pdo4->prepare($sql5);
+                                    $cuen=$q8->execute();
+                                    $sum=$q8->fetchColumn();
+
+                                    $idUsu = $usuarios['id_user'] ;
+                                    $sql7 = "SELECT COUNT(*) FROM certificados WHERE idUser_certif=$idUsu ";
+                                    $q9 = $pdo4->prepare($sql7);
+                                    $cu=$q9->execute();
+                                    $su=$q9->fetchColumn();
+                                    
                                 ?>
                                     <tr>
                                         <td><?php echo $datoPrivi['nombre_privilegio']; ?></td>
@@ -189,10 +201,10 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                                         <td><?php echo $datoSexo['nombre_genero']; ?></td>
                                         <!-- <td><img style="height: 50px;" src="data:image/*;base64,<php echo base64_encode($usuarios['mifoto']) ?>"></td> -->
                                         <td>
-                                          <label style="color: #C71C64;">  NO COMPLETADO</label>
+                                          <center><label style="color: #C71C64;"><?php echo $sum." / ".$su;?></label></center>
                                         </td>
                                         <td>
-                                            <?php $idUsu = $usuarios['id_user'] ?>
+                                            <?php ?>
                                             <?php //echo $_SESSION['passSinHash'];
                                             ?>
                                             <!--para editar curso-->
