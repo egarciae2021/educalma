@@ -127,8 +127,8 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                                 <td>
                                   <?php echo $curso['nombreCurso']; ?>
                                 </td>
-                                <td>
-                                  <?php echo substr($curso['descripcionCurso'], 0, 100) . "..."; ?>
+                                <td width="330" height="80">
+                                  <?php echo substr($curso['descripcionCurso'], 0, 70) . "..."; ?>
                                 </td>
                                 <td>
                                   <?php echo $datoCate['nombreCategoria']; ?>
