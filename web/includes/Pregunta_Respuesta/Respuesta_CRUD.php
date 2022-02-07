@@ -11,14 +11,22 @@
 
         //insertar pregunta 
             $pdo4 = Database::connect(); 
-            $verif4=$pdo4->prepare("INSERT INTO respuestas (respuesta, id_Pregunta,estado)VALUES ('$respuesta','$id_pregunta',0) ");
-            $verif4->execute(array());
+            try{
+                // $verif4=$pdo4->prepare("INSERT INTO respuestas (respuesta, id_Pregunta,estado)VALUES ('$respuesta','$id_pregunta',0) ");
+                $verif4=$pdo4->prepare("INSERT INTO `respuestas` (`respuesta`, `id_Pregunta`,estado)VALUES (:respuesta,:id_pregunta,0) ");
+                $verif4->bindParam(":respuesta",$respuesta,PDO::PARAM_STR);
+                $verif4->bindParam(":id_pregunta",$id_pregunta,PDO::PARAM_INT);
+                $verif4->execute();
+            }catch(PDOException $e){
+                echo $e->getMessage();
+            }
+            
 
             Database::disconnect();
             echo'
                 <script>
                     // alert("respuesta agregada");
-                    window.location = "../../Form_respue_cuestionario.php?id_modulo='.$id_modulo.'&id_pregunta='.$id_pregunta.'&pregunta='.$pregunta.'";
+                    window.location = "../../Form_respue_cuestionario.php?id='.$_GET['id'].'&id_modulo='.$id_modulo.'&id_pregunta='.$id_pregunta.'&pregunta='.$pregunta.'";
                 </script>
             ';
             exit();
@@ -46,7 +54,7 @@
         echo'
             <script>
                 // alert ("Actualizado exitosamente");
-                window.location = "../../Form_respue_cuestionario.php?id_modulo='.$id_modulo.'&id_pregunta='.$id_pregunta.'&pregunta='.$pregunta.'";
+                window.location = "../../Form_respue_cuestionario.php?id='.$_GET['id'].'&id_modulo='.$id_modulo.'&id_pregunta='.$id_pregunta.'&pregunta='.$pregunta.'";
             </script>
         ';
 
@@ -69,7 +77,7 @@
         Database::disconnect();
         echo'
             <script>
-                window.location = "../../Form_respue_cuestionario.php?id_modulo='.$id_modulo.'&id_pregunta='.$id_pregunta.'&pregunta='.$pregunta.'";
+                window.location = "../../Form_respue_cuestionario.php?id='.$_GET['id'].'&id_pregunta='.$id_pregunta.'&id_modulo='.$id_modulo.'&pregunta='.$pregunta.'";
             </script>
         ';
     }

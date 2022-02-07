@@ -11,10 +11,18 @@ if(isset($_GET['idCurso'])){
     $descripcionTema = $_POST['descripcio_tema'];
     $link = $_POST['link'];
 
-    $pdo = Database::connect();  
-    $verif=$pdo->prepare("INSERT INTO tema (id_Modulo, nombreTema, descripcionTema, link_video, encuestaTema) VALUES ('$idModulo','$nombreTema','$descripcionTema','$link','activo') ");
-
-    $verif->execute();
+    $pdo = Database::connect();
+    try{
+        // $verif=$pdo->prepare("INSERT INTO tema (id_modulo, nombreTema, descripcionTema, link_video, encuestaTema) VALUES ('$idModulo','$nombreTema','$descripcionTema','$link','activo')");
+        $verif=$pdo->prepare("INSERT INTO `tema` (`id_modulo`, `nombreTema`, `descripcionTema`, `link_video`, encuestaTema) VALUES (:idModulo,:nombreTema,:descripcionTema,:link,'activo')");
+        $verif->bindParam(":idModulo",$idModulo,PDO::PARAM_INT);
+        $verif->bindParam(":nombreTema",$nombreTema,PDO::PARAM_STR);
+        $verif->bindParam(":descripcionTema",$descripcionTema,PDO::PARAM_STR);
+        $verif->bindParam(":link",$link,PDO::PARAM_STR);
+        $verif->execute();
+    }catch(PDOException $e){
+        echo $e->getMessage();
+    }
     Database::disconnect();
     echo'
             <script>
@@ -24,6 +32,57 @@ if(isset($_GET['idCurso'])){
             
             ';
         
+}
+
+    /*
+        EDITAR TEMA
+    */
+
+if(isset($_POST['actu_tema'])){
+
+    $idCurso= $_GET['idCur'];
+    $idModulo= $_GET['id_mod'];
+
+    $nombreTema=$_POST['actu_tema'];
+    $descripcionTema = $_POST['descripcionT'];
+    $link = $_POST['linkT'];
+    $idTema= $_POST['idTema'];
+
+    $pdo = Database::connect();  
+    $veri="UPDATE tema SET nombreTema='$nombreTema', descripcionTema ='$descripcionTema', link_video= '$link' WHERE idTema = '$idTema'";
+    $q = $pdo->prepare($veri);
+    $q->execute(array());
+    $dato=$q->fetch(PDO::FETCH_ASSOC);
+    Database::disconnect();
+
+    echo'
+        <script>
+        window.location = "../../agregartema.php?idCurso='.$idCurso.'&id_mo='.$idModulo.'";
+        </script>
+    ';
+}
+
+/*
+    ELIMINAR TEMA
+*/
+if(isset($_POST['idTemas'])){
+    $idCurso= $_GET['idCurs'];
+    $idModulo= $_GET['id_mod'];
+
+    $idTema= $_POST['idTemas'];
+
+    /* Eliminar todos los temas del modulo*/
+    $pdo1 = Database::connect();  
+    $verif1=$pdo1->prepare("DELETE FROM tema where idTema = '$idTema'");
+
+    $verif1->execute(array());
+    Database::disconnect();
+
+    echo'
+        <script>
+            window.location = "../../agregartema.php?idCurso='.$idCurso.'&id_mo='.$idModulo.'";
+        </script>
+    ';
 }
 
 
@@ -54,7 +113,7 @@ if(isset($_POST['respu_correcta'])){
     echo'
         <script>
             // alert ("respuesta correcta -- escogida");
-            window.location = "../../Form_respue_cuestionario.php?id_pregunta='.$idpregunta.'&id_modulo='.$id_modulo.'&pregunta='.$pregunta.'";
+            window.location = "../../Form_respue_cuestionario.php?id='.$_GET['id'].'&id_pregunta='.$idpregunta.'&id_modulo='.$id_modulo.'&pregunta='.$pregunta.'";
         </script>
     ';
 }

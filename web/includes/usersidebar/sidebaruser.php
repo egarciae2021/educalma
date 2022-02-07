@@ -63,7 +63,18 @@ $dato12 = $q12->fetch(PDO::FETCH_ASSOC)
 
             <div style="text-align: right;">
 
-<img src="data:image/*;base64,<?php echo base64_encode($dato12['mifoto']);?>" alt="foto_curso" style="width: 50px;height:45px;border-radius: 50%;">
+
+<?php    
+    if($dato12['mifoto']!=null){
+?>
+        <img src="data:image/*;base64,<?php echo base64_encode($dato12['mifoto']);?>" alt="foto_curso" style="width: 50px;height:45px;border-radius: 50%;">
+<?php
+    }else{
+?>
+        <img src="./assets/images/user.png" alt="foto_curso" style="width: 50px;height:45px;border-radius: 50%;">
+<?php
+    }
+?>
 
 </div>
 
@@ -101,7 +112,7 @@ $dato12 = $q12->fetch(PDO::FETCH_ASSOC)
                             <span class="nav__name">Profesores</span>
                         </a>-->
                          <?php
-                         if($_SESSION['privilegio']==2 ||$_SESSION['privilegio']==3 ){
+                         if($_SESSION['privilegio']==1 ||$_SESSION['privilegio']==6 ){
                          ?>
                         <a href="agregarcurso.php" class="nav__link">
                             <i class='nav__icon'><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbG5zOnN2Z2pzPSJodHRwOi8vc3ZnanMuY29tL3N2Z2pzIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgeD0iMCIgeT0iMCIgdmlld0JveD0iMCAwIDQ4OS42IDQ4OS42IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MTIgNTEyIiB4bWw6c3BhY2U9InByZXNlcnZlIiBjbGFzcz0iIj48Zz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KCTxnPgoJCTxwYXRoIGQ9Ik0zOTQuOCwyNjEuNVY4MS43YzAtMjQuOS0yMC4zLTQ1LjItNDUuMi00NS4ySDQ1LjJDMjAuMywzNi41LDAsNTYuOCwwLDgxLjd2MTc5LjhjMCwyNC45LDIwLjMsNDUuMiw0NS4yLDQ1LjJoMTIuOXY1NC4yICAgIGMwLDEwLDguMSwxOC4xLDE4LjIsMTguMWwwLDBjNS4yLDAsMTAuMi0yLjMsMTMuNy02LjNsNTcuMS02Ni4xaDIwMi42QzM3NC41LDMwNi43LDM5NC44LDI4Ni40LDM5NC44LDI2MS41eiBNMTQxLjQsMjgyLjIgICAgYy0zLjYsMC02LjksMS41LTkuMyw0LjJsLTQ5LjYsNTcuM3YtNDkuM2MwLTYuOC01LjUtMTIuMy0xMi4zLTEyLjNoLTI1Yy0xMS40LDAtMjAuNy05LjMtMjAuNy0yMC43VjgxLjcgICAgYzAtMTEuNCw5LjMtMjAuNywyMC43LTIwLjdoMzA0LjRjMTEuNCwwLDIwLjcsOS4zLDIwLjcsMjAuN3YxNzkuOGMwLDExLjQtOS4zLDIwLjctMjAuNywyMC43TDE0MS40LDI4Mi4yTDE0MS40LDI4Mi4yeiIgZmlsbD0iIzRmNTJkNiIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgc3R5bGU9IiIgY2xhc3M9IiI+PC9wYXRoPgoJCTxwYXRoIGQ9Ik0zOTkuNyw0NDYuOGMzLjUsNC4xLDguNSw2LjMsMTMuNiw2LjNjMi4xLDAsNC4zLTAuNCw2LjQtMS4yYzcuMi0yLjcsMTEuOC05LjMsMTEuOC0xN3YtNTQuMmgxMi45ICAgIGMyNC45LDAsNDUuMi0yMC4zLDQ1LjItNDUuMlYxNTUuN2MwLTI0LjktMjAuMy00NS4yLTQ1LjItNDUuMmMtNi44LDAtMTIuMyw1LjUtMTIuMywxMi4yYzAsNi44LDUuNSwxMi4zLDEyLjMsMTIuMyAgICBjMTEuNCwwLDIwLjcsOS4zLDIwLjcsMjAuN3YxNzkuOGMwLDExLjQtOS4zLDIwLjctMjAuNywyMC43aC0yNS4xYy02LjgsMC0xMi4zLDUuNS0xMi4zLDEyLjN2NDkuM2wtNDkuNi01Ny4zICAgIGMtMi4zLTIuNy01LjctNC4yLTkuMy00LjJoLTE4NGMtNi44LDAtMTIuMyw1LjUtMTIuMywxMi4zczUuNSwxMi4zLDEyLjMsMTIuM2gxNzguNEwzOTkuNyw0NDYuOHoiIGZpbGw9IiM0ZjUyZDYiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIHN0eWxlPSIiIGNsYXNzPSIiPjwvcGF0aD4KCQk8Y2lyY2xlIGN4PSIxOTcuNCIgY3k9IjE3NS45IiByPSIxNC42IiBmaWxsPSIjNGY1MmQ2IiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBzdHlsZT0iIiBjbGFzcz0iIj48L2NpcmNsZT4KCQk8Y2lyY2xlIGN4PSIyNDYuMyIgY3k9IjE3NS45IiByPSIxNC42IiBmaWxsPSIjNGY1MmQ2IiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBzdHlsZT0iIiBjbGFzcz0iIj48L2NpcmNsZT4KCQk8Y2lyY2xlIGN4PSIxNDguNSIgY3k9IjE3NS45IiByPSIxNC42IiBmaWxsPSIjNGY1MmQ2IiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBzdHlsZT0iIiBjbGFzcz0iIj48L2NpcmNsZT4KCTwvZz4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8L2c+CjxnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjwvZz4KPGcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPC9nPgo8L2c+PC9zdmc+" /></i>
@@ -272,7 +283,19 @@ $dato12 = $q12->fetch(PDO::FETCH_ASSOC)
                                     <tr style="position:center;">
                                       
                                         <td >
-                                            <div class="imgbx"><img src="data:image/*;base64,<?php echo base64_encode($dato11['mifoto']);?>" alt="foto_curso" style="width: 50px;"></div>
+                                            <div class="imgbx">
+                                                <?php    
+                                                    if($dato11['mifoto']!=null){
+                                                ?>
+                                                        <img src="data:image/*;base64,<?php echo base64_encode($dato11['mifoto']);?>" alt="foto_curso" style="width: 50px;">
+                                                <?php
+                                                    }else{
+                                                ?>
+                                                        <img src="./assets/images/user.png" alt="foto_curso" style="width: 50px;">
+                                                <?php
+                                                    }
+                                                ?> 
+                                            </div>
                                             <span>⠀⠀</span>
                                         </td>
                                         <td>

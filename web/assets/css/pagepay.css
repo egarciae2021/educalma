@@ -1,12 +1,158 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;300;500&family=Raleway:wght@100;200;300;400;500;600;700&display=swap");
-
-body{
-    background-image: url('../images/Azul\ Degradado1.jpg');
+body {
+    background-image: url("../images/preguntas.png");
     background-size: cover;
-    background-position-y: 50%;
+    background-repeat: no-repeat;
+    /* background-position-y: 50%; */
+    color: #000000;
+    height: 100vh;
+    font-family: "Inter", sans-serif;
+    font-family: "Raleway", sans-serif;
+}
+
+.container {
+    margin-top: 4rem;
+    /* font-family: "Inter", sans-serif;
+  font-family: "Raleway", sans-serif; */
+}
+
+.container-navbar-router a {
+    text-decoration: none;
+    color: #777777;
+    font-size: 14px;
+}
+
+.container-navbar-router i {
+    font-size: 10px;
+    color: #777777;
+}
+
+.container-navbar-router span {
+    font-size: 14px;
+    color: #777777;
+}
+
+.container-pay .d-flex h4 {
+    font-size: 14px;
+}
+
+.container-pay .d-flex span {
+    font-size: 14px;
+}
+
+.container-pay .d-flex span a {
+    text-decoration: none;
+}
+
+.container-pay .container-pay-online .col-12 {
+    background-color: #f7f7f7;
+    border-radius: 5px;
+    font-size: 13px;
+    color: rgb(148, 148, 148);
+}
+
+.container-pay .container-pay-card .col-12 {
+    /* background-color: #f7f7f7; */
+    border: 2px solid #f7f7f7;
+    border-radius: 5px;
+    font-size: 13px;
+}
+
+.container-pay .container-pay-card a {
+    text-decoration: none;
     color: #000000;
 }
-.container {
+
+.container-pay .container-pay-card .col-12:hover {
+    /* border: 2px solid #abb0ee;
+  cursor: pointer;
+  transition: .3 all ease-in; */
+}
+
+.container-info-course {
+    border-top: 3px solid #abb0ee;
+}
+
+.container-info-course .px-4 h5 {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+
+/* .container-info-course .px-4 p{
+  font-size: 15px;
+  font-weight: bold;
+} */
+
+.container-info-course .px-4 .d-flex span {
+    font-size: 13px;
+    /* font-weight: bold; */
+}
+
+.container-info-resumen .px-4 h5 {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+
+/* .container-info-resumen .px-4 p{
+  font-size: 15px;
+  font-weight: bold;
+} */
+
+.container-info-resumen .px-4 .row {
+    font-size: 13px;
+    /* font-weight: bold; */
+}
+
+.container-info-resumen .px-4 .row .container-image-detalle {
+    position: relative;
+    /* border:1px dashed red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.container-info-resumen .px-4 .row .container-image-detalle img {
+    flex-shrink: 0;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+@media (max-width: 767px) {
+    .container-info-course {
+        margin-top: 1rem;
+    }
+}
+
+#accordion .card {
+    border: 1px solid transparent;
+}
+
+#accordion .card a {
+    font-size: 13px;
+}
+
+#accordion .card .card-header {
+    border: none;
+    background-color: #f7f7f7;
+}
+
+#accordion .card .card-header i {
+    color: rgba(136, 136, 136, 0.747);
+}
+
+
+/* paypal (1).png */
+
+
+/* .container-pay .container-pay-card .col-12 .form-check input i{
+  font-size: 15px;
+} */
+
+
+/* .container {
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -41,7 +187,6 @@ body{
 .contenedor-nextpage .credit i{
     color: #ffffff;
     font-size: 1.5rem;
-    /* position: absolute; */
 }
 .contenedor-nextpage .credit {
     background-color: #313131;
@@ -93,4 +238,4 @@ body{
   .contenedor-nextpage h4 {
     font-size: 13px;
   }
-}
+} */

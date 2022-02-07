@@ -64,8 +64,19 @@ $dato1 = $q1->fetch(PDO::FETCH_ASSOC)
 
             <div style="text-align: right;">
 
-                <img src="data:image/*;base64,<?php echo base64_encode($dato1['mifoto']);?>" alt="foto_curso"
-                    style="width: 50px;height:45px;border-radius: 50%;">
+                
+                <?php    
+                    if($dato1['mifoto']!=null){
+                ?>
+                        <img src="data:image/*;base64,<?php echo base64_encode($dato1['mifoto']);?>" alt="foto_curso"
+                            style="width: 50px;height:45px;border-radius: 50%;">
+                <?php
+                    }else{
+                ?>
+                        <img src="./assets/images/user.png" alt="foto_curso" style="width: 50px;height:45px;border-radius: 50%;">
+                <?php
+                    }
+                ?>
 
             </div>
 
@@ -106,7 +117,7 @@ $dato1 = $q1->fetch(PDO::FETCH_ASSOC)
                         </a>-->
 
                         <?php
-                         if($_SESSION['privilegio']==2 ||$_SESSION['privilegio']==3 ){
+                         if($_SESSION['privilegio']==1 ||$_SESSION['privilegio']==6 ){
                          ?>
                         <a href="agregarcurso.php" class="nav__link">
                             <i class='nav__icon'><img
