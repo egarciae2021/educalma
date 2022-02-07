@@ -279,8 +279,8 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
 
                                                 <div class="row form-group">
                                                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-0"></div>
-                                                    <label class="col-lg-2 col-md-3 col-sm-3 col-xs-4 control-label">Número de subscripciones:</label>
-                                                    <div class="col-lg-7 col-md-5 col-sm-5 col-xs-6">
+                                                    <label class="col-lg-3 col-md-3 col-sm-3 col-xs-4 control-label">Número de subscripciones:</label>
+                                                    <div class="col-lg-6 col-md-5 col-sm-5 col-xs-6">
                                                         <!-- <input class="form-control input-md" type="number" value="<?php //echo $usuarios['num_suscripcion']; ?>" id="N-S" name="N-S"> -->
                                                         <input class="form-control input-md" type="number" id="N-S" name="N-S">
                                                     </div>
@@ -312,9 +312,9 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                                         </div>
 
                                         <div class="row form-group">
-                                            <div class="col-lg-2 col-md-2 col-sm-2 col-0"></div>
-                                            <label class="col-lg-2 col-md-3 col-sm-3 col-4 control-label">Fecha de solicitud:</label>
-                                            <div class="col-lg-7 col-md-5 col-sm-5 col-6">
+                                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-0"></div>
+                                            <label class="col-lg-2 col-md-3 col-sm-3 col-xs-4 control-label">Fecha de solicitud:</label>
+                                            <div class="col-lg-7 col-md-5 col-sm-5 col-xs-6">
                                                 <!-- <input class="form-control input-md" type="text" id="F-S" value="<?php //echo $usuarios['fecha_registro']; ?>" readonly name="nume_documento"> -->
                                                 <input class="form-control input-md" type="text" id="F-S" readonly name="F-S">
                                             </div>
