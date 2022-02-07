@@ -43,7 +43,28 @@
         $url = 'https://'.$_SERVER["SERVER_NAME"].'/restablecer_pass.php?id='.$user_id.'&token='.$token;			
         $asunto = 'Recuperar contraseña - Sistema de Usuarios';
 
-        $cuerpo = "Estimado $user_nombre: <br /><br />para restablecer la contraseña haga clic en el siguiente enlace <a href='$url'>Restablcer</a>";
+        // $cuerpo = "Estimado $user_nombre: <br /><br />para restablecer la contraseña haga clic en el siguiente enlace <a href='$url'>Activar Cuenta</a>";
+        $cuerpo = "<div style='width: 50%;'>
+                        Hola $user_nombre: <br />
+                        <p>Estás recibiendo este correo porque hiciste una solicitud de recuperacion de contraseña para tu cuenta.</p>
+                        
+                            <div style='margin: auto; width: 50%; padding: 60px;'>
+                                <a style='text-decoration: none;
+                                        padding: 10px;
+                                        font-weight: 600;
+                                        font-size: 20px;
+                                        color: #ffffff;
+                                        background-color: #85c1e9;
+                                        border-radius: 6px;' 
+                                        href='$url'>Cambiar contraseña
+                            </a>
+                        </div>
+                        <p>Si no realizaste esta solicitud, no se requiere realizar ninguna otra acción..</p>
+                        <hr>
+                        <p>Si el boton no funciona haga clic en el siguiente enlace </p>
+                        <a href='$url'>$url </a>
+                    </div>";
+
 
         $condicion = enviarEmail($usercor, $asunto, $cuerpo);
 
