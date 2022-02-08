@@ -15,14 +15,14 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
     <!-- para listar y la paginacion de tablas -->
     <?php
     $pdo3 = Database::connect();
-    $sqlz = "SELECT * FROM usuarios as c inner join solicitud as a on a.id_usuario=c.id_user where privilegio=4";
+    $sqlz = "SELECT * from usuarios as c INNER JOIN cursoinscrito as a ON a.usuario_id=c.id_user WHERE c.privilegio=4";
     $qz = $pdo3->prepare($sqlz);
     $qz->execute();
 
     $contar = $qz->rowCount();
 
     $idProfe = $_SESSION['codUsuario'];
-    $sql3 = "SELECT * FROM usuarios as c inner join solicitud as a on a.id_usuario=c.id_user where privilegio=4";
+    $sql3 = "SELECT * from usuarios as c INNER JOIN cursoinscrito as a ON a.usuario_id=c.id_user WHERE c.privilegio=4";
 
 
     $q3 = $pdo3->prepare($sql3);
@@ -33,7 +33,7 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
         <!-- para listar y la paginacion de usuarios -->
         <?php
         $pdo4 = Database::connect();
-        $sql3 = "SELECT * FROM usuarios as c inner join solicitud as a on a.id_usuario=c.id_user where privilegio=4 order by id_user DESC";
+        $sql3 = "SELECT * from usuarios as c INNER JOIN cursoinscrito as a ON a.usuario_id=c.id_user WHERE c.privilegio=4 order by id_user DESC";
         $q3 = $pdo4->prepare($sql3);
         $q3->execute();
         $usuarios = $q3->fetchAll(PDO::FETCH_ASSOC);
