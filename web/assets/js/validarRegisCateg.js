@@ -21,7 +21,7 @@ $(document).ready(function(){
                         timer: 1000,
                         showConfirmButton: false,
                     }).then(()=>{
-                        window.location.href = "../../agregarCategorias.php";                    
+                        window.location.href = "./user-sidebar.php";                    
                     })
                                        
                 }else{                    
@@ -65,7 +65,7 @@ $(document).ready(function(){
                             timer: 1000,
                             showConfirmButton: false,
                         }).then(()=>{
-                            window.location.href = "agregarCategorias.php";                    
+                            window.location.href = "./user-sidebar.php";                   
                         }) 
 
                     },statusCode: {

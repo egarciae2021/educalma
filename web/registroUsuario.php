@@ -163,8 +163,13 @@
                 <span>¡Este es un campo requerido!</span>
               </div>
             </div>
+            <!-- Codigo Empresa -->
+          <div class="col my-3">
+              <label for="txtcodigo">Codigo Emp.</label>
+              <input type="text" style="display: block; width: 100%; height:calc(1.5em + .75rem + 2px); padding: 0.375rem 0.75rem; font-size: 1rem; font-weight: 400; line-height: 1.5; background-clip: padding-box; border: 1px solid #ced4da; border-radius: 0.25rem; transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out" id="txtcode" placeholder="Ingrese el codigo de su empresa"/>
+            </div>
           </div>
-
+          
           <!-- Button -->
           <div class="col">
             <button class="col-12 btn btn-primary my-3" id="btnSubmit" style="background-color: #99ccff;border: none;">CONTINUAR →</button>

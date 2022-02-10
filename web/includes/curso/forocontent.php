@@ -81,9 +81,21 @@
                 ?>
                 <div class="comment-main-level">
                     <!-- Avatar -->
-                    <div class="comment-avatar"><img
-                            src="data:image/*;base64,<?php echo base64_encode($registro['mifoto']);?>" alt="foto_curso"
-                            style="width: 60px;height:60px;"></div>
+                    <div class="comment-avatar">
+
+                        <?php    
+                            if($registro['mifoto']!=null){
+                        ?>
+                                <img src="data:image/*;base64,<?php echo base64_encode($registro['mifoto']);?>" alt="foto_curso"
+                            style="width: 60px;height:60px;">
+                        <?php
+                            }else{
+                        ?>
+                                <img src="./assets/images/user.png" alt="foto_curso" style="width: 60px;height:60px;">
+                        <?php
+                            }
+                        ?> 
+                    </div>
                     <!-- Contenedor del Comentario -->
                     <div class="comment-box">
                         <div class="comment-head">
@@ -130,9 +142,22 @@
                 <ul class="comments-list reply-list">
                     <li>
                         <!-- Avatar -->
-                        <div class="comment-avatar"><img
-                                src="data:image/*;base64,<?php echo base64_encode($registro2['mifoto']);?>"
-                                alt="foto_curso" style="width: 43px;height:43px;"></div>
+                        <div class="comment-avatar">
+                            
+                            <?php    
+                                if($registro2['mifoto']!=null){
+                            ?>
+                                    <img src="data:image/*;base64,<?php echo base64_encode($registro2['mifoto']);?>"
+                                        alt="foto_curso" style="width: 43px;height:43px;">
+                            <?php
+                                }else{
+                            ?>
+                                    <img src="./assets/images/user.png" alt="foto_curso" style="width: 43px;height:43px;">
+                            <?php
+                                }
+                            ?> 
+                        
+                        </div>
                         <!-- Contenedor del Comentario -->
                         <div class="comment-box">
                             <div class="comment-head">

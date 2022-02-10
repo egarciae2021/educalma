@@ -1,108 +1,134 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap');
-*{
+* {
     padding: 0%;
     margin: 0%;
 }
 
-:root{
-  --orange:#4F52D6 ;
+:root {
+    --orange: #4F52D6;
 }
 
-.container-contformulario{
-  font-family: 'Nunito', sans-serif;
+.container {
+    text-align: center;
+    justify-content: center;
 }
 
-.contformulario .row{
-  display: flex;
-  flex-wrap: wrap;
-  gap:1.5rem;
-  align-items: center;
-  margin: 0 1rem;
+.container h1 {
+    padding-top: 5rem;
+    color: #27ae60;
 }
 
-.contformulario .row .image{
-  flex:1 1 25rem;
+.container .namecategoria .btn-primary {
+    background-color: #7c83fd;
+    border: none;
 }
 
-.contformulario .row .image img{
-  width:100%;
+.container .namecategoria .border-button {
+    border-top: 3px solid #7c83fd;
 }
 
-.contformulario .row form{
-  flex:1 1 25rem;
-  padding:1rem;
-  margin: 10rem;
-  display: inline-block;
-  grid-template-columns:auto auto;
-  gap: 10px;
+
+/* nuevaedicion lo de abajo no sirve */
+
+.container-contformulario {
+    font-family: 'Nunito', sans-serif;
 }
 
-.contformulario .row form .inputBox{
-  padding:.5rem 0;
+.contformulario .row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    align-items: center;
+    margin: 0 1rem;
 }
 
-.contformulario .row form .boton1{
-  grid-column: 1 / 3;
+.contformulario .row .image {
+    flex: 1 1 25rem;
 }
 
-.contformulario .row form .inputBox input, select, textarea{
-  font-family: 'Nunito', sans-serif;
-  width:90%;
-  padding:.5rem;
-  border:.1rem solid rgba(0,0,0,.1);
-  font-size: 1rem;
-  color:#333;
-  text-transform: none;
+.contformulario .row .image img {
+    width: 100%;
 }
 
-.contformulario .row form .inputBox input:focus , select:focus, textarea:focus{
-  border-color: #8494f4  ;
-  outline: 0 none;
-  box-shadow: 0 1px 1px rgba(229, 103, 23, 0.075)inset, 0 0 8px rgba(55, 0, 255, 0.6);
+.contformulario .row form {
+    flex: 1 1 25rem;
+    padding: 1rem;
+    margin: 10rem;
+    display: inline-block;
+    grid-template-columns: auto auto;
+    gap: 10px;
 }
 
-.contformulario .row form .inputBox h3{
-  font-size: 1em;
-  color:#333;
-  margin: 0.5rem 0;
-  font-weight: bold;
-  font-size: 1.2rem;
+.contformulario .row form .inputBox {
+    padding: .5rem 0;
 }
 
-.title{
-  display: inline-block;
-  font-family: 'Poppins', cursive;
-  text-transform: uppercase;
-  font-weight: 500;
-  font-size: 1.6em;
-  width: 100%;
-  color:#27ae60;
+.contformulario .row form .boton1 {
+    grid-column: 1 / 3;
 }
 
-.boton1{
-  margin: .5rem;
-  background:var(--orange);
-  border-radius: 30px;
-  color:#fff;
-  padding:.8rem 1rem;
-  border:.2rem solid var(--orange);
-  cursor: pointer;
-  font-size: 1rem;
+.contformulario .row form .inputBox input,
+select,
+textarea {
+    font-family: 'Nunito', sans-serif;
+    width: 90%;
+    padding: .5rem;
+    border: .1rem solid rgba(0, 0, 0, .1);
+    font-size: 1rem;
+    color: #333;
+    text-transform: none;
 }
 
-.boton1:hover{
-  background:#fff ;
-  border-color: var(--orange) ;
-  color:var(--orange) ;
-  font-weight: bold;
-  transition: 0.3s ease-in-out all;
+.contformulario .row form .inputBox input:focus,
+select:focus,
+textarea:focus {
+    border-color: #8494f4;
+    outline: 0 none;
+    box-shadow: 0 1px 1px rgba(229, 103, 23, 0.075)inset, 0 0 8px rgba(55, 0, 255, 0.6);
 }
 
-.container_cate{
+.contformulario .row form .inputBox h3 {
+    font-size: 1em;
+    color: #333;
+    margin: 0.5rem 0;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.title {
+    display: inline-block;
+    font-family: 'Poppins', cursive;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 1.6em;
+    width: 100%;
+    color: #27ae60;
+}
+
+.boton1 {
+    margin: .5rem;
+    background: var(--orange);
+    border-radius: 30px;
+    color: #fff;
+    padding: .8rem 1rem;
+    border: .2rem solid var(--orange);
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.boton1:hover {
+    background: #fff;
+    border-color: var(--orange);
+    color: var(--orange);
+    font-weight: bold;
+    transition: 0.3s ease-in-out all;
+}
+
+.container_cate {
     padding: auto;
     margin-top: 35mm;
 }
+
 
 /*.get_in_touch{
     max-width: 500px;
@@ -133,62 +159,67 @@
     color: cornsilk;
 }*/
 
+
 /*TABLA*/
-table{
+
+table {
     border-collapse: collapse;
     width: 100%;
     padding: auto;
-  }
+}
 
-  th, td {
+th,
+td {
     text-align: center;
-  }
-  
-  tr:nth-child(even){background-color: whitesmoke}
-  
-  th {
+}
+
+tr:nth-child(even) {
+    background-color: whitesmoke
+}
+
+th {
     background-color: #7C83FD;
     color: white;
-  }
+}
 
-  tr {
+tr {
     background-color: whitesmoke;
-  }
+}
 
-  .cont{
+.cont {
     max-width: 650px;
     margin: 30px auto;
     position: relative;
     padding: 30px;
-    border:  1px solid #7C83FD;
-  }
+    border: 1px solid #7C83FD;
+}
 
-  .boton_add{
+.boton_add {
     width: 100%;
     padding: 5px;
     text-align: center;
-  }
+}
 
-  @keyframes fanimado {
-    0%{
-      background-position: 0% 50%;
+@keyframes fanimado {
+    0% {
+        background-position: 0% 50%;
     }
-    50%{
-      background-position: 100% 50%;
+    50% {
+        background-position: 100% 50%;
     }
-    100%{
-      background-position: 0% 50%;
+    100% {
+        background-position: 0% 50%;
     }
-  }
+}
 
-  @media (max-width:1192px){
-    .contformulario .row .image img{
-      display: none;
+@media (max-width:1192px) {
+    .contformulario .row .image img {
+        display: none;
     }
-  }
+}
 
-  @media (max-width:775px){
-    .contformulario .row form{
-      margin: 2rem;
+@media (max-width:775px) {
+    .contformulario .row form {
+        margin: 2rem;
     }
-  }
+}

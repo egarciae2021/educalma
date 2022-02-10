@@ -17,7 +17,20 @@ ob_start();
             $dato = $q->fetch(PDO::FETCH_ASSOC);
             Database::disconnect();
         ?>
-            <img src="data:image/*;base64,<?php echo base64_encode($dato['mifoto']); ?>" class=" header__img" alt="foto_curso">
+        
+
+        <?php    
+            if($dato['mifoto']!=null){
+        ?>
+                <img src="data:image/*;base64,<?php echo base64_encode($dato['mifoto']); ?>" class=" header__img" alt="foto_curso"> 
+        <?php
+            }else{
+        ?>
+                <img src="./assets/images/user.png" class=" header__img" alt="foto_curso">
+        <?php
+            }
+        ?>
+            
             <a href="#" class="header__logo">
                 <?php
                 if (isset($_SESSION['Logueado']) && $_SESSION['Logueado'] === true) {

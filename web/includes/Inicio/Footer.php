@@ -111,7 +111,7 @@
 <script src="includes/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
 
 
-<script type="text/javascript" src="../../dataTable/datatables.min.js"></script>
+<!-- <script type="text/javascript" src="../../dataTable/datatables.min.js"></script> -->
 
 
 
