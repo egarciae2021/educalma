@@ -79,7 +79,7 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                                         <div class="row mb-2">
                                             <div class="col-12">
                                                 <h3 class="card-title">Cantidad de empresas
-                                                    <span style="color:#C1E1EE;">(20)</span>
+                                                    <span style="color:#C1E1EE;"><?php echo " ( ".$contar." )"?></span>
                                                 </h3>
                                             </div>
                                         </div>
