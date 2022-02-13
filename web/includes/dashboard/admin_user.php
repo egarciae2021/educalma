@@ -172,14 +172,14 @@ $usuarios = $q3->fetchAll(PDO::FETCH_ASSOC);
                 <?php
                 $pdo10 = Database::connect();
 
-                $sqlw = "SELECT * FROM usuarios as c inner join solicitud as a on a.id_usuario=c.id_user where privilegio=4";
+                $sqlw = "SELECT * from usuarios as c INNER JOIN cursoinscrito as a ON a.usuario_id=c.id_user WHERE c.privilegio=4";
                 $qw = $pdo10->prepare($sqlw);
                 $qw->execute();
 
                 $contar = $qw->rowCount();
 
                 $idProfesor = $_SESSION['codUsuario'];
-                $sql10 = "SELECT * FROM usuarios as c inner join solicitud as a on a.id_usuario=c.id_user where privilegio=4";
+                $sql10 = "SELECT * from usuarios as c INNER JOIN cursoinscrito as a ON a.usuario_id=c.id_user WHERE c.privilegio=4";
                 $q10 = $pdo10->prepare($sql10);
                 $q10->execute();
                 $curso = $q10->fetchAll(PDO::FETCH_ASSOC);
@@ -189,7 +189,7 @@ $usuarios = $q3->fetchAll(PDO::FETCH_ASSOC);
                 <!-- para listar y la paginacion de usuarios -->
                 <?php
                 $pdo11 = Database::connect();
-                $sql10 = "SELECT * FROM usuarios as c inner join solicitud as a on a.id_usuario=c.id_user where privilegio=4 order by id_user DESC";
+                $sql10 = "SELECT * from usuarios as c INNER JOIN cursoinscrito as a ON a.usuario_id=c.id_user WHERE c.privilegio=4 order by id_user DESC";
                 $q10 = $pdo11->prepare($sql10);
                 $q10->execute();
                 $usuarios = $q10->fetchAll(PDO::FETCH_ASSOC);

@@ -17,15 +17,6 @@
     $q4->execute(array());
     $dato4 = $q4->fetch(PDO::FETCH_ASSOC);
 
-    $idUserr = $_SESSION['codUsuario'];
-    $veriS = "SELECT * FROM cursoinscrito WHERE curso_id = $id AND usuario_id='$idUserr'";
-    $qS = $pdo->prepare($veriS);
-    $qS->execute(array());
-    $datoS = $qS->fetch(PDO::FETCH_ASSOC);
-    Database::disconnect();
-
-    if (empty($datoS['id_cursoInscrito'])) {
-
         //Cantidad de modulos del curso
         $pdo13 = Database::connect();
         $q13 = $pdo13->query("SELECT count(*) FROM modulo WHERE id_curso='$id'");
@@ -115,14 +106,27 @@
                                                                                                         echo 'Gratis';
                                                                                                     }
                                                                                                     ?></h4>
-                                <?php if ($dato4['costoCurso'] != 0) {
+                            <?php 
+                                if ($dato4['costoCurso'] != 0) {
+                                    if(isset($_SESSION['Logueado'])){
                                 ?>
-                                    <a href="pagepay.php?id=<?php echo $dato4["idCurso"]; ?>" class="btn btn-outline-dark my-3">Comprar ahora</a>
+                                        <a href="pagepay.php?id=<?php echo $dato4["idCurso"]; ?>" class="btn btn-outline-dark my-3">Comprar ahora</a>
                                 <?php
+                                    }else{
+                                        ?>
+                                        <a onclick="msje_Redireccion()" class="btn btn-outline-dark my-3">Comprar ahora</a>
+                                        <?php
+                                    }
                                 } else {
+                                    if(isset($_SESSION['Logueado'])){
                                 ?>
                                     <a href="includes/Cursos_crud/inscribirseGratis.php?id=<?php echo $dato4["idCurso"]; ?>" class="btn btn-outline-dark my-3">Comprar ahora</a>
                                 <?php
+                                    }else{
+                                        ?>
+                                            <a onclick="msje_Redireccion()" class="btn btn-outline-dark my-3">Comprar ahora</a>
+                                        <?php
+                                    }
                                 }
                                 ?>
                                 <p class="font-weight-bold mb-0">Este curso incluye:</p>
@@ -231,15 +235,17 @@
                     </div>
                 </div>
             </div>
-        <?php
-    } else {
-        echo '
-            <script>
-                window.location = "sidebarCursos.php";
-            </script>
-        ';
-    }
-        ?>
+    <script>
+        function msje_Redireccion(){
+            Swal.fire({
+                title: 'Necesita Loguearse primero',
+                icon: 'error',
+                timer: 2000,
+            }).then(function() {
+                location.href= "../../iniciosesion.php"
+            });
+        }
+    </script>
 </body>
 
 </html>

@@ -15,14 +15,14 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
     <!-- para listar y la paginacion de tablas -->
     <?php
     $pdo3 = Database::connect();
-    $sqlz = "SELECT * FROM usuarios as c inner join solicitud as a on a.id_usuario=c.id_user where privilegio=4";
+    $sqlz = "SELECT * from usuarios as c INNER JOIN cursoinscrito as a ON a.usuario_id=c.id_user WHERE c.privilegio=4";
     $qz = $pdo3->prepare($sqlz);
     $qz->execute();
 
     $contar = $qz->rowCount();
 
     $idProfe = $_SESSION['codUsuario'];
-    $sql3 = "SELECT * FROM usuarios as c inner join solicitud as a on a.id_usuario=c.id_user where privilegio=4";
+    $sql3 = "SELECT * from usuarios as c INNER JOIN cursoinscrito as a ON a.usuario_id=c.id_user WHERE c.privilegio=4";
 
 
     $q3 = $pdo3->prepare($sql3);
@@ -33,7 +33,7 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
         <!-- para listar y la paginacion de usuarios -->
         <?php
         $pdo4 = Database::connect();
-        $sql3 = "SELECT * FROM usuarios as c inner join solicitud as a on a.id_usuario=c.id_user where privilegio=4 order by id_user DESC";
+        $sql3 = "SELECT * from usuarios as c INNER JOIN cursoinscrito as a ON a.usuario_id=c.id_user WHERE c.privilegio=4 order by id_user DESC";
         $q3 = $pdo4->prepare($sql3);
         $q3->execute();
         $usuarios = $q3->fetchAll(PDO::FETCH_ASSOC);
@@ -279,8 +279,8 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
 
                                                 <div class="row form-group">
                                                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-0"></div>
-                                                    <label class="col-lg-2 col-md-3 col-sm-3 col-xs-4 control-label">Número de subscripciones:</label>
-                                                    <div class="col-lg-7 col-md-5 col-sm-5 col-xs-6">
+                                                    <label class="col-lg-3 col-md-3 col-sm-3 col-xs-4 control-label">Número de subscripciones:</label>
+                                                    <div class="col-lg-6 col-md-5 col-sm-5 col-xs-6">
                                                         <!-- <input class="form-control input-md" type="number" value="<?php //echo $usuarios['num_suscripcion']; ?>" id="N-S" name="N-S"> -->
                                                         <input class="form-control input-md" type="number" id="N-S" name="N-S">
                                                     </div>
@@ -312,9 +312,9 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                                         </div>
 
                                         <div class="row form-group">
-                                            <div class="col-lg-2 col-md-2 col-sm-2 col-0"></div>
-                                            <label class="col-lg-2 col-md-3 col-sm-3 col-4 control-label">Fecha de solicitud:</label>
-                                            <div class="col-lg-7 col-md-5 col-sm-5 col-6">
+                                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-0"></div>
+                                            <label class="col-lg-2 col-md-3 col-sm-3 col-xs-4 control-label">Fecha de solicitud:</label>
+                                            <div class="col-lg-7 col-md-5 col-sm-5 col-xs-6">
                                                 <!-- <input class="form-control input-md" type="text" id="F-S" value="<?php //echo $usuarios['fecha_registro']; ?>" readonly name="nume_documento"> -->
                                                 <input class="form-control input-md" type="text" id="F-S" readonly name="F-S">
                                             </div>
