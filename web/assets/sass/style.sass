@@ -1,0 +1,215 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700&display=swap')
+
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+  outline: none
+  font-family: 'Montserrat', sans-serif
+
+html
+  width: 100%
+  height: 100%
+
+body
+  width: 100%
+  height: 100%
+  background: #85c1e9
+  display: flex
+  justify-content: center
+  align-items: center
+  position: relative
+
+.preloader
+  position: absolute
+  width: 100%
+  height: 100%
+  display: none
+  justify-content: center
+  align-items: center
+  background: #fff
+  z-index: 9999999
+
+  &.active
+    display: flex
+
+  .circle
+    width: 200px
+    height: 200px
+    border: 10px solid #eee
+    border-top: 10px solid #666
+    border-radius: 50%
+    animation-name: girar
+    animation-duration: 2s
+    animation-iteration-count: infinite
+
+@keyframes girar
+  from
+    transform: rotate(0deg)
+  to
+    transform: rotate(360deg)
+
+.container-pay
+  max-width: 450px
+  box-shadow: 0 0 2px 0 #00000080
+
+  .box-header
+    display: grid
+    grid-template-columns: 50% 50%
+    grid-template-rows: 75px
+    background: #fff
+    padding: 0 10px
+
+    .box-image
+      height: 100%
+      width: 100%
+      display: flex
+      align-items: center
+
+      img
+        max-height: 80%
+        object-fit: cover
+
+    .box-signout
+      display: flex
+      justify-content: flex-end
+      align-items: center
+
+      a
+        text-decoration: none
+        color: #333
+        font-weight: bold
+        font-size: large
+
+  .box-tools,
+  .box-form
+    margin-top: 15px
+    margin-bottom: 15px
+    padding-left: 20px
+    padding-right: 20px
+
+  .box-tools
+    h1
+      color: #222
+
+    a
+      text-decoration: none
+
+      &:hover
+        font-weight: bold
+
+      &::before
+        content: '<'
+        margin-right: 5px
+
+  .box-form
+    .labels-targets
+      display: grid
+      grid-template-columns: repeat(4, auto)
+      column-gap: 10px
+      margin-bottom: 10px
+      background: #fff
+      padding: 10px 25px
+      border-radius: 5px
+
+      & > *
+        display: flex
+        justify-content: center
+        align-items: center
+
+        img
+          text-align: center
+          max-height: 24px
+          object-fit: cover
+
+.group-input
+  background: #fff
+  padding: 20px 10px 5px
+  border: 1px solid #aaa
+  margin-bottom: 10px
+  border-radius: 5px
+  position: relative
+
+  &.invalid-wtext
+    label
+      font-size: 12px
+      color: #333
+      top: 12px
+      font-weight: 400
+
+  &.invalid,
+  &.invalid-wtext
+    border: 2px solid #b92d2b
+    margin-bottom: 0
+
+    & + .message-error
+      display: block
+      margin-bottom: 10px
+
+  &.valid
+    border: 2px solid #5fa53f
+
+  &.active,
+  &.valid
+    label
+      font-size: 12px
+      color: #333
+      top: 12px
+      font-weight: 400
+
+  label
+    position: absolute
+    font-size: 16px
+    top: 50%
+    transform: translateY(-50%)
+    left: 10px
+    color: #aaa
+    font-weight: 400
+    cursor: text
+    transition-property: top, font-size
+    transition-duration: 0.3s
+    user-select: none
+
+  input
+    width: 100%
+    border: none
+
+  .row-w-icon
+    display: grid
+    grid-template-columns: 1fr 30px
+
+    .icon
+      display: flex
+      justify-content: center
+      align-items: center
+      font-weight: bold
+      color: #aaa
+
+      span
+        cursor: pointer
+
+        &:hover
+          color: #999
+
+  & + .message-error
+    font-size: 10px
+    color: #b92d2b
+    display: none
+
+  button[type="submit"]
+    width: 100%
+    height: 100%
+    background: #084B83
+    border: none
+    position: absolute
+    top: 0
+    left: 0
+    // box-shadow: 0 0 10px 0 #00000080
+    outline: 2px solid #084B83
+    border-radius: 5px
+    color: #fff
+    font-weight: bold
+
+    &:hover
+      filter: drop-shadow(2px 2px 4px #00000080)

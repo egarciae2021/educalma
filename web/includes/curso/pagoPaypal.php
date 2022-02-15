@@ -90,7 +90,7 @@ $id = $_GET['id'];
 
                                 <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
                                     <div class="card-body">
-                                        Lorem ipsum dolor sit amet.
+                                        <a href="pay.php">VISA</a>
                                     </div>
                                 </div>
                             </div>
@@ -127,7 +127,7 @@ $id = $_GET['id'];
                         <!-- <p class="m-0">Curso:</p> -->
                         <div class="row">
                             <div class="col-6">Producto</div>
-                            <div class="col-6 text-right"><span>$.<?php echo $dato['costoCurso'];?>.00</span></div>
+                            <div class="col-6 text-right"><span>$.<?php echo $dato['costoCurso'];?></span></div>
                         </div>
                         <div class="row mt-3">
                             <div class="col-5 col-lg-6 col-xl-5">
@@ -138,7 +138,8 @@ $id = $_GET['id'];
                                 </div>
                             </div>
                             <div class="col-7 col-lg-6 col-xl-7 text-leftt"><span><?php echo $dato['nombreCurso'];?></span>
-                                <p class="font-weight-bold text-danger">$.<?php echo $dato['costoCurso'];?>.00</p>
+                                <p class="font-weight-bold text-danger">$.<?php echo $dato['costoCurso'];?></p>
+                                <?php $_SESSION['costoPay']=$dato['costoCurso'];?>
                             </div>
                         </div>
                         <hr>
