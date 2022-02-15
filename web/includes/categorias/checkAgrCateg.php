@@ -14,9 +14,15 @@ require_once '../../database/databaseConection.php';
         Database::disconnect();
     
         if(empty($dato)){
-            $pdo = Database::connect();
-            $verif=$pdo->prepare("INSERT INTO categorias (nombreCategoria) VALUES ('$nomb')");
-            $verif->execute();
+            try{
+                $pdo = Database::connect();
+                // $verif=$pdo->prepare("INSERT INTO categorias (nombreCategoria) VALUES ('$nomb')");
+                $verif=$pdo->prepare("INSERT INTO  `categorias`(`nombreCategoria`) VALUES (:nomb)");
+                $verif->bindParam(":nomb", $nomb, PDO::PARAM_STR);
+                $verif->execute();
+            }catch(PDOException $e){
+                echo $e->getMessage();
+            }
             Database::disconnect();
             echo 0;
         }else{

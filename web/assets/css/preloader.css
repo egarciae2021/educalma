@@ -1,0 +1,33 @@
+/*------------------------------------------------------------------
+   LOADER
+-------------------------------------------------------------------*/
+                
+#preloader {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 11000;
+    position: fixed;
+    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+}
+
+#preloader > .loader {
+    display: block;
+    flex-wrap: wrap;
+    width: 250px;
+    height: auto;
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+}
+
+#preloader > .loader img {
+    width: 100%;
+    height: auto;
+}

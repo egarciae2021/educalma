@@ -15,10 +15,7 @@
         $passwordHash = password_hash($password, PASSWORD_BCRYPT);
 
         $pdo = Database::connect();		
-        $respuesta=$pdo->prepare("UPDATE usuarios SET pass = ?, token_password='', password_request=0 WHERE id_user = ? AND token_password = ?");
-        $respuesta->bindParam(1, $passwordHash);
-        $respuesta->bindParam(2, $user_id);
-        $respuesta->bindParam(3, $token);
+        $respuesta=$pdo->prepare("UPDATE usuarios SET pass = '$passwordHash', token_password='', password_request=0 WHERE id_user = '$user_id' AND token_password = '$token'");
         //$respuesta->execute();
 
         if($respuesta->execute()){

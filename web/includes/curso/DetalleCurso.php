@@ -1,244 +1,251 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detalle Cursos</title>
-    <link rel="stylesheet" href="././assets/css/styledetcurso.css">
+    <title>Bootstrap Example</title>
+
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/styledetcurso.css">
 </head>
+
 <body>
 
-                <!--
-                    ======================================
-                               Detalle de Curso
-                    ======================================
-                -->
-<?php
-// Este codigo hace validacion para que no se pueda acceder a cualquier pagina sin estar logueado__Pablo Loyola
-
- //if(isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)){
-?>
-<?php
- 
+    <?php
     require_once 'database/databaseConection.php';
-    $id=$_GET['id'];
-
-    $pdo4 = Database::connect(); 
+    $id = $_GET['id'];
+    $pdo4 = Database::connect();
     $sql4 = "SELECT * FROM cursos WHERE idCurso='$id'";
     $q4 = $pdo4->prepare($sql4);
     $q4->execute(array());
     $dato4 = $q4->fetch(PDO::FETCH_ASSOC);
-    Database::disconnect();
-?>
 
-<section class="contbody">
+        //Cantidad de modulos del curso
+        $pdo13 = Database::connect();
+        $q13 = $pdo13->query("SELECT count(*) FROM modulo WHERE id_curso='$id'");
+        $modulos = $q13->fetchColumn();
 
-    <div class="contdetinfo">
-        <div class="continfo">
+        //Cantidad de temas
+        $pdo14 = Database::connect();
+        $q14 = $pdo14->query("SELECT  COUNT(tema.idTema) AS 'TEMA' from tema 
+                                                    INNER JOIN modulo ON tema.id_modulo = modulo.idModulo
+                                                    INNER JOIN  cursos ON cursos.idCurso = modulo.id_curso
+                                                    WHERE cursos.idCurso = '$id'
+                                                    GROUP BY cursos.idCurso");
+        $temas = $q14->fetchColumn();
 
-            <div class="detboxinfo">
-           <!-- Cursos prevención de bullying-->
-                <h1><?php echo $dato4['nombreCurso'];?> </h1>
-                <!-- <p><?php echo $dato4['descripcionCurso'];?></p> -->
-                
-                
-            </div>
+        //Cantidad de Cuestionarios
+        $pdo15 = Database::connect();
+        $q15 = $pdo15->query("SELECT  COUNT(cuestionario.idCuestionario) AS 'Cuestionario'  from cursos 
+                                                    INNER JOIN modulo ON cursos.idCurso = modulo.id_curso
+                                                    INNER JOIN  cuestionario ON cuestionario.id_modulo = modulo.idModulo
+                                                    WHERE cursos.idCurso = '$id'
+                                                    GROUP BY cursos.idCurso");
+        $cuestionarios = $q15->fetchColumn();
 
-            <!-- <div class="detboxinfo2">
-                
-                <?php 
-                    $ProfesorID = $dato4['id_userprofesor'];
+        //Cantidad de preguntas
+        $pdo16 = Database::connect();
+        $q16 = $pdo16->query("SELECT COUNT(preguntas.idPregunta) AS 'preguntas'  from cursos 
+                                                    INNER JOIN modulo ON cursos.idCurso = modulo.id_curso
+                                                    INNER JOIN cuestionario ON cuestionario.id_modulo = modulo.idModulo
+                                                    INNER JOIN preguntas on cuestionario.idcuestionario = preguntas.id_cuestionario
+                                                    WHERE cursos.idCurso = '$id'
+                                                    GROUP BY cursos.idCurso");
+        $preguntas = $q16->fetchColumn();
 
-                    //DATOS DEL PROFESOR
-                    $pdo5 = Database::connect(); 
-                    $sql5 = "SELECT * FROM usuarios WHERE id_user='$ProfesorID'";
-                    $q5 = $pdo5->prepare($sql5);
-                    $q5->execute(array());
-                    $dato5 = $q5->fetch(PDO::FETCH_ASSOC);
+        //cantidad respuestas para aprobar
+        $pdo5 = Database::connect();
+        $q5 = $pdo5->query("SELECT count(*) FROM respuestas res INNER JOIN preguntas pre ON res.id_Pregunta=pre.idPregunta
+                                                                                        INNER JOIN cuestionario cues ON cues.idCuestionario=pre.id_cuestionario
+                                                                                        INNER JOIN modulo mo ON mo.idModulo=cues.id_modulo
+                                                                                        INNER JOIN cursos cur ON cur.idCurso= mo.id_curso
+                                                                                        where cur.idCurso=$id and res.estado=1");
 
-                    $nombreP = $dato5['nombres'] . " " . $dato5['apellido_pat'] . " " . $dato5['apellido_mat'];
-                    $correoP = $dato5['email'];
-               ?>
-               <form class="formulario" action="" method="POST" enctype="multipart/form-data">
-               <div class="imgbx"><img src="data:image/*;base64,<?php echo base64_encode($dato5['mifoto']);?>" alt="foto_curso" style="width: 60px;"></div>
-                </form>
-                <h1><?php echo $nombreP ?></h1>
-                <p><?php echo $correoP ?></p>
-            </div> -->
+        $cantidad_respuestas_validas = $q5->fetchColumn();
 
-            <div class="detboxinfo3">
-                <h1>Porttitor feugiat</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Accumsan
-                    arcu ac adipiscing tincidunt adipiscing praesent consectetur. Sed
-                    amet, sapien metus, proin justo. Lacus adipiscing nisi, velit arcu.
-                    Consequat pretium, est tortor, proin urna nibh urna urna. Convallis
-                    integer ipsum vitae
-                </p>
-                <h1>Porttitor feugiat</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Accumsan
-                    arcu ac adipiscing tincidunt adipiscing praesent consectetur. Sed
-                    amet, sapien metus, proin justo. Lacus adipiscing nisi, velit arcu.
-                    Consequat pretium, est tortor, proin urna nibh urna urna. Convallis
-                    integer ipsum vitae
-                </p>
-                <h1>Porttitor feugiat</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Accumsan
-                    arcu ac adipiscing tincidunt adipiscing praesent consectetur. Sed
-                    amet, sapien metus, proin justo. Lacus adipiscing nisi, velit arcu.
-                    Consequat pretium, est tortor, proin urna nibh urna urna. Convallis
-                    integer ipsum vitae
-                </p>
-            </div>
+        if ($cantidad_respuestas_validas <= 9) {
+            $minimo_respuestas_para_aprobar = $cantidad_respuestas_validas;
+        } else {
+            $minimo_respuestas_para_aprobar = $cantidad_respuestas_validas - 2;
+        }
 
-            <div class="detboxinfo4">
-                <h1>Acerca del curso</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Accumsan
-                    arcu ac adipiscing tincidunt adipiscing praesent consectetur. Sed
-                    amet, sapien metus, proin justo. Lacus adipiscing nisi, velit arcu.
-                    Consequat pretium, est tortor, proin urna nibh urna urna. Convallis
-                    integer ipsum vitae
-                </p>
-      
-            </div>
+        //Nombre del modulo
+        $pdo6 = Database::connect();
+        $sql6 = "SELECT idModulo, nombreModulo FROM modulo WHERE id_curso='$id'";
+        $q6 = $pdo6->prepare($sql6);
+        $q6->execute(array());
 
-        </div>
-    </div>
+        Database::disconnect();
 
-    <div class="contboxdet">
-        <div class="contboxinfo">
-            <div class="detbox">
-                <img src="data:image/*;base64,<?php echo base64_encode($dato4['imagenDestacadaCurso'])?>">
-                     <a href="./includes/Cursos_crud/inscribeteCurso.php?id=<?php echo $id;?>">Inscríbete ahora</a>
-    
-                <h1>Detalles del curso</h1>
-                <?php
-                    $pdo10 = Database::connect(); 
-                    $sql10 = "SELECT * FROM cursoinscrito WHERE curso_id='$id'";
-                    $q10 = $pdo10->prepare($sql10);
-                    $q10->execute();
-                    $dato10 = $q10->rowCount();
-                    Database::disconnect();
+    ?>
 
-                    $pdo11 = Database::connect(); 
-                    $sql11 = "SELECT * FROM modulo WHERE id_curso='$id'";
-                    $q11 = $pdo11->prepare($sql11);
-                    $q11->execute();
-                    $dato11 = $q11->rowCount();
-                    Database::disconnect();
-
-                    if($dato10!=1){
-                        echo "<p>Este curso cuenta con <strong>".$dato10."</strong> usuarios inscritos<p>";
-                    }else{
-                        echo "<p>Este curso cuenta con <strong>".$dato10."</strong> usuario inscrito<p>";
-                    }
-
-                    if ($dato11!=1){
-                        echo "<p>Contiene <strong>".$dato11."</strong> Módulos<p>";
-                    }else{
-                        echo "<p>Contiene <strong>".$dato11."</strong> Módulo<p>";
-                    }
-                    
-                    echo '<p>Contiene un Certificado</p>';
-                   
-                ?>
-                
-               
-            </div>
-        </div>
-    </div>
-
-</section>
+        <div class="container-course bg-light" style="min-height: 100vh;">
+            <div class="bg-dark1">
+                <div class="row py-5">
+                    <div class="col-12 col-sm-12 col-md-7 col-lg-8 col-xl-9 ">
+                        <br><br><br><br>
+                        <span>Cursos</span><i class="fas fa-angle-right mx-2"></i>
+                        <span>Categoría</span><i class="fas fa-angle-right mx-2"></i>
+                        <span>nombre del curso</span>
+                        <h2 class="my-2 font-weight-bold"><?php echo $dato4['nombreCurso']; ?></h2>
+                        <p><?php echo $dato4['descripcionCurso']; ?></p>
+                        <i class="fas fa-stopwatch mr-2"></i><span>Fecha: <?php echo $dato4['fechaPulicacion']; ?></span>
+                        <i class="fas fa-globe ml-4 mr-2"></i><span>Español</span>
+                        <i class="fas fa-closed-captioning ml-4 mr-2"></i><span>Español [automático]</span>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-5 col-lg-4 col-xl-3 info-course-right pt-3">
+                        <!-- <br><br><br><br> -->
+                        <div class="card ">
+                            <div class="content-img">
+                                <img class="card-img-top1" src="data:image/*;base64,<?php echo base64_encode($dato4['imagenDestacadaCurso']) ?>" alt="Card image">
+                            </div>
 
 
-<section>
- <!-- start FAQ -->
-    <div class="containerdet">
+                            <div class="card-body">
+                                <h4 class="card-title font-weight-bold" style="font-size: 30px;"><?php
+                                                                                                    if ($dato4['costoCurso'] != 0) {
+                                                                                                        echo 'S/ ' . $dato4['costoCurso'];
+                                                                                                    } else {
+                                                                                                        echo 'Gratis';
+                                                                                                    }
+                                                                                                    ?></h4>
+                            <?php 
+                                if ($dato4['costoCurso'] != 0) {
+                                    if(isset($_SESSION['Logueado'])){
+                                ?>
+                                        <a href="pagepay.php?id=<?php echo $dato4["idCurso"]; ?>" class="btn btn-outline-dark my-3">Comprar ahora</a>
+                                <?php
+                                    }else{
+                                        ?>
+                                        <a onclick="msje_Redireccion()" class="btn btn-outline-dark my-3">Comprar ahora</a>
+                                        <?php
+                                    }
+                                } else {
+                                    if(isset($_SESSION['Logueado'])){
+                                ?>
+                                    <a href="includes/Cursos_crud/inscribirseGratis.php?id=<?php echo $dato4["idCurso"]; ?>" class="btn btn-outline-dark my-3">Comprar ahora</a>
+                                <?php
+                                    }else{
+                                        ?>
+                                            <a onclick="msje_Redireccion()" class="btn btn-outline-dark my-3">Comprar ahora</a>
+                                        <?php
+                                    }
+                                }
+                                ?>
+                                <p class="font-weight-bold mb-0">Este curso incluye:</p>
+                                <div class="my-1" style="font-size: 13px;">
+
+                                    <div>
+                                        <i class="far fa-file text-center" style="width: 1.5rem;"></i>
+                                        <span class="ml-3"><?php echo $modulos; ?> Módulos</span>
+                                    </div>
+
+                                    <div>
+                                        <i class="far fa-folder text-center" style="width: 1.5rem;"></i>
+                                        <span class="ml-3"><?php echo $temas; ?> Temas</span>
+                                    </div>
+
+                                    <div>
+                                        <i class="far fa-list-alt text-center" style="width: 1.5rem;"></i>
+                                        <span class="ml-3"><?php echo $cuestionarios; ?> Cuestionarios</span>
+                                    </div>
+
+                                    <div>
+                                        <i class="fas fa-graduation-cap text-center" style="width: 1.5rem;"></i>
+                                        <span class="ml-3">La nota mínima para aprobar el curso es <?php echo $minimo_respuestas_para_aprobar; ?></span>
+                                    </div>
+
+                                    <div>
+                                        <i class="fas fa-list-ol text-center" style="width: 1.5rem;"></i>
+                                        <span class="ml-3">Cantidad de preguntas: <?php echo $preguntas; ?></span>
+                                    </div>
 
 
-        <div class="row">
+                                    <div>
+                                        <i class="fas fa-trophy text-center" style="width: 1.5rem;"></i>
+                                        <span class="ml-3">Certificado de Finalización</span>
+                                    </div>
 
-                <div class="col-md-10">
-                    <div class="conttitudet">
-                    <h1 >Temario del curso</h1>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            <div class="col-md-1"></div>
-        </div>
-        <hr class="lineahoridet">
-
-        <?php
-                require_once 'database/databaseConection.php';
-            
-                $pdo5 = Database::connect(); 
-                $sql5 = "SELECT * FROM modulo WHERE id_curso='$id'";
-                $q5 = $pdo5->prepare($sql5);
-                $q5->execute(array());
-
-                while($dato5 = $q5->fetch(PDO::FETCH_ASSOC)){
-                    ?>
-
-                        
-        <div class="row" >
-        <div class="col-md-1"></div>
-        <div class="col-md-10">
-        <div class="accordion_outerdet">
-            <div class="containerdet">
-                <details>
-                    <summary><?php echo $dato5['nombreModulo'] ?><p>1h 30 min</p></summary>
-                        <div class="infodet">
-                            <?php
-                                 $pdo6 = Database::connect(); 
-                                 $aux1 = $dato5['idModulo'];
-                                 $sql6 = "SELECT * FROM tema WHERE id_modulo='$aux1'";
-                                 $q6 = $pdo6->prepare($sql6);
-                                 $q6->execute(array());
-                                 while($dato6 = $q6->fetch(PDO::FETCH_ASSOC)){
-                            ?>
-                                     <a href=""><?php echo $dato6['nombreTema']  ?></a><bR>
-                                <?php
-                                  }
-                                ?>
-
+            </div>
+            <div class="bg-light" style="height: 100%;">
+                <div class="row py-5" style="height: 100%;">
+                    <div class="col-12 col-sm-12 col-md-5 col-lg-4 col-xl-3 info-course-left" style="border: 1px solid red;">
+                        <h4>Contenido del curso</h4>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-7 col-lg-8 col-xl-9 text-dark">
+                        <h4 class="font-weight-bold">Contenido del curso</h4>
+                        <div class="d-flex">
+                            <div class="mr-auto p-2">
+                                <span class="mr-1"><?php echo $modulos; ?></span>Módulos <i class="fas fa-circle mx-2" style="font-size: 5px;"></i>
+                                <span class="mr-1"><?php echo $temas; ?></span>Temas <i class="fas fa-circle mx-2" style="font-size: 5px;"></i>
+                                <span class="mr-1"><?php echo $cuestionarios; ?></span>Cuestionarios
+                            </div>
+                            <div class="p-2">
+                                <h6>Ampliar todas las secciones</h6>
+                            </div>
                         </div>
-                </details>
+
+                        <?php
+                        $i = 0;
+                        while ($modulosC = $q6->fetch(PDO::FETCH_ASSOC)) {
+                        ?>
+                            <div id="accordion">
+                                <div class="card">
+                                    <a class="card-header card-link" data-toggle="collapse" href="<?php echo '#collapseOne' . $i  ?>">
+                                        <span><i class="fas fa-sort-down mr-3"></i><?php echo $modulosC['nombreModulo'] ?></span>
+                                    </a>
+
+                                    <?php
+
+                                    $idModuloC = $modulosC['idModulo'];
+
+                                    //Nombre del modulo
+                                    $pdo7 = Database::connect();
+                                    $sql7 = "SELECT nombreTema FROM tema WHERE id_modulo='$idModuloC'";
+                                    $q7 = $pdo7->prepare($sql7);
+                                    $q7->execute(array());
+
+                                    while ($temasC = $q7->fetch(PDO::FETCH_ASSOC)) {
+                                    ?>
+                                        <div id="<?php echo 'collapseOne' . $i ?>" class="collapse show" data-parent="#accordion">
+                                            <div class="card-body">
+                                                <?php echo $temasC['nombreTema'] ?>
+                                            </div>
+                                        </div>
+                                    <?php
+                                    }
+                                    ?>
+                                    <div id="<?php echo 'collapseOne' . $i  ?>" class="collapse show" data-parent="#accordion">
+                                        <div class="card-body">
+                                            Cuestionario
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php
+                            $i++;
+                        }
+                        ?>
+
+
+
+
+                    </div>
+                </div>
             </div>
-            </div>
-        </div>
-        <div class="col-md-1"></div>
-        </div>
-
-        <hr class="lineahoridet">
-
-
-                    <?php
-                              
-                }
-                Database::disconnect();
-
-        ?>
-
-       
-
-        <br>
-        <br>
-        <br>
-
-    </div>
-<!-- end FAQ -->
-
-</section>
-
-
-
-
-<?php
-    // }
-    // else{
-    //             header('Location:iniciosesion.php');
-    // }
-?>
-
-
+    <script>
+        function msje_Redireccion(){
+            Swal.fire({
+                title: 'Necesita Loguearse primero',
+                icon: 'error',
+                timer: 2000,
+            }).then(function() {
+                location.href= "../../iniciosesion.php"
+            });
+        }
+    </script>
 </body>
+
 </html>

@@ -78,8 +78,10 @@
             <div class="col-md-1"></div>
             <div class="col-md-10">
                 <div class="buttonfaq">
-                    <!-- <a style="pointer-events: none;" href="video.php?id=<?php echo $id;?>&validar=1&idtema=<?php echo $dato3['idTema'];?>&id_modulo=<?php echo $dato2['idModulo']?>">Siguiente</a> -->
-                    <a href="video.php?id=<?php echo $id;?>&idtema=<?php echo $dato3['idTema'];?>&validar=<?php echo $validacion;?>&id_modulo=<?php echo $dato2['idModulo']?>">Siguiente</a>
+                    <!--&validar=<?php //echo $validacion;?>  <a style="pointer-events: none;" href="video.php?id=<?php //echo $id;?>&validar=1&idtema=<?php //echo $dato3['idTema'];?>&id_modulo=<?php //echo $dato2['idModulo']?>">Siguiente</a> -->
+                    <!-- <a href="video.php?id=<?php //echo $id;?>&idtema=<?php //echo $dato3['idTema'];?>&id_modulo=<?php //echo $dato2['idModulo']?>">Siguiente</a> -->
+                    <a href="video.php?id=<?php echo $id;?>&idtema=<?php echo 1;?>&id_modulo=<?php echo $dato2['idModulo']?>">Siguiente</a>
+                    <!--Ponlo entre el id y idtema  &validar=<?php //echo $validar ?>&c_modulo=<?php //echo 1;?>&c_tema=<?php //echo 1;?>-->
                 </div>
             </div>
             <div class="col-md-1"></div>

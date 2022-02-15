@@ -6,11 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/agrecursos.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/js/plugins/sweetalert2.min.css">
     <link rel="stylesheet" href="assets/css/stylebuttonAtras.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
     <?php require_once "includes/Inicio/Head.php"; ?>
@@ -29,13 +32,14 @@
             color: #fff;
             background: #8886f3;
         }
-        
-  	    label.error{
-    	color: red;
-        font-style: italic;
-        font-size: 13px;
-        max-width:300px;
-        padding: 10px;
+        /*label*/
+  	    .form-group .error{
+    	color: crimson;
+        font-style: normal;
+        font-size: 16px;
+        padding-top: 5px;
+        /* max-width:300px; 
+        padding: 10px;*/
         margin:0;
         }
     </style>
@@ -47,222 +51,146 @@
 
  if(isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)){
 ?>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-1"></div>
-            <div class="col-md-10">
-                <div class="titlemc"></div>
-            </div>
-            <div class="col-md-1"></div>
-        </div>
-    </div>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <!--contenido-->
-    
-        <!--contenido de los cursos -->
+  
+<!-- formulario -->
+<div class="container-fluid">
+        <!--                    ======================================
+                                            Agregar Curso
+                                ====================================== 
+        -->
+        <div class="container" id="contformulario">
+            <div class="seccion">
+                <div class="row">
 
-        <!-- 
-
-        <div class="row justify-content-center">
-            <!--formulario curso -->
-         <!--   <div class="col-10">
-                <div class=" card" style="border-radius:8px; box-shadow:2px 3px 5px gray;">
-                    <div class="card-header text-white " style="border-radius:8px 8px 0 0; background:#7C83FD">
-                        <h1 class="text-white text-center mt-2"><i class="fas fa-book"></i> Dona un Curso</h1>
+                    <!-- primera columna -->
+                    <div class="col-3 pr-0 border-right">
+                        <ul class="list-group list-group-flush ">
+                            <li class="list-group-item border-bottom ">Curso</li>
+                        </ul>
+                        <!-- seccion donar un curso -->
+                        <div class="list-group py-3">
+                            <button type="button" class="list-group-item list-group-item-action active">
+                                Donar un Curso
+                            </button>
+                            <!-- seccion otros -->
+                            <ul class="list-group list-group-flush py-3">
+                                <li class="list-group-item border-top-0" style="color:#495057;">Componentes del Curso</li>
+                            </ul>
+                            <div class="list-group lista2 text-left">
+                            <!-- <a href="sidebarCursos.php" class="list-group-item list-group-item-action">
+                                <i class="fas fa-pencil-alt"></i> Editar curso
+                                </a> -->
+                                <a href="sidebarCursos.php" class="list-group-item list-group-item-action">
+                                    <i class="fas fa-book"></i> Mis Cursos
+                                </a>
+                                <a href="ListaCursos.php?pag=1" class="list-group-item list-group-item-action">
+                                    <i class="fas fa-eye"></i> Ver los cursos
+                                </a>
+                                <a href="publicarcursos.php?pag=1" class="list-group-item list-group-item-action">
+                                    <i class="fad fa-books"></i> Publicar cursos
+                                </a>
+                                <a class="btn btn-outline-secondary btn-back btn-sm" href="sidebarCursos.php" role="button">
+                                    <i class="fas fa-arrow-left"></i> Atrás
+                                </a>
+                            </div>
+                            <!-- fin seccion otros -->
+                        </div>
                     </div>
-                    <div class="card-body">
-                        <div class="cont_formu" style="border-radius:8px;">
-                            <!--
-                                        ======================================
-                                                    Agregar Curso
-                                        ======================================
-                                         
-                                    -->
+                    <!-- fin primera columna -->
 
-                                    <!--    ESTA MAL EL ID EN EL FORM  id="form-agrecursos" lo cambie por otro id, Giancarlo S. -->
-                   <!--                 <form  name="formulario" id="newUserForm" method="POST" action="includes/Cursos_crud/Cursos_CRUD.php" target="dummyframe" onsubmit="return comprobarDatosFormulario()" enctype="multipart/form-data">
-                                <div class="row">
-                                    <!--nombre -->
-                    <!--                <div class="col-6 mb-3">
-                                        <label for="names-agrecursos" style="font-size:15pt">Nombrie del Curso: </label>
-                                        <input style="border-radius:8px; border-color:#99CCFF ; font-size:15px;" type="text" name="nombres_agrecursos" id="names-agrecursos" class="form-control form-control-lg" placeholder="" aria-label="Nombrecurso" aria-describedby="names-addon">
-                                    </div>
-                                    <!--Categoria -->
-                   <!--                 <div class="col-6 mb-3">
-                                        <label for="categoria" style="font-size:15pt">Categoría: </label>
-                                        <select id="categoria" name="categoria" class="form-control form-control-sm " style="font-size:15px;border-radius:8px; border-color:#99CCFF; font-size:15pt;" >
-                                            <option value="">.............</option>
-
-                                            <?php
-                                            require_once 'database/databaseConection.php';
-                                            $pdo4 = Database::connect();
-
-                                            $sql4 = "SELECT * FROM categorias";
-                                            $q4 = $pdo4->prepare($sql4);
-                                            $q4->execute(array());
-
-                                            while ($registro =  $q4->fetch(PDO::FETCH_ASSOC)) {
-
+                    <!-- segunda columna -->
+                    <div class="col-9 pl-0">
+                        <form name="formulario" id="newUserForm" method="POST" action="includes/Cursos_crud/Cursos_CRUD.php"  onsubmit="return comprobarDatosFormulario()" enctype="multipart/form-data">
+                            <div class="form-row ">
+                                <div class="form-group col-md-6 ">
+                                    <label class="form-label">Nombre del curso</label>
+                                    <input type="text" name="nombres_agrecursos" id="names-agrecursos" class="form-control "  placeholder="Ingrese un nombre" aria-label="Nombrecurso" aria-describedby="names-addon">
+                                </div>
+                                <div class="form-group col-md-6 ">
+                                    <label class="form-label">Categoría</label>
+                                    <select id="categoria" name="categoria" class="form-control">
+                                        <option value="" selected disabled>Seleccionar</option>
+                                        
+                                        <?php
+                                        require_once 'database/databaseConection.php';
+                                        $pdo4 = Database::connect();
+                                        $sql4 = "SELECT * FROM categorias";
+                                        $q4 = $pdo4->prepare($sql4);
+                                        $q4->execute(array());
+                                        
+                                        while ($registro =  $q4->fetch(PDO::FETCH_ASSOC)) {
+                                            
                                             ?>
-                                                <option value="<?php echo $registro['idCategoria'] ?>"><?php echo $registro['nombreCategoria'] ?></option>
+                                            <option value="<?php echo $registro['idCategoria'] ?>"><?php echo $registro['nombreCategoria'] ?></option>
 
-                                            <?php
+                                        <?php
+                                        }
+                                        
+                                        Database::disconnect();
+                                        ?>
 
-                                            }
+                                    </select>
+                                </div>
+                            </div>
 
-                                            Database::disconnect();
-                                            ?>
-                                        </select>
+                            <div class="form-row ">
+                                <div class="form-group col-md-6">
+                                    <label class="form-label">Descripción del curso</label>
+                                    <textarea class="form-control" placeholder="Añadir descripción" id="descripcio-curso" name="descripcio_curso" rows="3"></textarea>
+                                </div>
 
-                                    </div>
-                                    <!--descripcion -->
-               <!--                     <div class="col-6 mb-3">
-                                        <div class="form-floating">
-                                            <label for="descripcio-curso" style="font-size:15pt">Descripción del Curso: </label>
-                                            <textarea class="form-control" maxlength="250" style="font-size:15px;border-radius:8px; border-color:#99CCFF" ; placeholder="" id="descripcio-curso" name="descripcio_curso"></textarea>
-                                        </div>
-                                    </div>
-                                    <!--Introduccion del curso -->
-               <!--                     <div class="col-6 mb-3">
-                                        <div class="form-floating">
-                                            <label for="intro-curso" style="font-size:15pt">Introducción del Curso: </label>
-                                            <textarea class="form-control" style="font-size:15px;border-radius:8px; border-color:#99CCFF" placeholder="" id="intro-curso" name="intro_curso" ;></textarea>
-                                        </div>
-                                    </div>
-                                    <!--Precio 
-                                <div class="mb-3">
-                                    <input type="number" style="border-radius:8px; border-color:#99CCFF" ; step="any" name="precio_curso" id="precio-curso" class="form-control form-control-lg " placeholder="Precio del Curso" aria-label="PrecioCurso" aria-describedby="precio-curso">
-                                </div>-->
-
-                                    <!--publico dirigido -->
-               <!--                      <div class="col-6 mb-3">
-                                       <label for="publico_dirigidoo" style="font-size:15pt">Público Dirigido: </label>
-                                        <input style="font-size:15px;border-radius:8px; border-color:#99CCFF ;" type="text" name="publico_dirigido" id="publico_dirigidoo" class="form-control form-control-lg" placeholder="" aria-label="Dirigido" aria-describedby="names-addon">
-                                    </div>
-
-                                    <!--Imagen -->
-               <!--                     <div class="col-6 form-group mt-0">
-                                        <div class="row">
-                                                <p class="col-12 mt-0" style="font-size:1em;font-style:italic;">*Agregar imagen del Curso</p>
-                                                <div class="col-lg-5 align-self-center">
-                                                    <label for="file-upload" class="subir" style="text-align:center;">
-                                                        <i class="fas fa-cloud-upload-alt"></i> Subir archivo
-                                                    </label>
-                                                    <input id="file-upload" name="txtimagen" onchange='cambiar()' type="file" style='display: none;' accept="image/*" />
-                                                </div>
-                                                <div class="col-lg-7 text-left align-self-center" id="info"></div>
-                                        </div>
-
+                                <div class="form-group col-md-6 ">
+                                    <div class="form-group ">
+                                        <label class="form-label">Introducción del Curso</label>
+                                        <textarea class="form-control " placeholder="Añadir introducción" id="intro-curso" name="intro_curso" rows="3"></textarea>
                                     </div>
                                 </div>
-                                      <div class="card-footer bg-transparent ">
-                                          <!--BOTONES DE AGREGAR  -->
-                      <!--                      <div class="col-12 ml-5" style=" padding: 2% 0px;">
-                                                 <button type="submit"  class="boton" style="background:#FA5CCA;color:#FFFFFF;font-size:12pt; border-radius:8px;"><i class="fas fa-plus "></i> Agregar</button>
-                                                  <!--boton modal <i class="fas fa-plus "></i>
-                                                 <button type="button" class="btn btn-success ml-auto" data-toggle="modal" data-target="#exampleModal">
-                                                            ver
-                                                 </button> -->
-                              <!--              </div>
-                                        </div>
-                                   </form> 
-                        </div>
-                    </div>
-                    
-                   
-                </div>
-            </div>-->
+                            </div>
 
-<!--FORMULARIO NUEVO -->
-<div class="container-contformulario">
-    <div class="contformulario" id="contformulario">
-        <div class="row">
-             <!--
-                                        ======================================
-                                                    Agregar Curso
-                                        ======================================
-                                         
-            -->
-            <form name="formulario" id="newUserForm" method="POST" action="includes/Cursos_crud/Cursos_CRUD.php"  onsubmit="return comprobarDatosFormulario()" enctype="multipart/form-data"> 
-                <div class="col-auto2">
-                    <a href="sidebarCursos.php" class="boton-nuevo">VOLVER</a>
-                </div>
-                <div class="container-fluid">
-                    <div class="title">
-                        <div class="mb-1">
-                            <center></i> Dona un Curso</center>
-                        </div>
-                    </div>
-                </div>
-                <div class="inputBox">
-                    <h3>Nombre del Curso</h3>
-                <input type="text" name="nombres_agrecursos" id="names-agrecursos" placeholder="" aria-label="Nombrecurso" aria-describedby="names-addon">      
-                </div>
-                <div class="inputBox">
-                <h3>Categoría</h3>
-                <select id="categoria" name="categoria" class="seleccionador">
-                    <option value="" selected disabled>Seleccionar</option>
-                            
-                        <?php
-                        require_once 'database/databaseConection.php';
-                        $pdo4 = Database::connect();
-                        $sql4 = "SELECT * FROM categorias";
-                        $q4 = $pdo4->prepare($sql4);
-                        $q4->execute(array());
-                        
-                        while ($registro =  $q4->fetch(PDO::FETCH_ASSOC)) {
-                            
-                            ?>
-                            <option value="<?php echo $registro['idCategoria'] ?>"><?php echo $registro['nombreCategoria'] ?></option>
+                            <div class="form-row ">
+                                <div class="form-group col-md-6 ">
+                                    <label class="form-label">Público Dirigido</label>
+                                    <input type="text " id="publico_dirigidoo" name="publico_dirigido" placeholder="Ingrese público dirigido" class="form-control" aria-label="Dirigido" aria-describedby="names-addon">
+                                </div>
 
-                        <?php
-                        }
-                        
-                        Database::disconnect();
-                        ?>
-                </select>
-                </div>
-                <div class="inputBox">
-                    <h3>Descripción del Curso</h3>
-                    <textarea maxlength="250" placeholder="" id="descripcio-curso" name="descripcio_curso"></textarea> 
-                </div>
-                <div class="inputBox">
-                <h3>Introducción del Curso</h3>
-                    <textarea maxlength="250" placeholder="" id="intro-curso" name="intro_curso"></textarea>
-                </div>
-                <div class="inputBox">
-                    <h3>Público Dirigido</h3>
-                    <input type="text" id="publico_dirigidoo" name="publico_dirigido" placeholder="" aria-label="Dirigido" aria-describedby="names-addon">
-                </div>
-                <div class="inputBox">
-                    <h3>*Agregar Imagen del Curso</h3>
-                    <div class="column" style="margin:auto;">
-                        <label for="file-upload" class="subir">
-                            <i class="fas fa-cloud-upload-alt" aria-hidden="true"></i>
-                            Insertar imagen
-                        </label>
-                        <input  type="file" id="file-upload" name="txtimagen" onchange='cambiar()' style='display: none;' 
-                        aria-label="Upload" aria-describedby="inputGroupFileAddon04" accept="image/*"; multiple/>
+                                <div class="form-group col-md-6 ">
+                                    <label class="form-label">*Agregar imagen del curso</label>
+                                    <br>
+                                    <!-- <button type="button " class="btn btn-outline-danger  ">
+                                        <i class="fas fa-cloud-upload-alt " aria-hidden="true "></i>
+                                        Insertar imagen
+                                    </button> -->
+                                    <div class="column" style="margin:auto;">
+                                        <label for="file-upload" class="btn btn-block btn-agregar">
+                                            <i class="fas fa-cloud-upload-alt" aria-hidden="true"></i>
+                                            Insertar imagen
+                                        </label>
+                                        <input  type="file" id="file-upload" name="txtimagen" onchange='cambiar()' style='display: none;' 
+                                        aria-label="Upload" aria-describedby="inputGroupFileAddon04" accept="image/*"; multiple/>
+                                    </div>
+
+                                    <div class="column" style="margin:auto;">
+                                        <div id="info"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group col-12">
+                                    <input type="submit" class="btn btn-block btn-agregar" value="Agregar">
+                                </div>
+                            </div>
+
+                        </form>
                     </div>
-                    <div class="column" style="margin:auto;">
-                        <div id="info"></div>
-                    </div>
+                    <!-- fin segunda columna -->
                 </div>
-                <input type="submit" class="boton1"  value="Agregar">
-            </form>
-            <div class="image">
-                <img src="./assets/images/card_04.jpg" alt="">
-            </div>
-            <div class="image2">
-                <img src="./assets/images/card_03.jpg" alt="">
             </div>
         </div>
     </div>
-</div>
+<!-- fin formulario -->
+
+
 
     <!--
                     ======================================

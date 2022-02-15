@@ -13,11 +13,11 @@ class CursosModelo
   public function InsertarCursosModelo($codigo,$nombre,$descripcion,$ntemas,$costo){
     try{   
          $obj = Conexion::singleton();
-         $query = $obj->prepare('insert into cursos (nombreCurso, descripcionCurso, cantidadTemas, costoCurso) values (?,?,?,?)');
-            $query -> bindParam(1, $nombre);
-            $query -> bindParam(2, $descripcion);
-            $query -> bindParam(4, $ntemas);
-            $query -> bindParam(5, $costo);
+         $query = $obj->prepare('insert into cursos (nombreCurso, descripcionCurso, cantidadTemas, costoCurso) values (:nombre,:descripcion,:ntemas,:costo)');
+            $query -> bindParam(":nombre", $nombre,PDO::PARAM_STR);
+            $query -> bindParam(":descripcion", $descripcion,PDO::PARAM_STR);
+            $query -> bindParam(":ntemas", $ntemas,PDO::PARAM_INT);
+            $query -> bindParam(":costo", $costo,PDO::PARAM_INT);
       
          $query->execute();//Ejecuta la consulta SQL
          

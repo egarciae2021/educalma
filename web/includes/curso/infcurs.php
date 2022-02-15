@@ -87,8 +87,7 @@ if(isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)){
                             $idProfe = $_SESSION['codUsuario'];
                             $sql3 = "SELECT p.idCurso,p.nombreCurso,p.descripcionCurso, p.categoriaCurso,
                              p.dirigido, p.costoCurso,p.introduccion,p.id_userprofesor,p.imagenDestacadaCurso,c.id_cursoInscrito,
-                             c.curso_id, c.usuario_id, c.cod_curso,
-                              c.curso_obt FROM cursos p inner join cursoinscrito c WHERE c.usuario_id='$idProfe' AND p.idCurso=c.curso_id order by idCurso DESC LIMIT $inicio,$cantidad_paginas";
+                             c.curso_id, c.usuario_id FROM cursos p inner join cursoinscrito c WHERE c.usuario_id='$idProfe' AND p.idCurso=c.curso_id order by idCurso DESC LIMIT $inicio,$cantidad_paginas";
                         }
 
                         $q3 = $pdo3->prepare($sql3);

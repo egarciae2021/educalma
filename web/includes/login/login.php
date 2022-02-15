@@ -39,7 +39,7 @@
           <div class="form-group my-3" style="text-align: center;">
             <a href="recuperar.php">¿Olvidaste tu Contraseña?</a>
             <br>
-            <p class="parr mr-2">¿Aún no tienes cuenta?</p><a href="registros.php" class="links">Registrarse</a>
+            <p class="parr mr-2">¿Aún no tienes cuenta?</p><a href="registroUsuario.php" class="links">Registrarse</a>
           </div>
 
 

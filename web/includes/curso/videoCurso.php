@@ -217,7 +217,12 @@
             <div class="col-md-1"></div>
             <div class="col-md-10">
                 <?php $d=$dato['idModulo'];
-                // echo $dato['idModulo'];
+                $pd8 = Database::connect();
+                $im=$_GET['id_modulo'];
+                $sq="SELECT * FROM cuestionario where id_modulo=$im";
+                $qy = $pd8->prepare($sq);
+                $qy->execute();
+                $dato8 = $qy->fetch(PDO::FETCH_ASSOC);
                 ?>
                 <br>
                 <button type="button" class="btn btn-outline-secondary" id="btnV"<?php if($nueva<=1){ echo "disabled";}?>
@@ -225,9 +230,14 @@
                         <?php if(count($resultado1)<=0){echo "No existo";}?>< </strong> Anterior </button>
                 <button type="button" class="btn btn-outline-secondary" id="btnV2"> <img
                         src="././assets/images/video_icono_32.png"></button>
-                <button type="button" class="btn btn-outline-secondary" id="btnV" <?php if($nueva>=count($resultado1)){?>onclick="parent.location='cuestionario.php?id=<?php echo $id;?>&idModulo=<?php echo $_GET['id_modulo'];?>'">Siguiente<strong> > </strong></button> <?php }else{ ?>
+                <button type="button" class="btn btn-outline-secondary" id="btnV" <?php if($nueva>=count($resultado1)){?>onclick="parent.location='cuestionario.php?id=<?php echo $id;?>&idModulo=<?php echo $_GET['id_modulo'];?>&up=0&idcues=<?php echo $dato8['idCuestionario'];?>&cuen=1&nro=0'">Siguiente<strong> > </strong></button> <?php }else{ ?>
                     onclick="parent.location='video.php?id=<?php echo $id; ?>&idtema=<?php echo ($nueva+1); ?>&id_modulo=<?php echo $_GET['id_modulo']?>'">Siguiente<strong> > </strong></button>
-                    <?php }?>
+                    
+                    <?php }
+                    $si=$dato8['idCuestionario'];
+                    $_SESSION['idcue']=$si;
+                    //ponlo ente id y idtema  &validar=1&c_modulo=<?php echo $cont_modulo;?><!-- &c_tema=<?php //echo ($cont_tema+1);?> -->
+                    
                     
             </div>
             <div class="col-md-1"></div>
