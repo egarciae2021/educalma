@@ -327,7 +327,12 @@ if (!isset($_GET['pag'])) {
           </div>
           <div class="row">
             <div class="group-control">
-              <span class="title">Tamaño de la empresa</span><input type="text" id="txtTamEmpresa" />
+              <span class="title">Tamaño de la empresa</span>
+              <div class="row-three">
+                <div class="icon" id="quitNumber">-</div>
+              <input type="number" id="txtTamEmpresa"  min="0" value="0"/>
+              <div class="icon" id="plusNumber">+</div>
+              </div>
             </div>
             <div class="group-control">
               <span class="title">N° de suscripciones</span>
