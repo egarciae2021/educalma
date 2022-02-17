@@ -12,7 +12,7 @@
           <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
             <div class="footer-widget">
               <div class="footer-menu">
-                <h4 class="footer-widget-title">Nosotros</h4>
+                <h4 class="footer-widget-title">Nosotros y algo mas</h4>
                 <ul>
                   <li>
                     <a href="https://fundacioncalma.org/%C2%BFqui%C3%A9nes-somos%3F">Qui&eacute;nes Somos</a>
