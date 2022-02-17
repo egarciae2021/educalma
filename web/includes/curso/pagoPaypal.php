@@ -91,6 +91,7 @@ $id = $_GET['id'];
                                 </a>
 
                                 <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+<<<<<<< HEAD
                                     <div class="card-container">
                                         <a href="pay.php">VISA</a>
 
@@ -102,6 +103,11 @@ $id = $_GET['id'];
                                             <?php include_once 'includes/curso/pagoVisa.php' ?>
     
                                             <!--Fin-->
+=======
+                                    <div class="card-body">
+                                        <!-- <a href="pay.php">VISA</a> -->
+                                        <a onclick="msje_Redirec()">VISA</a>
+>>>>>>> 824fd3f25352e4b8285f05a2f59c575e960d1b87
                                     </div>
                                 </div>
                             </div>
@@ -247,6 +253,29 @@ $id = $_GET['id'];
             ';
         }
     ?>
+    <script>
+        function msje_Redirec(){
+            Swal.fire({
+                title: '¿Quiere seguir usando sus datos actuales?',
+                text: '**Nombres, Apellidos y Correo**',
+                icon: 'warning',
+                showCancelButton: true,
+                showDenyButton: true,
+                confirmButtonColor: '#3085d6',
+                confirmButtonText: 'Si',
+                denyButtonText: `No`,
+                cancelButtonText: 'Cancelar'
+                
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    location.href= "pay.php?id=<?php echo $idUserr; ?>"
+                }else if (result.isDenied){
+                    location.href= "pay.php"
+                }
+            })
+        }
+    </script>
+
 </body>
 
 </html>

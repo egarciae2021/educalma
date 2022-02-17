@@ -50,22 +50,57 @@
           <img src="assets/img/diners-club-logo3-1.svg" alt="DINNER CLUB">
         </div>
       </div>
-      <div class="group-input">
-        <label for="txtNombre">Nombre</label>
-        <input type="text" id="txtNombre" name="txtNombre">
-      </div>
-      <div class="message-error">Ingrese un nombre.</div>
+        <?php
+        if (!empty($_GET['id'])){
+          require_once 'database/databaseConection.php';
+          $id=$_GET['id'];
+          $pdo = Database::connect();
+          $veriS="SELECT * FROM usuarios WHERE id_user = $id";
+          $qS = $pdo->prepare($veriS);
+          $qS->execute(array());
+          $datoS=$qS->fetch(PDO::FETCH_ASSOC);
+          Database::disconnect();
+        ?>
+          <div class="group-input">
+            <label for="txtNombre">Nombre</label>
+            <input type="text" id="txtNombre" name="txtNombre" value="<?php echo $datoS["nombres"]; ?>">
+          </div>
+          <div class="message-error">Ingrese un nombre.</div>
 
-      <div class="group-input">
-        <label for="txtApellido">Apellido</label>
-        <input type="text" id="txtApellido" name="txtApellido">
-      </div>
-      <div class="message-error">Ingrese tus apellidos.</div>
-      <div class="group-input">
-        <label for="txtCorreo">Correo</label>
-        <input type="text" name="txtCorreo" id="txtCorreo">
-      </div>
-      <div class="message-error">El correo no tiene un formato válido.</div>
+          <div class="group-input">
+            <label for="txtApellido">Apellido</label>
+            <input type="text" id="txtApellido" name="txtApellido" value="<?php echo $datoS["apellido_pat"]." ".$datoS["apellido_mat"]; ?>">
+          </div>
+          <div class="message-error">Ingrese tus apellidos.</div>
+
+          <div class="group-input">
+            <label for="txtCorreo">Correo</label>
+            <input type="text" name="txtCorreo" id="txtCorreo" value="<?php echo $datoS["email"]; ?>">
+          </div>
+          <div class="message-error">El correo no tiene un formato válido.</div>
+        <?php
+        }else{
+        ?>
+          <div class="group-input">
+            <label for="txtNombre">Nombre</label>
+            <input type="text" id="txtNombre" name="txtNombre">
+          </div>
+          <div class="message-error">Ingrese un nombre.</div>
+
+          <div class="group-input">
+            <label for="txtApellido">Apellido</label>
+            <input type="text" id="txtApellido" name="txtApellido">
+          </div>
+          <div class="message-error">Ingrese tus apellidos.</div>
+
+          <div class="group-input">
+            <label for="txtCorreo">Correo</label>
+            <input type="text" name="txtCorreo" id="txtCorreo">
+            </div>
+          <div class="message-error">El correo no tiene un formato válido.</div>
+        <?php
+        }
+        ?>
       <div class="group-input">
         <label for="txtNumTarget">Número de tarjeta</label>
         <input type="text" id="txtNumTarget" name="txtNumTarget">
