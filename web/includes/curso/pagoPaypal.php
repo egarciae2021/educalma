@@ -6,6 +6,7 @@ $id = $_GET['id'];
 
 <head>
     <link rel="stylesheet" href="assets/css/pagepay.css" />
+    <link rel="stylesheet" href="assets/css/tarjeta.css" />
     <link rel="stylesheet" href="assets/js/plugins/sweetalert2.min.css">
 </head>
 
@@ -13,6 +14,7 @@ $id = $_GET['id'];
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="assets/js/plugins/sweetalert2.all.min.js"></script>
+    <script src="assets/js/card-validator.js"></script>
 
     <?php
         $id = $_GET['id'];
@@ -89,8 +91,17 @@ $id = $_GET['id'];
                                 </a>
 
                                 <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-                                    <div class="card-body">
+                                    <div class="card-container">
                                         <a href="pay.php">VISA</a>
+
+                                    </div>
+
+                                    <div>
+                                            
+                                            <!--Inicio-->
+                                            <?php include_once 'includes/curso/pagoVisa.php' ?>
+    
+                                            <!--Fin-->
                                     </div>
                                 </div>
                             </div>
