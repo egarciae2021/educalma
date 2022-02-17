@@ -90,7 +90,8 @@ $id = $_GET['id'];
 
                                 <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
                                     <div class="card-body">
-                                        <a href="pay.php">VISA</a>
+                                        <!-- <a href="pay.php">VISA</a> -->
+                                        <a onclick="msje_Redirec()">VISA</a>
                                     </div>
                                 </div>
                             </div>
@@ -236,6 +237,29 @@ $id = $_GET['id'];
             ';
         }
     ?>
+    <script>
+        function msje_Redirec(){
+            Swal.fire({
+                title: '¿Quiere seguir usando sus datos actuales?',
+                text: '**Nombres, Apellidos y Correo**',
+                icon: 'warning',
+                showCancelButton: true,
+                showDenyButton: true,
+                confirmButtonColor: '#3085d6',
+                confirmButtonText: 'Si',
+                denyButtonText: `No`,
+                cancelButtonText: 'Cancelar'
+                
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    location.href= "pay.php?id=<?php echo $idUserr; ?>"
+                }else if (result.isDenied){
+                    location.href= "pay.php"
+                }
+            })
+        }
+    </script>
+
 </body>
 
 </html>
