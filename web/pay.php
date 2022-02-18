@@ -24,7 +24,7 @@
         <img src="assets/img/logo.calma.color.png" alt="Fundación Calma">
       </div>
       <div class="box-signout">
-        <a href="#">Cerrar sesión</a>
+      <a href="includes/login/logout.php">Cerrar sesión</a>
       </div>
     </div>
     <div class="box-tools">
@@ -32,7 +32,7 @@
         <h1>Realizar pago</h1>
       </div>
       <div class="button-before">
-        <a href="#">Regresar</a>
+        <a href="#" onclick="history.back()">Regresar</a>
       </div>
     </div>
     <form class="box-form" id="dataForm" action="./sendData/pay.php" method="post" autocomplete="off">
