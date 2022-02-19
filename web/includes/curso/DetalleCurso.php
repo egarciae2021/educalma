@@ -149,7 +149,7 @@
 
                                     <div>
                                         <i class="fas fa-graduation-cap text-center" style="width: 1.5rem;"></i>
-                                        <span class="ml-3">La nota mínima para aprobar el curso es <?php echo $minimo_respuestas_para_aprobar; ?></span>
+                                        <span class="ml-3">La nota mínima aprobatoria es <?php echo $minimo_respuestas_para_aprobar; ?></span>
                                     </div>
 
                                     <div>
@@ -169,6 +169,8 @@
                     </div>
                 </div>
             </div>
+<br><br><br>
+
             <div class="bg-light" style="height: 100%;">
                 <div class="row py-5" style="height: 100%;">
                     <div class="col-12 col-sm-12 col-md-5 col-lg-4 col-xl-3 info-course-left" style="border: 1px solid red;">
