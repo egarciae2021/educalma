@@ -99,7 +99,7 @@ $id = $_GET['id'];
                                     </div>
       
                                             <!--Inicio-->
-                                            <?php include_once 'includes/curso/pagoVisa.php' ?>
+                                            <?php include_once 'includes/curso/pagoTarjeta.php' ?>
     
                                             <!--Fin-->          
                                 </div>
