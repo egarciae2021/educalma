@@ -305,11 +305,11 @@
 
      <!-- Contenedor Principal -->
     <!-- Comentar Foro para que no se muestre y quitado de simbolos < > en los inicios de cada  ?php -->
-    <!--<div class="comments-container" id="foro-curso">
-        <h1>Foro Educalma ?php echo $_SESSION['iduser']?></h1>
+    <div class="comments-container" id="foro-curso">
+        <h1>Foro Educalma <?php echo $_SESSION['iduser']?></h1>
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Comentar</button>
 
-        ?php
+        <?php
             if($_SESSION['privilegio']==1 || $_SESSION['privilegio']==2){
                 echo '
                     <button type="button" class="btn btn-danger" onClick="AlertEliminaTodo('.$idCurso.')">
@@ -321,7 +321,7 @@
         
         <ul id="comments-list" class="comments-list">
             <li>
-                ?php
+                <?php
                 $autor = "";
                 while ($registro =  $stm->fetch(PDO::FETCH_ASSOC)) {
                     if($registro['iduser']==$idProfe){
@@ -331,35 +331,35 @@
                         $autor = "";
                     }
                 ?>
-                <div class="comment-main-level"> -->
+                <div class="comment-main-level">
                     <!-- Avatar -->
-            <!--        <div class="comment-avatar">
+                   <div class="comment-avatar">
                         
-                        ?php    
+                        <?php    
                             if($registro['mifoto']!=null){
                         ?>
-                                <img src="data:image/*;base64,?php echo base64_encode($registro['mifoto']);?>" alt="foto_curso"
+                                <img src="data:image/*;base64,<?php echo base64_encode($registro['mifoto']);?>" alt="foto_curso"
                                     style="width: 60px;height:60px;">
-                        ?php
+                        <?php
                             }else{
                         ?>
                                 <img src="./assets/images/user.png" alt="foto_curso" style="width: 60px;height:60px;">
-                        ?php
+                        <?php
                             }
                         ?> 
                         
-                    </div>  -->
+                    </div> 
                     <!-- Contenedor del Comentario -->
-            <!--        <div class="comment-box">
+                   <div class="comment-box">
                         <div class="comment-head">
-                            <h6 class="comment-name?php echo $autor; ?>">
-                                <spam>?php echo $registro['nombreUser']; ?></spam>
+                            <h6 class="comment-name<?php echo $autor; ?>">
+                                <spam><?php echo $registro['nombreUser']; ?></spam>
                             </h6>
-                            <span>?php echo $registro['fecha_ingreso']; ?></span>
+                            <span><?php echo $registro['fecha_ingreso']; ?></span>
                             <button type="button" id="modal" class="btn btn-light btn-sm ml-3" data-toggle="modal"
-                                data-target="#respuesta?php echo $registro['idcomentario'] ?>"
-                                data-id="?php echo '5' ?>">Responder</button>
-                            ?php
+                                data-target="#respuesta<?php echo $registro['idcomentario'] ?>"
+                                data-id="<?php echo '5' ?>">Responder</button>
+                            <?php
                             if($_SESSION['privilegio']==1 || $_SESSION['iduser']==$idProfe || $registro['iduser']==$_SESSION['iduser']){
                                 echo '
                                     <button type="submit" class="btn btn-danger" onClick="AlertEliminacion('.$registro['idcomentario'].')">
@@ -372,12 +372,12 @@
                             <i style="color:white;" class="fa fa-heart"></i>
                         </div>
                         <div class="comment-content">
-                            ?php echo $registro['comentario']; ?>
+                            <?php echo $registro['comentario']; ?>
                         </div>
                     </div>
-                </div> -->
+                </div>
                 <!-- Respuestas de los comentarios -->
-            <!--       ?php
+                  <?php
                         $pdo2 = Database::connect();
                         $sql2 = "SELECT * FROM sub_come_foro as s inner join usuarios as u on u.id_user= s.iduser WHERE idcomentario = '$registro[idcomentario]'";
                         $stm2 = $pdo2->prepare($sql2);
@@ -393,30 +393,29 @@
                         }
                     ?>
                 <ul class="comments-list reply-list">
-                    <li> -->
+                    <li>
                         <!-- Avatar -->
-            <!--            <div class="comment-avatar">
+                       <div class="comment-avatar">
                             
-                            ?php    
+                            <?php    
                                 if($registro2['mifoto']!=null){
                             ?>
                                     <img src="data:image/*;base64,?php echo base64_encode($registro2['mifoto']);?>"
                                 alt="foto_curso" style="width: 43px;height:43px;">
-                            ?php
+                            <?php
                                 }else{
                             ?>
                                     <img src="./assets/images/user.png" alt="foto_curso" style="width: 43px;height:43px;">
-                            ?php
+                            <?php
                                 }
                             ?> 
-                        </div>  -->
+                        </div> 
                         <!-- Contenedor del Comentario -->
-            <!--            <div class="comment-box">
+                       <div class="comment-box">
                             <div class="comment-head">
-                                <h6 class="comment-name?php echo $autor; ?>"><a
-                                        href="#">?php echo $registro2['user_men'];?></a></h6>
-                                <span>?php echo $registro2['fecha_ingreso']; ?></span>
-                                ?php
+                                <h6 class="comment-name<?php echo $autor; ?>"><spam><?php echo $registro2['user_men'];?></spam></h6>
+                                <span><?php echo $registro2['fecha_ingreso']; ?></span>
+                                <?php
                                     if($_SESSION['privilegio']==1 || $_SESSION['iduser']==$idProfe || $registro2['iduser']==$_SESSION['iduser']){
                                 
                                     echo '
@@ -430,19 +429,19 @@
                                 <i style="color:white;" class="fa fa-heart"></i>
                             </div>
                             <div class="comment-content">
-                                ?php echo $registro2['subcomentario'];?>
+                                <?php echo $registro2['subcomentario'];?>
                             </div>
                         </div>
                     </li>
                 </ul>
-                ?php 
+                <?php 
                 }
-                ?>   -->
+                ?>  
                 <!------------------------------------
                         modal para ingresar respuesta
                 -------------------------------------->
                 <!-- Modal -->
-            <!--    <div class="modal fade" id="respuesta?php echo $registro['idcomentario'] ?>" tabindex="-1"
+                <div class="modal fade" id="respuesta<?php echo $registro['idcomentario'] ?>" tabindex="-1"
                     aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
@@ -459,8 +458,8 @@
                                         <textarea class="form-control" id="mensaje" name="submensaje" rows="3"
                                             required></textarea>
                                         <input type="hidden" name="id_comenta"
-                                            value="?php echo $registro['idcomentario']?>">
-                                        <input type="hidden" name="id" value="?php echo $idCurso?>">
+                                            value="<?php echo $registro['idcomentario']?>">
+                                        <input type="hidden" name="id" value="<?php echo $idCurso?>">
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary"
@@ -472,12 +471,12 @@
                         </div>
                     </div>
                 </div>
-                ?php
+                <?php
                 }
                 ?>
             </li>
         </ul>
-    </div>       -->         
+    </div>              
 
 
 
@@ -519,6 +518,9 @@
             display:-webkit-box; 
             -webkit-box-orient:vertical;
             -webkit-line-clamp:2;
+        }
+        html{
+            scroll-behavior: smooth;
         }
     </style>
 

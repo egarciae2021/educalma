@@ -6,6 +6,7 @@ $id = $_GET['id'];
 
 <head>
     <link rel="stylesheet" href="assets/css/pagepay.css" />
+    <link rel="stylesheet" href="assets/css/tarjeta.css" />
     <link rel="stylesheet" href="assets/js/plugins/sweetalert2.min.css">
 </head>
 
@@ -13,6 +14,7 @@ $id = $_GET['id'];
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="assets/js/plugins/sweetalert2.all.min.js"></script>
+    <script src="assets/js/card-validator.js"></script>
 
     <?php
         $id = $_GET['id'];
@@ -89,9 +91,17 @@ $id = $_GET['id'];
                                 </a>
 
                                 <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+
                                     <div class="card-body">
-                                        <a href="pay.php">VISA</a>
+                                        <!-- <a href="pay.php">VISA</a> -->
+                                        <a onclick="msje_Redirec()">VISA</a>
+
                                     </div>
+      
+                                            <!--Inicio-->
+                                            <?php include_once 'includes/curso/pagoVisa.php' ?>
+    
+                                            <!--Fin-->          
                                 </div>
                             </div>
                             <div class="card mb-3">
@@ -236,6 +246,29 @@ $id = $_GET['id'];
             ';
         }
     ?>
+    <script>
+        function msje_Redirec(){
+            Swal.fire({
+                title: '¿Quiere seguir usando sus datos actuales?',
+                text: '**Nombres, Apellidos y Correo**',
+                icon: 'warning',
+                showCancelButton: true,
+                showDenyButton: true,
+                confirmButtonColor: '#3085d6',
+                confirmButtonText: 'Si',
+                denyButtonText: `No`,
+                cancelButtonText: 'Cancelar'
+                
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    location.href= "pay.php?id=<?php echo $idUserr; ?>"
+                }else if (result.isDenied){
+                    location.href= "pay.php"
+                }
+            })
+        }
+    </script>
+
 </body>
 
 </html>

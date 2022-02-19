@@ -187,6 +187,9 @@ body {
 }
 .group-input .row-w-icon .icon span {
   cursor: pointer;
+  color: #000;
+  position: absolute;
+  right: -14px;
 }
 .group-input .row-w-icon .icon span:hover {
   color: #999;
