@@ -24,7 +24,7 @@
         <img src="assets/img/logo.calma.color.png" alt="Fundación Calma">
       </div>
       <div class="box-signout">
-        <a href="#">Cerrar sesión</a>
+      <a href="includes/login/logout.php">Cerrar sesión</a>
       </div>
     </div>
     <div class="box-tools">
@@ -32,7 +32,7 @@
         <h1>Realizar pago</h1>
       </div>
       <div class="button-before">
-        <a href="#">Regresar</a>
+        <a href="#" onclick="history.back()">Regresar</a>
       </div>
     </div>
     <form class="box-form" id="dataForm" action="./sendData/pay.php" method="post" autocomplete="off">
@@ -63,19 +63,19 @@
         ?>
           <div class="group-input">
             <label for="txtNombre">Nombre</label>
-            <input type="text" id="txtNombre" name="txtNombre" value="<?php echo $datoS["nombres"]; ?>">
+            <input type="text" id="txtNombre" name="txtNombre" value="<?php echo $datoS["nombres"]; ?>" disabled>
           </div>
           <div class="message-error">Ingrese un nombre.</div>
 
           <div class="group-input">
             <label for="txtApellido">Apellido</label>
-            <input type="text" id="txtApellido" name="txtApellido" value="<?php echo $datoS["apellido_pat"]." ".$datoS["apellido_mat"]; ?>">
+            <input type="text" id="txtApellido" name="txtApellido" value="<?php echo $datoS["apellido_pat"]." ".$datoS["apellido_mat"]; ?>" disabled>
           </div>
           <div class="message-error">Ingrese tus apellidos.</div>
 
           <div class="group-input">
             <label for="txtCorreo">Correo</label>
-            <input type="text" name="txtCorreo" id="txtCorreo" value="<?php echo $datoS["email"]; ?>">
+            <input type="text" name="txtCorreo" id="txtCorreo" value="<?php echo $datoS["email"]; ?>" disabled>
           </div>
           <div class="message-error">El correo no tiene un formato válido.</div>
         <?php

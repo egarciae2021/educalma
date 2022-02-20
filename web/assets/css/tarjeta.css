@@ -1,0 +1,57 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+
+
+.div_contenedor{
+  height: auto;
+  width: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;   
+
+  /*padding: 80px;
+
+    border:1px solid rgba(199, 198, 198, 0.856);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px; */ 
+  
+  }
+
+  .div_centrado{
+  
+    width: 450px;
+      
+  }
+
+.cvv{
+
+    width: 48%;
+    }
+
+.input-group{
+
+	width: auto;
+}
+
+.input-group-text{
+    width: auto;
+}
+
+.input::placeholder{
+    width: auto;
+            
+}
+
+.btn {
+  width: 100%;
+  background: #064887;
+  color: #fff;
+  padding: 10px;
+  border-radius: 3px;
+  text-align: center;
+  font-size: 18px;
+  text-transform: uppercase;
+  cursor: pointer;
+  letter-spacing: 5px;
+}
