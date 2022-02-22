@@ -201,7 +201,18 @@ if (!isset($_GET['pag'])) {
             </div>
           </div>
           <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
-            <img class="img_nueva" src="data:image/*;base64,<?php echo base64_encode($dato['imagenDestacadaCurso']); ?>" alt="" style="max-width: 100%;">
+            <?php    
+                if($dato['imagenDestacadaCurso']!=null){
+            ?>
+                    <img class="img_nueva" src="data:image/*;base64,<?php echo base64_encode($dato['imagenDestacadaCurso']); ?>" alt="" style="max-width: 100%;">
+            <?php
+                }else{
+            ?>
+                    <img class="img_nueva" height="50px"  src="./assets/images/curso_educalma.png"  alt="" style="max-width: 100%;">
+            <?php
+                }
+            ?> 
+            
           </div>
         </div>
       </div>

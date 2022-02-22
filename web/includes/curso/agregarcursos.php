@@ -250,7 +250,21 @@
                                 <tbody>
                                     <tr>
                                         <td><?php echo $dato3['nombreCurso'] ?></td>
-                                        <td><img height="50px" src="data:image/*;base64,<?php echo base64_encode($dato3['imagenDestacadaCurso']) ?>"></td>
+                                        <td>
+                                            <?php    
+                                                if($dato3['imagenDestacadaCurso']!=null){
+                                            ?>
+                                                    <img height="50px" src="data:image/*;base64,<?php echo base64_encode($dato3['imagenDestacadaCurso']) ?>">
+                                            <?php
+                                                }else{
+                                            ?>
+                                                    <img style="height: 50px;"  src="./assets/images/curso_educalma.png">
+                                            <?php
+                                                }
+                                            ?>
+
+                                        
+                                        </td>
                                         <td class="text-center">
 
                                            

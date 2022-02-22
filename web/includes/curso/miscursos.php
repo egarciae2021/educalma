@@ -59,32 +59,67 @@
                     $q3->execute(array());
                     $dato3=$q3->fetch(PDO::FETCH_ASSOC);    
 
-                    echo '
-            <div class="row">
-            <div class="col-md-1"></div>
-            <div class="col-md-10">
-
-                <div class="blog-post">
-                <div class="blog-post_img">
-                    <img src="data:image/*;base64,'.base64_encode($dato3['imagenDestacadaCurso']).'" alt="foto_curso">
-                </div>
-        
-                <div class="blog-post_info" >
-                    <h1 class="blog-post_title">'.$dato3['nombreCurso'].'</h1>
-                    <p class="blog-posrt_text">
-                            '.$dato3['descripcionCurso'].'
-                    </p>
                     
-                    <a href="curso.php?id='.$cursoID.'" class="blog-post_cta">Ver ahora</a>
-                </div>
-                </div>
-            </div>
-            <div class="col-md-1"></div>
-            </div>
 
-            <br>
-            <br>
-            ';
+                        if($dato3['imagenDestacadaCurso']!=null){
+                        
+                            echo '
+                            <div class="row">
+                            <div class="col-md-1"></div>
+                            <div class="col-md-10">
+
+                                <div class="blog-post">
+                                <div class="blog-post_img">
+                                    <img src="data:image/*;base64,'.base64_encode($dato3['imagenDestacadaCurso']).'" alt="foto_curso">
+                                </div>
+                        
+                                <div class="blog-post_info" >
+                                    <h1 class="blog-post_title">'.$dato3['nombreCurso'].'</h1>
+                                    <p class="blog-posrt_text">
+                                            '.$dato3['descripcionCurso'].'
+                                    </p>
+                                    
+                                    <a href="curso.php?id='.$cursoID.'" class="blog-post_cta">Ver ahora</a>
+                                </div>
+                                </div>
+                            </div>
+                            <div class="col-md-1"></div>
+                            </div>
+
+                            <br>
+                            <br>
+                            ';
+                    
+                        }else{
+
+                            echo '
+                            <div class="row">
+                            <div class="col-md-1"></div>
+                            <div class="col-md-10">
+
+                                <div class="blog-post">
+                                <div class="blog-post_img">
+                                <img src="./assets/images/curso_educalma.png" alt="foto_curso" >
+                                </div>
+                        
+                                <div class="blog-post_info" >
+                                    <h1 class="blog-post_title">'.$dato3['nombreCurso'].'</h1>
+                                    <p class="blog-posrt_text">
+                                            '.$dato3['descripcionCurso'].'
+                                    </p>
+                                    
+                                    <a href="curso.php?id='.$cursoID.'" class="blog-post_cta">Ver ahora</a>
+                                </div>
+                                </div>
+                            </div>
+                            <div class="col-md-1"></div>
+                            </div>
+
+                            <br>
+                            <br>
+                            ';
+                    
+                        }
 
                 }
 

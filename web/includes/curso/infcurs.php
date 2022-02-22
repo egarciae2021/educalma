@@ -123,7 +123,19 @@ if(isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)){
                                             <td><?php echo $curso['nombreCurso']; ?></td>
                                             <td><?php echo $datoCate['nombreCategoria']; ?></td>
                                             <td><?php echo $curso['dirigido']; ?></td>
-                                            <td><img height="50px" src="data:image/*;base64,<?php echo base64_encode($curso['imagenDestacadaCurso']) ?>"></td>
+                                            <td>
+                                                <?php    
+                                                    if($curso['imagenDestacadaCurso']!=null){
+                                                ?>
+                                                        <img height="50px" src="data:image/*;base64,<?php echo base64_encode($curso['imagenDestacadaCurso']) ?>">
+                                                <?php
+                                                    }else{
+                                                ?>
+                                                        <img height="50px"  src="./assets/images/curso_educalma.png">
+                                                <?php
+                                                    }
+                                                ?>    
+                                            </td>
                                             <td><?php echo $curso['costoCurso'];?></td>
                                             <td><?php echo $curso['cod_curso'];?>
                                                 <!-- AQUiiiiiiiiiii essssssssssssssss pabloooooooooo -->
@@ -228,7 +240,21 @@ if(isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)){
                                 <tbody>
                                     <tr>
                                         <td><?php echo $dato3['nombreCurso'] ?></td>
-                                        <td><img height="50px" src="data:image/*;base64,<?php echo base64_encode($dato3['imagenDestacadaCurso']) ?>"></td>
+                                        <td>
+                                        
+                                            <?php    
+                                                if($curso['imagenDestacadaCurso']!=null){
+                                            ?>
+                                                    <img height="50px" src="data:image/*;base64,<?php echo base64_encode($curso['imagenDestacadaCurso']) ?>">
+                                            <?php
+                                                }else{
+                                            ?>
+                                                    <img height="50px"  src="./assets/images/curso_educalma.png">
+                                            <?php
+                                                }
+                                            ?>  
+                                        
+                                        </td>
                                         <td class="text-center">
 
                                            
@@ -399,7 +425,17 @@ if(isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)){
                             </div>
                             <div id="imagen" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
                                 <div class="card-body">
-                                    <img height="50px" src="data:image/*;base64,<?php echo base64_encode($dato3['imagenDestacadaCurso']) ?>">
+                                    <?php    
+                                        if($curso['imagenDestacadaCurso']!=null){
+                                    ?>
+                                            <img height="50px" src="data:image/*;base64,<?php echo base64_encode($curso['imagenDestacadaCurso']) ?>">
+                                    <?php
+                                        }else{
+                                    ?>
+                                            <img height="50px"  src="./assets/images/curso_educalma.png">
+                                    <?php
+                                        }
+                                    ?>  
                                 </div>
                             </div>
                         </div>

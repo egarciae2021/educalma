@@ -122,7 +122,17 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
 
                               <tr>
                                 <td>
-                                  <img style="height: 40px;" class="rounded-circle" src="data:image/*;base64,<?php echo base64_encode($curso['imagenDestacadaCurso']) ?>">
+                                  <?php    
+                                      if($curso['imagenDestacadaCurso']!=null){
+                                  ?>
+                                        <img style="height: 40px;" class="rounded-circle" src="data:image/*;base64,<?php echo base64_encode($curso['imagenDestacadaCurso']) ?>">
+                                  <?php
+                                      }else{
+                                  ?>
+                                        <img style="height: 40px;" class="rounded-circle" src="./assets/images/curso_educalma.png">
+                                  <?php
+                                      }
+                                  ?>
                                 </td>
                                 <td>
                                   <?php echo $curso['nombreCurso']; ?>
