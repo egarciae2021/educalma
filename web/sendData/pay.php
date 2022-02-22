@@ -1,19 +1,23 @@
 <?php
+ob_start();
+@session_start();
 $keyPayme = "EmQipLueZd0PMrAv.jq3CL4p4j6OIQPOLFrnFFBPNGtbVyvFN75IsDb1fOh1Pg3uDB5tpc9VNlcuQpGnf";
 
-$operation = "000022";
-$user_id = "USER_000001";
-$nombres = $_POST["txtNombre"];
-$apellidos = $_POST["txtApellido"];
-$correo = $_POST["txtCorreo"];
-$pais = "PER";
-$type_doc = "DNI";
-$doc = "455645446";
-$numTarjeta = str_replace(' ', '', $_POST["txtNumTarget"]);
-$fechaVencimiento = str_replace('/', '', $_POST["txtFechaVencimiento"]);
-$codCVV = $_POST["txtCodigoSeguridad"];
+$operation = "000041";//id de la transaccion, Auto Increment
+$user_id = $_POST["txtid"];//id del usuario
+$nombres = $_POST["txtNombre"];//nombres de la persona
+$apellidos = $_POST["txtApellido"];//apellidos de la persona
+$correo = $_POST["txtCorreo"];//correo de la persona
+// $precio=$_POST["txtcost"];//precio de la compra
+// $precio=strval($cos);
+$pais = "PER";//pais de la tarjeta
+$type_doc = "DNI";//tipo de documento
+$doc = "455645446";//numero de documento
+$numTarjeta = str_replace(' ', '', $_POST["txtNumTarget"]);//numero de tarjeta Prueba 4859 5100 0000 0051
+$fechaVencimiento = str_replace('/', '', $_POST["txtFechaVencimiento"]);//fecha de vencimiento lasmonth
+$codCVV = $_POST["txtCodigoSeguridad"];//codigo de seguridad año dias
 
-$response = [];
+$response = [];//array para guardar los datos de la transaccion
 
 if ($nombres !== "" && $correo !== "" && $numTarjeta !== "" && $fechaVencimiento !== "" && $codCVV !== "") {
   /* 
@@ -27,7 +31,7 @@ if ($nombres !== "" && $correo !== "" && $numTarjeta !== "" && $fechaVencimiento
   /*
   **** FORMATO DE MONEDA ****
   5 ultimos digitos son decimales
-  Asi que 1 SOL es igual a 100000
+  Asi que 1 SOL es igual a 1,00000
   Y 50 centimos seria 50000
 */
   $money = "50000";
@@ -50,11 +54,11 @@ if ($nombres !== "" && $correo !== "" && $numTarjeta !== "" && $fechaVencimiento
     ],
     "transaction" => [
       "currency" => $money_iso,
-      "amount" => "100000",
+      "amount" => "100000",//aqui va el precio de la operacion 
       "meta" => [
         "internal_operation_number" => $operation,
         "additional_fields" => [
-          "reserved1" => "Ejemplo valor reservado 1",
+          "reserved1" => "Ejemplo valor reservado 1",//opcional, pero sirve como descripcion
           "2" => "Ejemplo valor reservado 2",
           "plan" => "00",
           "cuota" => "000",
@@ -69,15 +73,15 @@ if ($nombres !== "" && $correo !== "" && $numTarjeta !== "" && $fechaVencimiento
         "email" => $correo,
         "phone" => [
           "country_code" => "51",
-          "subscriber" => "999999999"
+          "subscriber" => "999999999"//numero de telefono
         ],
         "location" => [
-          "line_1" => "Mi casa",
+          "line_1" => "Mi casa",//direccion pero si queremos solo con relleno para que no retorne error
           "line_2" => "Mi casa",
           "city" => "LIMA",
           "state" => "LIMA",
           "country" => "PE",
-          "zip_code" => "18"
+          "zip_code" => "18"//codigo postal
         ]
       ]
     ],
