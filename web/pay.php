@@ -82,6 +82,7 @@
             <input type="text" id="txtNombre" name="txtNombre">
           </div>
           <div class="message-error">Ingrese un nombre.</div>
+          <input hidden type="text" id="txtid" name="txtid" value="<?php echo $_SESSION['codUsuario'] ?>">
           <div class="group-input">
             <label for="txtApellido">Apellido</label>
             <input type="text" id="txtApellido" name="txtApellido">
@@ -116,7 +117,9 @@
       </div>
       <div class="message-error">Ingresa un código de seguridad (CVV).</div>
       <div class="group-input">
-        <button type="submit" id="btnPayme">PAGAR S/<?php echo $_SESSION['costoPay'];?></button>
+        <?php $costoCurse=$_SESSION['costoPay'];?>
+        <!-- <input type="text" name="txtcost" hidden id="txtcost" value=<?php echo $costoCurse?>> -->
+        <button type="submit" id="btnPayme">PAGAR S/<?php echo $costoCurse?></button>
       </div>
     </form>
   </div>
