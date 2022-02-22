@@ -288,7 +288,7 @@ CREATE PROCEDURE PROC_NUEVA_SOLICITUD (
 	IF repeat_data <> 0 THEN
 		SET type_resp := 'warning';
 		SET title_resp := 'DATO REPETIDO';
-		SET text_resp := 'YA SE ENCUENTRA REGISTRADO UNA SOLICITUD CON SU CORREO CORPORATIVO. MUY PRONTO ESTAREMOS EN COMUNICACIÓN CON USTED, GRACIAS.';
+		SET text_resp := 'Solicitud denegada correo repetido. Muy pronto estaremos en comunicación con usted, Gracias.';
 		SET refrest_resp := 1;
 	ELSE
 	-- INSERCION DE SOLICITUD
@@ -311,7 +311,7 @@ CREATE PROCEDURE PROC_NUEVA_SOLICITUD (
 
 		SET type_resp := 'success';
 		SET title_resp := 'REGISTRO EXITOSO';
-		SET text_resp := 'SU SOLICITUD HA SIDO INGRESADO CON ÉXITO, MUY PRONTO ESTAREMOS EN COMUNICACIÓN CON USTED, GRACIAS.';
+		SET text_resp := 'Su solicitud ha sido ingresado con éxito, muy pronto estaremos en comunicación con usted, Gracias.';
 		SET refrest_resp := 1;
 	END IF;
 

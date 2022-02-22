@@ -15,10 +15,15 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
     <?php require_once "includes/Inicio/Head.php"; ?>
+    <?php //include_once 'includes/dashboard/head1.php' ?>
+    <?php //include_once 'includes/dashboard/header1.php' ?>
+    <?php// include_once 'includes/dashboard/body1.php' ?>
+    
 
    
 </head>
 <body>
+
 <?php
 // Este codigo hace validacion para que no se pueda acceder a cualquier pagina sin estar logueado
 
@@ -90,7 +95,7 @@
                         ?>
                         <div class="table-responsive">
                 
-                             <table id="example1" class="table table-borderless text-center dt-responsive text-center" cellspacing="0" width="100%">
+                             <table id="example1" class="table table-borderless text-center dt-responsive text-center" cellspacing="0" width="100%" >
                                 <thead >
                                     <tr >
                                         <th style="border-radius: 10px 0 0  10px;">Nombre</th>
