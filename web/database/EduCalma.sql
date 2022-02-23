@@ -238,6 +238,17 @@ CREATE TABLE tipoDocumentoIdentidad (
 	longitud_digitos int(20) not null
 );
 
+-- Tabla Factura
+CREATE TABLE factura (
+  idFactura int auto_increment primary key,
+  codigo varchar(24) NOT NULL,
+  descripcion varchar(160) NOT NULL,
+  email varchar(90) NOT NULL,
+  Monto double NOT NULL,
+  FormaPago varchar(70) NOT NULL
+);
+
+
 INSERT INTO tipoDocumentoIdentidad VALUES ('1', 'DNI', 8);
 INSERT INTO tipoDocumentoIdentidad VALUES ('2', 'PASAPORTE', 11);
 INSERT INTO tipoDocumentoIdentidad VALUES ('3', 'CARNE DE EXTRANJERIA', 8);
