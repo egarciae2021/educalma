@@ -18,6 +18,7 @@ $id = $_GET['id'];
 
     <?php
         $id = $_GET['id'];
+        $_SESSION['cursoVisa']=$id;
         $pdo = Database::connect();
         $sql = "SELECT * FROM cursos WHERE idCurso='$id'";
         $q = $pdo->prepare($sql);

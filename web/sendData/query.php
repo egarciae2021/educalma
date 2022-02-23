@@ -10,7 +10,7 @@ $action = "charges";
 $method = "GET";
 
 // Codigo de la transaccion
-$id = "000029";
+$id = "000072";
 
 $opts = array(
   'http' =>

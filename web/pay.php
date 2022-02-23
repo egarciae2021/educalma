@@ -117,7 +117,11 @@
       </div>
       <div class="message-error">Ingresa un código de seguridad (CVV).</div>
       <div class="group-input">
-        <?php $costoCurse=$_SESSION['costoPay'];?>
+        <?php $costoCurse=$_SESSION['costoPay'];
+        $prec=$costoCurse*100000;
+        $cost=strval($prec);
+        $_SESSION['prec']=$cost;
+        ?>
         <!-- <input type="text" name="txtcost" hidden id="txtcost" value=<?php echo $costoCurse?>> -->
         <button type="submit" id="btnPayme">PAGAR S/<?php echo $costoCurse?></button>
       </div>

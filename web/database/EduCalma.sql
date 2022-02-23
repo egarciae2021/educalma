@@ -224,6 +224,18 @@ CREATE TABLE transaccion_paypal (
     email VARCHAR(100) NOT NULL , 
     idClientPay VARCHAR(20) NOT NULL 
 );
+
+--Tabla de transacciones de pago Visa
+CREATE TABLE transacciones_payme( 
+    id INT(11) auto_increment primary key,  
+    idTransac VARCHAR(20) NOT NULL , 
+    idUsuario INT(11) NOT NULL,
+    idCurso INT(10) NOT NULL,
+    monto DOUBLE NOT NULL , 
+    status VARCHAR(15) NOT NULL , 
+    fecha DATE , 
+    correo VARCHAR(100) NOT NULL 
+);
 -- Tabla Temporal de empresas
 CREATE TABLE temp ( 
     cod_temp INT(11) auto_increment primary key,  
