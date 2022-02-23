@@ -46,7 +46,18 @@ require_once '../../database/databaseConection.php';
                         <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3">
                             <div class="card">
                                 <div class="container-card-image">
-                                    <img heigth="10px" ; src="data:image/*;base64,<?php echo base64_encode($dato['imagenDestacadaCurso']); ?>" alt="">
+                                    <?php    
+                                        if($dato['imagenDestacadaCurso']!=null){
+                                    ?>
+                                            <img heigth="10px" ; src="data:image/*;base64,<?php echo base64_encode($dato['imagenDestacadaCurso']); ?>" alt="">
+                                    <?php
+                                        }else{
+                                    ?>
+                                            <img heigth="10px" ;  src="./assets/images/curso_educalma.png">
+                                    <?php
+                                        }
+                                    ?> 
+                                    
                                 </div>
                                 <div class="container-card-title">
                                     <a style="font-size:18px; color: black">

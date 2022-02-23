@@ -94,7 +94,18 @@
                         <!-- <br><br><br><br> -->
                         <div class="card ">
                             <div class="content-img">
-                                <img class="card-img-top1" src="data:image/*;base64,<?php echo base64_encode($dato4['imagenDestacadaCurso']) ?>" alt="Card image">
+                                <?php    
+                                    if($dato4['imagenDestacadaCurso']!=null){
+                                ?>
+                                        <img class="card-img-top1" src="data:image/*;base64,<?php echo base64_encode($dato4['imagenDestacadaCurso']) ?>" alt="Card image">
+                                <?php
+                                    }else{
+                                ?>
+                                        <img class="card-img-top1"  src="./assets/images/curso_educalma.png">
+                                <?php
+                                    }
+                                ?>
+                                
                             </div>
 
 

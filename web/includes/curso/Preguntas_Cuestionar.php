@@ -121,7 +121,7 @@
                     
                             <!-- lista de preguntas - codigo php -->
                             <!-- <div class="overflow-auto"> -->
-                            <div class="scroll">
+                            <div>
                                 <div class="form-row">
 
                                     <?php

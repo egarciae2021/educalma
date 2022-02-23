@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,7 +8,6 @@
   <link rel="stylesheet" href="assets/css/stylePay.css">
   <script src="assets/lib/sweetalert2/sweetalert2.all.min.js"></script>
 </head>
-
 <body>
   <?php
       ob_start();
@@ -66,13 +64,11 @@
             <input type="text" id="txtNombre" name="txtNombre" value="<?php echo $datoS["nombres"]; ?>" disabled>
           </div>
           <div class="message-error">Ingrese un nombre.</div>
-
           <div class="group-input">
             <label for="txtApellido">Apellido</label>
             <input type="text" id="txtApellido" name="txtApellido" value="<?php echo $datoS["apellido_pat"]." ".$datoS["apellido_mat"]; ?>" disabled>
           </div>
           <div class="message-error">Ingrese tus apellidos.</div>
-
           <div class="group-input">
             <label for="txtCorreo">Correo</label>
             <input type="text" name="txtCorreo" id="txtCorreo" value="<?php echo $datoS["email"]; ?>" disabled>
@@ -86,13 +82,12 @@
             <input type="text" id="txtNombre" name="txtNombre">
           </div>
           <div class="message-error">Ingrese un nombre.</div>
-
+          <input hidden type="text" id="txtid" name="txtid" value="<?php echo $_SESSION['codUsuario'] ?>">
           <div class="group-input">
             <label for="txtApellido">Apellido</label>
             <input type="text" id="txtApellido" name="txtApellido">
           </div>
           <div class="message-error">Ingrese tus apellidos.</div>
-
           <div class="group-input">
             <label for="txtCorreo">Correo</label>
             <input type="text" name="txtCorreo" id="txtCorreo">
@@ -106,13 +101,11 @@
         <input type="text" id="txtNumTarget" name="txtNumTarget">
       </div>
       <div class="message-error">Ingresa un número de tarjeta.</div>
-
       <div class="group-input">
         <label for="txtFechaVencimiento">Fecha de vencimiento (MM/AA)</label>
         <input type="text" id="txtFechaVencimiento" name="txtFechaVencimiento" maxlength="5">
       </div>
       <div class="message-error">Ingresa un mes de vencimiento.</div>
-
       <div class="group-input">
         <label for="txtCodigoSeguridad">Código de seguridad (CVV)</label>
         <div class="row-w-icon">
@@ -123,14 +116,13 @@
         </div>
       </div>
       <div class="message-error">Ingresa un código de seguridad (CVV).</div>
-
       <div class="group-input">
-        <button type="submit" id="btnPayme">PAGAR S/<?php echo $_SESSION['costoPay'];?></button>
+        <?php $costoCurse=$_SESSION['costoPay'];?>
+        <!-- <input type="text" name="txtcost" hidden id="txtcost" value=<?php echo $costoCurse?>> -->
+        <button type="submit" id="btnPayme">PAGAR S/<?php echo $costoCurse?></button>
       </div>
     </form>
   </div>
-
   <script src="assets/js/mainPay.js"></script>
 </body>
-
 </html>

@@ -201,7 +201,18 @@ if (!isset($_GET['pag'])) {
             </div>
           </div>
           <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
-            <img class="img_nueva" src="data:image/*;base64,<?php echo base64_encode($dato['imagenDestacadaCurso']); ?>" alt="" style="max-width: 100%;">
+            <?php    
+                if($dato['imagenDestacadaCurso']!=null){
+            ?>
+                    <img class="img_nueva" src="data:image/*;base64,<?php echo base64_encode($dato['imagenDestacadaCurso']); ?>" alt="" style="max-width: 100%;">
+            <?php
+                }else{
+            ?>
+                    <img class="img_nueva" height="50px"  src="./assets/images/curso_educalma.png"  alt="" style="max-width: 100%;">
+            <?php
+                }
+            ?> 
+            
           </div>
         </div>
       </div>
@@ -328,17 +339,17 @@ if (!isset($_GET['pag'])) {
           <div class="row">
             <div class="group-control">
               <span class="title">Tamaño de la empresa</span>
-              <div class="row-three">
-                <div class="icon" id="quitNumber">-</div>
-              <input type="number" id="txtTamEmpresa"  min="0" value="0"/>
-              <div class="icon" id="plusNumber">+</div>
+              <div>
+
+              <input class="text-center" type="text" id="txtTamEmpresa" onKeypress="if (event.keyCode < 0 || event.keyCode > 57) event.returnValue = false;" maxlength="2"/>
+              
               </div>
             </div>
             <div class="group-control">
               <span class="title">N° de suscripciones</span>
               <div class="row-three">
                 <div class="icon" id="quitNumber">-</div>
-                <input type="number" min="0" value="0" name="" id="numSusc" />
+                <input  class="text-center" type="text" min="0" value="0" name="" id="numSusc" onKeypress="if (event.keyCode < 49 || event.keyCode > 57) event.returnValue = false;"/>
                 <div class="icon" id="plusNumber">+</div>
               </div>
             </div>

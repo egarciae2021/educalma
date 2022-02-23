@@ -143,8 +143,19 @@ $id = $_GET['id'];
                             <div class="col-5 col-lg-6 col-xl-5">
                                 <div class="container-image-detalle" style="width:100px; height:100px">
                                     <!-- <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAPars5s2FQzySbkUpPjtBlvPlANAFDLP7x38q8nOqcke_Lrf_if34Y-kTjGQgS6pRvuQ&usqp=CAU" alt=""> -->
-                                    <img height="50px" src="data:image/*;base64,<?php echo base64_encode($dato['imagenDestacadaCurso']) ?>">
                                     
+                                    <?php    
+                                        if($dato['imagenDestacadaCurso']!=null){
+                                    ?>
+                                            <img height="50px" src="data:image/*;base64,<?php echo base64_encode($dato['imagenDestacadaCurso']) ?>">
+                                    <?php
+                                        }else{
+                                    ?>
+                                            <img height="50px"  src="./assets/images/curso_educalma.png">
+                                    <?php
+                                        }
+                                    ?> 
+
                                 </div>
                             </div>
                             <div class="col-7 col-lg-6 col-xl-7 text-leftt"><span><?php echo $dato['nombreCurso'];?></span>
