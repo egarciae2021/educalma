@@ -22,6 +22,10 @@
         padding: 10px;*/
             margin: 0;
         }
+
+        #success{
+            background-color: #bdecb6;
+        }
     </style>
 
     <script src="https://kit.fontawesome.com/f9e5248491.js" crossorigin="anonymous"></script>
@@ -31,6 +35,8 @@
 <body>
 
     <?php
+        require_once 'database/databaseConection.php';
+
         if(isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)){
     ?>
 
@@ -99,7 +105,7 @@
                                     <div class="form-row ">
                                         <div class="form-group col-md-12">
                                             <h5 class="font-weight-light text-justify" style="color:#495057;">
-                                                Agregue Respuestas a su Pregunta
+                                                <?php echo $pregunta;?>
                                             </h5>
                                         </div>
                                     </div>
@@ -155,12 +161,12 @@
                                                 Database::disconnect();
                                             ?>
 
-                                            <?php while($registro1 = $q1->fetch(PDO::FETCH_ASSOC)){?>
+                                            <?php while($registro1 = $q1->fetch(PDO::FETCH_ASSOC)){$success = $registro1['estado'];?>
 
                                         <div class="form-group col-8 col-md-10 col-sm-8 col-lg-10 col-xl-10">
-                                            <input type="text" value="<?php echo $registro1['respuesta'];?>" class="form-control" disabled>
+                                            <input type="text" id="<?php if($success=='1'){$success = 'success'; echo $success;}?>" value="<?php echo $registro1['respuesta'];?>" class="form-control" disabled>
                                         </div>
-
+            
                                         <!-- boton editar respuesta -->
                                         <div class="form-group col-2 col-md-1 col-sm-2 col-lg-1 col-xl-1">
                                             <!-- <a class="btn btn-block btn-outline-success" data-toggle="modal" data-target="#ModaleditarResp<?php echo $registro1['idRespuesta']?>">
@@ -253,7 +259,7 @@
                                     }
                                     ?>
 
-                                </div>
+                            </div>
                                 <hr>
                             </div>
                             
@@ -261,7 +267,7 @@
 
                                 <div class="row">
                                     <div class="col-12">
-                                        <form id= "form_respuesta" action="includes/tema/checkAgrTema.php?id=<?php echo $_GET['id']?>&idpregunta=<?php echo $id_pregunta;?>&id_modulo=<?php echo $idmodulo;?>&pregunta=<?php echo $pregunta;?>" class="pt-0" method="POST">
+                                        <form id= "" action="includes/tema/checkAgrTema.php?id=<?php echo $_GET['id']?>&idpregunta=<?php echo $id_pregunta;?>&id_modulo=<?php echo $idmodulo;?>&pregunta=<?php echo $pregunta;?>" class="pt-0" method="POST">
 
                                             <div class="form-row">
                                                 <div class="form-group col-md-12">
@@ -270,8 +276,8 @@
                                                     </h5>
                                                 </div>
                                             </div>
-                                            
-                                            <?php 
+                                            <!--
+                                            <?php /*
                                                 $pdo2 = Database::connect();
                                                 $sql2 = "SELECT * FROM respuestas WHERE id_Pregunta='$id_pregunta'";
                                                 $q2 = $pdo2->prepare($sql2);
@@ -281,7 +287,7 @@
 
                                             <div class="form-row">
                                                 <div class="form-group col-8 col-xs-8 col-md-9 col-sm-8 col-lg-10 col-xl-10">
-                                                    <select class="form-control" name="respu_correcta" id="inputGroupSelect04" aria-label="Example select with button addon">
+                                                    <select class="form-control" name="respu_correcta" id="respu_correcta" aria-label="Example select with button addon">
                                                 <option value="" disabled="">Seleccionar</option>
 
                                                 <?php
@@ -289,7 +295,7 @@
                                                       if ($registro2["estado"]==1){
                                                 ?>
 
-                                                <option selected="true" value="<?php echo $registro2['idRespuesta'];?>">
+                                                <option selected value="<?php echo $registro2['idRespuesta'];?>">
                                                 <?php echo $registro2['respuesta'];?>
                                                 </option>
 
@@ -303,18 +309,39 @@
                                                         
                                                         <?php
                                                         }
-                                                        }?>
+                                                        } */ ?>
 
-                                            </select>
-                                                </div>
+                                                    </select>
+                                                -->
 
-                                                <div class="form-group col-4 col-xs-4 col-md-3 col-sm-4 col-lg-2 col-xl-2">
-                                                    <button class="btn btn-block btn-primary text-white" type="submit">Correcto
-                                            </button>
+                                            <div class="form-row">
+                                                <div class="form-group col-8 col-xs-8 col-md-9 col-sm-8 col-lg-10 col-xl-10">
+                                                    <select class="form-control" name="respu_correcta" id="respu_correcta" aria-label="Example select with button addon" required>
+                                                        <option value="">Seleccionar</option>
+
+                                                        <?php
+                                                            $pdo2 = Database::connect();
+                                                            $sql2 = "SELECT * FROM respuestas WHERE id_Pregunta='$id_pregunta'";
+                                                            $q2 = $pdo2->prepare($sql2);
+                                                            $q2->execute(array());
+                                                            Database::disconnect();
+
+                                                            while($registro2=$q2->fetch(PDO::FETCH_ASSOC)){
+
+                                                                echo '<option id='.$registro2['idRespuesta'].'>'.$registro2['respuesta'].'</option>';
+                                                            }
+                                                        ?>
+
+                                                    </select>
                                                 </div>
+                                            
+                                                    <div class="form-group col-4 col-xs-4 col-md-3 col-sm-4 col-lg-2 col-xl-2">
+                                                        <button class="btn btn-block btn-primary text-white" id="form_respuesta" type="submit">Correcto</button>
+                                                    </div>
 
                                             </div>
                                         </form>
+                                        
                                     </div>
                                 </div>
 
