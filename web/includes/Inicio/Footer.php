@@ -62,6 +62,7 @@
           <div class="col-md-4 col-sm-6 col-12">
             <ul class="social-icons">
               <li><a class="facebook" href="https://www.facebook.com/fundacioncalma.org/"><i class="fab fa-facebook-f"></i></a></li>
+              <li><a class="facebook" href="https://api.whatsapp.com/send?phone=51910571087&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20los%20cursos%20."><i class="fab fa-whatsapp-f"></i></a></li>
               <li><a class="twitter" href="https://www.youtube.com/channel/UCsEmW0is_Q-d_IMfux0pfEw"><i class="fab fa-twitter"></i></a></li>
               <li><a class="instagram" href="https://www.instagram.com/fundacioncalma/?hl=es"><i class="fab fa-instagram"></i></a></li>
               <li><a class="envelope" href="mailto:contacto@fundacioncalma.org"><i class="far fa-envelope"></i></i></a></li>
