@@ -175,7 +175,7 @@ document.addEventListener("DOMContentLoaded", () => {
       element = element.parentNode;
       if (element.matches(encontrar))
         condicion = true;
-    } while (!condicion);
+    } while (!condicion);2
     return element;
   }
   

@@ -355,7 +355,39 @@
                             <h6 class="comment-name<?php echo $autor; ?>">
                                 <spam><?php echo $registro['nombreUser']; ?></spam>
                             </h6>
-                            <span><?php echo $registro['fecha_ingreso']; ?></span>
+                            <span>
+                                <?php
+                                    $fecha1 = new DateTime($registro['fecha_ingreso']);
+                                    $fecha_actual= new DateTime("now");
+                                    $fecha_correcta= $fecha1->add(new DateInterval('PT6H'));
+                                    //se agrega 6 horas porq restar al contrario agrega, no se porque.
+                                    //sucede el error q al crear un nuevo post aparece como si fuese 
+                                    //de hace 6 horas, incluso al probar como aparece en segundos(unix epoch)
+                                    $intervalo = $fecha_correcta->diff($fecha_actual);
+
+                                    if($intervalo->y>0){
+                                        echo 'hace '. $intervalo->y . ' año'.($intervalo->y>1?'s':'');
+                                    }
+                                    else if($intervalo->m>0){
+                                        echo 'hace '.$intervalo->m . ' mes'.($intervalo->m>1?'es':'');
+                                    }
+                                    else if($intervalo->days>0){
+                                        echo 'hace '.$intervalo->d . ' dia'.($intervalo->d>1?'s':'');
+                                    }
+                                    else if($intervalo->h>=1){
+                                        echo 'hace '.$intervalo->h . ' hora'.($intervalo->h>1?'s':'');
+                                    }
+                                    else if($intervalo->i>0){
+                                        echo 'hace '.$intervalo->i . ' minuto'.($intervalo->i>1?'s':'');
+                                    }
+                                    else if($intervalo->i=0){
+                                        echo 'justo ahora';
+                                    }        
+                                    else{
+                                        echo 'justo ahora';
+                                    }//si no pones el else hay bug
+                                ?>
+                            </span>
                             <button type="button" id="modal" class="btn btn-light btn-sm ml-3" data-toggle="modal"
                                 data-target="#respuesta<?php echo $registro['idcomentario'] ?>"
                                 data-id="<?php echo '5' ?>">Responder</button>
@@ -414,7 +446,36 @@
                        <div class="comment-box">
                             <div class="comment-head">
                                 <h6 class="comment-name<?php echo $autor; ?>"><spam><?php echo $registro2['user_men'];?></spam></h6>
-                                <span><?php echo $registro2['fecha_ingreso']; ?></span>
+                                <span>
+                                    <?php 
+                                        $fecha1_2 = new DateTime($registro2['fecha_ingreso']);
+                                        $fecha_actual12= new DateTime("now");
+                                        $fecha_correcta12= $fecha1_2->add(new DateInterval('PT6H'));
+                                        $intervalo = $fecha_correcta12->diff($fecha_actual12);
+    
+                                        if($intervalo->y>0){
+                                            echo 'hace '. $intervalo->y . ' año'.($intervalo->y>1?'s':'');
+                                        }
+                                        else if($intervalo->m>0){
+                                            echo 'hace '.$intervalo->m . ' mes'.($intervalo->m>1?'es':'');
+                                        }
+                                        else if($intervalo->days>0){
+                                            echo 'hace '.$intervalo->d . ' dia'.($intervalo->d>1?'s':'');
+                                        }
+                                        else if($intervalo->h>=1){
+                                            echo 'hace '.$intervalo->h . ' hora'.($intervalo->h>1?'s':'');
+                                        }
+                                        else if($intervalo->i>0){
+                                            echo 'hace '.$intervalo->i . ' minuto'.($intervalo->i>1?'s':'');
+                                        }
+                                        else if($intervalo->i=0){
+                                            echo 'justo ahora';
+                                        }        
+                                        else{
+                                            echo 'justo ahora';
+                                        }
+                                    ?>
+                                </span>
                                 <?php
                                     if($_SESSION['privilegio']==1 || $_SESSION['iduser']==$idProfe || $registro2['iduser']==$_SESSION['iduser']){
                                 

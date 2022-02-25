@@ -135,7 +135,7 @@
                                             </div> -->
                                     </div>
 
-                                    <div class="form-row ">
+                                    <div class="form-row">
                                         <div class="form-group col-6 col-md-6 ">
                                             <button class="btn btn-block btn-add">
                                                 <i class="fas fa-plus"></i> Añadir
@@ -162,7 +162,7 @@
                                     <!-- lista - codigo php -->
                                     <!-- <div class="overflow-auto"> -->
 
-                                    <div class="scroll">
+                                    <div>
                                         <div class="form-row">
 
                                             <?php
