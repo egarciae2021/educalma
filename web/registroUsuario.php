@@ -143,7 +143,10 @@
               <select id="cmbPais" class="form-control">
                 <option value="">Seleccionar</option>
                 <option value="1">Perú</option>
-                <option value="2">Argentina</option>
+                <option value="2">Costa Rica</option>
+                <option value="3">Mexico</option>
+                <option value="4">Argentina</option>
+                <option value="5">Colombia</option>
               </select>
               <div class="invalid-feedback">
                 <span>¡Este es un campo requerido!</span>
