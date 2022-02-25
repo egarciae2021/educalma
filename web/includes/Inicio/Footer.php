@@ -12,7 +12,7 @@
           <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
             <div class="footer-widget">
               <div class="footer-menu">
-                <h4 class="footer-widget-title">Nosotros y algo mas</h4>
+                <h4 class="footer-widget-title">Nosotros </h4>
                 <ul>
                   <li>
                     <a href="https://fundacioncalma.org/%C2%BFqui%C3%A9nes-somos%3F">Qui&eacute;nes Somos</a>
@@ -31,8 +31,10 @@
             <div class="footer-widget">
               <div class="footer-menu">
                 <!-- <h4 class="footer-widget-title">Blog</h4> -->
-                <b><a href="https://fundacioncalma.org/" >Blog</a></b> 
                 <ul>
+                  <li>
+                    <a href="https://fundacioncalma.org/" >Blog</a>
+                  </li>
                   <li>
                     <a href="certi.php">Validaci&oacute;n de Certificado</a>
                   </li>
