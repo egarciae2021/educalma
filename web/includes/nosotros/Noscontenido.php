@@ -45,21 +45,21 @@
                 </div>
             </div>
             <div class="col-12 col-md-4 d-flex flex-column justify-content-between my-2">
-                <div class="btn btn-light d-flex justify-content-between align-items-center mb-3 cards-video">
+                <div class="btn d-flex justify-content-between align-items-center mb-3 cards-video">
                     <img src="./assets/images/4838540 1.png" />
                     <span class="text-cards-video" style="flex: 1; font-family: 'Inter', sans-serif; color: #56a4d0">Comunidad</span>
                 </div>
-                <div class=" btn btn-light d-flex justify-content-between align-items-center mb-3 cards-video">
+                <div class=" btn d-flex justify-content-between align-items-center mb-3 cards-video">
                     <img src="./assets/images/3655563 1.png" />
                     <span class="text-cards-video" style="flex: 1; font-family: 'Inter', sans-serif; color: #56a4d0">Aprende
                         Educalma</span>
                 </div>
-                <div class=" btn btn-light d-flex justify-content-between align-items-center mb-3 cards-video">
+                <div class=" btn d-flex justify-content-between align-items-center mb-3 cards-video">
                     <img src="./assets/images/2597143 1.png" />
                     <span class="text-cards-video" style="flex: 1; font-family: 'Inter', sans-serif; color: #56a4d0">Apoyo
                         social</span>
                 </div>
-                <div class=" btn btn-light d-flex justify-content-between align-items-center cards-video">
+                <div class=" btn d-flex justify-content-between align-items-center cards-video">
                     <img src="./assets/images/3317550 1.png" />
                     <span class="text-cards-video" style="flex: 1; font-family: 'Inter', sans-serif; color: #56a4d0">Colaboración</span>
                 </div>

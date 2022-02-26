@@ -15,10 +15,15 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
     <?php require_once "includes/Inicio/Head.php"; ?>
+    <?php //include_once 'includes/dashboard/head1.php' ?>
+    <?php //include_once 'includes/dashboard/header1.php' ?>
+    <?php// include_once 'includes/dashboard/body1.php' ?>
+    
 
    
 </head>
 <body>
+
 <?php
 // Este codigo hace validacion para que no se pueda acceder a cualquier pagina sin estar logueado
 
@@ -90,7 +95,7 @@
                         ?>
                         <div class="table-responsive">
                 
-                             <table id="example1" class="table table-borderless text-center dt-responsive text-center" cellspacing="0" width="100%">
+                             <table id="example1" class="table table-borderless text-center dt-responsive text-center" cellspacing="0" width="100%" >
                                 <thead >
                                     <tr >
                                         <th style="border-radius: 10px 0 0  10px;">Nombre</th>
@@ -117,7 +122,19 @@
                                             <td><?php echo $curso['nombreCurso']; ?></td>
                                             <td><?php echo $datoCate['nombreCategoria']; ?></td>
                                             <td><?php echo $curso['dirigido']; ?></td>
-                                            <td><img height="50px" src="data:image/*;base64,<?php echo base64_encode($curso['imagenDestacadaCurso']) ?>"></td>
+                                            <td>
+                                                <?php    
+                                                    if($curso['imagenDestacadaCurso']!=null){
+                                                ?>
+                                                        <img height="50px" src="data:image/*;base64,<?php echo base64_encode($curso['imagenDestacadaCurso']) ?>">
+                                                <?php
+                                                    }else{
+                                                ?>
+                                                        <img height="50px"  src="./assets/images/curso_educalma.png">
+                                                <?php
+                                                    }
+                                                ?>      
+                                            </td>
                                             <td><?php echo substr($curso['descripcionCurso'],0,100)."..."; ?></td>
                                             <td><?php echo $curso['costoCurso'];?></td>
                                             <td>
@@ -247,7 +264,20 @@
                                 <tbody>
                                     <tr>
                                         <td><?php echo $dato3['nombreCurso'] ?></td>
-                                        <td><img height="50px" src="data:image/*;base64,<?php echo base64_encode($dato3['imagenDestacadaCurso']) ?>"></td>
+                                        <td>
+                                        
+                                            <?php    
+                                                if($dato3['imagenDestacadaCurso']!=null){
+                                            ?>
+                                                    <img height="50px" src="data:image/*;base64,<?php echo base64_encode($dato3['imagenDestacadaCurso']) ?>">
+                                            <?php
+                                                }else{
+                                            ?>
+                                                    <img height="50px"  src="./assets/images/curso_educalma.png">
+                                            <?php
+                                                }
+                                            ?> 
+                                        </td>
                                         <td class="text-center">
 
                                            
@@ -418,7 +448,18 @@
                             </div>
                             <div id="imagen" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
                                 <div class="card-body">
-                                    <img height="50px" src="data:image/*;base64,<?php echo base64_encode($dato3['imagenDestacadaCurso']) ?>">
+                                    <?php    
+                                        if($dato3['imagenDestacadaCurso']!=null){
+                                    ?>
+                                            <img height="50px" src="data:image/*;base64,<?php echo base64_encode($dato3['imagenDestacadaCurso']) ?>">
+                                    <?php
+                                        }else{
+                                    ?>
+                                            <img height="50px"  src="./assets/images/curso_educalma.png">
+                                    <?php
+                                        }
+                                    ?> 
+                                    
                                 </div>
                             </div>
                         </div>

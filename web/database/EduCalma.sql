@@ -224,6 +224,18 @@ CREATE TABLE transaccion_paypal (
     email VARCHAR(100) NOT NULL , 
     idClientPay VARCHAR(20) NOT NULL 
 );
+
+--Tabla de transacciones de pago Visa
+CREATE TABLE transacciones_payme( 
+    id INT(11) auto_increment primary key,  
+    idTransac VARCHAR(20) NOT NULL , 
+    idUsuario INT(11) NOT NULL,
+    idCurso INT(10) NOT NULL,
+    monto DOUBLE NOT NULL , 
+    status VARCHAR(15) NOT NULL , 
+    fecha DATE , 
+    correo VARCHAR(100) NOT NULL 
+);
 -- Tabla Temporal de empresas
 CREATE TABLE temp ( 
     cod_temp INT(11) auto_increment primary key,  
@@ -237,6 +249,17 @@ CREATE TABLE tipoDocumentoIdentidad (
 	nombre_tipoDoc varchar(250) not null,
 	longitud_digitos int(20) not null
 );
+
+-- Tabla Factura
+CREATE TABLE factura (
+  idFactura int auto_increment primary key,
+  codigo varchar(24) NOT NULL,
+  descripcion varchar(160) NOT NULL,
+  email varchar(90) NOT NULL,
+  Monto double NOT NULL,
+  FormaPago varchar(70) NOT NULL
+);
+
 
 INSERT INTO tipoDocumentoIdentidad VALUES ('1', 'DNI', 8);
 INSERT INTO tipoDocumentoIdentidad VALUES ('2', 'PASAPORTE', 11);
@@ -288,7 +311,7 @@ CREATE PROCEDURE PROC_NUEVA_SOLICITUD (
 	IF repeat_data <> 0 THEN
 		SET type_resp := 'warning';
 		SET title_resp := 'DATO REPETIDO';
-		SET text_resp := 'YA SE ENCUENTRA REGISTRADO UNA SOLICITUD CON SU CORREO CORPORATIVO. MUY PRONTO ESTAREMOS EN COMUNICACIÓN CON USTED, GRACIAS.';
+		SET text_resp := 'Solicitud denegada correo repetido. Muy pronto estaremos en comunicación con usted, Gracias.';
 		SET refrest_resp := 1;
 	ELSE
 	-- INSERCION DE SOLICITUD
@@ -311,7 +334,7 @@ CREATE PROCEDURE PROC_NUEVA_SOLICITUD (
 
 		SET type_resp := 'success';
 		SET title_resp := 'REGISTRO EXITOSO';
-		SET text_resp := 'SU SOLICITUD HA SIDO INGRESADO CON ÉXITO, MUY PRONTO ESTAREMOS EN COMUNICACIÓN CON USTED, GRACIAS.';
+		SET text_resp := 'Su solicitud ha sido ingresado con éxito, muy pronto estaremos en comunicación con usted, Gracias.';
 		SET refrest_resp := 1;
 	END IF;
 

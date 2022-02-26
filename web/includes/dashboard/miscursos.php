@@ -85,25 +85,54 @@
                             $q3->execute(array());
                             $dato3 = $q3->fetch(PDO::FETCH_ASSOC);
 
-                            echo '
-                            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3">
-                            <div class="card">
-                            <div class="container-card-image">
-                            <img src="data:image/*;base64,' . base64_encode($dato3['imagenDestacadaCurso']) . '" alt="foto_curso" >
-                            </div>
-                            <div class="container-card-title px-2">
-                            ' . $dato3['nombreCurso'] . '
-                            </div>
-                            <div class="container-card-description px-2">
-                            ' . substr($dato3['descripcionCurso'],0,90)."...". '
-                            </div>
-                            <div class="container-card-link px-2">
-                            <a href="curso.php?id=' . $cursoID . '">Ver más -></a>
-                            </div>
-                            </div>
-                            </div>
+                             
+                            if($dato3['imagenDestacadaCurso']!=null){
+                        
+                                echo '
+                                    <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3">
+                                    <div class="card">
+                                    <div class="container-card-image">
+                                    <img src="data:image/*;base64,' . base64_encode($dato3['imagenDestacadaCurso']) . '" alt="foto_curso" >
+                                    </div>
+                                    <div class="container-card-title px-2">
+                                    ' . $dato3['nombreCurso'] . '
+                                    </div>
+                                    <div class="container-card-description px-2">
+                                    ' . substr($dato3['descripcionCurso'],0,90)."...". '
+                                    </div>
+                                    <div class="container-card-link px-2">
+                                    <a href="curso.php?id=' . $cursoID . '">Ver más -></a>
+                                    </div>
+                                    </div>
+                                    </div>
+                                    
+                                    ';
+                        
+                            }else{
+                        
+                                echo '
+                                    <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3">
+                                    <div class="card">
+                                    <div class="container-card-image">
+                                    <img src="./assets/images/curso_educalma.png" alt="foto_curso" >
+                                    </div>
+                                    <div class="container-card-title px-2">
+                                    ' . $dato3['nombreCurso'] . '
+                                    </div>
+                                    <div class="container-card-description px-2">
+                                    ' . substr($dato3['descripcionCurso'],0,90)."...". '
+                                    </div>
+                                    <div class="container-card-link px-2">
+                                    <a href="curso.php?id=' . $cursoID . '">Ver más -></a>
+                                    </div>
+                                    </div>
+                                    </div>
+                                    
+                                    ';
+                        
+                            }
+
                             
-                            ';
 
                         }
                     }

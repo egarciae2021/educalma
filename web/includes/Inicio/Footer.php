@@ -12,7 +12,7 @@
           <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
             <div class="footer-widget">
               <div class="footer-menu">
-                <h4 class="footer-widget-title">Nosotros y algo mas</h4>
+                <h4 class="footer-widget-title">Nosotros</h4>
                 <ul>
                   <li>
                     <a href="https://fundacioncalma.org/%C2%BFqui%C3%A9nes-somos%3F">Qui&eacute;nes Somos</a>
@@ -30,13 +30,17 @@
           <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
             <div class="footer-widget">
               <div class="footer-menu">
-                <h4 class="footer-widget-title">Blog</h4>
+                <!-- <h4 class="footer-widget-title">Blog</h4> -->
                 <ul>
+                  <li>
+                    <a href="https://fundacioncalma.org/" >Blog</a>
+                  </li>
                   <li>
                     <a href="certi.php">Validaci&oacute;n de Certificado</a>
                   </li>
                   <li>
-                    <a href="recursos1.php">Presentaci&oacute;n</a>
+                    <!-- <a href="recursos1.php">Presentaci&oacute;n</a> -->
+                    <a href="recursos1.php">Comparte tu curso</a>
                   </li>
                 </ul>
               </div>
@@ -62,6 +66,7 @@
               <li><a class="facebook" href="https://www.facebook.com/fundacioncalma.org/"><i class="fab fa-facebook-f"></i></a></li>
               <li><a class="twitter" href="https://www.youtube.com/channel/UCsEmW0is_Q-d_IMfux0pfEw"><i class="fab fa-twitter"></i></a></li>
               <li><a class="instagram" href="https://www.instagram.com/fundacioncalma/?hl=es"><i class="fab fa-instagram"></i></a></li>
+              <li><a class="whatsapp" href="https://api.whatsapp.com/send?phone=51910571087&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20los%20cursos%20."><i class="fab fa-whatsapp"></i></a></li>
               <li><a class="envelope" href="mailto:contacto@fundacioncalma.org"><i class="far fa-envelope"></i></i></a></li>
             </ul>
           </div>

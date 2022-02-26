@@ -85,8 +85,8 @@ if(isset($_POST['idTemas'])){
     ';
 }
 
-
-if(isset($_POST['respu_correcta'])){
+$tipo = true;
+if(isset($_POST['respu_correcta']) && $tipo){
     $idpregunta=$_GET['idpregunta'];
     $id_modulo=$_GET['id_modulo'];
     $pregunta=$_GET['pregunta'];
@@ -106,14 +106,14 @@ if(isset($_POST['respu_correcta'])){
     Database::disconnect();
 
     $pdo3 = Database::connect();  
-    $verif3=$pdo3->prepare("UPDATE respuestas SET estado='1' WHERE respuesta='$registro2[respuesta]'");
+    $verif3=$pdo3->prepare("UPDATE respuestas SET estado='1' WHERE respuesta='$respuesta'");
     $verif3->execute(array());
     Database::disconnect();
 
-    echo'
+    echo' '.$respuesta.'
         <script>
             // alert ("respuesta correcta -- escogida");
-            window.location = "../../Form_respue_cuestionario.php?id='.$_GET['id'].'&id_pregunta='.$idpregunta.'&id_modulo='.$id_modulo.'&pregunta='.$pregunta.'";
+             window.location = "../../Form_respue_cuestionario.php?id='.$_GET['id'].'&id_pregunta='.$idpregunta.'&id_modulo='.$id_modulo.'&pregunta='.$pregunta.'";
         </script>
     ';
 }

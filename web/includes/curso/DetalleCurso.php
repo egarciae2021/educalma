@@ -63,7 +63,7 @@
         if ($cantidad_respuestas_validas <= 9) {
             $minimo_respuestas_para_aprobar = $cantidad_respuestas_validas;
         } else {
-            $minimo_respuestas_para_aprobar = $cantidad_respuestas_validas - 2;
+            $minimo_respuestas_para_aprobar = $cantidad_respuestas_validas; - 2;
         }
 
         //Nombre del modulo
@@ -94,7 +94,18 @@
                         <!-- <br><br><br><br> -->
                         <div class="card ">
                             <div class="content-img">
-                                <img class="card-img-top1" src="data:image/*;base64,<?php echo base64_encode($dato4['imagenDestacadaCurso']) ?>" alt="Card image">
+                                <?php    
+                                    if($dato4['imagenDestacadaCurso']!=null){
+                                ?>
+                                        <img class="card-img-top1" src="data:image/*;base64,<?php echo base64_encode($dato4['imagenDestacadaCurso']) ?>" alt="Card image">
+                                <?php
+                                    }else{
+                                ?>
+                                        <img class="card-img-top1"  src="./assets/images/curso_educalma.png">
+                                <?php
+                                    }
+                                ?>
+                                
                             </div>
 
 
@@ -149,7 +160,7 @@
 
                                     <div>
                                         <i class="fas fa-graduation-cap text-center" style="width: 1.5rem;"></i>
-                                        <span class="ml-3">La nota mínima aprobatoria es <?php echo $minimo_respuestas_para_aprobar; ?></span>
+                                        <span class="ml-3">La nota mínima aprobatoria es 14<?php //echo $minimo_respuestas_para_aprobar; ?></span>
                                     </div>
 
                                     <div>
