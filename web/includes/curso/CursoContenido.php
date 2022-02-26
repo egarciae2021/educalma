@@ -400,7 +400,8 @@
                                 ';
                             }
                             ?>
-                            <i style="color:white;" class="fa fa-reply"></i>
+                            <a class="fb-xfbml-parse-ignore" target="_blank" href="http://www.facebook.com/sharer.php?s=100&p[url]=http://educalma.fundacioncalma.org/detallecurso.php?id=<?php echo $idCurso;?>&p[title]=prueba&p[summary]=descripcion_contenido&display=page" 
+                                onclick="window.open(this.href, this.target, 'width=300,height=400')"><i style="color:white;" class="fa fa-reply"></i></a>
                             <i style="color:white;" class="fa fa-heart"></i>
                         </div>
                         <div class="comment-content">
