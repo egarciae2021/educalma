@@ -1,0 +1,2598 @@
+[33mcommit 33fbfdf764ce543b461420f5e9bbe4fedcdc64c1[m[33m ([m[1;36mHEAD -> [m[1;32mtesting[m[33m)[m
+Author: admi <jeanzz.1910@gmail.com>
+Date:   Sat Feb 26 12:22:15 2022 -0500
+
+    listado de empresas- reinol
+
+[33mcommit e86dfb433a2e58574d711d4cf8c8e59ea7a518f5[m
+Merge: ee64749 9a797e0
+Author: admi <jeanzz.1910@gmail.com>
+Date:   Fri Feb 25 06:24:26 2022 -0500
+
+    Merge branch 'testing' of gitlab.com:fundacion_calma/test-educalma into testing
+
+[33mcommit 9a797e01532fd5a9cf97e110eccee867d1170d32[m
+Author: unknown <gonzalocherre@gmail.com>
+Date:   Thu Feb 24 23:43:50 2022 -0500
+
+    agrege item wsp,Gonzalo Cherre
+
+[33mcommit ee647497e89aec0a14c997db0680d201f21c763e[m
+Author: admi <jeanzz.1910@gmail.com>
+Date:   Thu Feb 24 22:51:48 2022 -0500
+
+    avance - Reinol
+
+[33mcommit 220f8d5249a0e18b924e613bcba5c9648626d864[m
+Author: unknown <gonzalocherre@gmail.com>
+Date:   Thu Feb 24 17:38:00 2022 -0500
+
+    agrege item wsp,Gonzalo Cherre
+
+[33mcommit 7d103ac7743be97de6f5cd5c26de421151cef9c0[m
+Author: AronDeLaCruz <aadelacruzg1@unac.edu.pe>
+Date:   Wed Feb 23 18:03:46 2022 -0500
+
+    se ha agregado codigo para mostrar las fechas de los comentarios en un mejor formato,aron de la cruz
+
+[33mcommit 6e8005072379fc75927d329c0bd45e5e1803c819[m
+Author: Pablo Sergio Loyola Tantaruna <pabloloyolat@gmail.com>
+Date:   Wed Feb 23 17:00:20 2022 -0500
+
+    .
+
+[33mcommit d58769e466d5a6579e3aadf6c4e99db65f7eded3[m
+Merge: cd732cb c29e7ba
+Author: egarciae2021 <73246932@certus.edu.pe>
+Date:   Wed Feb 23 12:08:55 2022 -0500
+
+    Merge branch 'testing' of gitlab.com:fundacion_calma/test-educalma into testing
+
+[33mcommit cd732cb2e6fba43a3c6c6149e017c9439eaf0f47[m
+Author: egarciae2021 <73246932@certus.edu.pe>
+Date:   Wed Feb 23 12:07:31 2022 -0500
+
+    Modificacion Footer ,Edgar
+
+[33mcommit c29e7ba8ba0f588bc9874600f8f01ede302bda21[m
+Author: Christian Carranza <carranzachristian61@gmail.com>
+Date:   Wed Feb 23 12:04:46 2022 -0500
+
+    se aumento tabla factura en la bd
+
+[33mcommit 05cd71bf5a8c2c0f8f5fdfdfeba6f8ae88183cf1[m
+Merge: 0513a20 ea0b15e
+Author: Jorge Cayetano <cayetano.laboral@gmail.com>
+Date:   Tue Feb 22 21:16:01 2022 -0500
+
+    Pull de repositorio para entregar funcion que realize, Jorge cayetano,
+    g the commit.
+
+[33mcommit 0513a20dfb25f847639ccf21f23da68fec7fcba0[m
+Author: Jorge Cayetano <cayetano.laboral@gmail.com>
+Date:   Tue Feb 22 21:14:33 2022 -0500
+
+    Ahora se muestran las respuestas correctas en cada modulo y preguntas, Jorge Cayetano.
+
+[33mcommit ea0b15ec97d4cafad2a80378441dec43c7db90d1[m
+Author: JoseChacmana <josechacmana2014@gmail.com>
+Date:   Tue Feb 22 18:37:59 2022 -0500
+
+    Cambios en registrar empresa, menu y modulos - Jose C
+
+[33mcommit a40ce94e94c3ff3ead89bbc67f44df8b06672ea8[m
+Author: Christian Carranza <carranzachristian61@gmail.com>
+Date:   Tue Feb 22 12:28:01 2022 -0500
+
+    corregir registrar usuario
+
+[33mcommit 4594286771dcf684b0282b73bb440eab8c02ca8f[m
+Author: Christian Carranza <carranzachristian61@gmail.com>
+Date:   Mon Feb 21 23:04:27 2022 -0500
+
+    imagen por defecto de curso
+
+[33mcommit d67622d0525eb77cde1013990734fe131a1bf2c2[m
+Author: Pablo Sergio Loyola Tantaruna <pabloloyolat@gmail.com>
+Date:   Mon Feb 21 19:49:36 2022 -0500
+
+    .
+
+[33mcommit 1b6799554d480cb36eaad27aa5608424c9206966[m
+Author: Pablo Sergio Loyola Tantaruna <pabloloyolat@gmail.com>
+Date:   Mon Feb 21 19:30:47 2022 -0500
+
+    .
+
+[33mcommit ff2d5eb81b6b99cf88073a417a81d957e43bae64[m
+Author: JoseChacmana <josechacmana2014@gmail.com>
+Date:   Sat Feb 19 18:11:11 2022 -0500
+
+    Alinear formulario en detalleCurso.php Jose C
+
+[33mcommit 0cb4f24ae532257d07018d2862490e9c0b3ff741[m
+Author: JoseChacmana <josechacmana2014@gmail.com>
+Date:   Sat Feb 19 18:02:56 2022 -0500
+
+    Cambios en estilo de pago con tarjeta - Jose C
+
+[33mcommit d139ce96b9f3822112967bc0452db7f7cefe1034[m
+Author: admi <jeanzz.1910@gmail.com>
+Date:   Sat Feb 19 16:12:27 2022 -0500
+
+    loader- reinol
+
+[33mcommit 541fbd3642c7652d76633faf90ecec40ac3d1b7d[m
+Author: Carlos Sotelo <cmsotelos@ucvvirtual.edu.pe>
+Date:   Fri Feb 18 19:09:52 2022 -0500
+
+    Desahilitar campos en Pay.php
+
+[33mcommit c3f6e58200c0e324efd558c3bfa1cce1b874e0e7[m
+Author: AronDeLaCruz <aadelacruzg1@unac.edu.pe>
+Date:   Fri Feb 18 10:05:19 2022 -0500
+
+    se agregaron redireccionamientos y se movio el icono de interrogante en la plat. de pagos, aron de la cruz
+
+[33mcommit 9317e19faf3b0b6afe367c99ad24d8f2efdb8546[m
+Merge: e9c4883 824fd3f
+Author: JoseChacmana <josechacmana2014@gmail.com>
+Date:   Thu Feb 17 16:10:06 2022 -0500
+
+    Implementacion de formulario pagoVisa - Jose C
+
+[33mcommit e9c4883b1dbffad14fd2895098ab1252a7329539[m
+Author: JoseChacmana <josechacmana2014@gmail.com>
+Date:   Thu Feb 17 16:04:51 2022 -0500
+
+    Creacion de formulario pagoVisa.php - Jose C
+
+[33mcommit 824fd3f25352e4b8285f05a2f59c575e960d1b87[m
+Author: gfsp2001 <gfsp2001@hotmail.com>
+Date:   Thu Feb 17 13:05:48 2022 -0500
+
+    .
+
+[33mcommit 89dc5ebddec593d18d49fb52ae2d3b16b0fc3ae1[m
+Author: Carlos Sotelo <cmsotelos@ucvvirtual.edu.pe>
+Date:   Wed Feb 16 12:23:47 2022 -0500
+
+    Devolucion automatica en Pay.php
+
+[33mcommit 2ddaf330ecc9393cb662c7cd0686ff8b8a2118eb[m
+Author: Christian Carranza <carranzachristian61@gmail.com>
+Date:   Tue Feb 15 10:54:21 2022 -0500
+
+    foro
+
+[33mcommit 53aa01be5d6913a32cad8667df76e5e15869528b[m
+Author: Pablo Sergio Loyola Tantaruna <pabloloyolat@gmail.com>
+Date:   Mon Feb 14 21:53:29 2022 -0500
+
+    .
+
+[33mcommit 1fe9cb58f1d4251f23aacc778914a97b41155341[m
+Author: Christian Carranza <carranzachristian61@gmail.com>
+Date:   Mon Feb 14 21:08:05 2022 -0500
+
+    tipo numerico en tamño de empresa
+
+[33mcommit e3fa05926d6e1b0396901f36d90218ffe3f16992[m
+Author: RenLaut <reinolleonlaurente@gmail.com>
+Date:   Sun Feb 13 21:13:26 2022 +0000
+
+    Update web/Cursoiniciar.php
+
+[33mcommit fffa93d4cb6626386dcb5eca92a5425a1bba0ac0[m
+Author: RenLaut <reinolleonlaurente@gmail.com>
+Date:   Sun Feb 13 21:01:45 2022 +0000
+
+    Update web/loco.php
+
+[33mcommit cb972ff1842ad291a55da745d13ab009ec5159bd[m
+Author: Pablo Sergio Loyola Tantaruna <pabloloyolat@gmail.com>
+Date:   Fri Feb 11 19:42:52 2022 -0500
+
+    .
+
+[33mcommit f4c8d1eba29d1d84afdbb3b62dcabb65e426b29a[m
+Author: JoseChacmana <josechacmana2014@gmail.com>
+Date:   Thu Feb 10 20:36:01 2022 -0500
+
+    Implementacion de libreria para formato pdf
+
+[33mcommit e2246e1c8dbe1fe558735e090b77c7154e071ccb[m
+Author: Jorge Cayetano <cayetano.laboral@gmail.com>
+Date:   Tue Feb 8 13:57:58 2022 -0500
+
+    Arreglar errores de dashboard de la vista de cursos en cuenta administrador, Jorge Cayetano.
+
+[33mcommit 41c3374f7178843a0b197ad6f68faf35c15e096f[m
+Author: Carlos Sotelo <cmsotelos@ucvvirtual.edu.pe>
+Date:   Mon Feb 7 22:01:17 2022 -0500
+
+    Mensaje de Logueo en Detalle Curso
+
+[33mcommit ba67490e414cbf1739a260cdd87a008ce20ff203[m
+Author: Carlos Sotelo <cmsotelos@ucvvirtual.edu.pe>
+Date:   Mon Feb 7 19:20:37 2022 -0500
+
+    .
+
+[33mcommit 13c47e6504bbaa140c73af2fb8d40bbe853560f5[m
+Author: AronDeLaCruz <aadelacruzg1@unac.edu.pe>
+Date:   Mon Feb 7 18:41:14 2022 -0500
+
+    optimizar el tamaño de la descripcion en la pestaña usuario,aron de la cruz
+
+[33mcommit d3eb718fa4cc83857c85b00e0e1bf2fe5ba1b511[m
+Merge: aa13eae d2c304f
+Author: Jorge Cayetano <cayetano.laboral@gmail.com>
+Date:   Mon Feb 7 16:39:19 2022 -0500
+
+    Arreglé la consulta que impedia ver el listado de cursos en información de cursos, Jorge Cayetano.
+
+[33mcommit aa13eae3659c5db654aa37fe83545ef33d43e413[m
+Author: Jorge Cayetano <cayetano.laboral@gmail.com>
+Date:   Mon Feb 7 16:25:28 2022 -0500
+
+    Arreglé la consulta que impedia ver el listado de cursos en información de cursos, Jorge Cayetano.
+
+[33mcommit d2c304ffba814576566a38ccf670874a6dd89621[m
+Author: Christian Carranza <carranzachristian61@gmail.com>
+Date:   Mon Feb 7 15:40:43 2022 -0500
+
+    enviar correo de confirmacion de compra
+
+[33mcommit 93906090cc8b3e11c59331ce7208cee4ec4e74cd[m
+Author: JoseChacmana <josechacmana2014@gmail.com>
+Date:   Mon Feb 7 09:08:01 2022 -0500
+
+    Modificacion de estiloso en cursos y dashboard por empresas
+
+[33mcommit 323ac38b0f040498588372c22d0ad260697b81c6[m
+Author: Pablo Sergio Loyola Tantaruna <pabloloyolat@gmail.com>
+Date:   Sat Feb 5 16:51:20 2022 -0500
+
+    .
+
+[33mcommit ff9e7d330bbb1ca63befba136cca13c4f63e31b4[m
+Author: gfsp2001 <gfsp2001@hotmail.com>
+Date:   Fri Feb 4 20:01:27 2022 -0500
+
+    .
+
+[33mcommit 7b02809c09f49b2af988703c1909597e1faeaa18[m
+Author: JoseChacmana <josechacmana2014@gmail.com>
+Date:   Thu Feb 3 15:55:26 2022 -0500
+
+    cambios realizados en certificación de curso y foro, Jose C
+
+[33mcommit 9fcdc88477fcc0ecd107455fc0ef8ca0a84a6896[m
+Merge: 6567297 6f61748
+Author: Christian Carranza <carranzachristian61@gmail.com>
+Date:   Wed Feb 2 09:44:26 2022 -0500
+
+    Merge branch 'testing' of gitlab.com:fundacion_calma/test-educalma into testing
+
+[33mcommit 656729747d99f868cbdde3e918b4e5b21ffa2b7b[m
+Author: Christian Carranza <carranzachristian61@gmail.com>
+Date:   Wed Feb 2 09:44:13 2022 -0500
+
+    puntaje
+
+[33mcommit 6f61748f74b8718bdfa53d004b479483d7fd3f3e[m
+Author: Carlos Sotelo <cmsotelos@ucvvirtual.edu.pe>
+Date:   Tue Feb 1 18:08:52 2022 -0500
+
+    Alerta de Seleccion en Respuesta Correcta
+
+[33mcommit 4280ac258147232073034635f1d8eb65a55cf036[m
+Author: Christian Carranza <carranzachristian61@gmail.com>
+Date:   Tue Feb 1 17:09:22 2022 -0500
+
+    cuestionario
+
+[33mcommit ef6a95652664fd0d38b08e027df18bae7c755052[m
+Author: Christian Carranza <carranzachristian61@gmail.com>
+Date:   Tue Feb 1 13:00:47 2022 -0500
+
+    .
+
+[33mcommit e6e7fb19b98b50c863bd7a13a93194df99750a2d[m
+Author: Christian Carranza <carranzachristian61@gmail.com>
+Date:   Tue Feb 1 12:59:53 2022 -0500
+
+    validacion de terminar cuestionario
+
+[33mcommit 9af38e55cc0a62826e90b766a2a5377beb376344[m
+Author: gfsp2001 <gfsp2001@hotmail.com>
+Date:   Tue Feb 1 12:10:33 2022 -0500
+
+    acordion arreglado 2da parte, Giancarlo Santi
+
+[33mcommit 18631c0875c181661a7b405c992cd618d65892b9[m
+Author: gfsp2001 <gfsp2001@hotmail.com>
+Date:   Tue Feb 1 12:06:12 2022 -0500
+
+    acordion arreglado, Giancarlo Santi
+
+[33mcommit f33da629a0867ef2987bc78f955fd597601d689a[m
+Author: gfsp2001 <gfsp2001@hotmail.com>
+Date:   Tue Feb 1 10:55:08 2022 -0500
+
+    .
+
+[33mcommit 2c9a38988e22200450be04c236bb71e0efc8f67d[m
+Merge: f8af291 05867be
+Author: gfsp2001 <gfsp2001@hotmail.com>
+Date:   Tue Feb 1 10:10:16 2022 -0500
+
+    .Merge branch 'testing' of gitlab.com:fundacion_calma/test-educalma into testing
+
+[33mcommit f8af29192e92fec38c295aa2f6a3fb188a901fbc[m
+Author: gfsp2001 <gfsp2001@hotmail.com>
+Date:   Tue Feb 1 10:10:01 2022 -0500
+
+    .
+
+[33mcommit 05867be1ef6c71e4cceb5d814f71016d2ab0fe26[m
+Author: Pablo Sergio Loyola Tantaruna <pabloloyolat@gmail.com>
+Date:   Tue Feb 1 09:25:39 2022 -0500
+
+    .
+
+[33mcommit 8caeff303369dc92edd06432bf22875ac7adc1e4[m
+Author: gfsp2001 <gfsp2001@hotmail.com>
+Date:   Tue Feb 1 08:00:47 2022 -0500
+
+    .
+
+[33mcommit 802a4b7d6fb50bf4c329db22f370686bb82e6a66[m
+Author: LeidyCeron <leidycersan@gmail.com>
+Date:   Tue Feb 1 01:53:49 2022 -0500
+
+    nosotros, leidy
+
+[33mcommit 218ff2a4fd683d9cfe3aa75e432ea4f271e9d17a[m
+Author: sheyla2112 <sheylinrey21@gmail.com>
+Date:   Mon Jan 31 14:36:13 2022 -0500
+
+    .
+
+[33mcommit 541eb09c5ee53bde57e6691f4e30094f1086449b[m
+Author: gfsp2001 <gfsp2001@hotmail.com>
+Date:   Mon Jan 31 14:06:28 2022 -0500
+
+    .
+
+[33mcommit ba9d123024b098d12824da7527a6a6a24859c548[m
+Author: gfsp2001 <gfsp2001@hotmail.com>
+Date:   Mon Jan 31 14:03:30 2022 -0500
+
+    xd
+
+[33mcommit b0aacde97e4c3fb1d58654e7a6ec0557d3748339[m
+Author: gfsp2001 <gfsp2001@hotmail.com>
+Date:   Mon Jan 31 13:56:57 2022 -0500
+
+    .
+
+[33mcommit 6e0801df163f833e46115c797a2d04a68a31fbe0[m
+Author: gfsp2001 <gfsp2001@hotmail.com>
+Date:   Mon Jan 31 13:26:05 2022 -0500
+
+    curseEmp.php modificado
+
+[33mcommit 76dd33227c9fe6c86298011c53010bf48c040c1b[m
+Author: LeidyCeron <leidycersan@gmail.com>
+Date:   Sun Jan 30 20:39:05 2022 -0500
+
+    donarcurso, Leidy
+
+[33mcommit 95b6d834762d90fe7482acd132bc35526bcb3766[m
+Author: Pablo Sergio Loyola Tantaruna <pabloloyolat@gmail.com>
+Date:   Fri Jan 28 19:32:54 2022 -0500
+
+    .
+
+[33mcommit 9827d85119dc016093199edb2a727f6c0c057a19[m
+Author: renlaut <reinolleonlaurente@gmail.com>
+Date:   Fri Jan 28 16:57:43 2022 -0500
+
+    Correccion de lineas de codigo comentadas - Reinol Leon
+
+[33mcommit c9bf27f6eb4c804bb2385958dcd0b7e90591fa66[m
+Author: renlaut <reinolleonlaurente@gmail.com>
+Date:   Fri Jan 28 16:43:34 2022 -0500
+
+    Quitar el page loader - Reinol Leon
+
+[33mcommit 8b19ccfc76a356e88b7526ea99cf9d59b36aa4f6[m
+Author: renlaut <reinolleonlaurente@gmail.com>
+Date:   Thu Jan 27 02:06:44 2022 -0500
+
+    Estilo para los botones - Reinol
+
+[33mcommit 1b121cb32371d4d9a258f7ebfb44159d29c0ad19[m
+Author: renlaut <reinolleonlaurente@gmail.com>
+Date:   Thu Jan 27 02:00:05 2022 -0500
+
+    cambios al estilo de la  tabla - Reinol
+
+[33mcommit acccd5b18d6c6d3ca7270e6b7aee7582ace25b5b[m
+Author: renlaut <reinolleonlaurente@gmail.com>
+Date:   Thu Jan 27 01:09:47 2022 -0500
+
+    Cambios en el stilo tabla
+
+[33mcommit e75e5cee87c506c9c6bae019b4807d690c26f94a[m
+Author: Pablo Sergio Loyola Tantaruna <pabloloyolat@gmail.com>
+Date:   Wed Jan 26 21:36:45 2022 -0500
+
+    .
+
+[33mcommit 80931efe7366dcfe1024567fbf3c0e67e135a66b[m
+Author: Christian Carranza <carranzachristian61@gmail.com>
+Date:   Tue Jan 25 11:56:13 2022 -0500
+
+    valor por defecto del sexo para las empresas
+
+[33mcommit e175aee8d9110915c4c773745e432e2b74af7666[m
+Author: Christian Carranza <carranzachristian61@gmail.com>
+Date:   Tue Jan 25 10:53:46 2022 -0500
+
+    subir foto de usuario
+
+[33mcommit 607191910c0c277244ac90ababa7eae082ab6426[m
+Author: LeidyCeron <leidycersan@gmail.com>
+Date:   Mon Jan 24 22:41:11 2022 -0500
+
+    nosotros banner,Leidy
+
+[33mcommit c9a6a5a093fcb6fa497f9f75f3db7b4a6e0e9edf[m
+Author: gfsp2001 <gfsp2001@hotmail.com>
+Date:   Mon Jan 24 17:27:49 2022 -0500
+
+    .
+
+[33mcommit cad05a6967e94fa45fc3f3bab293531a24f22e68[m
+Author: renlaut <reinolleonlaurente@gmail.com>
+Date:   Sat Jan 22 21:33:11 2022 -0500
+
+    avance en index - Leon
+
+[33mcommit f3908b62e4f70058bcc412d36d0f094fa73b42ec[m
+Author: Pablo Sergio Loyola Tantaruna <pabloloyolat@gmail.com>
+Date:   Fri Jan 21 22:25:42 2022 -0500
+
+    .
+
+[33mcommit 7d53187a831d6856e6a0a87ad968ff0635be35af[m
+Author: Christian Carranza <carranzachristian61@gmail.com>
+Date:   Fri Jan 21 18:49:12 2022 -0500
+
+    descripcion de temas
+
+[33mcommit d94b735c638e32e27b078058186c14a621a1f1a3[m
+Author: gfsp2001 <gfsp2001@hotmail.com>
+Date:   Fri Jan 21 18:20:30 2022 -0500
+
+    .
+
+[33mcommit 2e65f71c9250b42e3f731f6a644d25d4f1a18496[m
+Author: LeidyCeron <leidycersan@gmail.com>
+Date:   Fri Jan 21 00:31:31 2022 -0500
+
+    dashboard perfil, Leidy
+
+[33mcommit 15980f179dc6fb72f95d4cec5f2e13ac23d15fd8[m
+Author: renlaut <reinolleonlaurente@gmail.com>
+Date:   Thu Jan 20 19:23:06 2022 -0500
+
+    comentario prueba - Reinol Leon
+
+[33mcommit ad708bdb7348e96e0714a4034b1f26650526b3de[m
+Author: Carlos Sotelo <cmsotelos@ucvvirtual.edu.pe>
+Date:   Thu Jan 20 12:29:52 2022 -0500
+
+    Tabla Empresas en User-sidebar, Carlos
+
+[33mcommit 6b23cb2473ae04ee5ea38473a6d7669a53bd6820[m
+Author: Christian Carranza <carranzachristian61@gmail.com>
+Date:   Thu Jan 20 08:41:42 2022 -0500
+
+    paginador de categorias
+
+[33mcommit cae87ec75c7f725ead7a04a8ed3a07dd828e09d1[m
+Author: Pablo Sergio Loyola Tantaruna <pabloloyolat@gmail.com>
+Date:   Wed Jan 19 23:07:58 2022 -0500
+
+    .
+
+[33mcommit 1d975cfb69b3ff317bfde2cc0258a9e4955e2d37[m
+Author: Pablo Sergio Loyola Tantaruna <pabloloyolat@gmail.com>
+Date:   Wed Jan 19 21:50:02 2022 -0500
+
+    .
+
+[33mcommit 6238bbee53b0cb87ca99f79e2184138cba9f293b[m
+Author: Pablo Sergio Loyola Tantaruna <pabloloyolat@gmail.com>
+Date:   Wed Jan 19 21:44:01 2022 -0500
+
+    .
+
+[33mcommit 86853354d0f031daf4d00df738b290454fb2c26a[m
+Author: sheyla2112 <sheylinrey21@gmail.com>
+Date:   Wed Jan 19 19:20:21 2022 -0500
+
+    ajuste de php css
+
+[33mcommit c96c67d19ff891cf026337925447bde65740bb29[m
+Author: sheyla2112 <sheylinrey21@gmail.com>
+Date:   Wed Jan 19 17:52:46 2022 -0500
+
+    ajuste
+
+[33mcommit 373c8bd3249d7db59faaa1184644b89ef906cf56[m
+Author: sheyla2112 <sheylinrey21@gmail.com>
+Date:   Wed Jan 19 17:39:32 2022 -0500
+
+    correccion de la primera tabla de inicio de dashboard, SR
+
+[33mcommit a74d5646235d545beffd7c1a9f2099f7d0a114e2[m
+Author: Christian Carranza <carranzachristian61@gmail.com>
+Date:   Tue Jan 18 08:56:25 2022 -0500
+
+    categoria
+
+[33mcommit 5b721d24f43e04b32b8e51d798f6d66f4dbfd1fa[m
+Merge: 3cf21f2 87af4fa
+Author: sheyla2112 <sheylinrey21@gmail.com>
+Date:   Mon Jan 17 22:57:25 2022 -0500
+
+    Merge branch 'testing' of gitlab.com:fundacion_calma/test-educalma into testing
+
+[33mcommit 3cf21f276011fdd7eb61a974866aedcb94a14d89[m
+Author: sheyla2112 <sheylinrey21@gmail.com>
+Date:   Mon Jan 17 22:56:56 2022 -0500
+
+    ajuste de redireccionamiento
+
+[33mcommit 87af4faad6606afd4bb456ac7605940f63aa3350[m
+Author: LeidyCeron <leidycersan@gmail.com>
+Date:   Mon Jan 17 22:42:27 2022 -0500
+
+    perfil dashboard, leidy
+
+[33mcommit 6be1a6deac9a1d09a7a57e6711096479fc3a8feb[m
+Author: sheyla2112 <sheylinrey21@gmail.com>
+Date:   Mon Jan 17 22:40:57 2022 -0500
+
+    ajuste de card
+
+[33mcommit 17593165738709545a3f8085bbfc52903a9800ad[m
+Author: LeidyCeron <leidycersan@gmail.com>
+Date:   Mon Jan 17 21:38:16 2022 -0500
+
+    .
+
+[33mcommit c13ec349e4d87ad8413bdaebc068015a53ebd56e[m
+Author: gfsp2001 <gfsp2001@hotmail.com>
+Date:   Mon Jan 17 17:35:48 2022 -0500
+
+    .
+
+[33mcommit 4e67c1363d524cac088d1b74dc6c18298709a1f8[m
+Author: Pablo Sergio Loyola Tantaruna <pabloloyolat@gmail.com>
+Date:   Mon Jan 17 17:20:35 2022 -0500
+
+    .
+
+[33mcommit b2f023e49778de2e57e34697a19b20e8e694f069[m
+Author: Pablo Sergio Loyola Tantaruna <pabloloyolat@gmail.com>
+Date:   Sat Jan 15 19:36:48 2022 -0500
+
+    .
+
+[33mcommit 574dfddce5790dcd59d7e5884b2a8342936834a7[m
+Author: Pablo Sergio Loyola Tantaruna <pabloloyolat@gmail.com>
+Date:   Sat Jan 15 19:10:22 2022 -0500
+
+    .
+
+[33mcommit f250c9518a2e8aeef187cf341207fcc63d7a9369[m
+Author: sheyla2112 <sheylinrey21@gmail.com>
+Date:   Fri Jan 14 01:33:57 2022 -0500
+
+    ajuste de detalle curso y editar curso
+
+[33mcommit 5e8ba22be07cffc81f23baf609e7c02b727febef[m
+Author: gfsp2001 <gfsp2001@hotmail.com>
+Date:   Tue Jan 11 15:00:19 2022 -0500
+
+    .
+
+[33mcommit 7a8b9a7f2ae2966c59e415d0e1a366660f6f598f[m
+Author: gfsp2001 <gfsp2001@hotmail.com>
+Date:   Tue Jan 11 14:50:27 2022 -0500
+
+    cambios jorge
+
+[33mcommit 3374e9c75565dd7bc5215d5f6e32a5dd32874d27[m
+Author: LeidyCeron <leidycersan@gmail.com>
+Date:   Tue Jan 11 01:46:53 2022 -0500
+
+    cuestionario cards, Leidy
+
+[33mcommit 85d3e0ec805d0a9d72ebf24d0d9b4e677b3b3683[m
+Author: Lorenzo G <grimaldo.legr@gmail.com>
+Date:   Mon Jan 10 15:48:53 2022 -0500
+
+    Temporizador en efecto de rotacion, Lorenzo G.
+
+[33mcommit 7f745bc0de6dd4cf8b86a70c78b74a8882b27f6d[m
+Author: Lorenzo G <grimaldo.legr@gmail.com>
+Date:   Sun Jan 9 23:52:28 2022 -0500
+
+    Funcion asyncrona, Lorenzo G.
+
+[33mcommit e0a19a9123620ad2349db878c3686ecf41f1caaa[m
+Author: Lorenzo G <grimaldo.legr@gmail.com>
+Date:   Sun Jan 9 23:31:14 2022 -0500
+
+    Solucion a sobreposicion en Empresas - Educalma, Lorenzo G.
+
+[33mcommit 0a68a2aa64edccebbc727013c96d79354a271015[m
+Author: gfsp2001 <gfsp2001@hotmail.com>
+Date:   Sun Jan 9 21:50:51 2022 -0500
+
+    cambios de jorge
+
+[33mcommit e3c7deb9cabde6a62558f4d0a9d6bbb6cbbe1c88[m
+Author: Christian Carranza <carranzachristian61@gmail.com>
+Date:   Sun Jan 9 10:16:31 2022 -0500
+
+    foro
+
+[33mcommit fbd6eea75f8a5243a1f5dde2a80a484928d92014[m
+Author: Christian Carranza <carranzachristian61@gmail.com>
+Date:   Sat Jan 8 15:31:50 2022 -0500
+
+    se corregio insertar imagen
+
+[33mcommit e81c229d667bc4a3692e6cc71b961f0e834a57e1[m
+Merge: f2b3234 7d166ef
+Author: Carlos Sotelo <cmsotelos@ucvvirtual.edu.pe>
+Date:   Sat Jan 8 13:57:49 2022 -0500
+
+    Merge branch 'testing' of gitlab.com:fundacion_calma/test-educalma into testing
+
+[33mcommit f2b3234d4fa422aa239af1452e6569366eecd843[m
+Author: Carlos Sotelo <cmsotelos@ucvvirtual.edu.pe>
+Date:   Sat Jan 8 13:57:15 2022 -0500
+
+    Alerta cancelar, Carlos
+
+[33mcommit 7d166ef2837c67b1d5367352903944a935c0acb9[m
+Author: Christian Carranza <carranzachristian61@gmail.com>
+Date:   Sat Jan 8 13:08:25 2022 -0500
+
+    se corregio la tabla de listar usuarios
+
+[33mcommit 1be4c9d2d3f63207a51194c8a21033c4db161236[m
+Author: Christian Carranza <carranzachristian61@gmail.com>
+Date:   Sat Jan 8 09:57:18 2022 -0500
+
+    se completo contenido curso
+
+[33mcommit 37c99baf318cad0fc2b63a0c88f114278ed9aa28[m
+Author: Lorenzo G <grimaldo.legr@gmail.com>
+Date:   Sat Jan 8 03:12:46 2022 -0500
+
+    Mostrar mensaje con SweetAlert2.js, Lorenzo G.
+
+[33mcommit 7e031d27f7c3b39d2a19143dfabb5f740a7c2a3f[m
+Author: sheyla2112 <sheylinrey21@gmail.com>
+Date:   Fri Jan 7 20:56:16 2022 -0500
+
+    ajuste de diseño de la pagina de curso,RS
+
+[33mcommit dfe86a98bf531812e35d0239c3c84d6a3c8c5ddb[m
+Author: sheyla2112 <sheylinrey21@gmail.com>
+Date:   Fri Jan 7 20:26:28 2022 -0500
+
+    Nuevo diseño de categoria,RS
+
+[33mcommit 66f49ba74511b8121305b6c8812078f65fd2f7c0[m
+Author: gfsp2001 <gfsp2001@hotmail.com>
+Date:   Fri Jan 7 18:34:03 2022 -0500
+
+    .
+
+[33mcommit 458e9b0cd41f5c41c67b6288f06254d8a6ca7e37[m
+Author: Carlos Sotelo <cmsotelos@ucvvirtual.edu.pe>
+Date:   Fri Jan 7 18:23:38 2022 -0500
+
+    Carlos, Implementar Detalle de compra
+
+[33mcommit fd41619dd0558fb317b7614c9129e211fcc5d5a6[m
+Merge: 7e81d6a 0d6a5a8
+Author: Lorenzo G <grimaldo.legr@gmail.com>
+Date:   Fri Jan 7 15:48:25 2022 -0500
+
+    Merge branch 'testing' of gitlab.com:fundacion_calma/test-educalma into testing
+
+[33mcommit 7e81d6aaf0009cbdea2739a0d7d261771c905e9a[m
+Author: Lorenzo G <grimaldo.legr@gmail.com>
+Date:   Fri Jan 7 15:48:00 2022 -0500
+
+    Enviar solicitud - Empresas, Lorenzo G.
+
+[33mcommit 0d6a5a89de96e759cf82d153533f37feb5f379ac[m
+Author: gfsp2001 <gfsp2001@hotmail.com>
+Date:   Fri Jan 7 11:11:50 2022 -0500
+
+    .
+
+[33mcommit 027fb6e6d9a9c0b8028bc4d1a999ea7965c77888[m
+Author: Pablo Sergio Loyola Tantaruna <pabloloyolat@gmail.com>
+Date:   Fri Jan 7 11:00:15 2022 -0500
+
+    .
+
+[33mcommit 436bafcd8602b2e80596478e9e8aba56c695d565[m
+Author: LeidyCeron <leidycersan@gmail.com>
+Date:   Thu Jan 6 21:26:19 2022 -0500
+
+    .
+
+[33mcommit 813c4fa8717dfaa8f63982a5a5b183e8c8385cfb[m
+Author: LeidyCeron <leidycersan@gmail.com>
+Date:   Thu Jan 6 20:39:47 2022 -0500
+
+    .
+
+[33mcommit c9e2a58b648f5d07ac45bf4b88144bfd93156fa6[m
+Author: LeidyCeron <leidycersan@gmail.com>
+Date:   Thu Jan 6 20:34:05 2022 -0500
+
+    .
+
+[33mcommit a5ee804677298cb67dc33bf9a0ebba67ecafb90d[m
+Author: gfsp2001 <gfsp2001@hotmail.com>
+Date:   Thu Jan 6 18:59:12 2022 -0500
+
+    cambios de bindParam
+
+[33mcommit 1ed2787994dc8353cab71a6323eff4fb8b3a23b2[m
+Author: Christian Carranza <carranzachristian61@gmail.com>
+Date:   Thu Jan 6 18:41:00 2022 -0500
+
+    crud usuarios
+
+[33mcommit 147f842ef89c212856c5b3c106bb91a959728767[m
+Author: Carlos Sotelo <cmsotelos@ucvvirtual.edu.pe>
+Date:   Thu Jan 6 18:31:32 2022 -0500
+
+    Carlos,
+
+[33mcommit 49585745e79435ca6a72633f72d348e8f5bc486c[m
+Author: Carlos Sotelo <cmsotelos@ucvvirtual.edu.pe>
+Date:   Thu Jan 6 16:07:30 2022 -0500
+
+    Carlos, Avance arreglar INSERT's
+
+[33mcommit 910c53f402276cb1bd3593b762aa85c30d7f21fa[m
+Author: Lorenzo G <grimaldo.legr@gmail.com>
+Date:   Thu Jan 6 15:45:23 2022 -0500
+
+    Rotacion - empresas, Lorenzo G.
+
+[33mcommit b48161621ce5655e0465264480d15298b98be4f8[m
+Author: gfsp2001 <gfsp2001@hotmail.com>
+Date:   Thu Jan 6 03:36:05 2022 -0500
+
+    nombre del curso y modulo, Giancarlo
+
+[33mcommit 491bfca28ded85b40f552f674aeb1c920f480351[m
+Author: gfsp2001 <gfsp2001@hotmail.com>
+Date:   Thu Jan 6 03:22:31 2022 -0500
+
+    .
+
+[33mcommit 54e2578a0d2377e758355aa0f6444e583b96d50f[m
+Author: gfsp2001 <gfsp2001@hotmail.com>
+Date:   Thu Jan 6 03:21:41 2022 -0500
+
+    cambios de jorge subidos
+
+[33mcommit 9e8505f03f72efd2ea8b27cd7d9011c770d68fc4[m
+Author: gfsp2001 <gfsp2001@hotmail.com>
+Date:   Thu Jan 6 03:18:41 2022 -0500
+
+    link bootstrap quitado, Giancarlo
+
+[33mcommit 0171fb7ef90776a52ca5fa89e0b1a8872c3a1b80[m
+Author: gfsp2001 <gfsp2001@hotmail.com>
+Date:   Thu Jan 6 03:05:04 2022 -0500
+
+    nombre de la categoria, Giancarlo
+
+[33mcommit 2c095068e732a9767055c247ce03dec930855f1a[m
+Author: Pablo Sergio Loyola Tantaruna <pabloloyolat@gmail.com>
+Date:   Wed Jan 5 21:18:28 2022 -0500
+
+    .
+
+[33mcommit b9b40999efdc77fafd3f8dd35649b009a8bccbe2[m
+Author: Christian Carranza <carranzachristian61@gmail.com>
+Date:   Wed Jan 5 20:53:41 2022 -0500
+
+    tabla del dashboard y contenido de curso
+
+[33mcommit 01dd187c025feeefd70a1de69cd9e0e83032a585[m
+Author: sheyla2112 <sheylinrey21@gmail.com>
+Date:   Wed Jan 5 20:45:41 2022 -0500
+
+    ajuste de sidebar dashboard, Reymundez S
+
+[33mcommit 639a0bcaa727dd1ba41e6157dbbe962650724817[m
+Author: gfsp2001 <gfsp2001@hotmail.com>
+Date:   Wed Jan 5 19:53:41 2022 -0500
+
+    cambios de jorge en cuestionario
+
+[33mcommit 9092cfd4bc73e85beb3187c0ae4e0fc8a09a599a[m
+Author: sheyla2112 <sheylinrey21@gmail.com>
+Date:   Wed Jan 5 19:16:38 2022 -0500
+
+    ajuste de sidebar dashboard, Reymundez S
+
+[33mcommit 7015312af74a015f3c9e02094b32243bb07aa820[m
+Author: sheyla2112 <sheylinrey21@gmail.com>
+Date:   Wed Jan 5 19:14:21 2022 -0500
+
+    ajuste de sidebar dashboard, Reymundez S
+
+[33mcommit d72a01ee540ff40ff836ed18c659d59e5e6d9476[m
+Author: Carlos Sotelo <cmsotelos@ucvvirtual.edu.pe>
+Date:   Wed Jan 5 17:31:37 2022 -0500
+
+    Carlos, Arreglar Select y Implementar paypal
+
+[33mcommit feec5aa0629ad3b5f6144a054baac3e1ebc99cf8[m
+Author: gfsp2001 <gfsp2001@hotmail.com>
+Date:   Tue Jan 4 21:48:20 2022 -0500
+
+    cambio de datos, Giancarlo
+
+[33mcommit bc3e4651d90c3141acd661c83c6d36667b7f4ca1[m
+Author: Pablo Sergio Loyola Tantaruna <pabloloyolat@gmail.com>
+Date:   Tue Jan 4 20:39:48 2022 -0500
+
+    .
+
+[33mcommit c1df3fbc99345f12f81f2dbce0c4d41324a20321[m
+Author: Pablo Sergio Loyola Tantaruna <pabloloyolat@gmail.com>
+Date:   Tue Jan 4 20:33:25 2022 -0500
+
+    .
+
+[33mcommit 32009c775a937f2718f9da989138f92a3aeae1cb[m
+Author: gfsp2001 <gfsp2001@hotmail.com>
+Date:   Tue Jan 4 19:46:16 2022 -0500
+
+    acordiones arreglados
+
+[33mcommit 07954714feac807dd4132c1557eb4d5d2277a9e2[m
+Author: Christian Carranza <carranzachristian61@gmail.com>
+Date:   Tue Jan 4 12:05:20 2022 -0500
+
+    Se agrego tablas al dashboard del administrador
+
+[33mcommit f76d1052c7267f2589cb18fd5158c127d1a406aa[m
+Author: Carlos Sotelo <cmsotelos@ucvvirtual.edu.pe>
+Date:   Tue Jan 4 10:13:02 2022 -0500
+
+    Carlos, Redirección boton cerrar en pagopaypal
+
+[33mcommit e524a65e887f2284137ded2587298304e3354388[m
+Author: sheyla2112 <sheylinrey21@gmail.com>
+Date:   Tue Jan 4 03:37:11 2022 -0500
+
+    card collapse, Reymundez S
+
+[33mcommit 0a2fa43e70543be42b44e12bb424f85042432c52[m
+Author: sheyla2112 <sheylinrey21@gmail.com>
+Date:   Tue Jan 4 02:41:10 2022 -0500
+
+    Pagina de curso, Reymundez S
+
+[33mcommit 86cafc836b66de57dd0f26801e0143e4a32d77ff[m
+Author: LeidyCeron <leidycersan@gmail.com>
+Date:   Mon Jan 3 19:31:02 2022 -0500
+
+    .
+
+[33mcommit e7e995104d2c6192f6213cab2ed368de482b3e2a[m
+Author: Pablo Sergio Loyola Tantaruna <pabloloyolat@gmail.com>
+Date:   Sun Jan 2 00:06:44 2022 -0500
+
+    .
+
+[33mcommit dfc26dbb7b134b3e1d2b8efbdc3ce4d80a441210[m
+Author: Pablo Sergio Loyola Tantaruna <pabloloyolat@gmail.com>
+Date:   Sat Jan 1 23:46:38 2022 -0500
+
+    .
+
+[33mcommit d23a0f265a512a97197fb36b3d6958cd38aa0c98[m
+Author: Pablo Sergio Loyola Tantaruna <pabloloyolat@gmail.com>
+Date:   Sat Jan 1 23:23:15 2022 -0500
+
+    .
+
+[33mcommit 69b448e145fd50c819474964500ed066f22ebb2c[m
+Author: gfsp2001 <gfsp2001@hotmail.com>
+Date:   Sat Jan 1 22:18:33 2022 -0500
+
+    .
+
+[33mcommit ae479698e3d85c6045e483bad47088e34ae64f39[m
+Author: Christian Carranza <carranzachristian61@gmail.com>
+Date:   Sat Jan 1 14:02:48 2022 -0500
+
+    tabla para mostrar los cursos en el dashboard
+
+[33mcommit 98d6ab6439511871c4e51ff91da30105f26dd8a6[m
+Author: Carlos Sotelo <cmsotelos@ucvvirtual.edu.pe>
+Date:   Fri Dec 31 16:08:09 2021 -0500
+
+    .
+
+[33mcommit 5c2feaf70864b531cfad7260a509574b50887a43[m
+Author: Pablo Sergio Loyola Tantaruna <pabloloyolat@gmail.com>
+Date:   Fri Dec 31 12:20:41 2021 -0500
+
+    .
+
+[33mcommit aa739054e2ffc7165d0276760a8bbef900bcc780[m
+Author: Carlos Sotelo <cmsotelos@ucvvirtual.edu.pe>
+Date:   Fri Dec 31 12:06:04 2021 -0500
+
+    Carlos, Implementar CRUD en Temas
+
+[33mcommit e457384ba7484a1f3d16cafa127ddbe5d7f7fb68[m
+Author: Pablo Sergio Loyola Tantaruna <pabloloyolat@gmail.com>
+Date:   Thu Dec 30 22:50:22 2021 -0500
+
+    .
+
+[33mcommit f95ff0227974a60790f2caa142a85eb3b33160c1[m
+Author: LeidyCeron <leidycersan@gmail.com>
+Date:   Thu Dec 30 20:33:45 2021 -0500
+
+    .
+
+[33mcommit 26250547773898065b4fe95d1bf70c0de3cc58cd[m
+Author: LeidyCeron <leidycersan@gmail.com>
+Date:   Thu Dec 30 19:52:00 2021 -0500
+
+    .
+
+[33mcommit ea440b5d09eb77d675a64819aa692c2dc42bada5[m
+Author: LeidyCeron <leidycersan@gmail.com>
+Date:   Thu Dec 30 19:38:47 2021 -0500
+
+    cartillas
+
+[33mcommit fe38e26baefb3a67263bf5f3457e179ae0cea282[m
+Author: LeidyCeron <leidycersan@gmail.com>
+Date:   Thu Dec 30 19:20:35 2021 -0500
+
+    curso,leidy
+
+[33mcommit 90c029073308abdfd15374b2d75cbd1770538c96[m
+Author: gfsp2001 <gfsp2001@hotmail.com>
+Date:   Thu Dec 30 19:19:24 2021 -0500
+
+    .
+
+[33mcommit 1b6c07d272737f3ed9e977fc669958c24843dd84[m
+Author: LeidyCeron <leidycersan@gmail.com>
+Date:   Thu Dec 30 19:16:46 2021 -0500
+
+    curso, leidy
+
+[33mcommit 9582f104e7551937c1bd06a5b7f7ef712cb9ad76[m
+Author: LeidyCeron <leidycersan@gmail.com>
+Date:   Thu Dec 30 19:02:47 2021 -0500
+
+    cartillas, Leidy
+
+[33mcommit 3d698221d79a9074527cd79046e7559c288a3c8a[m
+Author: Pablo Sergio Loyola Tantaruna <pabloloyolat@gmail.com>
+Date:   Thu Dec 30 16:36:11 2021 -0500
+
+    arreglo, Pablo
+
+[33mcommit d6115a9c4605846839d3558a8c2c57a0c323098d[m
+Author: gfsp2001 <gfsp2001@hotmail.com>
+Date:   Thu Dec 30 15:52:18 2021 -0500
+
+    .
+
+[33mcommit 0ba8880ef502a6385fb8174eb21ea05eed9b6645[m
+Author: Pablo Sergio Loyola Tantaruna <pabloloyolat@gmail.com>
+Date:   Wed Dec 29 23:59:44 2021 -0500
+
+    Cambio BD, Pablo
+
+[33mcommit dd8708f6f880998d925045c9abcd0a4dbdc3fc1c[m
+Author: sheyla2112 <sheylinrey21@gmail.com>
+Date:   Wed Dec 29 23:30:48 2021 -0500
+
+    .
+
+[33mcommit 4d381ad352f3e060081d5e37f18bc3068b861128[m
+Author: Pablo Sergio Loyola Tantaruna <pabloloyolat@gmail.com>
+Date:   Wed Dec 29 22:29:01 2021 -0500
+
+    Cambios en certificados y arreglo de compra de un curso
+
+[33mcommit 53aae2d886e3118f25bd499512b3253d21870f0d[m
+Author: sheyla2112 <sheylinrey21@gmail.com>
+Date:   Wed Dec 29 21:45:40 2021 -0500
+
+    proceso de pago, Reymundez S
+
+[33mcommit 50be49f34a8124c8a480fe1eef089d3eb87042b3[m
+Author: Carlos Sotelo <cmsotelos@ucvvirtual.edu.pe>
+Date:   Wed Dec 29 21:19:26 2021 -0500
+
+    Carlos, Implementar modal de editar y confirmación de eliminar en Preguntas y Respuestas
+
+[33mcommit 3ee9276d3bad99105c8f3809a2b2bbc0d06dcb87[m
+Author: Pablo Sergio Loyola Tantaruna <pabloloyolat@gmail.com>
+Date:   Wed Dec 29 14:58:05 2021 -0500
+
+    arreglar certificado, pablo
+
+[33mcommit aff7f5bc3fb334380dcb01f7333d7736d00c1fcc[m
+Author: gfsp2001 <gfsp2001@hotmail.com>
+Date:   Wed Dec 29 13:37:37 2021 -0500
+
+    .
+
+[33mcommit a275183c4950cc5d509662a1c500b63a4d79e233[m
+Author: gfsp2001 <gfsp2001@hotmail.com>
+Date:   Wed Dec 29 13:23:36 2021 -0500
+
+    .
+
+[33mcommit c25c480f435da3fd76c12422416622c1217007cb[m
+Author: gfsp2001 <gfsp2001@hotmail.com>
+Date:   Wed Dec 29 13:08:28 2021 -0500
+
+    certificado arreglado, Giancarlo
+
+[33mcommit 120ed71e1f74e364d20453ca1b89c3a34efc07d8[m
+Author: Pablo Sergio Loyola Tantaruna <pabloloyolat@gmail.com>
+Date:   Tue Dec 28 22:42:53 2021 -0500
+
+    Ajax ,Pablo
+
+[33mcommit a6f11ea2a41b0117dd1f6dd9c79a8439a4c5c2af[m
+Author: Carlos Sotelo <cmsotelos@ucvvirtual.edu.pe>
+Date:   Tue Dec 28 19:28:15 2021 -0500
+
+    Carlos, Confirmación de Eliminar y Arreglar Editar en agregar Modulo
+
+[33mcommit f55ccb1eb2eeb146266ce16d17f12e463b2ae4a3[m
+Author: LeidyCeron <leidycersan@gmail.com>
+Date:   Tue Dec 28 19:09:36 2021 -0500
+
+    agregar temas, Leidy
+
+[33mcommit 4bd4fe55b56013d6388d25d579aeb434b4fb3e5c[m
+Author: Mussolini22 <bmartinezhuamanialdair@gmail.com>
+Date:   Tue Dec 28 18:23:23 2021 -0500
+
+    acordion,nosotros(arreglado)add redirecion logo a educalma ,bryan
+
+[33mcommit 8844d241aad6be0617fa8d306e8e5ead838ab8a0[m
+Author: gfsp2001 <gfsp2001@hotmail.com>
+Date:   Tue Dec 28 17:08:16 2021 -0500
+
+    cambios de jorge
+
+[33mcommit 3377de3bac51af72adcfe93e3af36a63f45af7cc[m
+Author: LeidyCeron <leidycersan@gmail.com>
+Date:   Tue Dec 28 16:55:22 2021 -0500
+
+    agregar modulos, Leidy
+
+[33mcommit 06c5625b4bd39f0780119f531a43105f9aedcb33[m
+Author: gfsp2001 <gfsp2001@hotmail.com>
+Date:   Tue Dec 28 14:36:59 2021 -0500
+
+    aqui escribes bryan, Giancarlo
+
+[33mcommit e7d2f7065df1737172a978b58bc1ef38993d5c6b[m
+Author: Christian Carranza <carranzachristian61@gmail.com>
+Date:   Tue Dec 28 13:01:50 2021 -0500
+
+    se creo el dashboard para el administrador
+
+[33mcommit 338e635983de09eb7ab68ebd570cd792c32e7157[m
+Author: gfsp2001 <gfsp2001@hotmail.com>
+Date:   Tue Dec 28 08:15:19 2021 -0500
+
+    .
+
+[33mcommit 411145b17823763ee6158c6f4a756a567f6e7091[m
+Author: LeidyCeron <leidycersan@gmail.com>
+Date:   Mon Dec 27 23:22:51 2021 -0500
+
+    proceso donarcurso, Leidy
+
+[33mcommit 8c471dc98972cd555b5c4a488350c6a468d1bd1d[m
+Author: Pablo Sergio Loyola Tantaruna <pabloloyolat@gmail.com>
+Date:   Sun Dec 26 20:36:33 2021 -0500
+
+    Por fin, Pablo
+
+[33mcommit b70b77422b363995df18081e147bb3d6b5a409f0[m
+Author: sheyla2112 <sheylinrey21@gmail.com>
+Date:   Fri Dec 24 10:11:43 2021 -0500
+
+    correccion de diseño de detallecurso
+
+[33mcommit e44401b396607f5ae8bb04e5e66e413dfefe039b[m
+Author: gfsp2001 <gfsp2001@hotmail.com>
+Date:   Fri Dec 24 01:15:38 2021 -0500
+
+    .
+
+[33mcommit b5f4379c848b492eb29ba3f7334b1d578a3a6ff7[m
+Author: sheyla2112 <sheylinrey21@gmail.com>
+Date:   Fri Dec 24 00:36:53 2021 -0500
+
+    navbar de categoria, ajuste de contenedor y diseño de seccion buscar, Reymundez S
+
+[33mcommit 6eae693bb97d012c2b36e0a108a9343a2db4f679[m
+Author: Christian Carranza <carranzachristian61@gmail.com>
+Date:   Thu Dec 23 15:21:31 2021 -0500
+
+    Se arreglo iniciar curso
+
+[33mcommit 894933c9ef0848c52c127594877553f620edc9cd[m
+Merge: b17b329 22782d5
+Author: Carlos Sotelo <cmsotelos@ucvvirtual.edu.pe>
+Date:   Thu Dec 23 07:38:41 2021 -0500
+
+    Merge branch 'testing' of gitlab.com:fundacion_calma/test-educalma into testing
+
+[33mcommit b17b3295740d0a1524d015e508c3ff570d996d6e[m
+Author: Carlos Sotelo <cmsotelos@ucvvirtual.edu.pe>
+Date:   Thu Dec 23 07:38:25 2021 -0500
+
+    Carlos, Correcion del redirigir
+
+[33mcommit 22782d5dac70726a1b80f54522f7bf4f0b96b27a[m
+Author: LeidyCeron <leidycersan@gmail.com>
+Date:   Thu Dec 23 04:22:57 2021 -0500
+
+    donar curso, Leidy
+
+[33mcommit 828ffdde51e2145a4d6a94cece89c9127b0d4e8f[m
+Author: gfsp2001 <gfsp2001@hotmail.com>
+Date:   Thu Dec 23 01:46:04 2021 -0500
+
+    corregido url
+
+[33mcommit 378a4ee80a7219d68dd24c8c7acc6de89dab848c[m
+Author: Carlos Sotelo <cmsotelos@ucvvirtual.edu.pe>
+Date:   Wed Dec 22 16:14:14 2021 -0500
+
+    Carlos, Implementar boton pagar en EduCalma
+
+[33mcommit ca9b306a4f8fdde0da05661ca93cbc25815c698f[m
+Author: Lorenzo Enrique Grimaldo Ramos <grimaldo.legr@gmail.com>
+Date:   Wed Dec 22 00:25:46 2021 +0000
+
+    Estilos de preloader [SOLUCIONADO]
+
+[33mcommit e609285fcc4796d1a85863ff6dace74cc90c46d8[m
+Author: Pablo Sergio Loyola Tantaruna <pabloloyolat@gmail.com>
+Date:   Tue Dec 21 13:27:26 2021 -0500
+
+    cambios, Pablo
+
+[33mcommit a343adb4d4fbe0dff68656627c7e54ee491d5fe5[m
+Author: Christian Carranza <carranzachristian61@gmail.com>
+Date:   Tue Dec 21 12:59:48 2021 -0500
+
+    detalle curso - christian c.
+
+[33mcommit 5cc46d8da19182243c8079226410d284cb331c55[m
+Author: Pablo Sergio Loyola Tantaruna <pabloloyolat@gmail.com>
+Date:   Tue Dec 21 09:31:27 2021 -0500
+
+    redirecciones y botones, Sergio
+
+[33mcommit 3263db6b1931445144b894301c7a6dace8e032c9[m
+Author: sheyla2112 <sheylinrey21@gmail.com>
+Date:   Tue Dec 21 02:46:20 2021 -0500
+
+    Ajustes ,Reymundez S
+
+[33mcommit 40916303e90dc7a7b8f45c808899deb675479530[m
+Author: sheyla2112 <sheylinrey21@gmail.com>
+Date:   Tue Dec 21 02:40:41 2021 -0500
+
+    Correccion del boton header y ajuste en detallecurso, Reymundez S
+
+[33mcommit 84ba070d238d740cad3dd4311cc3ef4519ab90e3[m
+Author: sheyla2112 <sheylinrey21@gmail.com>
+Date:   Tue Dec 21 02:25:24 2021 -0500
+
+    Pagina de detalle curso, Reymundez S
+
+[33mcommit 5497996ebc23ed644121b9a3b69380fa20ba47c5[m
+Author: Giancarlo Santi <gfsp2001@hotmail.com>
+Date:   Tue Dec 21 03:05:48 2021 +0000
+
+    Update web/database/databaseConection.php
+
+[33mcommit 77caa2e6909ae9b1271e81f479954cea912d4798[m
+Merge: acf9a4c b222195
+Author: gfsp2001 <gfsp2001@hotmail.com>
+Date:   Mon Dec 20 22:01:19 2021 -0500
+
+    merge Merge branch 'testing'
+
+[33mcommit b2221954e21c72269070c7c974a3ee4848f35173[m
+Author: gfsp2001 <gfsp2001@hotmail.com>
+Date:   Mon Dec 20 21:28:01 2021 -0500
+
+    cambios
+
+[33mcommit 5ab5bcbefc517b2a7645b2738cae3044f2257efa[m
+Author: gfsp2001 <gfsp2001@hotmail.com>
+Date:   Mon Dec 20 20:59:10 2021 -0500
+
+    cambios de jorge
+
+[33mcommit 9d3f3f13048d17a5ecf6c1d01a0af6c4ed2e7f5b[m
+Author: sheyla2112 <sheylinrey21@gmail.com>
+Date:   Mon Dec 20 19:38:35 2021 -0500
+
+    pagepay pagina de pago, Reymundez S
+
+[33mcommit 17e7366bf5e4cc578bcf21e27b1a47f009453594[m
+Author: Pablo Sergio Loyola Tantaruna <pabloloyolat@gmail.com>
+Date:   Mon Dec 20 16:36:28 2021 -0500
+
+    limitador de palabras, Sergio
+
+[33mcommit bd179b920552722d77dc34fcb6785a1369127236[m
+Author: Lorenzo GR <grimaldo.legr@gmail.com>
+Date:   Mon Dec 20 11:40:53 2021 -0500
+
+    Responsive en miscursos.php, Lorenzo G.
+
+[33mcommit dad0c2c3e308638901f7d3fff749bdc4e2f5c105[m
+Author: gfsp2001 <gfsp2001@hotmail.com>
+Date:   Sun Dec 19 01:52:55 2021 -0500
+
+    cambios de jorge, Giancarlo
+
+[33mcommit 99aafdd393a3f42bd3e173f48669222848599422[m
+Author: gfsp2001 <gfsp2001@hotmail.com>
+Date:   Sat Dec 18 23:04:18 2021 -0500
+
+    cambios de jorge, Giancarlo
+
+[33mcommit 591651abf486ad2a8d39d1138b66cef13a8846ac[m
+Author: gfsp2001 <gfsp2001@hotmail.com>
+Date:   Sat Dec 18 12:12:54 2021 -0500
+
+    cambios de jorge, Giancarlo
+
+[33mcommit 223c92c34668f5a2f788e2f70ae07e35c02dccc8[m
+Author: Pablo Sergio Loyola Tantaruna <pabloloyolat@gmail.com>
+Date:   Fri Dec 17 21:50:31 2021 -0500
+
+    palabras controladas, Sergio
+
+[33mcommit e20058867b35f5648e4ada45e0b6b5238d67b0d8[m
+Author: Christian Carranza <carranzachristian61@gmail.com>
+Date:   Thu Dec 16 17:03:10 2021 -0500
+
+    Corregir listar temas en educalma
+
+[33mcommit 06f120a5f75b0fc64050dd1479a57f8048e8214e[m
+Author: gfsp2001 <gfsp2001@hotmail.com>
+Date:   Thu Dec 16 13:08:52 2021 -0500
+
+    acortar descripcion, Giancarlo
+
+[33mcommit 86591ec888bd5f19068f26dc9200faea2809ea4b[m
+Merge: 2b1c1df 07eefc4
+Author: gfsp2001 <gfsp2001@hotmail.com>
+Date:   Thu Dec 16 11:41:19 2021 -0500
+
+    Merge branch 'testing' of gitlab.com:fundacion_calma/test-educalma into testing
+
+[33mcommit 07eefc41b40bdc0e94d3229700835d20651b5453[m
+Author: Christian Carranza <carranzachristian61@gmail.com>
+Date:   Thu Dec 16 11:26:52 2021 -0500
+
+    Se arreglo el cerficado y el boton siguiente en los cuestionarios
+
+[33mcommit 2b1c1dfa28a78d1e76c9326f9234cc17ca26d365[m
+Merge: 7ba2bb1 4aa38de
+Author: gfsp2001 <gfsp2001@hotmail.com>
+Date:   Wed Dec 15 19:52:09 2021 -0500
+
+    Merge branch 'testing' of gitlab.com:fundacion_calma/test-educalma into testing
+
+[33mcommit 4aa38dedf58c62bc1dce68aa10f37688d1af8afd[m
+Author: Carlos Sotelo <cmsotelos@ucvvirtual.edu.pe>
+Date:   Wed Dec 15 16:06:47 2021 -0500
+
+    Carlos, Alerta de Contraseña incorrecta en Login
+
+[33mcommit d7728ac8f9342ec33eaf2d6d2b270b6bcf72250b[m
+Author: Pablo Sergio Loyola Tantaruna <pabloloyolat@gmail.com>
+Date:   Tue Dec 14 12:03:40 2021 -0500
+
+    Arreglar busqueda, Pablo Loyola
+
+[33mcommit a44cd7bc9fcf270f502feb2e969cddba02be4c29[m
+Author: Christian Carranza <carranzachristian61@gmail.com>
+Date:   Tue Dec 14 09:07:09 2021 -0500
+
+    se arreglo listar cursos para usuarios no registrados
+
+[33mcommit acf9a4c5fd98a1414e49a241aad448f02696e596[m
+Merge: 1305a5b 7ba2bb1
+Author: gfsp2001 <gfsp2001@hotmail.com>
+Date:   Tue Dec 14 00:05:41 2021 -0500
+
+    cambios subidos, Giancarlo
+
+[33mcommit 7ba2bb1d6645068e06e46ae2a85d5c494002487a[m
+Merge: b2ce1c0 5582c83
+Author: gfsp2001 <gfsp2001@hotmail.com>
+Date:   Mon Dec 13 23:55:59 2021 -0500
+
+    Merge branch 'testing' of gitlab.com:fundacion_calma/test-educalma into testing
+
+[33mcommit 5582c83adf606de4c752658e2cbe7309ef6d06ff[m
+Author: LeidyCeron <leidycersan@gmail.com>
+Date:   Mon Dec 13 23:50:20 2021 -0500
+
+    cursos, Leidy
+
+[33mcommit b2ce1c0573290f9c645678c8b47a19a90a50b070[m
+Author: gfsp2001 <gfsp2001@hotmail.com>
+Date:   Sun Dec 12 23:14:52 2021 -0500
+
+    giancarlo
+
+[33mcommit e4ff3580a27ef779b1471390bcb1e1ed8808613b[m
+Author: sheyla2112 <sheylinrey21@gmail.com>
+Date:   Sun Dec 12 23:09:44 2021 -0500
+
+    diseño de curso , Reymundez S
+
+[33mcommit 94706c8226adb62e29e6e5fb569eba61ed6290c5[m
+Author: gfsp2001 <gfsp2001@hotmail.com>
+Date:   Sun Dec 12 22:13:33 2021 -0500
+
+    giancarlo
+
+[33mcommit 87a0bf5029aaa0910a842f9852681ed7c6f09937[m
+Author: sheyla2112 <sheylinrey21@gmail.com>
+Date:   Sun Dec 12 22:10:03 2021 -0500
+
+    tipografia e diseño - login bton-registro diseño-empresas container-home , Reymundez S
+
+[33mcommit ff1dae5fee98d3501d41d3913ae3e10694164845[m
+Merge: bc82ae2 37f4ce4
+Author: LeidyCeron <leidycersan@gmail.com>
+Date:   Sun Dec 12 22:05:21 2021 -0500
+
+    curso, leidy
+
+[33mcommit bc82ae27b7fab45bef82b937e558a969793e6d51[m
+Author: LeidyCeron <leidycersan@gmail.com>
+Date:   Sun Dec 12 22:03:51 2021 -0500
+
+    curso, Leidy
+
+[33mcommit 37f4ce4e66e4fc29146108c93204cabaf0db7428[m
+Author: gfsp2001 <gfsp2001@hotmail.com>
+Date:   Sun Dec 12 21:53:15 2021 -0500
+
+    agregacursos.css,Giancarlo
+
+[33mcommit 2fee036a60dc680ba0513827e36ba64a045e02c4[m
+Author: jorge23478 <kokolucho2004@hotmail.com>
+Date:   Sun Dec 12 16:21:23 2021 -0500
+
+    Proceso de Cursos Rediseñado, Arreglo de Informacion Cursos, Jorge Martinez
+
+[33mcommit 16ce2db2affcbbb9abbebbfda2b1e7bd57fbe130[m
+Author: gfsp2001 <gfsp2001@hotmail.com>
+Date:   Sat Dec 11 22:32:08 2021 -0500
+
+    cambiar link contraseña, Giancarlo
+
+[33mcommit 7f0a3ca37fe7fb6e845d21fbe5dd501aa23e53a3[m
+Author: Pablo Sergio Loyola Tantaruna <pabloloyolat@gmail.com>
+Date:   Sat Dec 11 12:08:43 2021 -0500
+
+    cambios, Pablo
+
+[33mcommit 6605874f0200d3b7d55273fd858f9001242fb972[m
+Author: Lorenzo GR <grimaldo.legr@gmail.com>
+Date:   Fri Dec 10 20:34:45 2021 -0500
+
+    Corrección en empresas, Lorenzo G.
+
+[33mcommit ba9ec86771e79c31d15270c2e8e168e702ef26dd[m
+Author: gfsp2001 <gfsp2001@hotmail.com>
+Date:   Fri Dec 10 17:54:29 2021 -0500
+
+    ocultar los modulos, Giancarlo S.
+
+[33mcommit d500e16b8799d3d5a322191f34aaf349cbb9aa9b[m
+Author: gfsp2001 <gfsp2001@hotmail.com>
+Date:   Fri Dec 10 15:24:06 2021 -0500
+
+    cambios de sergio, Giancarlo
+
+[33mcommit 809543289b9cefb3664dccf1dbd493c5e3b8151e[m
+Author: gfsp2001 <gfsp2001@hotmail.com>
+Date:   Fri Dec 10 15:20:14 2021 -0500
+
+    asd
+
+[33mcommit afd5bb0176c17d749fd0fca39489df7b3ab51357[m
+Author: LeidyCeron <leidycersan@gmail.com>
+Date:   Thu Dec 9 23:46:54 2021 -0500
+
+    correccion, Leidy
+
+[33mcommit d3ef7acd4bbe08a456394787ee5e1534cea7e094[m
+Author: Christian Carranza <carranzachristian61@gmail.com>
+Date:   Thu Dec 9 21:40:13 2021 -0500
+
+    se corrigio eliminar foro
+
+[33mcommit 66a2bb133f80e9752256b0075844e833865be070[m
+Author: Lorenzo GR <grimaldo.legr@gmail.com>
+Date:   Thu Dec 9 13:44:18 2021 -0500
+
+    Adecuar Empresas - Educalma, Lorenzo G.
+
+[33mcommit a1d78459ac980fad444f968d8e5cfd3b312189fa[m
+Author: Christian Carranza <carranzachristian61@gmail.com>
+Date:   Tue Dec 7 20:37:34 2021 -0500
+
+    se aumento dos campos a la entidad usuarios en la bd
+
+[33mcommit 957e61b6d733e1dec7fe4667cfe081dc86a24a26[m
+Author: Christian Carranza <carranzachristian61@gmail.com>
+Date:   Mon Dec 6 23:56:56 2021 -0500
+
+    Se implemento recuperacion de contraseña por correo
+
+[33mcommit 3f8b3f6d910315baa858acdf69284c31936fbfef[m
+Author: LeidyCeron <leidycersan@gmail.com>
+Date:   Mon Dec 6 22:31:13 2021 -0500
+
+    curso.php, Leidy
+
+[33mcommit 4c4ab9658df7867c34f6188265c336d05ce08d91[m
+Author: sheyla2112 <sheylinrey21@gmail.com>
+Date:   Mon Dec 6 20:05:51 2021 -0500
+
+    Container cursos, Reymundez S
+
+[33mcommit fd63e3f8323dfde7b9c1aa47eba3790b835340c9[m
+Author: jorge23478 <kokolucho2004@hotmail.com>
+Date:   Mon Dec 6 01:33:45 2021 -0500
+
+    Login Nuevo Educalma, Jorge Martinez
+
+[33mcommit 171e4bee9fc0c52fce665a209dc09e80b43f52cb[m
+Author: Lorenzo GR <grimaldo.legr@gmail.com>
+Date:   Sun Dec 5 22:30:47 2021 -0500
+
+    Correccion de errores registro en Educalma, Lorenzo G.
+
+[33mcommit 05cf3a586bc8addb803a85ad31a8042a4b7ea724[m
+Author: gfsp2001 <gfsp2001@hotmail.com>
+Date:   Sun Dec 5 20:03:02 2021 -0500
+
+    giancarlo
+
+[33mcommit f06018745a00e472038cdcb43df7c9eca02891e7[m
+Author: Mariella Loli <melolinunez@gmail.com>
+Date:   Sun Dec 5 19:01:44 2021 -0500
+
+    Corrección del botón siguiente en los detalles del Curso
+
+[33mcommit 2369aa1a76b4e7563a0f787a2a72ceb8dcb8ce13[m
+Author: Lorenzo GR <grimaldo.legr@gmail.com>
+Date:   Sat Dec 4 23:33:18 2021 -0500
+
+    Validacion registro de usuario, Lorenzo G.
+
+[33mcommit 488163fc26dadd2fbac1d8e058d252e6c09f68fb[m
+Author: sheyla2112 <sheylinrey21@gmail.com>
+Date:   Sat Dec 4 18:14:07 2021 -0500
+
+    arreglo de la etiqueta <a>,Reymundez S
+
+[33mcommit 49547c8b6f180b16e833e390c0935ab4d1b6cb96[m
+Author: sheyla2112 <sheylinrey21@gmail.com>
+Date:   Sat Dec 4 03:51:44 2021 -0500
+
+    Pagina de cursos,Reymundez S
+
+[33mcommit 8274e8935a18c6bdd835b69c935dd77597387bd1[m
+Author: sheyla2112 <sheylinrey21@gmail.com>
+Date:   Sat Dec 4 02:41:07 2021 -0500
+
+    correcciones de diseño ,Reymundez S
+
+[33mcommit 90e1c0f807b2a11cf191669018a447188bb75dd4[m
+Author: sheyla2112 <sheylinrey21@gmail.com>
+Date:   Sat Dec 4 02:22:37 2021 -0500
+
+    pagina home y nosotros nuevo diseño, Reymundez S
+
+[33mcommit f035d1bf51b68f865ef97daaeda5ae20f0ac3bb2[m
+Author: Lorenzo GR <grimaldo.legr@gmail.com>
+Date:   Fri Dec 3 23:54:57 2021 -0500
+
+    Nuevo registro de usuario, Lorenzo G.
+
+[33mcommit 3e9e004d322094b7cf88816b66476b8d0648fb24[m
+Author: Pablo Sergio Loyola Tantaruna <pabloloyolat@gmail.com>
+Date:   Thu Dec 2 23:48:29 2021 -0500
+
+    Video cursos arreglado e informacion Cursos implementado, Pablo Loyola
+
+[33mcommit 361e810cff813fa7ab5ed1305a038c1984df9094[m
+Author: Mariella Loli <melolinunez@gmail.com>
+Date:   Thu Dec 2 17:04:06 2021 -0500
+
+    Busqueda por keyword, Mariella L.
+
+[33mcommit a9ae0d95ca209f3271556c02334a38555570a925[m
+Author: Mariella Loli <melolinunez@gmail.com>
+Date:   Thu Dec 2 15:41:08 2021 -0500
+
+    Busqueda filtrada por keyword, Mariella L.
+
+[33mcommit 2cbfcd111be4508cfdee3c85fb99947ca266f29e[m
+Author: gfsp2001 <gfsp2001@hotmail.com>
+Date:   Wed Dec 1 16:57:01 2021 -0500
+
+    aaa
+
+[33mcommit 1305a5bf535854a2f60eb377bf80cbb8eecc4585[m
+Author: Jean Matos Palomino <jeanzz.1910@gmail.com>
+Date:   Wed Dec 1 21:48:52 2021 +0000
+
+    Update web/database/conexion.php
+
+[33mcommit 695feee34441a01d6a181e610974847dfe91bc70[m
+Author: Giancarlo Santi <gfsp2001@hotmail.com>
+Date:   Wed Dec 1 21:40:54 2021 +0000
+
+    Update web/database/conexion.php
+
+[33mcommit 99b6b7d3efcc171b9c3611eef1f26c9cb09f0856[m
+Author: Giancarlo Santi <gfsp2001@hotmail.com>
+Date:   Wed Dec 1 21:39:44 2021 +0000
+
+    Update web/database/conexion.php
+
+[33mcommit d077f0c75ef45ff81149d3b57ded1a0ec4ed4e3a[m
+Author: Christian Carranza <carranzachristian61@gmail.com>
+Date:   Wed Dec 1 12:57:28 2021 -0500
+
+    Ocultar opciones de administrador en la vista clientes
+
+[33mcommit 77b6d4f448261234979ed52c341baf6767b4d5cf[m
+Author: Carlos Sotelo <cmsotelos@ucvvirtual.edu.pe>
+Date:   Sun Nov 28 13:56:11 2021 -0500
+
+    Implementar alerta en Agregar y Eliminar Categoria, Carlos
+
+[33mcommit f0c0db775e54cb47da6517bf94da2667f5a1192e[m
+Author: yair_utcane <jose.utcane.mancilla@gmail.com>
+Date:   Sun Nov 28 01:22:45 2021 -0500
+
+    boton de direccionado terminado -- jose yair
+
+[33mcommit f30e3ec858d42bb5c7b8c9d993cb671b5ad50116[m
+Author: Mariella Loli <melolinunez@gmail.com>
+Date:   Sat Nov 27 20:15:48 2021 -0500
+
+    Arreglo del guardado de datos al actualizar la fila imagen de Publicar Cursos _ Educalma, Mariella L.
+
+[33mcommit a92258a7c0ed92d3860067cd7fac166d12a4dcfa[m
+Author: Mariella Loli <melolinunez@gmail.com>
+Date:   Sat Nov 27 17:33:16 2021 -0500
+
+    Corrección en Editar con respecto al precio, Mariella L.
+
+[33mcommit 438193528d8cc82b4b134c9d0e92498a4e4f7d2d[m
+Author: Christian Carranza <carranzachristian61@gmail.com>
+Date:   Sat Nov 27 09:52:10 2021 -0500
+
+    paginacion de cursos arreglada
+
+[33mcommit 01053b2badab7504926865ca4b94891ca1b8bdb6[m
+Author: LeidyCeron <leidycersan@gmail.com>
+Date:   Sat Nov 27 03:01:34 2021 -0500
+
+    header, cards, footer, Leidy
+
+[33mcommit 1b8b7bdf46c3bbc93baefb49860bffdf01f52273[m
+Author: Mariella Loli <melolinunez@gmail.com>
+Date:   Sat Nov 27 00:46:57 2021 -0500
+
+    editar
+
+[33mcommit 4c5d5e7aae079dc1667948f9ca682fa251c241d3[m
+Author: JeanUtp <jeanzz.1910@gmail.com>
+Date:   Sat Nov 27 00:17:29 2021 -0500
+
+    asd
+
+[33mcommit d7d4e3e6b8eac081dffb20c5548fb590daa4eef9[m
+Author: JeanUtp <jeanzz.1910@gmail.com>
+Date:   Fri Nov 26 21:57:51 2021 -0500
+
+    reload, Giancarlo
+
+[33mcommit eb04be50afa1248d0d7377e410ddf05971726f1f[m
+Author: Pablo Sergio Loyola Tantaruna <pabloloyolat@gmail.com>
+Date:   Fri Nov 26 21:47:37 2021 -0500
+
+    Redireccion al publicar curso, Pablo Loyola
+
+[33mcommit 8de05bd50e4aa3264368c3eb09b86a6c586bbb7e[m
+Author: Christian Carranza <carranzachristian61@gmail.com>
+Date:   Fri Nov 26 21:37:16 2021 -0500
+
+    Quitar el alert, mejorar el sweet alert de salir de modulo
+
+[33mcommit 9ad5fd99ccd05eae6b60c08a98c05e246cf11fa6[m
+Author: Pablo Sergio Loyola Tantaruna <pabloloyolat@gmail.com>
+Date:   Fri Nov 26 21:25:54 2021 -0500
+
+    Mostrar solo cursos publicados EDUCALMA, Pablo Loyola
+
+[33mcommit 5bda8a140348172503199ddf4f5afd3857a7fa4f[m
+Author: Mariella Loli <melolinunez@gmail.com>
+Date:   Fri Nov 26 20:17:36 2021 -0500
+
+    Separación de listado de cursos de Donar a nueva ventana llamada Publicación de cursos
+
+[33mcommit 309e0f0e22d1a3852e63ff93fe76509f87357f26[m
+Author: Mariella Loli <melolinunez@gmail.com>
+Date:   Fri Nov 26 20:15:30 2021 -0500
+
+    Separación de listado de cursos de Donar a nueva ventana llamada Publicación de cursos
+
+[33mcommit f0d33302ba72021c9e4af1e0a99bf9f2e5cdf641[m
+Author: Christian Carranza <carranzachristian61@gmail.com>
+Date:   Fri Nov 26 17:40:09 2021 -0500
+
+    Agregar boton finalizar en la parte de modulo
+
+[33mcommit f575c7b7afcdfb2ccb418f1b4d492c6fc85dc5e1[m
+Author: Mariella Loli <melolinunez@gmail.com>
+Date:   Fri Nov 26 17:13:35 2021 -0500
+
+    CRUD categoria
+
+[33mcommit 25a0f66dcd977c08b958aafa2b0da01d1d0bff08[m
+Author: Mariella Loli <melolinunez@gmail.com>
+Date:   Fri Nov 26 15:50:28 2021 -0500
+
+    CRUD Categoria
+
+[33mcommit 95a3b053aec9848f51c7d6e7ccebe47526f135a0[m
+Author: Mariella Loli <melolinunez@gmail.com>
+Date:   Thu Nov 25 23:36:37 2021 -0500
+
+    CRUD de categoría, Mariella Loli
+
+[33mcommit d486a83fbedcffce0103e14796f2a45b28543d94[m
+Author: JeanUtp <jeanzz.1910@gmail.com>
+Date:   Wed Nov 24 16:44:17 2021 -0500
+
+    quitar punto
+
+[33mcommit f83c5f2153279565b30dc014591fa856692010ed[m
+Author: Christian Carranza <carranzachristian61@gmail.com>
+Date:   Wed Nov 24 21:35:11 2021 +0000
+
+    Agregar datos del curso en boton info (modal) - Completo
+
+[33mcommit a33bfe2b7ad0437110e6dcdcf271852f70799970[m
+Author: Christian Carranza <carranzachristian61@gmail.com>
+Date:   Wed Nov 24 14:22:08 2021 -0500
+
+    Agregar datos del curso en boton info (modal)
+
+[33mcommit 9c705109c12bbb74dcf6596591a2d1842621cb0a[m
+Author: sheyla2112 <sheylinrey21@gmail.com>
+Date:   Tue Nov 23 19:09:35 2021 +0000
+
+    Update web/database/databaseConection.php
+
+[33mcommit 742dbcb66ca61d0e34d9125478db05e9d629a093[m
+Author: sheyla2112 <sheylinrey21@gmail.com>
+Date:   Tue Nov 23 18:59:43 2021 +0000
+
+    Update web/database/databaseConection.php
+
+[33mcommit 834ff4ea32bc72e7ac3f9aa81a16a3a82bd83be5[m
+Author: Jean Matos Palomino <jeanzz.1910@gmail.com>
+Date:   Mon Nov 22 22:59:24 2021 +0000
+
+    Update web/video.php, web/sidebarUserAdmin.php, web/sidebarEditar.php, web/sidebarCursos.php, web/registros.php, web/recursos1.php, web/progreso.php, web/nosotros.php, web/miscursos.php, web/foro.php, web/editartema.php, web/editarcurso.php, web/editarModulo.php, web/detallecurso.php, web/descargas.php, web/cursoinscrito.php, web/curso.php, web/cuestionario.php, web/certi.php, web/anuevocurso.php, web/agregartema.php, web/agregarcurso.php, web/agregarModulos.php, web/agregarCategorias.php, web/ListaCursos.php, web/Form_respue_cuestionario.php, web/Form_pregun_cuestionario.php, web/Editar_respue_cuestionario.php, web/Editar_pregun_Cuestionario.php, web/Cursoiniciar.php
+
+[33mcommit 0d916dd83450e4cb5626e43e8319591c4e8c21f1[m
+Author: Jean Matos Palomino <jeanzz.1910@gmail.com>
+Date:   Mon Nov 22 22:53:52 2021 +0000
+
+    Update web/includes/login/checklogin.php, web/index.php
+
+[33mcommit 60ec1f9e47ca51435111c85878d5b97e92f498d0[m
+Author: Jean Matos Palomino <jeanzz.1910@gmail.com>
+Date:   Mon Nov 22 22:50:54 2021 +0000
+
+    Update web/includes/login/checklogin.php
+
+[33mcommit 4c74e570b75edddaf3476a3c1ab04c7560e9ee0e[m
+Author: Jean Matos Palomino <jeanzz.1910@gmail.com>
+Date:   Mon Nov 22 22:49:01 2021 +0000
+
+    Update web/iniciosesion.php, web/includes/login/checklogin.php
+
+[33mcommit 0c5f01704fe5f3de23515f1d3c37f161e71eb4db[m
+Author: Jean Matos Palomino <jeanzz.1910@gmail.com>
+Date:   Mon Nov 22 22:45:48 2021 +0000
+
+    Update web/includes/login/checksession.php, web/iniciosesion.php
+
+[33mcommit f40e06fa75da569cd19d75f9d60288aa1aefbf0f[m
+Author: Jean Matos Palomino <jeanzz.1910@gmail.com>
+Date:   Mon Nov 22 22:34:31 2021 +0000
+
+    Update web/database/databaseConection.php
+
+[33mcommit 91ca8fd7c45fd122dd4b8ac79af4039a6f91da78[m
+Merge: 8f51df0 1b20368
+Author: JeanUtp <jeanzz.1910@gmail.com>
+Date:   Mon Nov 22 17:30:21 2021 -0500
+
+    Merge branch 'testing'
+
+[33mcommit 8f51df07de48b1db4798eed348bc1e51602f09e3[m
+Author: Jean Matos Palomino <jeanzz.1910@gmail.com>
+Date:   Mon Nov 22 05:04:55 2021 +0000
+
+    Update web/user-sidebar.php
+
+[33mcommit 1b203681610a8318b4464dc8f2fa0bef04e25e08[m
+Author: LeidyCeron <leidycersan@gmail.com>
+Date:   Sun Nov 21 22:57:02 2021 -0500
+
+    boton de informacion y modal sobre Cursos, Leidy
+
+[33mcommit 66465151c77f3a1c078eb7358e03b30291fbcffd[m
+Author: jorge23478 <kokolucho2004@hotmail.com>
+Date:   Sat Nov 20 13:42:41 2021 -0500
+
+    DropDown con boton para ver cursos, Jorge Martinez
+
+[33mcommit 4d0eea776bc14b1e18d23e3cadac6fb86da7a01a[m
+Author: Lorenzo GR <grimaldo.legr@gmail.com>
+Date:   Sat Nov 20 03:00:47 2021 -0500
+
+    Rediseño de button Atras
+
+[33mcommit b3f853d645c72baca107462665df29896cc0b558[m
+Author: Lorenzo GR <grimaldo.legr@gmail.com>
+Date:   Fri Nov 19 19:02:10 2021 -0500
+
+    Arreglar enlace de editar perfil, Lorenzo G.
+
+[33mcommit fb14607531b92bac84f4a6e23202695f89090349[m
+Author: pabloloyolat <pabloloyolat@gmail.com>
+Date:   Fri Nov 19 18:46:44 2021 -0500
+
+    funcion preguntas, Pablo Loyola
+
+[33mcommit df4b4c6273fa92fa96bc42cfd86bc44080f7c926[m
+Author: pabloloyolat <pabloloyolat@gmail.com>
+Date:   Thu Nov 18 23:31:24 2021 -0500
+
+    Final boton, Pablo Loyola
+
+[33mcommit 1a2d98ffc820c3a25808c0d9deb4ac38b16b8cb0[m
+Author: pabloloyolat <pabloloyolat@gmail.com>
+Date:   Thu Nov 18 18:52:10 2021 -0500
+
+    arreglo boton, Pablo Loyola
+
+[33mcommit 969b0f018ea342a2f647ca9673a21a42b2c16288[m
+Author: jorge23478 <kokolucho2004@hotmail.com>
+Date:   Wed Nov 17 19:37:35 2021 -0500
+
+    Responsive Video.php, Jorge Martinez
+
+[33mcommit 76aca7fa79d2ee93599042b9d7713c7373bf969c[m
+Author: gfsp2001 <gfsp2001@hotmail.com>
+Date:   Wed Nov 17 16:38:24 2021 -0500
+
+    boton certificado validado, Giancarlo S.
+
+[33mcommit 55c5d686b38f8b46afdd8b1af1d4f2c7d7d2c425[m
+Author: gfsp2001 <gfsp2001@hotmail.com>
+Date:   Wed Nov 17 15:28:18 2021 -0500
+
+    boton certificado validado, Giancarlo S.
+
+[33mcommit b475cf36267b93f0861d488d1cf2e564c579dae6[m
+Author: pabloloyolat <pabloloyolat@gmail.com>
+Date:   Wed Nov 17 12:17:15 2021 -0500
+
+    Botones de regreso, Pablo Loyola
+
+[33mcommit 47b261a27aed35634eb98af4d6161da2bccbfc0f[m
+Author: gfsp2001 <gfsp2001@hotmail.com>
+Date:   Tue Nov 16 15:12:31 2021 -0500
+
+    login arreglado, Giancarlo S.
+
+[33mcommit 9b4f5b083b8b42445d53f0f2e68f6678bf9a0e74[m
+Author: Jean Matos Palomino <jeanzz.1910@gmail.com>
+Date:   Tue Nov 16 07:06:01 2021 +0000
+
+    Update web/includes/dashboard/head1.php
+
+[33mcommit 90583de3b36db3faef6a6a89ad795c310b07c7bc[m
+Author: Jean Matos Palomino <jeanzz.1910@gmail.com>
+Date:   Tue Nov 16 07:04:18 2021 +0000
+
+    Update web/includes/dashboard/head1.php
+
+[33mcommit a7286063fefa4370655f44f7161c22bcbf22b27b[m
+Author: Jean Matos Palomino <jeanzz.1910@gmail.com>
+Date:   Tue Nov 16 07:01:33 2021 +0000
+
+    Update web/includes/dashboard/header1.php, web/includes/dashboard/pages/index1.php, web/includes/dashboard/head1.php, web/user-sidebar.php, web/includes/dashboard/body1.php
+
+[33mcommit 5721c96e393ac1f7bb49ebecce0c6b6673a79084[m
+Author: Jean Matos Palomino <jeanzz.1910@gmail.com>
+Date:   Tue Nov 16 06:57:03 2021 +0000
+
+    Update web/includes/dashboard/header1.php, web/includes/dashboard/pages/index1.php
+
+[33mcommit c28cb0a3e7101d3af6089d99f918260051a8ce4c[m
+Author: Jean Matos Palomino <jeanzz.1910@gmail.com>
+Date:   Tue Nov 16 06:52:32 2021 +0000
+
+    Update web/includes/dashboard/body1.php
+
+[33mcommit d93d26c6b79c904c6e897d5f55d72e8303ed9847[m
+Author: Jean Matos Palomino <jeanzz.1910@gmail.com>
+Date:   Tue Nov 16 06:51:57 2021 +0000
+
+    Update web/includes/dashboard/body1.php
+
+[33mcommit 86d98abf18bdfa761ee94b21fa62186c88007cc7[m
+Author: Jean Matos Palomino <jeanzz.1910@gmail.com>
+Date:   Tue Nov 16 06:50:55 2021 +0000
+
+    Update web/includes/dashboard/body1.php
+
+[33mcommit 22123f78f6dbba0c3d6e8ac4fadcc3c69bd1e695[m
+Author: Jean Matos Palomino <jeanzz.1910@gmail.com>
+Date:   Tue Nov 16 06:46:31 2021 +0000
+
+    Update web/includes/dashboard/body1.php
+
+[33mcommit a8c5561a9d66973f121e71d3b69eeb49376c3389[m
+Author: Jean Matos Palomino <jeanzz.1910@gmail.com>
+Date:   Tue Nov 16 06:45:15 2021 +0000
+
+    Update web/includes/dashboard/body1.php
+
+[33mcommit 88aa226f259b5608ecd2c6cced1875cd2cd1cf8c[m
+Author: Jean Matos Palomino <jeanzz.1910@gmail.com>
+Date:   Tue Nov 16 06:42:40 2021 +0000
+
+    Update web/includes/dashboard/body1.php, web/includes/dashboard/contenido.php
+
+[33mcommit f2429089dd7de796a9d6ef1a372eab499a0c7cab[m
+Author: Jean Matos Palomino <jeanzz.1910@gmail.com>
+Date:   Tue Nov 16 06:38:14 2021 +0000
+
+    Update web/includes/dashboard/body1.php, web/includes/dashboard/head1.php, web/includes/dashboard/contenido.php
+
+[33mcommit 990dd31f8cacedc7c015a67d47aceb0dd6c478f5[m
+Author: Jean Matos Palomino <jeanzz.1910@gmail.com>
+Date:   Tue Nov 16 06:32:17 2021 +0000
+
+    Update web/includes/Inicio/Header.php, web/video.php, web/registros.php, web/recursos1.php, web/progreso.php, web/nosotros.php, web/miscursos.php, web/foro.php, web/editartema.php, web/editarcurso.php, web/editarModulo.php, web/detallecurso.php, web/descargas.php, web/cursoinscrito.php, web/curso.php, web/cuestionario.php, web/anuevocurso.php, web/agregartema.php, web/agregarcurso.php, web/agregarModulos.php, web/agregarCategorias.php, web/ListaCursos.php, web/Form_respue_cuestionario.php, web/Form_pregun_cuestionario.php, web/Editar_respue_cuestionario.php, web/Editar_pregun_Cuestionario.php, web/Cursoiniciar.php
+
+[33mcommit f1435465d35b18a818ced5371601139b31f906b0[m
+Author: Jean Matos Palomino <jeanzz.1910@gmail.com>
+Date:   Tue Nov 16 06:22:01 2021 +0000
+
+    Update web/iniciosesion.php
+
+[33mcommit de2796afdc7a8cf45ee9079c780fd8b9b6c268fe[m
+Author: Jean Matos Palomino <jeanzz.1910@gmail.com>
+Date:   Tue Nov 16 06:17:33 2021 +0000
+
+    Update web/includes/login/checklogin.php, web/iniciosesion.php
+
+[33mcommit 1765b6f9167dff29cc469731a087b6bf05ecf175[m
+Author: Jean Matos Palomino <jeanzz.1910@gmail.com>
+Date:   Tue Nov 16 06:09:20 2021 +0000
+
+    Update web/includes/Inicio/Header.php, web/index.php
+
+[33mcommit 782b67675db4590e14ef4b8af13dde3e3dd8cf4d[m
+Author: Jean Matos Palomino <jeanzz.1910@gmail.com>
+Date:   Tue Nov 16 05:57:58 2021 +0000
+
+    Update web/includes/Inicio/Header.php
+
+[33mcommit 3980d64754bababa55dd225627035282d99e7a92[m
+Author: Jean Matos Palomino <jeanzz.1910@gmail.com>
+Date:   Tue Nov 16 05:53:20 2021 +0000
+
+    Update web/includes/login/checklogin.php
+
+[33mcommit 69a908d0a84e2ba73d6657e326779db516d956f0[m
+Author: Jean Matos Palomino <jeanzz.1910@gmail.com>
+Date:   Tue Nov 16 05:51:52 2021 +0000
+
+    Update web/includes/login/checklogin.php
+
+[33mcommit 87fb64855ae963da056a5f1d76d0645419353c31[m
+Author: Jean Matos Palomino <jeanzz.1910@gmail.com>
+Date:   Tue Nov 16 05:48:00 2021 +0000
+
+    Update web/includes/Inicio/Header.php
+
+[33mcommit dacb8001d22f413715c07cceb359b9eadc9d7083[m
+Author: Jean Matos Palomino <jeanzz.1910@gmail.com>
+Date:   Tue Nov 16 05:47:37 2021 +0000
+
+    Update web/includes/login/checklogin.php
+
+[33mcommit 6e22818a77c45cbac82e99d53373613805dc142a[m
+Author: Jean Matos Palomino <jeanzz.1910@gmail.com>
+Date:   Tue Nov 16 05:44:02 2021 +0000
+
+    Update web/includes/Inicio/Header.php
+
+[33mcommit e8e915bf28eb2a453a3740744a64a62685f8a982[m
+Author: Jean Matos Palomino <jeanzz.1910@gmail.com>
+Date:   Tue Nov 16 05:41:22 2021 +0000
+
+    Update web/includes/Inicio/Header.php
+
+[33mcommit 83afd932ac5ae1b6c40ab1c2ad6bc971dd20a9dd[m
+Author: Jean Matos Palomino <jeanzz.1910@gmail.com>
+Date:   Tue Nov 16 05:38:57 2021 +0000
+
+    Update web/includes/Inicio/Header.php
+
+[33mcommit a6f4a7b5fe25c17e5185aeb1c7d61efba77f5c9e[m
+Author: Jean Matos Palomino <jeanzz.1910@gmail.com>
+Date:   Tue Nov 16 05:32:28 2021 +0000
+
+    Update web/includes/login/checklogin.php
+
+[33mcommit 670ea511e2665d647e5078b08e9fd4f2ab81101f[m
+Author: Jean Matos Palomino <jeanzz.1910@gmail.com>
+Date:   Tue Nov 16 05:30:01 2021 +0000
+
+    Update web/includes/login/checklogin.php
+
+[33mcommit 73d35d5d2dd4b0663897f79c910ad1321b842a31[m
+Author: Jean Matos Palomino <jeanzz.1910@gmail.com>
+Date:   Tue Nov 16 05:27:48 2021 +0000
+
+    Update web/includes/Inicio/Header.php
+
+[33mcommit 506437cde514b691b210cfe46bd5c2466dc39bda[m
+Author: Jean Matos Palomino <jeanzz.1910@gmail.com>
+Date:   Tue Nov 16 05:23:26 2021 +0000
+
+    Update web/includes/Inicio/Header.php, web/includes/login/checklogin.php
+
+[33mcommit 3f20a1232486e4430ae12974cb8f010ba69b2466[m
+Author: Jean Matos Palomino <jeanzz.1910@gmail.com>
+Date:   Tue Nov 16 05:19:17 2021 +0000
+
+    Update web/includes/Inicio/Header.php
+
+[33mcommit 6b592d5973af49cfb1c33c332237bda5f942e735[m
+Author: Jean Matos Palomino <jeanzz.1910@gmail.com>
+Date:   Tue Nov 16 05:17:22 2021 +0000
+
+    Update web/includes/Inicio/Header.php
+
+[33mcommit 6700ca0e9357655bab580109e92e565b2093689a[m
+Author: Jean Matos Palomino <jeanzz.1910@gmail.com>
+Date:   Tue Nov 16 05:15:21 2021 +0000
+
+    Update web/includes/Inicio/Header.php
+
+[33mcommit a09c101a7fd54ddef1dda560d21bcf5ddac1b4a7[m
+Author: Jean Matos Palomino <jeanzz.1910@gmail.com>
+Date:   Tue Nov 16 05:13:57 2021 +0000
+
+    Update web/includes/Inicio/Header.php
+
+[33mcommit 3e4f5d4ebb99861632e1a2f3e6af3c6a36a9f77a[m
+Author: Jean Matos Palomino <jeanzz.1910@gmail.com>
+Date:   Tue Nov 16 05:08:05 2021 +0000
+
+    Update web/includes/Inicio/Header.php
+
+[33mcommit 9b01d76ad35abd2f41062c92977785956bbda83e[m
+Author: Jean Matos Palomino <jeanzz.1910@gmail.com>
+Date:   Tue Nov 16 05:05:18 2021 +0000
+
+    Update web/includes/Inicio/Header.php, web/includes/Inicio/Contenido.php
+
+[33mcommit dc59f834c993d9d894cbdc88582b094b6ab1008e[m
+Author: Jean Matos Palomino <jeanzz.1910@gmail.com>
+Date:   Tue Nov 16 05:00:25 2021 +0000
+
+    Update web/includes/login/checklogin.php
+
+[33mcommit 4bc7330a01db1cb95c0d7f120f313c8490cf19dc[m
+Author: Jean Matos Palomino <jeanzz.1910@gmail.com>
+Date:   Tue Nov 16 04:58:45 2021 +0000
+
+    Update web/includes/login/checklogin.php
+
+[33mcommit 0cf596789b41e031e83eeb3488e08278dd3927a1[m
+Author: Jean Matos Palomino <jeanzz.1910@gmail.com>
+Date:   Tue Nov 16 04:56:40 2021 +0000
+
+    Update web/includes/login/checklogin.php
+
+[33mcommit 6d3c1cb92a84ee666f4d921d6dfdf11e91080d54[m
+Author: Jean Matos Palomino <jeanzz.1910@gmail.com>
+Date:   Tue Nov 16 04:54:30 2021 +0000
+
+    Update web/includes/login/checklogin.php
+
+[33mcommit e715d876faa75638e99edfed6d775dbe3f6e3f01[m
+Author: Jean Matos Palomino <jeanzz.1910@gmail.com>
+Date:   Tue Nov 16 04:51:46 2021 +0000
+
+    Update web/includes/login/checklogin.php
+
+[33mcommit 99d19f53412f1e3fa39eb8c0c484e1d8252c0fac[m
+Author: JeanUtp <jeanzz.1910@gmail.com>
+Date:   Mon Nov 15 22:51:38 2021 -0500
+
+    jean
+
+[33mcommit b7ea79e415dd05621eb1dd31340cf4a2555b411b[m
+Author: JeanUtp <jeanzz.1910@gmail.com>
+Date:   Mon Nov 15 22:48:38 2021 -0500
+
+    jean
+
+[33mcommit 14bdf6ded704b91041e4b0ab0dd097c43ef95d07[m
+Author: Jean Matos Palomino <jeanzz.1910@gmail.com>
+Date:   Tue Nov 16 03:42:28 2021 +0000
+
+    Update web/database/databaseConection.php
+
+[33mcommit 093a750fddbe96784f886efb9c8b7bcb37a1565e[m
+Author: Jean Matos Palomino <jeanzz.1910@gmail.com>
+Date:   Tue Nov 16 03:39:28 2021 +0000
+
+    Update web/iniciosesion.php, web/index.php
+
+[33mcommit cab15f6a095642a1ccccd61464e085b9b2a8d14f[m
+Author: Jean Matos Palomino <jeanzz.1910@gmail.com>
+Date:   Tue Nov 16 03:37:13 2021 +0000
+
+    Update web/index.php, web/iniciosesion.php
+
+[33mcommit 0b433860cd08d782acc86a79fcc1220b04051456[m
+Author: Jean Matos Palomino <jeanzz.1910@gmail.com>
+Date:   Tue Nov 16 03:33:21 2021 +0000
+
+    Update web/database/databaseConection.php
+
+[33mcommit d13589572aebf215097a9d5d5bf1284c06039f16[m
+Author: JeanUtp <jeanzz.1910@gmail.com>
+Date:   Mon Nov 15 22:30:34 2021 -0500
+
+    jean
+
+[33mcommit 97ed91733415375bc78b64ac38040cf325e83dee[m
+Author: Jean Matos Palomino <jeanzz.1910@gmail.com>
+Date:   Tue Nov 9 06:30:09 2021 +0000
+
+    Update web/iniciosesion.php, web/includes/login/checklogin.php, web/includes/login/login.php
+
+[33mcommit 0845a42a262e51973154fc30150715516946b00c[m
+Author: Jean Matos Palomino <jeanzz.1910@gmail.com>
+Date:   Tue Nov 9 06:19:26 2021 +0000
+
+    Update web/includes/dashboard/head1.php
+
+[33mcommit a1863030913c0062de2035f69dc65336bfc2c64a[m
+Author: Jean Matos Palomino <jeanzz.1910@gmail.com>
+Date:   Tue Nov 9 06:17:16 2021 +0000
+
+    Update web/includes/dashboard/head1.php
+
+[33mcommit 2479efa9ba0e66329ea30377545a4c30afab68f0[m
+Author: Jean Matos Palomino <jeanzz.1910@gmail.com>
+Date:   Tue Nov 9 06:14:53 2021 +0000
+
+    Update web/includes/Inicio/Header.php
+
+[33mcommit 4db313ef314ec136222e4c70692da2baeb3f19da[m
+Author: Jean Matos Palomino <jeanzz.1910@gmail.com>
+Date:   Tue Nov 9 06:11:24 2021 +0000
+
+    Update web/includes/login/checklogin.php
+
+[33mcommit 752ad1b6643c6d9eee73c90f90a378c23475556a[m
+Author: Jean Matos Palomino <jeanzz.1910@gmail.com>
+Date:   Tue Nov 9 06:07:20 2021 +0000
+
+    Update web/iniciosesion.php
+
+[33mcommit f66ea002d8d3385fc480d4aa49b24fcab2bcf7d6[m
+Author: Jean Matos Palomino <jeanzz.1910@gmail.com>
+Date:   Tue Nov 9 05:53:45 2021 +0000
+
+    Update web/includes/login/checklogin.php, web/includes/login/login.php
+
+[33mcommit cde62da57f9512d23243141fd71838d5d25c52b4[m
+Author: Jean Matos Palomino <jeanzz.1910@gmail.com>
+Date:   Tue Nov 9 05:39:57 2021 +0000
+
+    Update web/includes/login/checklogin.php
+
+[33mcommit 931986027f7b49689b30490de05e17ad0d8b91b6[m
+Author: Jean Matos Palomino <jeanzz.1910@gmail.com>
+Date:   Tue Nov 9 05:37:33 2021 +0000
+
+    Update web/includes/login/checklogin.php
+
+[33mcommit 734de54c412ae331f1446397bb19a03f97b419c3[m
+Author: Jean Matos Palomino <jeanzz.1910@gmail.com>
+Date:   Tue Nov 9 05:33:33 2021 +0000
+
+    Update web/includes/login/checklogin.php
+
+[33mcommit eb15e617a90f3e304a2cb348e99b9986262dc4be[m
+Author: Jean Matos Palomino <jeanzz.1910@gmail.com>
+Date:   Tue Nov 9 05:30:46 2021 +0000
+
+    Update web/includes/login/checklogin.php
+
+[33mcommit 81014cbf700f974d66a4d170ef8ff84f207f75dd[m
+Author: Jean Matos Palomino <jeanzz.1910@gmail.com>
+Date:   Tue Nov 9 05:29:07 2021 +0000
+
+    Update web/includes/login/checklogin.php
+
+[33mcommit 0ae5944a1a48653184d1d3d9f09535e4296ab494[m
+Author: Jean Matos Palomino <jeanzz.1910@gmail.com>
+Date:   Tue Nov 9 05:20:54 2021 +0000
+
+    Update web/includes/login/checklogin.php
+
+[33mcommit 46ae6e10c3309dd9351644f568bd731067da0573[m
+Author: Jean Matos Palomino <jeanzz.1910@gmail.com>
+Date:   Tue Nov 9 05:19:06 2021 +0000
+
+    Update web/includes/login/checklogin.php
+
+[33mcommit 8e255261c0e8adcb4ffc5a13a5f403d95cb98c82[m
+Author: Jean Matos Palomino <jeanzz.1910@gmail.com>
+Date:   Tue Nov 9 05:05:11 2021 +0000
+
+    Update web/video.php, web/registros.php, web/recursos1.php, web/progreso.php, web/nosotros.php, web/miscursos.php, web/iniciosesion.php, web/index.php, web/foro.php, web/editartema.php, web/editarcurso.php, web/editarModulo.php, web/detallecurso.php, web/descargas.php, web/cursoinscrito.php, web/curso.php, web/cuestionario.php, web/anuevocurso.php, web/agregartema.php, web/agregarcurso.php, web/agregarModulos.php, web/agregarCategorias.php, web/ListaCursos.php, web/Form_respue_cuestionario.php, web/Form_pregun_cuestionario.php, web/Editar_respue_cuestionario.php, web/Editar_pregun_Cuestionario.php, web/Cursoiniciar.php
+
+[33mcommit 7c303b73539894098ca6c82a482efc0c27fc517f[m
+Author: Jean Matos Palomino <jeanzz.1910@gmail.com>
+Date:   Tue Nov 9 04:58:30 2021 +0000
+
+    Update web/video.php, web/recursos1.php, web/progreso.php, web/nosotros.php, web/miscursos.php, web/iniciosesion.php, web/index.php, web/foro.php, web/editartema.php, web/editarcurso.php, web/editarModulo.php, web/detallecurso.php, web/descargas.php, web/cursoinscrito.php, web/curso.php, web/cuestionario.php, web/anuevocurso.php, web/agregartema.php, web/agregarcurso.php, web/agregarModulos.php, web/agregarCategorias.php, web/ListaCursos.php, web/Form_respue_cuestionario.php, web/Form_pregun_cuestionario.php, web/Editar_respue_cuestionario.php, web/Editar_pregun_Cuestionario.php, web/Cursoiniciar.php
+
+[33mcommit 364daae8a55adca748d0d95e4f65f249f7ad10ec[m
+Author: Jean Matos Palomino <jeanzz.1910@gmail.com>
+Date:   Tue Nov 9 04:48:48 2021 +0000
+
+    Update web/database/conexion.php, web/database/EduCalma.sql, web/database/databaseConection.php
+
+[33mcommit 2b6138ceec50698692ad067919cde3a1df5d108d[m
+Author: JeanUtp <jeanzz.1910@gmail.com>
+Date:   Mon Nov 8 23:36:05 2021 -0500
+
+    first commit, jean
+
+[33mcommit 2494a6b25ec049c6c7e82378104c0e4b486ff2ad[m
+Author: Angell4S <asencios093@gmail.com>
+Date:   Tue Nov 2 04:03:35 2021 +0000
+
+    Update web/database/databaseConection.php, .env
+
+[33mcommit 177b25dfb94a76ee6bd646fa1a9470a0df8c35fc[m
+Author: Angell4S <asencios093@gmail.com>
+Date:   Tue Nov 2 03:52:07 2021 +0000
+
+    Update .env
+
+[33mcommit 273be703a2217fc843237e0bd4164a6946a38ac0[m
+Author: Angell4S <asencios093@gmail.com>
+Date:   Tue Nov 2 03:49:45 2021 +0000
+
+    Update docker-compose.yml
+
+[33mcommit d3db32e5c5f67f65c3a129eb4e4a238e7961b9f6[m
+Author: Jean Matos Palomino <jeanzz.1910@gmail.com>
+Date:   Thu Oct 28 08:57:21 2021 +0000
+
+    Update web/database/databaseConection.php
+
+[33mcommit 2a9e37c6ebb68f6deb2ff0a529d63b03f744d1cc[m
+Author: Jean Matos Palomino <jeanzz.1910@gmail.com>
+Date:   Thu Oct 28 08:51:54 2021 +0000
+
+    Update web/database/conexion.php
+
+[33mcommit 59a5fd1eeb427ecb8fef2c86606c51472be494ae[m
+Author: Jean Matos Palomino <jeanzz.1910@gmail.com>
+Date:   Thu Oct 28 08:46:27 2021 +0000
+
+    Update web/database/databaseConection.php, docker-compose.yml
+
+[33mcommit a0362e20bc9d5807b8a34fa2078f58bbe0c38041[m
+Author: Jean Matos Palomino <jeanzz.1910@gmail.com>
+Date:   Thu Oct 28 08:43:30 2021 +0000
+
+    Update web/database/databaseConection.php
+
+[33mcommit 08322661b6cf20ccf485f41ceca05610d44b56a1[m
+Author: Jean Matos Palomino <jeanzz.1910@gmail.com>
+Date:   Thu Oct 28 08:39:31 2021 +0000
+
+    Update web/database/databaseConection.php, .env
+
+[33mcommit f04dcd8f5eb6b501585b438847c26c00385a577f[m
+Author: Jean Matos Palomino <jeanzz.1910@gmail.com>
+Date:   Thu Oct 28 08:36:13 2021 +0000
+
+    Update web/database/databaseConection.php
+
+[33mcommit fdd3b2be124ccef033e21bc1d50988f3937769c6[m
+Author: Jean Matos Palomino <jeanzz.1910@gmail.com>
+Date:   Thu Oct 28 08:34:17 2021 +0000
+
+    Update web/database/databaseConection.php
+
+[33mcommit 10f6d9520415c1cfc4bed42bced4857378260e48[m
+Author: Jean Matos Palomino <jeanzz.1910@gmail.com>
+Date:   Thu Oct 28 08:30:32 2021 +0000
+
+    Update .env, web/database/databaseConection.php
+
+[33mcommit fecc693ade705bc144ee5d9c421ab25e5c053545[m
+Author: Jean Matos Palomino <jeanzz.1910@gmail.com>
+Date:   Thu Oct 28 08:25:59 2021 +0000
+
+    Update docker-compose.yml
+
+[33mcommit 082a17a7f0cd37446a4b168175dc415925e00557[m
+Author: Jean Matos Palomino <jeanzz.1910@gmail.com>
+Date:   Thu Oct 28 08:23:15 2021 +0000
+
+    Update docker-compose.yml
+
+[33mcommit 01ada2806e60cb9ba72b68360240e8969f2ec56e[m
+Author: Jean Matos Palomino <jeanzz.1910@gmail.com>
+Date:   Thu Oct 28 08:14:10 2021 +0000
+
+    Update docker-compose.yml
+
+[33mcommit 132cdb8f2d22ea3ad604b280f7f4f72956cd050a[m
+Author: Jean Matos Palomino <jeanzz.1910@gmail.com>
+Date:   Thu Oct 28 08:12:10 2021 +0000
+
+    Update docker-compose.yml
+
+[33mcommit 1039b517f56b1c094227e7afe195cf6867357150[m
+Author: Jean Matos Palomino <jeanzz.1910@gmail.com>
+Date:   Thu Oct 28 08:09:53 2021 +0000
+
+    Update docker-compose.yml
+
+[33mcommit aae78bf44a3741f3fa2af1ad6f4e0f57b52b7f6f[m
+Author: Jean Matos Palomino <jeanzz.1910@gmail.com>
+Date:   Thu Oct 28 08:08:13 2021 +0000
+
+    Update docker-compose.yml
+
+[33mcommit 914d105361c8bb7f777b2858a1673022e8bb2656[m
+Author: Jean Matos Palomino <jeanzz.1910@gmail.com>
+Date:   Thu Oct 28 08:06:45 2021 +0000
+
+    Update docker-compose.yml
+
+[33mcommit ae9e6d9360e42652886f3188b59df0628170b640[m
+Author: Jean Matos Palomino <jeanzz.1910@gmail.com>
+Date:   Thu Oct 28 08:05:35 2021 +0000
+
+    Update .env, docker-compose.yml
+
+[33mcommit 0c6f4f4f225d20fc8f40da8fdd2333bd5257daa1[m
+Author: Jean Matos Palomino <jeanzz.1910@gmail.com>
+Date:   Thu Oct 28 07:54:15 2021 +0000
+
+    Update docker-compose.yml
+
+[33mcommit 129d1c9029afc22e755f996dfda99fedfba4fa9b[m
+Author: Jean Matos Palomino <jeanzz.1910@gmail.com>
+Date:   Thu Oct 28 07:46:26 2021 +0000
+
+    Update docker-compose.yml
+
+[33mcommit a0b7c5fb5030187e0bc4808b61d3d95bc8542bcf[m
+Author: Jean Matos Palomino <jeanzz.1910@gmail.com>
+Date:   Thu Oct 28 07:44:07 2021 +0000
+
+    Update docker-compose.yml
+
+[33mcommit 668bc9d9b5496dfc884d16b7648d35c11584ba71[m
+Author: Jean Matos Palomino <jeanzz.1910@gmail.com>
+Date:   Thu Oct 28 07:40:58 2021 +0000
+
+    Update .env, docker-compose.yml
+
+[33mcommit bd9fb18ee46dc2eb59309019724c837707b35c69[m
+Author: Angell4S <asencios093@gmail.com>
+Date:   Tue Oct 26 02:40:31 2021 +0000
+
+    Update docker-compose.yml
+
+[33mcommit 40aa1eeb938ccf7831ca01caf23bda3380b25e8d[m
+Author: Jean Matos Palomino <jeanzz.1910@gmail.com>
+Date:   Tue Oct 26 00:00:06 2021 +0000
+
+    Update web/nosotros.php
+
+[33mcommit 6486398f9fa1d60ca3e20681f1e0f79286859365[m
+Author: Jean Matos Palomino <jeanzz.1910@gmail.com>
+Date:   Mon Oct 25 23:57:42 2021 +0000
+
+    Update web/nosotros.php
+
+[33mcommit f880eccafba4f018c907877e577f13ada8d90b8c[m
+Author: Jean Matos Palomino <jeanzz.1910@gmail.com>
+Date:   Mon Oct 25 23:56:03 2021 +0000
+
+    Update web/nosotros.php
+
+[33mcommit ec5a635e3527000eb84f90d1ea0bddccbd7223da[m
+Author: Jean Matos Palomino <jeanzz.1910@gmail.com>
+Date:   Mon Oct 25 23:54:07 2021 +0000
+
+    Update web/index.php
+
+[33mcommit 0490360b967ddb341f5e701a184ea30da48831e8[m
+Author: Jean Matos Palomino <jeanzz.1910@gmail.com>
+Date:   Mon Oct 25 23:51:03 2021 +0000
+
+    Update web/index.php
+
+[33mcommit c0bf9b60eff6ed9c4b7a7e991393de1de14a9af6[m
+Author: Jean Matos Palomino <jeanzz.1910@gmail.com>
+Date:   Mon Oct 25 23:49:17 2021 +0000
+
+    Update web/database/databaseConection.php, web/index.php
+
+[33mcommit 800f2e86e9f0717691c06875b4756f1579e58c46[m
+Author: Jean Matos Palomino <jeanzz.1910@gmail.com>
+Date:   Mon Oct 25 23:44:43 2021 +0000
+
+    Update web/iniciosesion.php
+
+[33mcommit fb863e38104f3a75d9ecfafc1e42cccfa0039826[m
+Author: Jean Matos Palomino <jeanzz.1910@gmail.com>
+Date:   Mon Oct 25 23:42:22 2021 +0000
+
+    Update web/iniciosesion.php
+
+[33mcommit 4e8e84f18c077b5b298264acfdc9ed4600a43f07[m
+Author: Jean Matos Palomino <jeanzz.1910@gmail.com>
+Date:   Mon Oct 25 23:40:11 2021 +0000
+
+    Update web/iniciosesion.php
+
+[33mcommit a65f8c68573b99ed0f06b0a7311d57d707fe2135[m
+Author: Jean Matos Palomino <jeanzz.1910@gmail.com>
+Date:   Mon Oct 25 23:34:57 2021 +0000
+
+    Update web/iniciosesion.php
+
+[33mcommit 004c1f765b1de953832ee9740a729c2aef431599[m
+Author: Jean Matos Palomino <jeanzz.1910@gmail.com>
+Date:   Mon Oct 25 23:23:29 2021 +0000
+
+    Update web/iniciosesion.php
+
+[33mcommit df2d44bc38e348b6766defc3eda4b09c19595a21[m
+Author: Jean Matos Palomino <jeanzz.1910@gmail.com>
+Date:   Mon Oct 25 23:20:00 2021 +0000
+
+    Update web/nosotros.php, web/includes/Inicio/Head.php, web/includes/Inicio/Contenido.php, web/includes/nosotros/Noscontenido.php
+
+[33mcommit 458d572d50e534aeda5668226c29236e397e2d21[m
+Author: Jean Matos Palomino <jeanzz.1910@gmail.com>
+Date:   Mon Oct 25 23:13:11 2021 +0000
+
+    Update web/nosotros.php
+
+[33mcommit c159445a5bf9c8221676baad3d7436bbfb53f1b1[m
+Author: Jean Matos Palomino <jeanzz.1910@gmail.com>
+Date:   Mon Oct 25 23:11:49 2021 +0000
+
+    Update web/includes/nosotros/Noscontenido.php, web/nosotros.php
+
+[33mcommit 507eb2e5fc1f450507d32e6b178234871f8690d1[m
+Author: Jean Matos Palomino <jeanzz.1910@gmail.com>
+Date:   Mon Oct 25 23:07:53 2021 +0000
+
+    Update web/includes/nosotros/Noscontenido.php
+
+[33mcommit 1212f11ef166a9fb7f4046f417dc6dc76143d66d[m
+Author: Jean Matos Palomino <jeanzz.1910@gmail.com>
+Date:   Mon Oct 25 23:07:15 2021 +0000
+
+    Update web/includes/nosotros/Noscontenido.php
+
+[33mcommit e867f36eb6a578ff62d7deccde73849f925b829f[m
+Author: Jean Matos Palomino <jeanzz.1910@gmail.com>
+Date:   Mon Oct 25 23:05:58 2021 +0000
+
+    Update web/includes/nosotros/Noscontenido.php
+
+[33mcommit 889d7c7fbb0124d222bea44c8d8991a05c47df8a[m
+Author: Jean Matos Palomino <jeanzz.1910@gmail.com>
+Date:   Mon Oct 25 23:04:43 2021 +0000
+
+    Update web/nosotros.php
+
+[33mcommit 92d7f21a6988535b1b26b045faeb199aadc7a91d[m
+Author: Angell4S <asencios093@gmail.com>
+Date:   Mon Oct 25 22:41:16 2021 +0000
+
+    Update web/nosotros.php
+
+[33mcommit 6e5c89f9f6ace72dd4d8f4ca5d82d219b1cd0d4a[m
+Author: Angell4S <asencios093@gmail.com>
+Date:   Mon Oct 25 22:37:25 2021 +0000
+
+    Update web/nosotros.php
+
+[33mcommit 6efea668152dc46558b7dcff5fc3eba651a5f7ed[m
+Author: Angell4S <asencios093@gmail.com>
+Date:   Mon Oct 25 22:35:15 2021 +0000
+
+    Update web/nosotros.php, web/index.php
+
+[33mcommit 05ef6698ac6e70987dcac4bc25e99990d1697e7d[m
+Author: Angell4S <asencios093@gmail.com>
+Date:   Mon Oct 25 22:30:58 2021 +0000
+
+    Update web/nosotros.php, web/includes/Inicio/Contenido.php, web/includes/Inicio/Footer.php, web/includes/Inicio/Head.php, web/includes/Inicio/Header.php, web/includes/Inicio/Loader.php
+
+[33mcommit 7f33477ee44a2afbccd8261b6c198d8a1df4691d[m
+Author: Angell4S <asencios093@gmail.com>
+Date:   Mon Oct 25 22:28:16 2021 +0000
+
+    Update web/nosotros.php
+
+[33mcommit 734e5da9e27a7a0164852b7f1ac8e3cd8afe4310[m
+Author: Angell4S <asencios093@gmail.com>
+Date:   Mon Oct 25 22:25:02 2021 +0000
+
+    Update web/nosotros.php
+
+[33mcommit 69d163167a24c987ab767b9226e74df10c3e0e01[m
+Author: Angell4S <asencios093@gmail.com>
+Date:   Mon Oct 25 22:21:56 2021 +0000
+
+    Update web/nosotros.php, web/includes/inicio/Contenido.php, web/includes/inicio/Footer.php, web/includes/inicio/Head.php, web/includes/inicio/Header.php, web/includes/inicio/Loader.php, web/index.php
+
+[33mcommit 99aff8bb614b156f3832f8fcd66de2519e98f98c[m
+Author: Angell4S <asencios093@gmail.com>
+Date:   Mon Oct 25 22:11:17 2021 +0000
+
+    Update web/index.php
+
+[33mcommit d210d5cf75a3326ad1989fa503780ec340e2b1ac[m
+Author: Angell4S <asencios093@gmail.com>
+Date:   Mon Oct 25 22:07:56 2021 +0000
+
+    Update web/index.php
+
+[33mcommit 5fd2c489f8c58452361f5844d2c82b2b1a92f1e7[m
+Author: Angell4S <asencios093@gmail.com>
+Date:   Mon Oct 25 22:04:23 2021 +0000
+
+    Update docker-compose.yml
+
+[33mcommit 1ac0181b9f9a2a7c14e4c54bedd565deec7249e0[m
+Author: Angell4S <asencios093@gmail.com>
+Date:   Mon Oct 25 22:02:36 2021 +0000
+
+    Update docker-compose.yml
+
+[33mcommit 57a8b3916584e00ce9038e78cc3001efdf4162de[m
+Author: Angell4S <asencios093@gmail.com>
+Date:   Mon Oct 25 21:59:36 2021 +0000
+
+    Update .gitlab-ci.yml
+
+[33mcommit d2b7fe3a47c37fcad477bc5fb69f4f3ec7626cab[m
+Author: Angell4S <asencios093@gmail.com>
+Date:   Mon Oct 25 16:53:50 2021 -0500
+
+    add web
+
+[33mcommit 5f03e40d3f44ff795844943cebd77f28e88fd778[m
+Author: Angell4S <asencios093@gmail.com>
+Date:   Mon Oct 25 21:37:54 2021 +0000
+
+    Update web/index.php
+
+[33mcommit 61c0441c1981ae15c52cfef796469f484fd72f1f[m
+Author: Angell4S <asencios093@gmail.com>
+Date:   Mon Oct 25 21:37:21 2021 +0000
+
+    Update docker-compose.yml, Dockerfile, .env, 000-default.conf
+
+[33mcommit 13cff1150988aed2a0f2bfe4df677273b2a94bb4[m
+Author: Angell4S <asencios093@gmail.com>
+Date:   Mon Oct 25 21:26:57 2021 +0000
+
+    Initial commit
