@@ -9,7 +9,7 @@ ob_start();
 
     <?php include_once 'includes/dashboard/body1.php' ?>
 
-    <?php include_once 'includes/business/Empresas.php' ?>
+    <?php include_once 'includes/Business/Empresas.php' ?>
 
     <!-- <script src="./assets/js/plugins/jquery.min.js"></script> -->
     <!-- ALL JS FILES -->
