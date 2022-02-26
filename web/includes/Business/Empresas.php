@@ -9,7 +9,7 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
     <head>
         <link rel="stylesheet" href="assets/css/plugins/bootstrap.min.css" />
         <link rel="stylesheet" href="includes/dist/css/adminlte.min.css">
-        <--link rel="stylesheet" href="assets/css/styledash.css"-->
+        <link rel="stylesheet" href="assets/css/styledash.css">
     </head>
 
     <!-- para listar y la paginacion de tablas -->
