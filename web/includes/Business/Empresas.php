@@ -45,7 +45,7 @@ WHERE us.privilegio=4 ;";
 from usuarios as us  
 INNER JOIN solicitud as sl 
 on us.id_user = sl.id_usuario
-WHERE us.privilegio=4 group by id_user DESC;";
+WHERE us.privilegio=4 order by id_user DESC;";
         $q3 = $pdo4->prepare($sql3);
         $q3->execute();
         $usuarios = $q3->fetchAll(PDO::FETCH_ASSOC);
