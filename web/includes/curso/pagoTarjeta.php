@@ -16,17 +16,51 @@
     <h7 style="color: darkgray">Ingresa los datos de tu tarjeta:</h7>  
     <br> <br> 
         <div class="input-group">
-            
+            <input type="text" class="form-control" id="name" name="name" placeholder="Nombres">
+            <div class="input-group-append">
+            <span class="input-group-text"><img src="assets/img/user-name.png" width="25" height="20"></span>
+            </div>        
+        </div>
+
+        <br> 
+
+        <div class="input-group">
+            <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Apellidos">
+            <div class="input-group-append">
+            <span class="input-group-text"><img src="assets/img/last-name.png" width="25" height="20"></span>
+            </div>        
+        </div>
+
+        <br> 
+
+        <div class="input-group">
+            <input type="text" class="form-control" data-mask="000000000" id="celphone" name="celphone" placeholder="Nº de Celular">
+            <div class="input-group-append">
+            <span class="input-group-text"><img src="assets/img/cellphone.png" width="25" height="20"></span>
+            </div>        
+        </div>
+
+        <br> 
+
+        <div class="input-group">
+            <input type="email" class="form-control"  id="email" name="email" placeholder="Correo">
+            <div class="input-group-append">
+            <span class="input-group-text"><img src="assets/img/email.png" width="25" height="20"></span>
+            </div>        
+        </div>
+
+        <br> 
+
+        <div class="input-group">
             <input type="text" class="form-control" data-mask="0000 0000 0000 0000" id="card" name="card" placeholder="N° de Tarjeta">
             <div class="input-group-append">
             <span class="input-group-text"><img src="assets/img/tarjeta.png" width="25" height="20"></span>
-
-            </div>
-        
+            </div>       
         </div>
+
         <br>
-        <div class="input-group">
-            
+
+        <div class="input-group">           
         <select class="form-control">
         <option hidden selected>Mes</option>
         <option value="1">01</option>
@@ -59,18 +93,16 @@
 
     <br>
     <div class="cvv">
-    <div class="input-group">
-            
+    <div class="input-group">    
             <input type="text" class="form-control" data-mask="000" id="cvv" name="cvv" placeholder="CVV">
             <div class="input-group-append">
             <span class="input-group-text"><img src="assets/img/cvv.png" width="25" height="20"></span>
-
             </div>
-        </div>
-        
+        </div>       
         </div>
         
         <br>
+
     <div class="btn">
       pagar
     </div>
