@@ -8,7 +8,7 @@
             <div class="container-panel-image-nosotros">
                 <div class="container-image-panel">
                     <div class="image-panel">
-                        <img src="./assets/images/gou.png" alt="">
+                        <img class="img-fluid" src="./assets/images/gou.png" alt="">
                     </div>
                 </div>
             </div>

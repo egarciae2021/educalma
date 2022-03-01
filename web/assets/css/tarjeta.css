@@ -38,10 +38,6 @@
     width: auto;
 }
 
-.input::placeholder{
-    width: auto;
-            
-}
 
 .btn {
   width: 100%;
@@ -54,4 +50,20 @@
   text-transform: uppercase;
   cursor: pointer;
   letter-spacing: 5px;
+}
+
+
+.input::placeholder::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+  color:    #dadada;  
+}
+.input::placeholder:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+  color:    #dadada;
+  opacity:  1;
+}
+.input::placeholder::-moz-placeholder { /* Mozilla Firefox 19+ */
+  color:    #dadada;
+  opacity:  1;
+}
+.input::placeholder:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color:    #dadada;
 }
