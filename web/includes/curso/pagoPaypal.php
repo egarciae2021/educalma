@@ -95,7 +95,7 @@ $id = $_GET['id'];
 
                                     <div class="card-body">
                                         <!-- <a href="pay.php">VISA</a> -->
-                                        <a onclick="msje_Redirec()">VISA</a>
+                                        <a href="pay.php?id=<?php echo $idUserr; ?>">VISA</a>
 
                                     </div>
       
@@ -259,7 +259,7 @@ $id = $_GET['id'];
         }
     ?>
     <script>
-        function msje_Redirec(){
+    /*    function msje_Redirec(){
             Swal.fire({
                 title: '¿Quiere seguir usando sus datos actuales?',
                 text: '**Nombres, Apellidos y Correo**',
@@ -278,7 +278,7 @@ $id = $_GET['id'];
                     location.href= "pay.php"
                 }
             })
-        }
+        }*/
     </script>
 
 </body>
