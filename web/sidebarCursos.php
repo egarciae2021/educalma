@@ -1,6 +1,6 @@
-<?php   
-    ob_start();
-    @session_start();
+<?php
+ob_start();
+@session_start();
 ?>
 <?php include_once 'includes/dashboard/head1.php' ?>
 

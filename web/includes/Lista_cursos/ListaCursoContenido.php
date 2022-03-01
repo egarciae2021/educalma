@@ -62,25 +62,25 @@
                             <div class="row">
                                 <div class="col-5">
                                     <div class="container-image">
-                                        <?php    
-                                            if($dato['imagenDestacadaCurso']!=null){
-                                        ?>
-                                                <img src="data:image/*;base64,<?php echo base64_encode($dato['imagenDestacadaCurso']); ?>" alt="">
                                         <?php
-                                            }else{
+                                        if ($dato['imagenDestacadaCurso'] != null) {
                                         ?>
-                                                <img   src="./assets/images/curso_educalma.png">
+                                            <img src="data:image/*;base64,<?php echo base64_encode($dato['imagenDestacadaCurso']); ?>" alt="">
                                         <?php
-                                            }
-                                        ?> 
-                                        
+                                        } else {
+                                        ?>
+                                            <img src="./assets/images/curso_educalma.png">
+                                        <?php
+                                        }
+                                        ?>
+
                                     </div>
                                 </div>
                                 <div class="col-7">
                                     <div class="container-title">
                                         <a><strong><?php echo $dato['nombreCurso']; ?></strong></a>
                                     </div>
-                                    <div class="container-descrition">
+                                    <div class="container-description" style="height: 200px;">
                                         <p><?php echo substr($dato['descripcionCurso'], 0, 30) . "..."; ?></p>
                                     </div>
                                     <div class="container-link">
@@ -95,40 +95,40 @@
                 }
                 ?>
             </div>
-                <!-- FIN CURSOS EN FILA-->
+            <!-- FIN CURSOS EN FILA-->
 
-            </div>
         </div>
-        <div class="container-fluid px-0">
-            <div class="row">
-                <div class="col-12">
-                    <div class="row mb-4 mt-4" style="background-color: #f7f9fa;">
-                        <div class="container section-title-course">
-                            <i class="fas fa-shapes mr-3"></i>Cursos
-                            <hr>
-                        </div>
+    </div>
+    <div class="container-fluid px-0">
+        <div class="row">
+            <div class="col-12">
+                <div class="row mb-4 mt-4" style="background-color: #f7f9fa;">
+                    <div class="container section-title-course">
+                        <i class="fas fa-shapes mr-3"></i>Cursos
+                        <hr>
                     </div>
                 </div>
             </div>
-            <!-- Búsqueda -->
-            <div class="container mb-4">
-                <div class="col-12">
-                    <div class="row mb-2">
-                        <div class="col-12">
-                            <div class="search_wrap search_wrap_3">
-                                <div class="search_box">
-                                    <input type="text" class="input" id="buscar" name="buscar" placeholder="Busca un curso...">
-                                    <div class="btn btn_common">
-                                        <i class="fas fa-search"></i>
-                                    </div>
+        </div>
+        <!-- Búsqueda -->
+        <div class="container mb-4">
+            <div class="col-12">
+                <div class="row mb-2">
+                    <div class="col-12">
+                        <div class="search_wrap search_wrap_3">
+                            <div class="search_box">
+                                <input type="text" class="input" id="buscar" name="buscar" placeholder="Busca un curso...">
+                                <div class="btn btn_common">
+                                    <i class="fas fa-search"></i>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-12">
-                    <!-- <div class="row mb-4"> -->
-                    <!-- <hr>
+            </div>
+            <div class="col-12">
+                <!-- <div class="row mb-4"> -->
+                <!-- <hr>
                         <div class="d-flex justify-content-center mb-3">
                             <div class="px-2">Categoria 1</div>
                             <div class="px-2">Categoria 2</div>
@@ -144,10 +144,10 @@
                             <div class="px-2">subcategoria 5</div>
                         </div>
                         <hr> -->
-                    <!-- </div> -->
-                </div>
+                <!-- </div> -->
             </div>
-            <!-- 
+        </div>
+        <!-- 
                 <div class="col-12">
                     <div class="row">
                         <div class="col-12 col-sm-12 col-md-4 col-lg-4"></div>
@@ -165,122 +165,122 @@
                     </div>
                 </div> 
              -->
-            <!--Fin de Búsqueda-->
-        </div>
+        <!--Fin de Búsqueda-->
     </div>
-    <!-- FIN CURSOS DESTACADOS -->
-    <!-- SECCIÓN CURSOS -->
-    <div class="container-fluid px-0" id="result">
-        <div class="container-card-course">
-            <div class="row pt-1 container" style="margin: 0 auto;">
-                <?php
-                error_reporting(0);
-                $idcategoria = $_GET['idcate'];
-                $sql2 = "SELECT * FROM cursos WHERE permisoCurso=1";
-                $query2 = $pdo->prepare($sql2);
-                $query2->execute();
-                $contar = $query2->rowCount();
-                //con este codigo se hara la division 
-                //para generar las paginas necesarias 
-                //con respecto al numero que tenga y a los campos que halla
-                $cantidad_paginas = 8;
-                $page = $contar / $cantidad_paginas;
-                $page = ceil($page);
-                //seguimos con el paginador 
-                if ($contar > 0) {
-                    if ($_GET['pag'] > $page || $_GET['pag'] < 1) {
-                        header('Location:ListaCursos.php?pag=1');
-                    }
+</div>
+<!-- FIN CURSOS DESTACADOS -->
+<!-- SECCIÓN CURSOS -->
+<div class="container-fluid px-0" id="result">
+    <div class="container-card-course">
+        <div class="row pt-1 container" style="margin: 0 auto;">
+            <?php
+            error_reporting(0);
+            $idcategoria = $_GET['idcate'];
+            $sql2 = "SELECT * FROM cursos WHERE permisoCurso=1";
+            $query2 = $pdo->prepare($sql2);
+            $query2->execute();
+            $contar = $query2->rowCount();
+            //con este codigo se hara la division 
+            //para generar las paginas necesarias 
+            //con respecto al numero que tenga y a los campos que halla
+            $cantidad_paginas = 8;
+            $page = $contar / $cantidad_paginas;
+            $page = ceil($page);
+            //seguimos con el paginador 
+            if ($contar > 0) {
+                if ($_GET['pag'] > $page || $_GET['pag'] < 1) {
+                    header('Location:ListaCursos.php?pag=1');
                 }
-                $inicio = ($_GET['pag'] - 1) * $cantidad_paginas;
-                $sql3 = "SELECT * FROM cursos WHERE permisoCurso=1 LIMIT :iniciar,:narticulos";
+            }
+            $inicio = ($_GET['pag'] - 1) * $cantidad_paginas;
+            $sql3 = "SELECT * FROM cursos WHERE permisoCurso=1 LIMIT :iniciar,:narticulos";
 
-                $query3 = $pdo->prepare($sql3);
-                $query3->bindParam(':iniciar', $inicio, PDO::PARAM_INT);
-                $query3->bindParam(':narticulos', $cantidad_paginas, PDO::PARAM_INT);
-                $query3->execute();
-                $conteo = 0;
-                while ($dato = $query3->fetch(PDO::FETCH_ASSOC)) {
-                    $conteo = $conteo + 1;
-                    //ALGORITMO CURSO INSCRITO Y NO INSCRITO
-                    if (isset($_SESSION['codUsuario'])) {
-                        $cursoID = $dato['idCurso'];
-                        $userID = $_SESSION['codUsuario'];
-                        $sql4 = "SELECT * FROM cursoinscrito where curso_id='$cursoID' and usuario_id = '$userID' ";
-                        $query4 = $pdo->prepare($sql4);
-                        $query4->execute(array());
-                        $dato2 = $query4->fetch(PDO::FETCH_ASSOC);
-                        if (empty($dato2)) {
-                            $paginaRed = "detallecurso";
-                        } else {
-                            $paginaRed = "curso";
-                        }
+            $query3 = $pdo->prepare($sql3);
+            $query3->bindParam(':iniciar', $inicio, PDO::PARAM_INT);
+            $query3->bindParam(':narticulos', $cantidad_paginas, PDO::PARAM_INT);
+            $query3->execute();
+            $conteo = 0;
+            while ($dato = $query3->fetch(PDO::FETCH_ASSOC)) {
+                $conteo = $conteo + 1;
+                //ALGORITMO CURSO INSCRITO Y NO INSCRITO
+                if (isset($_SESSION['codUsuario'])) {
+                    $cursoID = $dato['idCurso'];
+                    $userID = $_SESSION['codUsuario'];
+                    $sql4 = "SELECT * FROM cursoinscrito where curso_id='$cursoID' and usuario_id = '$userID' ";
+                    $query4 = $pdo->prepare($sql4);
+                    $query4->execute(array());
+                    $dato2 = $query4->fetch(PDO::FETCH_ASSOC);
+                    if (empty($dato2)) {
+                        $paginaRed = "detallecurso";
                     } else {
-                        $paginaRed =
-                            "detallecurso";
+                        $paginaRed = "curso";
                     }
-                ?>
+                } else {
+                    $paginaRed =
+                        "detallecurso";
+                }
+            ?>
 
-                    <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3">
-                        <div class="card">
-                            <div class="container-card-image">
-                                <?php    
-                                    if($dato['imagenDestacadaCurso']!=null){
-                                ?>
-                                        <img heigth="10px" ; src="data:image/*;base64,<?php echo base64_encode($dato['imagenDestacadaCurso']); ?>" alt="">
-                                <?php
-                                    }else{
-                                ?>
-                                        <img heigth="10px" ;  src="./assets/images/curso_educalma.png">
-                                <?php
-                                    }
-                                ?> 
-                                
-                            </div>
-                            <div class="container-card-title">
-                                <a>
-                                    <center><strong><?php echo $dato['nombreCurso']; ?></strong></center>
-                                </a>
-                            </div>
-                            <div class="container-card-description">
-                                <p><?php echo substr($dato['descripcionCurso'], 0, 80) . "..."; ?></p>
-                            </div>
-                            <div class="container-card-link">
-                                <a href="<?php echo $paginaRed ?>.php?id=<?php echo $dato['idCurso']; ?>">
-                                    <center><strong>Ver Informaci&oacute;n -> </strong> </center>
-                                </a>
-                            </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3">
+                    <div class="card">
+                        <div class="container-card-image">
+                            <?php
+                            if ($dato['imagenDestacadaCurso'] != null) {
+                            ?>
+                                <img heigth="10px" ; src="data:image/*;base64,<?php echo base64_encode($dato['imagenDestacadaCurso']); ?>" alt="">
+                            <?php
+                            } else {
+                            ?>
+                                <img heigth="10px" ; src="./assets/images/curso_educalma.png">
+                            <?php
+                            }
+                            ?>
+
+                        </div>
+                        <div class="container-card-title">
+                            <a>
+                                <center><strong><?php echo $dato['nombreCurso']; ?></strong></center>
+                            </a>
+                        </div>
+                        <div class="container-card-description">
+                            <p><?php echo substr($dato['descripcionCurso'], 0, 80) . "..."; ?></p>
+                        </div>
+                        <div class="container-card-link">
+                            <a href="<?php echo $paginaRed ?>.php?id=<?php echo $dato['idCurso']; ?>">
+                                <center><strong>Ver Informaci&oacute;n -> </strong> </center>
+                            </a>
                         </div>
                     </div>
-                <?php
-                }
-                ?>
-            </div>
+                </div>
+            <?php
+            }
+            ?>
         </div>
-        <!-- Hasta aqui son las muestras -->
     </div>
-    <!-- FIN DE CURSOS -->
+    <!-- Hasta aqui son las muestras -->
+</div>
+<!-- FIN DE CURSOS -->
 
-    <!--PAGINADOR-->
-    <div class="row container py-4" style="margin: 0 auto;">
-        <div class="col-12 mx-auto">
-            <nav aria-label="Page navigation calma">
-                <ul class="pagination justify-content-end">
-                    <li class="page-item <?php if ($_GET['pag'] <= 1) echo 'disabled' ?>">
-                        <a class="page-link" href="ListaCursos.php?pag=<?php echo $_GET['pag'] - 1; ?>&idcate=<?php echo $_GET['$idcate']; ?>" tabindex="-1">
-                            Anterior
-                        </a>
-                    </li>
-                    <?php for ($i = 0; $i < $page; $i++) : ?>
-                        <li class="page-item <?php echo $_GET['pag'] == $i + 1 ? 'activate' : '' ?>"><a class="page-link" href="ListaCursos.php?pag=<?php echo $i + 1; ?>&idcate=<?php echo $_GET['idcate']; ?>"><?php echo $i + 1; ?></a></li>
-                    <?php endfor ?>
-                    <li class="page-item <?php if ($_GET['pag'] >= $page) echo 'disabled' ?>">
-                        <a class="page-link" href="ListaCursos.php?pag=<?php echo $_GET['pag'] + 1; ?>&idcate=<?php echo $_GET['idcate']; ?>">Siguiente</a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
+<!--PAGINADOR-->
+<div class="row container py-4" style="margin: 0 auto;">
+    <div class="col-12 mx-auto">
+        <nav aria-label="Page navigation calma">
+            <ul class="pagination justify-content-end">
+                <li class="page-item <?php if ($_GET['pag'] <= 1) echo 'disabled' ?>">
+                    <a class="page-link" href="ListaCursos.php?pag=<?php echo $_GET['pag'] - 1; ?>&idcate=<?php echo $_GET['$idcate']; ?>" tabindex="-1">
+                        Anterior
+                    </a>
+                </li>
+                <?php for ($i = 0; $i < $page; $i++) : ?>
+                    <li class="page-item <?php echo $_GET['pag'] == $i + 1 ? 'activate' : '' ?>"><a class="page-link" href="ListaCursos.php?pag=<?php echo $i + 1; ?>&idcate=<?php echo $_GET['idcate']; ?>"><?php echo $i + 1; ?></a></li>
+                <?php endfor ?>
+                <li class="page-item <?php if ($_GET['pag'] >= $page) echo 'disabled' ?>">
+                    <a class="page-link" href="ListaCursos.php?pag=<?php echo $_GET['pag'] + 1; ?>&idcate=<?php echo $_GET['idcate']; ?>">Siguiente</a>
+                </li>
+            </ul>
+        </nav>
     </div>
-    <!--FIN DE PAGINADOR-->
+</div>
+<!--FIN DE PAGINADOR-->
 
 </div>
