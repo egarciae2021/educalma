@@ -224,7 +224,7 @@
                     <!-- <div class="col-4">
                          <img src="assets/img/cursophp.png" alt=""> 
                     </div>-->
-                    <div class="col-4">
+                    <div class="col-4 order-1">
                 <h5>Certificación del curso</h5>
                 <img src="assets/images/certificado.jpg" alt="">
                 <div class="info">
