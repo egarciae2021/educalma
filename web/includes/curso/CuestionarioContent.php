@@ -269,11 +269,13 @@
                                             //checked
                                         ?>
                                 <div style="padding: 10px; border-radius: 5px; background: #ffff; border-bottom: 1px solid slategray; margin-bottom: 20px;">
-                                    <div class="form-check">
+                                    <div class="form-check" >
+                                        <label class="form-check-label">
                                         <input class="form-check-input" type="radio" name="verif_resp" value="<?php echo $fila2['respuesta'];?>">
                                         <input type="hidden" name="correcta" value="<?php echo $correcta;?>">
                                         <input type="hidden" name="contadorP" value="<?php echo $contadorP;?>">
-                                        <label class="form-check-label" for="exampleRadios1"> <?php echo $fila2['respuesta'];?> </label>
+                                         <?php echo $fila2['respuesta'];?> </label>
+                                        <!--<label><input type="radio" name="empleoactual" value="mediodia"> Medio día</label>-->
                                     </div>
                                 </div>
                                 <?php }?>
