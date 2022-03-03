@@ -27,12 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Verificar si es correo corporativo
-<<<<<<< HEAD
   $("#btnAction").click((e) => {
-    e.preventdefault();
-=======
-  $("#btnAction").click(() => {
->>>>>>> testing
     if (!validEmail()) {
       if (validarEmail($("#txtEmail").val())) {
         //window.location.href = "./#boxRotate";

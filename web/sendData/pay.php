@@ -5,34 +5,29 @@ require_once './../database/databaseConection.php';
 $pdo = Database::connect();
 $keyPayme = "EmQipLueZd0PMrAv.jq3CL4p4j6OIQPOLFrnFFBPNGtbVyvFN75IsDb1fOh1Pg3uDB5tpc9VNlcuQpGnf";
 $idCurso = $_SESSION['cursoVisa'];
-$operation="000072";
+
+$SQL3 = "SELECT MAX(id) as IDT FROM transacciones_payme";
+$q3 = $pdo->prepare($SQL3);
+$q3 -> execute(array());
+$dato3 = $q3->fetch(PDO::FETCH_ASSOC);
+$IDT = $dato3["IDT"];
+
+if($IDT==NULL){
+  $operation = "000001";
+}else{
+  $LEN = 6;
+  $SQL4 = "SELECT * FROM transacciones_payme WHERE ID = $IDT";
+  $q4 = $pdo->prepare($SQL4);
+  $q4 -> execute(array());
+  $dato4 = $q4->fetch(PDO::FETCH_ASSOC);
+  $IDT2 = strval((int)$dato4["idTransac"]+1);
+  $operation = str_pad($IDT2, $LEN, "0", STR_PAD_LEFT);
+}
 // $sql2="SELECT idTransac FROM `transacciones_payme` ORDER BY id DESC LIMIT 1";
 // $q2 = $pdo->prepare($sql2);
 // $q2->execute();
 // $data2 = $q2->fetch(PDO::FETCH_ASSOC);
-// $uno="00000";$dos="0000";$tres="000";$cuatro="00";$cinco="0";
-// //$idTransac = $data2['idTransac'];
-// if(empty($data2['idTransac'])){
-//   $operation = "000001";
-// }
-// $nu=intval($data2['idTransac']);
-// $nu+1;
-// $number=strval($nu);
-// if($nu<=9){
-//   $operation = $uno.$number;
-// }
-// if($nu>9 && $nu<=99){
-//   $operation = $dos.$number;
-// }
-// if($nu>99 && $nu<=999){
-//   $operation = $tres.$number;
-// }
-// if($nu>999 && $nu<=9999){
-//   $operation = $cuatro.$number;
-// }
-// if($nu>9999 && $nu<=99999){
-//   $operation = $cinco.$number;
-// }
+
 // $operation = "000001"; //id de la transaccion, Auto Increment
 $user_id = $_POST["txtid"]; //id del usuario
 $nombres = $_POST["txtNombre"]; //nombres de la persona
@@ -167,7 +162,6 @@ if ($nombres !== "" && $correo !== "" && $numTarjeta !== "" && $fechaVencimiento
 
   if ($decJSON["success"] === "true") {
     $status="COMPLETED";
-    $id_trans="000003";
     $sql = "INSERT INTO `cursoinscrito` (`curso_id`, `usuario_id`, cod_curso, curso_obt, cantidad_respuestas) VALUES (:idCurso, :idUser, '', 1, 0)";
     $q = $pdo->prepare($sql);
     $q->bindParam(":idCurso", $idCurso, PDO::PARAM_INT);
@@ -177,7 +171,7 @@ if ($nombres !== "" && $correo !== "" && $numTarjeta !== "" && $fechaVencimiento
     $sql1 = "INSERT INTO `transacciones_payme` (`idTransac`,`idUsuario`,`idCurso`,`monto`,`status`,`fecha`,`correo`) 
                     VALUES (:id_trans,:idUser,:idCurso,:monto,:status,now(),:correo)";
     $q1 = $pdo->prepare($sql1);
-    $q1->bindParam(":id_trans", $id_trans, PDO::PARAM_STR);
+    $q1->bindParam(":id_trans", $operation, PDO::PARAM_STR);
     $q1->bindParam(":idUser", $user_id, PDO::PARAM_INT);
     $q1->bindParam(":idCurso", $idCurso, PDO::PARAM_INT);
     $q1->bindParam(":monto", $precio, PDO::PARAM_INT);

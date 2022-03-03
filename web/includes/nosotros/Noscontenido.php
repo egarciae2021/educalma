@@ -8,7 +8,7 @@
             <div class="container-panel-image-nosotros">
                 <div class="container-image-panel">
                     <div class="image-panel">
-                        <img src="./assets/images/gou.png" alt="">
+                        <img class="img-fluid" src="./assets/images/gou.png" alt="">
                     </div>
                 </div>
             </div>
@@ -160,7 +160,7 @@
                         <div class="card-body py-0">
                             <ul class="px-0">
                                 <li class="card-body pb-3"><i class="far fa-check-circle mr-2"></i>Cada curso tiene
-                                    Certificados reconocidos por el Ministerio de Educación, los cuales cada curso
+                                    Certificados reconocidos por la fundacion internacional Calma, los cuales cada curso
                                     han sido evaluados y aprobados.</li>
                             </ul>
                         </div>
