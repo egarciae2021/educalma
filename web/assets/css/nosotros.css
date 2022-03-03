@@ -71,10 +71,10 @@
         margin: auto 0;
     }
     
-    .image-panel {
-        /* bottom: 0;
-    position: absolute; */
-    }
+     /*.image-panel {
+   bottom: 0;
+    position: absolute; 
+    }*/
     
     .container-panel-image-nosotros img {
         width: 800px;
@@ -309,7 +309,7 @@
     .container .row .col-md-12 .accordion .card {
         text-align: justify;
         background: #cce4fc;
-        color: #56a4d0;
+        color: #0c0d0e;
         padding-left: 2rem;
         font-size: 14px;
     }
@@ -328,8 +328,8 @@
         font-family: "Work Sans", sans-serif;
         font-style: normal;
         font-weight: normal;
-        font-size: 16px;
-        color: #56a4d0;
+        font-size: 17px;
+        color: #0c0e0f;
         text-decoration: none;
         cursor: pointer;
     }

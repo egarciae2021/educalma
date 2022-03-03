@@ -188,16 +188,72 @@ body {
 }
 
 .container-fluid .container-detalle-informacion .col-8 h5 {
-    font-size: 16px;
+    font-size: 20px;
 }
 
 .container-fluid .container-detalle-informacion .col-8 .container-info-course-detalle {
     border: 1px solid #597c9b;
-    padding: 1rem;
+
+    padding: 2rem;
+    
 }
 
+@media (min-width:300px){.container-fluid .container-detalle-informacion .col-8{
+    position: relative;
+    left: -100px;
+    right:10px;
+}
+}
+@media (min-width:1000px){
+    .container-fluid .container-detalle-informacion .col-8  {
+      position:relative;
+      right:-30px;
+    }
+    }
+    
+        
+@media(min-width: 950px){
+
+    .col-lg-5{
+        position: relative;
+    left: 150px;
+    }
+}
+@media(min-width:900px){
+    
+.container-padre .col-8{
+    position: relative;
+    top: -420px;
+    position: relative;
+    left: 240px;
+    max-width: 50%;
+   
+}
+
+}@media(min-width:300px){
+    
+    .container-padre .col-8{
+        position:relative;
+        right: -20px;
+        margin-top: 40px;
+       
+    }}
+    
+    @media (min-width: 300px){
+.container-fluid .container-detalle-informacion .col-8 {
+    position: relative;
+    left: -380px;
+    right: 10px;}
+}
+@media (min-width: 1000px){
+    .container-fluid .container-detalle-informacion .col-8 {
+        position: relative;
+        left: -180px;
+        right: 10px;}
+    }
+
 .container-fluid .container-detalle-informacion .col-8 .container-info-course-detalle h5 {
-    font-size: 12px;
+    font-size: 18px;
     color: #597c9b;
 }
 
@@ -241,16 +297,18 @@ body {
 }
 
 
-/* 
+    
+
+/*
 
 
 
 
 
-
-
-
-
+    padding-left: 10px;
+    height: 151px;
+    width: 1050px;
+    padding-top: 10px;
 
 
 
@@ -381,3 +439,6 @@ body {
 .custom-field.three input:focus~.border::after {
     transition-delay: calc(var(--draw-duration) * 2), calc(var(--draw-duration) * 3), calc(var(--draw-duration) * 2);
 }
+
+  
+      
