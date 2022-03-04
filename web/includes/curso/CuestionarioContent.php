@@ -155,7 +155,7 @@
 
                                 if($idModulo<$idmodu){
                             ?>
-                                    <a href="video.php?id=<?php echo $id?>&idtema=1&id_modulo=<?php echo ($idModulo+1)?>"><button type="button" class="btn btn-outline-secondary">Siguiente</button></a>
+                                    <a href="video.php?id=<?php echo $id?>&idtema=1&id_modulo=<?php echo ($idmodu)?>"><button type="button" class="btn btn-outline-secondary">Siguiente</button></a>
                             <?php
                                 }
                             ?>
@@ -194,6 +194,7 @@
                                     $q24->execute(array());
 
                                     $puntaje = false;
+                                    $puntRes = 20 / $cuenta2;
 
                                     while($fila24=$q24->fetch(PDO::FETCH_ASSOC)){
                                         if($fila24['idRespuesta'] == $idrespuesta && $fila24['estado']==1){
@@ -207,7 +208,7 @@
                                         <div class="card-header">
                                                 <div class="row">
                                                     <div class="col-sm-6 text-left">Pregunta n° 1</div>
-                                                    <div class="col-sm-6 text-right" style="color:#768EE8;"><?php echo (($puntaje)?'1/1 pts':'0/1 pts')?> </div>
+                                                    <div class="col-sm-6 text-right" style="color:#768EE8;"><?php echo (($puntaje)?''.round($puntRes).'/'.round($puntRes).' pts':'0/'.round($puntRes).' pts')?> </div>
                                                 </div>
                                         </div>
                                         <div class="list-group list-group-flush small text-center text-secondary font-weight-normal my-3">

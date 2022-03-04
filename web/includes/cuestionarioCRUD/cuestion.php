@@ -38,21 +38,42 @@
 
     $respuesta1 = $datoRes['idRespuesta'];
 
+    //Cantidad de preguntas
+    $pdo16 = Database::connect();
+    $q16 = $pdo16->query("SELECT COUNT(preguntas.idPregunta) AS 'preguntas'  from cursos 
+                        INNER JOIN modulo ON cursos.idCurso = modulo.id_curso
+                        INNER JOIN cuestionario ON cuestionario.id_modulo = modulo.idModulo
+                        INNER JOIN preguntas on cuestionario.idcuestionario = preguntas.id_cuestionario
+                        WHERE cursos.idCurso = '$id' GROUP BY cursos.idCurso");
+    $Cant_preg = $q16->fetchColumn();
+    Database::disconnect();
+    //promedio de nota
+    $NotaInd = 20 / $Cant_preg;
+
     if($cuenta==1){
         // CALCULAR LA CANTIDAD DE RESPUESTS ACERTADAS 
         if($validar==0){
             $pdo = Database::connect();
-        $sql = "SELECT cantidad_respuestas FROM cursoinscrito WHERE curso_id = '$id' ";
+        $sql = "SELECT cantidad_respuestas, nota FROM cursoinscrito WHERE curso_id = '$id' ";
         $q = $pdo->prepare($sql);
         $q->execute(array());
         $dato=$q->fetch(PDO::FETCH_ASSOC);
         Database::disconnect();
  
-            $cantidad_respuesta=$dato['cantidad_respuestas'];
+            $cantidad_respuesta=$dato['cantidad_respuestas']; 
         
         // SUMA LA CANTIDAD DE RESPUESTAS ACERTADAS 
+        $idUsuer= $_SESSION['codUsuario'];
         $pdo=Database::connect();
-        $sql = "UPDATE cursoinscrito SET cantidad_respuestas=$cantidad_respuesta+1 WHERE curso_id ='$id' ";
+        $sql = "UPDATE cursoinscrito SET cantidad_respuestas=$cantidad_respuesta+1 WHERE curso_id ='$id' and usuario_id= '$idUsuer'";
+        $q = $pdo->prepare($sql);
+        $q->execute();
+        Database::disconnect();
+
+        $nota = $dato['nota'];
+
+        $pdo=Database::connect();
+        $sql = "UPDATE cursoinscrito SET nota=$nota+$NotaInd WHERE curso_id ='$id' and usuario_id= '$idUsuer' ";
         $q = $pdo->prepare($sql);
         $q->execute();
         Database::disconnect();
