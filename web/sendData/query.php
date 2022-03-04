@@ -23,4 +23,7 @@ $context = stream_context_create($opts);
 $result = file_get_contents($url . $action . "/" . $id, false, $context);
 
 header('Content-Type: application/json; charset=utf-8');
-echo $result;
+$datos = json_decode($result, true);
+echo '<pre>';
+print_r( $datos);
+echo '</pre>';

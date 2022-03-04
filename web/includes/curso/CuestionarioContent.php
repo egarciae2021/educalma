@@ -155,7 +155,7 @@
 
                                 if($idModulo<$idmodu){
                             ?>
-                                    <a href="video.php?id=<?php echo $id?>&idtema=1&id_modulo=<?php echo ($idModulo+1)?>"><button type="button" class="btn btn-outline-secondary">Siguiente</button></a>
+                                    <a href="video.php?id=<?php echo $id?>&idtema=1&id_modulo=<?php echo ($idmodu)?>"><button type="button" class="btn btn-outline-secondary">Siguiente</button></a>
                             <?php
                                 }
                             ?>
@@ -194,6 +194,7 @@
                                     $q24->execute(array());
 
                                     $puntaje = false;
+                                    $puntRes = 20 / $cuenta2;
 
                                     while($fila24=$q24->fetch(PDO::FETCH_ASSOC)){
                                         if($fila24['idRespuesta'] == $idrespuesta && $fila24['estado']==1){
@@ -207,7 +208,7 @@
                                         <div class="card-header">
                                                 <div class="row">
                                                     <div class="col-sm-6 text-left">Pregunta n° 1</div>
-                                                    <div class="col-sm-6 text-right" style="color:#768EE8;"><?php echo (($puntaje)?'1/1 pts':'0/1 pts')?> </div>
+                                                    <div class="col-sm-6 text-right" style="color:#768EE8;"><?php echo (($puntaje)?''.round($puntRes).'/'.round($puntRes).' pts':'0/'.round($puntRes).' pts')?> </div>
                                                 </div>
                                         </div>
                                         <div class="list-group list-group-flush small text-center text-secondary font-weight-normal my-3">
@@ -269,11 +270,13 @@
                                             //checked
                                         ?>
                                 <div style="padding: 10px; border-radius: 5px; background: #ffff; border-bottom: 1px solid slategray; margin-bottom: 20px;">
-                                    <div class="form-check">
+                                    <div class="form-check" >
+                                        <label class="form-check-label">
                                         <input class="form-check-input" type="radio" name="verif_resp" value="<?php echo $fila2['respuesta'];?>">
                                         <input type="hidden" name="correcta" value="<?php echo $correcta;?>">
                                         <input type="hidden" name="contadorP" value="<?php echo $contadorP;?>">
-                                        <label class="form-check-label" for="exampleRadios1"> <?php echo $fila2['respuesta'];?> </label>
+                                         <?php echo $fila2['respuesta'];?> </label>
+                                        <!--<label><input type="radio" name="empleoactual" value="mediodia"> Medio día</label>-->
                                     </div>
                                 </div>
                                 <?php }?>
