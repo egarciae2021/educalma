@@ -4,7 +4,7 @@ class Database
 	private static $dbName = 'educalma' ;
 	private static $dbHost = 'localhost';
 	private static $dbUsername = 'root';
-	private static $dbUserPassword = 'sasa';
+	private static $dbUserPassword = '';
 // datooooo
 
 	private static $cont  = null;
