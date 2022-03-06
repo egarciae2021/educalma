@@ -155,7 +155,7 @@
 
                                 if($idModulo<$idmodu){
                             ?>
-                                    <a href="video.php?id=<?php echo $id?>&idtema=1&id_modulo=<?php echo ($idmodu)?>"><button type="button" class="btn btn-outline-secondary">Siguiente</button></a>
+                                    <a href="video.php?id=<?php echo $id?>&idtema=1&id_modulo=<?php echo ($idModulo+1)?>"><button type="button" class="btn btn-outline-secondary">Siguiente</button></a>
                             <?php
                                 }
                             ?>

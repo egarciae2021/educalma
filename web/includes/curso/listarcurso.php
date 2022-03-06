@@ -14,11 +14,7 @@
     <link rel="stylesheet" href="assets/css/stylebuttonAtras.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
-    <?php require_once "includes/Inicio/Head.php"; ?>
-    <?php //include_once 'includes/dashboard/head1.php' ?>
-    <?php //include_once 'includes/dashboard/header1.php' ?>
-    <?php// include_once 'includes/dashboard/body1.php' ?>
-    
+    <?php require_once "includes/Inicio/Head.php"; ?>    
 
    
 </head>
