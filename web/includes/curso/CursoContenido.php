@@ -273,10 +273,12 @@
             <div class="col-8">
                 <h5>Temario del curso</h5>
                 <?php 
+                $nW=0;
                     while ($modulosC = $q6->fetch(PDO::FETCH_ASSOC)) {
+                        $nW=$nW+1;
                 ?>
                     <div class="w-100">
-                        <a href="video.php?id=<?php echo $id;?>&idtema=<?php echo 1;?>&id_modulo=<?php echo $modulosC['idModulo']?>" class="btn w-100 px-4 mb-2">
+                        <a href="video.php?id=<?php echo $id;?>&idtema=<?php echo 1;?>&id_modulo=<?php echo $modulosC['idModulo']?>&nW=<?php echo $nW-1 ?>" class="btn w-100 px-4 mb-2">
                             <i class="fas fa-play mr-3"></i>
                             <span><?php echo $modulosC['nombreModulo'] ?></span>
                         </a>
