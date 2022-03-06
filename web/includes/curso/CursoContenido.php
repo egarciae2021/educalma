@@ -158,7 +158,12 @@
                 </div>
                 <div class="container-image-course col-12 col sm-12 col-md-6 col-lg-6 col-xl-6">
                     <div class="image-course">
-                        <img src="assets/images/curso_educalma.png" alt="">
+                     <?php
+                      if ($dato4['imagenDestacadaCurso'] != null) {
+                       echo '<img src="data:image/*;base64,' . base64_encode($dato4['imagenDestacadaCurso']) . '" alt="foto_curso" >' ;}    
+                       else { echo ' <img src="./assets/images/curso_educalma.png" alt="foto_curso" >';}
+                    ?> 
+                    <!-- <img src="assets/images/curso_educalma.png" alt=""> -->
                     </div>
                 </div>
             </div>
