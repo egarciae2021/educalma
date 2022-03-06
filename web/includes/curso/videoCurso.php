@@ -191,12 +191,20 @@
     $dato2 = $q2->fetch(PDO::FETCH_ASSOC);
     Database::disconnect();
 
+    $idModu12= $dato2['id_modulo'];
+
     $pdo6 = Database::connect(); 
     $sql6 = "SELECT * FROM cursos WHERE idCurso='$id'";
     $q6 = $pdo6->prepare($sql6);
     $q6->execute(array());
     $dato6 = $q6->fetch(PDO::FETCH_ASSOC);
     Database::disconnect();
+
+    $pdo13=Database::connect();
+    $sql13="SELECT * FROM modulo WHERE idModulo='$idModu12'";
+    $q13=$pdo13->prepare($sql13);
+    $q13->execute(array());
+    $dato13=$q13->fetch(PDO::FETCH_ASSOC);
 ?>
 
 <div class="container" style="margin-top: 120px;">
@@ -205,7 +213,7 @@
         <div class="col-md-10">
             <div class="infoMin">
                 <a href=""><?php echo $dato6['nombreCurso'];?></a> <label> > </label> <a
-                    href=""><?php echo $dato['nombreModulo'];?> </a><label> >
+                    href=""><?php echo $dato13['nombreModulo'];?> </a><label> >
                 </label><a href=""><?php echo $dato2['nombreTema'];?></a>
             </div>
         </div>
