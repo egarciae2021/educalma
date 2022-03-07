@@ -278,7 +278,7 @@
                         $nW=$nW+1;
                 ?>
                     <div class="w-100">
-                        <a href="video.php?id=<?php echo $id;?>&idtema=<?php echo 1;?>&id_modulo=<?php echo $modulosC['idModulo']?>&nW=<?php echo $nW-1 ?>" class="btn w-100 px-4 mb-2">
+                        <a href="video.php?id=<?php echo $id;?>&idtema=<?php echo 1;?>&id_modulo=<?php echo $modulosC['idModulo']?>&nW=<?php echo $nW-1?>" class="btn w-100 px-4 mb-2">
                             <i class="fas fa-play mr-3"></i>
                             <span><?php echo $modulosC['nombreModulo'] ?></span>
                         </a>
