@@ -61,17 +61,18 @@
         ?>
           <div class="group-input">
             <label for="txtNombre">Nombre</label>
-            <input type="text" id="txtNombre" name="txtNombre" value="<?php echo $datoS["nombres"]; ?>" disabled>
+            <input type="text" id="txtNombre" name="txtNombre">
           </div>
           <div class="message-error">Ingrese un nombre.</div>
+          <input hidden type="text" id="txtid" name="txtid" value="<?php echo $_SESSION['codUsuario'] ?>">
           <div class="group-input">
             <label for="txtApellido">Apellido</label>
-            <input type="text" id="txtApellido" name="txtApellido" value="<?php echo $datoS["apellido_pat"]." ".$datoS["apellido_mat"]; ?>" disabled>
+            <input type="text" id="txtApellido" name="txtApellido">
           </div>
           <div class="message-error">Ingrese tus apellidos.</div>
           <div class="group-input">
             <label for="txtCorreo">Correo</label>
-            <input type="text" name="txtCorreo" id="txtCorreo" value="<?php echo $datoS["email"]; ?>" disabled>
+            <input type="text" name="txtCorreo" id="txtCorreo">
           </div>
           <div class="message-error">El correo no tiene un formato válido.</div>
         <?php

@@ -80,7 +80,7 @@
                                     <div class="container-title">
                                         <a><strong><?php echo $dato['nombreCurso']; ?></strong></a>
                                     </div>
-                                    <div class="container-description" style="height: 200px;">
+                                    <div class="container-card-description">
                                         <p><?php echo substr($dato['descripcionCurso'], 0, 30) . "..."; ?></p>
                                     </div>
                                     <div class="container-link">

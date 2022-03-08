@@ -152,10 +152,18 @@
                                 $datoi = $qi->fetch(PDO::FETCH_ASSOC);
                                 $idmodu=$datoi['idModulo'];
 
-
+                                $pdo32 = Database::connect();
+                                $sqlit32="SELECT idModulo FROM modulo where id_curso=$id order by idModulo ASC";
+                                $qi32 = $pdo32->prepare($sqlit32);
+                                $qi32->execute(array());
+                                $datoi32 = $qi32->fetchAll(PDO::FETCH_ASSOC);
+                                $nW=$_GET['nW'];
                                 if($idModulo<$idmodu){
+                                    $idmodulito=$datoi32[$nW+1]['idModulo'];
                             ?>
-                                    <a href="video.php?id=<?php echo $id?>&idtema=1&id_modulo=<?php echo ($idModulo+1)?>"><button type="button" class="btn btn-outline-secondary">Siguiente</button></a>
+
+                                    <a href="video.php?id=<?php echo $id?>&idtema=1&id_modulo=<?php echo ($idmodulito)?>&nW=<?php echo $_GET['nW']+1?>"><button type="button" class="btn btn-outline-secondary">Siguiente</button></a>
+                                    <!-- <a href="video.php?id=?php echo $id?>&idtema=1&id_modulo=<php echo ($idModulo+1)?>"><button type="button" class="btn btn-outline-secondary">Siguiente</button></a> -->
                             <?php
                                 }
                             ?>
@@ -264,7 +272,7 @@
                             <h5 style="background: #CFE8FE; padding: 20px 35px; color: #4F52D6">
                                 <?php echo $fila1[$envi]['pregunta'];?>
                             </h5>
-                            <form style="padding: 30px;" action="includes/cuestionarioCRUD/cuestion.php?contador=<?php echo $contador;?>&id=<?php echo $id;?>&c=<?php $correcta ?>&idModulo=<?php echo $idModulo;?>&validar=<?php echo 0; ?>&up=<?php echo $up ?>&cuen=<?php echo $ens ?>&nro=<?php echo $envi?>&id_pregunta=<?php echo $idpregunta ?>"
+                            <form style="padding: 30px;" action="includes/cuestionarioCRUD/cuestion.php?contador=<?php echo $contador;?>&id=<?php echo $id;?>&c=<?php $correcta ?>&idModulo=<?php echo $idModulo;?>&validar=<?php echo 0; ?>&up=<?php echo $up ?>&cuen=<?php echo $ens ?>&nro=<?php echo $envi?>&id_pregunta=<?php echo $idpregunta ?>&nW=<?php echo $_GET['nW']?>"
                                 method="POST" id="formcito">
                                 <?php while($fila2=$q2->fetch(PDO::FETCH_ASSOC)){ 
                                             //checked
