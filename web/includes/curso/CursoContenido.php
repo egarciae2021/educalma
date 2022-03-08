@@ -64,13 +64,16 @@
         
         if($cantidad_respuestas_validas<=9){
             $minimo_respuestas_para_aprobar=$cantidad_respuestas_validas;
+            $nota37=20;
         }else{
             $minimo_respuestas_para_aprobar=$cantidad_respuestas_validas-2;
+            $nota37=19;
         }
         
         
         $pdo6 = Database::connect();
-        $sql6 = "SELECT cantidad_respuestas FROM cursoinscrito WHERE curso_id = '$id' ";
+        $idUser56=$_SESSION['iduser'];
+        $sql6 = "SELECT cantidad_respuestas FROM cursoinscrito WHERE curso_id = '$id' and usuario_id= '$idUser56'";
         $q6 = $pdo6->prepare($sql6);
         $q6->execute(array());
         $dato=$q6->fetch(PDO::FETCH_ASSOC);
@@ -252,7 +255,7 @@
                                     <div><i class="fas fa-infinity"></i></div><?php echo $cuestionarios; ?> Cuestionarios
                                 </div>
                                 <div class="col-12 col-sm-6 col-lg-6">
-                                    <div><i class="fas fa-mobile-alt"></i></div> Nota mínima <?php echo $minimo_respuestas_para_aprobar; ?>
+                                    <div><i class="fas fa-mobile-alt"></i></div> Nota mínima <?php echo $nota37; ?>
                                 </div>
                                 <div class="col-12 col-sm-6 col-lg-6">
                                     <div><i class="fas fa-list-ol"></i></div> Cant. de preguntas <?php echo $preguntas; ?>
