@@ -14,6 +14,8 @@ $("#salir_agregar").click(function () {
       
 });
 
+// Actualizado 
+
 $("#salir_public").click(function () {
 
   Swal.fire({
