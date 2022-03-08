@@ -8,11 +8,13 @@ $("#salir_agregar").click(function () {
         cancelButtonText: 'Cancelar',
       }).then((result) => {
         if (result.isConfirmed) {
-            window.location.href ="listaCursos.php";
+            window.location.href ="ListaCursos.php";
         }
       })
       
 });
+
+// Actualizado 
 
 $("#salir_public").click(function () {
 

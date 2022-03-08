@@ -28,7 +28,13 @@ require_once 'database/databaseConection.php';
                     //}   
                     ?> -->
                     </li>
+                    <div class="log-sign" style="--i: 1.8s">
+                    <a href="iniciosesion.php" class="btn transparent">Iniciar Sesi&oacute;n</a>
+                    <a href="registroUsuario.php" class="btn solid">Registrate!</a>
+                </div>
                 </ul>
+
+                
             </div>
             <?php
             Database::disconnect();
@@ -72,11 +78,11 @@ require_once 'database/databaseConection.php';
             <?php
             } else {
             ?>
-                <!-- REGISTRO Y LOGIN -->
+                <!-- REGISTRO Y LOGIN 
                 <div class="log-sign" style="--i: 1.8s">
                     <a href="iniciosesion.php" class="btn transparent">Iniciar Sesi&oacute;n</a>
                     <a href="registroUsuario.php" class="btn solid">Registrate!</a>
-                </div>
+                </div>-->
             <?php
             }
             ?>

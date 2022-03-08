@@ -168,7 +168,7 @@ if ($nombres !== "" && $correo !== "" && $numTarjeta !== "" && $fechaVencimiento
     $q->bindParam(":idUser", $user_id, PDO::PARAM_INT);
     $q->execute();
 
-    $sql1 = "INSERT INTO `transacciones_payme` (`idTransac`,`idUsuario`,`idCurso`,`monto`,`status`,`fecha`,`correo`, ) 
+    $sql1 = "INSERT INTO `transacciones_payme` (`idTransac`,`idUsuario`,`idCurso`,`monto`,`status`,`fecha`,`correo`) 
                     VALUES (:id_trans,:idUser,:idCurso,:monto,:status,now(),:correo)";
     $q1 = $pdo->prepare($sql1);
     $q1->bindParam(":id_trans", $operation, PDO::PARAM_STR);

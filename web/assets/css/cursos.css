@@ -22,6 +22,8 @@
     margin: 0 auto;
     margin-bottom: 2rem;
     display: flex;
+    margin-left:auto;
+    margin-right:auto;
 }
 
 .container-fluid .row .col-12 .card .col-5 .container-image {
@@ -58,6 +60,7 @@ min-height: 100%;
     font-size: 18px;
     text-transform: uppercase;
     color: #000000;
+    
 }
 
 .container-fluid .row .col-12 .card .col-7 .container-title a {
@@ -75,6 +78,7 @@ min-height: 100%;
     min-width: 270px;
     min-height: 80px;
     display: flex;
+    
 }
 
 .container-fluid .row .col-12 .card .col-7 .container-link {

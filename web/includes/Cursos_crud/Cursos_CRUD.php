@@ -140,6 +140,8 @@
         $nomb=$_POST['nomb_actu_cursos'];
         $descr=$_POST['desc_curso'];
         $prec=$_POST['prec_curso'];
+        $publ=$_POST['publi_cursos'];
+        $introduc=$_POST['intRR_cursos'];
 	
 	    if(($_FILES['txtimagenAct']['size'])>0){
             $nombreimagenes=$_FILES['txtimagenAct']['tmp_name'];
@@ -157,7 +159,7 @@
         }
         
         $pdo2 = Database::connect();
-        $consult1=$pdo2->prepare("UPDATE cursos SET nombreCurso='$nomb', descripcionCurso='$descr', costoCurso='$prec' WHERE idCurso = '$id' ");
+        $consult1=$pdo2->prepare("UPDATE cursos SET nombreCurso='$nomb', descripcionCurso='$descr', costoCurso='$prec', introduccion='$introduc', dirigido='$publ' WHERE idCurso = '$id' ");
         $consult1->execute();
         Database::disconnect();
 
