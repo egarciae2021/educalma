@@ -240,7 +240,7 @@
                     blanditiis cum omnis magni-->
                 </div>
             </div>
-                    <div class="col-8 "style="margin-bottom:25px;align-self: flex-end; margin-right:-310px;">
+                    <div class="col-8 ">
                         <h5>¿Que incluye este curso?</h5>
                         <div class="container-info-course-detalle">
                             <h5>Tabla de contenido del curso</h5>
@@ -271,8 +271,7 @@
         </div>
     </div>
     <div class="container-padre container-others mb-5" id="certificado-temario" style="margin-bottom:25px;">
-        <div class="row">
-            
+      
             <div class="col-8">
                 <h5>Temario del curso</h5>
                 <?php 
@@ -281,7 +280,7 @@
                         $nW=$nW+1;
                 ?>
                     <div class="w-100">
-                        <a href="video.php?id=<?php echo $id;?>&idtema=<?php echo 1;?>&id_modulo=<?php echo $modulosC['idModulo']?>&nW=<?php echo $nW-1?>" class="btn w-100 px-4 mb-2">
+                        <a href="video.php?id=<?php echo $id;?>&idtema=<?php echo 1;?>&id_modulo=<?php echo $modulosC['idModulo']?>&nW=<?php echo $nW-1?>" class="btn px-4 mb-2">
                             <i class="fas fa-play mr-3"></i>
                             <span><?php echo $modulosC['nombreModulo'] ?></span>
                         </a>
@@ -290,7 +289,7 @@
                     }
                 ?>
             </div>
-        </div>
+        
     </div>
 
 
