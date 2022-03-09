@@ -6,9 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet" />
+
     <link rel="stylesheet" href="././assets/css/stylecuestionario.css">
     <!-- iconos -->
     <script src="https://kit.fontawesome.com/abc76d5c4d.js" crossorigin="anonymous"></script>
+
+    <script>
+        $('.correcto').click(function() {
+    $(this).find('input').prop('checked', true)    
+    });
+    </script>
+
     <title>Cuestionario</title>
 </head>
 
@@ -276,17 +284,18 @@
                                 method="POST" id="formcito">
                                 <?php while($fila2=$q2->fetch(PDO::FETCH_ASSOC)){ 
                                             //checked
-                                        ?>
-                                <div style="padding: 10px; border-radius: 5px; background: #ffff; border-bottom: 1px solid slategray; margin-bottom: 20px;">
-                                    <div class="form-check" >
-                                        <label class="form-check-label">
+                                        ?> 
+                                                                           
+                                <div style="padding: 10px; border-radius: 5px; background: #E2EDF8; border-bottom: 1px solid slategray; margin-bottom: 20px;">
+                                    <div class="form-check">
+                                        <label class="form-check-label" style=" width: 100%;">
                                         <input class="form-check-input" type="radio" name="verif_resp" value="<?php echo $fila2['respuesta'];?>">
                                         <input type="hidden" name="correcta" value="<?php echo $correcta;?>">
                                         <input type="hidden" name="contadorP" value="<?php echo $contadorP;?>">
                                          <?php echo $fila2['respuesta'];?> </label>
-                                        <!--<label><input type="radio" name="empleoactual" value="mediodia"> Medio día</label>-->
                                     </div>
                                 </div>
+                                
                                 <?php }?>
                                 <div style="text-align: right;">
                                     <?php 
