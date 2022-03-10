@@ -1,0 +1,15 @@
+#cardBtn{
+    background-color: rgba(0, 0, 0, 0.883);
+    border-radius: 25px;
+}
+
+#cardBtn:hover{
+    transition: .4s ease-in-out all;
+    background-color: #2C2E2F;
+}
+
+@media only screen and (max-width: 768px) {
+    #cardBtn{
+        font-size: small;
+    }
+}

@@ -11,6 +11,7 @@ require_once 'database/databaseConection.php';
         </div>
         <div class="nav-btn-header">
             <div class="nav-links-header">
+                <?php if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {?>
                 <ul>
                     <li class="nav-link" style="--i: .6s">
                         <a href="nosotros.php">Nosotros</a>
@@ -28,11 +29,35 @@ require_once 'database/databaseConection.php';
                     //}   
                     ?> -->
                     </li>
-                    <div class="log-sign" style="--i: 1.8s">
-                    <a href="iniciosesion.php" class="btn transparent">Iniciar Sesi&oacute;n</a>
-                    <a href="registroUsuario.php" class="btn solid">Registrate!</a>
-                </div>
                 </ul>
+                <?php
+                    }else{
+                ?>
+                    <ul>
+                    <li class="nav-link" style="--i: .6s">
+                        <a href="nosotros.php">Nosotros</a>
+                    </li>
+                    <li class="nav-link" style="--i: .6s">
+                    <!-- <?php
+                    //if(isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)){
+                    ?> -->
+                        <a href="ListaCursos.php?pag=1">Cursos</a>
+                    <!-- <?php
+                    //}else{
+                    ?>
+                        <a href="login.php">Cursos</a>
+                    <?php
+                    //}   
+                    ?> -->
+                    </li>
+                    <div class="log-sign" style="--i: 1.8s">
+                        <a href="iniciosesion.php" class="btn transparent">Iniciar Sesi&oacute;n</a>
+                        <a href="registroUsuario.php" class="btn solid">Registrate!</a>
+                    </div>
+                </ul>
+                <?php
+                    }
+                ?>
 
                 
             </div>

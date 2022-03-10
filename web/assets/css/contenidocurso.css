@@ -198,59 +198,54 @@ body {
     
 }
 
-@media (min-width:300px){.container-fluid .container-detalle-informacion .col-8{
+@media (min-width:300px){
+    .container-fluid .container-detalle-informacion .col-8{
     position: relative;
-    left: -100px;
+    left: 60px;
     right:10px;
+    margin-bottom: 20px;
+    width: 300px;
 }
 }
 @media (min-width:1000px){
     .container-fluid .container-detalle-informacion .col-8  {
       position:relative;
-      right:-30px;
+      left:-300px;
+      margin-bottom:25px;align-self: flex-end; margin-right:-310px;
+      width: 750px;
     }
     }
+    
     
         
 @media(min-width: 950px){
 
     .col-lg-5{
         position: relative;
-    left: 150px;
+    left: 10px;
     }
 }
-@media(min-width:900px){
+@media(min-width:1000px){
     
-.container-padre .col-8{
-    position: relative;
-    top: -420px;
-    position: relative;
-    left: 240px;
-    max-width: 50%;
-   
-}
+    .container-padre .col-8{
+        position: relative;
+        top: -420px;
+      
+        left: 170px;
+       
+       
+    }
 
 }@media(min-width:300px){
     
     .container-padre .col-8{
         position:relative;
-        right: -20px;
+        right: 10px;
         margin-top: 40px;
        
     }}
     
-    @media (min-width: 300px){
-.container-fluid .container-detalle-informacion .col-8 {
-    position: relative;
-    left: -380px;
-    right: 10px;}
-}
-@media (min-width: 1000px){
-    .container-fluid .container-detalle-informacion .col-8 {
-        position: relative;
-        left: -180px;
-        right: 10px;}
-    }
+   
 
 .container-fluid .container-detalle-informacion .col-8 .container-info-course-detalle h5 {
     font-size: 18px;
@@ -290,14 +285,36 @@ body {
     background: #d5e7fb;
     font-size: 13px;
     text-align: left;
+    width: 760px;
 }
 
 .container-others .col-8 .fa-play {
     color: #a8b5ff;
 }
 
-
+@media(min-width:300px){
     
+    .container-others .col-8 a {
+       /* position:relative;
+        left:10px;*/
+        /*display: flex;
+        align-items: center;*/
+       width:350px;
+       
+    }}
+    
+    @media(min-width:1000px){
+    
+        .container-others .col-8 a {
+            width: 760px;
+           
+        }}
+        .mb-5{
+            width: 300px;
+    height: 19px;
+    margin-bottom: 20px;
+        }
+          
 
 /*
 
