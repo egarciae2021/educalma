@@ -10,8 +10,6 @@ $q = $pdo->prepare($veri);
 $q->execute(array());
 $dato=$q->fetch(PDO::FETCH_ASSOC);
 
-$id = $dato['idCurso_certif'];
-
 if($dato==null){
     echo '<script>
    
@@ -21,6 +19,7 @@ if($dato==null){
     </script>';
     
 }else{
+    $id = $dato['idCurso_certif'];
     header('Location: ../../plugins/ejemplo.php?idCurso='.$id.''); 
 }
 
