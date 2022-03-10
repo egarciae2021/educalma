@@ -16,6 +16,11 @@
         $q3 = $pdo3->prepare($sql3);
         $q3->execute(array());
 
+        $pdo5=Database::connect();
+        $sql5="SELECT * FROM certificados WHERE idUser_certif= '$id' and idCurso_certif = '$cursoid'";
+        $q5=$pdo5->prepare($sql5);
+        $q5->execute();
+        $dato5=$q5->fetch(PDO::FETCH_ASSOC);
        
         while( $dato = $q3->fetch(PDO::FETCH_ASSOC)){
             $fecha1 = date('Y');
@@ -70,23 +75,26 @@
              /*METODO PARA GUARDAR EL CERTIFICADO EN SU TABLA
              /*@Autor: Jean
              */
-            $ale= cod_aleatorio('C',8);
-            
-            $userid= $dato['id_user'];
-            $pdo4 = Database::connect();
-            try{
-                // $sql4 = "INSERT INTO certificados (idCurso_certif, idUser_certif, fechaCurso_terminado,codigo) values ('$cursoid','$userid','$fechaActual','$ale')";
-                $sql4 = "INSERT INTO `certificados` (`idCurso_certif`, `idUser_certif`, `fechaCurso_terminado`,`codigo`) values (:cursoid,:userid,:fechaActual,:codigo)";
-                // WHERE NOT EXISTS (SELECT 1 FROM certificados WHERE codigo<>'$ale')";
-                $q4 = $pdo4->prepare($sql4);
-                $q4->bindParam(":cursoid",$cursoid,PDO::PARAM_INT);
-                $q4->bindParam(":userid",$userid,PDO::PARAM_INT);
-                $q4->bindParam(":fechaActual",$fechaActual);
-                $q4->bindParam(":codigo",$ale,PDO::PARAM_STR);
-                $q4->execute();
-            }catch(PDOException $e){
-                echo $e->getMessage();
-            }                
+            if(empty($dato5)){
+                $ale= cod_aleatorio('C',8);
+                $userid= $dato['id_user'];
+                $pdo4 = Database::connect();
+                try{
+                    // $sql4 = "INSERT INTO certificados (idCurso_certif, idUser_certif, fechaCurso_terminado,codigo) values ('$cursoid','$userid','$fechaActual','$ale')";
+                    $sql4 = "INSERT INTO `certificados` (`idCurso_certif`, `idUser_certif`, `fechaCurso_terminado`,`codigo`) values (:cursoid,:userid,now(),:codigo)";
+                    // WHERE NOT EXISTS (SELECT 1 FROM certificados WHERE codigo<>'$ale')";
+                    $q4 = $pdo4->prepare($sql4);
+                    $q4->bindParam(":cursoid",$cursoid,PDO::PARAM_INT);
+                    $q4->bindParam(":userid",$userid,PDO::PARAM_INT);
+                    // $q4->bindParam(":fechaActual",$fechaActual);
+                    $q4->bindParam(":codigo",$ale,PDO::PARAM_STR);
+                    $q4->execute();
+                }catch(PDOException $e){
+                    echo $e->getMessage();
+                }
+            }else{
+                $ale=$dato5['codigo'];
+            }
 
             /*FIN*/
 
