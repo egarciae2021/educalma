@@ -5,10 +5,10 @@
 
     session_start();     
     //USUARIO VALIDADO SESIÓN   
-    if(isset($_SESSION['codUsuario'])){
+    if(isset($_GET['idUsu'])){
 
         $cursoid= $_GET['idCurso'];
-        $id= $_SESSION['codUsuario'];
+        $id= $_GET['idUsu'];
         $pdo3 = Database::connect();
         $sql3 = "SELECT * FROM cursoinscrito c inner join usuarios u on 
         u.id_user=c.usuario_id inner join cursos s on
@@ -17,6 +17,7 @@
         $q3->execute(array());
 
         $pdo5=Database::connect();
+        
         $sql5="SELECT * FROM certificados WHERE idUser_certif= '$id' and idCurso_certif = '$cursoid'";
         $q5=$pdo5->prepare($sql5);
         $q5->execute();
