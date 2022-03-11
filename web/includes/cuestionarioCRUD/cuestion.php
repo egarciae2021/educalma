@@ -55,29 +55,31 @@
         // CALCULAR LA CANTIDAD DE RESPUESTS ACERTADAS 
         if($validar==0){
             $pdo = Database::connect();
-        $sql = "SELECT cantidad_respuestas, nota FROM cursoinscrito WHERE curso_id = '$id' ";
-        $q = $pdo->prepare($sql);
-        $q->execute(array());
-        $dato=$q->fetch(PDO::FETCH_ASSOC);
-        Database::disconnect();
- 
+            $idUsuer= $_SESSION['codUsuario'];
+            $sql = "SELECT cantidad_respuestas, nota FROM cursoinscrito WHERE curso_id = '$id' and usuario_id= '$idUsuer'";
+            $q = $pdo->prepare($sql);
+            $q->execute(array());
+            $dato=$q->fetch(PDO::FETCH_ASSOC);
+            Database::disconnect();
+            
+    
             $cantidad_respuesta=$dato['cantidad_respuestas']; 
-        
-        // SUMA LA CANTIDAD DE RESPUESTAS ACERTADAS 
-        $idUsuer= $_SESSION['codUsuario'];
-        $pdo=Database::connect();
-        $sql = "UPDATE cursoinscrito SET cantidad_respuestas=$cantidad_respuesta+1 WHERE curso_id ='$id' and usuario_id= '$idUsuer'";
-        $q = $pdo->prepare($sql);
-        $q->execute();
-        Database::disconnect();
+            
+            // SUMA LA CANTIDAD DE RESPUESTAS ACERTADAS 
+            $pdo=Database::connect();
+            $sql = "UPDATE cursoinscrito SET cantidad_respuestas=$cantidad_respuesta+1 WHERE curso_id ='$id' and usuario_id= '$idUsuer'";
+            $q = $pdo->prepare($sql);
+            $q->execute();
+            Database::disconnect();
 
-        $nota = $dato['nota'];
+            $nota = $dato['nota'];
 
-        $pdo=Database::connect();
-        $sql = "UPDATE cursoinscrito SET nota=$nota+$NotaInd WHERE curso_id ='$id' and usuario_id= '$idUsuer' ";
-        $q = $pdo->prepare($sql);
-        $q->execute();
-        Database::disconnect();
+            //SUMA LOS PUNTOS POR CADA RESPUESTA ACERTADA
+            $pdo=Database::connect();
+            $sql = "UPDATE cursoinscrito SET nota=$nota+$NotaInd WHERE curso_id ='$id' and usuario_id= '$idUsuer' ";
+            $q = $pdo->prepare($sql);
+            $q->execute();
+            Database::disconnect();
 
         }
         

@@ -20,7 +20,9 @@ if($dato==null){
     
 }else{
     $id = $dato['idCurso_certif'];
-    header('Location: ../../plugins/ejemplo.php?id='.$id.''); 
+    $idU = $dato['idUser_certif'];
+    $_SESSION['codUsuario']=$idU;
+    header('Location: ../../plugins/ejemplo.php?idCurso='.$id.'&idUsu='.$idU.''); 
 }
 
 ?>

@@ -64,13 +64,16 @@
         
         if($cantidad_respuestas_validas<=9){
             $minimo_respuestas_para_aprobar=$cantidad_respuestas_validas;
+            $nota37=20;
         }else{
             $minimo_respuestas_para_aprobar=$cantidad_respuestas_validas-2;
+            $nota37=19;
         }
         
         
         $pdo6 = Database::connect();
-        $sql6 = "SELECT cantidad_respuestas FROM cursoinscrito WHERE curso_id = '$id' ";
+        $idUser56=$_SESSION['iduser'];
+        $sql6 = "SELECT cantidad_respuestas FROM cursoinscrito WHERE curso_id = '$id' and usuario_id= '$idUser56'";
         $q6 = $pdo6->prepare($sql6);
         $q6->execute(array());
         $dato=$q6->fetch(PDO::FETCH_ASSOC);
@@ -203,7 +206,7 @@
                 <?php 
                     // PONER EN EL BOTON DEL CERTIFICADO
                     if($cantidad_respuesta_acertadas>=$minimo_respuestas_para_aprobar){
-                        echo '<a data-filter=".seo" href="plugins/ejemplo.php?idCurso='.$id.'">Certificado</a>';
+                        echo '<a data-filter=".seo" href="plugins/ejemplo.php?idCurso='.$id.'&idUsu='.$idUser56.'">Certificado</a>';
                         $validar=1;
                     }else {
                         echo '<a onclick="sin_certificado()">Certificado</a>';
@@ -214,30 +217,28 @@
                     <!-- <a href="#certificado-temario">Certificado</a> -->
                 </div>
                 <div class="nav-link-course">
-                    <a href="#certificado-temario">Temario</a>
+                    <a href="#informacion">Temario</a>
                 </div>
                 <div class="nav-link-course">
+                    
                     <a href="#foro-curso">Foro</a>
+                
                 </div>
             </div>
         </div>
     </div>
-    <div class="container-fluid p-0" id="informacion">
+
+    <div class="container-fluid p-0">
         <div class="container-detalle-informacion">
-            <div class="container ">
+            <div class="container"  style="width:auto; overflow:hidden;">
                 <div class="row py-0  "style="display:flex; flex-direction:column ;margin-top:25px ;">
                     <!-- <div class="col-4">
                          <img src="assets/img/cursophp.png" alt=""> 
                     </div>-->
-                    <div class="col-md-5 col-lg-5 order-1 "style="align-self: flex-end; " >
-                <h5>Certificación del curso</h5>
-                <img src="assets/images/certificado.jpg" class="img-fluid "alt="">
-                <div class="info">
-                    <!--Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse sapiente, harum, vero molestiae magnam
-                    blanditiis cum omnis magni-->
-                </div>
-            </div>
-                    <div class="col-8 "style="margin-bottom:25px;align-self: flex-end; margin-right:-310px;">
+                    <!--div class="col-md-5 col-lg-5 order-1 "style="align-self: flex-end; margin-top:25px;" -->
+                    
+                    <!--div class="col-8"-->
+                    <div class="col-8" style="width: 100%;" id="informacion">
                         <h5>¿Que incluye este curso?</h5>
                         <div class="container-info-course-detalle">
                             <h5>Tabla de contenido del curso</h5>
@@ -252,7 +253,7 @@
                                     <div><i class="fas fa-infinity"></i></div><?php echo $cuestionarios; ?> Cuestionarios
                                 </div>
                                 <div class="col-12 col-sm-6 col-lg-6">
-                                    <div><i class="fas fa-mobile-alt"></i></div> Nota mínima <?php echo $minimo_respuestas_para_aprobar; ?>
+                                    <div><i class="fas fa-mobile-alt"></i></div> Nota mínima <?php echo $nota37; ?>
                                 </div>
                                 <div class="col-12 col-sm-6 col-lg-6">
                                     <div><i class="fas fa-list-ol"></i></div> Cant. de preguntas <?php echo $preguntas; ?>
@@ -263,14 +264,12 @@
                             </div>
                         </div>
                     </div>
+                
                 </div>
-            </div>
-        </div>
-    </div>
-    <div class="container-padre container-others mb-5" id="certificado-temario" style="margin-bottom:25px;">
-        <div class="row">
-            
-            <div class="col-8">
+
+                
+
+                <div class="col-12"   style="width:760px; height:auto; float:left; position: relative; " id="certificado-temario">
                 <h5>Temario del curso</h5>
                 <?php 
                 $nW=0;
@@ -278,18 +277,30 @@
                         $nW=$nW+1;
                 ?>
                     <div class="w-100">
-                        <a href="video.php?id=<?php echo $id;?>&idtema=<?php echo 1;?>&id_modulo=<?php echo $modulosC['idModulo']?>&nW=<?php echo $nW-1?>" class="btn w-100 px-4 mb-2">
+                        <a href="video.php?id=<?php echo $id;?>&idtema=<?php echo 1;?>&id_modulo=<?php echo $modulosC['idModulo']?>&nW=<?php echo $nW-1?>" class="btn px-4 mb-2 puntos-suspensivos"  style="background:#DCECFA; width:100%; text-align:left;">
                             <i class="fas fa-play mr-3"></i>
-                            <span><?php echo $modulosC['nombreModulo'] ?></span>
+                            <span style="color:black; width:100%;"><?php echo $modulosC['nombreModulo'] ?></span>
                         </a>
                     </div>
+                    
                 <?php 
                     }
                 ?>
+
+                </div>
+
+                <div class="col-md-5 col-lg-5 order-1 "style="width:auto; float:right; position: relative; " >
+                        <h5>Certificación del curso</h5>
+                        <img src="assets/images/certificado.jpg" class="img-fluid "alt="">
+                        <div class="info">
+                        <!--Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse sapiente, harum, vero molestiae magnam
+                        blanditiis cum omnis magni-->
+                        </div>
+                    </div>
+
             </div>
         </div>
     </div>
-
 
     <!-- Foro -->
 
@@ -442,4 +453,3 @@
     ?>
 </body>
 
-</html>

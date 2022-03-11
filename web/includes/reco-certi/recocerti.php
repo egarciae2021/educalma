@@ -16,9 +16,9 @@
             <img class="image" src="./assets/images/logo.svg" width="30%" alt="#">
             <p class="title">Verificar un certificado</p>
             <div class="separator"></div>
-            <form class="login-form" id="form-registro" action="includes/reco-certi/validarCertificado.php" target="dummyframe">
+            <form class="login-form" id="form-registro" action="includes/reco-certi/validarCertificado.php" method="POST" target="dummyframe">
                 <div class="form-control">
-                    <input type="text" name="codigo" id="codigo-certificado" placeholder="INTRODUCE EL CÓDIGO">
+                    <input type="text" name="codigo" id="codigo" placeholder="INTRODUCE EL CÓDIGO">
                     <i class="fas fa-award"></i>
                 </div>
                 <p class="welcome-message">El codigo aparece en la parte superior del certificado</p>
