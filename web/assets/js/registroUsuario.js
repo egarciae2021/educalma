@@ -23,89 +23,91 @@ $(document).ready(() => {
 
     // Formato JS
     let controlsArray = [{
-            // Selector
-            element: "input[type=text]",
-            // Propiedades a asignar
-            properties: [{
-                required: true,
-                minlength: 3,
-            }, ],
-            // Eventos
-            events: ["keyup", "focus", "blur"],
-            // Validado (true) - (function)
-            validAction: greenEffect,
-            // No validado (false) - (function)
-            noValidAction: redEffect,
-        },
-        {
-            element: "input[type=number]",
-            properties: [{
-                required: true,
-                min: 0,
-            }, ],
-            events: ["keyup", "focus", "blur"],
-            validAction: greenEffect,
-            noValidAction: redEffect,
-        },
-        {
-            element: "input[type=tel]",
-            properties: [{
-                required: true,
-                pattern: "[0-9]{9,}",
-            }, ],
-            events: ["keyup", "focus", "blur"],
-            validAction: greenEffect,
-            noValidAction: redEffect,
-        },
-        {
-            element: "input#Numero",
-            properties: [{
-                required: true,
-                pattern: "[0-9]{8}",
-            }, ],
-            events: ["keyup", "focus", "blur"],
-            validAction: greenEffect,
-            noValidAction: redEffect,
-        },
-        {
-            element: "input[type=password]",
-            properties: [{
-                required: true,
-                pattern: "(?=^.{8,}$)((?=.*\\d)|(?=.*\\W+))(?![.\\n])(?=.*[A-Z])(?=.*[a-z]).*$",
-            }, ],
-            events: ["keyup", "focus", "blur"],
-            validAction: greenEffect,
-            noValidAction: redEffect,
-        },
-        {
-            element: "input[type=radio]",
-            properties: [{
-                required: true,
-            }, ],
-            events: ["change"],
-            validAction: greenEffect,
-            noValidAction: redEffect,
-        },
-        {
-            element: "input[type=date]#txtNacimiento",
-            properties: [{
-                required: true,
-                min: FormatLocal(getMaxMinDate(18, 115).fMin),
-                max: FormatLocal(getMaxMinDate(18, 115).fMax),
-            }, ],
-            events: ["change", "focus"],
-            validAction: greenEffect,
-            noValidAction: redEffect,
-        },
-        {
-            element: "select",
-            properties: [{
-                required: true,
-            }, ],
-            events: ["change", "focus", "blur"],
-            validAction: greenEffect,
-            noValidAction: redEffect,
-        },
+        // Selector
+        element: "input[type=text]",
+        // Propiedades a asignar
+        properties: [{
+            required: true,
+            minlength: 3,
+        },],
+        // Eventos
+        events: ["keyup", "focus", "blur"],
+        // Validado (true) - (function)
+        validAction: greenEffect,
+        // No validado (false) - (function)
+        noValidAction: redEffect,
+    },
+
+
+    {
+        element: "input[type=number]",
+        properties: [{
+            required: true,
+            min: 0,
+        },],
+        events: ["keyup", "focus", "blur"],
+        validAction: greenEffect,
+        noValidAction: redEffect,
+    },
+    {
+        element: "input[type=tel]",
+        properties: [{
+            required: true,
+            pattern: "[0-9]{9,}",
+        },],
+        events: ["keyup", "focus", "blur"],
+        validAction: greenEffect,
+        noValidAction: redEffect,
+    },
+    {
+        element: "input#Numero",
+        properties: [{
+            required: true,
+            pattern: "[0-9]{8}",
+        },],
+        events: ["keyup", "focus", "blur"],
+        validAction: greenEffect,
+        noValidAction: redEffect,
+    },
+    {
+        element: "input[type=password]",
+        properties: [{
+            required: true,
+            pattern: "(?=^.{8,}$)((?=.*\\d)|(?=.*\\W+))(?![.\\n])(?=.*[A-Z])(?=.*[a-z]).*$",
+        },],
+        events: ["keyup", "focus", "blur"],
+        validAction: greenEffect,
+        noValidAction: redEffect,
+    },
+    {
+        element: "input[type=radio]",
+        properties: [{
+            required: true,
+        },],
+        events: ["change"],
+        validAction: greenEffect,
+        noValidAction: redEffect,
+    },
+    {
+        element: "input[type=date]#txtNacimiento",
+        properties: [{
+            required: true,
+            min: FormatLocal(getMaxMinDate(18, 115).fMin),
+            max: FormatLocal(getMaxMinDate(18, 115).fMax),
+        },],
+        events: ["change", "focus"],
+        validAction: greenEffect,
+        noValidAction: redEffect,
+    },
+    {
+        element: "select",
+        properties: [{
+            required: true,
+        },],
+        events: ["change", "focus", "blur"],
+        validAction: greenEffect,
+        noValidAction: redEffect,
+    },
     ];
 
     ValidControl(controlsArray);
@@ -195,9 +197,9 @@ $(document).ready(() => {
                 var formData = new FormData();
                 formData.append("email", email);
                 fetch("./verifiedCorreo.php", {
-                        method: "POST",
-                        body: formData,
-                    })
+                    method: "POST",
+                    body: formData,
+                })
                     .then((response) => response.json())
                     .catch((error) => console.error("Error:", error))
                     .then((response) => {
@@ -221,8 +223,8 @@ $(document).ready(() => {
                     });
             } else
                 $("#correoMessage")
-                .text("¡Debe ingresar su correo!")
-                .addClass("is-invalid");
+                    .text("¡Debe ingresar su correo!")
+                    .addClass("is-invalid");
         } else if (partAction === 1) {
             if (document.getElementById("txtPass").validity.valid) {
                 pass = $("#txtPass").val();
@@ -234,7 +236,9 @@ $(document).ready(() => {
             } else {
                 $("#txtPass").addClass("is-invalid");
             }
-        } else if (partAction === 2) {
+        }
+
+        else if (partAction === 2) {
             if (
                 document.getElementById("txtNombres").validity.valid &&
                 document.getElementById("txtAPaterno").validity.valid &&
@@ -281,9 +285,9 @@ $(document).ready(() => {
                 formData.append("codigo_registrar", code);
 
                 fetch("./register.php", {
-                        method: "POST",
-                        body: formData,
-                    })
+                    method: "POST",
+                    body: formData,
+                })
                     .then((response) => response.ok)
                     .catch((error) => console.error("Error:", error))
                     .then(() => {

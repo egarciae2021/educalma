@@ -219,7 +219,7 @@
                     <!-- <a href="#certificado-temario">Certificado</a> -->
                 </div>
                 <div class="nav-link-course">
-                    <a href="#certificado-temario">Temario</a>
+                    <a href="#informacion">Temario</a>
                 </div>
                 <div class="nav-link-course">
                     
@@ -230,22 +230,17 @@
         </div>
     </div>
 
-    <div class="container-fluid p-0" id="informacion">
+    <div class="container-fluid p-0">
         <div class="container-detalle-informacion">
-            <div class="container ">
+            <div class="container"  style="width:auto; overflow:hidden;">
                 <div class="row py-0  "style="display:flex; flex-direction:column ;margin-top:25px ;">
                     <!-- <div class="col-4">
                          <img src="assets/img/cursophp.png" alt=""> 
                     </div>-->
-                    <div class="col-md-5 col-lg-5 order-1 "style="align-self: flex-end; margin-top:25px;" >
-                        <h5>Certificación del curso</h5>
-                        <img src="assets/images/certificado.jpg" class="img-fluid "alt="">
-                        <div class="info">
-                        <!--Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse sapiente, harum, vero molestiae magnam
-                        blanditiis cum omnis magni-->
-                        </div>
-                    </div>
-                    <div class="col-8">
+                    <!--div class="col-md-5 col-lg-5 order-1 "style="align-self: flex-end; margin-top:25px;" -->
+                    
+                    <!--div class="col-8"-->
+                    <div class="col-8" style="width: 100%;" id="informacion">
                         <h5>¿Que incluye este curso?</h5>
                         <div class="container-info-course-detalle">
                             <h5>Tabla de contenido del curso</h5>
@@ -271,24 +266,12 @@
                             </div>
                         </div>
                     </div>
-                    
+                
                 </div>
-            </div>
-        </div>
-    </div>
 
-    <!--<div class="col-md-5 col-lg-5 order-1 "style="align-self: flex-end; margin-top:25px;" >
-                        <h5>Certificación del curso</h5>
-                        <img src="assets/images/certificado.jpg" class="img-fluid "alt="">
-                        <div class="info">
-                        !--Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse sapiente, harum, vero molestiae magnam
-                        blanditiis cum omnis magni--
-                        </div>
-                    </div>-->
+                
 
-    <div class="container-padre container-others mb-5" id="certificado-temario" style="">
-      
-            <div class="col-8">
+                <div class="col-12"   style="width:760px; height:auto; float:left; position: relative; " id="certificado-temario">
                 <h5>Temario del curso</h5>
                 <?php 
                 $nW=0;
@@ -296,18 +279,30 @@
                         $nW=$nW+1;
                 ?>
                     <div class="w-100">
-                        <a href="video.php?id=<?php echo $id;?>&idtema=<?php echo 1;?>&id_modulo=<?php echo $modulosC['idModulo']?>&nW=<?php echo $nW-1?>" class="btn px-4 mb-2">
+                        <a href="video.php?id=<?php echo $id;?>&idtema=<?php echo 1;?>&id_modulo=<?php echo $modulosC['idModulo']?>&nW=<?php echo $nW-1?>" class="btn px-4 mb-2 puntos-suspensivos"  style="background:#DCECFA; width:100%; text-align:left;">
                             <i class="fas fa-play mr-3"></i>
-                            <span><?php echo $modulosC['nombreModulo'] ?></span>
+                            <span style="color:black; width:100%;"><?php echo $modulosC['nombreModulo'] ?></span>
                         </a>
                     </div>
+                    
                 <?php 
                     }
                 ?>
-            </div>
-        
-    </div>
 
+                </div>
+
+                <div class="col-md-5 col-lg-5 order-1 "style="width:auto; float:right; position: relative; " >
+                        <h5>Certificación del curso</h5>
+                        <img src="assets/images/certificado.jpg" class="img-fluid "alt="">
+                        <div class="info">
+                        <!--Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse sapiente, harum, vero molestiae magnam
+                        blanditiis cum omnis magni-->
+                        </div>
+                    </div>
+
+            </div>
+        </div>
+    </div>
 
     <!-- Foro -->
 
@@ -460,4 +455,3 @@
     ?>
 </body>
 
-</html>
