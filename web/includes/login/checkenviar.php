@@ -40,13 +40,13 @@
 
         $token = generaTokenPass($user_id);
 
-        $url = 'https://'.$_SERVER["SERVER_NAME"].'/restablecer_pass.php?id='.$user_id.'&token='.$token;			
-        $asunto = 'Recuperar contrase&ntildea - Sistema de Usuarios';
+        $url = 'http://'.$_SERVER["SERVER_NAME"].'/restablecer_pass.php?id='.$user_id.'&token='.$token;			
+        $asunto = 'Recuperar password - Sistema de Usuarios';
 
         // $cuerpo = "Estimado $user_nombre: <br /><br />para restablecer la contraseña haga clic en el siguiente enlace <a href='$url'>Activar Cuenta</a>";
         $cuerpo = "<div style='width: 50%;'>
                         Hola $user_nombre: <br />
-                        <p>Estás recibiendo este correo porque hiciste una solicitud de recuperacion de contraseña para tu cuenta.</p>
+                        <p>Estás recibiendo este correo porque hiciste una solicitud de recuperacion de password para tu cuenta.</p>
                         
                             <div style='margin: auto; width: 50%; padding: 60px;'>
                                 <a style='text-decoration: none;
