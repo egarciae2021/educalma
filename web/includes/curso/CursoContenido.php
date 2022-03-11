@@ -78,6 +78,8 @@
         $q6->execute(array());
         $dato=$q6->fetch(PDO::FETCH_ASSOC);
         
+        // $cantidad_respuesta_acertadas=1;
+
         $cantidad_respuesta_acertadas=$dato['cantidad_respuestas'];
 
         // ******//

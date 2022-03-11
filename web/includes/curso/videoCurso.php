@@ -11,8 +11,16 @@
  if(isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)){
 ?>
 <?php
-    $nW=$_GET['nW'];
     
+    
+     
+    if(isset($_GET['nW']))
+    { $nW=$_GET['nW']; }
+    else{
+    $nW=0;}
+
+
+
     require_once '././database/databaseConection.php';
     if(isset($_GET['validar'])){
 
@@ -95,6 +103,7 @@
             <div class="col-md-1"></div>
             <div class="col-md-10">
                 <h2><?php 
+ 
                     $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                     $components = parse_url($url);
                     parse_str($components['query'], $results);
@@ -160,6 +169,7 @@
 
 <?php 
     
+
     $id=$_GET['id'];
     $pdo = Database::connect(); 
     $sql = "SELECT * FROM modulo WHERE id_curso='$id'";
@@ -236,11 +246,12 @@
                 ?>
                 <br>
                 <button type="button" class="btn btn-outline-secondary" id="btnV"<?php if($nueva<=1){ echo "disabled";}?>
-                    onclick="parent.location='video.php?id=<?php echo $id; ?>&idtema=<?php echo ($nueva-1); ?>&id_modulo=<?php echo $dato['idModulo']?>&nW=<?php echo $_GET['nW']?>'"> <strong>
+                    onclick="parent.location='video.php?id=<?php echo $id; ?>&idtema=<?php echo ($nueva-1); ?>&id_modulo=<?php echo $dato['idModulo']?>&nW=<?php echo $nW?>'"> <strong>
                         <?php if(count($resultado1)<=0){echo "No existo";}?>< </strong> Anterior </button>
                 <button type="button" class="btn btn-outline-secondary" id="btnV2"> <img
                         src="././assets/images/video_icono_32.png"></button>
-                <button type="button" class="btn btn-outline-secondary" id="btnV" <?php if($nueva>=count($resultado1)){?>onclick="parent.location='cuestionario.php?id=<?php echo $id;?>&nW=<?php echo $_GET['nW'];?>&idModulo=<?php echo $_GET['id_modulo'];?>&up=0&idcues=<?php echo $dato8['idCuestionario'];?>&cuen=1&nro=0'">Siguiente<strong> > </strong></button> <?php }else{ ?>
+                <button type="button" class="btn btn-outline-secondary" id="btnV" <?php if($nueva>=count($resultado1)){?>onclick="parent.location='cuestionario.php?id=<?php echo $id;?>&nW=<?php echo $nW;?>&idModulo=<?php echo $_GET['id_modulo'];?>&up=0&idcues=<?php echo $dato8['idCuestionario'];?>&cuen=1&nro=0'">Siguiente<strong> > </strong></button> <?php }else{ ?>
+                    
                     onclick="parent.location='video.php?id=<?php echo $id; ?>&nW=<?php echo $_GET['nW']?>&idtema=<?php echo ($nueva+1); ?>&id_modulo=<?php echo $_GET['id_modulo']?>'">Siguiente<strong> > </strong></button>
                     
                     <?php }
