@@ -45,7 +45,7 @@ footer a:hover {
 .widget-about img {
   display: block;
   margin-bottom: 30px;
-  max-width: 100%;
+  max-width: 80%;
 }
 .widget-about p {
   font-weight: 400;
@@ -71,7 +71,7 @@ footer a:hover {
     padding-left: 0;
   }
   .widget-about img {
-    max-width: 80%;
+    max-width: 100%;
   }
 }
 
