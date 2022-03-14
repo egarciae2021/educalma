@@ -89,8 +89,8 @@
                                 <a href="publicarcursos.php?pag=1" class="list-group-item list-group-item-action">
                                     <i class="fad fa-books"></i> Publicar cursos
                                 </a>
-                                <a class="btn btn-outline-secondary btn-back btn-sm" href="sidebarCursos.php" role="button">
-                                    <i class="fas fa-arrow-left"></i> Atrás
+                                <a class="btn btn-outline-secondary btn-back btn-sm" style="width:auto;" href="sidebarCursos.php" role="button">
+                                    <i class="fas fa-arrow-left" ></i> Atrás
                                 </a>
                             </div>
                             <!-- fin seccion otros -->

@@ -210,11 +210,13 @@
                     if($cantidad_respuesta_acertadas>=$minimo_respuestas_para_aprobar){
                         echo '<a data-filter=".seo" href="plugins/ejemplo.php?idCurso='.$id.'&idUsu='.$idUser56.'">Certificado</a>';
                         $validar=1;
-                    }else {
+                    }
+                    else {
                         echo '<a onclick="sin_certificado()">Certificado</a>';
                         $validar=0;
                     }
                     $_SESSION['validar']=$validar;
+
                 ?>
                     <!-- <a href="#certificado-temario">Certificado</a> -->
                 </div>
