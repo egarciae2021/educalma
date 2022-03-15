@@ -9,6 +9,6 @@
 <?php include_once 'includes/Inicio/Loader.php' ?>
 <?php include_once 'includes/Inicio/Header.php' ?>
 
-<?php include_once 'includes/curso/Iniciarcurso.php' ?>
+<?php include_once 'includes/curso/iniciarcurso.php' ?>
 <?php include_once 'includes/Inicio/Footer.php' ?>
 </body>

@@ -494,6 +494,7 @@
                                         <input type="hidden" name="id_comenta"
                                             value="<?php echo $registro['idcomentario']?>">
                                         <input type="hidden" name="id" value="<?php echo $idCurso?>">
+                                        <input type="hidden" name="detalleCursoHid" value="<?php echo $idCurso?>">
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary"
@@ -533,6 +534,7 @@
                             <label for="mensaje">Realiza un Comentario</label>
                             <textarea class="form-control" id="mensaje" name="mensaje" rows="3" required></textarea>
                             <input type="hidden" name="id" value="<?php echo  $idCurso; ?>">
+                            <input type="hidden" name="detalleCursoHid" value="<?php echo $idCurso?>">
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

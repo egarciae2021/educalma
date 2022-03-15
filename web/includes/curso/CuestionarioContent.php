@@ -223,26 +223,28 @@
                                     <div class="card c-rpta mx-4 mt-3">
                                         <div class="card-header">
                                                 <div class="row">
-                                                    <div class="col-sm-6 text-left">Pregunta n° 1</div>
-                                                    <div class="col-sm-6 text-right" style="color:#768EE8;"><?php echo (($puntaje)?''.round($puntRes).'/'.round($puntRes).' pts':'0/'.round($puntRes).' pts')?> </div>
-                                                </div>
+                                                    <!--div class="col-sm-6 text-left"></div-->
+                                                    <div class="col-sm-12 text-right" style="color:#768EE8;">Puntos: &nbsp; <?php echo (($puntaje)?''.round($puntRes).'/'.round($puntRes).' pts':'0/'.round($puntRes).' pts')?> </div>
+                                                </div> 
                                         </div>
-                                        <div class="list-group list-group-flush small text-center text-secondary font-weight-normal my-3">
+                                        <div class="list-group list-group-flush small text-left text-secondary font-weight-normal my-3" style="margin-left:10px;">
                                             <?php echo $filaCor['pregunta'];?>
                                         </div>
                                         <ul class="list-group list-group-flush text-justify">
-
+                                        
                                             <?php while($fila23=$q23->fetch(PDO::FETCH_ASSOC)){
                                             ?>
 
                                                 <label class="list-group-item small form-control">
-                                                    <div class="form-check">
+                                                    <div class="form-check" >
                                                         <?php if($fila23['idRespuesta'] == $idrespuesta){?>
+                                                            <label class="form-check-label" for="exampleRadios1" <?php echo (($fila23['estado']==1)?'style="background:#C4F3C0; width:100%; height:auto; padding:5px;"':'style="background:#EFAE9B; width:100%; height:auto; padding:5px;"')?>>
                                                             <input type="checkbox" name="verif_resp" disabled  checked value="<?php echo $fila23['idRespuesta'];?>">
-                                                            <label class="form-check-label" for="exampleRadios1" <?php echo (($fila23['estado']==1)?'style="color:green;"':'style="color:red;"')?>> <?php echo  $fila23['respuesta'];?> </label>
+                                                             <?php echo  $fila23['respuesta'];?> </label>
                                                         <?php }else{?>
+                                                            <label class="form-check-label" for="exampleRadios1" <?php echo (($fila23['estado']==1)?'style="background:#C4F3C0; width:100%; height:auto; padding:5px;"':'style="color:black; width:100%; height:auto; padding:5px;"')?>>
                                                             <input type="checkbox" name="verif_resp" disabled  value="<?php echo $fila23['idRespuesta'];?>">
-                                                            <label class="form-check-label" for="exampleRadios1" <?php echo (($fila23['estado']==1)?'style="color:green;"':'style="color:black;"')?>> <?php echo  $fila23['respuesta'];?> </label>
+                                                             <?php echo  $fila23['respuesta'];?> </label>
                                                         <?php }?>
                                                     </div>
                                                 </label>

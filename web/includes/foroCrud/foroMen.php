@@ -29,12 +29,24 @@ if(isset($_POST['mensaje']))
     }
     Database::disconnect();
     
-    echo'
-    <script>
-        //alert ("guardado exitosamente");
-        window.location = "../../detallecurso.php?id='.$idcurso.'";
-    </script>
-    ';
+    if(empty($_POST['detalleCursoHid'])){
+        echo'
+            <script>
+                //alert ("guardado exitosamente");
+                window.location = "../../curso.php?id='.$idcurso.'";
+                window.location = "../../curso.php?id='.$idcurso.'";
+            </script>
+            ';
+    }else{
+        echo'
+        <script>
+            //alert ("guardado exitosamente");
+            window.location = "../../detallecurso.php?id='.$idcurso.'";
+        </script>
+        ';
+    }
+
+    
 }
 if(isset($_POST['submensaje'])){
     $idcomen=$_POST['id_comenta'];
@@ -59,12 +71,22 @@ if(isset($_POST['submensaje'])){
     }
     Database::disconnect();
 
-    echo'
-    <script>
-        //alert ("subcomentario guardado exitosamente");
-       window.location = "../../detallecurso.php?id='.$idcurso.'";
-    </script>
-    ';
+    if(empty($_POST['detalleCursoHid'])){
+        echo'
+            <script>
+                //alert ("guardado exitosamente");
+                window.location = "../../curso.php?id='.$idcurso.'";
+            </script>
+            ';
+    }else{
+        echo'
+        <script>
+            //alert ("guardado exitosamente");
+            window.location = "../../detallecurso.php?id='.$idcurso.'";
+        </script>
+        ';
+    }
+
 }
  
 ?>
