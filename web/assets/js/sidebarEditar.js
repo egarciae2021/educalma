@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
       properties: [
         {
           required: true,
-          pattern: "[0-9]{9,}",
+          pattern: ".{7,}",
         },
       ],
       events: ["keyup", "focus", "blur"],
@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", () => {
       properties: [
         {
           required: true,
-          pattern: "[0-9]{8}",
+          pattern: ".{8,}",
         },
       ],
       events: ["keyup", "focus", "blur"],

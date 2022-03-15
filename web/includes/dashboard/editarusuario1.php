@@ -53,7 +53,7 @@
                 </div>
                 <div class="inputBox">
                     <h3>Tel&eacute;fono</h3>
-                    <input type="tel" id="Telefono" name="telefono" value="<?php echo $dato2['telefono']; ?>" <?php if('Perú' or 'Chile' == $dato2['pais']){echo 'maxlength="9"';}else{echo 'maxlength="10"';};?>>
+                    <input type="tel" id="Telefono" name="telefono" value="<?php echo $dato2['telefono']; ?>" maxlength="10">
                 </div>
                 <div class="inputBox">
                     <h3>Tipo de documento</h3>
@@ -67,7 +67,7 @@
                 </div>
                 <div class="inputBox">
                     <h3>Numero de identidad</h3>
-                    <input type="text" id="Numero" name="nume_documento" value="<?php echo $dato2['nro_doc']; ?>" <?php if(1 == $dato2['tipo_doc']){echo 'maxlength="8"';}elseif(2 or 3 == $dato2['tipo_doc']){echo 'maxlength="12"';}elseif(4 == $dato2['tipo_doc']){echo 'maxlength="11"';};?>>
+                    <input type="text" id="Numero" name="nume_documento" value="<?php echo $dato2['nro_doc']; ?>" <?php if(1 == $dato2['tipo_doc']){echo 'maxlength="8"';}else if(2 or 3 == $dato2['tipo_doc']){echo 'maxlength="12"';}else if(4 == $dato2['tipo_doc']){echo 'maxlength="11"';};?>>
                 </div>
                 <div class="inputBox">
                     <h3>Tipo de sexo</h3>
