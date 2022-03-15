@@ -49,7 +49,9 @@
                 </div>
                 <div class="inputBox">
                     <h3>Password</h3>
-                    <input type="password" id="Password" name="pass" value="<?php echo $dato2['pass']; ?>">
+                    <input type="hidden" id="cuentaEmail1" value='<?php echo $dato2['email'] ?>' readonly>
+                    <input type="Button" class="btn" style="margin-top: 0;" onclick="actualizarPass();" value="Cambiar">
+                    <!-- <input type="password" id="Password" name="pass" value="<php echo $dato2['pass']; ?>"> -->
                 </div>
                 <div class="inputBox">
                     <h3>Tel&eacute;fono</h3>
@@ -101,5 +103,9 @@
         </div>
     </div>
 </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="./assets/js/plugins/sweetalert2.all.min.js"></script>
 <script src="./assets/js/Validator.js"></script>
 <script src="./assets/js/sidebarEditar.js"></script>
+<script src="./assets/js/validarRecuperacion.js"></script>
