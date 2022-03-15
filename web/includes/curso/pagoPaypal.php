@@ -18,23 +18,26 @@ $id = $_GET['id'];
     <script src="assets/js/card-validator.js"></script>
 
     <?php
-        $id = $_GET['id'];
-        $_SESSION['cursoVisa']=$id;
-        $pdo = Database::connect();
-        $sql = "SELECT * FROM cursos WHERE idCurso='$id'";
-        $q = $pdo->prepare($sql);
-        $q->execute(array());
-        $dato = $q->fetch(PDO::FETCH_ASSOC);
-        
+        ob_start();
+        @session_start();
+        if(isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)){
+            $id = $_GET['id'];
+            $_SESSION['cursoVisa']=$id;
+            $pdo = Database::connect();
+            $sql = "SELECT * FROM cursos WHERE idCurso='$id'";
+            $q = $pdo->prepare($sql);
+            $q->execute(array());
+            $dato = $q->fetch(PDO::FETCH_ASSOC);
+            
 
-        $idUserr = $_SESSION['codUsuario'];
-        $veriS="SELECT * FROM cursoinscrito WHERE curso_id = $id AND usuario_id='$idUserr'";
-        $qS = $pdo->prepare($veriS);
-        $qS->execute(array());
-        $datoS=$qS->fetch(PDO::FETCH_ASSOC);
-        Database::disconnect();
+            $idUserr = $_SESSION['codUsuario'];
+            $veriS="SELECT * FROM cursoinscrito WHERE curso_id = $id AND usuario_id='$idUserr'";
+            $qS = $pdo->prepare($veriS);
+            $qS->execute(array());
+            $datoS=$qS->fetch(PDO::FETCH_ASSOC);
+            Database::disconnect();
 
-        if (empty($datoS['id_cursoInscrito'])){        
+            if (empty($datoS['id_cursoInscrito'])){        
     ?>
 
     <header style="background-color: #ffffff77;">
@@ -254,13 +257,17 @@ $id = $_GET['id'];
     </script>
 
     <?php
-        }else{
-            echo'
-                <script>
-                    window.location = "../../curso.php?id='.$id.'";
-                    
-                </script>
-            ';
+            }else{
+                echo'
+                    <script>
+                        window.location = "../../curso.php?id='.$id.'";
+                        
+                    </script>
+                ';
+            }
+        }
+        else{
+                    header('Location:iniciosesion.php');
         }
     ?>
     <script>

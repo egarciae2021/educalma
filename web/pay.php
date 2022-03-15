@@ -12,6 +12,7 @@
   <?php
       ob_start();
       @session_start();
+      if(isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)){
   ?>
   <div class="preloader" id="preloader">
     <div class="circle"></div>
@@ -128,6 +129,12 @@
       </div>
     </form>
   </div>
+  <?php
+    }
+    else{
+                header('Location:iniciosesion.php');
+    }
+  ?>
   <script src="assets/js/mainPay.js"></script>
 </body>
 </html>

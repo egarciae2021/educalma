@@ -1,6 +1,7 @@
 <?php   
     ob_start();
     @session_start();
+    if(isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)){
 ?>
 <?php include_once 'includes/Inicio/Head.php' ?>
 
@@ -13,5 +14,10 @@
 
 <?php include_once 'includes/Inicio/Footer.php' ?>
 
-
+<?php
+    }
+    else{
+        header('Location:iniciosesion.php');
+    }
+?>
 </body>

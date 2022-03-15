@@ -9,6 +9,11 @@
     <title>Agregar Nuevo Cursos</title>
 </head>
 <body>
+  <?php
+        ob_start();
+        @session_start();
+        if(isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)){
+  ?>
   <section>
     <div>
       <div class="contenedor">
@@ -88,5 +93,11 @@
 </div>
 </div>
   </section>
+  <?php
+        }
+        else{
+          header('Location:iniciosesion.php');
+      }
+  ?>
 </body>
 </html>

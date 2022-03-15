@@ -9,6 +9,11 @@
     <link rel="stylesheet" href="././assets/css/styleinscrito.css">
 </head>
 <body>
+    <?php
+        ob_start();
+        @session_start();
+        if(isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)){
+    ?>
 
 <!--<section class="contbody">
 
@@ -124,14 +129,19 @@
 <br>
 </div>   
 
-<?php
+    <?php
+                }
+            }
+
+
+            $pdo = Database::disconnect();
+
         }
-    }
+        else{
+                    header('Location:iniciosesion.php');
+        }
 
-
-    $pdo = Database::disconnect();
-
-            ?>
+    ?>
 
 </body>
 

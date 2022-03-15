@@ -8,7 +8,11 @@
     <link rel="stylesheet" href="././assets/css/stymiscursos.css">
 </head>
 <body>
-
+    <?php
+        ob_start();
+        @session_start();
+        if(isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)){
+    ?>
 
 <div class="container">
     <div class="row">
@@ -134,6 +138,11 @@
 
 <br>
 <br>
-
+    <?php
+        }
+        else{
+            header('Location:iniciosesion.php');
+        }
+    ?>
 </body>
 </html>
