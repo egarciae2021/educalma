@@ -826,8 +826,8 @@ modal para ingresar mensaje
             function sin_certificado() {
                 Swal.fire({
                     icon: 'error',
-                    title: 'Terminar el curso',
-                    text: 'Todavia no ha completado el curso!'
+                    title: 'Nota minima no alcanzada',
+                    text: 'Necesita aprobar el curso para descargar su certificado'
                 })
             }
 

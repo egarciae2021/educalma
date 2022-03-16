@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
         var datos = new FormData($("#formEnviarEmail")[0]);
 
         $.ajax({
-            url: 'includes/Login/checkenviar.php',
+            url: './includes/Login/checkenviar.php',
             type: 'POST',
             data: datos,
             contentType: false,
@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
         var datos = new FormData($("#cambiarpass")[0]);
 
         $.ajax({
-            url: 'includes/Login/checkcambiar.php',
+            url: './includes/Login/checkcambiar.php',
             type: 'POST',
             data: datos,
             contentType: false,
