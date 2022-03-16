@@ -73,7 +73,7 @@
         
         $pdo6 = Database::connect();
         $idUser56=$_SESSION['iduser'];
-        $sql6 = "SELECT cantidad_respuestas FROM cursoinscrito WHERE curso_id = '$id' and usuario_id= '$idUser56'";
+        $sql6 = "SELECT cantidad_respuestas, nota FROM cursoinscrito WHERE curso_id = '$id' and usuario_id= '$idUser56'";
         $q6 = $pdo6->prepare($sql6);
         $q6->execute(array());
         $dato=$q6->fetch(PDO::FETCH_ASSOC);
@@ -207,12 +207,12 @@
                 <div class="nav-link-course">
                 <?php 
                     // PONER EN EL BOTON DEL CERTIFICADO
-                    if($cantidad_respuesta_acertadas>=$minimo_respuestas_para_aprobar){
-                        echo '<a data-filter=".seo" href="plugins/ejemplo.php?idCurso='.$id.'&idUsu='.$idUser56.'">Certificado</a>';
+                    if($dato['nota']>=$nota37){
+                        echo '<a style="cursor: pointer;" data-filter=".seo" href="plugins/ejemplo.php?idCurso='.$id.'&idUsu='.$idUser56.'">Certificado</a>';
                         $validar=1;
                     }
                     else {
-                        echo '<a onclick="sin_certificado()">Certificado</a>';
+                        echo '<a style="cursor: pointer;" onclick="sin_certificado()">Certificado</a>';
                         $validar=0;
                     }
                     $_SESSION['validar']=$validar;
