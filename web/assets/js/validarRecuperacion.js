@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
         var datos = new FormData($("#formEnviarEmail")[0]);
 
         $.ajax({
-            url: './includes/Login/checkenviar.php',
+            url: './includes/login/checkenviar.php',
             type: 'POST',
             data: datos,
             contentType: false,
@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
         var datos = new FormData($("#cambiarpass")[0]);
 
         $.ajax({
-            url: './includes/Login/checkcambiar.php',
+            url: './includes/login/checkcambiar.php',
             type: 'POST',
             data: datos,
             contentType: false,
@@ -91,7 +91,7 @@ function enviar(evento) {
     var datos = new FormData($("#formEnviarEmail")[0]);
 
     $.ajax({
-        url: './includes/Login/checkenviar.php',
+        url: './includes/login/checkenviar.php',
         type: 'POST',
         data: datos,
         contentType: false,
@@ -140,7 +140,7 @@ function actualizarPass() {
         cancelButtonText: 'Cancelar'
     }).then(function() {
         $.ajax({
-            url: "./includes/Login/checkenviar.php",
+            url: "./includes/login/checkenviar.php",
             type: "POST",
             dataType: 'json',
             data: {
