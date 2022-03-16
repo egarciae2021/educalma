@@ -115,13 +115,13 @@
             $mail->isSMTP();                                            //Send using SMTP
             $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
             $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-            $mail->Username   = 'pe.fundacion.calma@gmail.com';                     //SMTP username
-            $mail->Password   = 'Fundacion@17';                               //SMTP password
+            $mail->Username   = 'fundacioncalma5@gmail.com';                     //SMTP username
+            $mail->Password   = '3face2021calma$$';                               //SMTP password
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
             $mail->Port       = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
         
             //Recipients
-            $mail->setFrom('pe.fundacion.calma@gmail.com', 'Fundacion calma');
+            $mail->setFrom('fundacioncalma5@gmail.com', 'Fundacion calma');
             $mail->addAddress($email);
         
             //Content
