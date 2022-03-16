@@ -316,23 +316,161 @@ if (!isset($_GET['pag'])) {
             <div class="group-control">
               <span class="title">Teléfono móvil</span>
               <div class="row-icon">
+                
                 <div class="selItem">
+                  
                   <div class="btn-select" id="btnPais">
                     <img id="imgPais" src="./assets/images/peru.png" alt="+51" />
-                    <input type="text" class="code" id="code" value="+51" readonly />
+                    <input type="text" class="code" id="code" value="+51" style="width:120%;" readonly />
                   </div>
-                  <ul class="sel" id="listPais">
-                    <li>
+
+                  <ul class="sel" id="listPais" style="height:300px; width:430%; overflow:auto;">
+                    <li style="border-bottom: 1px solid black;">
                       <img src="./assets/images/peru.png" alt="+51" />
                       <span>Perú (+51)</span>
+                    </li>
+                    <li>
+                      <img src="./assets/images/antigua-y-barbuda.png" alt="+1" />
+                      <span>Antigua y Barbuda (+1)</span>
+                    </li>
+                    <li>
+                      <img src="./assets/images/argentina.png" alt="+54" />
+                      <span>Argentina (+54)</span>
+                    </li>
+                    <li>
+                      <img src="./assets/images/bahamas.png" alt="+1" />
+                      <span>Bahamas (+1)</span>
+                    </li>
+                    <li>
+                      <img src="./assets/images/barbados.png" alt="+1" />
+                      <span>Barbados (+1)</span>
+                    </li>
+                    <li>
+                      <img src="./assets/images/belice.png" alt="+501" />
+                      <span>Belice (+501)</span>
+                    </li>
+                    <li>
+                      <img src="./assets/images/bolivia.png" alt="+591" />
+                      <span>Bolivia (+591)</span>
+                    </li>
+                    <li>
+                      <img src="./assets/images/brasil.png" alt="+55" />
+                      <span>Brasil (+55)</span>
+                    </li>
+                    <li>
+                      <img src="./assets/images/canada.png" alt="+1" />
+                      <span>Canadá (+1)</span>
+                    </li>
+                    <li>
+                      <img src="./assets/images/chile.png" alt="+56" />
+                      <span>Chile (+56)</span>
+                    </li>
+                    <li>
+                      <img src="./assets/images/colombia.png" alt="+57" />
+                      <span>Colombia (+57)</span>
+                    </li>
+                    <li>
+                      <img src="./assets/images/costa-rica.png" alt="+506" />
+                      <span>Costa Rica (+506)</span>
+                    </li>
+                    <li>
+                      <img src="./assets/images/cuba.png" alt="+53" />
+                      <span>Cuba (+53)</span>
+                    </li>
+                    <li>
+                      <img src="./assets/images/dominica.png" alt="+1" />
+                      <span>Dominica (+1)</span>
+                    </li>
+                    <li>
+                      <img src="./assets/images/ecuador.png" alt="+593" />
+                      <span>Ecuador (+593)</span>
+                    </li>
+                    <li>
+                      <img src="./assets/images/el-salvador.png" alt="+503" />
+                      <span>El Salvador (+503)</span>
                     </li>
                     <li>
                       <img src="./assets/images/estados-unidos.png" alt="+1" />
                       <span>Estados Unidos (+1)</span>
                     </li>
+                    <li>
+                      <img src="./assets/images/granada.png" alt="+1" />
+                      <span>Granada (+1)</span>
+                    </li>
+                    <li>
+                      <img src="./assets/images/guatemala.png" alt="+502" />
+                      <span>Guatemala (+502)</span>
+                    </li>
+                    <li>
+                      <img src="./assets/images/guyana.png" alt="+592" />
+                      <span>Guyana (+592)</span>
+                    </li>
+                    <li>
+                      <img src="./assets/images/haiti.png" alt="+509" />
+                      <span>Haití (+509)</span>
+                    </li>
+                    <li>
+                      <img src="./assets/images/honduras.png" alt="+504" />
+                      <span>Honduras (+504)</span>
+                    </li>
+                    <li>
+                      <img src="./assets/images/jamaica.png" alt="+1" />
+                      <span>Jamaica (+1)</span>
+                    </li>
+                    <li>
+                      <img src="./assets/images/mexico.png" alt="+52" />
+                      <span>México (+52)</span>
+                    </li>
+                    <li>
+                      <img src="./assets/images/nicaragua.png" alt="+505" />
+                      <span>Nicaragua (+505)</span>
+                    </li>
+                    <li>
+                      <img src="./assets/images/panama.png" alt="+507" />
+                      <span>Panamá (+507)</span>
+                    </li>
+                    <li>
+                      <img src="./assets/images/paraguay.png" alt="+595" />
+                      <span>Paraguay (+595)</span>
+                    </li>
+                    <li>
+                      <img src="./assets/images/republica-dominicana.png" alt="+1" />
+                      <span>República Dominicana (+1)</span>
+                    </li>
+                    <li>
+                      <img src="./assets/images/san-cristobal-y-nieves.png" alt="+1" />
+                      <span>San Cristóbal y Nieves (+1)</span>
+                    </li>
+                    <li>
+                      <img src="./assets/images/san-vicente-y-las-granadinas.png" alt="+1" />
+                      <span>San Vicente y las Granadinas (+1)</span>
+                    </li>
+                    <li>
+                      <img src="./assets/images/santa-lucia.png" alt="+1" />
+                      <span>Santa Lucía (+1)</span>
+                    </li>
+                    <li>
+                      <img src="./assets/images/surinam.png" alt="+597" />
+                      <span>Surinam (+597)</span>
+                    </li>
+                    <li>
+                      <img src="./assets/images/trinidad-y-tobago.png" alt="+1" />
+                      <span>Trinidad y Tobago (+1)</span>
+                    </li>
+                    <li>
+                      <img src="./assets/images/uruguay.png" alt="+598" />
+                      <span>Uruguay (+598)</span>
+                    </li>
+                    <li>
+                      <img src="./assets/images/venezuela.png" alt="+58" />
+                      <span>Venezuela (+58)</span>
+                    </li>
                   </ul>
+
                 </div>
-                <input type="tel" id="txtTelMovil" />
+
+                <input type="tel" id="txtTelMovil" style="position:relative; left:10px; width:95%" />
+
               </div>
             </div>
           </div>

@@ -934,4 +934,24 @@
         grid-template-columns: 50% 50%;
         position: relative;
     }
+}@media screen and (min-width: 360px) {
+    .container-bussines>.send-data .box-rotate {
+        position: relative;
+        height: 260px;
+        transform-style: preserve-3d;
+        transition: transform 2s;
+        transform: rotateY(0);
+        perspective: 1000px;
+    }
+    
+}
+@media screen and (min-width: 1300px) {
+    .container-bussines>.send-data .box-rotate {
+        position: relative;
+        height:100%;
+        transform-style: preserve-3d;
+        transition: transform 2s;
+        transform: rotateY(0);
+        perspective: 1000px;
+    }
 }

@@ -11,7 +11,6 @@
     <?php include_once 'includes/dashboard/editarusuario1.php' ?>
 
     <script src="./assets/js/main.js"></script>
-    <script src="./assets/lib/jquery-3.2.1.slim.min.js"></script>
     <script src="./assets/js/m.dashboard.js"></script>
     <script>
         function cambiarImg() {

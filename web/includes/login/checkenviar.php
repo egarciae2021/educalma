@@ -40,7 +40,8 @@
 
         $token = generaTokenPass($user_id);
 
-        $url = 'http://'.$_SERVER["SERVER_NAME"].'/restablecer_pass.php?id='.$user_id.'&token='.$token;			
+        // $url = 'http://'.$_SERVER["SERVER_NAME"].'/restablecer_pass.php?id='.$user_id.'&token='.$token;]
+        $url = 'https://educalma.fundacioncalma.org/restablecer_pass.php?id='.$user_id.'&token='.$token;		
         $asunto = 'Recuperar password - Sistema de Usuarios';
 
         // $cuerpo = "Estimado $user_nombre: <br /><br />para restablecer la contraseña haga clic en el siguiente enlace <a href='$url'>Activar Cuenta</a>";

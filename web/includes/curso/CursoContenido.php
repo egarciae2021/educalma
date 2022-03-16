@@ -202,7 +202,7 @@
         <div class="container container-links-course-curso">
             <div class="d-flex justify-content-around">
                 <div class="nav-link-course">
-                    <a href="#informacion">Información</a>
+                    <a href="#informacion">Introducción</a>
                 </div>
                 <div class="nav-link-course">
                 <?php 
@@ -235,42 +235,46 @@
     <div class="container-fluid p-0">
         <div class="container-detalle-informacion">
             <div class="container"  style="width:auto; overflow:hidden;">
-                <div class="row py-0  "style="display:flex; flex-direction:column ;margin-top:25px ;">
-                    <!-- <div class="col-4">
-                         <img src="assets/img/cursophp.png" alt=""> 
-                    </div>-->
-                    <!--div class="col-md-5 col-lg-5 order-1 "style="align-self: flex-end; margin-top:25px;" -->
-                    
-                    <!--div class="col-8"-->
-                    <div class="col-8" style="width: 100%;" id="informacion">
-                        <h5>¿Que incluye este curso?</h5>
-                        <div class="container-info-course-detalle">
-                            <h5>Tabla de contenido del curso</h5>
-                            <div class="row pt-2">
-                                <div class="col-12 col-sm-6 col-lg-6">
-                                    <div><i class="far fa-file"></i></div><?php echo $modulos; ?> Modulos
-                                </div>
-                                <div class="col-12 col-sm-6 col-lg-6">
-                                    <div><i class="fas fa-folder"></i></div><?php echo $temas; ?> Temas
-                                </div>
-                                <div class="col-12 col-sm-6 col-lg-6">
-                                    <div><i class="fas fa-infinity"></i></div><?php echo $cuestionarios; ?> Cuestionarios
-                                </div>
-                                <div class="col-12 col-sm-6 col-lg-6">
-                                    <div><i class="fas fa-mobile-alt"></i></div> Nota mínima <?php echo $nota37; ?>
-                                </div>
-                                <div class="col-12 col-sm-6 col-lg-6">
-                                    <div><i class="fas fa-list-ol"></i></div> Cant. de preguntas <?php echo $preguntas; ?>
-                                </div>
-                                <div class="col-12 col-sm-6 col-lg-6">
-                                    <div><i class="fas fa-trophy"></i></div> Certificado de Finalización
+                <div class="container"  style="width:auto; overflow:hidden;">    
+                    <div class="row py-0  "style="display:flex; flex-direction:row ;margin-top:25px ;">
+                        <!-- <div class="col-4">
+                            <img src="assets/img/cursophp.png" alt=""> 
+                        </div>-->
+                        <!--div class="col-md-5 col-lg-5 order-1 "style="align-self: flex-end; margin-top:25px;" -->
+                        <div class="col col-md-4"  id="informacion">
+                            <h5>Introducción</h5>
+                            <p><?php echo $dato4['introduccion']; ?></p>
+                        </div>
+                        <!--div class="col-8"-->
+                        <div class="col-8" style="position:relative; left: 1px;" id="informacion">
+                            <h5>¿Que incluye este curso?</h5>
+                            <div class="container-info-course-detalle">
+                                <h5>Tabla de contenido del curso</h5>
+                                <div class="row pt-2">
+                                    <div class="col-12 col-sm-6 col-lg-6">
+                                        <div><i class="far fa-file"></i></div><?php echo $modulos; ?> Modulos
+                                    </div>
+                                    <div class="col-12 col-sm-6 col-lg-6">
+                                        <div><i class="fas fa-folder"></i></div><?php echo $temas; ?> Temas
+                                    </div>
+                                    <div class="col-12 col-sm-6 col-lg-6">
+                                        <div><i class="fas fa-infinity"></i></div><?php echo $cuestionarios; ?> Cuestionarios
+                                    </div>
+                                    <div class="col-12 col-sm-6 col-lg-6">
+                                        <div><i class="fas fa-mobile-alt"></i></div> Nota mínima <?php echo $nota37; ?>
+                                    </div>
+                                    <div class="col-12 col-sm-6 col-lg-6">
+                                        <div><i class="fas fa-list-ol"></i></div> Cant. de preguntas <?php echo $preguntas; ?>
+                                    </div>
+                                    <div class="col-12 col-sm-6 col-lg-6">
+                                        <div><i class="fas fa-trophy"></i></div> Certificado de Finalización
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                
-                </div>
-
+                    
+                    </div>    
+                </div>            
                 
 
                 <div class="col-12"   style="width:760px; height:auto; float:left; position: relative; " id="certificado-temario">
@@ -822,8 +826,8 @@ modal para ingresar mensaje
             function sin_certificado() {
                 Swal.fire({
                     icon: 'error',
-                    title: 'Terminar el curso',
-                    text: 'Todavia no ha completado el curso!'
+                    title: 'Nota minima no alcanzada',
+                    text: 'Necesita aprobar el curso para descargar su certificado'
                 })
             }
 

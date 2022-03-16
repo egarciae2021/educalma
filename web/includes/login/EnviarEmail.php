@@ -27,7 +27,7 @@
           </a>
           <h1 class="font-weight-bold py-3" style="font-weight: 900;">Reestablecer contraseña!</h1>
           <!-- <h4>¡Que bueno verte de nuevo por aquí!</h4> -->
-          <form id="formEnviarEmail" action="includes/login/checkenviar.php" onsubmit="cargandoEnviar()" method="POST">
+          <form id="formEnviarEmail" action="./includes/login/checkenviar.php" onsubmit="cargandoEnviar()" method="POST">
 
             <div class="form-row">
               <div class="col-lg-7">
