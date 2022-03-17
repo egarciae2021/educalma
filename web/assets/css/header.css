@@ -318,6 +318,7 @@ header.btn.solid:hover {
     }
     @media (min-width: 320px) {
       .container-header {
+        height: 80px;
         max-width: 65rem;
         padding: 1rem 2rem;
         margin: 0 auto;
@@ -326,6 +327,11 @@ header.btn.solid:hover {
         background-color:#e7f4ff;
         position: relative;
     top: -10px;
+
+      }
+      .logo-container a img{
+        position: relative;
+        top: 5px;
       }
       }
     
