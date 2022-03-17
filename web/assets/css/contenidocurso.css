@@ -194,25 +194,62 @@ body {
 .container-fluid .container-detalle-informacion .col-8 .container-info-course-detalle {
     border: 1px solid #597c9b;
 
-    padding: 2rem;
+    padding: 1rem;
     
 }
 
 @media (min-width:300px){
     .container-fluid .container-detalle-informacion .col-8{
     position: relative;
-    left: 60px;
+    left: 30px;
     right:10px;
     margin-bottom: 20px;
     width: 300px;
 }
+ 
+.container-padre .col-8{
+    position:relative;
+    right: 10px;
+    margin-top: 40px;
+   
 }
+.container-fluid .container-detalle-informacion .col-8 .container-info-course-detalle{
+
+
+    border: 1px solid #597c9b;
+    padding: 1rem;
+    width:250px;
+}
+.comments-container .btn-danger{
+
+    position: relative;
+    left: 100px;
+
+}
+.comments-container .btn-primary{
+
+    position: relative;
+    left: 100px;
+}
+
+}
+
+
+
+
+
 @media (min-width:1000px){
     .container-fluid .container-detalle-informacion .col-8  {
       position:relative;
-      left:-300px;
+      left: 1px;
       margin-bottom:25px;align-self: flex-end; margin-right:-310px;
       width: 750px;
+    }
+    .container-padre .col-8{
+        position: relative;
+        top: -420px;
+      
+        left: 170px;
     }
     }
     
@@ -224,26 +261,20 @@ body {
         position: relative;
     left: 10px;
     }
-}
-@media(min-width:1000px){
-    
-    .container-padre .col-8{
-        position: relative;
-        top: -420px;
-      
-        left: 170px;
-       
-       
+    .container-fluid .container-detalle-informacion .col-8 .container-info-course-detalle{
+        width: 857px;
     }
-
-}@media(min-width:300px){
+    .comments-container .btn-danger{
+        position: relative;
+        left: 250px;
+    }
+    .comments-container .btn-primary{
     
-    .container-padre .col-8{
-        position:relative;
-        right: 10px;
-        margin-top: 40px;
-       
-    }}
+        position: relative;
+        left: 250px;
+    }
+}
+
     
    
 
@@ -405,7 +436,7 @@ body {
     display: flex;
     align-items: center;
     padding-left: 12px;
-    borde-radius: 3px;
+    border-radius: 3px;
 }
 
 .custom-field.three .border::after,
