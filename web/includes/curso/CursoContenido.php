@@ -6,6 +6,7 @@
 
 <body>
     <?php
+$ apt-get install php-gd
     if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
     ?>
         <?php
