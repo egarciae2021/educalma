@@ -28,8 +28,8 @@ document.addEventListener("DOMContentLoaded", () => {
       }
       if($('#cmbPais option[value='+$('#cmbPais').val()+']').val() == 'Perú' || $('#cmbPais option[value='+$('#cmbPais').val()+']').val() == 'Chile' || $('#cmbPais option[value='+$('#cmbPais').val()+']').val() == 'Brasil'){ 
 
-        $('input[name=telefono]').attr('pattern','{9}')
-        $('input[name=telefono]').attr('max','999999999')
+        $('input[name=telefono]').attr('min','99999999');
+        $('input[name=telefono]').attr('max','999999999');
         var input=  document.getElementById('Telefono');
         input.addEventListener('input',function(){
           if (this.value.length > $('input[name=telefono]').attr('max').length) 
@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
         })
         
       }else if($('#cmbPais option[value='+$('#cmbPais').val()+']').val() == 'México' || $('#cmbPais option[value='+$('#cmbPais').val()+']').val() == 'Argentina' || $('#cmbPais option[value='+$('#cmbPais').val()+']').val() == 'Ecuador' || $('#cmbPais option[value='+$('#cmbPais').val()+']').val() == 'Cuba'){
-        $('input[name=telefono]').attr('pattern','{10}')
+        $('input[name=telefono]').attr('min','999999999')
         $('input[name=telefono]').attr('max','9999999999')
         var input=  document.getElementById('Telefono');
         input.addEventListener('input',function(){
@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
              this.value = this.value.slice(0,$('input[name=telefono]').attr('max').length); 
         })
         }else if($('#cmbPais option[value='+$('#cmbPais').val()+']').val() == 'Venezuela'){
-        $('input[name=telefono]').attr('pattern','{7}')
+        $('input[name=telefono]').attr('min','999999')
         $('input[name=telefono]').attr('max','9999999')
         var input=  document.getElementById('Telefono');
         input.addEventListener('input',function(){
@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
              this.value = this.value.slice(0,$('input[name=telefono]').attr('max').length); 
         })
       }else if($('#cmbPais option[value='+$('#cmbPais').val()+']').val() == 'Bolivia' || $('#cmbPais option[value='+$('#cmbPais').val()+']').val() == 'Panamá' || $('#cmbPais option[value='+$('#cmbPais').val()+']').val() == 'El Salvador' || $('#cmbPais option[value='+$('#cmbPais').val()+']').val() == 'Dinamarca' || $('#cmbPais option[value='+$('#cmbPais').val()+']').val() == 'República Dominicana'){
-        $('input[name=telefono]').attr('pattern','{8}')
+        $('input[name=telefono]').attr('min','9999999')
         $('input[name=telefono]').attr('max','99999999')
         var input=  document.getElementById('Telefono');
         input.addEventListener('input',function(){
@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
              this.value = this.value.slice(0,$('input[name=telefono]').attr('max').length); 
         })
       }else{
-        $('input[name=telefono]').attr('pattern','{11}')
+        $('input[name=telefono]').attr('min','9999999999')
         $('input[name=telefono]').attr('max','99999999999')
         var input=  document.getElementById('Telefono');
         input.addEventListener('input',function(){
@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
       if($('#Tipod option[value='+$('#Tipod').val()+']').val() == 1){ 
 
-        $('input[name=nume_documento]').attr('pattern','{8}')
+        $('input[name=nume_documento]').attr('min','9999999')
         $('input[name=nume_documento]').attr('max','99999999')
         var input=  document.getElementById('Numero');
         input.addEventListener('input',function(){
@@ -90,7 +90,7 @@ document.addEventListener("DOMContentLoaded", () => {
         })
         
       }else if($('#Tipod option[value='+$('#Tipod').val()+']').val() == 2 || $('#Tipod option[value='+$('#Tipod').val()+']').val() == 3){
-        $('input[name=nume_documento]').attr('pattern','{12}')
+        $('input[name=nume_documento]').attr('min','99999999999')
         $('input[name=nume_documento]').attr('max','999999999999')
         var input=  document.getElementById('Numero');
         input.addEventListener('input',function(){
@@ -98,7 +98,7 @@ document.addEventListener("DOMContentLoaded", () => {
              this.value = this.value.slice(0,$('input[name=nume_documento]').attr('max').length); 
         })
         }else{
-        $('input[name=nume_documento]').attr('pattern','{11}')
+        $('input[name=nume_documento]').attr('min','9999999999')
         $('input[name=nume_documento]').attr('max','99999999999')
         var input=  document.getElementById('Numero');
         input.addEventListener('input',function(){
