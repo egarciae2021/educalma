@@ -127,6 +127,55 @@
                     </h1>
                     <?php
                         if($envi==$cuenta2){
+                            $pdo150 = Database::connect(); 
+                                $sqlit="SELECT COUNT(idModCurso) cantidad FROM progresocursoinscrito where id_cursoInscrito=$id and idModulo = $idModulo";
+                                $qi = $pdo150->prepare($sqlit);
+                                $qi->execute();
+                                $datoii = $qi->fetch(PDO::FETCH_ASSOC);
+                                $cantidad=$datoii['cantidad'];
+                                Database::disconnect();
+
+                            if($cantidad<1){
+                                $pdo2 = Database::connect();
+                                try{
+                                    $verif2=$pdo2->prepare("INSERT INTO `progresocursoinscrito` (`id_cursoInscrito`, idModulo, nota, intentos)VALUES ($id, $idModulo, 10, 1) ");
+                                    $verif2->execute();
+                                }catch(PDOException $e){
+                                    echo $e->getMessage();
+                                }
+                                Database::disconnect();
+                            }else{
+                                $pdo2 = Database::connect();
+                                try{
+                                    $verif2=$pdo2->prepare("UPDATE `progresocursoinscrito` SET `nota` = '20', `intentos` = '2' WHERE `id_cursoInscrito`=$id AND `idModulo`=$idModulo");
+                                    $verif2->execute();
+                                }catch(PDOException $e){
+                                    echo $e->getMessage();
+                                }
+                                Database::disconnect();
+                            }
+
+                            $pdo160 = Database::connect(); 
+                            $sqlitProgreT = "SELECT COUNT(idModulo) Total FROM modulo WHERE id_curso = $id";
+                            $qiProgreT = $pdo160->prepare($sqlitProgreT);
+                            $qiProgreT->execute();
+                            $datoProgreT = $qiProgreT -> fetch(PDO::FETCH_ASSOC);
+                            $ProgreT = $datoProgreT['Total'];
+                            Database::disconnect();
+
+                            $pdo161 = Database::connect(); 
+                            $sqlitProgreP = "SELECT COUNT(idModCurso) Parcial FROM progresocursoinscrito WHERE id_cursoInscrito = $id";
+                            $qiProgreP = $pdo161->prepare($sqlitProgreP);
+                            $qiProgreP->execute();
+                            $datoProgreP = $qiProgreP -> fetch(PDO::FETCH_ASSOC);
+                            $ProgreP = $datoProgreP['Parcial'];
+                            Database::disconnect();
+
+                            if($ProgreP>0)
+                                $Avance = $ProgreP/$ProgreT * 100;
+                            else
+                                $Avance = 0;
+
                     ?>
                         <h6 style="text-align: center; font-weight: bolder;">Fin de cuestionario</h6>
                         <div style="text-align: center;">
@@ -177,6 +226,7 @@
                             ?>
 
                         </div>
+                        <h2 style="text-align: center;">Avance de curso : <?php echo($Avance)?>%</h2>
                         <div class="card text-center muestras">
                             <div class="card-header">
                                 Resultado de las

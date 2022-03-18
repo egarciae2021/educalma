@@ -884,4 +884,19 @@ CREATE PROCEDURE `PROC_NUEVA_SOLICITUD` (IN `p_correo_corporativo` VARCHAR(320),
 	SELECT type_resp AS 'TYPE_RESP', title_resp AS 'TITLE_RESP', text_resp AS 'TEXT_RESP', refrest_resp AS 'REFREST_RESP';
 END$$
 
+CREATE TABLE `progresocursoinscrito` (
+  `idModCurso` int(11) NOT NULL,
+  `id_cursoInscrito` int(11) NOT NULL,
+  `idModulo` int(11) NOT NULL,
+  `nota` int(2) DEFAULT NULL,
+  `intentos` int(1) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+INSERT INTO `progresocursoinscrito` (`idModCurso`, `id_cursoInscrito`, `idModulo`, `nota`, `intentos`) VALUES
+(15, 3, 9, 20, 2),
+(16, 3, 14, 20, 2);
+
+ALTER TABLE `progresocursoinscrito`
+  ADD PRIMARY KEY (`idModCurso`);
+
 DELIMITER ;
