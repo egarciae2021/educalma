@@ -137,7 +137,7 @@
                     <h1 style="color: #4F52D6; font-size: 30px; padding: 15px; text-align: center;">
                         <strong>Cuestionario</strong>
                     </h1>
-                    <p>Reintentos:<?php echo implode($intentos);?></p>  
+                    <p style ="text-align: center;">Reintentos: <?php echo implode($intentos);?></p>  
                     <?php
                         if($envi==$cuenta2){
                             $pdo150 = Database::connect(); 
@@ -193,7 +193,7 @@
                             $pdo162 = Database::connect(); 
                             $sqlitUAvance = "UPDATE cursoinscrito SET avance = $AvanceFinal WHERE id_cursoInscrito = $idCI";
                             $qiUAvance = $pdo162->prepare($sqlitUAvance);
-                            $qiUAvance->execute();
+                       //     $qiUAvance->execute();
                             Database::disconnect();
                     ?>
                     
