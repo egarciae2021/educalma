@@ -67,8 +67,20 @@
         $contadorP=$_GET['contadorP'];
 
         // *****************************************************************//
-
+        // ID del curso Iniscrito
+        if(isset($_GET['idCI'])){ 
+            $idCI=$_GET['idCI'];}
+        else{
+            $idCI=0;}
         //selectionamos el id del cuestionario del modulo 1
+
+        $pdo3 = Database::connect();
+        $sql4 = "SELECT intentos FROM modulocurso WHERE id_Modulo='$idModulo' AND id_cursoInsc = '$id' ";
+         $q4= $pdo->prepare($sql);
+         $q4->execute(array());
+         $fila4=$q4->fetch(PDO::FETCH_ASSOC);
+         $intentos=Database::connect()->query("SELECT intentos FROM progresocursoinscrito WHERE idModulo='$idModulo' AND id_cursoInscrito = '$id' ")->fetch(PDO::FETCH_ASSOC);//$fila4['intentos'];
+         Database::disconnect();
 
         $pdo = Database::connect();
         $sql = "SELECT * FROM cuestionario WHERE id_modulo='$idModulo'";
@@ -125,12 +137,66 @@
                     <h1 style="color: #4F52D6; font-size: 30px; padding: 15px; text-align: center;">
                         <strong>Cuestionario</strong>
                     </h1>
+                    <p>Reintentos:<?php echo implode($intentos);?></p>  
                     <?php
                         if($envi==$cuenta2){
+                            $pdo150 = Database::connect(); 
+                                $sqlit="SELECT COUNT(idModCurso) cantidad FROM progresocursoinscrito where id_cursoInscrito=$idCI and idModulo = $idModulo";
+                                $qi = $pdo150->prepare($sqlit);
+                                $qi->execute();
+                                $datoii = $qi->fetch(PDO::FETCH_ASSOC);
+                                $cantidad=$datoii['cantidad'];
+                                Database::disconnect();
+
+                            if($cantidad<1){
+                                $pdo2 = Database::connect();
+                                try{
+                                    $verif2=$pdo2->prepare("INSERT INTO `progresocursoinscrito` (`id_cursoInscrito`, idModulo, nota, intentos)VALUES ($idCI, $idModulo, 10, 1) ");
+                                    $verif2->execute();
+                                }catch(PDOException $e){
+                                    echo $e->getMessage();
+                                }
+                                Database::disconnect();
+                            }else{
+                                $pdo2 = Database::connect();
+                                try{
+                                    $verif2=$pdo2->prepare("UPDATE `progresocursoinscrito` SET `nota` = '20', `intentos` = '2' WHERE `id_cursoInscrito`=$idCI AND `idModulo`=$idModulo");
+                                    $verif2->execute();
+                                }catch(PDOException $e){
+                                    echo $e->getMessage();
+                                }
+                                Database::disconnect();
+                            }
+
+                            $pdo160 = Database::connect(); 
+                            $sqlitProgreT = "SELECT COUNT(idModulo) Total FROM modulo WHERE id_curso = $id";
+                            $qiProgreT = $pdo160->prepare($sqlitProgreT);
+                            $qiProgreT->execute();
+                            $datoProgreT = $qiProgreT -> fetch(PDO::FETCH_ASSOC);
+                            $ProgreT = $datoProgreT['Total'];
+                            Database::disconnect();
+
+                            $pdo161 = Database::connect(); 
+                            $sqlitProgreP = "SELECT COUNT(idModCurso) Parcial FROM progresocursoinscrito WHERE id_cursoInscrito = $idCI";
+                            $qiProgreP = $pdo161->prepare($sqlitProgreP);
+                            $qiProgreP->execute();
+                            $datoProgreP = $qiProgreP -> fetch(PDO::FETCH_ASSOC);
+                            $ProgreP = $datoProgreP['Parcial'];
+                            Database::disconnect();
+
+                            if($ProgreP>0)
+                                $Avance = $ProgreP/$ProgreT * 100;
+                            else
+                                $Avance = 0;
+                            $AvanceFinal = number_format($Avance);
+
+                            
                     ?>
+                    
                         <h6 style="text-align: center; font-weight: bolder;">Fin de cuestionario</h6>
                         <div style="text-align: center;">
-                            <a href="curso.php?id=<?php echo $id;?>"><button type="button" class="btn btn-outline-secondary">Terminar</button></a>
+                            <a href="curso.php?id=<?php echo $id;?>&idCI=<?php echo $idCI;?>"><button type="button" class="btn btn-outline-secondary">Terminar</button></a>
+                            <a href="cuestionario.php?id=<?php echo $id?>&nW=<?php echo $_GET['nW']?>&idModulo=<?php echo $idModulo;?>&up=0&idCues=<?php echo $fila['idCuestionario'];?>&cuen=1&nro=0"><button onclick="actualizarConteo()" type="submit" class="btn btn-outline-secondary">Reintentar</button></a>
                             
                             <?php
                                 // $pdow = Database::connect(); 
@@ -169,14 +235,14 @@
                                 if($idModulo<$idmodu){
                                     $idmodulito=$datoi32[$nW+1]['idModulo'];
                             ?>
-
-                                    <a href="video.php?id=<?php echo $id?>&idtema=1&id_modulo=<?php echo ($idmodulito)?>&nW=<?php echo $_GET['nW']+1?>"><button type="button" class="btn btn-outline-secondary">Siguiente</button></a>
+                                    <a href="video.php?id=<?php echo $id?>&idtema=1&id_modulo=<?php echo ($idmodulito)?>&nW=<?php echo $_GET['nW']+1?>&idCI=<?php echo $idCI?>"><button type="button" class="btn btn-outline-secondary">Siguiente</button></a>
                                     <!-- <a href="video.php?id=?php echo $id?>&idtema=1&id_modulo=<php echo ($idModulo+1)?>"><button type="button" class="btn btn-outline-secondary">Siguiente</button></a> -->
                             <?php
                                 }
                             ?>
 
                         </div>
+                        <h2 style="text-align: center;">Avance de curso : <?php echo($AvanceFinal)?>%</h2>
                         <div class="card text-center muestras">
                             <div class="card-header">
                                 Resultado de las
@@ -282,7 +348,7 @@
                             <h5 style="background: #CFE8FE; padding: 20px 35px; color: #4F52D6">
                                 <?php echo $fila1[$envi]['pregunta'];?>
                             </h5>
-                            <form style="padding: 30px;" action="includes/cuestionarioCRUD/cuestion.php?contador=<?php echo $contador;?>&id=<?php echo $id;?>&c=<?php $correcta ?>&idModulo=<?php echo $idModulo;?>&validar=<?php echo 0; ?>&up=<?php echo $up ?>&cuen=<?php echo $ens ?>&nro=<?php echo $envi?>&id_pregunta=<?php echo $idpregunta ?>&nW=<?php echo $_GET['nW']?>"
+                            <form style="padding: 30px;" action="includes/cuestionarioCRUD/cuestion.php?contador=<?php echo $contador;?>&id=<?php echo $id;?>&c=<?php $correcta ?>&idModulo=<?php echo $idModulo;?>&validar=<?php echo 0; ?>&up=<?php echo $up ?>&cuen=<?php echo $ens ?>&nro=<?php echo $envi?>&id_pregunta=<?php echo $idpregunta ?>&nW=<?php echo $_GET['nW']?>&idCI=<?php echo $idCI?>"
                                 method="POST" id="formcito">
                                 <?php while($fila2=$q2->fetch(PDO::FETCH_ASSOC)){ 
                                             //checked

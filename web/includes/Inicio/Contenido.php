@@ -319,35 +319,23 @@ if (!isset($_GET['pag'])) {
                 
                 <div class="selItem">
                   
-                  <div class="btn-select" id="btnPais">
-                    <img id="imgPais" src="./assets/images/peru.png" alt="+51" />
-                    <input type="text" class="code" id="code" value="+51" style="width:120%;" readonly />
+                  <div class="btn-select">
+                    <div id="btnPais">
+                      <img id="imgPais" src="./assets/images/peru.png" style="cursor: pointer;"/>
+                    </div>
+                    <input type="text" class="code" id="code" value="+51" style="width:120%;" maxlength="4" onKeypress="return ((event.charCode >= 48 && event.charCode <= 57) || event.charCode == 43)" readonly />
                   </div>
 
                   <ul class="sel" id="listPais" style="height:300px; width:430%; overflow:auto;">
+
                     <li style="border-bottom: 1px solid black;">
                       <img src="./assets/images/peru.png" alt="+51" />
                       <span>Perú (+51)</span>
                     </li>
-                    <li>
-                      <img src="./assets/images/antigua-y-barbuda.png" alt="+1" />
-                      <span>Antigua y Barbuda (+1)</span>
-                    </li>
+
                     <li>
                       <img src="./assets/images/argentina.png" alt="+54" />
                       <span>Argentina (+54)</span>
-                    </li>
-                    <li>
-                      <img src="./assets/images/bahamas.png" alt="+1" />
-                      <span>Bahamas (+1)</span>
-                    </li>
-                    <li>
-                      <img src="./assets/images/barbados.png" alt="+1" />
-                      <span>Barbados (+1)</span>
-                    </li>
-                    <li>
-                      <img src="./assets/images/belice.png" alt="+501" />
-                      <span>Belice (+501)</span>
                     </li>
                     <li>
                       <img src="./assets/images/bolivia.png" alt="+591" />
@@ -356,10 +344,6 @@ if (!isset($_GET['pag'])) {
                     <li>
                       <img src="./assets/images/brasil.png" alt="+55" />
                       <span>Brasil (+55)</span>
-                    </li>
-                    <li>
-                      <img src="./assets/images/canada.png" alt="+1" />
-                      <span>Canadá (+1)</span>
                     </li>
                     <li>
                       <img src="./assets/images/chile.png" alt="+56" />
@@ -378,10 +362,6 @@ if (!isset($_GET['pag'])) {
                       <span>Cuba (+53)</span>
                     </li>
                     <li>
-                      <img src="./assets/images/dominica.png" alt="+1" />
-                      <span>Dominica (+1)</span>
-                    </li>
-                    <li>
                       <img src="./assets/images/ecuador.png" alt="+593" />
                       <span>Ecuador (+593)</span>
                     </li>
@@ -394,28 +374,12 @@ if (!isset($_GET['pag'])) {
                       <span>Estados Unidos (+1)</span>
                     </li>
                     <li>
-                      <img src="./assets/images/granada.png" alt="+1" />
-                      <span>Granada (+1)</span>
-                    </li>
-                    <li>
                       <img src="./assets/images/guatemala.png" alt="+502" />
                       <span>Guatemala (+502)</span>
                     </li>
                     <li>
-                      <img src="./assets/images/guyana.png" alt="+592" />
-                      <span>Guyana (+592)</span>
-                    </li>
-                    <li>
-                      <img src="./assets/images/haiti.png" alt="+509" />
-                      <span>Haití (+509)</span>
-                    </li>
-                    <li>
                       <img src="./assets/images/honduras.png" alt="+504" />
                       <span>Honduras (+504)</span>
-                    </li>
-                    <li>
-                      <img src="./assets/images/jamaica.png" alt="+1" />
-                      <span>Jamaica (+1)</span>
                     </li>
                     <li>
                       <img src="./assets/images/mexico.png" alt="+52" />
@@ -438,26 +402,6 @@ if (!isset($_GET['pag'])) {
                       <span>República Dominicana (+1)</span>
                     </li>
                     <li>
-                      <img src="./assets/images/san-cristobal-y-nieves.png" alt="+1" />
-                      <span>San Cristóbal y Nieves (+1)</span>
-                    </li>
-                    <li>
-                      <img src="./assets/images/san-vicente-y-las-granadinas.png" alt="+1" />
-                      <span>San Vicente y las Granadinas (+1)</span>
-                    </li>
-                    <li>
-                      <img src="./assets/images/santa-lucia.png" alt="+1" />
-                      <span>Santa Lucía (+1)</span>
-                    </li>
-                    <li>
-                      <img src="./assets/images/surinam.png" alt="+597" />
-                      <span>Surinam (+597)</span>
-                    </li>
-                    <li>
-                      <img src="./assets/images/trinidad-y-tobago.png" alt="+1" />
-                      <span>Trinidad y Tobago (+1)</span>
-                    </li>
-                    <li>
                       <img src="./assets/images/uruguay.png" alt="+598" />
                       <span>Uruguay (+598)</span>
                     </li>
@@ -465,11 +409,17 @@ if (!isset($_GET['pag'])) {
                       <img src="./assets/images/venezuela.png" alt="+58" />
                       <span>Venezuela (+58)</span>
                     </li>
+
+                    <ol style="border-top: 1px solid black; cursor: pointer;">
+                      <img id="otro" src="./assets/images/otro.png" alt="+" />
+                      <span>Otro</span>
+                    </ol>
+                    
                   </ul>
 
                 </div>
 
-                <input type="tel" id="txtTelMovil" style="position:relative; left:10px; width:95%" />
+                <input type="tel" id="txtTelMovil" style="position:relative; left:7px; width:96%" maxlength="15" onKeypress="if (event.keyCode < 46 || event.keyCode > 57) event.returnValue = false;"/>
 
               </div>
             </div>
@@ -477,10 +427,10 @@ if (!isset($_GET['pag'])) {
           <div class="row">
             <div class="group-control">
               <span class="title">Tamaño de la empresa</span>
-              <div>
-
-              <input class="text-center" type="text" id="txtTamEmpresa" onKeypress="if (event.keyCode < 0 || event.keyCode > 57) event.returnValue = false;" maxlength="2"/>
-              
+              <div  class="row-three">
+              <div class="icon" id="quitNumber">-</div>
+                <input  class="text-center" type="text" min="0" value="0" name="" id="numSusc" onKeypress="if (event.keyCode < 49 || event.keyCode > 57) event.returnValue = false;"/>
+                <div class="icon" id="plusNumber">+</div>
               </div>
             </div>
             <div class="group-control">

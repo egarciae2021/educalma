@@ -13,6 +13,10 @@
         // session_start();
         require_once '././database/databaseConection.php';
         $id = $_GET['id'];
+        if(isset($_GET['idCI'])){ 
+            $idCI=$_GET['idCI'];}
+        else{
+            $idCI=0;}
 
         $pdo4 = Database::connect();
         $sql4 = "SELECT * FROM cursos WHERE idCurso='$id'";
@@ -73,7 +77,7 @@
         
         $pdo6 = Database::connect();
         $idUser56=$_SESSION['iduser'];
-        $sql6 = "SELECT cantidad_respuestas FROM cursoinscrito WHERE curso_id = '$id' and usuario_id= '$idUser56'";
+        $sql6 = "SELECT cantidad_respuestas, nota FROM cursoinscrito WHERE curso_id = '$id' and usuario_id= '$idUser56'";
         $q6 = $pdo6->prepare($sql6);
         $q6->execute(array());
         $dato=$q6->fetch(PDO::FETCH_ASSOC);
@@ -207,12 +211,12 @@
                 <div class="nav-link-course">
                 <?php 
                     // PONER EN EL BOTON DEL CERTIFICADO
-                    if($cantidad_respuesta_acertadas>=$minimo_respuestas_para_aprobar){
-                        echo '<a data-filter=".seo" href="plugins/ejemplo.php?idCurso='.$id.'&idUsu='.$idUser56.'">Certificado</a>';
+                    if($dato['nota']>=$nota37){
+                        echo '<a style="cursor: pointer;" data-filter=".seo" href="plugins/ejemplo.php?idCurso='.$id.'&idUsu='.$idUser56.'">Certificado</a>';
                         $validar=1;
                     }
                     else {
-                        echo '<a onclick="sin_certificado()">Certificado</a>';
+                        echo '<a style="cursor: pointer;" onclick="sin_certificado()">Certificado</a>';
                         $validar=0;
                     }
                     $_SESSION['validar']=$validar;
@@ -246,7 +250,7 @@
                             <p><?php echo $dato4['introduccion']; ?></p>
                         </div>
                         <!--div class="col-8"-->
-                        <div class="col-8" style="position:relative; left: 1px;" id="informacion">
+                        <div class="col-8" id="informacion">
                             <h5>¿Que incluye este curso?</h5>
                             <div class="container-info-course-detalle">
                                 <h5>Tabla de contenido del curso</h5>
@@ -285,7 +289,7 @@
                         $nW=$nW+1;
                 ?>
                     <div class="w-100">
-                        <a href="video.php?id=<?php echo $id;?>&idtema=<?php echo 1;?>&id_modulo=<?php echo $modulosC['idModulo']?>&nW=<?php echo $nW-1?>" class="btn px-4 mb-2 puntos-suspensivos"  style="background:#DCECFA; width:100%; text-align:left;">
+                        <a href="video.php?id=<?php echo $id;?>&idtema=<?php echo 1;?>&id_modulo=<?php echo $modulosC['idModulo']?>&nW=<?php echo $nW-1?>&idCI=<?php echo $idCI?>" class="btn px-4 mb-2 puntos-suspensivos"  style="background:#DCECFA; width:100%; text-align:left;">
                             <i class="fas fa-play mr-3"></i>
                             <span style="color:black; width:100%;"><?php echo $modulosC['nombreModulo'] ?></span>
                         </a>

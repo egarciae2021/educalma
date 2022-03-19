@@ -19,6 +19,11 @@
     else{
     $nW=0;}
 
+    // ID del curso Iniscrito
+    if(isset($_GET['idCI'])){ 
+        $idCI=$_GET['idCI'];}
+    else{
+        $idCI=0;}
 
 
     require_once '././database/databaseConection.php';
@@ -117,14 +122,14 @@
                 <button type="button" <?php if ($access=="d") {
                     echo "disabled";
                 }?>  class="btn btn-outline-secondary" id="btnV"
-                    onclick="parent.location='includes/curso/VideoSiguiente.php?id=<?php echo $id; ?>&nW=<?php echo $_GET['nW']?>&idtema=<?php echo ($idtema-1)?>&id_modulo=<?php echo $dato['idModulo']?>'"> <strong> < </strong> Anterior</button>
+                    onclick="parent.location='includes/curso/VideoSiguiente.php?id=<?php echo $id; ?>&nW=<?php echo $_GET['nW']?>&idtema=<?php echo ($idtema-1)?>&id_modulo=<?php echo $dato['idModulo']?>&idCI=<?php echo $idCI?>'"> <strong> < </strong> Anterior</button>
                 <button type="button" class="btn btn-outline-secondary" id="btnV2"> 
                     <?php echo $dato2['nombreTema'];?>
                     <img src="././assets/images/video_icono_32.png"></button>
                 <button type="button"<?php if ($access=="d") {
                     echo "disabled";
                 }?> class="btn btn-outline-secondary" id="btnV"
-                    onclick="parent.location='includes/curso/VideoSiguiente.php?id=<?php echo $id; ?>&validar=1&c_modulo=<?php echo $cont_modulo;?>&c_tema=<?php echo ($cont_tema+1);?>&idmodulo=<?php echo $dato['idModulo']?>&nW=<?php echo $_GET['nW']?>'">
+                    onclick="parent.location='includes/curso/VideoSiguiente.php?id=<?php echo $id; ?>&validar=1&c_modulo=<?php echo $cont_modulo;?>&c_tema=<?php echo ($cont_tema+1);?>&idmodulo=<?php echo $dato['idModulo']?>&nW=<?php echo $_GET['nW']?>&idCI=<?php echo $idCI?>'">
                     Siguiente <strong> > </strong></button>
             </div>
             <div class="col-md-1"></div>
@@ -246,13 +251,13 @@
                 ?>
                 <br>
                 <button type="button" class="btn btn-outline-secondary" id="btnV"<?php if($nueva<=1){ echo "disabled";}?>
-                    onclick="parent.location='video.php?id=<?php echo $id; ?>&idtema=<?php echo ($nueva-1); ?>&id_modulo=<?php echo $dato['idModulo']?>&nW=<?php echo $nW?>'"> <strong>
+                    onclick="parent.location='video.php?id=<?php echo $id; ?>&idtema=<?php echo ($nueva-1); ?>&id_modulo=<?php echo $dato['idModulo']?>&nW=<?php echo $nW?>&idCI=<?php echo $idCI?>'"> <strong>
                         <?php if(count($resultado1)<=0){echo "No existo";}?>< </strong> Anterior </button>
                 <button type="button" class="btn btn-outline-secondary" id="btnV2"> <img
                         src="././assets/images/video_icono_32.png"></button>
-                <button type="button" class="btn btn-outline-secondary" id="btnV" <?php if($nueva>=count($resultado1)){?>onclick="parent.location='cuestionario.php?id=<?php echo $id;?>&nW=<?php echo $nW;?>&idModulo=<?php echo $_GET['id_modulo'];?>&up=0&idcues=<?php echo $dato8['idCuestionario'];?>&cuen=1&nro=0'">Siguiente<strong> > </strong></button> <?php }else{ ?>
+                <button type="button" class="btn btn-outline-secondary" id="btnV" <?php if($nueva>=count($resultado1)){?>onclick="parent.location='cuestionario.php?id=<?php echo $id;?>&nW=<?php echo $nW;?>&idModulo=<?php echo $_GET['id_modulo'];?>&up=0&idcues=<?php echo $dato8['idCuestionario'];?>&idCI=<?php echo $idCI?>&cuen=1&nro=0'">Siguiente<strong> > </strong></button> <?php }else{ ?>
                     
-                    onclick="parent.location='video.php?id=<?php echo $id; ?>&nW=<?php echo $_GET['nW']?>&idtema=<?php echo ($nueva+1); ?>&id_modulo=<?php echo $_GET['id_modulo']?>'">Siguiente<strong> > </strong></button>
+                    onclick="parent.location='video.php?id=<?php echo $id; ?>&nW=<?php echo $_GET['nW']?>&idtema=<?php echo ($nueva+1); ?>&id_modulo=<?php echo $_GET['id_modulo']?>&idCI=<?php echo $idCI?>'">Siguiente<strong> > </strong></button>
                     
                     <?php }
                     $si=$dato8['idCuestionario'];

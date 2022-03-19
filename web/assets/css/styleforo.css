@@ -49,6 +49,9 @@ body {
    color: #7C83FD;
    font-weight: 400;
    text-align: center;
+   
+   position: relative;
+   left: -55px;
 }
 
 .comments-container h1 a {

@@ -21,8 +21,97 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
+  $('#cmbPais').on('click',function(){
+    if($('#cmbPais').val()){ 
+      $('#cmbPais option[value!='+$('#cmbPais').val()+']').removeAttr('selected','selected');
+      $('#cmbPais option[value='+$('#cmbPais').val()+']').attr('selected','selected');
+      }
+      if($('#cmbPais option[value='+$('#cmbPais').val()+']').val() == 'Perú' || $('#cmbPais option[value='+$('#cmbPais').val()+']').val() == 'Chile' || $('#cmbPais option[value='+$('#cmbPais').val()+']').val() == 'Brasil'){ 
+
+        $('input[name=telefono]').attr('min','99999999');
+        $('input[name=telefono]').attr('max','999999999');
+        var input=  document.getElementById('Telefono');
+        input.addEventListener('input',function(){
+          if (this.value.length > $('input[name=telefono]').attr('max').length) 
+             this.value = this.value.slice(0,$('input[name=telefono]').attr('max').length); 
+        })
+        
+      }else if($('#cmbPais option[value='+$('#cmbPais').val()+']').val() == 'México' || $('#cmbPais option[value='+$('#cmbPais').val()+']').val() == 'Argentina' || $('#cmbPais option[value='+$('#cmbPais').val()+']').val() == 'Ecuador' || $('#cmbPais option[value='+$('#cmbPais').val()+']').val() == 'Cuba'){
+        $('input[name=telefono]').attr('min','999999999')
+        $('input[name=telefono]').attr('max','9999999999')
+        var input=  document.getElementById('Telefono');
+        input.addEventListener('input',function(){
+          if (this.value.length > $('input[name=telefono]').attr('max').length) 
+             this.value = this.value.slice(0,$('input[name=telefono]').attr('max').length); 
+        })
+        }else if($('#cmbPais option[value='+$('#cmbPais').val()+']').val() == 'Venezuela'){
+        $('input[name=telefono]').attr('min','999999')
+        $('input[name=telefono]').attr('max','9999999')
+        var input=  document.getElementById('Telefono');
+        input.addEventListener('input',function(){
+          if (this.value.length > $('input[name=telefono]').attr('max').length) 
+             this.value = this.value.slice(0,$('input[name=telefono]').attr('max').length); 
+        })
+      }else if($('#cmbPais option[value='+$('#cmbPais').val()+']').val() == 'Bolivia' || $('#cmbPais option[value='+$('#cmbPais').val()+']').val() == 'Panamá' || $('#cmbPais option[value='+$('#cmbPais').val()+']').val() == 'El Salvador' || $('#cmbPais option[value='+$('#cmbPais').val()+']').val() == 'Dinamarca' || $('#cmbPais option[value='+$('#cmbPais').val()+']').val() == 'República Dominicana'){
+        $('input[name=telefono]').attr('min','9999999')
+        $('input[name=telefono]').attr('max','99999999')
+        var input=  document.getElementById('Telefono');
+        input.addEventListener('input',function(){
+          if (this.value.length > $('input[name=telefono]').attr('max').length) 
+             this.value = this.value.slice(0,$('input[name=telefono]').attr('max').length); 
+        })
+      }else{
+        $('input[name=telefono]').attr('min','9999999999')
+        $('input[name=telefono]').attr('max','99999999999')
+        var input=  document.getElementById('Telefono');
+        input.addEventListener('input',function(){
+          if (this.value.length > $('input[name=telefono]').attr('max').length) 
+             this.value = this.value.slice(0,$('input[name=telefono]').attr('max').length); 
+        })
+      }
+    });
+
+  $('#Tipod').on('click',function(){
+    
+    console.log($('#Tipod option[value='+$('#Tipod').val()+']').val())
+    console.log($('input[name=nume_documento]').attr('id'))
+    if($('#Tipod').val()){ 
+      $('#Tipod option[value!='+$('#Tipod').val()+']').removeAttr('selected','selected');
+      $('#Tipod option[value='+$('#Tipod').val()+']').attr('selected','selected');
+      }
+      if($('#Tipod option[value='+$('#Tipod').val()+']').val() == 1){ 
+
+        $('input[name=nume_documento]').attr('min','9999999')
+        $('input[name=nume_documento]').attr('max','99999999')
+        var input=  document.getElementById('Numero');
+        input.addEventListener('input',function(){
+          if (this.value.length > $('input[name=nume_documento]').attr('max').length) 
+             this.value = this.value.slice(0,$('input[name=nume_documento]').attr('max').length); 
+        })
+        
+      }else if($('#Tipod option[value='+$('#Tipod').val()+']').val() == 2 || $('#Tipod option[value='+$('#Tipod').val()+']').val() == 3){
+        $('input[name=nume_documento]').attr('min','99999999999')
+        $('input[name=nume_documento]').attr('max','999999999999')
+        var input=  document.getElementById('Numero');
+        input.addEventListener('input',function(){
+          if (this.value.length > $('input[name=nume_documento]').attr('max').length) 
+             this.value = this.value.slice(0,$('input[name=nume_documento]').attr('max').length); 
+        })
+        }else{
+        $('input[name=nume_documento]').attr('min','9999999999')
+        $('input[name=nume_documento]').attr('max','99999999999')
+        var input=  document.getElementById('Numero');
+        input.addEventListener('input',function(){
+          if (this.value.length > $('input[name=nume_documento]').attr('max').length) 
+             this.value = this.value.slice(0,$('input[name=nume_documento]').attr('max').length); 
+        })
+      }
+    });
+  
+    
+
   // Formato JS
-  let controlsArray = [
+  var controlsArray = [
     {
       // Selector
       element: "input[type=text]",
@@ -64,7 +153,7 @@ document.addEventListener("DOMContentLoaded", () => {
       noValidAction: redEffect,
     },
     {
-      element: "input[type=tel]",
+      element: "input#Telefono",
       properties: [
         {
           required: true,
@@ -76,11 +165,10 @@ document.addEventListener("DOMContentLoaded", () => {
       noValidAction: redEffect,
     },
     {
-      element: "input#Numero",
+      element: 'input#Numero',
       properties: [
         {
           required: true,
-          pattern: ".{8,}",
         },
       ],
       events: ["keyup", "focus", "blur"],
@@ -134,7 +222,7 @@ document.addEventListener("DOMContentLoaded", () => {
       events: ["change"],
       validAction: greenEffect,
       noValidAction: redEffect,
-    },
+    }
   ];
 
   ValidControl(controlsArray);

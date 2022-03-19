@@ -11,6 +11,7 @@
     $ens=$_GET['cuen'];
     $envi=$_GET['nro'];
     $nW=$_GET['nW'];
+    $idCI=$_GET['idCI'];
     
     //para el boton siguientes necesita estas variables
     if(isset($_GET['c_tema']) && isset($_GET['c_modulo'])){
@@ -87,7 +88,7 @@
         echo'
             <script>
                 //alert("respuesta correcta");
-                window.location = "../../cuestionario.php?id='.$id.'&nW='.($nW).'&c='.($correcta+1).'&contadorP='.($contadorP.','.$id_pregunta.'-'.$respuesta1).'&idModulo='.$idModulo.'&up='.($up+1).'&idcues='.$_SESSION['idcue'].'&cuen='.($ens+1).'&nro='.($envi+1).'";
+                window.location = "../../cuestionario.php?id='.$id.'&nW='.($nW).'&c='.($correcta+1).'&contadorP='.($contadorP.','.$id_pregunta.'-'.$respuesta1).'&idModulo='.$idModulo.'&up='.($up+1).'&idcues='.$_SESSION['idcue'].'&idCI='.($idCI).'&cuen='.($ens+1).'&nro='.($envi+1).'";
             </script>
         ';
        
@@ -98,7 +99,7 @@
         echo'
             <script>
                 //alert("respuesta incorrecta");
-                window.location = "../../cuestionario.php?id='.$id.'&nW='.($nW).'&c='.$correcta.'&contadorP='.($contadorP.','.$id_pregunta.'-'.$respuesta1).'&idModulo='.$idModulo.'&up='.($up+1).'&idcues='.$_SESSION['idcue'].'&cuen='.($ens+1).'&nro='.($envi+1).'";
+                window.location = "../../cuestionario.php?id='.$id.'&nW='.($nW).'&c='.$correcta.'&contadorP='.($contadorP.','.$id_pregunta.'-'.$respuesta1).'&idModulo='.$idModulo.'&up='.($up+1).'&idcues='.$_SESSION['idcue'].'&idCI='.($idCI).'&cuen='.($ens+1).'&nro='.($envi+1).'";
             </script>
         ';
         
