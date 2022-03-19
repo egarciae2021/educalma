@@ -79,7 +79,7 @@
          $q4= $pdo->prepare($sql);
          $q4->execute(array());
          $fila4=$q4->fetch(PDO::FETCH_ASSOC);
-         $intentos=Database::connect()->query("SELECT intentos FROM progresocursoinscrito WHERE idModulo='$idModulo' AND id_cursoInscrito = '$id' ")->fetch(PDO::FETCH_ASSOC);//$fila4['intentos'];
+         $intentos=Database::connect()->query("SELECT intentos FROM progresocursoinscrito WHERE idModulo='$idModulo' AND id_cursoInscrito = '$idCI' ")->fetch(PDO::FETCH_ASSOC);//$fila4['intentos'];
          Database::disconnect();
 
         $pdo = Database::connect();
@@ -190,13 +190,17 @@
                                 $Avance = 0;
                             $AvanceFinal = number_format($Avance);
 
-                            
+                            $pdo162 = Database::connect(); 
+                            $sqlitUAvance = "UPDATE cursoinscrito SET avance = $AvanceFinal WHERE id_cursoInscrito = $idCI";
+                            $qiUAvance = $pdo162->prepare($sqlitUAvance);
+                            $qiUAvance->execute();
+                            Database::disconnect();
                     ?>
                     
                         <h6 style="text-align: center; font-weight: bolder;">Fin de cuestionario</h6>
                         <div style="text-align: center;">
                             <a href="curso.php?id=<?php echo $id;?>&idCI=<?php echo $idCI;?>"><button type="button" class="btn btn-outline-secondary">Terminar</button></a>
-                            <a href="cuestionario.php?id=<?php echo $id?>&nW=<?php echo $_GET['nW']?>&idModulo=<?php echo $idModulo;?>&up=0&idCues=<?php echo $fila['idCuestionario'];?>&cuen=1&nro=0"><button onclick="actualizarConteo()" type="submit" class="btn btn-outline-secondary">Reintentar</button></a>
+                            <a href="cuestionario.php?id=<?php echo $id?>&nW=<?php echo $_GET['nW']?>&idModulo=<?php echo $idModulo;?>&up=0&idCues=<?php echo $fila['idCuestionario'];?>&idCI=<?php echo $idCI?>&cuen=1&nro=0"><button onclick="actualizarConteo()" type="submit" class="btn btn-outline-secondary">Reintentar</button></a>
                             
                             <?php
                                 // $pdow = Database::connect(); 
