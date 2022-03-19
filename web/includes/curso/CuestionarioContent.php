@@ -74,6 +74,14 @@
             $idCI=0;}
         //selectionamos el id del cuestionario del modulo 1
 
+        $pdo3 = Database::connect();
+        $sql4 = "SELECT intentos FROM modulocurso WHERE id_Modulo='$idModulo' AND id_cursoInsc = '$id' ";
+         $q4= $pdo->prepare($sql);
+         $q4->execute(array());
+         $fila4=$q4->fetch(PDO::FETCH_ASSOC);
+         $intentos=Database::connect()->query("SELECT intentos FROM progresocursoinscrito WHERE idModulo='$idModulo' AND id_cursoInscrito = '$id' ")->fetch(PDO::FETCH_ASSOC);//$fila4['intentos'];
+         Database::disconnect();
+
         $pdo = Database::connect();
         $sql = "SELECT * FROM cuestionario WHERE id_modulo='$idModulo'";
         $q = $pdo->prepare($sql);
@@ -129,6 +137,7 @@
                     <h1 style="color: #4F52D6; font-size: 30px; padding: 15px; text-align: center;">
                         <strong>Cuestionario</strong>
                     </h1>
+                    <p>Reintentos:<?php echo implode($intentos);?></p>  
                     <?php
                         if($envi==$cuenta2){
                             $pdo150 = Database::connect(); 
@@ -181,10 +190,13 @@
                                 $Avance = 0;
                             $AvanceFinal = number_format($Avance);
 
+                            
                     ?>
+                    
                         <h6 style="text-align: center; font-weight: bolder;">Fin de cuestionario</h6>
                         <div style="text-align: center;">
                             <a href="curso.php?id=<?php echo $id;?>&idCI=<?php echo $idCI;?>"><button type="button" class="btn btn-outline-secondary">Terminar</button></a>
+                            <a href="cuestionario.php?id=<?php echo $id?>&nW=<?php echo $_GET['nW']?>&idModulo=<?php echo $idModulo;?>&up=0&idCues=<?php echo $fila['idCuestionario'];?>&cuen=1&nro=0"><button onclick="actualizarConteo()" type="submit" class="btn btn-outline-secondary">Reintentar</button></a>
                             
                             <?php
                                 // $pdow = Database::connect(); 
