@@ -179,6 +179,7 @@
                                 $Avance = $ProgreP/$ProgreT * 100;
                             else
                                 $Avance = 0;
+                            $AvanceFinal = number_format($Avance);
 
                     ?>
                         <h6 style="text-align: center; font-weight: bolder;">Fin de cuestionario</h6>
@@ -229,7 +230,7 @@
                             ?>
 
                         </div>
-                        <h2 style="text-align: center;">Avance de curso : <?php echo($Avance)?>%</h2>
+                        <h2 style="text-align: center;">Avance de curso : <?php echo($AvanceFinal)?>%</h2>
                         <div class="card text-center muestras">
                             <div class="card-header">
                                 Resultado de las
