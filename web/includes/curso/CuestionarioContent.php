@@ -7,6 +7,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet" />
 
+    <style>
+        /* WEBKIT BROWSERS - CHROME, OPERA AND SAFARI */
+       progress::-webkit-progress-bar {
+           background-color: #777;
+           border-radius: 20px;
+       }
+ 
+       progress::-webkit-progress-value {
+           background-image:
+               -webkit-linear-gradient(45deg, transparent 40%, rgba(0, 0, 0, .1) 40%, rgba(0, 0, 0, .1) 70%, transparent 70%),
+               -webkit-linear-gradient(top, rgba(255, 255, 255, .25), rgba(0, 0, 0, .25)),
+               -webkit-linear-gradient(left, #1abc9c, #3498db);
+           border-radius: 20px;
+       }
+ 
+       /* MOZILLA FIREFOX */
+       progress::-moz-progress-bar {
+           background-image:
+               -moz-linear-gradient(45deg, transparent 33%, rgba(0, 0, 0, 0.1) 40%, rgba(0, 0, 0, 0.1) 70%, transparent 70%),
+               -moz-linear-gradient(top, rgba(255, 255, 255, 0.25), rgba(0, 0, 0, 0.25)),
+               -moz-linear-gradient(left, #1abc9c, #3498db);
+           border-radius: 20px;
+       }
+ 
+       /* MICROSOFT EDGE & IE */
+       .custom-progress::-ms-fill {
+           border-radius: 18px;
+           background: repeating-linear-gradient(45deg, #1abc9c, #1abc9c 10px,#3498db 10px, #3498db 20px);
+       }
+    </style>
+
     <link rel="stylesheet" href="././assets/css/stylecuestionario.css">
     <!-- iconos -->
     <script src="https://kit.fontawesome.com/abc76d5c4d.js" crossorigin="anonymous"></script>
@@ -143,11 +174,7 @@
                             <a href=""> Cuestionario </a>
                         </div>
                     </div>
-                    <h1 style="color: #4F52D6; font-size: 30px; padding: 15px; text-align: center;">
-                        <strong>Cuestionario</strong>
-                    </h1>
-                    
-                    <p style ="text-align: center;">Reintentos: <?php echo implode($intentos);?></p>  
+                     
                     <?php
                         if($envi==$cuenta2){
                             $pdo150 = Database::connect(); 
@@ -206,11 +233,25 @@
                        //     $qiUAvance->execute();
                             Database::disconnect();
                     ?>
+
+                    <h4 style="text-align: center; ">
+                    <span style="text-align: center; color: #9383F3;">Avance de curso : </span> 
+                    <progress style="width:100%; background:none;" max="100" value="<?php echo($Avance)?>"></progress>
+                    <span style="text-align: center; color: #9383F3;"><?php echo($Avance)?>%</span>
+                        </h4> 
+
+                        <h1 style="color: #4F52D6; font-size: 30px; padding: 15px; text-align: center;">
+                        <strong>Cuestionario</strong>
+                    </h1>
+                    
+                    
+                    <p style ="text-align: center;">Reintentos: <?php echo implode($intentos);?></p> 
                     
                         <h6 style="text-align: center; font-weight: bolder;">Fin de cuestionario</h6>
                         <div style="text-align: center;">
                             <a href="curso.php?id=<?php echo $id;?>&idCI=<?php echo $idCI;?>"><button type="button" class="btn btn-outline-secondary">Terminar</button></a>
                             <a href="cuestionario.php?id=<?php echo $id?>&nW=<?php echo $_GET['nW']?>&idModulo=<?php echo $idModulo;?>&up=0&idCues=<?php echo $fila['idCuestionario'];?>&idCI=<?php echo $idCI?>&cuen=1&nro=0"><button id="actualizarConteo" type="submit" class="btn btn-outline-secondary">Reintentar</button></a>
+                            
                             
                             <?php
                                 // $pdow = Database::connect(); 
@@ -256,7 +297,7 @@
                             ?>
 
                         </div>
-                        <h2 style="text-align: center;">Avance de curso : <?php echo($AvanceFinal)?>%</h2>
+                        
                         <div class="card text-center muestras">
                             <div class="card-header">
                                 Resultado de las
