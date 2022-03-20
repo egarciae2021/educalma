@@ -202,6 +202,7 @@ $id = $_GET['id'];
             },
 
             createOrder: function(data, actions) {
+                /*
                 return actions.order.create({
                     purchase_units: [{
                         amount: {
@@ -210,6 +211,8 @@ $id = $_GET['id'];
                         
                     }]
                 });
+                */
+                Swal.fire("Falta implementar.");
             },
             onApprove: function(data, actions) {
                 
