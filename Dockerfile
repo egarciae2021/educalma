@@ -36,6 +36,17 @@ RUN chgrp -R www-data /var/www \
     && find /var/www -type d -exec chmod 0777 {} \; \
     && find /var/www -type f -exec chmod ug+rw {} \; \
     && usermod -a -G www-data root
+RUN 
+# Envase
+ #ECHO "DEB http://mirrors.163.com/debian/ stretch principal contributs no libre \ ndeb http://mirrors.163.com/debian/ actualiza el control principal de control no libre \ ndeb http: // Espejos.163.es
+ APT Actualización # Actualizar fuente fuente
+ APT install -y libwebp-dev libjpeg-dev libpng-dev libfreetype6-dev # instale varias bibliotecas
+ Extracto de fuente de fuente Docker-PHP # fuente de descompresión
+ Carpeta de código fuente de CD / USR / SRC / PHP / EXT / GD #GD
+ Docker-PHP-EXT-CONFIGURACIÓN GD --WITH-WEBP-DIR = / USR / INCLUSION / WEBP --WITH-JPEG-DIR = / USR / INCLUSIÓN - DIVERSIÓN-PNG-DIR = / USR / INCLUIDO - con- Freetype-dir = / usr / include / freetype2 # preparar la compilación
+ Instalación de la compilación de Docker-PHP-EXT-EXTT INSTRULT GD #
+php -m | grep gd
+ #  
 RUN find /etc/apache2/sites-available -type d -exec chmod 0777 {} \;
 RUN find /etc/apache2/sites-enabled -type d -exec chmod 0777 {} \;
 RUN a2enmod rewrite
