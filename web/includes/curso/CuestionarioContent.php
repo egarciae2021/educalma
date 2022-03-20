@@ -74,7 +74,7 @@
             $idCI=0;}
         //selectionamos el id del cuestionario del modulo 1
 
-        $pdo3 = Database::connect();
+        $pdo3 = Database::connect();//intentos
         $sql4 = "SELECT intentos FROM modulocurso WHERE id_Modulo='$idModulo' AND id_cursoInsc = '$id' ";
          $q4= $pdo->prepare($sql);
          $q4->execute(array());
@@ -97,6 +97,15 @@
 
         //nombre del modulo 
         
+         $pdo169 = Database::connect();
+         $verif16=$pdo169->prepare("UPDATE `progresocursoinscrito` SET `nota`='$correcta' WHERE `idModulo`='$idModulo' AND `id_cursoInscrito`='$id'");
+         $verif16->execute();
+
+         $resultadoTemp=Database::connect()->query("SELECT nota FROM progresocursoinscrito WHERE idModulo='$idModulo' AND id_cursoInscrito = '$id' ")->fetch(PDO::FETCH_ASSOC);//$fila4['intentos'];
+         Database::disconnect();
+        //primero se envia $correcta a la bd y luego se compara se llama con otra 
+        //y se compara con el nuevo $correcta
+
 
         
         //saber cantidad de preguntas existen
@@ -137,6 +146,7 @@
                     <h1 style="color: #4F52D6; font-size: 30px; padding: 15px; text-align: center;">
                         <strong>Cuestionario</strong>
                     </h1>
+                    
                     <p style ="text-align: center;">Reintentos: <?php echo implode($intentos);?></p>  
                     <?php
                         if($envi==$cuenta2){
@@ -200,7 +210,7 @@
                         <h6 style="text-align: center; font-weight: bolder;">Fin de cuestionario</h6>
                         <div style="text-align: center;">
                             <a href="curso.php?id=<?php echo $id;?>&idCI=<?php echo $idCI;?>"><button type="button" class="btn btn-outline-secondary">Terminar</button></a>
-                            <a href="cuestionario.php?id=<?php echo $id?>&nW=<?php echo $_GET['nW']?>&idModulo=<?php echo $idModulo;?>&up=0&idCues=<?php echo $fila['idCuestionario'];?>&idCI=<?php echo $idCI?>&cuen=1&nro=0"><button onclick="actualizarConteo()" type="submit" class="btn btn-outline-secondary">Reintentar</button></a>
+                            <a href="cuestionario.php?id=<?php echo $id?>&nW=<?php echo $_GET['nW']?>&idModulo=<?php echo $idModulo;?>&up=0&idCues=<?php echo $fila['idCuestionario'];?>&idCI=<?php echo $idCI?>&cuen=1&nro=0"><button id="actualizarConteo" type="submit" class="btn btn-outline-secondary">Reintentar</button></a>
                             
                             <?php
                                 // $pdow = Database::connect(); 
@@ -288,6 +298,8 @@
                                         }
                                     }
 
+
+
                                 ?>
                                     <!-- nuevo -->
                                     <div class="card c-rpta mx-4 mt-3">
@@ -356,7 +368,7 @@
                                 method="POST" id="formcito">
                                 <?php while($fila2=$q2->fetch(PDO::FETCH_ASSOC)){ 
                                             //checked
-                                        ?> 
+                                        ?>      
                                                                            
                                 <div style="padding: 10px; border-radius: 5px; background: #E2EDF8; border-bottom: 1px solid slategray; margin-bottom: 20px;">
                                     <div class="form-check">
@@ -430,6 +442,13 @@
                 return false;
             }
         }
+
+        $('#actualizarConteo').click(function(){
+            var intentos=$($intentos-1).val();
+            var notaTemp=$($correcta).val();
+            $.post()
+        });
+
     </script>
 
 </body>
