@@ -110,8 +110,15 @@
          $q4= $pdo->prepare($sql);
          $q4->execute(array());
          $fila4=$q4->fetch(PDO::FETCH_ASSOC);
-         $intentos=Database::connect()->query("SELECT intentos FROM progresocursoinscrito WHERE idModulo='$idModulo' AND id_cursoInscrito = '$idCI' ")->fetch(PDO::FETCH_ASSOC);//$fila4['intentos'];
-         Database::disconnect();
+
+         $pdo170 = Database::connect();
+         $sqlitIntentos="SELECT intentos FROM progresocursoinscrito WHERE idModulo='$idModulo' AND id_cursoInscrito = '$id' ";
+         $qiIntentos=$pdo170 -> prepare($sqlitIntentos);
+         $qiIntentos->execute();
+         $datoIntentos= $qiIntentos-> fetch(PDO::FETCH_ASSOC);
+         $intentos=$datoIntentos['intentos'];//$fila4['intentos'];
+
+
 
         $pdo = Database::connect();
         $sql = "SELECT * FROM cuestionario WHERE id_modulo='$idModulo'";
@@ -126,14 +133,14 @@
        $nombre_modulo = Database::connect()->query("SELECT nombreModulo FROM modulo WHERE idModulo='$idModulo'")->fetch(PDO::FETCH_ASSOC);
        Database::disconnect();
 
-        //nombre del modulo 
-        
-         $pdo169 = Database::connect();
-         $verif16=$pdo169->prepare("UPDATE `progresocursoinscrito` SET `nota`='$correcta' WHERE `idModulo`='$idModulo' AND `id_cursoInscrito`='$id'");
-         $verif16->execute();
-
-         $resultadoTemp=Database::connect()->query("SELECT nota FROM progresocursoinscrito WHERE idModulo='$idModulo' AND id_cursoInscrito = '$id' ")->fetch(PDO::FETCH_ASSOC);//$fila4['intentos'];
-         Database::disconnect();
+        //nombre del modulo
+         
+        $pdo169 = Database::connect();   
+         $sqlitResTemp = "SELECT nota FROM progresocursoinscrito WHERE idModulo=$idModulo AND id_cursoInscrito = $id ";
+         $qiResTemp = $pdo169 -> prepare($sqlitResTemp);
+         $qiResTemp ->execute();
+         $datoResTemp =  $qiResTemp -> fetch(PDO::FETCH_ASSOC);
+         $resultadoTemp = $datoResTemp['nota'];
         //primero se envia $correcta a la bd y luego se compara se llama con otra 
         //y se compara con el nuevo $correcta
 
@@ -206,7 +213,7 @@
                             }
 
                             $pdo160 = Database::connect(); 
-                            $sqlitProgreT = "SELECT COUNT(idModulo) Total FROM modulo WHERE id_curso = $id";
+                            $sqlitProgreT = "SELECT COUNT(idModulo) Total FROM modulo WHERE id_curso = $idCI";
                             $qiProgreT = $pdo160->prepare($sqlitProgreT);
                             $qiProgreT->execute();
                             $datoProgreT = $qiProgreT -> fetch(PDO::FETCH_ASSOC);
@@ -245,7 +252,7 @@
                     </h1>
                     
                     
-                    <p style ="text-align: center;">Reintentos: <?php echo implode($intentos);?></p> 
+                    <p style ="text-align: center;">Reintentos: <?php echo $intentos;?></p> 
                     
                         <h6 style="text-align: center; font-weight: bolder;">Fin de cuestionario</h6>
                         <div style="text-align: center;">
@@ -297,6 +304,24 @@
                             ?>
 
                         </div>
+
+                        <?php
+                                $Result=$correcta*5;
+                                if($Result>$resultadoTemp){
+                                    $pdo1691 = Database::connect(); 
+                                    $verif161=$pdo1691->prepare("UPDATE `progresocursoinscrito` SET `nota`='$Result',`intentos`='$intentos'-1 WHERE `idModulo`='$idModulo' AND `id_cursoInscrito`='$id'");
+                                    $verif161->execute();
+                                }   
+                                else{
+                                    $Resul=0;
+                                    $pdo1691 = Database::connect(); 
+                                    $verif161=$pdo1691->prepare("UPDATE `progresocursoinscrito` SET `intentos`='$intentos'-1 WHERE `idModulo`='$idModulo' AND `id_cursoInscrito`='$id'");
+                                    $verif161->execute();
+                                } 
+                                
+                                
+
+                        ?> 
                         
                         <div class="card text-center muestras">
                             <div class="card-header">
