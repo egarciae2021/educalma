@@ -69,6 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
              this.value = this.value.slice(0,$('input[name=telefono]').attr('max').length); 
         })
       }
+      $('input[name=telefono]').removeClass("is-invalid").removeClass("is-valid");
     });
 
   $('#Tipod').on('click',function(){
@@ -106,6 +107,7 @@ document.addEventListener("DOMContentLoaded", () => {
              this.value = this.value.slice(0,$('input[name=nume_documento]').attr('max').length); 
         })
       }
+      $('input[name=nume_documento]').removeClass("is-invalid").removeClass("is-valid");
     });
   
     
