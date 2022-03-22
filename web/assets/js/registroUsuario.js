@@ -61,8 +61,8 @@ $(document).ready(() => {
                  this.value = this.value.slice(0,$('#txtCelular').attr('max').length); 
             })
           }else{
-            $('#txtCelular').attr('min','9999999999')
-            $('#txtCelular').attr('max','99999999999')
+            $('#txtCelular').attr('min','99999999999999')
+            $('#txtCelular').attr('max','999999999999999')
             var input=  document.getElementById('txtCelular');
             input.addEventListener('input',function(){
               if (this.value.length > $('#txtCelular').attr('max').length) 

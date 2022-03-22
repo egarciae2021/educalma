@@ -61,8 +61,8 @@ document.addEventListener("DOMContentLoaded", () => {
              this.value = this.value.slice(0,$('input[name=telefono]').attr('max').length); 
         })
       }else{
-        $('input[name=telefono]').attr('min','9999999999')
-        $('input[name=telefono]').attr('max','99999999999')
+        $('input[name=telefono]').attr('min','99999999999999')
+        $('input[name=telefono]').attr('max','999999999999999')
         var input=  document.getElementById('Telefono');
         input.addEventListener('input',function(){
           if (this.value.length > $('input[name=telefono]').attr('max').length) 
