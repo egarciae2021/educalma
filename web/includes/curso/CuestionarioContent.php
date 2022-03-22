@@ -10,15 +10,15 @@
     <style>
         /* WEBKIT BROWSERS - CHROME, OPERA AND SAFARI */
        progress::-webkit-progress-bar {
-           background-color: #777;
-           border-radius: 20px;
+           background-color: #E3E8E2;
+           border-radius: 10px;
        }
  
        progress::-webkit-progress-value {
            background-image:
                -webkit-linear-gradient(45deg, transparent 40%, rgba(0, 0, 0, .1) 40%, rgba(0, 0, 0, .1) 70%, transparent 70%),
                -webkit-linear-gradient(top, rgba(255, 255, 255, .25), rgba(0, 0, 0, .25)),
-               -webkit-linear-gradient(left, #1abc9c, #3498db);
+               -webkit-linear-gradient(left, #5BF543, #5BF543);
            border-radius: 20px;
        }
  
@@ -27,14 +27,14 @@
            background-image:
                -moz-linear-gradient(45deg, transparent 33%, rgba(0, 0, 0, 0.1) 40%, rgba(0, 0, 0, 0.1) 70%, transparent 70%),
                -moz-linear-gradient(top, rgba(255, 255, 255, 0.25), rgba(0, 0, 0, 0.25)),
-               -moz-linear-gradient(left, #1abc9c, #3498db);
+               -moz-linear-gradient(left, #5BF543, #5BF543);
            border-radius: 20px;
        }
  
        /* MICROSOFT EDGE & IE */
        .custom-progress::-ms-fill {
            border-radius: 18px;
-           background: repeating-linear-gradient(45deg, #1abc9c, #1abc9c 10px,#3498db 10px, #3498db 20px);
+           background: repeating-linear-gradient(45deg, ##5BF543, #5BF543 10px,#5BF543 10px, #5BF543 20px);
        }
     </style>
 
@@ -250,9 +250,9 @@
                             Database::disconnect();
                     ?>
 
-                    <h4 style="text-align: center; ">
+                    <h4 style="text-align: right; ">
                     <span style="text-align: center; color: #9383F3;">Avance de curso : </span> 
-                    <progress style="width:100%; background:none;" max="100" value="<?php echo($Avance)?>"></progress>
+                    <progress style="width:; background:#E3E8E2;" max="100" value="<?php echo($Avance)?>"></progress>
                     <span style="text-align: center; color: #9383F3;"><?php echo($Avance)?>%</span>
                         </h4> 
 
