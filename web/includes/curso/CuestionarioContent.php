@@ -213,7 +213,7 @@
                             }
 
                             $pdo160 = Database::connect(); 
-                            $sqlitProgreT = "SELECT COUNT(idModulo) Total FROM modulo WHERE id_curso = $idCI";
+                            $sqlitProgreT = "SELECT COUNT(idModulo) Total FROM modulo WHERE id_curso = $id";
                             $qiProgreT = $pdo160->prepare($sqlitProgreT);
                             $qiProgreT->execute();
                             $datoProgreT = $qiProgreT -> fetch(PDO::FETCH_ASSOC);
@@ -261,6 +261,7 @@
                             
                             
                             <?php
+                            
                                 // $pdow = Database::connect(); 
                                 // $sqli = "SELECT * FROM modulo WHERE id_curso='$id'";
                                 // $qi = $pdow->prepare($sqli);
