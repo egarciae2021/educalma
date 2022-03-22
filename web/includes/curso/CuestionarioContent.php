@@ -106,13 +106,13 @@
         //selectionamos el id del cuestionario del modulo 1
 
         $pdo3 = Database::connect();//intentos
-        $sql4 = "SELECT intentos FROM modulocurso WHERE id_Modulo='$idModulo' AND id_cursoInsc = '$id' ";
+        $sql4 = "SELECT intentos FROM modulocurso WHERE id_Modulo='$idModulo' AND id_cursoInsc = '$idCI' ";
          $q4= $pdo->prepare($sql);
          $q4->execute(array());
          $fila4=$q4->fetch(PDO::FETCH_ASSOC);
 
          $pdo170 = Database::connect();
-         $sqlitIntentos="SELECT intentos FROM progresocursoinscrito WHERE idModulo='$idModulo' AND id_cursoInscrito = '$id' ";
+         $sqlitIntentos="SELECT intentos FROM progresocursoinscrito WHERE idModulo='$idModulo' AND id_cursoInscrito = '$idCI' ";
          $qiIntentos=$pdo170 -> prepare($sqlitIntentos);
          $qiIntentos->execute();
          $datoIntentos= $qiIntentos-> fetch(PDO::FETCH_ASSOC);
@@ -243,8 +243,8 @@
 
                     <h4 style="text-align: center; ">
                     <span style="text-align: center; color: #9383F3;">Avance de curso : </span> 
-                    <progress style="width:100%; background:none;" max="100" value="<?php echo($Avance)?>"></progress>
-                    <span style="text-align: center; color: #9383F3;"><?php echo($Avance)?>%</span>
+                    <progress style="width:100%; background:none;" max="100" value="<?php echo($AvanceFinal)?>"></progress>
+                    <span style="text-align: center; color: #9383F3;"><?php echo($AvanceFinal)?>%</span>
                         </h4> 
 
                         <h1 style="color: #4F52D6; font-size: 30px; padding: 15px; text-align: center;">
