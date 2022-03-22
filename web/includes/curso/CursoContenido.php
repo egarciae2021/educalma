@@ -155,7 +155,7 @@
                                 <h5 class="m-0">Mira la primera clase de este curso!</h5>
                             </div>
                             <div class="col-6">
-                                <a class="hvr-radial-out button-theme" href="Cursoiniciar.php?id=<?php echo $id;?>"<?php if ($query==0 || $vere==false) {
+                                <a class="hvr-radial-out button-theme" href="Cursoiniciar.php?id=<?php echo $id;?>&idCI=<?php echo $idCI?>"<?php if ($query==0 || $vere==false) {
                                     echo 'style="pointer-events: none;"';}?> >
                                     <button type="button" class="btn container-button">
                                         COMIENZA AHORA
@@ -250,7 +250,7 @@
                             <p><?php echo $dato4['introduccion']; ?></p>
                         </div>
                         <!--div class="col-8"-->
-                        <div class="col-8" id="informacion">
+                        <div class="col-8" style="position:relative; left: 1px;" id="informacion">
                             <h5>¿Que incluye este curso?</h5>
                             <div class="container-info-course-detalle">
                                 <h5>Tabla de contenido del curso</h5>

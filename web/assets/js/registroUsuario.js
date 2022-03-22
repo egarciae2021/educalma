@@ -21,6 +21,95 @@ $(document).ready(() => {
         }
     };
 
+    $('#cmbPais').on('click',function(){
+        if($('#cmbPais').val()){ 
+          $('#cmbPais option[value!='+$('#cmbPais').val()+']').removeAttr('selected','selected');
+          $('#cmbPais option[value='+$('#cmbPais').val()+']').attr('selected','selected');
+          }
+          if($('#cmbPais option[value='+$('#cmbPais').val()+']').val() == 'Perú' || $('#cmbPais option[value='+$('#cmbPais').val()+']').val() == 'Chile' || $('#cmbPais option[value='+$('#cmbPais').val()+']').val() == 'Brasil'){ 
+    
+            $('#txtCelular').attr('min','99999999');
+            $('#txtCelular').attr('max','999999999');
+            var input=  document.getElementById('txtCelular');
+            input.addEventListener('input',function(){
+              if (this.value.length > $('#txtCelular').attr('max').length) 
+                 this.value = this.value.slice(0,$('#txtCelular').attr('max').length); 
+            })
+            
+          }else if($('#cmbPais option[value='+$('#cmbPais').val()+']').val() == 'México' || $('#cmbPais option[value='+$('#cmbPais').val()+']').val() == 'Argentina' || $('#cmbPais option[value='+$('#cmbPais').val()+']').val() == 'Ecuador' || $('#cmbPais option[value='+$('#cmbPais').val()+']').val() == 'Cuba'){
+            $('#txtCelular').attr('min','999999999')
+            $('#txtCelular').attr('max','9999999999')
+            var input=  document.getElementById('txtCelular');
+            input.addEventListener('input',function(){
+              if (this.value.length > $('#txtCelular').attr('max').length) 
+                 this.value = this.value.slice(0,$('#txtCelular').attr('max').length); 
+            })
+            }else if($('#cmbPais option[value='+$('#cmbPais').val()+']').val() == 'Venezuela'){
+            $('#txtCelular').attr('min','999999')
+            $('#txtCelular').attr('max','9999999')
+            var input=  document.getElementById('txtCelular');
+            input.addEventListener('input',function(){
+              if (this.value.length > $('#txtCelular').attr('max').length) 
+                 this.value = this.value.slice(0,$('#txtCelular').attr('max').length); 
+            })
+          }else if($('#cmbPais option[value='+$('#cmbPais').val()+']').val() == 'Bolivia' || $('#cmbPais option[value='+$('#cmbPais').val()+']').val() == 'Panamá' || $('#cmbPais option[value='+$('#cmbPais').val()+']').val() == 'El Salvador' || $('#cmbPais option[value='+$('#cmbPais').val()+']').val() == 'Dinamarca' || $('#cmbPais option[value='+$('#cmbPais').val()+']').val() == 'República Dominicana'){
+            $('#txtCelular').attr('min','9999999')
+            $('#txtCelular').attr('max','99999999')
+            var input=  document.getElementById('txtCelular');
+            input.addEventListener('input',function(){
+              if (this.value.length > $('#txtCelular').attr('max').length) 
+                 this.value = this.value.slice(0,$('#txtCelular').attr('max').length); 
+            })
+          }else{
+            $('#txtCelular').attr('min','99999999999999')
+            $('#txtCelular').attr('max','999999999999999')
+            var input=  document.getElementById('txtCelular');
+            input.addEventListener('input',function(){
+              if (this.value.length > $('#txtCelular').attr('max').length) 
+                 this.value = this.value.slice(0,$('#txtCelular').attr('max').length); 
+            })
+          }
+          $('#txtCelular').removeClass("is-invalid").removeClass("is-valid");
+        });
+
+    $('#cmbTDocumento').on('click',function(){
+    
+        console.log($('#cmbTDocumento option[value='+$('#cmbTDocumento').val()+']').val())
+        console.log($('#txtDocumento').attr('id'))
+        if($('#cmbTDocumento').val()){ 
+          $('#cmbTDocumento option[value!='+$('#cmbTDocumento').val()+']').removeAttr('selected','selected');
+          $('#cmbTDocumento option[value='+$('#cmbTDocumento').val()+']').attr('selected','selected');
+          }
+          if($('#cmbTDocumento option[value='+$('#cmbTDocumento').val()+']').val() == 1){ 
+    
+            $('#txtDocumento').attr('min','9999999')
+            $('#txtDocumento').attr('max','99999999')
+            var input=  document.getElementById('txtDocumento');
+            input.addEventListener('input',function(){
+              if (this.value.length > $('#txtDocumento').attr('max').length) 
+                 this.value = this.value.slice(0,$('#txtDocumento').attr('max').length); 
+            })
+            
+          }else if($('#cmbTDocumento option[value='+$('#cmbTDocumento').val()+']').val() == 2 || $('#cmbTDocumento option[value='+$('#cmbTDocumento').val()+']').val() == 3){
+            $('#txtDocumento').attr('min','99999999999')
+            $('#txtDocumento').attr('max','999999999999')
+            var input=  document.getElementById('txtDocumento');
+            input.addEventListener('input',function(){
+              if (this.value.length > $('#txtDocumento').attr('max').length) 
+                 this.value = this.value.slice(0,$('#txtDocumento').attr('max').length); 
+            })
+            }else{
+            $('#txtDocumento').attr('min','9999999999')
+            $('#txtDocumento').attr('max','99999999999')
+            var input=  document.getElementById('txtDocumento');
+            input.addEventListener('input',function(){
+              if (this.value.length > $('#txtDocumento').attr('max').length) 
+                 this.value = this.value.slice(0,$('#txtDocumento').attr('max').length); 
+            })
+          }
+          $('#txtDocumento').removeClass("is-invalid").removeClass("is-valid");
+        });
+
     // Formato JS
     let controlsArray = [{
         // Selector
@@ -43,27 +132,34 @@ $(document).ready(() => {
         element: "input[type=number]",
         properties: [{
             required: true,
-            min: 0,
         },],
         events: ["keyup", "focus", "blur"],
         validAction: greenEffect,
         noValidAction: redEffect,
     },
     {
-        element: "input[type=tel]",
+        element: "input[type=text]",
         properties: [{
             required: true,
-            pattern: "[0-9]{9,}",
+            pattern: "[a-zA-Z ]{3,254}",
         },],
         events: ["keyup", "focus", "blur"],
         validAction: greenEffect,
         noValidAction: redEffect,
     },
     {
-        element: "input#Numero",
+        element: "input#txtCelular",
         properties: [{
             required: true,
-            pattern: "[0-9]{8}",
+        },],
+        events: ["keyup", "focus", "blur"],
+        validAction: greenEffect,
+        noValidAction: redEffect,
+    },
+    {
+        element: "input#txtDocumento",
+        properties: [{
+            required: true,
         },],
         events: ["keyup", "focus", "blur"],
         validAction: greenEffect,
@@ -134,7 +230,7 @@ $(document).ready(() => {
     var lastname1 = "";
     var lastname2 = "";
     var tdoc = "";
-    var doc = "";
+    var doc = 0;
     var fnac = "";
     var cel = "";
     var pais = "";
@@ -171,7 +267,7 @@ $(document).ready(() => {
             .removeClass("is-valid");
         doc = "";
         $("#txtDocumento")
-            .val("")
+            .val(0)
             .removeClass("is-invalid")
             .removeClass("is-valid");
         fnac = "";

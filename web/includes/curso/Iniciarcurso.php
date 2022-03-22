@@ -12,7 +12,13 @@
         $validacion=1;
         $id=$_GET['id'];
         $validar=$_SESSION['validar'];
+        $id = $_GET['id'];
+        if(isset($_GET['idCI'])){ 
+            $idCI=$_GET['idCI'];}
+        else{
+            $idCI=0;}
         
+            
         $pdo1 = Database::connect(); 
         $sql1 = "SELECT * FROM cursos WHERE idCurso='$id'";
         $q1 = $pdo1->prepare($sql1);
@@ -80,7 +86,7 @@
                 <div class="buttonfaq">
                     <!--&validar=<?php //echo $validacion;?>  <a style="pointer-events: none;" href="video.php?id=<?php //echo $id;?>&validar=1&idtema=<?php //echo $dato3['idTema'];?>&id_modulo=<?php //echo $dato2['idModulo']?>">Siguiente</a> -->
                     <!-- <a href="video.php?id=<?php //echo $id;?>&idtema=<?php //echo $dato3['idTema'];?>&id_modulo=<?php //echo $dato2['idModulo']?>">Siguiente</a> -->
-                    <a href="video.php?id=<?php echo $id;?>&idtema=<?php echo 1;?>&id_modulo=<?php echo $dato2['idModulo']?>">Siguiente</a>
+                    <a href="video.php?id=<?php echo $id;?>&idtema=<?php echo 1;?>&id_modulo=<?php echo $dato2['idModulo']?>&idCI=<?php echo $idCI?>">Siguiente</a>
                     <!--Ponlo entre el id y idtema  &validar=<?php //echo $validar ?>&c_modulo=<?php //echo 1;?>&c_tema=<?php //echo 1;?>-->
                 </div>
             </div>

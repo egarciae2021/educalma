@@ -7,6 +7,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet" />
 
+    <style>
+        /* WEBKIT BROWSERS - CHROME, OPERA AND SAFARI */
+       progress::-webkit-progress-bar {
+           background-color: #777;
+           border-radius: 20px;
+       }
+ 
+       progress::-webkit-progress-value {
+           background-image:
+               -webkit-linear-gradient(45deg, transparent 40%, rgba(0, 0, 0, .1) 40%, rgba(0, 0, 0, .1) 70%, transparent 70%),
+               -webkit-linear-gradient(top, rgba(255, 255, 255, .25), rgba(0, 0, 0, .25)),
+               -webkit-linear-gradient(left, #1abc9c, #3498db);
+           border-radius: 20px;
+       }
+ 
+       /* MOZILLA FIREFOX */
+       progress::-moz-progress-bar {
+           background-image:
+               -moz-linear-gradient(45deg, transparent 33%, rgba(0, 0, 0, 0.1) 40%, rgba(0, 0, 0, 0.1) 70%, transparent 70%),
+               -moz-linear-gradient(top, rgba(255, 255, 255, 0.25), rgba(0, 0, 0, 0.25)),
+               -moz-linear-gradient(left, #1abc9c, #3498db);
+           border-radius: 20px;
+       }
+ 
+       /* MICROSOFT EDGE & IE */
+       .custom-progress::-ms-fill {
+           border-radius: 18px;
+           background: repeating-linear-gradient(45deg, #1abc9c, #1abc9c 10px,#3498db 10px, #3498db 20px);
+       }
+    </style>
+
     <link rel="stylesheet" href="././assets/css/stylecuestionario.css">
     <!-- iconos -->
     <script src="https://kit.fontawesome.com/abc76d5c4d.js" crossorigin="anonymous"></script>
@@ -74,13 +105,20 @@
             $idCI=0;}
         //selectionamos el id del cuestionario del modulo 1
 
-        $pdo3 = Database::connect();
-        $sql4 = "SELECT intentos FROM modulocurso WHERE id_Modulo='$idModulo' AND id_cursoInsc = '$id' ";
+        $pdo3 = Database::connect();//intentos
+        $sql4 = "SELECT intentos FROM modulocurso WHERE id_Modulo='$idModulo' AND id_cursoInsc = '$idCI' ";
          $q4= $pdo->prepare($sql);
          $q4->execute(array());
          $fila4=$q4->fetch(PDO::FETCH_ASSOC);
-         $intentos=Database::connect()->query("SELECT intentos FROM progresocursoinscrito WHERE idModulo='$idModulo' AND id_cursoInscrito = '$id' ")->fetch(PDO::FETCH_ASSOC);//$fila4['intentos'];
-         Database::disconnect();
+
+         $pdo170 = Database::connect();
+         $sqlitIntentos="SELECT intentos FROM progresocursoinscrito WHERE idModulo='$idModulo' AND id_cursoInscrito = '$idCI' ";
+         $qiIntentos=$pdo170 -> prepare($sqlitIntentos);
+         $qiIntentos->execute();
+         $datoIntentos= $qiIntentos-> fetch(PDO::FETCH_ASSOC);
+         $intentos=$datoIntentos['intentos'];//$fila4['intentos'];
+
+
 
         $pdo = Database::connect();
         $sql = "SELECT * FROM cuestionario WHERE id_modulo='$idModulo'";
@@ -95,8 +133,17 @@
        $nombre_modulo = Database::connect()->query("SELECT nombreModulo FROM modulo WHERE idModulo='$idModulo'")->fetch(PDO::FETCH_ASSOC);
        Database::disconnect();
 
-        //nombre del modulo 
-        
+        //nombre del modulo
+         
+        $pdo169 = Database::connect();   
+         $sqlitResTemp = "SELECT nota FROM progresocursoinscrito WHERE idModulo=$idModulo AND id_cursoInscrito = $id ";
+         $qiResTemp = $pdo169 -> prepare($sqlitResTemp);
+         $qiResTemp ->execute();
+         $datoResTemp =  $qiResTemp -> fetch(PDO::FETCH_ASSOC);
+         $resultadoTemp = $datoResTemp['nota'];
+        //primero se envia $correcta a la bd y luego se compara se llama con otra 
+        //y se compara con el nuevo $correcta
+
 
         
         //saber cantidad de preguntas existen
@@ -134,10 +181,7 @@
                             <a href=""> Cuestionario </a>
                         </div>
                     </div>
-                    <h1 style="color: #4F52D6; font-size: 30px; padding: 15px; text-align: center;">
-                        <strong>Cuestionario</strong>
-                    </h1>
-                    <p>Reintentos:<?php echo implode($intentos);?></p>  
+                     
                     <?php
                         if($envi==$cuenta2){
                             $pdo150 = Database::connect(); 
@@ -190,15 +234,34 @@
                                 $Avance = 0;
                             $AvanceFinal = number_format($Avance);
 
-                            
+                            $pdo162 = Database::connect(); 
+                            $sqlitUAvance = "UPDATE cursoinscrito SET avance = $AvanceFinal WHERE id_cursoInscrito = $idCI";
+                            $qiUAvance = $pdo162->prepare($sqlitUAvance);
+                            $qiUAvance->execute();
+                            Database::disconnect();
                     ?>
+
+                    <h4 style="text-align: center; ">
+                    <span style="text-align: center; color: #9383F3;">Avance de curso : </span> 
+                    <progress style="width:100%; background:none;" max="100" value="<?php echo($AvanceFinal)?>"></progress>
+                    <span style="text-align: center; color: #9383F3;"><?php echo($AvanceFinal)?>%</span>
+                        </h4> 
+
+                        <h1 style="color: #4F52D6; font-size: 30px; padding: 15px; text-align: center;">
+                        <strong>Cuestionario</strong>
+                    </h1>
+                    
+                    
+                    <p style ="text-align: center;">Reintentos: <?php echo $intentos;?></p> 
                     
                         <h6 style="text-align: center; font-weight: bolder;">Fin de cuestionario</h6>
                         <div style="text-align: center;">
                             <a href="curso.php?id=<?php echo $id;?>&idCI=<?php echo $idCI;?>"><button type="button" class="btn btn-outline-secondary">Terminar</button></a>
-                            <a href="cuestionario.php?id=<?php echo $id?>&nW=<?php echo $_GET['nW']?>&idModulo=<?php echo $idModulo;?>&up=0&idCues=<?php echo $fila['idCuestionario'];?>&cuen=1&nro=0"><button onclick="actualizarConteo()" type="submit" class="btn btn-outline-secondary">Reintentar</button></a>
+                            <a href="cuestionario.php?id=<?php echo $id?>&nW=<?php echo $_GET['nW']?>&idModulo=<?php echo $idModulo;?>&up=0&idCues=<?php echo $fila['idCuestionario'];?>&idCI=<?php echo $idCI?>&cuen=1&nro=0"><button id="actualizarConteo" type="submit" class="btn btn-outline-secondary">Reintentar</button></a>
+                            
                             
                             <?php
+                            
                                 // $pdow = Database::connect(); 
                                 // $sqli = "SELECT * FROM modulo WHERE id_curso='$id'";
                                 // $qi = $pdow->prepare($sqli);
@@ -242,7 +305,25 @@
                             ?>
 
                         </div>
-                        <h2 style="text-align: center;">Avance de curso : <?php echo($AvanceFinal)?>%</h2>
+
+                        <?php
+                                $Result=$correcta*5;
+                                if($Result>$resultadoTemp){
+                                    $pdo1691 = Database::connect(); 
+                                    $verif161=$pdo1691->prepare("UPDATE `progresocursoinscrito` SET `nota`='$Result',`intentos`='$intentos'-1 WHERE `idModulo`='$idModulo' AND `id_cursoInscrito`='$id'");
+                                    $verif161->execute();
+                                }   
+                                else{
+                                    $Resul=0;
+                                    $pdo1691 = Database::connect(); 
+                                    $verif161=$pdo1691->prepare("UPDATE `progresocursoinscrito` SET `intentos`='$intentos'-1 WHERE `idModulo`='$idModulo' AND `id_cursoInscrito`='$id'");
+                                    $verif161->execute();
+                                } 
+                                
+                                
+
+                        ?> 
+                        
                         <div class="card text-center muestras">
                             <div class="card-header">
                                 Resultado de las
@@ -283,6 +364,8 @@
                                             $puntaje = true;
                                         }
                                     }
+
+
 
                                 ?>
                                     <!-- nuevo -->
@@ -352,7 +435,7 @@
                                 method="POST" id="formcito">
                                 <?php while($fila2=$q2->fetch(PDO::FETCH_ASSOC)){ 
                                             //checked
-                                        ?> 
+                                        ?>      
                                                                            
                                 <div style="padding: 10px; border-radius: 5px; background: #E2EDF8; border-bottom: 1px solid slategray; margin-bottom: 20px;">
                                     <div class="form-check">
@@ -426,6 +509,13 @@
                 return false;
             }
         }
+
+        $('#actualizarConteo').click(function(){
+            var intentos=$($intentos-1).val();
+            var notaTemp=$($correcta).val();
+            $.post()
+        });
+
     </script>
 
 </body>

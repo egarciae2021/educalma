@@ -61,14 +61,15 @@ document.addEventListener("DOMContentLoaded", () => {
              this.value = this.value.slice(0,$('input[name=telefono]').attr('max').length); 
         })
       }else{
-        $('input[name=telefono]').attr('min','9999999999')
-        $('input[name=telefono]').attr('max','99999999999')
+        $('input[name=telefono]').attr('min','99999999999999')
+        $('input[name=telefono]').attr('max','999999999999999')
         var input=  document.getElementById('Telefono');
         input.addEventListener('input',function(){
           if (this.value.length > $('input[name=telefono]').attr('max').length) 
              this.value = this.value.slice(0,$('input[name=telefono]').attr('max').length); 
         })
       }
+      $('input[name=telefono]').removeClass("is-invalid").removeClass("is-valid");
     });
 
   $('#Tipod').on('click',function(){
@@ -106,6 +107,7 @@ document.addEventListener("DOMContentLoaded", () => {
              this.value = this.value.slice(0,$('input[name=nume_documento]').attr('max').length); 
         })
       }
+      $('input[name=nume_documento]').removeClass("is-invalid").removeClass("is-valid");
     });
   
     

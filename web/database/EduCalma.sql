@@ -81,6 +81,8 @@ CREATE TABLE IF NOT EXISTS `cursoinscrito` (
   PRIMARY KEY (`id_cursoInscrito`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 ;
 
+ALTER TABLE `cursoinscrito` ADD `avance` SMALLINT(3) NOT NULL DEFAULT '0' AFTER `nota`;
+
 INSERT INTO `cursoinscrito` (`id_cursoInscrito`, `curso_id`, `usuario_id`, `cod_curso`, `curso_obt`, `cantidad_respuestas`, `nota`) VALUES
 (1, 1, 3, 'P 001', 0, 0, 0),
 (2, 3, 14, '', 1, 0, 0),
