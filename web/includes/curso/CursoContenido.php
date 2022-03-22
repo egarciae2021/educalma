@@ -155,7 +155,7 @@
                                 <h5 class="m-0">Mira la primera clase de este curso!</h5>
                             </div>
                             <div class="col-6">
-                                <a class="hvr-radial-out button-theme" href="Cursoiniciar.php?id=<?php echo $id;?>"<?php if ($query==0 || $vere==false) {
+                                <a class="hvr-radial-out button-theme" href="Cursoiniciar.php?id=<?php echo $id;?>&idCI=<?php echo $idCI?>"<?php if ($query==0 || $vere==false) {
                                     echo 'style="pointer-events: none;"';}?> >
                                     <button type="button" class="btn container-button">
                                         COMIENZA AHORA

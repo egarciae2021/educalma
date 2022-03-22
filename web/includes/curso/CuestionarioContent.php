@@ -237,7 +237,7 @@
                             $pdo162 = Database::connect(); 
                             $sqlitUAvance = "UPDATE cursoinscrito SET avance = $AvanceFinal WHERE id_cursoInscrito = $idCI";
                             $qiUAvance = $pdo162->prepare($sqlitUAvance);
-                       //     $qiUAvance->execute();
+                            $qiUAvance->execute();
                             Database::disconnect();
                     ?>
 
