@@ -106,18 +106,23 @@
         //selectionamos el id del cuestionario del modulo 1
 
         $pdo3 = Database::connect();//intentos
-        $sql4 = "SELECT intentos FROM modulocurso WHERE id_Modulo='$idModulo' AND id_cursoInsc = '$idCI' ";
+        $sql4 = "SELECT intentos FROM modulocurso WHERE id_Modulo='$idModulo' AND id_cursoInsc = '$id' ";
          $q4= $pdo->prepare($sql);
          $q4->execute(array());
          $fila4=$q4->fetch(PDO::FETCH_ASSOC);
 
          $pdo170 = Database::connect();
-         $sqlitIntentos="SELECT intentos FROM progresocursoinscrito WHERE idModulo='$idModulo' AND id_cursoInscrito = '$idCI' ";
+         $sqlitIntentos="SELECT intentos FROM progresocursoinscrito WHERE idModulo='$idModulo' AND id_cursoInscrito = '$id' ";
          $qiIntentos=$pdo170 -> prepare($sqlitIntentos);
          $qiIntentos->execute();
          $datoIntentos= $qiIntentos-> fetch(PDO::FETCH_ASSOC);
-         $intentos=$datoIntentos['intentos'];//$fila4['intentos'];
-
+         if(empty($datoIntentos)){
+            $intentos = 3;
+            
+         }else{
+            $intentos=$datoIntentos['intentos'];//$fila4['intentos'];
+         }
+         
 
 
         $pdo = Database::connect();
@@ -140,7 +145,11 @@
          $qiResTemp = $pdo169 -> prepare($sqlitResTemp);
          $qiResTemp ->execute();
          $datoResTemp =  $qiResTemp -> fetch(PDO::FETCH_ASSOC);
-         $resultadoTemp = $datoResTemp['nota'];
+         if(empty($datoResTemp)){
+            $resultadoTemp = 0;
+         }else{
+            $resultadoTemp = $datoResTemp['nota'];
+         }
         //primero se envia $correcta a la bd y luego se compara se llama con otra 
         //y se compara con el nuevo $correcta
 
@@ -243,8 +252,8 @@
 
                     <h4 style="text-align: center; ">
                     <span style="text-align: center; color: #9383F3;">Avance de curso : </span> 
-                    <progress style="width:100%; background:none;" max="100" value="<?php echo($AvanceFinal)?>"></progress>
-                    <span style="text-align: center; color: #9383F3;"><?php echo($AvanceFinal)?>%</span>
+                    <progress style="width:100%; background:none;" max="100" value="<?php echo($Avance)?>"></progress>
+                    <span style="text-align: center; color: #9383F3;"><?php echo($Avance)?>%</span>
                         </h4> 
 
                         <h1 style="color: #4F52D6; font-size: 30px; padding: 15px; text-align: center;">
