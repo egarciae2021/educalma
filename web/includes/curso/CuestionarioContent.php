@@ -10,15 +10,15 @@
     <style>
         /* WEBKIT BROWSERS - CHROME, OPERA AND SAFARI */
        progress::-webkit-progress-bar {
-           background-color: #777;
-           border-radius: 20px;
+           background-color: #E3E8E2;
+           border-radius: 10px;
        }
  
        progress::-webkit-progress-value {
            background-image:
                -webkit-linear-gradient(45deg, transparent 40%, rgba(0, 0, 0, .1) 40%, rgba(0, 0, 0, .1) 70%, transparent 70%),
                -webkit-linear-gradient(top, rgba(255, 255, 255, .25), rgba(0, 0, 0, .25)),
-               -webkit-linear-gradient(left, #1abc9c, #3498db);
+               -webkit-linear-gradient(left, #5BF543, #5BF543);
            border-radius: 20px;
        }
  
@@ -27,14 +27,14 @@
            background-image:
                -moz-linear-gradient(45deg, transparent 33%, rgba(0, 0, 0, 0.1) 40%, rgba(0, 0, 0, 0.1) 70%, transparent 70%),
                -moz-linear-gradient(top, rgba(255, 255, 255, 0.25), rgba(0, 0, 0, 0.25)),
-               -moz-linear-gradient(left, #1abc9c, #3498db);
+               -moz-linear-gradient(left, #5BF543, #5BF543);
            border-radius: 20px;
        }
  
        /* MICROSOFT EDGE & IE */
        .custom-progress::-ms-fill {
            border-radius: 18px;
-           background: repeating-linear-gradient(45deg, #1abc9c, #1abc9c 10px,#3498db 10px, #3498db 20px);
+           background: repeating-linear-gradient(45deg, #5BF543, #5BF543 10px,#5BF543 10px, #5BF543 20px);
        }
     </style>
 
@@ -112,7 +112,7 @@
          $fila4=$q4->fetch(PDO::FETCH_ASSOC);
 
          $pdo170 = Database::connect();
-         $sqlitIntentos="SELECT intentos FROM progresocursoinscrito WHERE idModulo='$idModulo' AND id_cursoInscrito = '$id' ";
+         $sqlitIntentos="SELECT intentos FROM progresocursoinscrito WHERE idModulo='$idModulo' AND id_cursoInscrito = '$idCI' ";
          $qiIntentos=$pdo170 -> prepare($sqlitIntentos);
          $qiIntentos->execute();
          $datoIntentos= $qiIntentos-> fetch(PDO::FETCH_ASSOC);
@@ -141,7 +141,7 @@
         //nombre del modulo
          
         $pdo169 = Database::connect();   
-         $sqlitResTemp = "SELECT nota FROM progresocursoinscrito WHERE idModulo=$idModulo AND id_cursoInscrito = $id ";
+         $sqlitResTemp = "SELECT nota FROM progresocursoinscrito WHERE idModulo=$idModulo AND id_cursoInscrito = $idCI ";
          $qiResTemp = $pdo169 -> prepare($sqlitResTemp);
          $qiResTemp ->execute();
          $datoResTemp =  $qiResTemp -> fetch(PDO::FETCH_ASSOC);
@@ -193,27 +193,52 @@
                      
                     <?php
                         if($envi==$cuenta2){
-                            $pdo150 = Database::connect(); 
-                                $sqlit="SELECT COUNT(idModCurso) cantidad FROM progresocursoinscrito where id_cursoInscrito=$idCI and idModulo = $idModulo";
-                                $qi = $pdo150->prepare($sqlit);
-                                $qi->execute();
-                                $datoii = $qi->fetch(PDO::FETCH_ASSOC);
-                                $cantidad=$datoii['cantidad'];
-                                Database::disconnect();
 
+                            //Calcular Nota Final
+                            if($cuenta2 == $correcta){
+                                $notaFinal = 20;
+                            }else{
+                                $notaFi = $correcta * 20 / $cuenta2;
+                                $notaFinal = number_format($notaFi);
+                            }
+
+                            //Verificar si existe registro de haber realizado el modulo.
+                            $pdo150 = Database::connect(); 
+                            $sqlit="SELECT COUNT(idModCurso) cantidad FROM progresocursoinscrito where id_cursoInscrito=$idCI and idModulo = $idModulo";
+                            $qi = $pdo150->prepare($sqlit);
+                            $qi->execute();
+                            $datoii = $qi->fetch(PDO::FETCH_ASSOC);
+                            $cantidad=$datoii['cantidad'];
+                            Database::disconnect();
+                            $intentos = 3;
+                            //Dependiendo de la verificación se procede a insertar o actualizar valores.
                             if($cantidad<1){
                                 $pdo2 = Database::connect();
                                 try{
-                                    $verif2=$pdo2->prepare("INSERT INTO `progresocursoinscrito` (`id_cursoInscrito`, idModulo, nota, intentos)VALUES ($idCI, $idModulo, 10, 1) ");
+                                    $verif2=$pdo2->prepare("INSERT INTO `progresocursoinscrito` (`id_cursoInscrito`, idModulo, nota, intentos)VALUES ($idCI, $idModulo, $notaFinal, $intentos) ");
                                     $verif2->execute();
                                 }catch(PDOException $e){
                                     echo $e->getMessage();
                                 }
                                 Database::disconnect();
                             }else{
+
+                                $pdo1 = Database::connect();
+                                $sqlitIntNotas="SELECT intentos, nota FROM progresocursoinscrito WHERE idModulo='$idModulo' AND id_cursoInscrito = '$idCI' ";
+                                $qiIntNotas=$pdo1 -> prepare($sqlitIntNotas);
+                                $qiIntNotas->execute();
+                                $datoIntNotas= $qiIntNotas-> fetch(PDO::FETCH_ASSOC);
+                                $intentos=$datoIntNotas['intentos'];//$fila4['intentos'];
+                                $notaSFinal = $datoIntNotas['nota'];
+
+                                $intentos--;
+                                if($notaSFinal < $notaFinal){
+                                    $notaSFinal = $notaFinal;
+                                }
+
                                 $pdo2 = Database::connect();
                                 try{
-                                    $verif2=$pdo2->prepare("UPDATE `progresocursoinscrito` SET `nota` = '20', `intentos` = '2' WHERE `id_cursoInscrito`=$idCI AND `idModulo`=$idModulo");
+                                    $verif2=$pdo2->prepare("UPDATE `progresocursoinscrito` SET `nota` = $notaSFinal, `intentos` = $intentos WHERE `id_cursoInscrito`=$idCI AND `idModulo`=$idModulo");
                                     $verif2->execute();
                                 }catch(PDOException $e){
                                     echo $e->getMessage();
@@ -221,6 +246,7 @@
                                 Database::disconnect();
                             }
 
+                            //Calcular Avance de Curso y almacenarlo en BD
                             $pdo160 = Database::connect(); 
                             $sqlitProgreT = "SELECT COUNT(idModulo) Total FROM modulo WHERE id_curso = $id";
                             $qiProgreT = $pdo160->prepare($sqlitProgreT);
@@ -228,7 +254,7 @@
                             $datoProgreT = $qiProgreT -> fetch(PDO::FETCH_ASSOC);
                             $ProgreT = $datoProgreT['Total'];
                             Database::disconnect();
-
+    
                             $pdo161 = Database::connect(); 
                             $sqlitProgreP = "SELECT COUNT(idModCurso) Parcial FROM progresocursoinscrito WHERE id_cursoInscrito = $idCI";
                             $qiProgreP = $pdo161->prepare($sqlitProgreP);
@@ -236,23 +262,27 @@
                             $datoProgreP = $qiProgreP -> fetch(PDO::FETCH_ASSOC);
                             $ProgreP = $datoProgreP['Parcial'];
                             Database::disconnect();
-
+    
                             if($ProgreP>0)
                                 $Avance = $ProgreP/$ProgreT * 100;
                             else
                                 $Avance = 0;
                             $AvanceFinal = number_format($Avance);
-
-                            $pdo162 = Database::connect(); 
-                            $sqlitUAvance = "UPDATE cursoinscrito SET avance = $AvanceFinal WHERE id_cursoInscrito = $idCI";
+                            $pdo162 = Database::connect();
+                            if($AvanceFinal == 100){
+                                $sqlitUAvance = "UPDATE cursoinscrito SET avance = $AvanceFinal, nota = (SELECT AVG(nota) FROM progresocursoinscrito WHERE id_cursoInscrito = $idCI) WHERE id_cursoInscrito = $idCI";
+                            }else{
+                                $sqlitUAvance = "UPDATE cursoinscrito SET avance = $AvanceFinal, nota = 0 WHERE id_cursoInscrito = $idCI";
+                            }
+                            
                             $qiUAvance = $pdo162->prepare($sqlitUAvance);
                             $qiUAvance->execute();
-                            Database::disconnect();
+                            Database::disconnect(); 
                     ?>
 
-                    <h4 style="text-align: center; ">
+                    <h4 style="text-align: right; ">
                     <span style="text-align: center; color: #9383F3;">Avance de curso : </span> 
-                    <progress style="width:100%; background:none;" max="100" value="<?php echo($Avance)?>"></progress>
+                    <progress style="width:; background:#E3E8E2;" max="100" value="<?php echo($Avance)?>"></progress>
                     <span style="text-align: center; color: #9383F3;"><?php echo($Avance)?>%</span>
                         </h4> 
 
@@ -314,25 +344,6 @@
                             ?>
 
                         </div>
-
-                        <?php
-                                $Result=$correcta*5;
-                                if($Result>$resultadoTemp){
-                                    $pdo1691 = Database::connect(); 
-                                    $verif161=$pdo1691->prepare("UPDATE `progresocursoinscrito` SET `nota`='$Result',`intentos`='$intentos'-1 WHERE `idModulo`='$idModulo' AND `id_cursoInscrito`='$id'");
-                                    $verif161->execute();
-                                }   
-                                else{
-                                    $Resul=0;
-                                    $pdo1691 = Database::connect(); 
-                                    $verif161=$pdo1691->prepare("UPDATE `progresocursoinscrito` SET `intentos`='$intentos'-1 WHERE `idModulo`='$idModulo' AND `id_cursoInscrito`='$id'");
-                                    $verif161->execute();
-                                } 
-                                
-                                
-
-                        ?> 
-                        
                         <div class="card text-center muestras">
                             <div class="card-header">
                                 Resultado de las
@@ -342,8 +353,6 @@
                                 <h5 style="font-size: large; margin-left: 10px; color:black; background-color: #fff;">Respuestas Correctas:
                                     <?php echo $correcta;?>
                                 </h5>
-                                
-                                
                                 <?php
                                 $porciones = explode(",", $contadorP);
                                 $cont = 1;
@@ -367,15 +376,14 @@
 
                                     $puntaje = false;
                                     $puntRes = 20 / $cuenta2;
-
+                                    $conF = 0;
+                                    $conT = 0;
+                                    $conTotal = 0;
                                     while($fila24=$q24->fetch(PDO::FETCH_ASSOC)){
                                         if($fila24['idRespuesta'] == $idrespuesta && $fila24['estado']==1){
                                             $puntaje = true;
                                         }
                                     }
-
-
-
                                 ?>
                                     <!-- nuevo -->
                                     <div class="card c-rpta mx-4 mt-3">
@@ -407,20 +415,23 @@
                                                     </div>
                                                 </label>
                                             <?php }?>
+                                            
                                         </ul>
+                                        
                                     </div>
+                                            
                                     <!-- fin nuevo -->
 
                                 <?php
                                     $cont++;
                                 }
                                 ?>
-                                
                             </div>
                         </div>
                     </div>
                     
-                    <?php 
+                    <?php
+                        
                     } 
                     ?>
                     
