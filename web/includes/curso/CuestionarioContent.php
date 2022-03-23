@@ -231,19 +231,25 @@
                                 $intentos=$datoIntNotas['intentos'];//$fila4['intentos'];
                                 $notaSFinal = $datoIntNotas['nota'];
 
-                                $intentos--;
+                                
                                 if($notaSFinal < $notaFinal){
                                     $notaSFinal = $notaFinal;
                                 }
 
-                                $pdo2 = Database::connect();
-                                try{
-                                    $verif2=$pdo2->prepare("UPDATE `progresocursoinscrito` SET `nota` = $notaSFinal, `intentos` = $intentos WHERE `id_cursoInscrito`=$idCI AND `idModulo`=$idModulo");
-                                    $verif2->execute();
-                                }catch(PDOException $e){
-                                    echo $e->getMessage();
+                                if($intentos>0){
+
+                                    $intentos--;
+
+                                    $pdo2 = Database::connect();
+                                    try{
+                                        $verif2=$pdo2->prepare("UPDATE `progresocursoinscrito` SET `nota` = $notaSFinal, `intentos` = $intentos WHERE `id_cursoInscrito`=$idCI AND `idModulo`=$idModulo");
+                                        $verif2->execute();
+                                    }catch(PDOException $e){
+                                        echo $e->getMessage();
+                                    }
+                                    Database::disconnect();    
+                                
                                 }
-                                Database::disconnect();
                             }
 
                             //Calcular Avance de Curso y almacenarlo en BD
@@ -295,7 +301,28 @@
                     
                         <h6 style="text-align: center; font-weight: bolder;">Fin de cuestionario</h6>
                         <div style="text-align: center;">
-                            <a href="curso.php?id=<?php echo $id;?>&idCI=<?php echo $idCI;?>"><button type="button" class="btn btn-outline-secondary">Terminar</button></a>
+                            <a href="curso.php?id=<?php echo $id;?>&idCI=<?php echo $idCI;?>"><button id="botonTerminar" type="button" class="btn btn-outline-secondary">Terminar</button></a>
+
+                            <?php if($intentos==1){?>
+                                
+                                <script>Swal.fire("Esta es tu última opción para realizar el cuestionario.");</script>
+
+                            <?php }?>
+
+                            <?php if($intentos==0){?>
+
+                                <script>
+    
+                                    Swal.fire("Se te agotó el número de intentos.");
+
+                                    $('#botonTerminar').trigger('click');
+                                
+                                </script>
+
+                            <?php }?>
+
+
+
                             <a href="cuestionario.php?id=<?php echo $id?>&nW=<?php echo $_GET['nW']?>&idModulo=<?php echo $idModulo;?>&up=0&idCues=<?php echo $fila['idCuestionario'];?>&idCI=<?php echo $idCI?>&cuen=1&nro=0"><button id="actualizarConteo" type="submit" class="btn btn-outline-secondary">Reintentar</button></a>
                             
                             
