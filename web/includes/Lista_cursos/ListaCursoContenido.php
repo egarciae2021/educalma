@@ -84,7 +84,7 @@
                                         <p><?php echo substr($dato['descripcionCurso'], 0, 30) . "..."; ?></p>
                                     </div>
                                     <div class="container-link">
-                                        <a href="<?php echo $paginaRed ?>.php?id=<?php echo $dato['idCurso']; ?>">Ver informaci&oacute;n -></a>
+                                        <a href="<?php echo $paginaRed ?>.php?id=<?php echo $dato['idCurso']; ?>&idCI=<?php echo $dato2['id_cursoInscrito']; ?>">Ver informaci&oacute;n -></a>
                                     </div>
                                 </div>
                             </div>

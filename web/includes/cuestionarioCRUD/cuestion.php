@@ -76,12 +76,13 @@
             $nota = $dato['nota'];
 
             //SUMA LOS PUNTOS POR CADA RESPUESTA ACERTADA
+            /*
             $pdo=Database::connect();
             $sql = "UPDATE cursoinscrito SET nota=$nota+$NotaInd WHERE curso_id ='$id' and usuario_id= '$idUsuer' ";
             $q = $pdo->prepare($sql);
             $q->execute();
             Database::disconnect();
-
+            */
         }
         
         
