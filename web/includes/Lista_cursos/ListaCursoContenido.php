@@ -84,7 +84,7 @@
                                         <p><?php echo substr($dato['descripcionCurso'], 0, 30) . "..."; ?></p>
                                     </div>
                                     <div class="container-link">
-                                        <a href="<?php echo $paginaRed ?>.php?id=<?php echo $dato['idCurso']; ?>&idCI=<?php echo $dato2['id_cursoInscrito']; ?>">Ver informaci&oacute;n -></a>
+                                        <a href="<?php echo $paginaRed ?>.php?id=<?php echo $dato['idCurso']; ?><?php if(!empty($dato2)){?>&idCI=<?php echo $dato2['id_cursoInscrito']; }?>">Ver informaci&oacute;n -></a>
                                     </div>
                                 </div>
                             </div>
@@ -246,7 +246,7 @@
                             <p><?php echo substr($dato['descripcionCurso'], 0, 80) . "..."; ?></p>
                         </div>
                         <div class="container-card-link">
-                            <a href="<?php echo $paginaRed ?>.php?id=<?php echo $dato['idCurso']; ?>">
+                            <a href="<?php echo $paginaRed ?>.php?id=<?php echo $dato['idCurso']; ?><?php if(!empty($dato2)){?>&idCI=<?php echo $dato2['id_cursoInscrito']; }?>">
                                 <center><strong>Ver Informaci&oacute;n -> </strong> </center>
                             </a>
                         </div>
