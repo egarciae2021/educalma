@@ -303,29 +303,57 @@
                         <div style="text-align: center;">
                             <a href="curso.php?id=<?php echo $id;?>&idCI=<?php echo $idCI;?>"><button id="botonTerminar" type="button" class="btn btn-outline-secondary">Terminar</button></a>
 
-                            <?php if($intentos==1){?>
-                                
-                                <script>Swal.fire("Esta es tu última opción para realizar el cuestionario.");</script>
-
-                            <?php }?>
-
                             <?php if($intentos==0){?>
 
                                 <script>
     
-                                    Swal.fire("Se te agotó el número de intentos.");
+                                    Swal.fire({
 
-                                    $('#botonTerminar').trigger('click');
+                                        title: 'Se te agotó el número de intentos.',
+                                        
+                                    }).then((result) => {
+                                        
+                                        $('#botonTerminar').trigger('click');
+                                    })
                                 
                                 </script>
 
                             <?php }?>
 
+                            <?php if($intentos==1){?>
+                                
+                                <script>
 
+                                    function showAlert(){
 
-                            <a href="cuestionario.php?id=<?php echo $id?>&nW=<?php echo $_GET['nW']?>&idModulo=<?php echo $idModulo;?>&up=0&idCues=<?php echo $fila['idCuestionario'];?>&idCI=<?php echo $idCI?>&cuen=1&nro=0"><button id="actualizarConteo" type="submit" class="btn btn-outline-secondary">Reintentar</button></a>
-                            
-                            
+                                        Swal.fire({
+
+                                            title: 'Esta es tu última opción para realizar el cuestionario.',
+                                        
+                                        }).then((result) => {
+                                        
+                                            $('#actualizarConteo').trigger('click');
+                                        })
+                                    }
+
+                                </script>
+
+                            <?php }else{?>
+
+                                <script>
+
+                                    function showAlert(){
+
+                                        $('#actualizarConteo').trigger('click');
+                                    }
+                                    
+                                </script>
+
+                            <?php }?>
+
+                            <a><button id="actualizarConteo_2" type="button" onclick='showAlert()' class="btn btn-outline-secondary">Reintentar</button></a>
+                            <a href="cuestionario.php?id=<?php echo $id?>&nW=<?php echo $_GET['nW']?>&idModulo=<?php echo $idModulo;?>&up=0&idCues=<?php echo $fila['idCuestionario'];?>&idCI=<?php echo $idCI?>&cuen=1&nro=0"><button id="actualizarConteo" type="submit" class="btn btn-outline-secondary" hidden multiple>Reintentar</button></a>
+
                             <?php
                             
                                 // $pdow = Database::connect(); 
