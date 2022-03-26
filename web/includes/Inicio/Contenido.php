@@ -184,7 +184,7 @@ if (!isset($_GET['pag'])) {
               <?php
                if(isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)){
                  ?>
-              <a href="<?php echo $paginaRed ?>.php?id=<?php echo $dato['idCurso']; ?>" type="button" class="btn btn-outline-info btn_registrar">
+              <a href="<?php echo $paginaRed ?>.php?id=<?php echo $dato['idCurso']; ?><?php if(!empty($dato2)){?>&idCI=<?php echo $dato2['id_cursoInscrito']; }?>" type="button" class="btn btn-outline-info btn_registrar">
                 <i class="far fa-play-circle"></i>
                 Comienza este curso
               </a>
