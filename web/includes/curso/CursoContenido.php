@@ -229,7 +229,7 @@
                     switch($dato['nota']){
                         case $nota37:
                             $pdo21 = Database::connect();
-                            $verif21=$pdo21->prepare("UPDATE `cursoinscrito` SET `solicitudcertificado`='si' WHERE `curso_id`=$idCI AND `usuario_id`=$idUser56;");
+                            $verif21=$pdo21->prepare("UPDATE `cursoinscrito` SET `solicitudcertificado`='si' WHERE `id_cursoInscrito`=$idCI AND `usuario_id`=$idUser56;");
                             $verif21->execute();
                             Database::disconnect(); 
                             echo '<a style="cursor: pointer;" id="solcert" onclick="con_certificado()">Certificado</a>'; 
@@ -861,7 +861,7 @@ modal para ingresar mensaje
                 Swal.fire({
                     icon: 'success',
                     title: 'Nota minima alcanzada',
-                    text: 'aprobado el curso espere para descargar su certificado'
+                    text: 'Hola mama estoy jugando'
                 }) 
             }
 
