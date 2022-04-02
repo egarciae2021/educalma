@@ -861,7 +861,7 @@ modal para ingresar mensaje
                 Swal.fire({
                     icon: 'success',
                     title: 'Nota minima alcanzada',
-                    text: 'Hola mama estoy jugando'
+                    text: 'Su certificado se le enviara a su correo '
                 }) 
             }
 
