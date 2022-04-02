@@ -1423,3 +1423,17 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+-- Listar usuarios que han solicitado su certificado
+
+ALTER TABLE `cursoinscrito` 
+  ADD `solicitudcertificado` VARCHAR(5) NOT NULL AFTER `avance`;
+
+-- Vista almacenada para consultar los datos de solicitantes de certificado
+
+CREATE VIEW usuariosSolicitantes AS 
+SELECT c.usuario_id, u.nombres, u.apellido_pat, c.solicitudcertificado,u.email
+FROM cursoinscrito as c 
+inner JOIN usuarios as u 
+ON c.usuario_id=u.id_user
+WHERE c.solicitudcertificado='si'
