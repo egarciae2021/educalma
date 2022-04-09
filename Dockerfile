@@ -36,6 +36,13 @@ RUN chgrp -R www-data /var/www \
     && find /var/www -type d -exec chmod 0777 {} \; \
     && find /var/www -type f -exec chmod ug+rw {} \; \
     && usermod -a -G www-data root
+    
+RUN apt-get update
+RUN apt-get upgrade -qqy
+RUN php -v
+RUN apt-get install -qy libpng-dev
+RUN docker-php-ext-install gd
+
 RUN find /etc/apache2/sites-available -type d -exec chmod 0777 {} \;
 RUN find /etc/apache2/sites-enabled -type d -exec chmod 0777 {} \;
 RUN a2enmod rewrite

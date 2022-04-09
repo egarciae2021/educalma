@@ -30,9 +30,8 @@ session_start();
         Database::disconnect();
     echo'
                 <script>
-                    alert ("Necesita Loguearse");
-                    
-                    //window.location = "../../sidebarCursos.php";
+                    //alert ("Necesita Loguearse");
+                    window.location = "../../sidebarCursos.php";
                 </script>
             ';
 ?>
