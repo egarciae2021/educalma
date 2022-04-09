@@ -126,6 +126,7 @@
                             <?php
                                 }else{
                                     ?>
+                                    <a href="pagepay.php?id=<?php echo $dato4["idCurso"];
                                     <a onclick="msje_Redireccion()" class="btn btn-outline-dark my-3">Comprar ahora</a>
                                     <?php
                                 }
