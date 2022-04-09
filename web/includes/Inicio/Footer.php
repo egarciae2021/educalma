@@ -40,7 +40,7 @@
                   </li>
                   <li>
                     <!-- <a href="recursos1.php">Presentaci&oacute;n</a> -->
-                    <a href="recursos1.php">Comparte tus cursos</a>
+                    <a href="recursos1.php">Comparte tu curso</a>
                   </li>
                 </ul>
               </div>
