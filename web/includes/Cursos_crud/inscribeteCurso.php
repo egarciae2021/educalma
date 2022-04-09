@@ -62,7 +62,7 @@ session_start();
             echo'
                 <script>
                     alert ("Necesita Loguearse");
-                    window.location = "../../detallecurso.php?id='.$idCurso.'";
+                    window.location = "../../sidebarCursos.php";
                 </script>
             ';
         }
