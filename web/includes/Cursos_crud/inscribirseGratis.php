@@ -31,7 +31,7 @@ session_start();
     echo'
                 <script>
                     //alert ("Necesita Loguearse");
-                    window.location = "../../curso.php?id='.$idCurso.'";
+                    window.location = "../../sidebarCursos.php";
                 </script>
             ';
 ?>
