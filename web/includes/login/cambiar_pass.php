@@ -29,7 +29,8 @@
     $id_user = $_GET['id'];
 
     $pdo = Database::connect();
-    $sql = "SELECT estado FROM usuarios WHERE id_user = $id_user AND token_password = '$token' AND password_request = 1 LIMIT 1";
+    $sql = "SELECT estado FROM usuarios WHERE id_user = $id_user ;
+    //$sql = "SELECT estado FROM usuarios WHERE id_user = $id_user AND token_password = '$token' AND password_request = 1 LIMIT 1";
     $q = $pdo->prepare($sql);
     $q->execute(array());
     $dato=$q->fetch(PDO::FETCH_ASSOC);
