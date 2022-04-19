@@ -288,8 +288,8 @@
 
                     <h4 style="text-align: right; ">
                     <span style="text-align: center; color: #9383F3;">Avance de curso : </span> 
-                    <progress style="width:; background:#E3E8E2;" max="100" value="<?php echo($Avance)?>"></progress>
-                    <span style="text-align: center; color: #9383F3;"><?php echo($Avance)?>%</span>
+                    <progress style="width:; background:#E3E8E2;" max="100" value="<?php echo($AvanceFinal)?>"></progress>
+                    <span style="text-align: center; color: #9383F3;"><?php echo($AvanceFinal)?>%</span>
                         </h4> 
 
                         <h1 style="color: #4F52D6; font-size: 30px; padding: 15px; text-align: center;">
