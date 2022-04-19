@@ -211,23 +211,23 @@
                 <div class="nav-link-course">
                 <?php 
                     // PONER EN EL BOTON DEL CERTIFICADO
-                   /* if($dato['nota']>=$nota37){
+                    if($dato['nota']>=18){
                         echo '<a style="cursor: pointer;" id="solcert" onclick="con_certificado()">Certificado</a>';     
                         //'<a style="cursor: pointer;" data-filter=".seo" href="plugins/ejemplo.php?idCurso='.$id.'&idUsu='.$idUser56.'">Certificado</a>';
                         $validar=1;
                         $pdo21 = Database::connect();
-                        $verif21=$pdo21->prepare("UPDATE `cursoinscrito` SET `solicitudcertificado` = `si` WHERE curso_id = '$id' and usuario_id= '$idUser56'");
+                        $verif21=$pdo21->prepare("UPDATE `cursoinscrito` SET `solicitudcertificado`='si' WHERE `id_cursoInscrito`=$idCI AND `usuario_id`=$idUser56;");
                         $verif21->execute();
                         Database::disconnect();  
-                        break;
+                        //break;
                     }
                     else {
                         echo '<a style="cursor: pointer;" onclick="sin_certificado()">Certificado</a>';
                         $validar=0;
-                    }*/
-
+                    }
+                    /*
                     switch($dato['nota']){
-                        case $nota37:
+                        case 20:
                             $pdo21 = Database::connect();
                             $verif21=$pdo21->prepare("UPDATE `cursoinscrito` SET `solicitudcertificado`='si' WHERE `id_cursoInscrito`=$idCI AND `usuario_id`=$idUser56;");
                             $verif21->execute();
@@ -239,7 +239,7 @@
                             echo '<a style="cursor: pointer;" onclick="sin_certificado()">Certificado</a>';
                             $validar=0;
                             break;
-                        }
+                        }*/
 
                     $_SESSION['validar']=$validar;
 
