@@ -39,31 +39,12 @@
             violencia, el mañana pertenece a las personas que se preparan para hoy.
         </p>
         <div class="row">
-            <div class="col-12 col-md-8 my-2 container-video-educalma"  >
+            <div class="col-12 col-md-12 my-2 container-video-educalma"  >
                 <div class="video-youtube">
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/U7JlQWtidOo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
             </div>
-            <div class="col-12 col-md-4 d-flex flex-column justify-content-between my-2">
-                <div class="btn d-flex justify-content-between align-items-center mb-3 cards-video">
-                    <img src="./assets/images/4838540 1.png" />
-                    <span class="text-cards-video" style="flex: 1; font-family: 'Inter', sans-serif; color: #56a4d0">Comunidad</span>
-                </div>
-                <div class=" btn d-flex justify-content-between align-items-center mb-3 cards-video">
-                    <img src="./assets/images/3655563 1.png" />
-                    <span class="text-cards-video" style="flex: 1; font-family: 'Inter', sans-serif; color: #56a4d0">Aprende
-                        Educalma</span>
-                </div>
-                <div class=" btn d-flex justify-content-between align-items-center mb-3 cards-video">
-                    <img src="./assets/images/2597143 1.png" />
-                    <span class="text-cards-video" style="flex: 1; font-family: 'Inter', sans-serif; color: #56a4d0">Apoyo
-                        social</span>
-                </div>
-                <div class=" btn d-flex justify-content-between align-items-center cards-video">
-                    <img src="./assets/images/3317550 1.png" />
-                    <span class="text-cards-video" style="flex: 1; font-family: 'Inter', sans-serif; color: #56a4d0">Colaboración</span>
-                </div>
-            </div>
+            
         </div>
     </div>
 </div>
