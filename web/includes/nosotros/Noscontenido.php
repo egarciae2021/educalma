@@ -41,7 +41,7 @@
         <div class="row">
             <div class="col-12 col-md-8 my-2 container-video-educalma"  >
                 <div class="video-youtube">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/ipm0g7LRT5Y?autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/U7JlQWtidOo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
             </div>
             <div class="col-12 col-md-4 d-flex flex-column justify-content-between my-2">
