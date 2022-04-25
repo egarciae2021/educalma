@@ -37,11 +37,7 @@
             <button type="submit" class="btn btn-primary w-100">INGRESAR</button>
           </div>
           <div class="form-group my-3" style="text-align: center;">
-<<<<<<< HEAD
             <a href="nuevopass.php">¿Olvidaste tu Contraseña?</a>
-=======
-            <a href="https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&su=Educalma+-+Restablecer%20Contraseña&to=reyorcristian@gmail.com&body=Deseo%20restablecer%20mi%20contraseña."target="_blank">¿Olvidaste tu Contraseña?</a>
->>>>>>> 28c74edc8e8b17a1d577a5fd3557b9bfa8f27500
             <br>
             <p class="parr mr-2">¿Aún no tienes cuenta?</p><a href="registroUsuario.php" class="links">Registrarse</a>
           </div>
