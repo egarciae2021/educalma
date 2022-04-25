@@ -45,6 +45,9 @@ $dato1 = $q1->fetch(PDO::FETCH_ASSOC)
 ?>
 
 <body>
+    <?php
+        if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
+    ?>
     <!--========== HEADER ==========-->
     <header class="header">
         <div class="header__container">
@@ -224,7 +227,11 @@ $dato1 = $q1->fetch(PDO::FETCH_ASSOC)
         </table>
         
     </div>
-
+    <?php
+        } else {
+            header('Location:iniciosesion.php');
+        }
+    ?>
     <!--========== MAIN JS ==========-->
     <script src="././assets/js/mainsidebar.js"></script>
 </body>

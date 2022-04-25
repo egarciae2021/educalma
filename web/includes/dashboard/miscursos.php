@@ -102,7 +102,7 @@
                                     ' . substr($dato3['descripcionCurso'], 0, 90) . "..." . '
                                     </div>
                                     <div class="container-card-link px-2">
-                                    <a href="curso.php?id=' . $cursoID . '">Ver más -></a>
+                                    <a href="curso.php?id=' . $cursoID . '&idCI='.$dato2['id_cursoInscrito'].'">Ver más -></a>
                                     </div>
                                     </div>
                                     </div>
@@ -125,7 +125,7 @@
                                     ' . substr($dato3['descripcionCurso'], 0, 90) . "..." . '
                                     </div>
                                     <div class="container-card-link px-2">
-                                    <a href="curso.php?id=' . $cursoID . '">Ver más -></a>
+                                    <a href="curso.php?id=' . $cursoID .'&idCI='.$dato2['id_cursoInscrito'].'">Ver más -></a>
                                     </div>
                                     </div>
                                     </div>

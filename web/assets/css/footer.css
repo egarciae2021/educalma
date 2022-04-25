@@ -24,10 +24,10 @@ footer a:hover {
 .footer-big .footer-menu ul li a,
 .footer-big p,
 .footer-big ul li {
-  color: #898b96;
+  color: #7c83fd;
 }
 .footer-menu ul li a {
-  font-size: 15px;
+  font-size: 18px;
   line-height: 32px;
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
@@ -74,10 +74,10 @@ footer a:hover {
     max-width: 100%;
   }
 }
-
+/*#e5f3ff*/ 
 .site-footer {
     padding: 0 0 20px;
-    font-size: 15px;
+    font-size: 17px;
     line-height: 24px;
     color: #737373;
   }
@@ -90,7 +90,7 @@ footer a:hover {
     margin: 20px 0;
   }
   .site-footer a {
-    color: #737373;
+    color: #7c83fd;
   }
   .site-footer a:hover {
     color: #fff;

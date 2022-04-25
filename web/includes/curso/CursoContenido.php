@@ -13,6 +13,10 @@
         // session_start();
         require_once '././database/databaseConection.php';
         $id = $_GET['id'];
+        if(isset($_GET['idCI'])){ 
+            $idCI=$_GET['idCI'];}
+        else{
+            $idCI=0;}
 
         $pdo4 = Database::connect();
         $sql4 = "SELECT * FROM cursos WHERE idCurso='$id'";
@@ -73,7 +77,7 @@
         
         $pdo6 = Database::connect();
         $idUser56=$_SESSION['iduser'];
-        $sql6 = "SELECT cantidad_respuestas FROM cursoinscrito WHERE curso_id = '$id' and usuario_id= '$idUser56'";
+        $sql6 = "SELECT cantidad_respuestas, nota FROM cursoinscrito WHERE curso_id = '$id' and usuario_id= '$idUser56'";
         $q6 = $pdo6->prepare($sql6);
         $q6->execute(array());
         $dato=$q6->fetch(PDO::FETCH_ASSOC);
@@ -151,7 +155,7 @@
                                 <h5 class="m-0">Mira la primera clase de este curso!</h5>
                             </div>
                             <div class="col-6">
-                                <a class="hvr-radial-out button-theme" href="Cursoiniciar.php?id=<?php echo $id;?>"<?php if ($query==0 || $vere==false) {
+                                <a class="hvr-radial-out button-theme" href="Cursoiniciar.php?id=<?php echo $id;?>&idCI=<?php echo $idCI?>"<?php if ($query==0 || $vere==false) {
                                     echo 'style="pointer-events: none;"';}?> >
                                     <button type="button" class="btn container-button">
                                         COMIENZA AHORA
@@ -202,19 +206,41 @@
         <div class="container container-links-course-curso">
             <div class="d-flex justify-content-around">
                 <div class="nav-link-course">
-                    <a href="#informacion">Información</a>
+                    <a href="#informacion">Introducción</a>
                 </div>
                 <div class="nav-link-course">
                 <?php 
                     // PONER EN EL BOTON DEL CERTIFICADO
-                    if($cantidad_respuesta_acertadas>=$minimo_respuestas_para_aprobar){
-                        echo '<a data-filter=".seo" href="plugins/ejemplo.php?idCurso='.$id.'&idUsu='.$idUser56.'">Certificado</a>';
+                    if($dato['nota']>=18){
+                        echo '<a style="cursor: pointer;" id="solcert" onclick="con_certificado()">Certificado</a>';     
+                        //'<a style="cursor: pointer;" data-filter=".seo" href="plugins/ejemplo.php?idCurso='.$id.'&idUsu='.$idUser56.'">Certificado</a>';
                         $validar=1;
+                        $pdo21 = Database::connect();
+                        $verif21=$pdo21->prepare("UPDATE `cursoinscrito` SET `solicitudcertificado`='si' WHERE `id_cursoInscrito`=$idCI AND `usuario_id`=$idUser56;");
+                        $verif21->execute();
+                        Database::disconnect();  
+                        //break;
                     }
                     else {
-                        echo '<a onclick="sin_certificado()">Certificado</a>';
+                        echo '<a style="cursor: pointer;" onclick="sin_certificado()">Certificado</a>';
                         $validar=0;
                     }
+                    /*
+                    switch($dato['nota']){
+                        case 20:
+                            $pdo21 = Database::connect();
+                            $verif21=$pdo21->prepare("UPDATE `cursoinscrito` SET `solicitudcertificado`='si' WHERE `id_cursoInscrito`=$idCI AND `usuario_id`=$idUser56;");
+                            $verif21->execute();
+                            Database::disconnect(); 
+                            echo '<a style="cursor: pointer;" id="solcert" onclick="con_certificado()">Certificado</a>'; 
+                            $validar=1;
+                            break;
+                        default:
+                            echo '<a style="cursor: pointer;" onclick="sin_certificado()">Certificado</a>';
+                            $validar=0;
+                            break;
+                        }*/
+
                     $_SESSION['validar']=$validar;
 
                 ?>
@@ -235,42 +261,46 @@
     <div class="container-fluid p-0">
         <div class="container-detalle-informacion">
             <div class="container"  style="width:auto; overflow:hidden;">
-                <div class="row py-0  "style="display:flex; flex-direction:column ;margin-top:25px ;">
-                    <!-- <div class="col-4">
-                         <img src="assets/img/cursophp.png" alt=""> 
-                    </div>-->
-                    <!--div class="col-md-5 col-lg-5 order-1 "style="align-self: flex-end; margin-top:25px;" -->
-                    
-                    <!--div class="col-8"-->
-                    <div class="col-8" style="width: 100%;" id="informacion">
-                        <h5>¿Que incluye este curso?</h5>
-                        <div class="container-info-course-detalle">
-                            <h5>Tabla de contenido del curso</h5>
-                            <div class="row pt-2">
-                                <div class="col-12 col-sm-6 col-lg-6">
-                                    <div><i class="far fa-file"></i></div><?php echo $modulos; ?> Modulos
-                                </div>
-                                <div class="col-12 col-sm-6 col-lg-6">
-                                    <div><i class="fas fa-folder"></i></div><?php echo $temas; ?> Temas
-                                </div>
-                                <div class="col-12 col-sm-6 col-lg-6">
-                                    <div><i class="fas fa-infinity"></i></div><?php echo $cuestionarios; ?> Cuestionarios
-                                </div>
-                                <div class="col-12 col-sm-6 col-lg-6">
-                                    <div><i class="fas fa-mobile-alt"></i></div> Nota mínima <?php echo $nota37; ?>
-                                </div>
-                                <div class="col-12 col-sm-6 col-lg-6">
-                                    <div><i class="fas fa-list-ol"></i></div> Cant. de preguntas <?php echo $preguntas; ?>
-                                </div>
-                                <div class="col-12 col-sm-6 col-lg-6">
-                                    <div><i class="fas fa-trophy"></i></div> Certificado de Finalización
+                <div class="container"  style="width:auto; overflow:hidden;">    
+                    <div class="row py-0  "style="display:flex; flex-direction:row ;margin-top:25px ;">
+                        <!-- <div class="col-4">
+                            <img src="assets/img/cursophp.png" alt=""> 
+                        </div>-->
+                        <!--div class="col-md-5 col-lg-5 order-1 "style="align-self: flex-end; margin-top:25px;" -->
+                        <div class="col col-md-4"  id="informacion">
+                            <h5>Introducción</h5>
+                            <p><?php echo $dato4['introduccion']; ?></p>
+                        </div>
+                        <!--div class="col-8"-->
+                        <div class="col-8" style="position:relative; left: 1px;" id="informacion">
+                            <h5>¿Que incluye este curso?</h5>
+                            <div class="container-info-course-detalle">
+                                <h5>Tabla de contenido del curso</h5>
+                                <div class="row pt-2">
+                                    <div class="col-12 col-sm-6 col-lg-6">
+                                        <div><i class="far fa-file"></i></div><?php echo $modulos; ?> Modulos
+                                    </div>
+                                    <div class="col-12 col-sm-6 col-lg-6">
+                                        <div><i class="fas fa-folder"></i></div><?php echo $temas; ?> Temas
+                                    </div>
+                                    <div class="col-12 col-sm-6 col-lg-6">
+                                        <div><i class="fas fa-infinity"></i></div><?php echo $cuestionarios; ?> Cuestionarios
+                                    </div>
+                                    <div class="col-12 col-sm-6 col-lg-6">
+                                        <div><i class="fas fa-mobile-alt"></i></div> Nota mínima <?php echo $nota37; ?>
+                                    </div>
+                                    <div class="col-12 col-sm-6 col-lg-6">
+                                        <div><i class="fas fa-list-ol"></i></div> Cant. de preguntas <?php echo $preguntas; ?>
+                                    </div>
+                                    <div class="col-12 col-sm-6 col-lg-6">
+                                        <div><i class="fas fa-trophy"></i></div> Certificado de Finalización
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                
-                </div>
-
+                    
+                    </div>    
+                </div>            
                 
 
                 <div class="col-12"   style="width:760px; height:auto; float:left; position: relative; " id="certificado-temario">
@@ -281,7 +311,7 @@
                         $nW=$nW+1;
                 ?>
                     <div class="w-100">
-                        <a href="video.php?id=<?php echo $id;?>&idtema=<?php echo 1;?>&id_modulo=<?php echo $modulosC['idModulo']?>&nW=<?php echo $nW-1?>" class="btn px-4 mb-2 puntos-suspensivos"  style="background:#DCECFA; width:100%; text-align:left;">
+                        <a href="video.php?id=<?php echo $id;?>&idtema=<?php echo 1;?>&id_modulo=<?php echo $modulosC['idModulo']?>&nW=<?php echo $nW-1?>&idCI=<?php echo $idCI?>" class="btn px-4 mb-2 puntos-suspensivos"  style="background:#DCECFA; width:100%; text-align:left;">
                             <i class="fas fa-play mr-3"></i>
                             <span style="color:black; width:100%;"><?php echo $modulosC['nombreModulo'] ?></span>
                         </a>
@@ -822,9 +852,17 @@ modal para ingresar mensaje
             function sin_certificado() {
                 Swal.fire({
                     icon: 'error',
-                    title: 'Terminar el curso',
-                    text: 'Todavia no ha completado el curso!'
+                    title: 'Nota minima no alcanzada',
+                    text: 'Necesita aprobar el curso para descargar su certificado'
                 })
+            }
+
+            function con_certificado() {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Nota minima alcanzada',
+                    text: 'Su certificado se le enviara a su correo '
+                }) 
             }
 
             (function($) {

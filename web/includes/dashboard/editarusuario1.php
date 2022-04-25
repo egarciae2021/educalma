@@ -49,11 +49,13 @@
                 </div>
                 <div class="inputBox">
                     <h3>Password</h3>
-                    <input type="password" id="Password" name="pass" value="<?php echo $dato2['pass']; ?>">
+                    <input type="hidden" id="cuentaEmail1" value='<?php echo $dato2['email'] ?>' readonly>
+                    <input type="Button" class="btn" style="margin-top: 0;" onclick="actualizarPass();" value="Cambiar">
+                    <!-- <input type="password" id="Password" name="pass" value="<php echo $dato2['pass']; ?>"> -->
                 </div>
                 <div class="inputBox">
                     <h3>Tel&eacute;fono</h3>
-                    <input type="tel" id="Telefono" name="telefono" value="<?php echo $dato2['telefono']; ?>" <?php if('Perú' or 'Chile' == $dato2['pais']){echo 'maxlength="9"';}else{echo 'maxlength="10"';};?>>
+                    <input type="number" id="Telefono" name="telefono" value="<?php echo $dato2['telefono']; ?>">
                 </div>
                 <div class="inputBox">
                     <h3>Tipo de documento</h3>
@@ -61,13 +63,15 @@
                         <option value="1" <?php if(1 == $dato2['tipo_doc']){echo 'selected';};?>>DNI</option>
                         <option value="2" <?php if(2 == $dato2['tipo_doc']){echo 'selected';};?>>Pasaporte</option>
                         <option value="3" <?php if(3 == $dato2['tipo_doc']){echo 'selected';};?>>Carné extranjería</option>
+                        <?php if ($_SESSION['privilegio']!=3) { ?>
                         <option value="4" <?php if(4 == $dato2['tipo_doc']){echo 'selected';};?>>RUC</option>
+                        <?php } ?>
                     </select>
                     <!-- <input type="text"> -->
                 </div>
                 <div class="inputBox">
                     <h3>Numero de identidad</h3>
-                    <input type="text" id="Numero" name="nume_documento" value="<?php echo $dato2['nro_doc']; ?>" <?php if(1 == $dato2['tipo_doc']){echo 'maxlength="8"';}elseif(2 or 3 == $dato2['tipo_doc']){echo 'maxlength="12"';}elseif(4 == $dato2['tipo_doc']){echo 'maxlength="11"';};?>>
+                    <input type="number" id="Numero" name="nume_documento" value="<?php echo $dato2['nro_doc']; ?>">
                 </div>
                 <div class="inputBox">
                     <h3>Tipo de sexo</h3>
@@ -101,5 +105,9 @@
         </div>
     </div>
 </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="./assets/js/plugins/sweetalert2.all.min.js"></script>
 <script src="./assets/js/Validator.js"></script>
 <script src="./assets/js/sidebarEditar.js"></script>
+<script src="./assets/js/validarRecuperacion.js"></script>

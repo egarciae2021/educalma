@@ -50,23 +50,49 @@ document.addEventListener("DOMContentLoaded", () => {
     else $("#listPais").addClass("show")
   })
 
-  // Seleccinar codigo de pais
-  $("#listPais").on("click", "li", (e) => {
-    // Consulta si el eelemento que ha sido presionado es un LI
-    // Si lo es lo selecciona
-    // Sino busca al padre que sea LI
-    // Selecciona y guarda el control
-    let control = e.target.tagName === "LI" ? e.target : $(e.target).parents("li")[0];
+// Seleccionar codigo de pais
+$("#listPais").on("click", "li", (e) => {
+  // Consulta si el eelemento que ha sido presionado es un LI
+  // Si lo es lo selecciona
+  // Sino busca al padre que sea LI
+  // Selecciona y guarda el control
+  let control = e.target.tagName === "LI" ? e.target : $(e.target).parents("li")[0];
+  // Inserta el contenido de la propiedad alt de el primer hijo
+  // del control anteriormente seleccionado
+  // Y se lo asigna a #code
+  $("#code").attr("value", control.children[0].alt)
 
-    // Inserta el contenido de la propiedad alt de el primer hijo
-    // del control anteriormente seleccionado
-    // Y se lo asigna a #code
-    $("#code").attr("value", control.children[0].alt)
-    // El mismo hijo selecciona la propiedad "src" y se lo asigna a #imgPais
-    $("#imgPais").attr("src", control.children[0].src)
-    // Oculta lista de Paises
-    $("#listPais").removeClass("show")
-  })
+  $("#code").val(control.children[0].alt);
+
+  // El mismo hijo selecciona la propiedad "src" y se lo asigna a #imgPais
+  $("#imgPais").attr("src", control.children[0].src)
+  // Oculta lista de Paises
+  $("#listPais").removeClass("show")
+  // Activar atributo readOnly
+  $("#code").attr("readonly", true)
+})
+  
+// Seleccionar otro 
+$("#listPais").on("click", "ol", (e) => {
+  // Consulta si el eelemento que ha sido presionado es un LI
+  // Si lo es lo selecciona
+  // Sino busca al padre que sea LI
+  // Selecciona y guarda el control
+  let control = e.target.tagName === "OL" ? e.target : $(e.target).parents("ol")[0];
+  // Inserta el contenido de la propiedad alt de el primer hijo
+  // del control anteriormente seleccionado
+  // Y se lo asigna a #code
+  $("#code").attr("value", control.children[0].alt)
+
+  $("#code").val(control.children[0].alt);
+
+  // El mismo hijo selecciona la propiedad "src" y se lo asigna a #imgPais
+  $("#imgPais").attr("src", control.children[0].src)
+  // Oculta lista de Paises
+  $("#listPais").removeClass("show")
+  // Desactivar atributo readOnly
+  $("#code").attr("readonly", false)
+})
 
   // Para aumentar numero de suscripciones
   $("#plusNumber").click((e) => {

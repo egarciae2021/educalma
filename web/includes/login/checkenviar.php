@@ -40,7 +40,8 @@
 
         $token = generaTokenPass($user_id);
 
-        $url = 'http://'.$_SERVER["SERVER_NAME"].'/restablecer_pass.php?id='.$user_id.'&token='.$token;			
+        // $url = 'http://'.$_SERVER["SERVER_NAME"].'/restablecer_pass.php?id='.$user_id.'&token='.$token;]
+        $url = 'https://educalma.fundacioncalma.org/restablecer_pass.php?id='.$user_id.'&token='.$token;		
         $asunto = 'Recuperar password - Sistema de Usuarios';
 
         // $cuerpo = "Estimado $user_nombre: <br /><br />para restablecer la contraseña haga clic en el siguiente enlace <a href='$url'>Activar Cuenta</a>";
@@ -119,8 +120,9 @@
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
             $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
         
+        
             //Recipients
-            $mail->setFrom('pe.fundacion.calma@gmail.com', 'Fundacion calma');
+            $mail->setFrom('fundacioncalma5@gmail.com', 'Fundacion calma');
             $mail->addAddress($email);
         
             //Content

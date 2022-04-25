@@ -7,7 +7,7 @@ require_once '../../database/databaseConection.php';
     $ape_pater=$_POST['Apellido_Paterno'];
     $ape_mater=$_POST['Apellido_Materno'];
     $correo=$_POST['Correo'];
-    $pass=$_POST['pass'];
+    // $pass=$_POST['pass'];
     $telefono=$_POST['telefono'];
     $tipo_docu=$_POST['tipo_doc'];
     $num_docume=$_POST['nume_documento'];
@@ -16,19 +16,19 @@ require_once '../../database/databaseConection.php';
     $pais=$_POST['pais'];
 
 
-    $password = password_hash($pass, PASSWORD_BCRYPT);
+    // $password = password_hash($pass, PASSWORD_BCRYPT);
 
         if($_FILES['imagen']['size']>0){
             $imga=$_FILES['imagen']['tmp_name'];
             $imagen = addslashes(file_get_contents($imga));
 
             $pdo2 = Database::connect();  
-            $veri2="UPDATE usuarios SET nombres='$nombre', apellido_pat='$ape_pater', apellido_mat='$ape_mater', email='$correo', pass='$password', telefono='$telefono', tipo_doc='$tipo_docu',nro_doc='$num_docume',sexo='$sexo',fecha_nacimiento	='$fecha',pais ='$pais',mifoto = '$imagen' WHERE id_user = '$id' ";
+            $veri2="UPDATE usuarios SET nombres='$nombre', apellido_pat='$ape_pater', apellido_mat='$ape_mater', email='$correo', telefono='$telefono', tipo_doc='$tipo_docu',nro_doc='$num_docume',sexo='$sexo',fecha_nacimiento	='$fecha',pais ='$pais',mifoto = '$imagen' WHERE id_user = '$id' ";
             $q2 = $pdo2->prepare($veri2);
             $q2->execute(array());
         }else{
             $pdo2 = Database::connect();  
-            $veri2="UPDATE usuarios SET nombres='$nombre', apellido_pat='$ape_pater', apellido_mat='$ape_mater', email='$correo', pass='$password', telefono='$telefono', tipo_doc='$tipo_docu',nro_doc='$num_docume',sexo='$sexo',fecha_nacimiento	='$fecha',pais ='$pais' WHERE id_user = '$id' ";
+            $veri2="UPDATE usuarios SET nombres='$nombre', apellido_pat='$ape_pater', apellido_mat='$ape_mater', email='$correo', telefono='$telefono', tipo_doc='$tipo_docu',nro_doc='$num_docume',sexo='$sexo',fecha_nacimiento	='$fecha',pais ='$pais' WHERE id_user = '$id' ";
             $q2 = $pdo2->prepare($veri2);
             $q2->execute(array());    
 

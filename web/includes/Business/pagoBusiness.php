@@ -19,26 +19,29 @@ require_once 'database/databaseConection.php';
     <script src="assets/js/plugins/sweetalert2.all.min.js"></script>
 
     <?php
-    $id = base64_decode($_GET['id']);
-    $val = base64_decode($_GET['val']);
-    $subs = base64_decode($_GET['subs']);
-    $id_sol = base64_decode($_GET['sol']);
-    $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-    $pdo = Database::connect();
-    $sql = "SELECT * FROM empresascursos WHERE id_Empresa='$id_sol' LIMIT 1";
-    $q = $pdo->prepare($sql);
-    $q->execute(array());
-    $dato = $q->fetch(PDO::FETCH_ASSOC);
+    ob_start();
+    @session_start();
+    if(isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)){
+        $id = base64_decode($_GET['id']);
+        $val = base64_decode($_GET['val']);
+        $subs = base64_decode($_GET['subs']);
+        $id_sol = base64_decode($_GET['sol']);
+        $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+        $pdo = Database::connect();
+        $sql = "SELECT * FROM empresascursos WHERE id_Empresa='$id_sol' LIMIT 1";
+        $q = $pdo->prepare($sql);
+        $q->execute(array());
+        $dato = $q->fetch(PDO::FETCH_ASSOC);
 
 
-    // $idUserr = base64_decode($_GET['us']);
-    // $veriS = "SELECT * FROM cursoinscrito WHERE curso_id = $id AND usuario_id='$idUserr'";
-    // $qS = $pdo->prepare($veriS);
-    // $qS->execute(array());
-    // $datoS = $qS->fetch(PDO::FETCH_ASSOC);
-    // Database::disconnect();
+        // $idUserr = base64_decode($_GET['us']);
+        // $veriS = "SELECT * FROM cursoinscrito WHERE curso_id = $id AND usuario_id='$idUserr'";
+        // $qS = $pdo->prepare($veriS);
+        // $qS->execute(array());
+        // $datoS = $qS->fetch(PDO::FETCH_ASSOC);
+        // Database::disconnect();
 
-    // if (empty($dato['id_Empresa'])) {
+        // if (empty($dato['id_Empresa'])) {
     ?>
 
     <header style="background-color: #ffffff77;">
@@ -272,6 +275,10 @@ require_once 'database/databaseConection.php';
     </script>
 
     <?php
+        }
+        else{
+                    header('Location:iniciosesion.php');
+        }
     //// } else {
     ////     echo '
     ////             <script>

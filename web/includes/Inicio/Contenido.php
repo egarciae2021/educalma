@@ -184,7 +184,7 @@ if (!isset($_GET['pag'])) {
               <?php
                if(isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)){
                  ?>
-              <a href="<?php echo $paginaRed ?>.php?id=<?php echo $dato['idCurso']; ?>" type="button" class="btn btn-outline-info btn_registrar">
+              <a href="<?php echo $paginaRed ?>.php?id=<?php echo $dato['idCurso']; ?><?php if(!empty($dato2)){?>&idCI=<?php echo $dato2['id_cursoInscrito']; }?>" type="button" class="btn btn-outline-info btn_registrar">
                 <i class="far fa-play-circle"></i>
                 Comienza este curso
               </a>
@@ -316,33 +316,121 @@ if (!isset($_GET['pag'])) {
             <div class="group-control">
               <span class="title">Teléfono móvil</span>
               <div class="row-icon">
+                
                 <div class="selItem">
-                  <div class="btn-select" id="btnPais">
-                    <img id="imgPais" src="./assets/images/peru.png" alt="+51" />
-                    <input type="text" class="code" id="code" value="+51" readonly />
+                  
+                  <div class="btn-select">
+                    <div id="btnPais">
+                      <img id="imgPais" src="./assets/images/peru.png" style="cursor: pointer;"/>
+                    </div>
+                    <input type="text" class="code" id="code" value="+51" style="width:120%;" maxlength="4" onKeypress="return ((event.charCode >= 48 && event.charCode <= 57) || event.charCode == 43)" readonly />
                   </div>
-                  <ul class="sel" id="listPais">
-                    <li>
+
+                  <ul class="sel" id="listPais" style="height:300px; width:430%; overflow:auto;">
+
+                    <li style="border-bottom: 1px solid black;">
                       <img src="./assets/images/peru.png" alt="+51" />
                       <span>Perú (+51)</span>
+                    </li>
+
+                    <li>
+                      <img src="./assets/images/argentina.png" alt="+54" />
+                      <span>Argentina (+54)</span>
+                    </li>
+                    <li>
+                      <img src="./assets/images/bolivia.png" alt="+591" />
+                      <span>Bolivia (+591)</span>
+                    </li>
+                    <li>
+                      <img src="./assets/images/brasil.png" alt="+55" />
+                      <span>Brasil (+55)</span>
+                    </li>
+                    <li>
+                      <img src="./assets/images/chile.png" alt="+56" />
+                      <span>Chile (+56)</span>
+                    </li>
+                    <li>
+                      <img src="./assets/images/colombia.png" alt="+57" />
+                      <span>Colombia (+57)</span>
+                    </li>
+                    <li>
+                      <img src="./assets/images/costa-rica.png" alt="+506" />
+                      <span>Costa Rica (+506)</span>
+                    </li>
+                    <li>
+                      <img src="./assets/images/cuba.png" alt="+53" />
+                      <span>Cuba (+53)</span>
+                    </li>
+                    <li>
+                      <img src="./assets/images/ecuador.png" alt="+593" />
+                      <span>Ecuador (+593)</span>
+                    </li>
+                    <li>
+                      <img src="./assets/images/el-salvador.png" alt="+503" />
+                      <span>El Salvador (+503)</span>
                     </li>
                     <li>
                       <img src="./assets/images/estados-unidos.png" alt="+1" />
                       <span>Estados Unidos (+1)</span>
                     </li>
+                    <li>
+                      <img src="./assets/images/guatemala.png" alt="+502" />
+                      <span>Guatemala (+502)</span>
+                    </li>
+                    <li>
+                      <img src="./assets/images/honduras.png" alt="+504" />
+                      <span>Honduras (+504)</span>
+                    </li>
+                    <li>
+                      <img src="./assets/images/mexico.png" alt="+52" />
+                      <span>México (+52)</span>
+                    </li>
+                    <li>
+                      <img src="./assets/images/nicaragua.png" alt="+505" />
+                      <span>Nicaragua (+505)</span>
+                    </li>
+                    <li>
+                      <img src="./assets/images/panama.png" alt="+507" />
+                      <span>Panamá (+507)</span>
+                    </li>
+                    <li>
+                      <img src="./assets/images/paraguay.png" alt="+595" />
+                      <span>Paraguay (+595)</span>
+                    </li>
+                    <li>
+                      <img src="./assets/images/republica-dominicana.png" alt="+1" />
+                      <span>República Dominicana (+1)</span>
+                    </li>
+                    <li>
+                      <img src="./assets/images/uruguay.png" alt="+598" />
+                      <span>Uruguay (+598)</span>
+                    </li>
+                    <li>
+                      <img src="./assets/images/venezuela.png" alt="+58" />
+                      <span>Venezuela (+58)</span>
+                    </li>
+
+                    <ol style="border-top: 1px solid black; cursor: pointer;">
+                      <img id="otro" src="./assets/images/otro.png" alt="+" />
+                      <span>Otro</span>
+                    </ol>
+                    
                   </ul>
+
                 </div>
-                <input type="tel" id="txtTelMovil" />
+
+                <input type="tel" id="txtTelMovil" style="position:relative; left:7px; width:96%" maxlength="15" onKeypress="if (event.keyCode < 46 || event.keyCode > 57) event.returnValue = false;"/>
+
               </div>
             </div>
           </div>
           <div class="row">
             <div class="group-control">
               <span class="title">Tamaño de la empresa</span>
-              <div>
-
-              <input class="text-center" type="text" id="txtTamEmpresa" onKeypress="if (event.keyCode < 0 || event.keyCode > 57) event.returnValue = false;" maxlength="2"/>
-              
+              <div  class="row-three">
+              <div class="icon" id="quitNumber">-</div>
+                <input  class="text-center" type="text" min="0" value="0" name="" id="numSusc" onKeypress="if (event.keyCode < 49 || event.keyCode > 57) event.returnValue = false;"/>
+                <div class="icon" id="plusNumber">+</div>
               </div>
             </div>
             <div class="group-control">

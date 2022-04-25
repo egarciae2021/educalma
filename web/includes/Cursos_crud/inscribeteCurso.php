@@ -35,7 +35,7 @@ session_start();
             if (empty($datoS['id_cursoInscrito'])){
                 try{
                     // $veri="INSERT INTO cursoinscrito (curso_id, usuario_id, cod_curso, curso_obt, cantidad_respuestas) VALUES ($idCurso, $idUser, '', 1, 0)";
-                    $veri="INSERT INTO `cursoinscrito` (`curso_id`, `usuario_id`, cod_curso, curso_obt, cantidad_respuestas, nota) VALUES (:idCurso, :idUser, '', 1, 0, 0)";
+                    $veri="INSERT INTO `cursoinscrito` (`curso_id`, `usuario_id`, `cod_curso`, `curso_obt`, `cantidad_respuestas`, `nota`, `solicitudcertificado`) VALUES (:idCurso, :idUser, '', 1, 0, 0, '')";
                     $q = $pdo->prepare($veri);
                     $q->bindParam(":idCurso", $idCurso, PDO::PARAM_INT);
                     $q->bindParam(":idUser", $idUser, PDO::PARAM_INT);
@@ -62,7 +62,7 @@ session_start();
             echo'
                 <script>
                     alert ("Necesita Loguearse");
-                    window.location = "../../detallecurso.php?id='.$idCurso.'";
+                    window.location = "../../sidebarCursos.php";
                 </script>
             ';
         }
