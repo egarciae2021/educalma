@@ -425,6 +425,14 @@ if (!isset($_GET['pag'])) {
             </div>
           </div>
           <div class="row">
+            <!--div class="group-control">
+              <span class="title">Tamaño de la empresa</span>
+              <div  class="">
+              
+                <input  class="text-center" type="text" min="0" value="0" name="" id="txtTamEmpresa" onKeypress="if (event.keyCode < 49 || event.keyCode > 57) event.returnValue = false;"/>
+                
+              </div>
+            </div-->
             <div class="group-control">
               <span class="title">Tamaño de la empresa</span>
               <div  class="row-three">
@@ -433,6 +441,7 @@ if (!isset($_GET['pag'])) {
                 <div class="icon" id="plusNumber">+</div>
               </div>
             </div>
+
             <div class="group-control">
               <span class="title">N° de suscripciones</span>
               <div class="row-three">

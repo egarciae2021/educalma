@@ -94,6 +94,16 @@ $("#listPais").on("click", "ol", (e) => {
   $("#code").attr("readonly", false)
 })
 
+// Para aumentar numero de suscripciones
+$("#sumNumber1").click((e) => {
+  $("#txtTamEmpresa").val(parseInt($("#txtTamEmpresa").val()) + 1 || 0)
+})
+// Para reducir numero de suscripciones
+$("#restaNumber1").click((e) => {
+  var numberTam = parseInt($("#txtTamEmpresa").val()) || 0;
+  $("#txtTamEmpresa").val(numberTam > 0 ? numberTam - 1 : 0)
+})
+
   // Para aumentar numero de suscripciones
   $("#plusNumber").click((e) => {
     $("#numSusc").val(parseInt($("#numSusc").val()) + 1 || 0)
