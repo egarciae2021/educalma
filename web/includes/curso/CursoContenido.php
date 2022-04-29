@@ -323,7 +323,7 @@
                     <div class="w-100">
                         <a href="video.php?id=<?php echo $id;?>&idtema=<?php echo 1;?>&id_modulo=<?php echo $modulosC['idModulo']?>&nW=<?php echo $nW-1?>&idCI=<?php echo $idCI?>" class="btn px-4 mb-2 puntos-suspensivos"  style="background:#DCECFA; width:100%; text-align:left;">
                             <i class="fas fa-play mr-3"></i>
-                            <span style="color:black; width:100%;"><?php echo $modulosC['nombreModulo'] ?></span>
+                            <span style="color:black; width:100%;    white-space: initial;"><?php echo $modulosC['nombreModulo'] ?></span>
                         </a>
                     </div>
                     
