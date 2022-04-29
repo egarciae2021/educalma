@@ -173,7 +173,20 @@ body {
    -moz-box-shadow: 0 1px 1px rgba(0,0,0,0.15);
    box-shadow: 0 1px 1px rgba(0,0,0,0.15);
 }
-
+@media(max-width:1000px){
+   .comments-list .comment-box {
+      position: relative;
+      left: -115px;
+      width: 59%;
+   }
+}
+@media(min-width:1000px){
+   .comments-list .comment-box {
+      position: relative;
+      left: 20px;
+   
+   }
+}
 .comments-list .comment-box:before, .comments-list .comment-box:after {
    content: '';
    height: 0;
@@ -246,15 +259,6 @@ body {
    top: 1px;
 }
 
-.comment-box .comment-content {
-   background: #FFF;
-   padding: 12px;
-   font-size: 15px;
-   color: #595959;
-   -webkit-border-radius: 0 0 4px 4px;
-   -moz-border-radius: 0 0 4px 4px;
-   border-radius: 0 0 4px 4px;
-}
 
 .comment-box .comment-name.by-author, .comment-box .comment-name.by-author a {color: #03658c;}
 .comment-box .comment-name.by-author:after {
@@ -278,9 +282,7 @@ body {
        width: 480px;
    }
 
-   .comments-list .comment-box {
-       width: 390px;
-   }
+ 
 
    .reply-list .comment-box {
        width: 320px;
@@ -370,7 +372,7 @@ body {
 .contformulario .row form .inputBox input:focus , select:focus, textarea:focus{
  border-color: #8494f4  ;
  outline: 0 none;
- box-shadow: 0 1px 1px rgba(229, 103, 23, 0.075)inset, 0 0 8px rgba(55, 0, 255, 0.6);
+ 
 }
 
 .contformulario .row form .inputBox h3{
@@ -418,7 +420,43 @@ body {
    background: black;
    transition: 0.3s ease-in-out all;
  }
+ .comment-box .comment-content {
+   background: #FFF;
+   padding: 12px;
+   font-size: 15px;
+   color: #595959;
+   -webkit-border-radius: 0 0 4px 4px;
+   -moz-border-radius: 0 0 4px 4px;
+   border-radius: 0 0 4px 4px;
+   
+}/*
+@media(min-width:360px){
+   .comment-box .comment-content {
+   
+      width: 60%;
+   }*/
+ /*
+ @media(min-width:360px){
+   .comment-box .comment-content {
+      background: #FFF;
+      padding: 12px;
+      font-size: 15px;
+      color: #595959;
+      -webkit-border-radius: 0 0 4px 4px;
+      -moz-border-radius: 0 0 4px 4px;
+      border-radius: 0 0 4px 4px;
+      width: 70%;
+   }
+   
 
+ }
+ @media(min-width:1000px){
+   .comment-box .comment-content {
+     
+      width: 100%;
+   }
+
+ }*/
 @media (max-width:967px){
  .contformulario .row .image img{
    display: none;
