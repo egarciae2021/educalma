@@ -378,7 +378,7 @@
                             <?php
                             if($_SESSION['privilegio']==1 || $_SESSION['iduser']==$idProfe || $registro['iduser']==$_SESSION['iduser']){
                                 echo '
-                                    <button style="background-color:red; color:white; cursor:pointer; type="submit" class="boton4 btn btn-sm ml-3" onClick="AlertEliminacion('.$registro['idcomentario'].')">
+                                    <button style="background-color:red; color:white; cursor:pointer;" type="submit" class="boton4 btn btn-sm ml-3" onClick="AlertEliminacion('.$registro['idcomentario'].')">
                                        Borrar <i style="color:white;" class="fas fa-trash-alt"></i>
                                     </button>
                                  
