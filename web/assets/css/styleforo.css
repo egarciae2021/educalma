@@ -166,7 +166,7 @@ body {
 * Caja del Comentario
 ---------------------------*/
 .comments-list .comment-box {
-   width: 680px;
+  
    float: right;
    position: relative;
    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.15);
@@ -207,7 +207,7 @@ body {
 }
 
 .reply-list .comment-box {
-   width: 610px;
+ 
 }
 .comment-box .comment-head {
    background: #7C83FD;
@@ -285,7 +285,7 @@ body {
  
 
    .reply-list .comment-box {
-       width: 320px;
+       width: 214px;
    }
 }
 
