@@ -207,7 +207,7 @@ body {
 }
 
 .reply-list .comment-box {
- 
+   width: 610px;
 }
 .comment-box .comment-head {
    background: #7C83FD;
@@ -277,7 +277,7 @@ body {
 /** =====================
 * Responsive
 ========================*/
-@media only screen and (max-width: 766px) {
+@media only screen and (max-width: 999px) {
    .comments-container {
        width: 480px;
    }
