@@ -114,6 +114,10 @@ $("#restaNumber1").click((e) => {
     $("#numSusc").val(numberSus > 0 ? numberSus - 1 : 0)
   })
 
+
+
+
+  
   const error_catch = { "TITLE_RESP": "¡ERROR!", "TEXT_RESP": "EL SERVIDOR NO HA RETORNADO RESPUESTA.", "TYPE_RESP": "error", "REFREST_RESP": 1 };
 
   const ShowMessage = (resp) => {
