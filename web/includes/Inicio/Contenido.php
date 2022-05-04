@@ -21,7 +21,22 @@ if (!isset($_GET['pag'])) {
           ¡Impulsa tu aprendizaje junto a los mejores especialistas en EduCalma desde hoy!
         </div>
         <div class="button-panel">
-          <a href="registroUsuario.php" type="button" class="btn btn_registrar_panel">Regístrate!</a>
+
+    <?php
+    if (isset($_SESSION['Logueado']) && $_SESSION['Logueado'] === true){
+      echo "<a href='sidebarCursos.php' type='button' class='btn btn_registrar_panel'>Mis cursos</a>";
+    }
+    else{
+      echo "<a href='registroUsuario.php' type='button' class='btn btn_registrar_panel'>Regístrate!</a>";
+      
+    }
+
+    
+    ?>
+         
+
+
+
         </div>
       </div>
     </div>
