@@ -103,8 +103,9 @@
             $idCI=$_GET['idCI'];}
         else{
             $idCI=0;}
-        //selectionamos el id del cuestionario del modulo 1
 
+
+        //selectionamos el id del cuestionario del modulo 1
         $pdo3 = Database::connect();//intentos
         $sql4 = "SELECT intentos FROM modulocurso WHERE id_Modulo='$idModulo' AND id_cursoInsc = '$id' ";
          $q4= $pdo->prepare($sql);
@@ -303,13 +304,18 @@
                         <div style="text-align: center;">
                             <a href="curso.php?id=<?php echo $id;?>&idCI=<?php echo $idCI;?>"><button id="botonTerminar" type="button" class="btn btn-outline-secondary">Terminar</button></a>
 
+
+
+
+
+                            <!-- -->
                             <?php if($intentos==0){?>
 
                                 <script>
     
                                     Swal.fire({
 
-                                        title: 'Se te agotó el número de intentos.',
+                                        title: 'Tu número de intentos está agotado. Podrá seguir respondiendo el cuestionario, pero su calificación ya no será válida.',
                                         
                                     }).then((result) => {
                                         
@@ -319,8 +325,54 @@
                                 </script>
 
                             <?php }?>
+                            
 
-                            <?php if($intentos==1){?>
+
+
+
+                            <!-- -->
+                            <?php 
+                            
+                            if($intentos==1){?>
+                                
+                                <script>
+
+                                    function showAlert(){
+
+                                        
+                                        Swal.fire({
+
+                                            title: 'Le queda solo un intento. No olvide que después de haber realizado 3 intentos, podrá seguir respondiendo el cuestionario, pero su calificación ya no será válida. Preste mucha atención al video del módulo antes de volver a responder el cuestionario.',
+
+                                            confirmButtonText: "Volver a responder el cuestionario",
+
+                                            showDenyButton: true,
+                                            denyButtonColor: '#7A5CBB',
+                                            denyButtonText: `Volver a ver el video`,
+
+                                            showCancelButton: true,
+                                            cancelButtonColor: 'red',
+                                            cancelButtonText: "Cancelar",
+
+                                        }).then((result) => {
+
+                                            if (result.isConfirmed) {
+    
+                                                $('#actualizarConteo').trigger('click');
+
+                                            } else if (result.isDenied) {
+
+ 
+                                            }
+                                        })
+
+                                    }
+
+                                </script>
+
+                            <?php
+                            
+                            } else if($intentos==2){?>
                                 
                                 <script>
 
@@ -328,17 +380,40 @@
 
                                         Swal.fire({
 
-                                            title: 'Esta es tu última opción para realizar el cuestionario.',
-                                        
+                                            title: 'Te quedan 2 intentos. Preste mucha atención al video del módulo antes de volver a responder el cuestionario.',
+
+                                            confirmButtonText: "Volver a responder el cuestionario",
+
+                                            showDenyButton: true,
+                                            denyButtonColor: '#7A5CBB',
+                                            denyButtonText: `Volver a ver el video`,
+
+                                            showCancelButton: true,
+                                            cancelButtonColor: 'red',
+                                            cancelButtonText: "Cancelar",
+
                                         }).then((result) => {
-                                        
-                                            $('#actualizarConteo').trigger('click');
+
+                                            if (result.isConfirmed) {
+    
+                                                $('#actualizarConteo').trigger('click');
+
+                                            } else if (result.isDenied) {
+
+ 
+                                            }
                                         })
+
                                     }
 
                                 </script>
+                        
+                        
+                            <?php
+                        
+                        
+                            }else{?>
 
-                            <?php }else{?>
 
                                 <script>
 
@@ -351,8 +426,17 @@
 
                             <?php }?>
 
-                            <a><button id="actualizarConteo_2" type="button" onclick='showAlert()' class="btn btn-outline-secondary">Reintentar</button></a>
-                            <a href="cuestionario.php?id=<?php echo $id?>&nW=<?php echo $_GET['nW']?>&idModulo=<?php echo $idModulo;?>&up=0&idCues=<?php echo $fila['idCuestionario'];?>&idCI=<?php echo $idCI?>&cuen=1&nro=0"><button id="actualizarConteo" type="submit" class="btn btn-outline-secondary" hidden multiple>Reintentar</button></a>
+
+
+
+
+                            <a>
+                                <button id="actualizarConteo_2" type="button" onclick='showAlert()' class="btn btn-outline-secondary">Reintentar</button>
+                            </a>
+
+                            <a href="cuestionario.php?id=<?php echo $id?>&nW=<?php echo $_GET['nW']?>&idModulo=<?php echo $idModulo;?>&up=0&idCues=<?php echo $fila['idCuestionario'];?>&idCI=<?php echo $idCI?>&cuen=1&nro=0">
+                                <button id="actualizarConteo" type="submit" onclick='' class="btn btn-outline-secondary" hidden multiple>Reintentar</button>
+                            </a>
 
                             <?php
                             
@@ -572,7 +656,8 @@
                 }
             ?>
 
-    <script>
+    <script type="text/javascript">
+
         var form = document.getElementById('formcito');
         form.onsubmit = function() {
             if (form.verif_resp.value == "") {
@@ -590,6 +675,8 @@
             var notaTemp=$($correcta).val();
             $.post()
         });
+
+
 
     </script>
 
