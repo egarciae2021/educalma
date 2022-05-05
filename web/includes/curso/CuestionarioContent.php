@@ -348,7 +348,7 @@
 
                                             showDenyButton: true,
                                             denyButtonColor: '#7A5CBB',
-                                            denyButtonText: `Volver a ver el video`,
+                                            denyButtonText: '<a href="http://localhost/test-educalma/test-educalma/test-educalma/web/video.php?id=5&idtema=1&id_modulo=19&idCI=15">Ver el video de nuevo</a>',
 
                                             showCancelButton: true,
                                             cancelButtonColor: 'red',
@@ -386,7 +386,7 @@
 
                                             showDenyButton: true,
                                             denyButtonColor: '#7A5CBB',
-                                            denyButtonText: `Volver a ver el video`,
+                                            denyButtonText: '<a href="http://localhost/test-educalma/test-educalma/test-educalma/web/video.php?id=5&idtema=1&id_modulo=19&idCI=15">Ver el video de nuevo</a>',
 
                                             showCancelButton: true,
                                             cancelButtonColor: 'red',
