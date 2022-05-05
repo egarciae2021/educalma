@@ -130,6 +130,7 @@ body {
    height: 65px;
    position: relative;
    z-index: 99;
+   left: -5px;
    float: left;
    border: 3px solid #FFF;
    -webkit-border-radius: 4px;
@@ -176,7 +177,7 @@ body {
 @media(max-width:1000px){
    .comments-list .comment-box {
       position: relative;
-      left: -115px;
+      left: -121px;
       width: 59%;
    }
 }
