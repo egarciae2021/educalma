@@ -237,6 +237,28 @@
                         </div>
                     </div>
                      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                     <?php
                         if($envi==$cuenta2){
 
@@ -282,9 +304,19 @@
                                     $notaSFinal = $notaFinal;
                                 }
 
+
+                               
+
+
+
+
+
+                            
+
+
                                 if($intentos>0){
 
-                                    $intentos--;
+                                    $intentos--; ///////////////
 
                                     $pdo2 = Database::connect();
                                     try{
@@ -331,6 +363,20 @@
                             $qiUAvance->execute();
                             Database::disconnect(); 
                     ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
                     <h4 style="text-align: right; ">
                     <span style="text-align: center; color: #9383F3;">Avance de curso : </span> 
@@ -662,11 +708,16 @@
                                             $datoi = $qi->fetch(PDO::FETCH_ASSOC);
                                             $idmodu=$datoi['idModulo'];
                                             //echo $idModulo;
+
+
                                             if($envi<$cuenta2 && $ens<=$cuenta2){
-                                        ?>
-                                    <button type="submit" id="env" class="btn btn-outline-primary">Siguiente</button>
+                                    ?>
+                                                <button type="submit" id="env" class="btn btn-outline-primary">Siguiente</button>
                                     <?php
                                             }
+
+
+
                                             //     else if($idModulo==$idmodu){
                                             //         
                                             //         <button type="submit" id="env" class="btn btn-outline-primary" onclick="parent.location='curso.php?id=<?php echo $id'">Siguiente</button> -->

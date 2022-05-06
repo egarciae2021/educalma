@@ -289,7 +289,7 @@
     <?php
     if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
     ?>
-        <div class="comments-container" id="foro-curso">
+        <div class="comments-container" style="background-color: #ECECEC; border-radius: 40px" id="foro-curso">
         <h1>Foro Educalma <?php echo $_SESSION['iduser']?></h1>
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Comentar</button>
 
@@ -316,6 +316,7 @@
                     }
                 ?>
                 <div class="comment-main-level">
+                    <br>
                     <!-- Avatar -->
                    <div class="comment-avatar">
                         
@@ -412,6 +413,7 @@
                         }
                     ?>
                 <ul class="comments-list reply-list">
+                    <br>
                     <li>
                         <!-- Avatar -->
                        <div class="comment-avatar">
