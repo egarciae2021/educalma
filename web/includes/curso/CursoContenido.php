@@ -3,7 +3,17 @@
     <!-- Stylesheet -->
     <link rel="stylesheet" href="assets/css/styleforo.css">
 </head>
+<style>
+.boton4 {
+  position: relative;
+}
+.boton4:hover {
+  color: rgba(255, 255, 255, 1) !important;
+  box-shadow: 0 4px 16px rgba(49, 138, 172, 1);
+  transition: all 0.2s ease;
+}
 
+</style>
 <body>
     <?php
     if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
@@ -313,7 +323,7 @@
                     <div class="w-100">
                         <a href="video.php?id=<?php echo $id;?>&idtema=<?php echo 1;?>&id_modulo=<?php echo $modulosC['idModulo']?>&nW=<?php echo $nW-1?>&idCI=<?php echo $idCI?>" class="btn px-4 mb-2 puntos-suspensivos"  style="background:#DCECFA; width:100%; text-align:left;">
                             <i class="fas fa-play mr-3"></i>
-                            <span style="color:black; width:100%;"><?php echo $modulosC['nombreModulo'] ?></span>
+                            <span style="color:black; width:100%;    white-space: initial;"><?php echo $modulosC['nombreModulo'] ?></span>
                         </a>
                     </div>
                     
@@ -362,7 +372,7 @@ $idProfe = $dato6['id_userprofesor'];
 if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
 ?>
 <div class="comments-container" id="foro-curso">
-<h1>Foro Educalma <?php echo $_SESSION['iduser']?></h1>
+<h1>Foro Educalma<?php echo $_SESSION['iduser']?></h1>
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Comentar</button>
 
 <?php
@@ -450,9 +460,10 @@ while ($registro =  $stm->fetch(PDO::FETCH_ASSOC)) {
             <?php
             if($_SESSION['privilegio']==1 || $_SESSION['iduser']==$idProfe || $registro['iduser']==$_SESSION['iduser']){
                 echo '
-                    <button type="submit" class="btn btn-danger" onClick="AlertEliminacion('.$registro['idcomentario'].')">
-                        <i class="fas fa-trash-alt"></i>
+                    <button style="background-color:red; color:white; cursor:pointer;" type="submit" class="boton4 btn btn-sm ml-3" onClick="AlertEliminacion('.$registro['idcomentario'].')">
+                       Borrar <i style="color:white;" class="fas fa-trash-alt"></i>
                     </button>
+                    
                 ';
             }
             ?>
@@ -537,9 +548,12 @@ while ($registro =  $stm->fetch(PDO::FETCH_ASSOC)) {
                     if($_SESSION['privilegio']==1 || $_SESSION['iduser']==$idProfe || $registro2['iduser']==$_SESSION['iduser']){
                 
                     echo '
-                        <button type="submit" class="btn btn-danger" onClick="AlertElimiSubComen('.$registro2['idsubcomentario'].')">
-                            <i class="fas fa-trash-alt"></i>
+                
+                        <button style="background-color:red; color:white; cursor:pointer;" type="submit" class="boton4 btn btn-sm ml-3" onClick="AlertElimiSubComen('.$registro2['idsubcomentario'].')">
+                            Borrar<i style="color:white;" class="fas fa-trash-alt"></i>
                         </button>
+                      
+                       
                     ';
                     }
                 ?>

@@ -21,7 +21,22 @@ if (!isset($_GET['pag'])) {
           ¡Impulsa tu aprendizaje junto a los mejores especialistas en EduCalma desde hoy!
         </div>
         <div class="button-panel">
-          <a href="registroUsuario.php" type="button" class="btn btn_registrar_panel">Regístrate!</a>
+
+    <?php
+    if (isset($_SESSION['Logueado']) && $_SESSION['Logueado'] === true){
+      echo "<a href='sidebarCursos.php' type='button' class='btn btn_registrar_panel'>Mis cursos</a>";
+    }
+    else{
+      echo "<a href='registroUsuario.php' type='button' class='btn btn_registrar_panel'>Regístrate!</a>";
+      
+    }
+
+    
+    ?>
+         
+
+
+
         </div>
       </div>
     </div>
@@ -425,6 +440,14 @@ if (!isset($_GET['pag'])) {
             </div>
           </div>
           <div class="row">
+            <!--div class="group-control">
+              <span class="title">Tamaño de la empresa</span>
+              <div  class="">
+              
+                <input  class="text-center" type="text" min="0" value="0" name="" id="txtTamEmpresa" onKeypress="if (event.keyCode < 49 || event.keyCode > 57) event.returnValue = false;"/>
+                
+              </div>
+            </div-->
             <div class="group-control">
               <span class="title">Tamaño de la empresa</span>
               <div  class="row-three">
@@ -433,15 +456,18 @@ if (!isset($_GET['pag'])) {
                 <div class="icon" id="plusNumber">+</div>
               </div>
             </div>
+
             <div class="group-control">
               <span class="title">N° de suscripciones</span>
               <div class="row-three">
-                <div class="icon" id="quitNumber">-</div>
-                <input  class="text-center" type="text" min="0" value="0" name="" id="numSusc" onKeypress="if (event.keyCode < 49 || event.keyCode > 57) event.returnValue = false;"/>
-                <div class="icon" id="plusNumber">+</div>
+                <div class="icon" id="restaNumber1">-</div>
+                <input  class="text-center" type="text" min="0" value="0" name="" id="txtTamEmpresa" onKeypress="if (event.keyCode < 49 || event.keyCode > 57) event.returnValue = false;"/>
+                <div class="icon" id="sumNumber1">+</div>
               </div>
             </div>
-          </div>
+           </div>
+         
+
           <div class="group-control">
             <span>¿Qué objetivo tiene tu equipo?</span>
             <textarea rows="2" id="objEmpresa"></textarea>

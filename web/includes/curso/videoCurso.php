@@ -118,7 +118,7 @@
                         $access="true";
                     }
                 ?>
-            </h2>
+                </h2>
                 <button type="button" <?php if ($access=="d") {
                     echo "disabled";
                 }?>  class="btn btn-outline-secondary" id="btnV"
@@ -250,12 +250,28 @@
                 $dato8 = $qy->fetch(PDO::FETCH_ASSOC);
                 ?>
                 <br>
+                <!-- Aquí están los botones "Anterior" y "Siguiente" -->
                 <button type="button" class="btn btn-outline-secondary" id="btnV"<?php if($nueva<=1){ echo "disabled";}?>
-                    onclick="parent.location='video.php?id=<?php echo $id; ?>&idtema=<?php echo ($nueva-1); ?>&id_modulo=<?php echo $dato['idModulo']?>&nW=<?php echo $nW?>&idCI=<?php echo $idCI?>'"> <strong>
-                        <?php if(count($resultado1)<=0){echo "No existo";}?>< </strong> Anterior </button>
-                <button type="button" class="btn btn-outline-secondary" id="btnV2"> <img
-                        src="././assets/images/video_icono_32.png"></button>
-                <button type="button" class="btn btn-outline-secondary" id="btnV" <?php if($nueva>=count($resultado1)){?>onclick="parent.location='cuestionario.php?id=<?php echo $id;?>&nW=<?php echo $nW;?>&idModulo=<?php echo $_GET['id_modulo'];?>&up=0&idcues=<?php echo $dato8['idCuestionario'];?>&idCI=<?php echo $idCI?>&cuen=1&nro=0'">Siguiente<strong> > </strong></button> <?php }else{ ?>
+                onclick="parent.location='video.php?id=<?php echo $id; ?>&idtema=<?php echo ($nueva-1); ?>&id_modulo=<?php echo $dato['idModulo']?>&nW=<?php echo $nW?>&idCI=<?php echo $idCI?>'"> <strong>
+                <?php if(count($resultado1)<=0){echo "No existo";}?>< </strong> 
+                    Anterior 
+                </button>
+
+                <button type="button" class="btn btn-outline-secondary" id="btnV2"> 
+                    <img src="././assets/images/video_icono_32.png">
+                </button>
+
+                <!-- Botón Siguiente 2 -->
+                <button type="button" class="botonSiguiente_2 btn btn-outline-secondary" id="btnV">
+                    Siguiente<strong> > </strong>
+                </button> 
+
+                <!-- Botón Siguiente -->
+                <button type="button" class="botonSiguiente btn btn-outline-secondary" id="btnV" <?php if($nueva>=count($resultado1)){?>onclick="parent.location='cuestionario.php?id=<?php echo $id;?>&nW=<?php echo $nW;?>&idModulo=<?php echo $_GET['id_modulo'];?>&up=0&idcues=<?php echo $dato8['idCuestionario'];?>&idCI=<?php echo $idCI?>&cuen=1&nro=0'" hidden multiple>
+                    Siguiente<strong> > </strong>
+                </button> 
+                
+                <?php }else{ ?>
                     
                     onclick="parent.location='video.php?id=<?php echo $id; ?>&nW=<?php echo $_GET['nW']?>&idtema=<?php echo ($nueva+1); ?>&id_modulo=<?php echo $_GET['id_modulo']?>&idCI=<?php echo $idCI?>'">Siguiente<strong> > </strong></button>
                     
@@ -263,7 +279,42 @@
                     $si=$dato8['idCuestionario'];
                     $_SESSION['idcue']=$si;
                     //ponlo ente id y idtema  &validar=1&c_modulo=<?php echo $cont_modulo;?><!-- &c_tema=<?php //echo ($cont_tema+1);?> -->
-                    
+                
+                <!-- -->
+                            
+
+                            <script>
+
+                                $('.botonSiguiente_2').click(function(){
+
+                                    Swal.fire({
+
+                                        title: "Se validará tu conocimiento del módulo mediante un cuestionario. Tiene solo 3 intentos para realizarlo. Después de 3 intentos, podrá continuar respondiendo el cuestionario, pero su calificación ya no será válida. Preste mucha atención al video del módulo antes de responder el cuestionario.",  
+                                        
+                                        confirmButtonText: "Ir al cuestionario",
+                                        
+                                        showCancelButton: true,
+                                        cancelButtonColor: 'red',
+                                        cancelButtonText: "Cancelar",
+                                    
+                                    }).then(resultado => {
+        
+                                        if (resultado.value) {
+
+                                            $('.botonSiguiente').trigger('click');
+            
+                                        } else {
+            
+                                        }
+    
+                                    });
+                                  
+                                });
+    
+                            </script>
+ 
+
+                            
                     
             </div>
             <div class="col-md-1"></div>

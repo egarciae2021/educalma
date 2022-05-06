@@ -33,7 +33,7 @@ function AlertEliminaTodo(idtodo) {
 //eliminar los comentarios por individual
 function AlertEliminacion(id) {
     Swal.fire({
-        title: 'Estas seguro hola?',
+        title: '¿Estás seguro que quieres eliminar este comentario?',
         text: 'Eliminarás el comentario',
         icon: 'warning',
         showCancelButton: true,
@@ -64,7 +64,7 @@ function AlertEliminacion(id) {
 /*Eliminar los subComentarios*/
 function AlertElimiSubComen(idSub) {
     Swal.fire({
-        title: 'Estas seguro prueba?',
+        title: '¿Estás seguro que quieres eliminar este comentario?',
         text: 'Eliminarás este comentario por siempre',
         icon: 'warning',
         showCancelButton: true,

@@ -94,6 +94,16 @@ $("#listPais").on("click", "ol", (e) => {
   $("#code").attr("readonly", false)
 })
 
+// Para aumentar numero de suscripciones
+$("#sumNumber1").click((e) => {
+  $("#txtTamEmpresa").val(parseInt($("#txtTamEmpresa").val()) + 1 || 0)
+})
+// Para reducir numero de suscripciones
+$("#restaNumber1").click((e) => {
+  var numberTam = parseInt($("#txtTamEmpresa").val()) || 0;
+  $("#txtTamEmpresa").val(numberTam > 0 ? numberTam - 1 : 0)
+})
+
   // Para aumentar numero de suscripciones
   $("#plusNumber").click((e) => {
     $("#numSusc").val(parseInt($("#numSusc").val()) + 1 || 0)
@@ -104,6 +114,10 @@ $("#listPais").on("click", "ol", (e) => {
     $("#numSusc").val(numberSus > 0 ? numberSus - 1 : 0)
   })
 
+
+
+
+  
   const error_catch = { "TITLE_RESP": "¡ERROR!", "TEXT_RESP": "EL SERVIDOR NO HA RETORNADO RESPUESTA.", "TYPE_RESP": "error", "REFREST_RESP": 1 };
 
   const ShowMessage = (resp) => {

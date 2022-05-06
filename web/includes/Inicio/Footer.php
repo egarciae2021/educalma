@@ -1,4 +1,4 @@
-<footer class="footer--light "style=" background-color: #e7f4ff">
+<footer class="footer--light " style="background-color: #e7f4ff; position: relative; top: 170px;">
     <div class="footer-big">
       <div class="container">
         <div class="row">

@@ -4,6 +4,7 @@ $data = file_get_contents('php://input');
 $data = json_decode($data, true);  
 $cel= $data['celular'];  
 $pass=$data['nueva_clave'];
+$pass = password_hash($pass, PASSWORD_BCRYPT);
 $mysqli = new mysqli("localhost", "root", "", "educalma"); 
 $sql ="select * from usuarios where telefono = '".$cel."'";  
 
