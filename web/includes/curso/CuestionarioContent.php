@@ -175,6 +175,51 @@
             $reco++;
         }
     ?>
+
+    
+
+
+
+
+
+
+
+
+
+    <?php 
+            $pdo2 = Database::connect(); 
+            $sql2 = "SELECT * FROM modulo WHERE id_curso='$id'";
+            $q2 = $pdo2->prepare($sql2);
+            $q2->execute();
+            $dato2 = $q2->fetch(PDO::FETCH_ASSOC);
+            Database::disconnect();
+
+            $pdo3 = Database::connect(); 
+            $sql3 = "SELECT * FROM tema WHERE id_modulo='$dato2[idModulo]'";
+            $q3 = $pdo3->prepare($sql3);
+            $q3->execute();
+            $dato3 = $q3->fetch(PDO::FETCH_ASSOC);
+    ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             <br>
             <br>
 
@@ -348,7 +393,7 @@
 
                                             showDenyButton: true,
                                             denyButtonColor: '#7A5CBB',
-                                            denyButtonText: '<a href="http://localhost/test-educalma/test-educalma/test-educalma/web/video.php?id=5&idtema=1&id_modulo=19&idCI=15">Ver el video de nuevo</a>',
+                                            denyButtonText: '<a style="color: white; text-decoration: none;" href="video.php?id=<?php echo $id;?>&idtema=<?php echo 1;?>&id_modulo=<?php echo $idModulo?>&idCI=<?php echo $idCI?>">Volver a ver el video del módulo</a>',
 
                                             showCancelButton: true,
                                             cancelButtonColor: 'red',
@@ -386,7 +431,8 @@
 
                                             showDenyButton: true,
                                             denyButtonColor: '#7A5CBB',
-                                            denyButtonText: '<a href="http://localhost/test-educalma/test-educalma/test-educalma/web/video.php?id=5&idtema=1&id_modulo=19&idCI=15">Ver el video de nuevo</a>',
+                                            denyButtonText: '<a style="color: white; text-decoration: none;" href="video.php?id=<?php echo $id;?>&idtema=<?php echo 1;?>&id_modulo=<?php echo $idModulo?>&idCI=<?php echo $idCI?>">Volver a ver el video del módulo</a>',
+                                            
 
                                             showCancelButton: true,
                                             cancelButtonColor: 'red',
