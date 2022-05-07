@@ -371,9 +371,10 @@ $idProfe = $dato6['id_userprofesor'];
 <?php
 if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
 ?>
-<div class="comments-container" id="foro-curso">
+
+<div class="comments-container" style="background-color: #D9EBFF; border-radius: 40px" id="foro-curso">
 <h1>Foro Educalma<?php echo $_SESSION['iduser']?></h1>
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Comentar</button>
+<button style="position: relative; left: -1px;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Comentar</button>
 
 <?php
 if($_SESSION['privilegio']==1 || $_SESSION['privilegio']==2){
@@ -385,8 +386,83 @@ echo '
 }
 ?>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--AQUI COMIENZAN LOS COMENTARIOS Y SUBCOMENTARIOS-->
 <ul id="comments-list" class="comments-list">
+
+
+
 <li>
+
+
+
 <?php
 $autor = "";
 while ($registro =  $stm->fetch(PDO::FETCH_ASSOC)) {
@@ -397,8 +473,66 @@ while ($registro =  $stm->fetch(PDO::FETCH_ASSOC)) {
         $autor = "";
     }
 ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- COMENTARIOOOOOOOOOOOOOOOOOOOOOOOOOOOOO -->
 <div class="comment-main-level" >
-    <!-- Avatar -->
+
+<br>
+    <!-- AVATAR -->
    <div class="comment-avatar">
         
         <?php    
@@ -415,8 +549,12 @@ while ($registro =  $stm->fetch(PDO::FETCH_ASSOC)) {
         ?> 
         
     </div> 
-    <!-- Contenedor del Comentario -->
+
+    <!-- CONTENEDOR DEL COMENTARIO -->
    <div class="comment-box">
+
+
+   
         <div class="comment-head">
             <h6 class="comment-name<?php echo $autor; ?>">
                 <spam><?php echo $registro['nombreUser']; ?></spam>
@@ -471,12 +609,36 @@ while ($registro =  $stm->fetch(PDO::FETCH_ASSOC)) {
                 onclick="window.open(this.href, this.target, 'width=300,height=400')"><i style="color:white;" class="fa fa-reply"></i></a>
             <i style="color:white;" class="fa fa-heart"></i>
         </div>
+
+
+        <!-- COMENTARIO -->
         <div class="comment-content">
             <?php echo $registro['comentario']; ?>
         </div>
+
     </div>
+
 </div>
-<!-- Respuestas de los comentarios -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- RESPUESTAS DE LOS COMENTARIOS -->
   <?php
         $pdo2 = Database::connect();
         $sql2 = "SELECT * FROM sub_come_foro as s inner join usuarios as u on u.id_user= s.iduser WHERE idcomentario = '$registro[idcomentario]'";
@@ -492,9 +654,21 @@ while ($registro =  $stm->fetch(PDO::FETCH_ASSOC)) {
             $autor = "";
         }
     ?>
+
+
+
+
+
+
+
+
+
+<!-- SUBCOMENTARIOOOOOOOOOOOOOOOOOOOOOO -->
 <ul class="comments-list reply-list">
+<br>
     <li>
-        <!-- Avatar -->
+
+        <!-- AVATAR -->
        <div class="comment-avatar">
             
             <?php    
@@ -510,10 +684,14 @@ while ($registro =  $stm->fetch(PDO::FETCH_ASSOC)) {
                 }
             ?> 
         </div> 
-        <!-- Contenedor del Comentario -->
+
+        <!-- CONTENEDOR DEL SUBCOMENTARIO -->
        <div class="comment-box">
+
             <div class="comment-head">
+
                 <h6 class="comment-name<?php echo $autor; ?>"><spam><?php echo $registro2['user_men'];?></spam></h6>
+                
                 <span>
                     <?php 
                         $fecha1_2 = new DateTime($registro2['fecha_ingreso']);
@@ -544,6 +722,7 @@ while ($registro =  $stm->fetch(PDO::FETCH_ASSOC)) {
                         }
                     ?>
                 </span>
+
                 <?php
                     if($_SESSION['privilegio']==1 || $_SESSION['iduser']==$idProfe || $registro2['iduser']==$_SESSION['iduser']){
                 
@@ -560,12 +739,46 @@ while ($registro =  $stm->fetch(PDO::FETCH_ASSOC)) {
                 <i style="color:white;" class="fa fa-reply"></i>
                 <i style="color:white;" class="fa fa-heart"></i>
             </div>
+
+            <!-- SUBCOMENTARIO -->
             <div class="comment-content">
                 <?php echo $registro2['subcomentario'];?>
             </div>
+
+
         </div>
+
     </li>
+
 </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <?php 
 }
 ?>  

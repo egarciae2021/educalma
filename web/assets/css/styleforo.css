@@ -48,10 +48,7 @@ body {
    font-size: 36px;
    color: #7C83FD;
    font-weight: 400;
-   text-align: center;
    
-   position: relative;
-   left: -55px;
 }
 
 .comments-container h1 a {
@@ -62,12 +59,15 @@ body {
 .comments-list {
    margin-top: 30px;
    margin-bottom: 30px;
-   position: relative;
+ 
 }
 
 /**
 * Lineas / Detalles
 -----------------------*/
+
+
+/*LINEA LARGA*/
 .comments-list:before {
    content: '';
    width: 2px;
@@ -78,6 +78,7 @@ body {
    top: 0;
 }
 
+/*PUNTA DE LA LINEA*/
 .comments-list:after {
    content: '';
    position: absolute;
@@ -91,6 +92,15 @@ body {
    -moz-border-radius: 50%;
    border-radius: 50%;
 }
+
+
+
+
+
+
+
+
+
 
 .reply-list:before, .reply-list:after {display: none;}
 .reply-list li:before {
@@ -119,9 +129,12 @@ body {
 
 .reply-list {
    padding-left: 88px;
+   padding-right: 18px;
    clear: both;
    margin-top: 15px;
 }
+
+
 /**
 * Avatar
 ---------------------------*/
@@ -152,6 +165,98 @@ body {
    height: 50px;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*pegando*/
+.comment-main-level:before, .comment-main-level:after {
+   display: none;
+}
+
+.comment-main-level li:before {
+   content: '';
+   width: 60px;
+   height: 2px;
+   background: #c7cacb;
+   position: absolute;
+   top: 25px;
+   left: -55px;
+}
+
+.comment-main-level {
+   padding-left: 0;
+   padding-right: 70px;
+   clear: both;
+   margin-top: 15px;
+}
+
+.comment-main-level .comment-avatar {
+   width: 70px;
+   height: 70px;
+}
+
+.comment-main-level .comment-box {
+   width: 610px;
+}
+
+/** =====================
+* Responsive
+========================*/
+@media only screen and (max-width: 999px) {
+   .comments-container {
+       width: 480px;
+   }
+
+ 
+
+   .comment-main-level .comment-box {
+       width: 214px;
+   }
+
+
+   .comment-main-level {
+      padding-left: 0;
+      padding-right: 0;
+      clear: both;
+      margin-top: 15px;
+   }
+}
+
+
+
+
+
+
+
+
+
+/*
 .comment-main-level{
    margin: 0px 8px 30px;
 }
@@ -163,17 +268,33 @@ body {
    display: block;
    clear: both;
 }
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /**
 * Caja del Comentario
 ---------------------------*/
 .comments-list .comment-box {
   
-   float: right;
+   float: right; /*No funciona a comentario pero si a subcomentario*/
    position: relative;
    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.15);
    -moz-box-shadow: 0 1px 1px rgba(0,0,0,0.15);
    box-shadow: 0 1px 1px rgba(0,0,0,0.15);
 }
+
 @media(max-width:1000px){
    .comments-list .comment-box {
       position: relative;
@@ -199,6 +320,7 @@ body {
    border-color: transparent #7C83FD;
    top: 8px;
    left: -11px;
+    
 }
 
 .comments-list .comment-box:before {
@@ -218,6 +340,7 @@ body {
    -webkit-border-radius: 4px 4px 0 0;
    -moz-border-radius: 4px 4px 0 0;
    border-radius: 4px 4px 0 0;
+   
 }
 
 .comment-box .comment-head h6{
@@ -421,7 +544,26 @@ body {
    background: black;
    transition: 0.3s ease-in-out all;
  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**************************************************/
  .comment-box .comment-content {
+    
    background: #FFF;
    padding: 12px;
    font-size: 15px;
@@ -429,8 +571,28 @@ body {
    -webkit-border-radius: 0 0 4px 4px;
    -moz-border-radius: 0 0 4px 4px;
    border-radius: 0 0 4px 4px;
-   
-}/*
+
+ 
+   width: auto;
+   /* Control de la altura con base en el texto del div*/
+   height: auto;
+   word-wrap: break-word;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 @media(min-width:360px){
    .comment-box .comment-content {
    
