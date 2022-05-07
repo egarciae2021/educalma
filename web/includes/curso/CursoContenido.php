@@ -374,7 +374,7 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
 
 <div class="comments-container" style="background-color: #D9EBFF; border-radius: 40px" id="foro-curso">
 <h1>Foro Educalma<?php echo $_SESSION['iduser']?></h1>
-<button style="position: relative; left: -1px;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Comentar</button>
+<button style="" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Comentar</button>
 
 <?php
 if($_SESSION['privilegio']==1 || $_SESSION['privilegio']==2){
@@ -385,72 +385,6 @@ echo '
 ';
 }
 ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -476,62 +410,10 @@ while ($registro =  $stm->fetch(PDO::FETCH_ASSOC)) {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!-- COMENTARIOOOOOOOOOOOOOOOOOOOOOOOOOOOOO -->
 <div class="comment-main-level" >
 
-<br>
+
     <!-- AVATAR -->
    <div class="comment-avatar">
         

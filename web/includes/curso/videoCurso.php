@@ -289,7 +289,7 @@
 
                                     Swal.fire({
 
-                                        title: "Se validará tu conocimiento del módulo mediante un cuestionario. Tiene solo 3 intentos para realizarlo. Después de 3 intentos, podrá continuar respondiendo el cuestionario, pero su calificación ya no será válida. Preste mucha atención al video del módulo antes de responder el cuestionario.",  
+                                        title: "• Se validará tu conocimiento del módulo mediante un cuestionario.<br><br>• Tiene solo 3 intentos para realizarlo. <br><br> • Después de 3 intentos, podrá continuar respondiendo el cuestionario, pero su calificación ya no será válida. <br><br> • Preste mucha atención al video del módulo antes de responder el cuestionario.",  
                                         
                                         confirmButtonText: "Ir al cuestionario",
                                         

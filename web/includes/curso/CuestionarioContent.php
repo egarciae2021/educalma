@@ -406,7 +406,7 @@
     
                                     Swal.fire({
 
-                                        title: 'Tu número de intentos está agotado. Podrá seguir respondiendo el cuestionario, pero su calificación ya no será válida.',
+                                        title: '• Tu número de intentos está agotado.<br><br> • Podrá seguir respondiendo el cuestionario, pero su calificación ya no será válida.',
                                         
                                     }).then((result) => {
                                         
@@ -433,7 +433,7 @@
                                         
                                         Swal.fire({
 
-                                            title: 'Le queda solo un intento. No olvide que después de haber realizado 3 intentos, podrá seguir respondiendo el cuestionario, pero su calificación ya no será válida. Preste mucha atención al video del módulo antes de volver a responder el cuestionario.',
+                                            title: '• Le queda solo un intento.<br><br> • No olvide que después de haber realizado 3 intentos, podrá seguir respondiendo el cuestionario, pero su calificación ya no será válida.<br><br> • Preste mucha atención al video del módulo antes de volver a responder el cuestionario.',
 
                                             confirmButtonText: "Volver a responder el cuestionario",
 
@@ -471,7 +471,7 @@
 
                                         Swal.fire({
 
-                                            title: 'Te quedan 2 intentos. Preste mucha atención al video del módulo antes de volver a responder el cuestionario.',
+                                            title: '• Te quedan 2 intentos.<br><br>• Preste mucha atención al video del módulo antes de volver a responder el cuestionario.',
 
                                             confirmButtonText: "Volver a responder el cuestionario",
 
