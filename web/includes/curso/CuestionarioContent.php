@@ -406,7 +406,13 @@
     
                                     Swal.fire({
 
-                                        title: '• Tu número de intentos está agotado.<br><br> • Podrá seguir respondiendo el cuestionario, pero su calificación ya no será válida.',
+                                        icon: 'warning',
+
+                                        html:
+
+                                        '<h5 style="color: black;">• Tu número de intentos está agotado.</h5>'
+                                        +
+                                        '<h5 style="color: black;">• Podrá seguir respondiendo el cuestionario, pero su calificación ya no será válida.</h5>',
                                         
                                     }).then((result) => {
                                         
@@ -433,7 +439,15 @@
                                         
                                         Swal.fire({
 
-                                            title: '• Le queda solo un intento.<br><br> • No olvide que después de haber realizado 3 intentos, podrá seguir respondiendo el cuestionario, pero su calificación ya no será válida.<br><br> • Preste mucha atención al video del módulo antes de volver a responder el cuestionario.',
+                                            icon: 'warning',
+
+                                            html:
+
+                                            '<h5 style="color: black;">• Le queda solo un intento.</h5>'
+                                            +
+                                            '<h5 style="color: black;">• No olvide que después de haber realizado 3 intentos, podrá seguir respondiendo el cuestionario, pero su calificación ya no será válida.</h5>'
+                                            +
+                                            '<h5 style="color: black;">• Preste mucha atención al video del módulo antes de volver a responder el cuestionario.</h5>',
 
                                             confirmButtonText: "Volver a responder el cuestionario",
 
@@ -471,7 +485,13 @@
 
                                         Swal.fire({
 
-                                            title: '• Te quedan 2 intentos.<br><br>• Preste mucha atención al video del módulo antes de volver a responder el cuestionario.',
+                                            icon: 'warning',
+
+                                            html:
+
+                                            '<h5 style="color: black;">• Te quedan 2 intentos.</h5>'
+                                            +
+                                            '<h5 style="color: black;">• Preste mucha atención al video del módulo antes de volver a responder el cuestionario.</h5>',
 
                                             confirmButtonText: "Volver a responder el cuestionario",
 
