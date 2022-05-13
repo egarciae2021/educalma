@@ -707,7 +707,8 @@
                                 $valorEstado=1;
                                 if($envi==0){
                                     $valorEstado = 2;
-                                }else if($envi==$cuenta2-1){
+                                }
+                                if($envi==$cuenta2-1){
                                     $valorEstado = 3;
                                 }
                                 $pdo151 = Database::connect(); 
