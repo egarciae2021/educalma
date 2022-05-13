@@ -634,4 +634,26 @@ body {
  }
 }
 
+@media (max-width: 767px) {
 
+   .comments-container{
+     width: auto !important;
+   }
+}
+ 
+@media (max-width: 767px) {
+
+   #btnComienzaAhora {
+      width: auto;
+
+      position: relative;
+      left: -10px;
+   }  
+}   
+
+#btnComentar2 {
+
+   /*Centrar botón*/
+   display: block; 
+   margin: 0 auto;
+ }

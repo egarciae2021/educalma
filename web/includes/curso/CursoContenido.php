@@ -1,7 +1,12 @@
 <head>
-    <link href="assets/css/contenidocurso.css" rel="stylesheet" type="text/css" />
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="assets/css/styleforo.css">
+
+
+    <link rel="stylesheet" type="text/css" href="assets/css/contenidocurso.css"/>
+  
+    <link rel="stylesheet" type="text/css" href="assets/css/styleforo.css"/>
+
+
+     
 </head>
 <style>
 .boton4 {
@@ -160,19 +165,32 @@
                         <?php echo $dato4['descripcionCurso']; ?>
                     </div>
                     <div class="start-course mt-5">
-                        <div class="row container-start-course py-2 ml-1 my-3">
+
+
+                    
+                        <div class="row container-start-course py-2 ml-1 my-3" style="position: relative; left: -10px;">
+
                             <div class="col-6 pr-0">
                                 <h5 class="m-0">Mira la primera clase de este curso!</h5>
                             </div>
+
                             <div class="col-6">
+
                                 <a class="hvr-radial-out button-theme" href="Cursoiniciar.php?id=<?php echo $id;?>&idCI=<?php echo $idCI?>"<?php if ($query==0 || $vere==false) {
                                     echo 'style="pointer-events: none;"';}?> >
-                                    <button type="button" class="btn container-button">
+
+                                    <button id="btnComienzaAhora" type="button" class="btn container-button">
                                         COMIENZA AHORA
                                     </button>
+
                                 </a>
+
                             </div>
+
                         </div>
+
+
+
                     </div>
                 </div>
                 <div class="container-image-course col-12 col sm-12 col-md-6 col-lg-6 col-xl-6">
@@ -363,19 +381,57 @@ $dato6 = $stm5->fetch(PDO::FETCH_ASSOC);
 $idProfe = $dato6['id_userprofesor'];
 ?>
 
-<!-- Comentario del Foro de Educalma -->
-
-<!-- Contenedor Principal -->
-<!-- Comentar Foro para que no se muestre y quitado de simbolos < > en los inicios de cada  ?php -->
-
 <?php
 if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
 ?>
 
-<div class="comments-container" style="background-color: #D9EBFF; border-radius: 40px" id="foro-curso">
-<h1>Foro Educalma<?php echo $_SESSION['iduser']?></h1>
-<button style="" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Comentar</button>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- COMIENZOOOOOOOOOOOOOO -->
+<div class="comments-container" style="background-color: #D9EBFF; border-radius: 40px;" id="foro-curso">
+
+
+
+
+
+
+<!-- TITULO FORO EDUCALMA -->
+<h1 style="text-align: center">Foro Educalma<?php echo $_SESSION['iduser']?></h1>
+
+
+
+
+<!-- BOTON COMENTAR -->
+<button id="btnComentar2" style="width: 310px;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Comentar</button>
+
+
+
+
+
+
+
+
+<!-- xxxxxxx -->
 <?php
 if($_SESSION['privilegio']==1 || $_SESSION['privilegio']==2){
 echo '
@@ -385,18 +441,35 @@ echo '
 ';
 }
 ?>
+<!-- xxxxxxx -->
+
+
+
+
 
 
 
 <!--AQUI COMIENZAN LOS COMENTARIOS Y SUBCOMENTARIOS-->
 <ul id="comments-list" class="comments-list">
 
-
-
+<!-- lilililili -->
 <li>
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- tttttttttt -->
 <?php
 $autor = "";
 while ($registro =  $stm->fetch(PDO::FETCH_ASSOC)) {
@@ -407,11 +480,119 @@ while ($registro =  $stm->fetch(PDO::FETCH_ASSOC)) {
         $autor = "";
     }
 ?>
+<!-- tttttttttt -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 <!-- COMENTARIOOOOOOOOOOOOOOOOOOOOOOOOOOOOO -->
 <div class="comment-main-level" >
+
+
+
+
+
 
 
     <!-- AVATAR -->
@@ -431,16 +612,30 @@ while ($registro =  $stm->fetch(PDO::FETCH_ASSOC)) {
         ?> 
         
     </div> 
+    <!-- AVATAR -->
+
+
+
+
+
 
     <!-- CONTENEDOR DEL COMENTARIO -->
    <div class="comment-box">
 
-
-   
+        <!-- xxxxx -->
         <div class="comment-head">
+
+
             <h6 class="comment-name<?php echo $autor; ?>">
+
                 <spam><?php echo $registro['nombreUser']; ?></spam>
+            
             </h6>
+
+
+
+
+            <!-- yyyyyyyyyyyyyyyyyyy -->
             <span>
                 <?php
                     $fecha1 = new DateTime($registro['fecha_ingreso']);
@@ -474,9 +669,19 @@ while ($registro =  $stm->fetch(PDO::FETCH_ASSOC)) {
                     }//si no pones el else hay bug
                 ?>
             </span>
+            <!-- yyyyyyyyyyyyyyyyyyy -->
+
+
+
+
             <button type="button" id="modal" class="btn btn-light btn-sm ml-3" data-toggle="modal"
                 data-target="#respuesta<?php echo $registro['idcomentario'] ?>"
-                data-id="<?php echo '5' ?>">Responder</button>
+                data-id="<?php echo '5' ?>">Responder
+            </button>
+
+
+
+
             <?php
             if($_SESSION['privilegio']==1 || $_SESSION['iduser']==$idProfe || $registro['iduser']==$_SESSION['iduser']){
                 echo '
@@ -487,20 +692,47 @@ while ($registro =  $stm->fetch(PDO::FETCH_ASSOC)) {
                 ';
             }
             ?>
+
+
+
+
             <a class="fb-xfbml-parse-ignore" target="_blank" href="http://www.facebook.com/sharer.php?s=100&p[url]=http://educalma.fundacioncalma.org/detallecurso.php?id=<?php echo $idCurso;?>&p[title]=prueba&p[summary]=descripcion_contenido&display=page" 
-                onclick="window.open(this.href, this.target, 'width=300,height=400')"><i style="color:white;" class="fa fa-reply"></i></a>
+                onclick="window.open(this.href, this.target, 'width=300,height=400')"><i style="color:white;" class="fa fa-reply"></i>
+            </a>
+
+
+
+
             <i style="color:white;" class="fa fa-heart"></i>
+
+
+
+
         </div>
+        <!-- xxxxx -->
+
+
+
+
 
 
         <!-- COMENTARIO -->
         <div class="comment-content">
             <?php echo $registro['comentario']; ?>
         </div>
+        <!-- COMENTARIO -->
+
+
+
+
 
     </div>
+    <!-- CONTENEDOR DEL COMENTARIO -->
+
+
 
 </div>
+<!-- COMENTARIOOOOOOOOOOOOOOOOOOOOOOOOOOOOO -->
 
 
 
@@ -520,7 +752,73 @@ while ($registro =  $stm->fetch(PDO::FETCH_ASSOC)) {
 
 
 
-  <!-- RESPUESTAS DE LOS COMENTARIOS -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- ooooooooo -->
   <?php
         $pdo2 = Database::connect();
         $sql2 = "SELECT * FROM sub_come_foro as s inner join usuarios as u on u.id_user= s.iduser WHERE idcomentario = '$registro[idcomentario]'";
@@ -528,14 +826,15 @@ while ($registro =  $stm->fetch(PDO::FETCH_ASSOC)) {
         $stm2->execute(array());
 
         $autor = "";
-    while($registro2 =  $stm2->fetch(PDO::FETCH_ASSOC)){
+        while($registro2 =  $stm2->fetch(PDO::FETCH_ASSOC)){
      
-        if($registro2['iduser']==$idProfe){
-            $autor = " by-author";
-        }else{
-            $autor = "";
-        }
-    ?>
+            if($registro2['iduser']==$idProfe){
+                $autor = " by-author";
+            }else{
+                $autor = "";
+            }
+  ?>
+  <!-- ooooooooo -->
 
 
 
@@ -545,32 +844,134 @@ while ($registro =  $stm->fetch(PDO::FETCH_ASSOC)) {
 
 
 
-<!-- SUBCOMENTARIOOOOOOOOOOOOOOOOOOOOOO -->
-<ul class="comments-list reply-list">
-<br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- SUBCOMENTARIOOOOOOOOOOOOOOOOOOOOOO -->
+    <ul class="comments-list reply-list">
+          
+    <br>
+
+    <!-- iiiiiiiiii -->
     <li>
 
-        <!-- AVATAR -->
-       <div class="comment-avatar">
-            
-            <?php    
-                if($registro2['mifoto']!=null){
-            ?>
-                    <img src="data:image/*;base64,?php echo base64_encode($registro2['mifoto']);?>"
-                alt="foto_curso" style="width: 43px;height:43px;">
-            <?php
-                }else{
-            ?>
-                    <img src="./assets/images/user.png" alt="foto_curso" style="width: 43px;height:43px;">
-            <?php
-                }
-            ?> 
-        </div> 
 
-        <!-- CONTENEDOR DEL SUBCOMENTARIO -->
+
+                    <!-- AVATAR -->
+                    <div class="comment-avatar">
+            
+                      <?php    
+                          if($registro2['mifoto']!=null){
+                      ?>
+                      
+                      <img src="data:image/*;base64,?php echo base64_encode($registro2['mifoto']);?>" 
+                      alt="foto_curso" style="width: 43px;height:43px;">
+                      
+                      <?php
+                          }else{
+                      ?>
+                      
+                      <img src="./assets/images/user.png" alt="foto_curso" style="width: 43px;height:43px;">
+            
+                      <?php
+                          }
+                      ?> 
+                    </div> 
+                    <!-- AVATAR -->
+
+
+
+
+
+       <!-- CONTENEDOR DEL SUBCOMENTARIO -->
        <div class="comment-box">
 
+            <!-- oeoeoeoeoeo -->
             <div class="comment-head">
+
 
                 <h6 class="comment-name<?php echo $autor; ?>"><spam><?php echo $registro2['user_men'];?></spam></h6>
                 
@@ -618,9 +1019,13 @@ while ($registro =  $stm->fetch(PDO::FETCH_ASSOC)) {
                     ';
                     }
                 ?>
+
                 <i style="color:white;" class="fa fa-reply"></i>
+
                 <i style="color:white;" class="fa fa-heart"></i>
+
             </div>
+            <!-- oeoeoeoeoeo -->
 
             <!-- SUBCOMENTARIO -->
             <div class="comment-content">
@@ -629,20 +1034,13 @@ while ($registro =  $stm->fetch(PDO::FETCH_ASSOC)) {
 
 
         </div>
+        <!-- CONTENEDOR DEL SUBCOMENTARIO -->
 
     </li>
+    <!-- iiiiiiiiii -->
 
-</ul>
-
-
-
-
-
-
-
-
-
-
+    </ul>
+    <!-- SUBCOMENTARIOOOOOOOOOOOOOOOOOOOOOO -->
 
 
 
@@ -664,6 +1062,34 @@ while ($registro =  $stm->fetch(PDO::FETCH_ASSOC)) {
 <?php 
 }
 ?>  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!------------------------------------
         modal para ingresar respuesta
 -------------------------------------->
@@ -702,9 +1128,189 @@ while ($registro =  $stm->fetch(PDO::FETCH_ASSOC)) {
 <?php
 }
 ?>
+
+
+
+
+
 </li>
+<!-- lilililili -->
+
 </ul>
-</div>              
+<!--AQUI COMIENZAN LOS COMENTARIOS Y SUBCOMENTARIOS-->
+
+
+</div>      
+<!-- COMIENZOOOOOOOOOOOOOO -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
