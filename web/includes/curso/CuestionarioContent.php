@@ -723,7 +723,7 @@
                                     $pdo2 = Database::connect();
                                     try{
                                         $pdo152 = Database::connect();
-                                        $sqlitEstado = "UPDATE progresocursoinscrito SET estado = 2 where id_cursoInscrito=$idCI and idModulo = $idModulo";
+                                        $sqlitEstado = "UPDATE progresocursoinscrito SET estado = $valorEstado where id_cursoInscrito=$idCI and idModulo = $idModulo";
                                         $qiUEst = $pdo152->prepare($sqlitEstado);
                                         $qiUEst->execute();
                                     }catch(PDOException $e){
