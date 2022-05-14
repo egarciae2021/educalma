@@ -33,7 +33,7 @@
             background: #8886f3;
         }
         /*label*/
-  	    .form-group .error{
+        .form-group .error{
     	color: crimson;
         font-style: normal;
         font-size: 16px;
@@ -191,6 +191,7 @@
     <script src="assets/js/plugins/sweetalert2.all.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script src="assets/js/validarModulo.js"></script>
+<script src="assets/js/validarCategoria.js"></script>
     
     <?php
     }

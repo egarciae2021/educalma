@@ -116,7 +116,7 @@
 
                                 <div class="form-group col-md-6 ">
                                     <label class="form-label">Nombre del tema</label>
-                                    <input type="text" class="form-control" name="temas_agregar" id="tema-agregar" placeholder="Ingrese un nombre" aria-label="TemaAgr" aria-describedby="temaAgr-addon" required>
+                                    <input type="text" class="form-control" name="temas_agregar" id="" placeholder="Ingrese un nombre" aria-label="TemaAgr" aria-describedby="temaAgr-addon" required>
                                 </div>
 
                                 <div class="form-group col-md-6 ">
