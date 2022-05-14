@@ -13,8 +13,6 @@
 <style>
 
 
-
-
 .boton4 {
   position: relative;
 }
@@ -22,6 +20,10 @@
   color: rgba(255, 255, 255, 1) !important;
   box-shadow: 0 4px 16px rgba(49, 138, 172, 1);
   transition: all 0.2s ease;
+}
+
+body {
+    background-color: white;
 }
 
 
@@ -34,68 +36,7 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <body>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     <!-- Código PHP-->
@@ -474,19 +415,25 @@
     if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
     ?>
 
-        <div class="comments-container" style="background-color: #ECECEC; border-radius: 40px; width: 100px, auto;" id="foro-curso">
+        <div class="comments-container" style="background-color: #ECECEC; border-radius: 40px;" id="foro-curso">
 
 
         <h1 style="text-align: center">Foro Educalma <?php echo $_SESSION['iduser']?></h1>
         
-        
+
         <button id="btnComentar" style="width: 310px;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Comentar</button>
+
+        <br>
 
         <?php
             if($_SESSION['privilegio']==1 || $_SESSION['privilegio']==2){
                 echo '
                     <button type="button" class="btn btn-danger" onClick="AlertEliminaTodo('.$idCurso.')">
+
+                        Eliminar todos los comentarios
+
                         <i class="fas fa-trash-alt"></i>
+                    
                     </button>
                 ';
             }
@@ -505,7 +452,7 @@
                     }
                 ?>
                 <div class="comment-main-level">
-                    <br>
+                    
                     <!-- Avatar -->
                    <div class="comment-avatar">
                         
@@ -569,7 +516,11 @@
                             if($_SESSION['privilegio']==1 || $_SESSION['iduser']==$idProfe || $registro['iduser']==$_SESSION['iduser']){
                                 echo '
                                     <button style="background-color:red; color:white; cursor:pointer;" type="submit" class="boton4 btn btn-sm ml-3" onClick="AlertEliminacion('.$registro['idcomentario'].')">
-                                       Borrar <i style="color:white;" class="fas fa-trash-alt"></i>
+                                       
+                                        <i style="color:white;" class="fas fa-trash-alt"></i>
+
+                                        Eliminar comentario
+
                                     </button>
                                  
                                 ';
@@ -585,6 +536,7 @@
                         </div>
                     </div>
                 </div>
+                <br>
                 <!-- Respuestas de los comentarios -->
                   <?php
                         $pdo2 = Database::connect();
@@ -602,7 +554,7 @@
                         }
                     ?>
                 <ul class="comments-list reply-list">
-                    <br>
+                   
                     <li>
                         <!-- Avatar -->
                        <div class="comment-avatar">
@@ -659,7 +611,11 @@
                                 
                                     echo '
                                         <button style="background-color:red; color:white; cursor:pointer;" type="submit" class="boton4 btn btn-sm ml-3" onClick="AlertElimiSubComen('.$registro2['idsubcomentario'].')">
-                                           Borrar<i style="color:white;" class="fas fa-trash-alt"></i>
+                                           
+                                            Eliminar subcomentario
+                                        
+                                            <i style="color:white;" class="fas fa-trash-alt"></i>
+
                                         </button>
                                         
                                     ';
@@ -672,8 +628,11 @@
                                 <?php echo $registro2['subcomentario'];?>
                             </div>
                         </div>
+                        
                     </li>
                 </ul>
+
+                
                 <?php 
                 }
                 ?>  
