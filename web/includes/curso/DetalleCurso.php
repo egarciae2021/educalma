@@ -5,9 +5,14 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/styledetcurso.css">
     <link rel="stylesheet" href="assets/css/styleforo.css">
+
+    <!-- Esto hará que página se vea bien en cualquier resolución, a una escala correcta.-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <style>
+
+
 .boton4 {
   position: relative;
 }
@@ -17,10 +22,24 @@
   transition: all 0.2s ease;
 }
 
+body {
+    background-color: white;
+}
+
+
+
 </style>
+
+
+
+
+
+
 
 <body>
 
+
+    <!-- Código PHP-->
     <?php
     require_once 'database/databaseConection.php';
     $id = $_GET['id'];
@@ -89,9 +108,39 @@
 
     ?>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- pppp -->
     <div class="container-course bg-light" style="min-height: 100vh;">
+
+        <!-- zzzz -->
         <div class="bg-dark1">
+
+
+            <!-- yyyy -->
             <div class="row py-5">
+
+
+
+
+
+
+
                 <div class="col-12 col-sm-12 col-md-7 col-lg-8 col-xl-9 ">
                     <br><br><br><br>
                     <span>Cursos</span><i class="fas fa-angle-right mx-2"></i>
@@ -103,9 +152,45 @@
                     <i class="fas fa-globe ml-4 mr-2"></i><span>Español</span>
                     <i class="fas fa-closed-captioning ml-4 mr-2"></i><span>Español [automático]</span>
                 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <!-- xxxxx -->
                 <div class="col-12 col-sm-12 col-md-5 col-lg-4 col-xl-3 info-course-right pt-3">
-                    <!-- <br><br><br><br> -->
+                
+
+                    <!-- CARD///////////////////////////////// -->
                     <div class="card ">
+
+
+
+
+
+
+
+
+
+
+
+
                         <div class="content-img">
                             <?php    
                                 if($dato4['imagenDestacadaCurso']!=null){
@@ -122,6 +207,28 @@
                         </div>
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <!-- ///////////////////////////////// -->
                         <div class="card-body">
                             <h4 class="card-title font-weight-bold" style="font-size: 30px;"><?php
                                                                                                 if ($dato4['costoCurso'] != 0) {
@@ -131,10 +238,11 @@
                                                                                                 }
                                                                                                 ?></h4>
                         <?php 
+
                             if ($dato4['costoCurso'] != 0) {
                                 if(isset($_SESSION['Logueado'])){
                             ?>
-                                    <a href="pagepay.php?id=<?php echo $dato4["idCurso"]; ?>" class="btn btn-outline-dark my-3">Comprar ahora</a>
+                                <a href="pagepay.php?id=<?php echo $dato4["idCurso"]; ?>" class="btn btn-outline-dark my-3">Comprar ahora</a>
                             <?php
                                 }else{
                                     ?>
@@ -154,7 +262,13 @@
                                 }
                             }
                             ?>
+
                             <p class="font-weight-bold mb-0">Este curso incluye:</p>
+
+
+
+
+
                             <div class="my-1" style="font-size: 13px;">
 
                                 <div>
@@ -189,79 +303,90 @@
                                 </div>
 
                             </div>
+
+                        </div>
+                        <!-- ///////////////////////////////// -->
+
+                    </div>
+                    <!-- CARD///////////////////////////////// -->
+
+                </div>
+                <!-- xxxxx -->
+
+            </div>
+            <!-- yyyy -->
+
+        </div>
+        <!-- zzzz -->
+
+        <br><br><br>
+
+
+
+        <!-- mmmm -->
+        <div class="bg-light" style="height: 100%;">
+            <div class="row py-5" style="height: 100%;">
+                <div class="col-12 col-sm-12 col-md-5 col-lg-4 col-xl-3 info-course-left" style="border: 1px solid red;">
+                    <h4>Contenido del curso</h4>
+                </div>
+                <div class="col-12 col-sm-12 col-md-7 col-lg-8 col-xl-9 text-dark">
+                    <h4 class="font-weight-bold">Contenido del curso</h4>
+                    <div class="d-flex">
+                        <div class="mr-auto p-2">
+                            <span class="mr-1"><?php echo $modulos; ?></span>Módulos <i class="fas fa-circle mx-2" style="font-size: 5px;"></i>
+                            <span class="mr-1"><?php echo $temas; ?></span>Temas <i class="fas fa-circle mx-2" style="font-size: 5px;"></i>
+                            <span class="mr-1"><?php echo $cuestionarios; ?></span>Cuestionarios
+                        </div>
+                        <div class="p-2">
+                            <h6>Ampliar todas las secciones</h6>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    <br><br><br>
 
-    <div class="bg-light" style="height: 100%;">
-        <div class="row py-5" style="height: 100%;">
-            <div class="col-12 col-sm-12 col-md-5 col-lg-4 col-xl-3 info-course-left" style="border: 1px solid red;">
-                <h4>Contenido del curso</h4>
-            </div>
-            <div class="col-12 col-sm-12 col-md-7 col-lg-8 col-xl-9 text-dark">
-                <h4 class="font-weight-bold">Contenido del curso</h4>
-                <div class="d-flex">
-                    <div class="mr-auto p-2">
-                        <span class="mr-1"><?php echo $modulos; ?></span>Módulos <i class="fas fa-circle mx-2" style="font-size: 5px;"></i>
-                        <span class="mr-1"><?php echo $temas; ?></span>Temas <i class="fas fa-circle mx-2" style="font-size: 5px;"></i>
-                        <span class="mr-1"><?php echo $cuestionarios; ?></span>Cuestionarios
-                    </div>
-                    <div class="p-2">
-                        <h6>Ampliar todas las secciones</h6>
-                    </div>
-                </div>
+                    <?php
+                    $i = 0;
+                    while ($modulosC = $q6->fetch(PDO::FETCH_ASSOC)) {
+                    ?>
+                        <div id="accordion">
+                            <div class="card">
+                                <a class="card-header card-link" data-toggle="collapse" href="<?php echo '#collapseOne' . $i  ?>">
+                                    <span><i class="fas fa-sort-down mr-3"></i><?php echo $modulosC['nombreModulo'] ?></span>
+                                </a>
 
-                <?php
-                $i = 0;
-                while ($modulosC = $q6->fetch(PDO::FETCH_ASSOC)) {
-                ?>
-                    <div id="accordion">
-                        <div class="card">
-                            <a class="card-header card-link" data-toggle="collapse" href="<?php echo '#collapseOne' . $i  ?>">
-                                <span><i class="fas fa-sort-down mr-3"></i><?php echo $modulosC['nombreModulo'] ?></span>
-                            </a>
+                                <?php
 
-                            <?php
+                                $idModuloC = $modulosC['idModulo'];
 
-                            $idModuloC = $modulosC['idModulo'];
+                                //Nombre del modulo
+                                $pdo7 = Database::connect();
+                                $sql7 = "SELECT nombreTema FROM tema WHERE id_modulo='$idModuloC'";
+                                $q7 = $pdo7->prepare($sql7);
+                                $q7->execute(array());
 
-                            //Nombre del modulo
-                            $pdo7 = Database::connect();
-                            $sql7 = "SELECT nombreTema FROM tema WHERE id_modulo='$idModuloC'";
-                            $q7 = $pdo7->prepare($sql7);
-                            $q7->execute(array());
-
-                            while ($temasC = $q7->fetch(PDO::FETCH_ASSOC)) {
-                            ?>
-                                <div id="<?php echo 'collapseOne' . $i ?>" class="collapse show" data-parent="#accordion">
-                                    <div class="card-body">
-                                        <?php echo $temasC['nombreTema'] ?>
+                                while ($temasC = $q7->fetch(PDO::FETCH_ASSOC)) {
+                                ?>
+                                    <div id="<?php echo 'collapseOne' . $i ?>" class="collapse show" data-parent="#accordion">
+                                        <div class="card-body">
+                                            <?php echo $temasC['nombreTema'] ?>
+                                        </div>
                                     </div>
-                                </div>
-                            <?php
-                            }
-                            ?>
-                            <div id="<?php echo 'collapseOne' . $i  ?>" class="collapse show" data-parent="#accordion">
-                                <div class="card-body">
-                                    Cuestionario
+                                <?php
+                                }
+                                ?>
+                                <div id="<?php echo 'collapseOne' . $i  ?>" class="collapse show" data-parent="#accordion">
+                                    <div class="card-body">
+                                        Cuestionario
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                <?php
-                    $i++;
-                }
-                ?>
-
-
-
-
+                    <?php
+                        $i++;
+                    }
+                    ?>
+                </div>
             </div>
         </div>
-    </div>
+        <!-- mmmm -->
     
 
     <?php
@@ -289,15 +414,26 @@
     <?php
     if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
     ?>
-        <div class="comments-container" style="background-color: #ECECEC; border-radius: 40px" id="foro-curso">
-        <h1>Foro Educalma <?php echo $_SESSION['iduser']?></h1>
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Comentar</button>
+
+        <div class="comments-container" style="background-color: #ECECEC; border-radius: 40px;" id="foro-curso">
+
+
+        <h1 style="text-align: center">Foro Educalma <?php echo $_SESSION['iduser']?></h1>
+        
+
+        <button id="btnComentar" style="width: 310px;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Comentar</button>
+
+        <br>
 
         <?php
             if($_SESSION['privilegio']==1 || $_SESSION['privilegio']==2){
                 echo '
                     <button type="button" class="btn btn-danger" onClick="AlertEliminaTodo('.$idCurso.')">
+
+                        Eliminar todos los comentarios
+
                         <i class="fas fa-trash-alt"></i>
+                    
                     </button>
                 ';
             }
@@ -316,7 +452,7 @@
                     }
                 ?>
                 <div class="comment-main-level">
-                    <br>
+                    
                     <!-- Avatar -->
                    <div class="comment-avatar">
                         
@@ -380,7 +516,11 @@
                             if($_SESSION['privilegio']==1 || $_SESSION['iduser']==$idProfe || $registro['iduser']==$_SESSION['iduser']){
                                 echo '
                                     <button style="background-color:red; color:white; cursor:pointer;" type="submit" class="boton4 btn btn-sm ml-3" onClick="AlertEliminacion('.$registro['idcomentario'].')">
-                                       Borrar <i style="color:white;" class="fas fa-trash-alt"></i>
+                                       
+                                        <i style="color:white;" class="fas fa-trash-alt"></i>
+
+                                        Eliminar comentario
+
                                     </button>
                                  
                                 ';
@@ -396,6 +536,7 @@
                         </div>
                     </div>
                 </div>
+                <br>
                 <!-- Respuestas de los comentarios -->
                   <?php
                         $pdo2 = Database::connect();
@@ -413,7 +554,7 @@
                         }
                     ?>
                 <ul class="comments-list reply-list">
-                    <br>
+                   
                     <li>
                         <!-- Avatar -->
                        <div class="comment-avatar">
@@ -470,7 +611,11 @@
                                 
                                     echo '
                                         <button style="background-color:red; color:white; cursor:pointer;" type="submit" class="boton4 btn btn-sm ml-3" onClick="AlertElimiSubComen('.$registro2['idsubcomentario'].')">
-                                           Borrar<i style="color:white;" class="fas fa-trash-alt"></i>
+                                           
+                                            Eliminar subcomentario
+                                        
+                                            <i style="color:white;" class="fas fa-trash-alt"></i>
+
                                         </button>
                                         
                                     ';
@@ -483,8 +628,11 @@
                                 <?php echo $registro2['subcomentario'];?>
                             </div>
                         </div>
+                        
                     </li>
                 </ul>
+
+                
                 <?php 
                 }
                 ?>  
@@ -566,6 +714,12 @@
     <?php
     }else{
     ?>
+
+
+
+
+
+        <!-- rrrrrrr -->
         <div class="comments-container" id="foro-curso">
             <h1>Foro Educalma </h1>
             <button type="button" class="btn btn-primary" onclick="msje_Redireccion()">Comentar</button>
@@ -738,7 +892,15 @@
                     ?>
                 </li>
             </ul>
-        </div>              
+        </div>
+        <!-- rrrrrrr -->
+        
+
+
+
+
+
+
     <?php
     }
     ?>

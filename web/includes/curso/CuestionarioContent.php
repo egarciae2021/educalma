@@ -292,13 +292,13 @@
                             }else{
 
                                 $pdo1 = Database::connect();
-                                $sqlitIntNotas="SELECT intentos, nota FROM progresocursoinscrito WHERE idModulo='$idModulo' AND id_cursoInscrito = '$idCI' ";
+                                $sqlitIntNotas="SELECT intentos, nota, estado FROM progresocursoinscrito WHERE idModulo='$idModulo' AND id_cursoInscrito = '$idCI' ";
                                 $qiIntNotas=$pdo1 -> prepare($sqlitIntNotas);
                                 $qiIntNotas->execute();
                                 $datoIntNotas= $qiIntNotas-> fetch(PDO::FETCH_ASSOC);
                                 $intentos=$datoIntNotas['intentos'];//$fila4['intentos'];
                                 $notaSFinal = $datoIntNotas['nota'];
-
+                                $estadoMod = $datoIntNotas['estado'];
                                 
                                 if($notaSFinal < $notaFinal){
                                     $notaSFinal = $notaFinal;
@@ -315,17 +315,31 @@
 
 
                                 if($intentos>0){
-
-                                    $intentos--; ///////////////
-
-                                    $pdo2 = Database::connect();
-                                    try{
-                                        $verif2=$pdo2->prepare("UPDATE `progresocursoinscrito` SET `nota` = $notaSFinal, `intentos` = $intentos WHERE `id_cursoInscrito`=$idCI AND `idModulo`=$idModulo");
-                                        $verif2->execute();
-                                    }catch(PDOException $e){
-                                        echo $e->getMessage();
+                                    if($estadoMod == 3){
+                                        $intentos--; ///////////////
+                                        $estadoMod = 1;
+                                        $pdo2 = Database::connect();
+                                        try{
+                                            $verif2=$pdo2->prepare("UPDATE `progresocursoinscrito` SET `nota` = $notaSFinal, `intentos` = $intentos, `estado` = $estadoMod WHERE `id_cursoInscrito`=$idCI AND `idModulo`=$idModulo");
+                                            $verif2->execute();
+                                        }catch(PDOException $e){
+                                            echo $e->getMessage();
+                                        }
+                                        Database::disconnect();  
+                                    }else if($estadoMod == 2){
+                                        $estadoMod = 1;
+                                        $pdo2 = Database::connect();
+                                        try{
+                                            $verif2=$pdo2->prepare("UPDATE `progresocursoinscrito` SET `estado` = $estadoMod WHERE `id_cursoInscrito`=$idCI AND `idModulo`=$idModulo");
+                                            $verif2->execute();
+                                        }catch(PDOException $e){
+                                            echo $e->getMessage();
+                                        }
+                                        Database::disconnect(); 
                                     }
-                                    Database::disconnect();    
+                                    
+
+                                      
                                 
                                 }
                             }
@@ -406,7 +420,13 @@
     
                                     Swal.fire({
 
-                                        title: 'Tu número de intentos está agotado. Podrá seguir respondiendo el cuestionario, pero su calificación ya no será válida.',
+                                        icon: 'warning',
+
+                                        html:
+
+                                        '<h5 style="color: black;">• Tu número de intentos está agotado.</h5>'
+                                        +
+                                        '<h5 style="color: black;">• Podrá seguir respondiendo el cuestionario, pero su calificación ya no será válida.</h5>',
                                         
                                     }).then((result) => {
                                         
@@ -433,7 +453,15 @@
                                         
                                         Swal.fire({
 
-                                            title: 'Le queda solo un intento. No olvide que después de haber realizado 3 intentos, podrá seguir respondiendo el cuestionario, pero su calificación ya no será válida. Preste mucha atención al video del módulo antes de volver a responder el cuestionario.',
+                                            icon: 'warning',
+
+                                            html:
+
+                                            '<h5 style="color: black;">• Le queda solo un intento.</h5>'
+                                            +
+                                            '<h5 style="color: black;">• No olvide que después de haber realizado 3 intentos, podrá seguir respondiendo el cuestionario, pero su calificación ya no será válida.</h5>'
+                                            +
+                                            '<h5 style="color: black;">• Preste mucha atención al video del módulo antes de volver a responder el cuestionario.</h5>',
 
                                             confirmButtonText: "Volver a responder el cuestionario",
 
@@ -471,7 +499,13 @@
 
                                         Swal.fire({
 
-                                            title: 'Te quedan 2 intentos. Preste mucha atención al video del módulo antes de volver a responder el cuestionario.',
+                                            icon: 'warning',
+
+                                            html:
+
+                                            '<h5 style="color: black;">• Te quedan 2 intentos.</h5>'
+                                            +
+                                            '<h5 style="color: black;">• Preste mucha atención al video del módulo antes de volver a responder el cuestionario.</h5>',
 
                                             confirmButtonText: "Volver a responder el cuestionario",
 
@@ -669,6 +703,36 @@
                     <?php 
                     if($envi<$cuenta2){
                         if($fila1=$q1->fetchAll()){
+                            if($envi==0 || $envi==$cuenta2-1){
+                                $valorEstado=1;
+                                if($envi==0){
+                                    $valorEstado = 2;
+                                }
+                                if($envi==$cuenta2-1){
+                                    $valorEstado = 3;
+                                }
+                                $pdo151 = Database::connect(); 
+                                $sqlita="SELECT COUNT(idModCurso) cantidad FROM progresocursoinscrito where id_cursoInscrito=$idCI and idModulo = $idModulo";
+                                $qi2 = $pdo151->prepare($sqlita);
+                                $qi2->execute();
+                                $datoiii = $qi2->fetch(PDO::FETCH_ASSOC);
+                                $cantidad2=$datoiii['cantidad'];
+                                Database::disconnect();
+                                //Dependiendo de la verificación se procede actualizar el estadi
+                                //1: Revisado 2: Iniciado 3: Terminado
+                                if($cantidad2>0){
+                                    $pdo2 = Database::connect();
+                                    try{
+                                        $pdo152 = Database::connect();
+                                        $sqlitEstado = "UPDATE progresocursoinscrito SET estado = $valorEstado where id_cursoInscrito=$idCI and idModulo = $idModulo";
+                                        $qiUEst = $pdo152->prepare($sqlitEstado);
+                                        $qiUEst->execute();
+                                    }catch(PDOException $e){
+                                        echo $e->getMessage();
+                                    }
+                                    Database::disconnect();
+                                }
+                            }
                             
                             $pdo2 = Database::connect();
                             $idpregunta=$fila1[$up]['idPregunta'];

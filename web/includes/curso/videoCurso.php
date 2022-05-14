@@ -289,8 +289,18 @@
 
                                     Swal.fire({
 
-                                        title: "Se validará tu conocimiento del módulo mediante un cuestionario. Tiene solo 3 intentos para realizarlo. Después de 3 intentos, podrá continuar respondiendo el cuestionario, pero su calificación ya no será válida. Preste mucha atención al video del módulo antes de responder el cuestionario.",  
-                                        
+                                        icon: 'warning',
+
+                                        html:
+
+                                        '<h5 style="color: black;">• Se validará tu conocimiento del módulo mediante un cuestionario.</h5>'
+                                        +
+                                        '<h5 style="color: black;">• Tiene solo 3 intentos para realizarlo.</h5>'
+                                        +
+                                        '<h5 style="color: black;">• Después de 3 intentos, podrá continuar respondiendo el cuestionario, pero su calificación ya no será válida.</h5>'
+                                        +
+                                        '<h5 style="color: black;">• Preste mucha atención al video del módulo antes de responder el cuestionario.</h2>',
+             
                                         confirmButtonText: "Ir al cuestionario",
                                         
                                         showCancelButton: true,
@@ -324,7 +334,7 @@
 
 <div class="containervid">
 
-    <div class="contvid" style="width: 500px; height: 270px; padding: 10px;">
+    <div class="contvid" style="width: 500px, auto; height: 270px; padding: 10px;">
         <?php 
               $url=$dato2['link_video'];
               function getYoutubeEmbedUrl($url){

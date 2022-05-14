@@ -1,19 +1,33 @@
 <head>
-    <link href="assets/css/contenidocurso.css" rel="stylesheet" type="text/css" />
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="assets/css/styleforo.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/contenidocurso.css"/>
+    <link rel="stylesheet" type="text/css" href="assets/css/styleforo.css"/>
 </head>
-<style>
-.boton4 {
-  position: relative;
-}
-.boton4:hover {
-  color: rgba(255, 255, 255, 1) !important;
-  box-shadow: 0 4px 16px rgba(49, 138, 172, 1);
-  transition: all 0.2s ease;
-}
 
+
+
+
+
+<style>
+    
+    .boton4 {
+        
+        position: relative;
+    }
+
+    .boton4:hover {
+        
+        color: rgba(255, 255, 255, 1) !important;
+        box-shadow: 0 4px 16px rgba(49, 138, 172, 1);
+        transition: all 0.2s ease;
+    }
+    
 </style>
+
+
+
+
+
+
 <body>
     <?php
     if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
@@ -160,19 +174,32 @@
                         <?php echo $dato4['descripcionCurso']; ?>
                     </div>
                     <div class="start-course mt-5">
-                        <div class="row container-start-course py-2 ml-1 my-3">
+
+
+                    
+                        <div class="row container-start-course py-2 ml-1 my-3" style="position: relative; left: -10px;">
+
                             <div class="col-6 pr-0">
                                 <h5 class="m-0">Mira la primera clase de este curso!</h5>
                             </div>
+
                             <div class="col-6">
+
                                 <a class="hvr-radial-out button-theme" href="Cursoiniciar.php?id=<?php echo $id;?>&idCI=<?php echo $idCI?>"<?php if ($query==0 || $vere==false) {
                                     echo 'style="pointer-events: none;"';}?> >
-                                    <button type="button" class="btn container-button">
+
+                                    <button id="btnComienzaAhora" type="button" class="btn container-button">
                                         COMIENZA AHORA
                                     </button>
+
                                 </a>
+
                             </div>
+
                         </div>
+
+
+
                     </div>
                 </div>
                 <div class="container-image-course col-12 col sm-12 col-md-6 col-lg-6 col-xl-6">
@@ -363,106 +390,100 @@ $dato6 = $stm5->fetch(PDO::FETCH_ASSOC);
 $idProfe = $dato6['id_userprofesor'];
 ?>
 
-<!-- Comentario del Foro de Educalma -->
-
-<!-- Contenedor Principal -->
-<!-- Comentar Foro para que no se muestre y quitado de simbolos < > en los inicios de cada  ?php -->
-
 <?php
 if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
 ?>
 
-<div class="comments-container" style="background-color: #D9EBFF; border-radius: 40px" id="foro-curso">
-<h1>Foro Educalma<?php echo $_SESSION['iduser']?></h1>
-<button style="position: relative; left: -1px;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Comentar</button>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- COMIENZOOOOOOOOOOOOOO - Contenedor de todo. El que tiene esquinas curveadas. -->
+<div id="contenedorTodo" class="comments-container" style="background-color: #D9EBFF; border-radius: 40px;" id="foro-curso">
+
+
+
+
+
+
+<!-- TITULO FORO EDUCALMA -->
+<h1 id="tituloForoEducalma" style="text-align: center">Foro Educalma<?php echo $_SESSION['iduser']?></h1>
+<!-- TITULO FORO EDUCALMA -->
+
+
+ 
+<!-- BOTON COMENTAR -->
+<button id="btnComentar2" style="width: 310px;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Comentar</button>
+<!-- BOTON COMENTAR -->
+
+
+
+
+<!-- BOTON ELIMINAR TODO -->
+<div id="botonEliminarTodo">
+
+<br>
 
 <?php
 if($_SESSION['privilegio']==1 || $_SESSION['privilegio']==2){
 echo '
-    <button type="button" class="btn btn-danger" onClick="AlertEliminaTodo('.$idCurso.')">
+    <button style="position: relative; left: -10px;" type="button" class="btn btn-danger" onClick="AlertEliminaTodo('.$idCurso.')">
+        
+        Eliminar todos los comentarios
+
         <i class="fas fa-trash-alt"></i>
+
     </button>
 ';
 }
 ?>
+ 
+</div>
+<!-- BOTON ELIMINAR TODO -->
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!--AQUI COMIENZAN LOS COMENTARIOS Y SUBCOMENTARIOS-->
+<!-- LISTA DE COMENTARIOS -->
 <ul id="comments-list" class="comments-list">
 
 
-
+<!-- lilililili -->
 <li>
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- tttttttttt -->
 <?php
 $autor = "";
 while ($registro =  $stm->fetch(PDO::FETCH_ASSOC)) {
@@ -473,6 +494,55 @@ while ($registro =  $stm->fetch(PDO::FETCH_ASSOC)) {
         $autor = "";
     }
 ?>
+<!-- tttttttttt -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -529,36 +599,56 @@ while ($registro =  $stm->fetch(PDO::FETCH_ASSOC)) {
 
 
 <!-- COMENTARIOOOOOOOOOOOOOOOOOOOOOOOOOOOOO -->
-<div class="comment-main-level" >
+<div id="divComentario" class="comment-main-level" >
 
-<br>
+
+
+
+
+
+
     <!-- AVATAR -->
-   <div class="comment-avatar">
+   <div id="avatarComentario" class="comment-avatar">
         
         <?php    
             if($registro['mifoto']!=null){
         ?>
-                <img src="data:image/*;base64,<?php echo base64_encode($registro['mifoto']);?>" alt="foto_curso"
-                    style="width: 60px;height:60px;">
+                <img id="imagenAvatarComentario" src="data:image/*;base64,<?php echo base64_encode($registro['mifoto']);?>" alt="foto_curso" style="width: 60px;height:60px;">
         <?php
             }else{
         ?>
-                <img src="./assets/images/user.png" alt="foto_curso" style="width: 60px;height:60px;">
+                <img id="imagenAvatarComentario" src="./assets/images/user.png" alt="foto_curso" style="width: 60px;height:60px;">
         <?php
             }
         ?> 
         
     </div> 
+    <!-- AVATAR -->
+
+
+
+
+
 
     <!-- CONTENEDOR DEL COMENTARIO -->
-   <div class="comment-box">
+   <div id="contenedorComentario" class="comment-box">
+
+        <!-- HEAD -->
+        <div id="headComentario" class="comment-head">
 
 
-   
-        <div class="comment-head">
+            <!-- Nombre de Usuario del Comentario -->
             <h6 class="comment-name<?php echo $autor; ?>">
-                <spam><?php echo $registro['nombreUser']; ?></spam>
+
+                <span id="nombreUsuarioComentario"><?php echo $registro['nombreUser']; ?></span>
+            
             </h6>
+            <!-- Nombre de Usuario del Comentario -->
+
+
+
+
+            <!-- yyyyyyyyyyyyyyyyyyy -->
             <span>
                 <?php
                     $fecha1 = new DateTime($registro['fecha_ingreso']);
@@ -592,33 +682,87 @@ while ($registro =  $stm->fetch(PDO::FETCH_ASSOC)) {
                     }//si no pones el else hay bug
                 ?>
             </span>
+            <!-- yyyyyyyyyyyyyyyyyyy -->
+
+
+
+
             <button type="button" id="modal" class="btn btn-light btn-sm ml-3" data-toggle="modal"
                 data-target="#respuesta<?php echo $registro['idcomentario'] ?>"
-                data-id="<?php echo '5' ?>">Responder</button>
+                data-id="<?php echo '5' ?>">Responder
+            </button>
+
+
+
+            <!-- Botón Borrar Comentario -->
             <?php
             if($_SESSION['privilegio']==1 || $_SESSION['iduser']==$idProfe || $registro['iduser']==$_SESSION['iduser']){
                 echo '
                     <button style="background-color:red; color:white; cursor:pointer;" type="submit" class="boton4 btn btn-sm ml-3" onClick="AlertEliminacion('.$registro['idcomentario'].')">
-                       Borrar <i style="color:white;" class="fas fa-trash-alt"></i>
+                        
+                       <i id="botonBorrarComentario" style="color:white;" class="fas fa-trash-alt"></i>
+
+                       Eliminar comentario
+                    
                     </button>
                     
                 ';
             }
             ?>
+            <!-- Botón Borrar Comentario -->
+
+
+
+
+            <!-- Flecha compartir -->
             <a class="fb-xfbml-parse-ignore" target="_blank" href="http://www.facebook.com/sharer.php?s=100&p[url]=http://educalma.fundacioncalma.org/detallecurso.php?id=<?php echo $idCurso;?>&p[title]=prueba&p[summary]=descripcion_contenido&display=page" 
-                onclick="window.open(this.href, this.target, 'width=300,height=400')"><i style="color:white;" class="fa fa-reply"></i></a>
-            <i style="color:white;" class="fa fa-heart"></i>
+                onclick="window.open(this.href, this.target, 'width=300,height=400')">
+                
+                <i id="flechaCompartirComentario" style="color:white;" class="fa fa-reply"></i>
+            
+            </a>
+            <!-- Flecha compartir -->
+
+
+
+            <!-- Corazón -->
+            <i id="corazonComentario" style="color: white;" class="fa fa-heart"></i>
+            <!-- Corazón -->
+
+
+
+
         </div>
+        <!-- HEAD -->
 
 
-        <!-- COMENTARIO -->
-        <div class="comment-content">
+
+
+
+
+        <!-- Contenido del comentario -->
+        <div id="contenidoComentario" class="comment-content">
             <?php echo $registro['comentario']; ?>
         </div>
+        <!-- Contenido del comentario -->
+
+
+
+
 
     </div>
+    <!-- CONTENEDOR DEL COMENTARIO -->
+
+
 
 </div>
+<!-- COMENTARIOOOOOOOOOOOOOOOOOOOOOOOOOOOOO -->
+
+
+
+
+
+<br>
 
 
 
@@ -638,7 +782,67 @@ while ($registro =  $stm->fetch(PDO::FETCH_ASSOC)) {
 
 
 
-  <!-- RESPUESTAS DE LOS COMENTARIOS -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- ooooooooo -->
   <?php
         $pdo2 = Database::connect();
         $sql2 = "SELECT * FROM sub_come_foro as s inner join usuarios as u on u.id_user= s.iduser WHERE idcomentario = '$registro[idcomentario]'";
@@ -646,14 +850,15 @@ while ($registro =  $stm->fetch(PDO::FETCH_ASSOC)) {
         $stm2->execute(array());
 
         $autor = "";
-    while($registro2 =  $stm2->fetch(PDO::FETCH_ASSOC)){
+        while($registro2 =  $stm2->fetch(PDO::FETCH_ASSOC)){
      
-        if($registro2['iduser']==$idProfe){
-            $autor = " by-author";
-        }else{
-            $autor = "";
-        }
-    ?>
+            if($registro2['iduser']==$idProfe){
+                $autor = " by-author";
+            }else{
+                $autor = "";
+            }
+  ?>
+  <!-- ooooooooo -->
 
 
 
@@ -663,34 +868,141 @@ while ($registro =  $stm->fetch(PDO::FETCH_ASSOC)) {
 
 
 
-<!-- SUBCOMENTARIOOOOOOOOOOOOOOOOOOOOOO -->
-<ul class="comments-list reply-list">
-<br>
-    <li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- LISTA DE SUBCOMENTARIOS -->
+    <ul id="listaSubComentarios" class="comments-list reply-list">
+          
+        
+
+        <!-- iiiiiiiiii -->
+        <li>
+
+
+        <div id="divSubcomentario">
+
+
 
         <!-- AVATAR -->
-       <div class="comment-avatar">
+        <div id="avatarSubcomentario" class="comment-avatar">
             
-            <?php    
-                if($registro2['mifoto']!=null){
-            ?>
-                    <img src="data:image/*;base64,?php echo base64_encode($registro2['mifoto']);?>"
-                alt="foto_curso" style="width: 43px;height:43px;">
-            <?php
-                }else{
-            ?>
-                    <img src="./assets/images/user.png" alt="foto_curso" style="width: 43px;height:43px;">
-            <?php
-                }
-            ?> 
+                      <?php    
+                          if($registro2['mifoto']!=null){
+                      ?>
+                      
+                      <img id="imagenAvatarSubcomentario" src="data:image/*;base64,?php echo base64_encode($registro2['mifoto']);?>" 
+                      alt="foto_curso" style="width: 43px;height:43px;">
+                      
+                      <?php
+                          }else{
+                      ?>
+                      
+                      <img id="imagenAvatarSubcomentario" src="./assets/images/user.png" alt="foto_curso" style="width: 43px;height:43px;">
+            
+                      <?php
+                          }
+                      ?> 
         </div> 
+        <!-- AVATAR -->
+
+
+
+
 
         <!-- CONTENEDOR DEL SUBCOMENTARIO -->
-       <div class="comment-box">
+        <div id="contenedorSubcomentario" class="comment-box">
 
-            <div class="comment-head">
+            <!-- oeoeoeoeoeo -->
+            <div id="headSubcomentario" class="comment-head">
 
-                <h6 class="comment-name<?php echo $autor; ?>"><spam><?php echo $registro2['user_men'];?></spam></h6>
+
+                <h6 class="comment-name<?php echo $autor; ?>">
+                    <span id="nombreUsuarioSubcomentario"><?php echo $registro2['user_men'];?></span>
+                </h6>
                 
                 <span>
                     <?php 
@@ -723,65 +1035,96 @@ while ($registro =  $stm->fetch(PDO::FETCH_ASSOC)) {
                     ?>
                 </span>
 
+                <!-- Botón Borrar Subcomentario -->
                 <?php
                     if($_SESSION['privilegio']==1 || $_SESSION['iduser']==$idProfe || $registro2['iduser']==$_SESSION['iduser']){
                 
                     echo '
                 
                         <button style="background-color:red; color:white; cursor:pointer;" type="submit" class="boton4 btn btn-sm ml-3" onClick="AlertElimiSubComen('.$registro2['idsubcomentario'].')">
-                            Borrar<i style="color:white;" class="fas fa-trash-alt"></i>
+                            
+                            <i id="botonBorrarSubcomentario" style="color:white;" class="fas fa-trash-alt"></i>
+
+                            Eliminar subcomentario
+                        
                         </button>
-                      
-                       
                     ';
                     }
                 ?>
-                <i style="color:white;" class="fa fa-reply"></i>
-                <i style="color:white;" class="fa fa-heart"></i>
-            </div>
+                <!-- Botón Borrar Subcomentario -->
 
-            <!-- SUBCOMENTARIO -->
-            <div class="comment-content">
+
+
+
+
+                <!-- Flecha Compartir Subcomentario -->
+                <i id="flechaCompartirSubcomentario" style="color:white;" class="fa fa-reply"></i>
+                <!-- Flecha Compartir Subcomentario -->
+
+
+
+
+
+                <!-- Corazón Subcomentario -->
+                <i id="corazonSubcomentario" style="color:white;" class="fa fa-heart"></i>
+                <!-- Corazón Subcomentario -->
+
+
+
+            </div>
+            <!-- oeoeoeoeoeo -->
+
+            
+            <!-- Contenido del subcomentario. -->
+            <div id="contenidoSubcomentario" class="comment-content">
                 <?php echo $registro2['subcomentario'];?>
             </div>
+            <!-- Contenido del subcomentario. -->
 
 
         </div>
+        <!-- CONTENEDOR DEL SUBCOMENTARIO -->
 
-    </li>
+        </div>
 
-</ul>
+        </li>
+        <!-- iiiiiiiiii -->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    </ul>
+    <!-- LISTA DE SUBCOMENTARIOS -->
 
 
 <?php 
 }
 ?>  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!------------------------------------
         modal para ingresar respuesta
 -------------------------------------->
@@ -820,9 +1163,189 @@ while ($registro =  $stm->fetch(PDO::FETCH_ASSOC)) {
 <?php
 }
 ?>
+
+
+
+
+
 </li>
+<!-- lilililili -->
+
 </ul>
-</div>              
+<!-- LISTA DE COMENTARIOS -->
+
+
+</div>      
+<!-- COMIENZOOOOOOOOOOOOOO - Contenedor de todo. El que tiene esquinas curveadas.-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1197,4 +1720,6 @@ modal para ingresar mensaje
     }
     ?>
 </body>
+
+
 

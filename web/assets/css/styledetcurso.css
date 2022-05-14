@@ -68,3 +68,12 @@
     width: 100%;
   }
 }
+
+
+
+#btnComentar {
+
+  /*Centrar botón*/
+  display: block; 
+  margin: 0 auto;
+}
