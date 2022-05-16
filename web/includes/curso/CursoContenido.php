@@ -438,6 +438,8 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
 
 
 <!-- BOTON ELIMINAR TODO -->
+<!--botonEliminarTodo Le quite los estilos(style="position: relative; left: 10px; top: -10px" type="button"), hace que el boton 
+se vea fuera del contenedor -->
 <div id="botonEliminarTodo">
 
 <br>
@@ -445,7 +447,7 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
 <?php
 if($_SESSION['privilegio']==1 || $_SESSION['privilegio']==2){
 echo '
-    <button style="position: relative; left: -10px;" type="button" class="btn btn-danger" onClick="AlertEliminaTodo('.$idCurso.')">
+    <button  class="btn btn-danger" onClick="AlertEliminaTodo('.$idCurso.')">
         
         Eliminar todos los comentarios
 
