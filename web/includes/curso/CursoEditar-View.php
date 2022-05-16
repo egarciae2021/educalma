@@ -100,7 +100,7 @@
                                 <!-- <a href="publicarcursos.php?pag=1" class="list-group-item list-group-item-action">
                                     <i class="fad fa-books"></i> Publicar cursos
                                 </a> -->
-                                <a class="btn btn-outline-secondary btn-back btn-sm" href="agregarcurso.php" role="button">
+                                <a class="btn btn-outline-secondary btn-back btn-sm" href="user-sidebar.php" role="button">
                                     <i class="fas fa-arrow-left"></i> Atrás
                                 </a>
                             </div>
@@ -259,7 +259,7 @@
     <script src="assets/js/plugins/sweetalert2.all.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script src="assets/js/validarModulo.js"></script>
-<script src="assets/js/validarCategoria.js"></script>
+
     
     <?php
     }
