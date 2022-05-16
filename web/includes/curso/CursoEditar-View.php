@@ -42,6 +42,13 @@
         padding: 10px;*/
         margin:0;
         }
+
+        #actucurso_2 {
+
+            position: relative;
+            top: -120px;
+        }
+
     </style>
     <title>Editar Curso</title>
 </head>
@@ -54,7 +61,7 @@
 ?>
   
 <!-- formulario -->
-<div class="container-fluid">
+    <div class="container-fluid">
         <!--                    ======================================
                                             Editar Curso
                                 ====================================== 
@@ -115,6 +122,18 @@
                     ?>
                     <!-- segunda columna -->
                     <div class="col-9 pl-0">
+
+
+
+
+
+
+
+
+
+
+
+
                         <form name="formulario" id="form-leditcursos" method="POST"  enctype="multipart/form-data" action="includes/Cursos_crud/Cursos_CRUD.php?id=<?php echo $dato2['idCurso'];?>">
 
                         <div class="row">
@@ -171,10 +190,59 @@
 
                             <div class="form-group col-12">
                                 <input type="hidden" name="idcurso" value="<?php echo $dato2['idCurso'];?>">
-                                <button type="submit" id="actucurso" class="btn btn-block btn-agregar"><i class="fas fa-redo"></i> Actualizar curso</button>
+                                <button type="submit" id="actucurso" class="btn btn-block btn-agregar" hidden multiple><i class="fas fa-redo"></i> Actualizar curso</button>
                             </div>
 
                         </form>
+
+                            <div class="form-group col-12">
+                                <input type="hidden" name="idcurso">
+                                <button type="submit" id="actucurso_2" class="btn btn-block btn-agregar" onclick="alertaCursoActualizado()"><i class="fas fa-redo"></i> Actualizar curso</button>
+                            </div>
+
+                            <!-- Mensaje de alerta curso actualizado -->
+                            <script>
+
+                                    function alertaCursoActualizado(){
+
+                                        Swal.fire({
+
+                                            icon: 'success',
+
+                                            title: 'Curso actualizado correctamente',
+
+                                            allowOutsideClick: false,
+
+                                            confirmButtonText: "Ok",
+
+                                        }).then((result) => {
+
+                                            if (result.isConfirmed) {
+
+                                                $('#actucurso').trigger('click');
+
+                                            } else if (result.isDenied) {
+
+ 
+                                            }
+                                        })
+
+                                    }
+
+                            </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
                     </div>
                     <!-- fin segunda columna -->
                 </div>
