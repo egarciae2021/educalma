@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/js/plugins/sweetalert2.min.css">
     <link rel="stylesheet" href="assets/css/stylebuttonAtras.css">
+
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,7 +17,6 @@
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
-    <?php require_once "includes/Inicio/Head.php"; ?>
 
     <style>
         .subir {
@@ -100,9 +100,9 @@
                                 <!-- <a href="publicarcursos.php?pag=1" class="list-group-item list-group-item-action">
                                     <i class="fad fa-books"></i> Publicar cursos
                                 </a> -->
-                                <!-- <a class="btn btn-outline-secondary btn-back btn-sm" href="agregarcurso.php" role="button">
+                                <a class="btn btn-outline-secondary btn-back btn-sm" href="agregarcurso.php" role="button">
                                     <i class="fas fa-arrow-left"></i> Atrás
-                                </a> -->
+                                </a>
                             </div>
                             <!-- fin seccion otros -->
                         </div>
