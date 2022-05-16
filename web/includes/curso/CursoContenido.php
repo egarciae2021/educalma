@@ -417,7 +417,7 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
 
 
 <!-- COMIENZOOOOOOOOOOOOOO - Contenedor de todo. El que tiene esquinas curveadas. -->
-<div id="contenedorTodo" class="comments-container" style="background-color: #D9EBFF; border-radius: 40px;" id="foro-curso">
+<div id="contenedorTodo" class="comments-container"  style="background-color: #D9EBFF; border-radius: 40px;" id="foro-curso">
 
 
 
@@ -447,7 +447,7 @@ se vea fuera del contenedor -->
 <?php
 if($_SESSION['privilegio']==1 || $_SESSION['privilegio']==2){
 echo '
-    <button  class="btn btn-danger" onClick="AlertEliminaTodo('.$idCurso.')">
+    <button style="width: 310px;"  class="btn btn-danger" onClick="AlertEliminaTodo('.$idCurso.')  ">
         
         Eliminar todos los comentarios
 
