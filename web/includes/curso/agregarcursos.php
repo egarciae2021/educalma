@@ -70,7 +70,7 @@
                         <!-- seccion donar un curso -->
                         <div class="list-group py-3">
                             <button type="button" class="list-group-item list-group-item-action active">
-                                Donar un Curso
+                                Agregar un Nuevo Curso
                             </button>
                             <!-- seccion otros -->
                             <ul class="list-group list-group-flush py-3">
