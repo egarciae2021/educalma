@@ -206,13 +206,13 @@
                                     <form name="formulario" class="p-0 bg-0" style="background: transparent;" id="editando_preguntas" method="POST" action="includes/tema/checkAgrTema.php?idCur=<?php echo $idCurso;?>&id_mod=<?php echo $idModulo;?>">
                                         <div class="modal-body px-4">
                                             <h6>Nombre del Tema:</h6>
-                                            <input type="text" name="actu_tema" class="form-control" value="<?php echo $dato3['nombreTema'];?>">
+                                            <input required type="text" name="actu_tema" class="form-control" value="<?php echo $dato3['nombreTema'];?>">
                                             
                                             <h6 class="pt-3">Descripción:</h6>
-                                            <textarea class="form-control" rows="3" name="descripcionT"><?php echo $dato3['descripcionTema'];?></textarea>
+                                            <textarea required class="form-control" rows="3" name="descripcionT"><?php echo $dato3['descripcionTema'];?></textarea>
                                 
                                             <h6 class="pt-3">Link del vídeo:</h6>
-                                            <input type="text" name="linkT" class="form-control" value="<?php echo $dato3['link_video'];?>">
+                                            <input required type="text" name="linkT" class="form-control" value="<?php echo $dato3['link_video'];?>">
                                             
                                             <input type="hidden" name="idTema" value="<?php echo $dato3['idTema'];?>">
                                         </div>
