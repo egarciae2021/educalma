@@ -372,7 +372,7 @@ form {
     background: none;
 }
 
-.list-group-item:hover {
+.container-fluid .container .seccion .row .col-3 .list-group .lista2 .list-group-item:hover  {
     background: #6A6DE5;
     color: white;
 }
