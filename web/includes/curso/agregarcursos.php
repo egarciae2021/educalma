@@ -459,7 +459,7 @@
             document.getElementById('info').innerHTML = pdrs;
         }
     </script>
-    <?php require_once "includes/Inicio/Footer.php"; ?>
+ 
     <script type="text/javascript">
         /*    $(document).ready(function() {
             $('#example').DataTable({

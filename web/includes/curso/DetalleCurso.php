@@ -26,6 +26,16 @@ body {
     background-color: white;
 }
 
+#btnComprarAhora {
+
+     
+}
+
+#btnComprarAhora:hover {
+
+    background: #99ccff;
+}
+
 
 
 </style>
@@ -136,11 +146,6 @@ body {
             <div class="row py-5">
 
 
-
-
-
-
-
                 <div class="col-12 col-sm-12 col-md-7 col-lg-8 col-xl-9 ">
                     <br><br><br><br>
                     <span>Cursos</span><i class="fas fa-angle-right mx-2"></i>
@@ -155,40 +160,12 @@ body {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                 <!-- xxxxx -->
                 <div class="col-12 col-sm-12 col-md-5 col-lg-4 col-xl-3 info-course-right pt-3">
                 
 
                     <!-- CARD///////////////////////////////// -->
                     <div class="card ">
-
-
-
-
-
-
-
-
-
-
 
 
                         <div class="content-img">
@@ -208,26 +185,6 @@ body {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                         <!-- ///////////////////////////////// -->
                         <div class="card-body">
                             <h4 class="card-title font-weight-bold" style="font-size: 30px;"><?php
@@ -242,31 +199,28 @@ body {
                             if ($dato4['costoCurso'] != 0) {
                                 if(isset($_SESSION['Logueado'])){
                             ?>
-                                <a href="pagepay.php?id=<?php echo $dato4["idCurso"]; ?>" class="btn btn-outline-dark my-3">Comprar ahora</a>
+                                <a id="btnComprarAhora" href="pagepay.php?id=<?php echo $dato4["idCurso"]; ?>" class="btn btn-outline-dark my-3">Comprar ahora</a>
                             <?php
                                 }else{
                                     ?>
-                                    <a href="pagepay.php?id=<?php echo $dato4["idCurso"]; ?>" 
-                                    <a onclick="msje_Redireccion()" class="btn btn-outline-dark my-3">Comprar ahora</a>
+                                    <a href="pagepay.php?id=<?php echo $dato4["idCurso"]; ?>"> 
+                                    <a id="btnComprarAhora" onclick="msje_Redireccion()" class="btn btn-outline-dark my-3">Comprar ahora</a>
                                     <?php
                                 }
                             } else {
                                 if(isset($_SESSION['Logueado'])){
                             ?>
-                                <a href="includes/Cursos_crud/inscribirseGratis.php?id=<?php echo $dato4["idCurso"]; ?>" class="btn btn-outline-dark my-3">Comprar ahora</a>
+                                <a id="btnComprarAhora" href="includes/Cursos_crud/inscribirseGratis.php?id=<?php echo $dato4["idCurso"]; ?>" class="btn btn-outline-dark my-3">Comprar ahora</a>
                             <?php
                                 }else{
                                     ?>
-                                        <a onclick="msje_Redireccion()" class="btn btn-outline-dark my-3">Comprar ahora</a>
+                                        <a id="btnComprarAhora" onclick="msje_Redireccion()" class="btn btn-outline-dark my-3">Comprar ahora</a>
                                     <?php
                                 }
                             }
                             ?>
 
                             <p class="font-weight-bold mb-0">Este curso incluye:</p>
-
-
-
 
 
                             <div class="my-1" style="font-size: 13px;">
@@ -348,7 +302,7 @@ body {
                     ?>
                         <div id="accordion">
                             <div class="card">
-                                <a class="card-header card-link" data-toggle="collapse" href="<?php echo '#collapseOne' . $i  ?>">
+                                <a style="background: #7c83fd;" class="card-header card-link" data-toggle="collapse" href="<?php echo '#collapseOne' . $i  ?>">
                                     <span><i class="fas fa-sort-down mr-3"></i><?php echo $modulosC['nombreModulo'] ?></span>
                                 </a>
 
@@ -365,7 +319,7 @@ body {
                                 while ($temasC = $q7->fetch(PDO::FETCH_ASSOC)) {
                                 ?>
                                     <div id="<?php echo 'collapseOne' . $i ?>" class="collapse show" data-parent="#accordion">
-                                        <div class="card-body">
+                                        <div style="background: white ; border: 2px solid #E1EEED;" class="card-body">
                                             <?php echo $temasC['nombreTema'] ?>
                                         </div>
                                     </div>
@@ -373,11 +327,12 @@ body {
                                 }
                                 ?>
                                 <div id="<?php echo 'collapseOne' . $i  ?>" class="collapse show" data-parent="#accordion">
-                                    <div class="card-body">
+                                    <div style="background: #F1F7F7;" class="card-body">
                                         Cuestionario
                                     </div>
                                 </div>
                             </div>
+                            <br><br>
                         </div>
                     <?php
                         $i++;
