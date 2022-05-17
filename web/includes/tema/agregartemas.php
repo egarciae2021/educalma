@@ -106,8 +106,8 @@
                     
                             <div class="form-row ">
                                 <div class="form-group col-md-12">
-                                    <h6 class="font-weight-light text-justify" style="color:#495057;">
-                                    Agregue Temas al Módulo: "<strong><?php echo $dato2['nombreModulo'];?></strong>"
+                                    <h6 class="font-weight-light text-justify" style="color:#495057; font-size: 20px;">
+                                    Agregue Temas al Módulo: <strong style="font-weight: bold;"><?php echo $dato2['nombreModulo'];?></strong>
                                     </h6>
                                 </div>
                             </div>
@@ -116,7 +116,7 @@
 
                                 <div class="form-group col-md-6 ">
                                     <label class="form-label">Nombre del tema</label>
-                                    <input type="text" class="form-control" name="temas_agregar" id="tema-agregar" placeholder="Ingrese un nombre" aria-label="TemaAgr" aria-describedby="temaAgr-addon" required>
+                                    <input type="text" class="form-control" name="temas_agregar" id="" placeholder="Ingrese un nombre" aria-label="TemaAgr" aria-describedby="temaAgr-addon" required>
                                 </div>
 
                                 <div class="form-group col-md-6 ">
@@ -206,13 +206,13 @@
                                     <form name="formulario" class="p-0 bg-0" style="background: transparent;" id="editando_preguntas" method="POST" action="includes/tema/checkAgrTema.php?idCur=<?php echo $idCurso;?>&id_mod=<?php echo $idModulo;?>">
                                         <div class="modal-body px-4">
                                             <h6>Nombre del Tema:</h6>
-                                            <input type="text" name="actu_tema" class="form-control" value="<?php echo $dato3['nombreTema'];?>">
+                                            <input required type="text" name="actu_tema" class="form-control" value="<?php echo $dato3['nombreTema'];?>">
                                             
                                             <h6 class="pt-3">Descripción:</h6>
-                                            <textarea class="form-control" rows="3" name="descripcionT"><?php echo $dato3['descripcionTema'];?></textarea>
+                                            <textarea required class="form-control" rows="3" name="descripcionT"><?php echo $dato3['descripcionTema'];?></textarea>
                                 
                                             <h6 class="pt-3">Link del vídeo:</h6>
-                                            <input type="text" name="linkT" class="form-control" value="<?php echo $dato3['link_video'];?>">
+                                            <input required type="text" name="linkT" class="form-control" value="<?php echo $dato3['link_video'];?>">
                                             
                                             <input type="hidden" name="idTema" value="<?php echo $dato3['idTema'];?>">
                                         </div>

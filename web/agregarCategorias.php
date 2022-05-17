@@ -11,4 +11,5 @@
 <?php include_once 'includes/Inicio/Footer.php' ?>
 
 <!-- Hola mundo -->
+<!-- Hola Mundo 2 -->
 </body>

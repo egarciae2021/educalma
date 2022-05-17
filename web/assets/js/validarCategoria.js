@@ -8,7 +8,7 @@ e.preventDefault();
 
 })
 */
-    
+
 
     var $registrationForm = $('#newUserForm');
 

@@ -397,27 +397,8 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!-- COMIENZOOOOOOOOOOOOOO - Contenedor de todo. El que tiene esquinas curveadas. -->
-<div id="contenedorTodo" class="comments-container" style="background-color: #D9EBFF; border-radius: 40px;" id="foro-curso">
+<div id="contenedorTodo" class="comments-container"  style="background-color: #D9EBFF; border-radius: 40px;" id="foro-curso">
 
 
 
@@ -435,19 +416,19 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
 <!-- BOTON COMENTAR -->
 
 
-
+<br>
 
 <!-- BOTON ELIMINAR TODO -->
-<div id="botonEliminarTodo">
+<!--botonEliminarTodo Le quite los estilos(style="position: relative; left: 10px; top: -10px" type="button"), hace que el boton 
+se vea fuera del contenedor -->
 
-<br>
 
 <?php
 if($_SESSION['privilegio']==1 || $_SESSION['privilegio']==2){
 echo '
-    <button style="position: relative; left: -10px;" type="button" class="btn btn-danger" onClick="AlertEliminaTodo('.$idCurso.')">
+    <button class="btn btn-danger" onClick="AlertEliminaTodo('.$idCurso.')  ">
         
-        Eliminar todos los comentarios
+        Borrar todos los comentarios
 
         <i class="fas fa-trash-alt"></i>
 
@@ -456,7 +437,7 @@ echo '
 }
 ?>
  
-</div>
+
 <!-- BOTON ELIMINAR TODO -->
 
 
@@ -468,18 +449,6 @@ echo '
 
 <!-- lilililili -->
 <li>
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -497,114 +466,8 @@ while ($registro =  $stm->fetch(PDO::FETCH_ASSOC)) {
 <!-- tttttttttt -->
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!-- COMENTARIOOOOOOOOOOOOOOOOOOOOOOOOOOOOO -->
 <div id="divComentario" class="comment-main-level" >
-
-
-
-
-
 
 
     <!-- AVATAR -->
@@ -624,9 +487,6 @@ while ($registro =  $stm->fetch(PDO::FETCH_ASSOC)) {
         
     </div> 
     <!-- AVATAR -->
-
-
-
 
 
 
@@ -765,83 +625,6 @@ while ($registro =  $stm->fetch(PDO::FETCH_ASSOC)) {
 <br>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   <!-- ooooooooo -->
   <?php
         $pdo2 = Database::connect();
@@ -859,98 +642,6 @@ while ($registro =  $stm->fetch(PDO::FETCH_ASSOC)) {
             }
   ?>
   <!-- ooooooooo -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -1099,32 +790,6 @@ while ($registro =  $stm->fetch(PDO::FETCH_ASSOC)) {
 ?>  
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!------------------------------------
         modal para ingresar respuesta
 -------------------------------------->
@@ -1177,176 +842,6 @@ while ($registro =  $stm->fetch(PDO::FETCH_ASSOC)) {
 
 </div>      
 <!-- COMIENZOOOOOOOOOOOOOO - Contenedor de todo. El que tiene esquinas curveadas.-->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 <!------------------------------------

@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/js/plugins/sweetalert2.min.css">
     <link rel="stylesheet" href="assets/css/stylebuttonAtras.css">
+
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,7 +17,6 @@
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
-    <?php require_once "includes/Inicio/Head.php"; ?>
 
     <style>
         .subir {
@@ -33,7 +33,7 @@
             background: #8886f3;
         }
         /*label*/
-  	    .form-group .error{
+        .form-group .error{
     	color: crimson;
         font-style: normal;
         font-size: 16px;
@@ -42,6 +42,13 @@
         padding: 10px;*/
         margin:0;
         }
+
+        #actucurso_2 {
+
+            position: relative;
+            top: -120px;
+        }
+
     </style>
     <title>Editar Curso</title>
 </head>
@@ -54,7 +61,7 @@
 ?>
   
 <!-- formulario -->
-<div class="container-fluid">
+    <div class="container-fluid">
         <!--                    ======================================
                                             Editar Curso
                                 ====================================== 
@@ -88,14 +95,14 @@
                                     <i class="fas fa-plus-square"></i> Agregar Modulos
                                 </a>
                                 <button typer="button" id="salir_public" class="list-group-item list-group-item-action" style="cursor: pointer">
-                                    <i class="fad fa-books"></i> Publicar cursos
+                                    <i class="fad fa-books"></i> Ver lista de cursos por publicar
                                 </button>
                                 <!-- <a href="publicarcursos.php?pag=1" class="list-group-item list-group-item-action">
                                     <i class="fad fa-books"></i> Publicar cursos
                                 </a> -->
-                                <!-- <a class="btn btn-outline-secondary btn-back btn-sm" href="agregarcurso.php" role="button">
+                                <a class="btn btn-outline-secondary btn-back btn-sm" href="user-sidebar.php" role="button">
                                     <i class="fas fa-arrow-left"></i> Atrás
-                                </a> -->
+                                </a>
                             </div>
                             <!-- fin seccion otros -->
                         </div>
@@ -115,6 +122,18 @@
                     ?>
                     <!-- segunda columna -->
                     <div class="col-9 pl-0">
+
+
+
+
+
+
+
+
+
+
+
+
                         <form name="formulario" id="form-leditcursos" method="POST"  enctype="multipart/form-data" action="includes/Cursos_crud/Cursos_CRUD.php?id=<?php echo $dato2['idCurso'];?>">
 
                         <div class="row">
@@ -171,10 +190,59 @@
 
                             <div class="form-group col-12">
                                 <input type="hidden" name="idcurso" value="<?php echo $dato2['idCurso'];?>">
-                                <button type="submit" id="actucurso" class="btn btn-block btn-agregar"><i class="fas fa-redo"></i> Actualizar curso</button>
+                                <button type="submit" id="actucurso" class="btn btn-block btn-agregar" hidden multiple><i class="fas fa-redo"></i> Actualizar curso</button>
                             </div>
 
                         </form>
+
+                            <div class="form-group col-12">
+                                <input type="hidden" name="idcurso">
+                                <button type="submit" id="actucurso_2" class="btn btn-block btn-agregar" onclick="alertaCursoActualizado()"><i class="fas fa-redo"></i> Actualizar curso</button>
+                            </div>
+
+                            <!-- Mensaje de alerta curso actualizado -->
+                            <script>
+
+                                    function alertaCursoActualizado(){
+
+                                        Swal.fire({
+
+                                            icon: 'success',
+
+                                            title: 'Curso actualizado correctamente',
+
+                                            allowOutsideClick: false,
+
+                                            confirmButtonText: "Ok",
+
+                                        }).then((result) => {
+
+                                            if (result.isConfirmed) {
+
+                                                $('#actucurso').trigger('click');
+
+                                            } else if (result.isDenied) {
+
+ 
+                                            }
+                                        })
+
+                                    }
+
+                            </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
                     </div>
                     <!-- fin segunda columna -->
                 </div>
@@ -191,6 +259,7 @@
     <script src="assets/js/plugins/sweetalert2.all.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script src="assets/js/validarModulo.js"></script>
+
     
     <?php
     }

@@ -9,6 +9,12 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
     <link rel="stylesheet" href="assets/css/plugins/bootstrap.min.css" />
     <link rel="stylesheet" href="includes/dist/css/adminlte.min.css">
     <link rel="stylesheet" href="assets/css/styledash.css">
+
+    <style>
+
+ 
+
+    </style>
   </head>
 
   <!-- para lista de cursos -->
@@ -74,8 +80,12 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
             ?>
 
             <!-- TABLA DE CURSOS -->
-            <div class="col-12">
-              <div class="card mt-2">
+            <div class="col-12 mt-5 text-center">
+              <div class="card">
+                  
+              
+
+
                   <div class="card-header">
                     <div class="row mb-2">
                       <div class="col-12">
@@ -85,25 +95,28 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                       </div>
                     </div>
                   </div>
+
+
+
                   <!-- /.card-header -->
                   <div class="card-body">
-                    <div class=" ">
+
+                  
+                 
                       <div class="table-responsive">
-                        <table id="tablaCursos" class="table table-borderless dt-responsive text-left" cellspacing="0" width="100%">
+                      <!--class="standard-grid1 full-width content-scrollable"-->
+                        <table id="tablaCursos" class="table table-borderless dt-responsive" cellspacing="0" width="auto">
+                          
                           <thead>
                             <tr>
-                              <th style="border-radius: 10px 0 0 10px;">
-                                Imagen
-                              </th>
-                              <th scope="col">Nombre</th>
+                              <th style="border-radius: 10px 0 0 10px;">Imagen</th>
+                              <th>Nombre</th>
                               <th>Descripción</th>
                               <th>Categoría</th>
                               <th>Dirigido</th>
                               <th>Costo</th>
                               <th>Publicado</th>
-                              <th style="border-radius: 0 10px 10px 0;">
-                                Acción
-                              </th>
+                              <th style="border-radius: 0 10px 10px 0;">Acciones</th>
                             </tr>
                           </thead>
 
@@ -120,7 +133,7 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                               $dotocoto = $q4->fetchAll();
                             ?>
 
-                              <tr>
+                              <tr class="h-100 justify-content-center align-items-center">
                                 <td>
                                   <?php    
                                       if($curso['imagenDestacadaCurso']!=null){
@@ -179,7 +192,6 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                           </tbody>
                         </table>
                       </div>
-                    </div>
                     <!-- /.card-body -->
                   </div>
                   <!-- fin tabla cursos -->
@@ -656,6 +668,10 @@ function actu() {
         if (dismiss === 'cancel') {}
     })
 }
+</script>
+
+<script>
+
 </script>
 
 <?php

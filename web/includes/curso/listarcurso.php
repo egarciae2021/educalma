@@ -52,7 +52,7 @@
             <div class="col-12 mt-5 text-center">
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title">Listado de Cursos</h3>
+                        <h3 class="card-title">Listado de Cursos por Publicar</h3>
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body">
@@ -155,7 +155,11 @@
                                                 ?>
                                                     <!--para quitar curso-->
                                                     <a href="includes/Cursos_crud/aceptarCurso.php?id_curso=<?php echo $curso['idCurso']; ?>&pag=<?php echo $_GET['pag'];?>">
-                                                        <button class="btn btn-upload" type="button">Publicar</button>
+                                                        <button id="btnPublicarCurso" class="btn btn-upload" type="button" hidden multiple>Publicar</button>
+                                                    </a>
+
+                                                    <a>
+                                                        <button id="" class="btn btn-upload" type="button" onclick="alertaCursoPublicado()">Publicar Curso</button>
                                                     </a>
 
                                                 <?php
@@ -557,5 +561,65 @@
                 header('Location:iniciosesion.php');
     }
 ?>
+
+<script>
+
+        //Mensaje de alerta curso publicado
+        function alertaCursoPublicado(){
+
+                                        Swal.fire({
+
+                                            icon: 'warning',
+
+                                            title: '¿Está seguro que desea publicar el curso?',
+
+                                            allowOutsideClick: false,
+
+                                            confirmButtonText: "Sí",
+                                            
+                                            showCancelButton: true,
+                                            cancelButtonColor: 'red',
+                                            cancelButtonText: "No",
+
+                                        }).then((result) => {
+
+                                            if (result.isConfirmed) {
+    
+                                                Swal.fire({
+
+                                                    icon: 'success',
+
+                                                    title: 'Curso publicado correctamente',
+
+                                                    allowOutsideClick: false,
+
+                                                    allowOutsideClick: false,
+
+                                                    confirmButtonText: "Ok",
+
+                                                }).then((result) => {
+
+                                                    if (result.isConfirmed) {
+
+                                                        $('#btnPublicarCurso').trigger('click');
+
+                                                    } else if (result.isDenied) {
+
+ 
+                                                    }
+                                                })
+
+                                            } else if (result.isDenied) {
+
+ 
+                                            }
+                                        })
+
+        }
+
+</script>
+
+
+
 </body>
 </html>
