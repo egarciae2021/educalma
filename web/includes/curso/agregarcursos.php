@@ -94,10 +94,10 @@
                                     <i class="fas fa-book"></i> Mis Cursos
                                 </a>
                                 <a href="ListaCursos.php?pag=1" class="list-group-item list-group-item-action">
-                                    <i class="fas fa-eye"></i> Ver los cursos
+                                    <i class="fas fa-eye"></i> Ver los cursos publicados
                                 </a>
                                 <a href="publicarcursos.php?pag=1" class="list-group-item list-group-item-action">
-                                    <i class="fad fa-books"></i> Publicar cursos
+                                    <i class="fad fa-books"></i> Ver lista de cursos por publicar
                                 </a>
                                 <a id="btnAtras" class="btn btn-outline-secondary btn-back btn-sm" style="width:auto;" href="sidebarCursos.php" role="button">
                                     <i class="fas fa-arrow-left" ></i> Atrás

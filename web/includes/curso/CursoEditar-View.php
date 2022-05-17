@@ -95,7 +95,7 @@
                                     <i class="fas fa-plus-square"></i> Agregar Modulos
                                 </a>
                                 <button typer="button" id="salir_public" class="list-group-item list-group-item-action" style="cursor: pointer">
-                                    <i class="fad fa-books"></i> Publicar cursos
+                                    <i class="fad fa-books"></i> Ver lista de cursos por publicar
                                 </button>
                                 <!-- <a href="publicarcursos.php?pag=1" class="list-group-item list-group-item-action">
                                     <i class="fad fa-books"></i> Publicar cursos

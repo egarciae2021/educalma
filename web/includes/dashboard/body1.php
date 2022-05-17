@@ -75,7 +75,7 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                                     if ($_SESSION['privilegio'] == 1 || $_SESSION['privilegio'] == 6) {
                                     ?>
                                         <a href="agregarcurso.php" class="nav__dropdown-item-dashboard nav__link-dashboard">Agregar Nuevo Curso</a>
-                                        <a href="publicarcursos.php?pag=1" class="nav__dropdown-item-dashboard nav__link-dashboard">Publicar cursos</a>
+                                        <a href="publicarcursos.php?pag=1" class="nav__dropdown-item-dashboard nav__link-dashboard">Ver Cursos Por Publicar</a>
                                     <?php
                                     }
                                     ?>

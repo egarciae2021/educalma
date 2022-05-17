@@ -91,7 +91,7 @@
                                                 <i class="fas fa-eye"></i> Ver todos los Cursos
                                             </a> -->
                                         <button typer="button" id="salir_public" class="list-group-item list-group-item-action" style="cursor: pointer">
-                                            <i class="fad fa-books"></i> Publicar cursos
+                                            <i class="fad fa-books"></i> Ver lista de cursos por publicar
                                         </button>
 
                                         <a class="btn btn-outline-secondary btn-back btn-sm" href="agregarcurso.php" role="button">
@@ -115,7 +115,7 @@
                                     <div class="form-row">
                                         <div class="form-group col-md-12">
                                             <h5 class="font-weight-light" style="color:#495057;">
-                                                Agregue módulos a su Curso
+                                                Agregue Módulos a su Curso.
                                             </h5>
                                         </div>
                                     </div>

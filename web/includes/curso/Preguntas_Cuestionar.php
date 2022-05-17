@@ -90,7 +90,7 @@
                             <div class="form-row ">
                                 <div class="form-group col-md-12">
                                     <h5 class="font-weight-light text-justify" style="color:#495057;">
-                                    Agregue preguntas a su Cuestionario
+                                    Agregue Preguntas a su Cuestionario.
                                     </h5>
                                 </div>
                             </div>
