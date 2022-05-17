@@ -28,21 +28,26 @@ body {
 
 #btnComprarAhora {
 
-     
+    background: #99ccff;
+    color: black;
+    font-weight: bold;
 }
 
 #btnComprarAhora:hover {
 
     background: #99ccff;
+    color: black;
+    font-weight: bold;
+    border: 2px solid black;
+}
+
+#nombreTemaCss:hover {
+
+    background: #CCE3E5 !important; 
 }
 
 
-
 </style>
-
-
-
-
 
 
 
@@ -302,9 +307,15 @@ body {
                     ?>
                         <div id="accordion">
                             <div class="card">
+
+
+
+                                <!-- ////////////////// -->
                                 <a style="background: #7c83fd;" class="card-header card-link" data-toggle="collapse" href="<?php echo '#collapseOne' . $i  ?>">
-                                    <span><i class="fas fa-sort-down mr-3"></i><?php echo $modulosC['nombreModulo'] ?></span>
+                                    <span><i class="fas fa-sort-down mr-3"></i>Módulo: <?php echo $modulosC['nombreModulo'] ?></span>
                                 </a>
+
+
 
                                 <?php
 
@@ -319,17 +330,32 @@ body {
                                 while ($temasC = $q7->fetch(PDO::FETCH_ASSOC)) {
                                 ?>
                                     <div id="<?php echo 'collapseOne' . $i ?>" class="collapse show" data-parent="#accordion">
-                                        <div style="background: white ; border: 2px solid #E1EEED;" class="card-body">
-                                            <?php echo $temasC['nombreTema'] ?>
+
+
+                                        <!-- ////////////////// -->
+                                        <div id="nombreTemaCss" style="background: white;" class="card-body">
+                                            Tema: <?php echo $temasC['nombreTema'] ?>
                                         </div>
+
+
+                                        
                                     </div>
                                 <?php
                                 }
                                 ?>
                                 <div id="<?php echo 'collapseOne' . $i  ?>" class="collapse show" data-parent="#accordion">
+
+
+
+                                    <!-- ////////////////// -->
+                                    <!--
                                     <div style="background: #F1F7F7;" class="card-body">
                                         Cuestionario
                                     </div>
+                                    -->
+
+
+
                                 </div>
                             </div>
                             <br><br>
@@ -370,7 +396,7 @@ body {
     if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
     ?>
 
-        <div class="comments-container" style="background-color: #ECECEC; border-radius: 40px;" id="foro-curso">
+        <div class="comments-container" style="background-color: #F1F7F7; border-radius: 40px;" id="foro-curso">
 
 
         <h1 style="text-align: center">Foro Educalma <?php echo $_SESSION['iduser']?></h1>
@@ -471,11 +497,11 @@ body {
                             if($_SESSION['privilegio']==1 || $_SESSION['iduser']==$idProfe || $registro['iduser']==$_SESSION['iduser']){
                                 echo '
                                     <button style="background-color:red; color:white; cursor:pointer;" type="submit" class="boton4 btn btn-sm ml-3" onClick="AlertEliminacion('.$registro['idcomentario'].')">
-                                       
-                                        <i style="color:white;" class="fas fa-trash-alt"></i>
+                        
+                                       <i id="botonBorrarComentario" style="color:white;" class="fas fa-trash-alt"></i>
 
-                                        Eliminar comentario
-
+                                       Eliminar comentario
+                    
                                     </button>
                                  
                                 ';
@@ -872,6 +898,27 @@ body {
             });
         }
     </script>
+
+    <!-- ALL JS FILES -->
+    <script src="assets/js/plugins/jquery.min.js"></script>
+        <script src="assets/js/plugins//popper.min.js"></script>
+        <script src="assets/js/plugins/bootstrap.min.js"></script>
+        <!-- FORO -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="./assets/js/plugins/eliminarforo.js"></script>
+        <!-- ALL PLUGINS -->
+        <script src="assets/js/plugins/jquery.magnific-popup.min.js"></script>
+        <script src="assets/js/plugins/jquery.pogo-slider.min.js"></script>
+        <script src="assets/js/plugins/slider-index.js"></script>
+        <script src="assets/js/plugins/smoothscroll.js"></script>
+        <script src="assets/js/plugins/form-validator.min.js"></script>
+        <script src="assets/js/plugins/contact-form-script.js"></script>
+        <script src="assets/js/plugins/isotope.min.js"></script>
+        <script src="assets/js/plugins/images-loded.min.js"></script>
+        <script src="assets/js/plugins/custom.js"></script>
+        <script src="./assets/js/plugins/sweetalert2.all.min.js"></script>
+
 </body>
 
 </html>

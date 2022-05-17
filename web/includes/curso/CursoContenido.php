@@ -477,14 +477,6 @@ echo '
 
 
 
-
-
-
-
-
-
-
-
 <!-- tttttttttt -->
 <?php
 $autor = "";
@@ -501,109 +493,8 @@ while ($registro =  $stm->fetch(PDO::FETCH_ASSOC)) {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!-- COMENTARIOOOOOOOOOOOOOOOOOOOOOOOOOOOOO -->
 <div id="divComentario" class="comment-main-level" >
-
-
 
 
 

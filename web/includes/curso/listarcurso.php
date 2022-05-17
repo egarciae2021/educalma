@@ -159,7 +159,7 @@
                                                     </a>
 
                                                     <a>
-                                                        <button id="" class="btn btn-upload" type="button" onclick="alertaCursoPublicado()">Publisssscar</button>
+                                                        <button id="" class="btn btn-upload" type="button" onclick="alertaCursoPublicado()">Publicar Curso</button>
                                                     </a>
 
                                                 <?php
