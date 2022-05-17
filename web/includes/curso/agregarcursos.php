@@ -42,6 +42,16 @@
         padding: 10px;*/
         margin:0;
         }
+
+        #btnAtras {
+            color: #5451D6;
+            border: 2px solid #5451D6;
+        }
+
+        #btnAtras:hover {
+            color: #fff;
+            background: #5451D6; 
+        }
     </style>
     <title>Agregar Cursos</title>
 </head>
@@ -89,7 +99,7 @@
                                 <a href="publicarcursos.php?pag=1" class="list-group-item list-group-item-action">
                                     <i class="fad fa-books"></i> Publicar cursos
                                 </a>
-                                <a class="btn btn-outline-secondary btn-back btn-sm" style="width:auto;" href="sidebarCursos.php" role="button">
+                                <a id="btnAtras" class="btn btn-outline-secondary btn-back btn-sm" style="width:auto;" href="sidebarCursos.php" role="button">
                                     <i class="fas fa-arrow-left" ></i> Atrás
                                 </a>
                             </div>
