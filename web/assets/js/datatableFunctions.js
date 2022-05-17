@@ -3,7 +3,7 @@ $(document).ready(function () {
     $("#tablaCursos").DataTable({
       //"responsive": true, 
       "lengthChange": false, 
-      "autoWidth": false,
+      "autoWidth": true,
       "scrollX": true,
       "language": {
         "lengthMenu": "Display _MENU_ records per page",
@@ -27,7 +27,7 @@ $(document).ready(function () {
   $("#tableUsuarios").DataTable({
     //"responsive": true, 
     "lengthChange": false, 
-    "autoWidth": false,
+    "autoWidth": true,
     "scrollX": true,
     "language": {
       "lengthMenu": "Display _MENU_ records per page",
@@ -118,3 +118,4 @@ $(document).ready(function () {
     "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
   }).buttons().container().appendTo('#tableAdmins_wrapper .col-md-6:eq(0)');
 });
+
