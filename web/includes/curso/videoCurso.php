@@ -262,12 +262,13 @@
                 </button>
 
                 <!-- Botón Siguiente 2 -->
+                <!--
                 <button type="button" class="botonSiguiente_2 btn btn-outline-secondary" id="btnV">
                     Siguiente<strong> > </strong>
-                </button> 
+                </button> -->
 
                 <!-- Botón Siguiente -->
-                <button type="button" class="botonSiguiente btn btn-outline-secondary" id="btnV" <?php if($nueva>=count($resultado1)){?>onclick="parent.location='cuestionario.php?id=<?php echo $id;?>&nW=<?php echo $nW;?>&idModulo=<?php echo $_GET['id_modulo'];?>&up=0&idcues=<?php echo $dato8['idCuestionario'];?>&idCI=<?php echo $idCI?>&cuen=1&nro=0'" hidden multiple>
+                <button type="button" class="botonSiguiente btn btn-outline-secondary" id="btnV" <?php if($nueva>=count($resultado1)){?>onclick="parent.location='cuestionario.php?id=<?php echo $id;?>&nW=<?php echo $nW;?>&idModulo=<?php echo $_GET['id_modulo'];?>&up=0&idcues=<?php echo $dato8['idCuestionario'];?>&idCI=<?php echo $idCI?>&cuen=1&nro=0'">
                     Siguiente<strong> > </strong>
                 </button> 
                 
@@ -280,7 +281,7 @@
                     $_SESSION['idcue']=$si;
                     //ponlo ente id y idtema  &validar=1&c_modulo=<?php echo $cont_modulo;?><!-- &c_tema=<?php //echo ($cont_tema+1);?> -->
                 
-                <!-- -->
+                <!-- 
                             
 
                             <script>
@@ -322,6 +323,8 @@
                                 });
     
                             </script>
+
+                            -->
  
 
                             
