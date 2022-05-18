@@ -721,16 +721,29 @@
                                 //Dependiendo de la verificación se procede actualizar el estadi
                                 //1: Revisado 2: Iniciado 3: Terminado
                                 if($cantidad2>0){
-                                    $pdo2 = Database::connect();
-                                    try{
-                                        $pdo152 = Database::connect();
-                                        $sqlitEstado = "UPDATE progresocursoinscrito SET estado = $valorEstado where id_cursoInscrito=$idCI and idModulo = $idModulo";
-                                        $qiUEst = $pdo152->prepare($sqlitEstado);
-                                        $qiUEst->execute();
-                                    }catch(PDOException $e){
-                                        echo $e->getMessage();
+
+                                    $pdo1 = Database::connect();
+                                    $sqlitIntNotas="SELECT estado FROM progresocursoinscrito WHERE idModulo='$idModulo' AND id_cursoInscrito = '$idCI' ";
+                                    $qiIntNotas=$pdo1 -> prepare($sqlitIntNotas);
+                                    $qiIntNotas->execute();
+                                    $datoIntNotas= $qiIntNotas-> fetch(PDO::FETCH_ASSOC);
+                                    $estadoMod = $datoIntNotas['estado'];
+
+                                    if($valorEstado==2 || ($valorEstado != 2 && $estadoMod != 1) || ($cuenta2==1)){
+                                        $pdo2 = Database::connect();
+                                        try{
+                                            $pdo152 = Database::connect();
+                                            $sqlitEstado = "UPDATE progresocursoinscrito SET estado = $valorEstado where id_cursoInscrito=$idCI and idModulo = $idModulo";
+                                            $qiUEst = $pdo152->prepare($sqlitEstado);
+                                            $qiUEst->execute();
+                                        }catch(PDOException $e){
+                                            echo $e->getMessage();
+                                        }
+                                        Database::disconnect();
+                                    }else{
+                                        header('Location:sidebarCursos.php');
                                     }
-                                    Database::disconnect();
+                                    
                                 }
                             }
                             
