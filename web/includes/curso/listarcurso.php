@@ -140,7 +140,7 @@
                                                 ?>
                                                     <!--para agregar modulo-->
                                                     <a href="agregarModulos.php?id=<?php echo $curso['idCurso']; ?>">
-                                                        <button class="btn btn-add" type="button"><i class="far fa-plus-square"></i> </button>
+                                                        <button id="btnAgregarModulos" class="btn btn-add" type="button"><i class="far fa-plus-square"></i> </button>
                                                     </a>
                                                     <!--para editar curso-->
                                                     <a href="editarcurso.php?id=<?php echo $curso['idCurso']; ?>">
@@ -569,28 +569,14 @@
             Swal.fire({
                 icon: 'warning',
                 title: 'Tienes que agregar temas para el curso',
-                allowOutsideClick: false,
-                confirmButtonText: "Ya lo hice",
-                                            
-                showCancelButton: true,
-                cancelButtonColor: 'red',
-                cancelButtonText: "No lo hice",
+                allowOutsideClick: true,
+                confirmButtonText: "Agregar temas",       
+                showCancelButton: false,
             }).then((result) => {
-                if (result.isConfirmed) {
-
-                    Swal.fire({
-                        icon: 'success',
-                        title: 'Curso publicado correctamente',
-                        allowOutsideClick: false,
-                        allowOutsideClick: false,
-                        confirmButtonText: "Ok",
-                    }).then((result) => {
-                        if (result.isConfirmed) {
-                            $('#btnPublicarCurso').trigger('click');
-                        } else if (result.isDenied) {
-                        }
-                    })
-                } else if (result.isDenied) {
+                if(result.isConfirmed) {
+                    window.location.href="agregarModulos.php?id=8";
+                }else if(result.isDenied){
+                    
                 }
             })
         }
