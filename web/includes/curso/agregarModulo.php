@@ -135,12 +135,45 @@
                                             </div> -->
                                     </div>
 
+
                                     <div class="form-row">
-                                        <div class="form-group col-6 col-md-6 ">
-                                            <button class="btn btn-block btn-add">
+                                        <div class="form-group col-6 col-md-6 "><input type="hidden" >
+                                            <button  type="submit" id="actumodulo_2" class="btn btn-block btn-add" onclick="alertaModulo()">
                                                 <i class="fas fa-plus"></i> Añadir
                                             </button>
                                         </div>
+                                        
+                            <!-- Mensaje de alerta modulo agregado -->
+                                        <script>
+
+
+function alertaModulo(){
+
+    Swal.fire({
+
+        icon: 'success',
+
+        title: 'Modulo agregado',
+
+        allowOutsideClick: false,
+
+        confirmButtonText: "Ok",
+
+    }).then((result) => {
+
+        if (result.isConfirmed) {
+
+            $('#actumodulo').trigger('click');
+
+        } else if (result.isDenied) {
+
+
+        }
+    })
+
+}
+
+</script>
 
                                         <div class="form-group col-6 col-md-6 ">
                                             <button type="button" id="salir_agregar" class="btn btn-block btn-dark">
