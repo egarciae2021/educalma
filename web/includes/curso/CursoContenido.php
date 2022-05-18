@@ -188,11 +188,15 @@
                                 <a class="hvr-radial-out button-theme" href="Cursoiniciar.php?id=<?php echo $id;?>&idCI=<?php echo $idCI?>"<?php if ($query==0 || $vere==false) {
                                     echo 'style="pointer-events: none;"';}?> >
 
-                                    <button id="btnComienzaAhora" type="button" class="btn container-button">
+                                    <button id="btnComienzaAhora" type="button" class="btn container-button" hidden multiple>
                                         COMIENZA AHORA
                                     </button>
 
                                 </a>
+
+                                <button id="btnComienzaAhora_2" class="btn container-button">
+                                    COMIENZA AHORA
+                                </button>
 
                             </div>
 
@@ -348,10 +352,12 @@
                         $nW=$nW+1;
                 ?>
                     <div class="w-100">
-                        <a href="video.php?id=<?php echo $id;?>&idtema=<?php echo 1;?>&id_modulo=<?php echo $modulosC['idModulo']?>&nW=<?php echo $nW-1?>&idCI=<?php echo $idCI?>" class="btn px-4 mb-2 puntos-suspensivos"  style="background:#DCECFA; width:100%; text-align:left;">
+
+                        <a id="btnInicioModulo" href="video.php?id=<?php echo $id;?>&idtema=<?php echo 1;?>&id_modulo=<?php echo $modulosC['idModulo']?>&nW=<?php echo $nW-1?>&idCI=<?php echo $idCI?>" class="btn px-4 mb-2 puntos-suspensivos"  style="background:#DCECFA; width:100%; text-align:left;">
                             <i class="fas fa-play mr-3"></i>
                             <span style="color:black; width:100%;    white-space: initial;"><?php echo $modulosC['nombreModulo'] ?></span>
                         </a>
+
                     </div>
                     
                 <?php 
@@ -360,7 +366,7 @@
 
                 </div>
 
-                <div class="col-md-5 col-lg-5 order-1 "style="width:auto; float:right; position: relative; " >
+                <div class="col-md-5 col-lg-5 order-1 " style="width:auto; float:right; position: relative; " >
                         <h5>Certificación del curso</h5>
                         <img src="assets/images/certificado.jpg" class="img-fluid "alt="">
                         <div class="info">
@@ -397,8 +403,27 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!-- COMIENZOOOOOOOOOOOOOO - Contenedor de todo. El que tiene esquinas curveadas. -->
-<div id="contenedorTodo" class="comments-container"  style="background-color: #D9EBFF; border-radius: 40px;" id="foro-curso">
+<div id="contenedorTodo" class="comments-container"  style="background-color: #D9EBFF; border-radius: 40px;">
 
 
 
@@ -416,12 +441,14 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
 <!-- BOTON COMENTAR -->
 
 
-<br>
+
 
 <!-- BOTON ELIMINAR TODO -->
 <!--botonEliminarTodo Le quite los estilos(style="position: relative; left: 10px; top: -10px" type="button"), hace que el boton 
 se vea fuera del contenedor -->
+<div id="botonEliminarTodo">
 
+<br>
 
 <?php
 if($_SESSION['privilegio']==1 || $_SESSION['privilegio']==2){
@@ -437,7 +464,7 @@ echo '
 }
 ?>
  
-
+</div>
 <!-- BOTON ELIMINAR TODO -->
 
 
@@ -449,6 +476,10 @@ echo '
 
 <!-- lilililili -->
 <li>
+
+
+
+
 
 
 
@@ -466,8 +497,13 @@ while ($registro =  $stm->fetch(PDO::FETCH_ASSOC)) {
 <!-- tttttttttt -->
 
 
+
+
 <!-- COMENTARIOOOOOOOOOOOOOOOOOOOOOOOOOOOOO -->
 <div id="divComentario" class="comment-main-level" >
+
+
+
 
 
     <!-- AVATAR -->
@@ -487,6 +523,9 @@ while ($registro =  $stm->fetch(PDO::FETCH_ASSOC)) {
         
     </div> 
     <!-- AVATAR -->
+
+
+
 
 
 
@@ -625,6 +664,83 @@ while ($registro =  $stm->fetch(PDO::FETCH_ASSOC)) {
 <br>
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   <!-- ooooooooo -->
   <?php
         $pdo2 = Database::connect();
@@ -642,6 +758,98 @@ while ($registro =  $stm->fetch(PDO::FETCH_ASSOC)) {
             }
   ?>
   <!-- ooooooooo -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -790,6 +998,32 @@ while ($registro =  $stm->fetch(PDO::FETCH_ASSOC)) {
 ?>  
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!------------------------------------
         modal para ingresar respuesta
 -------------------------------------->
@@ -842,6 +1076,176 @@ while ($registro =  $stm->fetch(PDO::FETCH_ASSOC)) {
 
 </div>      
 <!-- COMIENZOOOOOOOOOOOOOO - Contenedor de todo. El que tiene esquinas curveadas.-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 <!------------------------------------
@@ -1214,7 +1618,52 @@ modal para ingresar mensaje
         header('Location:iniciosesion.php');
     }
     ?>
-</body>
 
+
+
+                            <script>
+
+                                $('#btnComienzaAhora_2').click(function(){
+
+                                    Swal.fire({
+
+                                        icon: 'warning',
+
+                                        title: 'Se dará inicio al primer módulo del curso.',
+
+                                        html:
+
+                                        '<h5 style="color: black;">• Se validará tu conocimiento del módulo mediante un cuestionario.</h5>'
+                                        +
+                                        '<h5 style="color: black;">• Tiene solo 3 intentos para realizarlo.</h5>'
+                                        +
+                                        '<h5 style="color: black;">• Después de 3 intentos, podrá continuar respondiendo el cuestionario, pero su calificación ya no será válida.</h5>'
+                                        +
+                                        '<h5 style="color: black;">• Preste mucha atención al video del módulo antes de responder el cuestionario.</h2>',
+             
+                                        confirmButtonText: "Iniciar el curso",
+                                        
+                                        showCancelButton: true,
+                                        cancelButtonColor: 'red',
+                                        cancelButtonText: "Cancelar",
+                                    
+                                    }).then(resultado => {
+        
+                                        if (resultado.value) {
+
+                                            $('#btnComienzaAhora').trigger('click');
+            
+                                        } else {
+            
+                                        }
+    
+                                    });
+                                  
+                                });
+
+                                
+    
+                            </script>
+</body>
 
 
