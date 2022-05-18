@@ -313,7 +313,7 @@
                             <p><?php echo $dato4['introduccion']; ?></p>
                         </div>
                         <!--div class="col-8"-->
-                        <div class="col-8" style="position:relative; left: 1px;" id="informacion">
+                        <div class="col-8"  id="informacion">
                             <h5>¿Que incluye este curso?</h5>
                             <div class="container-info-course-detalle">
                                 <h5>Tabla de contenido del curso</h5>
@@ -366,7 +366,7 @@
 
                 </div>
 
-                <div class="col-md-5 col-lg-5 order-1 "style="width:auto; float:right; position: relative; " >
+                <div class="col-md-5 col-lg-5 order-1 " style="width:auto; float:right; position: relative; " >
                         <h5>Certificación del curso</h5>
                         <img src="assets/images/certificado.jpg" class="img-fluid "alt="">
                         <div class="info">
@@ -423,7 +423,7 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
 
 
 <!-- COMIENZOOOOOOOOOOOOOO - Contenedor de todo. El que tiene esquinas curveadas. -->
-<div id="contenedorTodo" class="comments-container"  style="background-color: #D9EBFF; border-radius: 40px;" id="foro-curso">
+<div id="contenedorTodo" class="comments-container"  style="background-color: #D9EBFF; border-radius: 40px;">
 
 
 
@@ -453,9 +453,9 @@ se vea fuera del contenedor -->
 <?php
 if($_SESSION['privilegio']==1 || $_SESSION['privilegio']==2){
 echo '
-    <button style="width: 310px;"  class="btn btn-danger" onClick="AlertEliminaTodo('.$idCurso.')  ">
+    <button class="btn btn-danger" onClick="AlertEliminaTodo('.$idCurso.')  ">
         
-        Eliminar todos los comentarios
+        Borrar todos los comentarios
 
         <i class="fas fa-trash-alt"></i>
 
@@ -1665,6 +1665,5 @@ modal para ingresar mensaje
     
                             </script>
 </body>
-
 
 

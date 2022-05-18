@@ -241,24 +241,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                     <?php
                         if($envi==$cuenta2){
 
@@ -377,15 +359,6 @@
                             $qiUAvance->execute();
                             Database::disconnect(); 
                     ?>
-
-
-
-
-
-
-
-
-
 
 
 
@@ -651,7 +624,7 @@
                                     }
                                 ?>
                                     <!-- nuevo -->
-                                    <div class="card c-rpta mx-4 mt-3">
+                                    <div class="card c-rpta mx-7 mt-2">
                                         <div class="card-header">
                                                 <div class="row">
                                                     <!--div class="col-sm-6 text-left"></div-->
@@ -669,11 +642,11 @@
                                                 <label class="list-group-item small form-control">
                                                     <div class="form-check" >
                                                         <?php if($fila23['idRespuesta'] == $idrespuesta){?>
-                                                            <label class="form-check-label" for="exampleRadios1" <?php echo (($fila23['estado']==1)?'style="background:#C4F3C0; width:100%; height:auto; padding:5px;"':'style="background:#EFAE9B; width:100%; height:auto; padding:5px;"')?>>
+                                                            <label class="form-check-label" for="exampleRadios1" <?php echo (($fila23['estado']==1)?'style="background:#C4F3C0; width:100%; height:auto; padding:1px;"':'style="background:#EFAE9B; width:100%; height:auto; padding:1px;"')?>>
                                                             <input type="checkbox" name="verif_resp" disabled  checked value="<?php echo $fila23['idRespuesta'];?>">
                                                              <?php echo  $fila23['respuesta'];?> </label>
                                                         <?php }else{?>
-                                                            <label class="form-check-label" for="exampleRadios1" <?php echo (($fila23['estado']==1)?'style="background:#C4F3C0; width:100%; height:auto; padding:5px;"':'style="color:black; width:100%; height:auto; padding:5px;"')?>>
+                                                            <label class="form-check-label" for="exampleRadios1" <?php echo (($fila23['estado']==1)?'style="background:#C4F3C0; width:100%; height:auto; padding:1px;"':'style="color:black; width:100%; height:auto; padding:1px;"')?>>
                                                             <input type="checkbox" name="verif_resp" disabled  value="<?php echo $fila23['idRespuesta'];?>">
                                                              <?php echo  $fila23['respuesta'];?> </label>
                                                         <?php }?>
@@ -721,16 +694,29 @@
                                 //Dependiendo de la verificación se procede actualizar el estadi
                                 //1: Revisado 2: Iniciado 3: Terminado
                                 if($cantidad2>0){
-                                    $pdo2 = Database::connect();
-                                    try{
-                                        $pdo152 = Database::connect();
-                                        $sqlitEstado = "UPDATE progresocursoinscrito SET estado = $valorEstado where id_cursoInscrito=$idCI and idModulo = $idModulo";
-                                        $qiUEst = $pdo152->prepare($sqlitEstado);
-                                        $qiUEst->execute();
-                                    }catch(PDOException $e){
-                                        echo $e->getMessage();
+
+                                    $pdo1 = Database::connect();
+                                    $sqlitIntNotas="SELECT estado FROM progresocursoinscrito WHERE idModulo='$idModulo' AND id_cursoInscrito = '$idCI' ";
+                                    $qiIntNotas=$pdo1 -> prepare($sqlitIntNotas);
+                                    $qiIntNotas->execute();
+                                    $datoIntNotas= $qiIntNotas-> fetch(PDO::FETCH_ASSOC);
+                                    $estadoMod = $datoIntNotas['estado'];
+
+                                    if($valorEstado==2 || ($valorEstado != 2 && $estadoMod != 1) || ($cuenta2==1)){
+                                        $pdo2 = Database::connect();
+                                        try{
+                                            $pdo152 = Database::connect();
+                                            $sqlitEstado = "UPDATE progresocursoinscrito SET estado = $valorEstado where id_cursoInscrito=$idCI and idModulo = $idModulo";
+                                            $qiUEst = $pdo152->prepare($sqlitEstado);
+                                            $qiUEst->execute();
+                                        }catch(PDOException $e){
+                                            echo $e->getMessage();
+                                        }
+                                        Database::disconnect();
+                                    }else{
+                                        header('Location:sidebarCursos.php');
                                     }
-                                    Database::disconnect();
+                                    
                                 }
                             }
                             

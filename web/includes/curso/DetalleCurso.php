@@ -409,13 +409,16 @@ body {
         <?php
             if($_SESSION['privilegio']==1 || $_SESSION['privilegio']==2){
                 echo '
-                    <button type="button" class="btn btn-danger" onClick="AlertEliminaTodo('.$idCurso.')">
+                    <center><button  class="btn btn-danger" onClick="AlertEliminaTodo('.$idCurso.')">
 
-                        Eliminar todos los comentarios
+                        Borrar todos los comentarios
 
                         <i class="fas fa-trash-alt"></i>
                     
                     </button>
+                    </button></center>
+
+
                 ';
             }
         ?>
