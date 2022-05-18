@@ -5,7 +5,7 @@
           <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
             <div class="footer-widget">
               <div class="widget-about">
-                <img src="assets/images/Logo.svg" alt="" class="img-fluid">
+                <img src="assets/images/logo_educalma.png" alt="" class="img-fluid">
               </div>
             </div>
           </div>
