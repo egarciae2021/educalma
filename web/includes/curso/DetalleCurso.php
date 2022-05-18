@@ -26,13 +26,28 @@ body {
     background-color: white;
 }
 
+#btnComprarAhora {
+
+    background: #99ccff;
+    color: black;
+    font-weight: bold;
+}
+
+#btnComprarAhora:hover {
+
+    background: #99ccff;
+    color: black;
+    font-weight: bold;
+    border: 2px solid black;
+}
+
+#nombreTemaCss:hover {
+
+    background: #CCE3E5 !important; 
+}
 
 
 </style>
-
-
-
-
 
 
 
@@ -136,11 +151,6 @@ body {
             <div class="row py-5">
 
 
-
-
-
-
-
                 <div class="col-12 col-sm-12 col-md-7 col-lg-8 col-xl-9 ">
                     <br><br><br><br>
                     <span>Cursos</span><i class="fas fa-angle-right mx-2"></i>
@@ -155,40 +165,12 @@ body {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                 <!-- xxxxx -->
                 <div class="col-12 col-sm-12 col-md-5 col-lg-4 col-xl-3 info-course-right pt-3">
                 
 
                     <!-- CARD///////////////////////////////// -->
                     <div class="card ">
-
-
-
-
-
-
-
-
-
-
 
 
                         <div class="content-img">
@@ -208,26 +190,6 @@ body {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                         <!-- ///////////////////////////////// -->
                         <div class="card-body">
                             <h4 class="card-title font-weight-bold" style="font-size: 30px;"><?php
@@ -242,31 +204,28 @@ body {
                             if ($dato4['costoCurso'] != 0) {
                                 if(isset($_SESSION['Logueado'])){
                             ?>
-                                <a href="pagepay.php?id=<?php echo $dato4["idCurso"]; ?>" class="btn btn-outline-dark my-3">Comprar ahora</a>
+                                <a id="btnComprarAhora" href="pagepay.php?id=<?php echo $dato4["idCurso"]; ?>" class="btn btn-outline-dark my-3">Comprar ahora</a>
                             <?php
                                 }else{
                                     ?>
-                                    <a href="pagepay.php?id=<?php echo $dato4["idCurso"]; ?>" 
-                                    <a onclick="msje_Redireccion()" class="btn btn-outline-dark my-3">Comprar ahora</a>
+                                    <a href="pagepay.php?id=<?php echo $dato4["idCurso"]; ?>"> 
+                                    <a id="btnComprarAhora" onclick="msje_Redireccion()" class="btn btn-outline-dark my-3">Comprar ahora</a>
                                     <?php
                                 }
                             } else {
                                 if(isset($_SESSION['Logueado'])){
                             ?>
-                                <a href="includes/Cursos_crud/inscribirseGratis.php?id=<?php echo $dato4["idCurso"]; ?>" class="btn btn-outline-dark my-3">Comprar ahora</a>
+                                <a id="btnComprarAhora" href="includes/Cursos_crud/inscribirseGratis.php?id=<?php echo $dato4["idCurso"]; ?>" class="btn btn-outline-dark my-3">Comprar ahora</a>
                             <?php
                                 }else{
                                     ?>
-                                        <a onclick="msje_Redireccion()" class="btn btn-outline-dark my-3">Comprar ahora</a>
+                                        <a id="btnComprarAhora" onclick="msje_Redireccion()" class="btn btn-outline-dark my-3">Comprar ahora</a>
                                     <?php
                                 }
                             }
                             ?>
 
                             <p class="font-weight-bold mb-0">Este curso incluye:</p>
-
-
-
 
 
                             <div class="my-1" style="font-size: 13px;">
@@ -348,9 +307,15 @@ body {
                     ?>
                         <div id="accordion">
                             <div class="card">
-                                <a class="card-header card-link" data-toggle="collapse" href="<?php echo '#collapseOne' . $i  ?>">
-                                    <span><i class="fas fa-sort-down mr-3"></i><?php echo $modulosC['nombreModulo'] ?></span>
+
+
+
+                                <!-- ////////////////// -->
+                                <a style="background: #7c83fd;" class="card-header card-link" data-toggle="collapse" href="<?php echo '#collapseOne' . $i  ?>">
+                                    <span><i class="fas fa-sort-down mr-3"></i>Módulo: <?php echo $modulosC['nombreModulo'] ?></span>
                                 </a>
+
+
 
                                 <?php
 
@@ -365,19 +330,35 @@ body {
                                 while ($temasC = $q7->fetch(PDO::FETCH_ASSOC)) {
                                 ?>
                                     <div id="<?php echo 'collapseOne' . $i ?>" class="collapse show" data-parent="#accordion">
-                                        <div class="card-body">
-                                            <?php echo $temasC['nombreTema'] ?>
+
+
+                                        <!-- ////////////////// -->
+                                        <div id="nombreTemaCss" style="background: white;" class="card-body">
+                                            Tema: <?php echo $temasC['nombreTema'] ?>
                                         </div>
+
+
+                                        
                                     </div>
                                 <?php
                                 }
                                 ?>
                                 <div id="<?php echo 'collapseOne' . $i  ?>" class="collapse show" data-parent="#accordion">
-                                    <div class="card-body">
+
+
+
+                                    <!-- ////////////////// -->
+                                    <!--
+                                    <div style="background: #F1F7F7;" class="card-body">
                                         Cuestionario
                                     </div>
+                                    -->
+
+
+
                                 </div>
                             </div>
+                            <br><br>
                         </div>
                     <?php
                         $i++;
@@ -415,7 +396,7 @@ body {
     if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
     ?>
 
-        <div class="comments-container" style="background-color: #ECECEC; border-radius: 40px;" id="foro-curso">
+        <div class="comments-container" style="background-color: #F1F7F7; border-radius: 40px;" id="foro-curso">
 
 
         <h1 style="text-align: center">Foro Educalma <?php echo $_SESSION['iduser']?></h1>
@@ -428,13 +409,16 @@ body {
         <?php
             if($_SESSION['privilegio']==1 || $_SESSION['privilegio']==2){
                 echo '
-                    <button type="button" class="btn btn-danger" onClick="AlertEliminaTodo('.$idCurso.')">
+                    <center><button  class="btn btn-danger" onClick="AlertEliminaTodo('.$idCurso.')">
 
-                        Eliminar todos los comentarios
+                        Borrar todos los comentarios
 
                         <i class="fas fa-trash-alt"></i>
                     
                     </button>
+                    </button></center>
+
+
                 ';
             }
         ?>
@@ -516,11 +500,11 @@ body {
                             if($_SESSION['privilegio']==1 || $_SESSION['iduser']==$idProfe || $registro['iduser']==$_SESSION['iduser']){
                                 echo '
                                     <button style="background-color:red; color:white; cursor:pointer;" type="submit" class="boton4 btn btn-sm ml-3" onClick="AlertEliminacion('.$registro['idcomentario'].')">
-                                       
-                                        <i style="color:white;" class="fas fa-trash-alt"></i>
+                        
+                                       <i id="botonBorrarComentario" style="color:white;" class="fas fa-trash-alt"></i>
 
-                                        Eliminar comentario
-
+                                       Eliminar comentario
+                    
                                     </button>
                                  
                                 ';
@@ -917,6 +901,27 @@ body {
             });
         }
     </script>
+
+    <!-- ALL JS FILES -->
+    <script src="assets/js/plugins/jquery.min.js"></script>
+        <script src="assets/js/plugins//popper.min.js"></script>
+        <script src="assets/js/plugins/bootstrap.min.js"></script>
+        <!-- FORO -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="./assets/js/plugins/eliminarforo.js"></script>
+        <!-- ALL PLUGINS -->
+        <script src="assets/js/plugins/jquery.magnific-popup.min.js"></script>
+        <script src="assets/js/plugins/jquery.pogo-slider.min.js"></script>
+        <script src="assets/js/plugins/slider-index.js"></script>
+        <script src="assets/js/plugins/smoothscroll.js"></script>
+        <script src="assets/js/plugins/form-validator.min.js"></script>
+        <script src="assets/js/plugins/contact-form-script.js"></script>
+        <script src="assets/js/plugins/isotope.min.js"></script>
+        <script src="assets/js/plugins/images-loded.min.js"></script>
+        <script src="assets/js/plugins/custom.js"></script>
+        <script src="./assets/js/plugins/sweetalert2.all.min.js"></script>
+
 </body>
 
 </html>

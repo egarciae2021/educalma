@@ -159,7 +159,7 @@
                                                     </a>
 
                                                     <a>
-                                                        <button id="" class="btn btn-upload" type="button" onclick="alertaCursoPublicado()">Publisssscar</button>
+                                                        <button id="" class="btn btn-upload" type="button" onclick="alertaCursoPublicado()">Publicar Curso</button>
                                                     </a>
 
                                                 <?php
@@ -563,58 +563,36 @@
 ?>
 
 <script>
-
-        //Mensaje de alerta curso publicado
+        
+        //Mensaje de alerta para publicar curso
         function alertaCursoPublicado(){
-
-                                        Swal.fire({
-
-                                            icon: 'warning',
-
-                                            title: '¿Está seguro que desea publicar el curso?',
-
-                                            allowOutsideClick: false,
-
-                                            confirmButtonText: "Sí",
+            Swal.fire({
+                icon: 'warning',
+                title: 'Tienes que agregar temas para el curso',
+                allowOutsideClick: false,
+                confirmButtonText: "Ya lo hice",
                                             
-                                            showCancelButton: true,
-                                            cancelButtonColor: 'red',
-                                            cancelButtonText: "No",
+                showCancelButton: true,
+                cancelButtonColor: 'red',
+                cancelButtonText: "No lo hice",
+            }).then((result) => {
+                if (result.isConfirmed) {
 
-                                        }).then((result) => {
-
-                                            if (result.isConfirmed) {
-    
-                                                Swal.fire({
-
-                                                    icon: 'success',
-
-                                                    title: 'Curso publicado correctamente',
-
-                                                    allowOutsideClick: false,
-
-                                                    allowOutsideClick: false,
-
-                                                    confirmButtonText: "Ok",
-
-                                                }).then((result) => {
-
-                                                    if (result.isConfirmed) {
-
-                                                        $('#btnPublicarCurso').trigger('click');
-
-                                                    } else if (result.isDenied) {
-
- 
-                                                    }
-                                                })
-
-                                            } else if (result.isDenied) {
-
- 
-                                            }
-                                        })
-
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Curso publicado correctamente',
+                        allowOutsideClick: false,
+                        allowOutsideClick: false,
+                        confirmButtonText: "Ok",
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            $('#btnPublicarCurso').trigger('click');
+                        } else if (result.isDenied) {
+                        }
+                    })
+                } else if (result.isDenied) {
+                }
+            })
         }
 
 </script>

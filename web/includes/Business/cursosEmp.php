@@ -146,7 +146,7 @@ if (isset($_GET['sol'])) {
 
                 <div class="table-responsive">
                     <table id="tabla" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
-                        <thead>
+                        <thead style="background-color:#AED6F1;">
                             <tr>
                                 <th>Nombre-Empresa</th>
                                 <th class="col-lg-6">Curso(s)</th>
@@ -204,20 +204,20 @@ if (isset($_GET['sol'])) {
     <div class="col-12 text-center">
 
         <div class="card">
-            <div class="card-header">
+            <div class="card-header" style="background-color:#5499C7 ; color:white;">
                 <h3 class="card-title"><strong>CONTROL DE PAGO</strong></h3>
             </div>
             <div class="card-body">
                 <div class="row">
                     <div class="col-12 col-md-4 col-lg-4 pb-3 ">
                         <div class="card">
-                            <div class="card-header">
+                            <div class="card-header" style="background-color:#5c5dc4; color:white;">
                                 <h5 style="font-size: 14px;" class="card-title"><strong>CANTIDAD DE CURSOS</strong></h5>
                             </div>
                             <?php
                             if (isset($_GET['sol'])) {
                             ?>
-                                <div class="card-body">
+                                <div class="card-body" style="background-color:#FDEDEC;">
                                     <?php
 
                                     $sql2 = $pdo1->query("SELECT COUNT(*) FROM temp where cod_empre=$ent");
@@ -231,13 +231,13 @@ if (isset($_GET['sol'])) {
                             ?>
                         </div>
                         <div class="card">
-                            <div class="card-header">
+                            <div class="card-header" style="background-color:#5c5dc4; color:white;">
                                 <h5 style="font-size: 14px;" class="card-title"><strong>CANTIDAD DE SUSCRIPCIONES</strong></h5>
                             </div>
                             <?php
                             if (isset($_GET['sol'])) {
                             ?>
-                                <div class="card-body">
+                                <div class="card-body" style="background-color:#FDEDEC;">
                                     <?php
                                     $sql2 = "SELECT num_suscripcion FROM solicitud where id_usuario=" . $_GET['sol'];
                                     $q2 = $pdo1->prepare($sql2);

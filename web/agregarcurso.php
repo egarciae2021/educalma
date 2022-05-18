@@ -16,7 +16,7 @@
 <?php include_once 'includes/curso/agregarcursos.php' ?>
 
 
-<?php include_once 'includes/Inicio/Footer.php' ?>
+ 
 <script src="assets/js/home.js"></script>
 
 </body>

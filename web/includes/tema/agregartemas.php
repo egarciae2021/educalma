@@ -106,8 +106,8 @@
                     
                             <div class="form-row ">
                                 <div class="form-group col-md-12">
-                                    <h6 class="font-weight-light text-justify" style="color:#495057;">
-                                    Agregue Temas al Módulo: "<strong><?php echo $dato2['nombreModulo'];?></strong>"
+                                    <h6 class="font-weight-light text-justify" style="color:#495057; font-size: 20px;">
+                                    Agregue Temas al Módulo: <strong style="font-weight: bold;"><?php echo $dato2['nombreModulo'];?></strong>
                                     </h6>
                                 </div>
                             </div>

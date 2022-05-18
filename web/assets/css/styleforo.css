@@ -271,7 +271,7 @@ body {
   border-radius: 3px;
 }
 
-#btnComienzaAhora {
+#btnComienzaAhora_2 {
   width: auto;
 
   position: relative;
@@ -301,7 +301,7 @@ body {
      width: 320px;
   }
 
-  #btnComienzaAhora {
+  #btnComienzaAhora_2 {
     width: auto;
 
     position: relative;
