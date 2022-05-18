@@ -12,6 +12,7 @@
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <!-- Site Icons -->
     <link rel="shortcut icon" href="assets/images/educalmalogo.svg">
+    <!-- <link rel="shortcut icon" href="assets/images/nuevo_logo.jpg"> -->
     <link rel="apple-touch-icon" href="#" />
 
     <!-- Bootstrap CSS -->
