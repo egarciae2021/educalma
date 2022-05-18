@@ -9,8 +9,13 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
         <nav class="nav__container-dashboard">
             <div>
                 <a href="index.php" class="nav__link-dashboard nav__logo-dashboard">
-                    <img src="./assets/images/imagen_2021-10-28_233347.png" alt="" class="header__img__logo">
-                    <span class="nav__logo-name-dashboard"> Educalma</span>
+                    
+                    <!-- <img src="./assets/images/imagen_2021-10-28_233347.png" alt="" class="header__img__logo"> -->
+
+                    <!-- <span class="nav__logo-name-dashboard"> Educalma</span> -->
+
+                    <img style="width: 150px; height: 30px;" src="./assets/images/logo_educalma.png" alt="" class="header__img__logo">
+
                     <i style="margin-left: 9rem; display: none;" class='bx bx-menu' id="header-toggle"></i>
                 </a>
                 <div class="nav__list-dashboard">

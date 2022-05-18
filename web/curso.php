@@ -5,6 +5,10 @@
 <?php include_once 'includes/Inicio/Head.php' ?>
 
 <body id="home" data-spy="scroll" data-target="#navbar-wd" data-offset="98">
+<<<<<<< HEAD
+    
+=======
+>>>>>>> 0c885cb923339dc80482adf19720a69de7fcffb0
 <?php include_once 'includes/Inicio/Loader.php' ?>
 <?php include_once 'includes/Inicio/Header.php' ?>
 
