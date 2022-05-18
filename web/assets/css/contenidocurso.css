@@ -201,8 +201,8 @@ body {
 @media (min-width:300px){
     .container-fluid .container-detalle-informacion .col-8{
     position: relative;
-    left: 30px;
-    right:10px;
+    left: 45px;
+    
     margin-bottom: 20px;
     width: 300px;
 }
