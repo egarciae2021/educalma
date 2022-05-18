@@ -360,7 +360,7 @@
 
                 </div>
 
-                <div class="col-md-5 col-lg-5 order-1 "style="width:auto; float:right; position: relative; " >
+                <div class="col-md-5 col-lg-5 order-1 " style="width:auto; float:right; position: relative; " >
                         <h5>Certificación del curso</h5>
                         <img src="assets/images/certificado.jpg" class="img-fluid "alt="">
                         <div class="info">
@@ -398,7 +398,7 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
 
 
 <!-- COMIENZOOOOOOOOOOOOOO - Contenedor de todo. El que tiene esquinas curveadas. -->
-<div id="contenedorTodo" class="comments-container"  style="background-color: #D9EBFF; border-radius: 40px;" id="foro-curso">
+<div id="contenedorTodo" class="comments-container"  style="background-color: #D9EBFF; border-radius: 40px;">
 
 
 
