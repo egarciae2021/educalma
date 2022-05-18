@@ -7,7 +7,7 @@ require_once 'database/databaseConection.php';
     <div class="container-header navbar-fixed-top">
         <input type="checkbox" name="" id="check">
         <div class="logo-container">
-            <a href="index.php"><img src="assets/images/nuevo_logo.jpg" alt=""></a>
+            <a href="index.php"><img src="assets/images/logo_educalma.png" alt=""></a>
         </div>
         <div class="nav-btn-header">
             <div class="nav-links-header">
