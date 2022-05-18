@@ -286,7 +286,7 @@ if (isset($_GET['sol'])) {
                         ?>
                     </div>
                     <div class="col-12 col-md-4 col-lg-3 pb-3 " style="display: flex; align-items: center; justify-content: center;">
-                        <a  href="includes/Business/addcurso.php?ent=<?php echo $ent; ?>" <?php
+                        <a  href="includes/Business/addcurso.php?ent= <?php echo $ent;?>" <?php
                                                                                             if (!isset($_GET['sol'])) {
                                                                                                 echo 'style="width:100%;cursor: not-allowed;pointer-events: none;"';
                                                                                             } else {

@@ -146,6 +146,7 @@
                                 <div class="form-group col-md-12 col-lg-12">
                                     <label class="form-label">Costo del curso</label>
                                     <input type="number" step="any" id="precio-curso" name="prec_curso"  class="form-control" value="<?php echo $dato2['costoCurso'];?>" aria-label="Dirigido" aria-describedby="names-addon">
+                                    
                                 </div>
 
                                 <div class="form-group col-md-12 col-lg-12">
@@ -155,7 +156,7 @@
                                 
                                 <div class="form-group col-md-12">
                                     <label class="form-label">Descripción del curso</label>
-                                    <textarea class="form-control" id="desc-curso" name="desc_curso" rows="4"><?php echo $dato2['descripcionCurso'];?></textarea>
+                                    <textarea class="form-control datos" id="desc-curso" name="desc_curso" rows="4"><?php echo $dato2['descripcionCurso'];?></textarea>
                                 </div>
 
                             </div>
@@ -168,11 +169,11 @@
                                             <i class="fas fa-cloud-upload-alt" aria-hidden="true"></i>
                                             Insertar imagen
                                         </label>
-                                        <input  type="file" id="file-upload" name="txtimagenAct" onchange='cambiar()' style='display: none;' 
+                                        <input require type="file" id="file-upload" name="txtimagenAct" onchange='cambiar()' style='display: none;' 
                                         aria-label="Upload" aria-describedby="inputGroupFileAddon04" accept="image/*"; multiple/>
                                         
                                         <div class="content-imagen">
-                                            <img class="content-img" src="data:image/*;base64,<?php echo base64_encode($dato2['imagenDestacadaCurso'])?>">
+                                            <img class="content-img datos" src="data:image/*;base64,<?php echo base64_encode($dato2['imagenDestacadaCurso'])?>">
                                         </div>
                                     </div>
 
@@ -181,7 +182,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group col-md-12">
-                                    <label class="form-label">Introducción del Curso: </label>
+                                    <label class="form-label" require>Introducción del Curso: </label>
                                     <textarea class="form-control" name="intRR_cursos" rows="5"><?php echo $dato2['introduccion'];?></textarea>
                                 </div>
                             </div>
@@ -201,15 +202,21 @@
                             </div>
 
                             <!-- Mensaje de alerta curso actualizado -->
+                            <!-- Mensaje de precio curso actualizado -->
                             <script>
-
+                                    let precioA = document.getElementById('precio-curso').value;
                                     function alertaCursoActualizado(){
-
+                                        if (precioA != document.getElementById('precio-curso').value ) {
+                                            titulo = 'Precio actualizado correctamente'
+                                        }else{
+                                            titulo = 'Datos actualizados correctamente'
+                                        }
+                                        
                                         Swal.fire({
 
                                             icon: 'success',
 
-                                            title: 'Curso actualizado correctamente',
+                                            title: titulo,
 
                                             allowOutsideClick: false,
 
@@ -228,6 +235,7 @@
                                         })
 
                                     }
+                                    
 
                             </script>
 
