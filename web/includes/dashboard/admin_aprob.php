@@ -69,6 +69,35 @@
                         </div>
                     </div>
 
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table id="tableUsuarios" class="table table-borderless dt-responsive text-left" cellspacing="0" width="100%">
+                                <thead>
+                                    <tr>
+                                        <th style="border-radius: 10px 0 0 10px;">
+                                            Tipo
+                                        </th>
+                                        <th scope="col">Estado de Curso</th>
+                                        <th>Nota</th>
+                                        <th>Nombres</th>
+              
+                                        <th>Fecha de Finalización</th>
+                                    
+                                        <th style="border-radius: 0 10px 10px 0;">
+                                            Acción
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    
+
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+
                     
 
 
