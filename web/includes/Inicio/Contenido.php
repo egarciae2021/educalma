@@ -43,7 +43,7 @@ if (!isset($_GET['pag'])) {
     <div class="col-12 col-sm-12 col-md-7 col-lg-7 col-xl-6 container-panel-image">
       <div class="container-image-panel">
         <div class="image-panel">
-          <img src="./assets/images/—Pngtree—hand drawn online mobile phone_5341169.png" alt="">
+          <img src="./assets/images/edu.png" alt="">
         </div>
       </div>
     </div>
@@ -301,7 +301,7 @@ if (!isset($_GET['pag'])) {
     <div class="box-rotate my-5" id="boxRotate">
       <div class="front w-100">
         <div class="box-image d-flex align-items-center justify-content-center w-100">
-          <img class="img-fluid" src="./assets/images/—Pngtree—people make puzzles concept team_5356575.png" alt="" />
+          <img class="img-fluid" src="./assets/images/EDU-EMP.png" alt="" />
         </div>
       </div>
       <div class="back">

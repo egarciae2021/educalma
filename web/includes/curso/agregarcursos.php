@@ -188,15 +188,9 @@
 
                             <div class="form-row">
                                 <div class="form-group col-12">
+                                    
                                     <input type="button" class="btn btn-block btn-agregar" value="Agregar" onclick="curso()">
                                    
-                                    Swal.fire({
-  position: 'top-end',
-  icon: 'success',
-  title: 'Your work has been saved',
-  showConfirmButton: false,
-  timer: 1500
-})   
                                 </div>
                             </div>
 
