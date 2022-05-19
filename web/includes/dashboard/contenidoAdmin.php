@@ -46,7 +46,7 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
     <div class="container-fluid">
       <div class="row mt-5">
         <div class="col-12">
-          <div class="title">Administrar</div>
+          <div class="title" style="color:#737BF1;">Administrar</div>
             <div class="row">
               <div class="col-12">
                 <nav class="navbar navbar-expand">
@@ -94,8 +94,8 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                   <div class="card-header">
                     <div class="row mb-2">
                       <div class="col-12">
-                        <h3 class="card-title">Cantidad de cursos
-                          <span style="color:#C1E1EE;">(<?php echo $resultCurs['cantidad']; ?>)</span>
+                        <h3 class="card-title" style="color:#737BF1;">Cantidad de cursos
+                          <span style="color:#BEC1F3;">(<?php echo $resultCurs['cantidad']; ?>)</span>
                         </h3>
                       </div>
                     </div>
@@ -113,7 +113,7 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                         <table id="tablaCursos" class="table table-borderless dt-responsive" cellspacing="0" width="auto">
                           
                           <thead>
-                            <tr>
+                            <tr  style="background-color:#737BF1;">
                               <th style="border-radius: 10px 0 0 10px;">Imagen</th>
                               <th>Nombre</th>
                               <th>Descripción</th>
@@ -230,7 +230,7 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                             <form id="formRegis" action="includes/categorias/checkAgrCateg.php" target="dummyframe" method="POST" onsubmit="return comprobarCategoria()" style="padding:0;">
                               <table id="" class="table table-borderless text-center dt-responsive text-center" cellspacing="0 " width="100%">
                                 <thead>
-                                  <tr>
+                                  <tr style="background-color:#737BF1;">
                                     <th style="border-radius:10px;">
                                       nombre de categoría
                                     </th>
@@ -269,7 +269,7 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                           <div class="table-responsive">
                             <table id="" class="table table-borderless text-center dt-responsive text-center" cellspacing="0" width="100%">
                               <thead>
-                                <tr>
+                                <tr style="background-color:#737BF1;">
                                   <th style="border-radius: 10px 0 0 10px;">
                                     nombre de categoría
                                   </th>
