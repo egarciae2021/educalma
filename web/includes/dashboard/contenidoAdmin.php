@@ -319,13 +319,19 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                                             <i class='fas fa-edit'></i></button>
                                         </a>
                                       </div>
+
+
+                                      
                                       <!-- para quitar categoría -->
+                                      <!--
                                       <div class="btn-group" role="group">
                                         <a id="eliminar_categoria" href="#" data-id="<?php echo $dato3['idCategoria'] ?>">
                                           <button class="btn btn-quitar" type="button">
                                             <i class="fas fa-trash-alt"></i></button>
                                         </a>
                                       </div>
+                                      -->
+
 
                                       <!--/----------------------------------------MODAL EDITAR ---------------------------------------------------->
                                       <div class="modal fade" id="ModalCategoria<?php echo $dato3['idCategoria']; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
