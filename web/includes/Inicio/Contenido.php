@@ -289,14 +289,20 @@ if (!isset($_GET['pag'])) {
       <li><i class="fas fa-check-circle mr-3"></i>Certificaciones por cada curso del plan completado.</li>
     </ul>
     <div class="box-email">
-      <span>Recibe informaci&oacute;n específica para tu empresa</span>
-      <div class="input-data">
-        <input type="email" placeholder="Escribe tu correo empresarial" id="txtEmail" />
-        <button id="btnAction">CONOCE MÁS</button>
-      </div>
+
+      <span style="position: relative; top: -30px;">Recibe informaci&oacute;n específica para tu empresa</span>
+      
+      <!--<div class="input-data">-->
+
+        <!--<input type="email" placeholder="Escribe tu correo empresarial" id="txtEmail" />-->
+        
+        <button id="btnAction" style="position: relative; top: -30px;">CONOCE MÁS</button>
+      
+      <!--</div>-->
       <span class="msg-error">Debe ser un correo corporativo.</span>
     </div>
   </div>
+
   <div class="send-data col-12 my-auto">
     <div class="box-rotate my-5" id="boxRotate">
       <div class="front w-100">
