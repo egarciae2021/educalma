@@ -9,7 +9,9 @@
     <?php include_once 'includes/Inicio/Header.php' ?>
 
     <?php include_once 'includes/curso/videoCurso.php' ?>
+
     <?php include_once 'includes/Inicio/Footer.php' ?>
+    
     <script src="assets/js/home.js"></script>
 
 </body>
