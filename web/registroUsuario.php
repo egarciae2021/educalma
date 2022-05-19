@@ -10,6 +10,8 @@
   <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <link rel="stylesheet" href="assets/lib/bootstrap.min.css" />
+
+<link rel="shortcut icon" href="assets/images/logo_edu.png">
   <script src="assets/lib/jquery.min.js"></script>
   <script src="assets/lib/popper.min.js"></script>
   <script src="assets/lib/bootstrap.min.js"></script>

@@ -4,7 +4,7 @@
 ?>
 <?php //include_once 'includes/inicio/head.php' ?>
 <head>
-<link rel="shortcut icon" href="assets/images/educalmalogo.svg">
+<link rel="shortcut icon" href="assets/images/logo_edu.png">
 </head>
 <body>
 
