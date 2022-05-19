@@ -138,7 +138,8 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                                   <?php    
                                       if($curso['imagenDestacadaCurso']!=null){
                                   ?>
-                                        <img style="height: 40px;" class="rounded-circle" src="data:image/*;base64,<?php echo base64_encode($curso['imagenDestacadaCurso']) ?>">
+                                        <img style="height: 40px;" class="rounded-circle" src="data:image/*;base64,<?php echo base64_encode
+                                        ($curso['imagenDestacadaCurso']) ?>">
                                   <?php
                                       }else{
                                   ?>
@@ -175,6 +176,9 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                                     </a>
                                   </div>
                                   <!-- para quitar curso -->
+
+
+                                  
                                   <div class="btn-group" role="group">
                                     <a href="includes/Cursos_crud/Cursos_CRUD.php?id_eliminar=<?php echo $curso['idCurso']; ?>">
                                       <button type="button" class="btn btn-quitar">

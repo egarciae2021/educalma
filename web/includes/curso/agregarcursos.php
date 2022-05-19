@@ -13,7 +13,8 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
     <?php require_once "includes/Inicio/Head.php"; ?>
@@ -187,7 +188,15 @@
 
                             <div class="form-row">
                                 <div class="form-group col-12">
-                                    <input type="submit" class="btn btn-block btn-agregar" value="Agregar">
+                                    <input type="button" class="btn btn-block btn-agregar" value="Agregar" onclick="curso()">
+                                   
+                                    Swal.fire({
+  position: 'top-end',
+  icon: 'success',
+  title: 'Your work has been saved',
+  showConfirmButton: false,
+  timer: 1500
+})   
                                 </div>
                             </div>
 
@@ -249,7 +258,7 @@
                             <thead>
                                 <tr class="bg-primary">
                                     <th>Nombre</th>
-                                    <th>imagen</th>
+                                    <th>Imagen</th>
                                     <th class="text-center">Acciones</th>
                                 </tr>
                             </thead>
