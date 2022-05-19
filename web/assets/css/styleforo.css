@@ -285,20 +285,27 @@ body {
   margin: 0 auto;
 }
 
+#botonEliminarTodo {
+
+  position: relative;
+  left: 70px;
+}
+
+/****************************************************************************************************/
 /** =====================
 * Responsive
 ========================*/
 @media only screen and (max-width: 766px) {
   .comments-container {
-     width: 480px;
+     width: 350px;
   }
 
   .comments-list .comment-box {
-     width: 390px;
+     width: 260px;
   }
 
   .reply-list .comment-box {
-     width: 320px;
+     width: 190px;
   }
 
   #btnComienzaAhora_2 {
@@ -315,13 +322,18 @@ body {
     margin: 0 auto;
   }
 
-  .comments-container{
-     width: 10px, auto !important;
+  .comments-container {
+    width: 10px, auto !important;
   }
 
- 
+  #botonEliminarTodo {
+
+    position: relative;
+    left: 12px;
+  }
 
 }
+/****************************************************************************************************/
 
 /* CODIGO SIDEBAR */
 

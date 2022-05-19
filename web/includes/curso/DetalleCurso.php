@@ -47,6 +47,65 @@ body {
 }
 
 
+
+
+
+
+
+
+
+/****************************************************************************************************/
+/** =====================
+* Responsive
+========================*/
+@media only screen and (max-width: 766px) {
+  .comments-container {
+     width: 340px;
+  }
+
+  .comments-list .comment-box {
+     width: 260px;
+  }
+
+  .reply-list .comment-box {
+     width: 190px;
+  }
+
+  #btnComienzaAhora_2 {
+    width: auto;
+
+    position: relative;
+    left: -10px;
+  }
+  
+  #btnComentar2 {
+
+    /*Centrar botón*/
+    display: block; 
+    margin: 0 auto;
+  }
+
+  .comments-container {
+    width: 10px, auto !important;
+  }
+
+  #botonEliminarTodo {
+
+    position: relative;
+    left: -63px;
+  }
+
+}
+/****************************************************************************************************/
+
+
+
+
+
+
+
+
+
 </style>
 
 
@@ -170,7 +229,7 @@ body {
                 
 
                     <!-- CARD///////////////////////////////// -->
-                    <div class="card ">
+                    <div class="card">
 
 
                         <div class="content-img">
@@ -402,7 +461,7 @@ body {
         <h1 style="text-align: center">Foro Educalma <?php echo $_SESSION['iduser']?></h1>
         
 
-        <button id="btnComentar" style="width: 310px;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Comentar</button>
+        <button id="btnComentar" style="width: 320px;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Comentar</button>
 
         <br>
 
@@ -411,7 +470,7 @@ body {
                 echo '
                     <center><button  class="btn btn-danger" onClick="AlertEliminaTodo('.$idCurso.')">
 
-                        Borrar todos los comentarios
+                        Borrar todo
 
                         <i class="fas fa-trash-alt"></i>
                     
@@ -503,7 +562,7 @@ body {
                         
                                        <i id="botonBorrarComentario" style="color:white;" class="fas fa-trash-alt"></i>
 
-                                       Eliminar comentario
+                                       Borrar
                     
                                     </button>
                                  
@@ -596,7 +655,7 @@ body {
                                     echo '
                                         <button style="background-color:red; color:white; cursor:pointer;" type="submit" class="boton4 btn btn-sm ml-3" onClick="AlertElimiSubComen('.$registro2['idsubcomentario'].')">
                                            
-                                            Eliminar subcomentario
+                                            Borrar
                                         
                                             <i style="color:white;" class="fas fa-trash-alt"></i>
 
