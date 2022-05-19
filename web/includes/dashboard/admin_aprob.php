@@ -17,7 +17,7 @@
     <div class="container-fluid">
         <div class="row mt-5">
             <div class="col-12">
-                <div class="title">Administrar</div>
+                <div class="title" style="color:#737BF1;">Administrar</div>
                 <div class="row">
                     <div class="col-12">
                         <nav class="navbar navbar-expand">
@@ -62,8 +62,8 @@
                     <div class="card-header">
                         <div class="row mb-2">
                             <div class="col-12">
-                                <h3 class="card-title">Cantidad de aprobados
-                                    <span style="color:#C1E1EE;">(<?php echo $resultUsu['cantidad']; ?>)</span>
+                                <h3 class="card-title" style="color:#737BF1;">Cantidad de aprobados
+                                    <span style="color:#BEC1F3;">(<?php echo $resultUsu['cantidad']; ?>)</span>
                                 </h3>
                             </div>
                         </div>
