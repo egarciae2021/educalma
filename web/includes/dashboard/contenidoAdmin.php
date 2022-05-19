@@ -66,6 +66,11 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                         por empresas
                       </a>
                     </li>
+                    <li class="nav-item ">
+                      <a class="nav-link" href="aprobdash.php">
+                        por aprobados
+                      </a>
+                    </li>
                   </ul>
                 </nav>
               </div>

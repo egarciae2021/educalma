@@ -38,6 +38,11 @@ $usuarios = $q3->fetchAll(PDO::FETCH_ASSOC);
                                         por empresas
                                     </a>
                                 </li>
+                                <li class="nav-item ">
+                                    <a class="nav-link" href="aprobdash.php">
+                                        por aprobados
+                                    </a>
+                                </li>
                             </ul>
                         </nav>
                     </div>
