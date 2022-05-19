@@ -17,7 +17,7 @@
     <div class="container-fluid">
         <div class="row mt-5">
             <div class="col-12">
-                <div class="title">Administrar</div>
+                <div class="title" style="color:#737BF1;">Administrar</div>
                 <div class="row">
                     <div class="col-12">
                         <nav class="navbar navbar-expand">
@@ -62,11 +62,40 @@
                     <div class="card-header">
                         <div class="row mb-2">
                             <div class="col-12">
-                                <h3 class="card-title">Cantidad de aprobados
-                                    <span style="color:#C1E1EE;">(<?php echo $resultUsu['cantidad']; ?>)</span>
+                                <h3 class="card-title" style="color:#737BF1;">Cantidad de aprobados
+                                    <span style="color:#BEC1F3;">(<?php echo $resultUsu['cantidad']; ?>)</span>
                                 </h3>
                             </div>
                         </div>
+                    </div>
+
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table id="tableUsuarios" class="table table-borderless dt-responsive text-left" cellspacing="0" width="100%">
+                                <thead>
+                                    <tr>
+                                        <th style="border-radius: 10px 0 0 10px;">
+                                            Tipo
+                                        </th>
+                                        <th scope="col">Estado de Curso</th>
+                                        <th>Nota</th>
+                                        <th>Nombres</th>
+              
+                                        <th>Fecha de Finalización</th>
+                                    
+                                        <th style="border-radius: 0 10px 10px 0;">
+                                            Acción
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    
+
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- /.card-body -->
                     </div>
 
                     
