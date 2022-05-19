@@ -714,7 +714,8 @@
                                         }
                                         Database::disconnect();
                                     }else{
-                                        header('Location:sidebarCursos.php');
+                                        //header('Location:sidebarCursos.php');
+                                        header('Location:curso.php?id='.urlencode($id).'&idCI='.urlencode($idCI));
                                     }
                                     
                                 }
