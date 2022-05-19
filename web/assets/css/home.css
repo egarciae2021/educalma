@@ -320,11 +320,12 @@
 .container-fluid-brida .row .col-12 .card {
     max-width: 318px;
     margin: auto;
-    border: none;
+    border: 2px #7d84fd solid;
     -webkit-transition: background-color 1s linear;
     transition: background-color 1s linear;
     cursor: pointer;
     padding: 2rem;
+    border-radius: 30px;
 }
 
 .container-fluid-brida .row .col-12 .card:hover {

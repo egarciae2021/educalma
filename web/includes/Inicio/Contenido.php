@@ -56,14 +56,14 @@ if (!isset($_GET['pag'])) {
     <div class="col-12">
       <div class="row">
         <div class="section-title">
-          <h2>¿Qué te brinda <span>Educalma</span>?</h2>
+          <h2>¿Qué te ofrece <span>Educalma</span>?</h2>
         </div>
       </div>
       <div class="row">
         <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
           <div class="card">
             <div class="card-image">
-              <img src="./assets/images/2000920.png" alt="" />
+              <img src="./assets/images/cur.png" alt="" />
             </div>
             <div class="card-title">
               <p>Cursos</p>
@@ -79,7 +79,7 @@ if (!isset($_GET['pag'])) {
         <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
           <div class="card">
             <div class="card-image">
-              <img src="./assets/images/3966968.png" alt="" />
+              <img src="./assets/images/curso culminad.png" alt="" />
             </div>
             <div class="card-title">
               <p>Desarrollo Personal</p>
@@ -94,7 +94,7 @@ if (!isset($_GET['pag'])) {
         <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
           <div class="card">
             <div class="card-image">
-              <img src="./assets/images/certificado.png" alt="" />
+              <img src="./assets/images/certificad.png" alt="" />
             </div>
             <div class="card-title">
               <p>Certificados</p>
