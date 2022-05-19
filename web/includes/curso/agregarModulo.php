@@ -149,6 +149,7 @@
 
 function alertaModulo(){
 
+    
     Swal.fire({
 
         icon: 'success',
@@ -166,8 +167,6 @@ function alertaModulo(){
             $('#actumodulo').trigger('click');
 
         } else if (result.isDenied) {
-
-
         }
     })
 
