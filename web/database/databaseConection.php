@@ -9,12 +9,13 @@ class Database
 	private static $dbUsername = '994896741';
   private static $dbUserPassword = 'HVc$DhzpSweC';
   */
-  
+
   //Credenciales para el LOCALHOST
   private static $dbName = 'educalma' ;
 	private static $dbHost = 'localhost';
 	private static $dbUsername = 'root';
   private static $dbUserPassword = '';
+  
 // datooooo
 
 	private static $cont  = null;
