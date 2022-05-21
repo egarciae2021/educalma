@@ -72,18 +72,18 @@
 
                     <!-- primera columna -->
                     <div class="col-3 pr-0 border-right">
-                        <ul class="list-group list-group-flush ">
+                        <!--ul class="list-group list-group-flush ">
                             <li class="list-group-item border-bottom ">Curso</li>
-                        </ul>
+                        </ul-->
                         <!-- seccion donar un curso -->
-                        <div class="list-group py-3">
+                        <div class="list-group">
                             <button type="button" class="list-group-item list-group-item-action active">
                             <i class="fas fa-pencil-alt"></i> Editar Curso
                             </button>
-                            <!-- seccion otros -->
+                            <!-- seccion otros 
                             <ul class="list-group list-group-flush py-3">
                                 <li class="list-group-item border-top-0" style="color:#495057;">Componentes del Curso</li>
-                            </ul>
+                            </ul>-->
                             <div class="list-group lista2 text-left">
                             <!-- <a href="editarcurso.php" class="list-group-item list-group-item-action">
                                 <i class="fas fa-pencil-alt"></i> Editar curso
@@ -122,16 +122,6 @@
                     ?>
                     <!-- segunda columna -->
                     <div class="col-9 pl-0">
-
-
-
-
-
-
-
-
-
-
 
 
                         <form name="formulario" id="form-leditcursos" method="POST"  enctype="multipart/form-data" action="includes/Cursos_crud/Cursos_CRUD.php?id=<?php echo $dato2['idCurso'];?>">

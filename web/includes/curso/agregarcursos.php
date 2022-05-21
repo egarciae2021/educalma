@@ -73,19 +73,19 @@
                 <div class="row">
 
                     <!-- primera columna -->
-                    <div class="col-3 pr-0 border-right">
-                        <ul class="list-group list-group-flush ">
+                    <div class="col-3 pr-0 border-right" >
+                        <!--ul class="list-group list-group-flush ">
                             <li class="list-group-item border-bottom ">Curso</li>
-                        </ul>
+                        </ul-->
                         <!-- seccion donar un curso -->
-                        <div class="list-group py-3">
+                        <div class="list-group">
                             <button type="button" class="list-group-item list-group-item-action active">
                                 Agregar un Nuevo Curso
                             </button>
-                            <!-- seccion otros -->
+                            <!-- seccion otros 
                             <ul class="list-group list-group-flush py-3">
                                 <li class="list-group-item border-top-0" style="color:#495057;">Componentes del Curso</li>
-                            </ul>
+                            </ul>-->
                             <div class="list-group lista2 text-left">
                             <!-- <a href="sidebarCursos.php" class="list-group-item list-group-item-action">
                                 <i class="fas fa-pencil-alt"></i> Editar curso
@@ -109,7 +109,7 @@
                     <!-- fin primera columna -->
 
                     <!-- segunda columna -->
-                    <div class="col-9 pl-0">
+                    <div class="col-9 pl-0" style="column-width:1040px;">
                         <form name="formulario" id="newUserForm" method="POST" action="includes/Cursos_crud/Cursos_CRUD.php"  onsubmit="return comprobarDatosFormulario()" enctype="multipart/form-data">
                             <div class="form-row ">
                                 <div class="form-group col-md-6 ">

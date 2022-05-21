@@ -37,7 +37,7 @@
       <div class="col h-auto mx-auto align-self-center" style="max-width: 400px">
         <div class="col-12 mb-4">
           <a href="./iniciosesion.php">
-            <img style="max-width: 150px" src="assets/img/logo_educalma.svg" alt="Logo Educalma" />
+            <img style="max-width: 150px" src="assets/images/logo_educalma.png" alt="Logo Educalma" />
           </a>
         </div>
         <h5 class="col d-block">¡Únete y comienza a potenciar tu carrera!</h5>

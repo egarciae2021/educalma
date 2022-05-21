@@ -73,7 +73,7 @@
                         <div class="table-responsive">
                             <table id="tableUsuarios" class="table table-borderless dt-responsive text-left" cellspacing="0" width="100%">
                                 <thead>
-                                    <tr>
+                                    <tr style="background-color:#737BF1;">
                                         <th style="border-radius: 10px 0 0 10px;">
                                             Tipo
                                         </th>

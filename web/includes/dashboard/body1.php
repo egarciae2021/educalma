@@ -14,7 +14,7 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
 
                     <!-- <span class="nav__logo-name-dashboard"> Educalma</span> -->
 
-                    <img style="width: 40px; height: 35px;" src="./assets/images/logo_edu.png" alt="" class="header__img__logo">
+                    <img style="width: 60px; height: 40px;" src="./assets/images/logo_edu.png" alt="" class="header__img__logo">
                     <img style="width: 150px; height: 30px;" src="./assets/images/logo_edu_2.png" alt="" class="header__img__logo">
                     <i style="margin-left: 9rem; display: none;" class='bx bx-menu' id="header-toggle"></i>
                 </a>
