@@ -327,7 +327,7 @@ if (!isset($_GET['pag'])) {
               <span class="title">Nombre Completo</span><input type="text" id="nomCompleto" />
             </div>
             <div class="group-control">
-              <span class="title">Correo electrónico</span><input type="text" id="txtCorreo" />
+              <span class="title">Correo electrónico</span><input type="text" id="txtEmail" />
             </div>
           </div>
           <div class="row">
