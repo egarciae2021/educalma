@@ -77,7 +77,7 @@
                         </ul-->
                         <!-- seccion donar un curso -->
                         <div class="list-group">
-                            <button type="button" class="list-group-item list-group-item-action active">
+                            <button type="button" class="list-group-item list-group-item-action active" style="font-weight: bold;">
                             <i class="fas fa-pencil-alt"></i> Editar Curso
                             </button>
                             <!-- seccion otros 
@@ -91,10 +91,10 @@
                                 <!-- <a href="sidebarCursos.php" class="list-group-item list-group-item-action">
                                     <i class="fas fa-book"></i> Mis Cursos
                                 </a> -->
-                                <a href="agregarModulos.php?id=<?php echo $id ?>" class="list-group-item list-group-item-action">
+                                <a href="agregarModulos.php?id=<?php echo $id ?>" class="list-group-item list-group-item-action" style="font-weight: bold;">
                                     <i class="fas fa-plus-square"></i> Agregar Modulos
                                 </a>
-                                <button typer="button" id="salir_public" class="list-group-item list-group-item-action" style="cursor: pointer">
+                                <button typer="button" id="salir_public" class="list-group-item list-group-item-action" style="cursor: pointer; font-weight: bold;">
                                     <i class="fad fa-books"></i> Ver lista de cursos por publicar
                                 </button>
                                 <!-- <a href="publicarcursos.php?pag=1" class="list-group-item list-group-item-action">

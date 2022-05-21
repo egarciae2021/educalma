@@ -44,24 +44,24 @@
 
                      <!-- primera columna -->
                      <div class="col-3 pr-0 border-right">
-                        <ul class="list-group list-group-flush ">
+                        <!--ul class="list-group list-group-flush ">
                             <li class="list-group-item border-bottom ">Curso</li>
-                        </ul>
+                        </ul-->
                         <!-- seccion agregar modulo -->
-                        <div class="list-group py-3">
-                            <button type="button" class="list-group-item list-group-item-action active">
+                        <div class="list-group">
+                            <button type="button" class="list-group-item list-group-item-action active" style="font-weight: bold;">
                                 Cuestionario de Preguntas
                             </button>
                             <!-- seccion otros -->
-                            <ul class="list-group list-group-flush py-3">
+                            <!--ul class="list-group list-group-flush py-3">
                                 <li class="list-group-item border-top-0" style="color:#495057;">Componentes del curso</li>
-                            </ul>
+                            </ul-->
 
                             <div class="list-group lista2 text-left">
-                                <a href="editarcurso.php?id=<?php echo $_GET['id']?>" class="list-group-item list-group-item-action">
+                                <a href="editarcurso.php?id=<?php echo $_GET['id']?>" class="list-group-item list-group-item-action" style="font-weight: bold;">
                                     <i class="fas fa-pencil-alt"></i> Editar curso
                                 </a>
-                                <a href="agregarModulos.php?id=<?php echo $_GET['id'] ?>" class="list-group-item list-group-item-action">
+                                <a href="agregarModulos.php?id=<?php echo $_GET['id'] ?>" class="list-group-item list-group-item-action" style="font-weight: bold;">
                                         <i class="fas fa-plus-square"></i> Agregar Módulos
                                 </a>
                                     <!-- <a href="sidebarCursos.php" class="list-group-item list-group-item-action">
@@ -70,7 +70,7 @@
                                     <!-- <a href="ListaCursos.php?pag=1" class="list-group-item list-group-item-action">
                                         <i class="fas fa-eye"></i> Ver todos los Cursos
                                     </a> -->
-                                <button typer="button" id="salir_public" class="list-group-item list-group-item-action" style="cursor: pointer">
+                                <button typer="button" id="salir_public" class="list-group-item list-group-item-action" style="cursor: pointer; font-weight: bold;">
                                     <i class="fad fa-books"></i> Publicar cursos
                                 </button>
                                 <a class="btn btn-outline-secondary btn-back btn-sm" href="agregarModulos.php?id=<?php echo $id=$_SESSION['ids'];?>" role="button">

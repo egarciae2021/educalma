@@ -71,7 +71,7 @@
                             </ul-->
                             <!-- seccion agregar modulo -->
                             <div class="list-group">
-                                <button type="button" class="list-group-item list-group-item-action active">
+                                <button type="button" class="list-group-item list-group-item-action active" style="font-weight: bold;">
                                     Agregar un Módulo
                                 </button>
 
@@ -81,7 +81,7 @@
                                 </ul> -->
 
                                 <div class="list-group lista2 text-left">
-                                    <a href="editarcurso.php?id=<?php echo $envio ?>" class="list-group-item list-group-item-action">
+                                    <a href="editarcurso.php?id=<?php echo $envio ?>" class="list-group-item list-group-item-action" style="font-weight: bold;">
                                         <i class="fas fa-pencil-alt"></i> Editar curso
                                     </a>
                                     <!-- <a href="sidebarCursos.php" class="list-group-item list-group-item-action">
@@ -90,7 +90,7 @@
                                             <a href="ListaCursos.php?pag=1" class="list-group-item list-group-item-action">
                                                 <i class="fas fa-eye"></i> Ver todos los Cursos
                                             </a> -->
-                                    <button typer="button" id="salir_public" class="list-group-item list-group-item-action" style="cursor: pointer">
+                                    <button typer="button" id="salir_public" class="list-group-item list-group-item-action" style="cursor: pointer; font-weight: bold;">
                                         <i class="fad fa-books"></i> Ver lista de cursos por publicar
                                     </button>
 
