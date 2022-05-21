@@ -13,8 +13,7 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
     <?php require_once "includes/Inicio/Head.php"; ?>
@@ -74,19 +73,19 @@
                 <div class="row">
 
                     <!-- primera columna -->
-                    <div class="col-3 pr-0 border-right" >
-                        <!--ul class="list-group list-group-flush ">
+                    <div class="col-3 pr-0 border-right">
+                        <ul class="list-group list-group-flush ">
                             <li class="list-group-item border-bottom ">Curso</li>
-                        </ul-->
+                        </ul>
                         <!-- seccion donar un curso -->
-                        <div class="list-group">
+                        <div class="list-group py-3">
                             <button type="button" class="list-group-item list-group-item-action active">
                                 Agregar un Nuevo Curso
                             </button>
-                            <!-- seccion otros 
+                            <!-- seccion otros -->
                             <ul class="list-group list-group-flush py-3">
                                 <li class="list-group-item border-top-0" style="color:#495057;">Componentes del Curso</li>
-                            </ul>-->
+                            </ul>
                             <div class="list-group lista2 text-left">
                             <!-- <a href="sidebarCursos.php" class="list-group-item list-group-item-action">
                                 <i class="fas fa-pencil-alt"></i> Editar curso
@@ -110,7 +109,7 @@
                     <!-- fin primera columna -->
 
                     <!-- segunda columna -->
-                    <div class="col-9 pl-0" style="column-width:1040px;">
+                    <div class="col-9 pl-0">
                         <form name="formulario" id="newUserForm" method="POST" action="includes/Cursos_crud/Cursos_CRUD.php"  onsubmit="return comprobarDatosFormulario()" enctype="multipart/form-data">
                             <div class="form-row ">
                                 <div class="form-group col-md-6 ">
@@ -188,9 +187,7 @@
 
                             <div class="form-row">
                                 <div class="form-group col-12">
-                                    
-                                    <input type="button" class="btn btn-block btn-agregar" value="Agregar" onclick="curso()">
-                                   
+                                    <input type="submit" class="btn btn-block btn-agregar" value="Agregar">
                                 </div>
                             </div>
 
@@ -252,7 +249,7 @@
                             <thead>
                                 <tr class="bg-primary">
                                     <th>Nombre</th>
-                                    <th>Imagen</th>
+                                    <th>imagen</th>
                                     <th class="text-center">Acciones</th>
                                 </tr>
                             </thead>
