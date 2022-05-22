@@ -241,8 +241,9 @@ a {
 }
 
 .nav__link-dashboard:hover {
-    color: var(--first-color);
+    color: var(--title-color);
     font-size: 16px;
+    text-decoration: none;
 }
 
 .nav__icon-dashboard {
@@ -292,7 +293,7 @@ a {
 }
 
 .nav__dropdown-item-dashboard:hover {
-    color: var(--first-color);
+    color: var(--title-color);
 }
 
 .nav__dropdown-icon-dashboard {

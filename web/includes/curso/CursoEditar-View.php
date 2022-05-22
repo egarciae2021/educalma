@@ -75,11 +75,21 @@
                         <!--ul class="list-group list-group-flush ">
                             <li class="list-group-item border-bottom ">Curso</li>
                         </ul-->
+                        <?php
+                        require_once 'database/databaseConection.php';
+                        $pdo3 = Database::connect();
+                        $sql3 = "SELECT * FROM cursos WHERE idCurso = '$id'";
+                        $q3 = $pdo3->prepare($sql3);
+                        $q3->execute(array());
+                        $dato2 = $q3->fetch(PDO::FETCH_ASSOC);
+            
+                        if($dato2['costoCurso']=="Gratis"){
+                            $dato2['costoCurso']=0;
+                        }
+                    ?>
                         <!-- seccion donar un curso -->
                         <div class="list-group">
-                            <button type="button" class="list-group-item list-group-item-action active" style="font-weight: bold;">
-                            <i class="fas fa-pencil-alt"></i> Editar Curso
-                            </button>
+                            
                             <!-- seccion otros 
                             <ul class="list-group list-group-flush py-3">
                                 <li class="list-group-item border-top-0" style="color:#495057;">Componentes del Curso</li>
@@ -91,16 +101,16 @@
                                 <!-- <a href="sidebarCursos.php" class="list-group-item list-group-item-action">
                                     <i class="fas fa-book"></i> Mis Cursos
                                 </a> -->
-                                <a href="agregarModulos.php?id=<?php echo $id ?>" class="list-group-item list-group-item-action" style="font-weight: bold;">
-                                    <i class="fas fa-plus-square"></i> Agregar Modulos
+                                <a href="agregarModulos.php?id=<?php echo $id ?>" class="btn btn-outline-secondary btn-back btn-sm" style="cursor: pointer; position: relative;">
+                                    <i class="fas fa-plus-square"></i> Agregar módulos al curso
                                 </a>
-                                <button typer="button" id="salir_public" class="list-group-item list-group-item-action" style="cursor: pointer; font-weight: bold;">
-                                    <i class="fad fa-books"></i> Ver lista de cursos por publicar
+                                <button typer="button" id="salir_public" class="btn btn-outline-secondary btn-back btn-sm" style="cursor: pointer; position: relative; top: -50px;">
+                                    <i class="fad fa-books"></i> Ver lista de cursos no publicados
                                 </button>
                                 <!-- <a href="publicarcursos.php?pag=1" class="list-group-item list-group-item-action">
                                     <i class="fad fa-books"></i> Publicar cursos
                                 </a> -->
-                                <a class="btn btn-outline-secondary btn-back btn-sm" href="user-sidebar.php" role="button">
+                                <a class="btn btn-outline-secondary btn-back btn-sm" href="user-sidebar.php" role="button" style="cursor: pointer; position: relative; top: -100px;">
                                     <i class="fas fa-arrow-left"></i> Atrás
                                 </a>
                             </div>
@@ -126,26 +136,29 @@
 
                         <form name="formulario" id="form-leditcursos" method="POST"  enctype="multipart/form-data" action="includes/Cursos_crud/Cursos_CRUD.php?id=<?php echo $dato2['idCurso'];?>">
 
+                        <div type="button" class="list-group-item list-group-item-action active" style="position: relative; top: -30px; background: #4F52D6; text-align: center; font-size: 24px;">
+                            <i class="fas fa-pencil-alt"></i> Editar datos del curso: <?php echo $dato2['nombreCurso'];?>
+                        </div>
                         <div class="row">
                             <div class="col-12 col-lg-6">
                                 <div class="form-group col-md-12 col-lg-12">
                                     <label class="form-label">Nombre del curso: <?php echo $dato2['nombreCurso'];?></label>
-                                    <input type="text" name="nomb_actu_cursos" id="names-agrecursos" class="form-control " value="<?php echo $dato2['nombreCurso'];?>"  aria-label="Nombrecurso" aria-describedby="names-addon">
+                                    <input style="background: #EAE7FA; color: black;" type="text" name="nomb_actu_cursos" id="names-agrecursos" class="form-control " value="<?php echo $dato2['nombreCurso'];?>"  aria-label="Nombrecurso" aria-describedby="names-addon">
                                 </div>
                                 
                                 <div class="form-group col-md-12 col-lg-12">
                                     <label class="form-label">Costo del curso</label>
-                                    <input type="number" step="any" id="precio-curso" name="prec_curso"  class="form-control" value="<?php echo $dato2['costoCurso'];?>" aria-label="Dirigido" aria-describedby="names-addon">
+                                    <input style="background: #EAE7FA; color: black;" type="number" step="any" id="precio-curso" name="prec_curso"  class="form-control" value="<?php echo $dato2['costoCurso'];?>" aria-label="Dirigido" aria-describedby="names-addon">
                                 </div>
 
                                 <div class="form-group col-md-12 col-lg-12">
                                     <label class="form-label">Público Dirigido</label>
-                                    <input type="text" name="publi_cursos" id="publicar_cursos" class="form-control " value="<?php echo $dato2['dirigido'];?>"  aria-label="Nombrecurso" aria-describedby="names-addon">
+                                    <input style="background: #EAE7FA; color: black;" type="text" name="publi_cursos" id="publicar_cursos" class="form-control " value="<?php echo $dato2['dirigido'];?>"  aria-label="Nombrecurso" aria-describedby="names-addon">
                                 </div>
                                 
                                 <div class="form-group col-md-12">
                                     <label class="form-label">Descripción del curso</label>
-                                    <textarea class="form-control" id="desc-curso" name="desc_curso" rows="4"><?php echo $dato2['descripcionCurso'];?></textarea>
+                                    <textarea style="background: #EAE7FA; color: black;" class="form-control" id="desc-curso" name="desc_curso" rows="4"><?php echo $dato2['descripcionCurso'];?></textarea>
                                 </div>
 
                             </div>
@@ -172,7 +185,7 @@
                                 </div>
                                 <div class="form-group col-md-12">
                                     <label class="form-label">Introducción del Curso: </label>
-                                    <textarea class="form-control" name="intRR_cursos" rows="5"><?php echo $dato2['introduccion'];?></textarea>
+                                    <textarea style="background: #EAE7FA; color: black;" class="form-control" name="intRR_cursos" rows="5"><?php echo $dato2['introduccion'];?></textarea>
                                 </div>
                             </div>
 
@@ -180,14 +193,14 @@
 
                             <div class="form-group col-12">
                                 <input type="hidden" name="idcurso" value="<?php echo $dato2['idCurso'];?>">
-                                <button type="submit" id="actucurso" class="btn btn-block btn-agregar" hidden multiple><i class="fas fa-redo"></i> Actualizar curso</button>
+                                <button type="submit" id="actucurso" class="btn btn-block btn-agregar" hidden multiple><i class="fas fa-redo"></i> Guardar datos modificados</button>
                             </div>
 
                         </form>
 
                             <div class="form-group col-12">
                                 <input type="hidden" name="idcurso">
-                                <button type="submit" id="actucurso_2" class="btn btn-block btn-agregar" onclick="alertaCursoActualizado()"><i class="fas fa-redo"></i> Actualizar curso</button>
+                                <button type="submit" id="actucurso_2" class="btn btn-block btn-agregar" onclick="alertaCursoActualizado()"><i class="fas fa-redo"></i> Guardar nuevos datos</button>
                             </div>
 
                             <!-- Mensaje de alerta curso actualizado -->

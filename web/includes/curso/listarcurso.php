@@ -52,7 +52,7 @@
             <div class="col-12 mt-5 text-center">
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title">Listado de Cursos por Publicar</h3>
+                        <h3 class="card-title">Lista de Cursos No Publicados</h3>
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body">

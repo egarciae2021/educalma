@@ -42,6 +42,18 @@
             <div class="seccion">
                 <div class="row">
 
+
+
+
+
+
+
+
+
+
+
+
+
                      <!-- primera columna -->
                      <div class="col-3 pr-0 border-right">
                         <!--ul class="list-group list-group-flush ">
@@ -49,20 +61,18 @@
                         </ul-->
                         <!-- seccion agregar modulo -->
                         <div class="list-group">
-                            <button type="button" class="list-group-item list-group-item-action active" style="font-weight: bold;">
-                                Cuestionario de Preguntas
-                            </button>
+                            
                             <!-- seccion otros -->
                             <!--ul class="list-group list-group-flush py-3">
                                 <li class="list-group-item border-top-0" style="color:#495057;">Componentes del curso</li>
                             </ul-->
 
                             <div class="list-group lista2 text-left">
-                                <a href="editarcurso.php?id=<?php echo $_GET['id']?>" class="list-group-item list-group-item-action" style="font-weight: bold;">
-                                    <i class="fas fa-pencil-alt"></i> Editar curso
+                                <a href="editarcurso.php?id=<?php echo $_GET['id']?>" class="btn btn-outline-secondary btn-back btn-sm" style="">
+                                    <i class="fas fa-pencil-alt"></i> Editar datos del curso
                                 </a>
-                                <a href="agregarModulos.php?id=<?php echo $_GET['id'] ?>" class="list-group-item list-group-item-action" style="font-weight: bold;">
-                                        <i class="fas fa-plus-square"></i> Agregar Módulos
+                                <a href="agregarModulos.php?id=<?php echo $_GET['id'] ?>" class="btn btn-outline-secondary btn-back btn-sm" style="position: relative; top: -50px;">
+                                        <i class="fas fa-plus-square"></i> Agregar módulos y/o temas
                                 </a>
                                     <!-- <a href="sidebarCursos.php" class="list-group-item list-group-item-action">
                                         <i class="fas fa-book"></i> Mis Cursos
@@ -70,10 +80,10 @@
                                     <!-- <a href="ListaCursos.php?pag=1" class="list-group-item list-group-item-action">
                                         <i class="fas fa-eye"></i> Ver todos los Cursos
                                     </a> -->
-                                <button typer="button" id="salir_public" class="list-group-item list-group-item-action" style="cursor: pointer; font-weight: bold;">
-                                    <i class="fad fa-books"></i> Publicar cursos
+                                <button typer="button" id="salir_public" class="btn btn-outline-secondary btn-back btn-sm" style="cursor: pointer; position: relative; top: -100px;">
+                                    <i class="fad fa-books"></i> Ver cursos no publicados
                                 </button>
-                                <a class="btn btn-outline-secondary btn-back btn-sm" href="agregarModulos.php?id=<?php echo $id=$_SESSION['ids'];?>" role="button">
+                                <a class="btn btn-outline-secondary btn-back btn-sm" style="cursor: pointer; position: relative; top: -150px;" href="agregarModulos.php?id=<?php echo $id=$_SESSION['ids'];?>" role="button">
                                     <i class="fas fa-arrow-left"></i> Atrás
                                 </a>
                             </div>
@@ -83,39 +93,55 @@
                     </div>
                     <!-- fin primera columna -->
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                     <!-- segunda columna -->
                     <div class="col-9 pl-0">
                         <form id="preguntas_cuestionario" action="includes/Pregunta_Respuesta/Pregunta_CRUD.php?id=<?php echo $_GET['id']; ?>&id_modulo=<?php echo $idmodulo;?>" method="POST">
             
-                            <div class="form-row ">
-                                <div class="form-group col-md-12">
-                                    <h5 class="font-weight-light text-justify" style="color:#495057;">
-                                    Agregue Preguntas a su Cuestionario.
-                                    </h5>
-                                </div>
-                            </div>
+                            <button type="button" class="list-group-item list-group-item-action active" style="background: #4F52D6; text-align: center; font-size: 24px;">
+                                Registro de preguntas para el cuestionario del módulo:
+                            </button>
+                          
 
-                            <div class="form-row">
+                            <div class="form-row" style="position: relative; top: 20px;">
                                 <div class="form-group col-12">
                                     <label class="form-label">Pregunta</label>
-                                    <textarea type="text" name="pregunta" class="form-control" placeholder="Ingrese una pregunta" rows="3" minlength="3" required></textarea>
+                                    <textarea style="" type="text" name="pregunta" class="form-control" placeholder="Ingrese una pregunta" rows="3" minlength="3" required></textarea>
                                 </div>
                             </div>
                             
                             <div class="form-row">
                                 <div class="form-group col-12">
                                     <a>
-                                        <button class="btn btn-block btn-add" type="submit"><i class="fas fa-plus"></i> Añadir</button>
+                                        <button style="position: relative; top: 10px;" class="btn btn-block btn-add" type="submit"><i class="fas fa-plus"></i> Añadir</button>
                                     </a>
                                 </div>
                             </div>
                         </form>
                     
                     
-                        <form class="pt-0">
+                        <form style="border: #4F52D6 2px solid; border-radius: 5px;" class="pt-0">
                             <div class="form-row">
-                                <div class="form-group col-12">
-                                    <label class="form-label">Listado de Preguntas</label>
+                                <div class="form-group col-12" style="position: relative; top: 10px; text-align: center;">
+                                    <label style="font-size: 24px;" class="form-label">Preguntas del cuestionario del módulo:</label>
                                 </div>
                             </div>
                     
@@ -143,7 +169,7 @@
                                     ?>
 
                                     <div class="form-group col-8 col-md-7 col-sm-9 col-lg-7 col-xl-8">
-                                        <input type="text" value="<?php echo $registro1['pregunta'];?>" class="form-control" disabled>
+                                        <input type="text" value="Pregunta: <?php echo $registro1['pregunta'];?>" class="form-control" disabled>
                                     </div>
 
                                     <!-- boton agregar respuesta -->
@@ -230,6 +256,33 @@
                         
                 </div>
                 <!-- fin segunda columna -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             </div>
         </div>
     </div>

@@ -66,9 +66,7 @@
                         </ul-->
                         <!-- seccion agregar temas a un módulo -->
                         <div class="list-group">
-                            <button type="button" class="list-group-item list-group-item-action active" style="font-weight: bold;">
-                                Agrega Temas a un Módulo
-                            </button>
+                            
                             <!-- seccion otros -->
                             <!--ul class="list-group list-group-flush py-3">
                                 <li class="list-group-item border-top-0" style="color:#495057;">Otros</li>
@@ -77,20 +75,20 @@
                                 <!-- <a href="sidebarCursos.php" class="list-group-item list-group-item-action">
                                     <i class="fas fa-book"></i> Mis Cursos
                                 </a> -->
-                                <a href="editarcurso.php?id=<?php echo $_GET['idCurso']; ?>" class="list-group-item list-group-item-action" style="font-weight: bold;">
-                                    <i class="fas fa-pencil-alt"></i> Editar curso
+                                <a href="editarcurso.php?id=<?php echo $_GET['idCurso']; ?>" class="btn btn-outline-secondary btn-back btn-sm" style="">
+                                    <i class="fas fa-pencil-alt"></i> Editar datos del curso
                                 </a>
 
-                                <a href="agregarModulos.php?id=<?php echo $_GET['idCurso']; ?>" class="list-group-item list-group-item-action" style="font-weight: bold;">
-                                    <i class="fas fa-plus-square"></i> Agregar Módulos
+                                <a href="agregarModulos.php?id=<?php echo $_GET['idCurso']; ?>" class="btn btn-outline-secondary btn-back btn-sm" style="position: relative; top: -50px;">
+                                    <i class="fas fa-plus-square"></i> Agregar módulos al curso
                                 </a>
                                 <!-- <a href="ListaCursos.php?pag=1" class="list-group-item list-group-item-action">
                                     <i class="fas fa-eye"></i> Ver todos los Cursos
                                 </a> -->
-                                <button typer="button" id="salir_public" class="list-group-item list-group-item-action" style="cursor: pointer; font-weight: bold;">
-                                    <i class="fad fa-books"></i> Publicar cursos
+                                <button typer="button" id="salir_public" class="btn btn-outline-secondary btn-back btn-sm" style="cursor: pointer; position: relative; top: -100px;">
+                                    <i class="fad fa-books"></i> Ver cursos no publicados
                                 </button>
-                                <a class="btn btn-outline-secondary btn-back btn-sm" href="agregarModulos.php?id=<?php echo $idCurso=$_GET['idCurso'];?>" role="button">
+                                <a style="cursor: pointer; position: relative; top: -150px;" class="btn btn-outline-secondary btn-back btn-sm" href="agregarModulos.php?id=<?php echo $idCurso=$_GET['idCurso'];?>" role="button">
                                     <i class="fas fa-arrow-left"></i> Atrás
                                 </a>
                             </div>
@@ -104,12 +102,8 @@
                         <!-- form temas -->
                         <form name="formulario" id="form-agretemas2" method="POST" action="includes/tema/checkAgrTema.php?idCurso=<?php echo $idCurso;?>&id_mo=<?php echo $idModulo;?>">
                     
-                            <div class="form-row ">
-                                <div class="form-group col-md-12">
-                                    <h6 class="font-weight-light text-justify" style="color:#495057; font-size: 20px;">
-                                    Agregue Temas al Módulo: <strong style="font-weight: bold;"><?php echo $dato2['nombreModulo'];?></strong>
-                                    </h6>
-                                </div>
+                            <div type="button" class="list-group-item list-group-item-action active" style="margin-bottom: 20px; background: #4F52D6; text-align: center; font-size: 24px;">
+                                Registro de temas del módulo: <?php echo $dato2['nombreModulo'];?>
                             </div>
 
                             <div class="form-row ">
@@ -145,11 +139,11 @@
                             </div>
                         </form>
 
-                        <form class="pt-0">
+                        <form style="border: #4F52D6 2px solid; border-radius: 5px;" class="pt-0">
 
                             <div class="form-row">
-                                <div class="form-group col-12">
-                                    <label class="form-label">Listado de Temas</label>
+                                <div class="form-group col-12" style="text-align: center;">
+                                    <label style="font-size: 24px;" class="form-label">Listado de temas del módulo: <?php echo $dato2['nombreModulo'];?></label>
                                 </div>
                             </div>
 
@@ -170,7 +164,7 @@
                                     ?>
 
                                     <div class="form-group col-8 col-md-10 col-sm-8 col-lg-10 col-xl-10">
-                                        <input type="text" class="form-control" value="<?php echo $dato3['nombreTema'] ?>" aria-label="Recipient's username with two button addons" disabled>
+                                        <input type="text" class="form-control" value="Tema: <?php echo $dato3['nombreTema'] ?>" aria-label="Recipient's username with two button addons" disabled>
                                     </div>
 
                                     <!-- boton editar tema -->
