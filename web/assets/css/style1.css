@@ -99,6 +99,9 @@ a {
     width: 40%;
     align-items: center;
     border-radius: 50%;
+
+    position: relative;
+    left: 25px !important;
 }
 
 .header__img__logo {
@@ -239,6 +242,7 @@ a {
 
 .nav__link-dashboard:hover {
     color: var(--first-color);
+    font-size: 16px;
 }
 
 .nav__icon-dashboard {
@@ -354,7 +358,7 @@ a {
         display: none;
     }
     .header__img__side {
-        width: 50%;
+        width: 10%;
     }
     .header__logo {
         display: block;
@@ -367,7 +371,7 @@ a {
     .nav-dashboard {
         left: 0;
         padding: 1.2rem 1.5rem 0;
-        width: 68px;
+        width: 90px;
         /* Reduced navbar */
     }
     .nav__items-dashboard {
@@ -392,7 +396,7 @@ a {
         transition: .3s;
     }
     .nav-dashboard:hover {
-        width: 300px;
+        width: 400px;
     }
     .nav-dashboard:hover .nav__logo-name-dashboard {
         opacity: 1;

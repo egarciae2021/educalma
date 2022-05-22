@@ -150,6 +150,8 @@ $("#restaNumber1").click((e) => {
 
   $('#btnSendRequest').click(() => {
     
+      if (!validEmail()) {
+
       // Data
       let frmData = new FormData();
       // Correo corporativo
@@ -179,7 +181,18 @@ $("#restaNumber1").click((e) => {
         .then((resp) => resp.ok ? resp.json() : error_catch)
         .catch(() => error_catch)
         .then(ShowMessage);
-    
+
+      }
+      else {
+        $($(".box-email > .msg-error")[0]).addClass("show");
+        $("#txtEmail").focus();
+        Swal.fire({
+          title: "¡CORREO INVÁLIDO!",
+          text: "EL CORREO NO ES CORPORATIVO.",
+          icon: "warning",
+        })
+      }
+  
   })
 
 

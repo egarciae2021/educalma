@@ -644,12 +644,16 @@
                     $('.dataTables_scrollBody').scrollLeft($(this).scrollLeft());
                     });                    
                 },
+                scrollY: 854, 
+                scrollX: 200, 
 
                 "responsive": true,
                 "lengthChange": false,
                 "autoWidth": false,
+                dom: '<"top"flBp>t<"bottom"pBl>',
                 "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
             }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+            
             $('#example2').DataTable({
                 "paging": true,
                 "lengthChange": false,
@@ -658,7 +662,7 @@
                 "info": true,
                 "autoWidth": false,
                 "responsive": true,
-            });
+            }),
         });
     </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
