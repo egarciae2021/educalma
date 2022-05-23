@@ -363,8 +363,8 @@ textarea {
 }
 
 .container-fluid .container .seccion .row .col-9 .form-row .btn-add {
-    background: #4F52D6;
-    color: #fff;
+    background: #fff;
+    color: #4F52D6;
     border: 1px solid #4F52D6;
 }
 

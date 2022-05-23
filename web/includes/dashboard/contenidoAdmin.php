@@ -11,7 +11,42 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
     <link rel="stylesheet" href="assets/css/styledash.css">
 
     <style>
+.dataTables_filter{
 
+position: relative;
+float: right;
+border-radius: 5px ; 
+border: 1px solid #57B3F7;
+background-repeat: no-repeat;
+background-image: url("./assets/img/buscar.png");
+background-position: 8px 5px;
+background-size: 25px 25px;
+
+}
+
+/*Palabra "Buscar"*/ 
+.dataTables_filter label {
+
+  position: relative;
+    top: 5px;
+    
+    left: 38px;
+    /*font-weight: bold;*/
+    width: 280px;
+
+    font-size: 15.4px;
+
+}
+
+/*Caja de texto del buscador*/ 
+.dataTables_filter label .form-control {
+
+  border: 0;
+    height: 25px;
+    position: relative;
+    left: -9px;
+    padding: 0;
+}
 
 
     </style>

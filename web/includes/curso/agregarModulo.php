@@ -64,6 +64,40 @@
                 <div class="seccion">
                     <div class="row">
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                         <!-- primera columna -->
                         <div class="col-3 pr-0 border-right">
                             <!--ul class="list-group list-group-flush ">
@@ -71,9 +105,7 @@
                             </ul-->
                             <!-- seccion agregar modulo -->
                             <div class="list-group">
-                                <button type="button" class="list-group-item list-group-item-action active">
-                                    Agregar un Módulo
-                                </button>
+                                
 
                                 <!-- seccion otros
                                 <ul class="list-group list-group-flush py-3">
@@ -81,8 +113,8 @@
                                 </ul> -->
 
                                 <div class="list-group lista2 text-left">
-                                    <a href="editarcurso.php?id=<?php echo $envio ?>" class="list-group-item list-group-item-action">
-                                        <i class="fas fa-pencil-alt"></i> Editar curso
+                                    <a href="editarcurso.php?id=<?php echo $envio ?>" class="btn btn-outline-secondary btn-back btn-sm">
+                                        <i class="fas fa-pencil-alt"></i> Editar datos del curso
                                     </a>
                                     <!-- <a href="sidebarCursos.php" class="list-group-item list-group-item-action">
                                                 <i class="fas fa-book"></i> Mis Cursos
@@ -90,11 +122,11 @@
                                             <a href="ListaCursos.php?pag=1" class="list-group-item list-group-item-action">
                                                 <i class="fas fa-eye"></i> Ver todos los Cursos
                                             </a> -->
-                                    <button typer="button" id="salir_public" class="list-group-item list-group-item-action" style="cursor: pointer">
-                                        <i class="fad fa-books"></i> Ver lista de cursos por publicar
+                                    <button typer="button" id="salir_public" class="btn btn-outline-secondary btn-back btn-sm" style="cursor: pointer; position: relative; top: -40px;">
+                                        <i class="fad fa-books"></i> Ver cursos no publicados
                                     </button>
 
-                                    <a class="btn btn-outline-secondary btn-back btn-sm" href="agregarcurso.php" role="button">
+                                    <a class="btn btn-outline-secondary btn-back btn-sm" href="agregarcurso.php" role="button" style="position: relative; top: -80px;">
                                         <i class="fas fa-arrow-left"></i> Atrás
                                     </a>
                                 </div>
@@ -104,6 +136,50 @@
                         </div>
                         <!-- fin primera columna -->
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                         <!-- segunda columna -->
                         <div class="col-9 pl-0">
 
@@ -112,15 +188,14 @@
                                                     =====================================
                                 -->
                             <form name="formulario" id="form-agretemas" method="POST" action="includes/modulo/Modulo_CRUD.php?id=<?php echo $dato['idCurso']; ?>">
-                                <div class="form-row">
-                                    <div class="form-group col-md-12">
-                                        <h5 class="font-weight-light" style="color:#495057;">
-                                            Agregue Módulos a su Curso.
-                                        </h5>
-                                    </div>
-                                </div>
+                                
+                                <div type="button" class="list-group-item list-group-item-action active" style="background: #4F52D6; text-align: center; font-size: 26px;">
+                                    Registro de módulos del curso:
+                                </div>    
 
-                                <div class="form-row pb-2">
+                            
+
+                                <div style="position: relative; top: 10px;" class="form-row pb-2">
                                     <div class="form-group col-12">
                                         <label class="form-label">Nombre del módulo</label>
                                         <input type="text" class="form-control" name="modulo_agregar" id="modulo_agregar" placeholder="Ingrese un nombre" aria-label="ModuloAgr" aria-describedby="ModuloAgr" aria-describedby="moduloAgr-addon" minlength="2" required>
@@ -138,7 +213,7 @@
 
                                 <div class="form-row">
                                     <div class="form-group col-6 col-md-6 "><input type="hidden">
-                                        <button type="button" id="actumodulo_2" class="btn btn-block btn-add" onclick="alertaModulo()">
+                                        <button type="button" id="actumodulo_2" class="btn btn-modulos" onclick="alertaModulo()">
                                             <i class="fas fa-plus"></i> Añadir
                                         </button>
                                     </div>
@@ -186,10 +261,10 @@
                             </form>
 
                             <!-- añadido nuevo -->
-                            <form class="pt-0">
-                                <div class="form-row">
-                                    <div class="form-group col-12">
-                                        <label class="form-label">Listado de Módulos</label>
+                            <form style="border: #4F52D6 2px solid; border-radius: 5px;" class="pt-0">
+                                <div style="position: relative; top: 30px;" class="form-row">
+                                    <div class="form-group col-12" style="text-align: center;">
+                                        <label style="font-size: 24px; position: relative; top: -10px;" class="form-label">Listado de módulos del curso:</label>
                                     </div>
                                 </div>
 
@@ -197,7 +272,7 @@
                                 <!-- <div class="overflow-auto"> -->
 
                                 <div>
-                                    <div class="form-row">
+                                    <div style="position: relative; top: 10px;" class="form-row">
 
                                         <?php
                                         require_once '././database/databaseConection.php';
@@ -324,6 +399,33 @@
                             <!-- fin añadido nuevo -->
                         </div>
                         <!-- fin segunda columna -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                     </div>
                 </div>
             </div>
