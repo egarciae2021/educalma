@@ -4,7 +4,7 @@ ob_start();
 ?>
 
 
-<header class="header">
+<header class="header" style="background-color:#737BF1;">
     <div class="header__container">
         <?php
         if (isset($_SESSION['Logueado']) && $_SESSION['Logueado'] === true) {
@@ -22,20 +22,24 @@ ob_start();
         <?php    
             if($dato['mifoto']!=null){
         ?>
-                <img src="data:image/*;base64,<?php echo base64_encode($dato['mifoto']); ?>" class=" header__img" alt="foto_curso"> 
+                <!--img src="data:image/*;base64,<?php echo base64_encode($dato['mifoto']); ?>" class=" header__img" alt="foto_curso"--> 
         <?php
             }else{
         ?>
-                <img src="./assets/images/user.png" class=" header__img" alt="foto_curso">
+                <!--img src="./assets/images/user.png" class=" header__img" alt="foto_curso"-->
         <?php
             }
         ?>
             
-            <a href="#" class="header__logo">
+            <a href="#" class="header__logo" style="color:white; padding: 500px;">
                 <?php
                 if (isset($_SESSION['Logueado']) && $_SESSION['Logueado'] === true) {
                     echo $_SESSION['nombres'];
-                    if ($_SESSION['privilegio'] == 1) {
+                    ?>
+                    &nbsp; <img src="./assets/img/user-admi.jpg" class=" header__img" alt="foto_curso">
+
+
+                    <!--if ($_SESSION['privilegio'] == 1) {
                         $privilegioNombre = 'Administrador';
                     } else if ($_SESSION['privilegio'] == 2) {
                         $privilegioNombre = 'Profesor';
@@ -48,7 +52,11 @@ ob_start();
                     } else if ($_SESSION['privilegio'] == 6) {
                         $privilegioNombre = 'superadmin';
                     }
-                    echo "<center>" . $privilegioNombre;
+                    echo "<center>" . $privilegioNombre;-->
+
+                    <?php   
+
+                    
                 } else {
                     echo '';
                 }
