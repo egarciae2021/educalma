@@ -280,23 +280,23 @@ if (!isset($_GET['pag'])) {
 <!-- EMPRESAS -->
 <div class="container-bussines container">
   <div class="info col-12 my-auto mb-2">
-    <div class="line"></div>
+    <div></div>
     <h2 class="text-center">Educalma para empresas</h2>
     <ul>
-      <li><i class="fas fa-check-circle mr-3"></i>Mide y analiza los resultados de tu equipo con nuestro servicio.
+      <li><i class="fas fa-check mr-3" style="color:#7249F3;"></i>Mide y analiza los resultados de tu equipo con nuestro servicio.
       </li>
-      <li><i class="fas fa-check-circle mr-3"></i>Acompañamiento y seguimiento por un Ejecutivo de Cuenta.</li>
-      <li><i class="fas fa-check-circle mr-3"></i>Certificaciones por cada curso del plan completado.</li>
+      <li><i class="fas fa-check mr-3" style="color:#7249F3;"></i>Acompañamiento y seguimiento por un Ejecutivo de Cuenta.</li>
+      <li><i class="fas fa-check mr-3" style="color:#7249F3;"></i>Certificaciones por cada curso del plan completado.</li>
     </ul>
     <div class="box-email">
 
-      <span style="position: relative; top: -30px;">Recibe informaci&oacute;n específica para tu empresa</span>
+      <!--span style="position: relative; top: -30px;">Recibe informaci&oacute;n específica para tu empresa</span-->
       
       <!--<div class="input-data">-->
 
         <!--<input type="email" placeholder="Escribe tu correo empresarial" id="txtEmail" />-->
         
-        <button id="btnAction" style="position: relative; top: -30px;">CONOCE MÁS</button>
+        <button id="btnAction" style="position: relative; background-color:#9170F8; font-weight:bold;">MÁS INFORMACIÓN</button>
       
       <!--</div>-->
       <span class="msg-error">Debe ser un correo corporativo.</span>
@@ -307,13 +307,13 @@ if (!isset($_GET['pag'])) {
     <div class="box-rotate my-5" id="boxRotate">
       <div class="front w-100">
         <div class="box-image d-flex align-items-center justify-content-center w-100">
-          <img class="img-fluid" src="./assets/images/EDU-EMP.png" alt="" />
+          &nbsp;&nbsp; <img class="img-fluid" src="./assets/images/EDU-EMP.png" alt="" />
         </div>
       </div>
       <div class="back">
         <div class="header w-100">
           <div class="box-image">
-            <img src="./assets/images/Rectangle 51.png" alt="" />
+            <<img src="./assets/images/Rectangle 51.png" alt="" />
           </div>
           <div class="box-text">
             <h3>CAPACITA A TU EQUIPO</h3>
