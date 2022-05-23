@@ -7,7 +7,7 @@
     <!-- CURSOS DESTACADOS -->
     <div class="row">
         <div class="col-12">
-            <div class="row mb-4 mt-4" style="background-color: #CDE8FD;">
+            <div class="row mb-4 mt-4" style="background-color: #e7f4ff;">
                 <div class="container section-title-course">
                     <i class="fas fa-shapes mr-3"></i>Cursos destacados
                     <hr>
@@ -102,7 +102,7 @@
     <div class="container-fluid px-0">
         <div class="row">
             <div class="col-12">
-                <div class="row mb-4 mt-4" style="background-color: #CDE8FD;">
+                <div class="row mb-4 mt-4" style="background-color: #e7f4ff;">
                     <div class="container section-title-course">
                         <i class="fas fa-shapes mr-3"></i>Cursos
                         <hr>

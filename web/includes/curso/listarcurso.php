@@ -26,17 +26,9 @@
  if(isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)){
 ?>
     <div class="container">
-        <div class="row">
-            <div class="col-md-1"></div>
-            <div class="col-md-10">
-                <div class="titlemc"></div>
-            </div>
-            <div class="col-md-1"></div>
-        </div>
+        
     </div>
-    <br>
-    <br>
-    <br>
+
     <!-- <br>
     <br> -->
     <!--contenido-->
@@ -49,7 +41,7 @@
         <!--contenido de los cursos -->
 
     <!--tabla de curso -->
-            <div class="col-12 mt-5 text-center">
+            <div class="col-12 text-center">
                 <div class="card">
                     <div class="card-header">
                         <h3 class="card-title">Lista de Cursos No Publicados</h3>
@@ -91,7 +83,7 @@
                         ?>
                         <div class="table-responsive">
                 
-                             <table id="example1" class="table table-borderless text-center dt-responsive text-center" cellspacing="0" width="100%" >
+                             <table id="example1" class="table table-borderless dt-responsive text-center" cellspacing="0" width="100%" >
                                 <thead>
                                     <tr>
                                         <th style="border-radius: 10px 0 0  10px;">Nombre</th>
@@ -181,11 +173,11 @@
                                                 <?php    
                                                     if($curso['imagenDestacadaCurso']!=null){
                                                 ?>
-                                                        <img height="50px" src="data:image/*;base64,<?php echo base64_encode($curso['imagenDestacadaCurso']) ?>">
+                                                        <img style="height:40px;" src="data:image/*;base64,<?php echo base64_encode($curso['imagenDestacadaCurso']) ?>">
                                                 <?php
                                                     }else{
                                                 ?>
-                                                        <img height="50px"  src="./assets/images/curso_educalma.png">
+                                                        <img  style="height:40px;" src="./assets/images/curso_educalma.png">
                                                 <?php
                                                     }
                                                 ?>      
