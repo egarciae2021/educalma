@@ -16,6 +16,25 @@
 
     <?php require_once "includes/Inicio/Head.php"; ?>    
 
+
+    <style>
+
+        
+    .boton3 {
+  color: #9A80F3 !important;
+  padding: 0.5em 1.2em;
+  background: rgba(0,0,0,0);
+  border-radius:10px;
+  border: 2px solid;
+  border-color: #9A80F3;
+  transition: all 1s ease;
+  position: relative;
+}
+.boton3:hover {
+  background: #9A80F3;
+  color: white !important;
+}
+    </style>
    
 </head>
 <body>
@@ -95,7 +114,7 @@
                                         <th>N° Módulos</th>
                                         <th>N° Temas</th>
                                         <th>N° Cuestionarios</th>
-                                        <th style="border-radius: 0 10px 10px 0;">Acciones</th>
+                                        <th style="border-radius: 0 10px 10px 0;" colspan="3">Acciones</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -224,36 +243,45 @@
 
                                             ?></td>
 
-                                            <td>
+                                            
                                                 <?php
 
                     
                                                 ?>
+                                                <td>
                                                     <!--para agregar modulo-->
-                                                    <a href="agregarModulos.php?id=<?php echo $curso['idCurso']; ?>">
-                                                        <button style="width: 10px;" id="btnAgregarModulos" class="btn btn-add" type="button"><i class="far fa-plus-square"></i> </button>
+                                                    <a style="color:blue;" href="agregarModulos.php?id=<?php echo $curso['idCurso']; ?>">
+                                                        <i class="far fa-plus-square fa-lg"></i> 
                                                     </a>
+
+                                                    </td>    
+
+                                                    <td>
                                                     <!--para editar curso-->
-                                                    <a style="" href="editarcurso.php?id=<?php echo $curso['idCurso']; ?>">
-                                                        <button style="width: 10px;" class="btn btn-edit" type="button"><i class="far fa-edit"></i></button>
+                                                    <a style="color:green;" href="editarcurso.php?id=<?php echo $curso['idCurso']; ?>">
+                                                        <i class="far fa-edit fa-lg"></i>
                                                     </a>
+                                                    </td>
                                                     <!--para quitar curso-->
                                                     <!-- <a href="includes/Cursos_crud/Cursos_CRUD.php?id_curso=<?php echo $curso['idCurso']; ?>">
                                                         <button class="boton_personalizado" type="button"><i class="far fa-bell-slash fa-2x"></i></button>
                                                     </a> -->
+
+                                                
+                                                <td>
                                                 <?php
                                                  if($_SESSION['privilegio'] == 1) {
 
                                                 ?>
                                                     <!--para publicar curso-->
                                                     <a style="" href="includes/Cursos_crud/aceptarCurso.php?id_curso=<?php echo $curso['idCurso']; ?>&pag=<?php echo $_GET['pag'];?>">
-                                                        <button style="width: 10px;" id="btnPublicarCurso" class="btn btn-upload" type="button" hidden multiple>Publicar</button>
+                                                        <button  id="btnPublicarCurso" class="btn btn-upload" type="button" hidden multiple>Publicar</button>
                                                     </a>
-
+                                               
                                                     <a>
-                                                        <button style="width: 10px;" id="" class="btn btn-upload" type="button" onclick="alertaCursoPublicado()">Publicar <br> Curso</button>
+                                                        <button id="" class="boton3" type="button" onclick="alertaCursoPublicado()">Publicar Curso</button>
                                                     </a>
-
+                                                 </td>
                                                 <?php
 
                                                 }
@@ -263,7 +291,7 @@
                                                 <!-- <a href="curso.php?id=<?php echo $curso['idCurso']; ?>">
                                                     <i class="far fa-eye fa-2x"></i>
                                                 </a> -->
-                                            </td>
+                                            
 
                                         </tr>
                                         
