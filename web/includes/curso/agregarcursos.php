@@ -187,10 +187,12 @@
                             </div>
 
                             <div class="form-row ">
+
                                 <div class="form-group col-md-6 ">
-                                    <label class="form-label">Público Dirigido</label>
-                                    <input type="text " id="publico_dirigidoo" name="publico_dirigido" placeholder="Ingrese público dirigido" class="form-control" aria-label="Dirigido" aria-describedby="names-addon">
+                                    <label class="form-label">Costo Curso</label>
+                                    <input type="number" id="precio-curso" name="prec_curso" placeholder="Ingrese Costo del Curso" class="form-control" aria-label="preci_curso" aria-describedby="names-addon">
                                 </div>
+
 
                                 <div class="form-group col-md-6 ">
                                     <label class="form-label">*Agregar imagen del curso</label>
@@ -212,6 +214,12 @@
                                         <div id="info"></div>
                                     </div>
                                 </div>
+
+                                <div class="form-group col-md-6 ">
+                                    <label class="form-label">Público Dirigido</label>
+                                    <input type="text " id="publico_dirigidoo" name="publico_dirigido" placeholder="Ingrese público dirigido" class="form-control" aria-label="Dirigido" aria-describedby="names-addon">
+                                </div>
+                                
                             </div>
 
                             <div class="form-row">
