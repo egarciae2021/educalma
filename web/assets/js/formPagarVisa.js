@@ -61,6 +61,7 @@ formulario.inputNumero.addEventListener('keyup', (e) => {
 	numeroTarjeta.textContent = valorInput;
 
 	if(valorInput == ''){
+
 		numeroTarjeta.textContent = '#### #### #### ####';
 
 		logoMarca.innerHTML = '';
@@ -76,11 +77,11 @@ formulario.inputNumero.addEventListener('keyup', (e) => {
         Swal.fire('No puede comenzar con el número 5.');
 
 
-        Swal.fire({
+          Swal.fire({
 			
+			icon: 'error',
 			allowOutsideClick: false,
-
-            title: 'No puede comenzar con el número 5.',
+            title: 'No puede comenzar con el número 5',
             confirmButtonText: 'Aceptar',
 
 			 
@@ -88,6 +89,7 @@ formulario.inputNumero.addEventListener('keyup', (e) => {
     
             if (result.isConfirmed) {
 
+				// Limpiar
                 $('input[type="text"]').val('');
               
 
