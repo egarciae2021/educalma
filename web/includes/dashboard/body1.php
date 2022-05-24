@@ -88,6 +88,7 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                                     ?>
                                         <a href="publicarcursos.php?pag=1" class="nav__dropdown-item-dashboard nav__link-dashboard">Cursos No Publicados</a>
                                         <a href="agregarcurso.php" class="nav__dropdown-item-dashboard nav__link-dashboard">Agregar Un Nuevo Curso</a>
+                                        <a href="aprobadosCurso.php" class="nav__dropdown-item-dashboard nav__link-dashboard">Aprobados</a>
                                     <?php
                                     }
                                     ?>
