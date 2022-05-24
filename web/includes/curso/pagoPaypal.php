@@ -48,7 +48,7 @@ $id = $_GET['id'];
         <div class="container-header navbar-fixed-top" style="max-width: 95rem;">
             <input type="checkbox" name="" id="check">
             <div class="logo-container">
-                <a href="index.php"><img src="assets/images/Logo.svg" alt=""></a>
+                <a href="index.php"><img src="assets/images/logo_educalma.png" alt=""></a>
             </div>
             <div class="nav-btn-header">
                 <div class="nav-links-header">
@@ -149,7 +149,7 @@ $id = $_GET['id'];
             <div class="col-12 col-sm-12 col-md-5 col-lg-4 col-xl-4">
                 <div class="container-info-course" style="background-color: white;">
                     <div class="px-4 py-2">
-                        <h5>Detalles del pedido</h5>
+                    <h4  style="color: #4D1BF8; font-weight: bold;">Detalles del pedido</h4>
                         <!-- <p class="m-0">Curso:</p> -->
                         <div class="d-flex flex-column">
                             <span>Nombre del curso: <?php echo $dato['nombreCurso'];?></span>
@@ -158,13 +158,13 @@ $id = $_GET['id'];
                         </div>
                     </div>
                 </div>
-                <div class="container-info-resumen mt-3" style="background-color: white;">
+                <div class="container-info-resumen mt-3" style="background-color: white; border: 2px solid #737BF1; border-radius: 15px;">
                     <div class="px-4 py-3">
-                        <h5>Resumen de pedido</h5>
+                        <h4 style="color: #4D1BF8; font-weight: bold;">Resumen de pedido</h4>
                         <!-- <p class="m-0">Curso:</p> -->
                         <div class="row">
-                            <div class="col-6">Producto</div>
-                            <div class="col-6 text-right"><span>$.<?php echo $dato['costoCurso'];?></span></div>
+                            <div class="col-6" style="font-weight: bold;">Producto</div>
+                            <div class="col-6 text-right" style="font-weight: bold;"><span>$.<?php echo $dato['costoCurso'];?></span></div>
                         </div>
                         <div class="row mt-3">
                             <div class="col-5 col-lg-6 col-xl-5">
@@ -185,15 +185,15 @@ $id = $_GET['id'];
 
                                 </div>
                             </div>
-                            <div class="col-7 col-lg-6 col-xl-7 text-leftt"><span><?php echo $dato['nombreCurso'];?></span>
-                                <p class="font-weight-bold text-danger">$.<?php echo $dato['costoCurso'];?></p>
+                            <div class="col-7 col-lg-6 col-xl-7 font-weight-bold text-leftt" style="font-size: 16px;"><span><?php echo $dato['nombreCurso'];?></span>
+                                <p class="font-weight-bold text-danger" >$.<?php echo $dato['costoCurso'];?></p>
                                 <?php $_SESSION['costoPay']=$dato['costoCurso'];?>
                             </div>
                         </div>
                         <hr>
                         <div class="mt-2">
-                            <h4 style="font-size: 10px;">Los productos podrán ser descargados una vez que se procede el pago</h4>
-                            <h5 class="font-weight-bold" style="font-size: 8px;">(Para aclaraciones giancarlosuggardaddy@gmail.com)</h5>
+                            <h3 style="font-size: 13px;">Los productos podrán ser descargados una vez que se procede el pago</h3>
+                            <h3 class="font-weight-bold" style="font-size: 10px;">(Para aclaraciones giancarlosuggardaddy@gmail.com)</h3>
                         </div>
                     </div>
 

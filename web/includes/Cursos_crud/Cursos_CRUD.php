@@ -13,7 +13,7 @@
         $descripcionCur=$_POST['descripcio_curso'];
         $intro = $_POST['intro_curso'];
         $categoriaCur = $_POST['categoria'];
-        $precio=0.00;
+        $precio=$_POST['prec_curso'];
         $nombreimagen=$_FILES['txtimagen']['tmp_name'];
         $dirigido =$_POST['publico_dirigido'];
         $idProfe = $_SESSION['codUsuario'];
