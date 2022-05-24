@@ -339,7 +339,7 @@ $id = $_GET['id'];
  
 
 <div class="modal" id="modal1" data-animation="slideInOutLeft">
-    <section style="background: #ddeefc; border: 2px solid black; border-radius: 30px; width: 500px; height: 800px; overflow-y: scroll; " class="modal-content">
+    <section class="modal-content">
 
         <div class="contenedor">
 
@@ -428,14 +428,10 @@ $id = $_GET['id'];
                     </div>
                 </div>
                 <button type="submit" class="btn-enviar">Enviar</button>
+                <button type="button" class="btnCancelar" aria-label="close modal" data-close>Cancelar</button>
             </form>
         </div>
 
-        <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
-        <script src="js/main.js"></script>
-
- 
-      
     </section>
   </div>
 </div>
@@ -449,6 +445,38 @@ $id = $_GET['id'];
 
 <script src="assets/js/modalPagarVisa.js"></script>
 <script src="assets/js/formPagarVisa.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
