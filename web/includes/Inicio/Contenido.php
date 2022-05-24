@@ -124,7 +124,7 @@ if (!isset($_GET['pag'])) {
     <div class="col-12">
       <div class="row">
         <div class="section-title">
-          <div class="line"></div>
+          <div class=""></div>
           <h2>Cursos destacados</h2>
         </div>
       </div>
@@ -296,7 +296,7 @@ if (!isset($_GET['pag'])) {
 
         <!--<input type="email" placeholder="Escribe tu correo empresarial" id="txtEmail" />-->
         
-        <button id="btnAction" style="position: relative; background-color:#9170F8; font-weight:bold;">MÁS INFORMACIÓN</button>
+        <button id="btnAction" style="position: relative; background-color:#737BF1; font-weight:bold;">MÁS INFORMACIÓN</button>
       
       <!--</div>-->
       <span class="msg-error">Debe ser un correo corporativo.</span>

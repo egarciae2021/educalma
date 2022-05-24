@@ -31,11 +31,12 @@ ob_start();
             }
         ?>
             
-            <a href="#" class="header__logo" style="color:white; padding-left:500px;">
+            <a href="#" class="header__logo" style="color:white; padding-left:700px;">
                 <?php
                 if (isset($_SESSION['Logueado']) && $_SESSION['Logueado'] === true) {
-                    echo $_SESSION['nombres'];
+                    
                     ?>
+                    <!--echo $_SESSION['nombres'];-->
                     &nbsp; <img src="./assets/img/user-admi.jpg" class=" header__img" alt="foto_curso">
 
 
