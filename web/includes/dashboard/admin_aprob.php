@@ -89,7 +89,8 @@ background-size: 25px 25px;
                 <!-- cambiar de usuarios a aprobados -->
                 <?php
                 $pdo3 = Database::connect();
-                $sqlUsu = "SELECT COUNT(*) AS cantidad FROM usuarios WHERE estado = 1";
+                //$sqlUsu = "SELECT COUNT(*) AS cantidad FROM usuarios WHERE estado = 1";
+                $sqlUsu = "SELECT COUNT(*) AS cantidad FROM aprobados";
                 $qUsua = $pdo3->prepare($sqlUsu);
                 $qUsua->execute(array());
                 $resultUsu = $qUsua->fetch(PDO::FETCH_ASSOC);
@@ -128,7 +129,37 @@ background-size: 25px 25px;
                                     </tr>
                                 </thead>
                                 <tbody>
-
+                                    <?php 
+                                    
+                                        $pdo4 = Database::connect();
+                                        $sql4 = "SELECT * FROM `aprobados`";
+                                        /* max$q4 = $pdo4->prepare($sql4);
+                                        $q4->execute(array());*/
+                                        foreach($pdo->query($sql4) as $aprobados){ //= $q4->fetch(PDO::FETCH_ASSOC)
+                                    echo '<tr class="h-100 justify-content-center align-items-center">';
+                                    echo '
+                                        <td>'; 
+                                        if($aprobados['hijoEmpresa']==0){
+                                            echo 'normal';
+                                        }else{
+                                            echo 'privado';
+                                        };
+                                        echo '</td>
+                                        <td>';
+                                        if($aprobados['avance']==100){
+                                            echo 'completado';
+                                        }else{
+                                            echo 'por terminar';
+                                        }
+                                        echo '</td>
+                                        <td>'. $aprobados['nota'].'</td>
+                                        <td>'. $aprobados['nombres'].'</td>
+                                        <td>'. $aprobados['fecha'].'</td>
+                                        <td>'. 'boton'.'</td>
+                                    ';
+                                        }
+                                    Database::disconnect();
+                                    ?>    
                                     
 
                                 </tbody>
