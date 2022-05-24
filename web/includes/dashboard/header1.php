@@ -31,7 +31,7 @@ ob_start();
             }
         ?>
             
-            <a href="#" class="header__logo" style="color:white; padding: 500px;">
+            <a href="#" class="header__logo" style="color:white; padding-left:500px;">
                 <?php
                 if (isset($_SESSION['Logueado']) && $_SESSION['Logueado'] === true) {
                     echo $_SESSION['nombres'];
