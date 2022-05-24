@@ -123,9 +123,7 @@ background-size: 25px 25px;
               
                                         <th>Fecha de Finalización</th>
                                     
-                                        <th style="border-radius: 0 10px 10px 0;">
-                                            Acción
-                                        </th>
+                                        
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -155,7 +153,7 @@ background-size: 25px 25px;
                                         <td>'. $aprobados['nota'].'</td>
                                         <td>'. $aprobados['nombres'].'</td>
                                         <td>'. $aprobados['fecha'].'</td>
-                                        <td>'. 'boton'.'</td>
+                                       
                                     ';
                                         }
                                     Database::disconnect();
