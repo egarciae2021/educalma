@@ -21,17 +21,17 @@
 
         
     .boton3 {
-  color: #9A80F3 !important;
+  color: #737BF1 !important;
   padding: 0.5em 1.2em;
   background: rgba(0,0,0,0);
   border-radius:10px;
   border: 2px solid;
-  border-color: #9A80F3;
+  border-color: #737BF1;
   transition: all 1s ease;
   position: relative;
 }
 .boton3:hover {
-  background: #9A80F3;
+  background: #737BF1;
   color: white !important;
 }
     </style>
@@ -104,7 +104,7 @@
                 
                              <table id="example1" class="table table-borderless dt-responsive text-center" cellspacing="0" width="100%" >
                                 <thead>
-                                    <tr>
+                                    <tr style="background-color:#737BF1">
                                         <th style="border-radius: 10px 0 0  10px;">Nombre</th>
                                         <th>Categoría</th>
                                         <th>Público dirigido</th>
@@ -607,7 +607,7 @@
             document.getElementById('info').innerHTML = pdrs;
         }
     </script>
-    <?php require_once "includes/Inicio/Footer.php"; ?>
+ 
     <script type="text/javascript">
         /*    $(document).ready(function() {
             $('#example').DataTable({
