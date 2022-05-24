@@ -60,7 +60,7 @@
             <div class="accordion" id="accordion" style="font-family:'Work Sans',sans-serif;">
                 <div class="card border-0 rounded my-4 card-questions-box">
                     <div class="card-header border-0" data-toggle="collapse" href="#collapseOne" aria-controls="collapse1">
-                        <a class="card-text">
+                        <a class="card-text" style="font-weight: bold;">
                             ¿Cómo puedo inscribirme a un curso de EDUCALMA?
                             <i class="fas fa-angle-down rotate-icon fa-2x" style="float:right;"></i>
                         </a>
@@ -78,7 +78,7 @@
 
                 <div class="card border-0 rounded mb-4 card-questions-box">
                     <div class="card-header border-0" data-toggle="collapse" href="#collapseTwo">
-                        <a class="collapsed card-text">
+                        <a class="collapsed card-text" style="font-weight: bold;">
                             ¿Cuántas sesiones tiene un curso?
                             <i class="fas fa-angle-down rotate-icon fa-2x" style="float:right;"></i>
                         </a>
@@ -96,7 +96,7 @@
 
                 <div class="card border-0 rounded mb-4 card-questions-box">
                     <div class="card-header border-0" data-toggle="collapse" href="#collapseThree">
-                        <a class="collapsed card-text">
+                        <a class="collapsed card-text" style="font-weight: bold;">
                             ¿Cuántas son las preguntas que tiene el test?
                             <i class="fas fa-angle-down rotate-icon fa-2x" style="float:right;"></i>
                         </a>
@@ -114,7 +114,7 @@
 
                 <div class="card border-0 rounded mb-4 card-questions-box">
                     <div class="card-header border-0" data-toggle="collapse" href="#collapseFour">
-                        <a class="collapsed card-text">
+                        <a class="collapsed card-text" style="font-weight: bold;">
                             ¿Tiene un pago para inscribirse?
                             <i class="fas fa-angle-down rotate-icon fa-2x" style="float:right;"></i>
                         </a>
@@ -132,7 +132,7 @@
 
                 <div class="card border-0 rounded mb-4 card-questions-box">
                     <div class="card-header border-0" data-toggle="collapse" href="#collapseFive">
-                        <a class="collapsed card-text">
+                        <a class="collapsed card-text" style="font-weight: bold;"> 
                             ¿Los Certificados están reconocidos?
                             <i class="fas fa-angle-down rotate-icon fa-2x" style="float:right;"></i>
                         </a>

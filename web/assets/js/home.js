@@ -28,19 +28,28 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Verificar si es correo corporativo
   $("#btnAction").click((e) => {
-    if (!validEmail()) {
-      if (validarEmail($("#txtEmail").val())) {
+    
+    //if (!validEmail()) {
+      
+      
+      //if (validarEmail($("#txtEmail").val())) {
+
+
         //window.location.href = "./#boxRotate";
         scrollTo(scrollX, scrollY - 100);
         $(".back input").first().focus();
         $("#boxRotate").addClass("active");
-        $($(".box-email > .msg-error")[0]).removeClass("show")
+        $($("")[0]).removeClass("show")
         setTimeout(function () {
           $("#boxRotate > .front").remove();
         }, 2000);
-      }
-    } else
-      $($(".box-email > .msg-error")[0]).addClass("show")
+
+
+      //}
+
+    //} else
+    
+      //$($(".box-email > .msg-error")[0]).addClass("show")
   })
 
   // Mostrar Paises
@@ -140,7 +149,9 @@ $("#restaNumber1").click((e) => {
   };
 
   $('#btnSendRequest').click(() => {
-    if (!validEmail()) {
+    
+      if (!validEmail()) {
+
       // Data
       let frmData = new FormData();
       // Correo corporativo
@@ -170,16 +181,18 @@ $("#restaNumber1").click((e) => {
         .then((resp) => resp.ok ? resp.json() : error_catch)
         .catch(() => error_catch)
         .then(ShowMessage);
-    }
-    else {
-      $($(".box-email > .msg-error")[0]).addClass("show");
-      $("#txtEmail").focus();
-      Swal.fire({
-        title: "¡CORREO INVÁLIDO!",
-        text: "EL CORREO NO ES CORPORATIVO.",
-        icon: "warning",
-      })
-    }
+
+      }
+      else {
+        $($(".box-email > .msg-error")[0]).addClass("show");
+        $("#txtEmail").focus();
+        Swal.fire({
+          title: "¡CORREO INVÁLIDO!",
+          text: "EL CORREO NO ES CORPORATIVO.",
+          icon: "warning",
+        })
+      }
+  
   })
 
 

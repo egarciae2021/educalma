@@ -51,44 +51,38 @@
 
             <?php $idmodulo=$_GET['id_modulo'];?>
 
-            <div class="container-fluid">
+            <div class="container-fluid" style="">
                 <div class="container" id="contformulario">
                     <div class="seccion">
                         <div class="row">
 
                             <!-- primera columna -->
                             <div class="col-3 pr-0 border-right">
-                                <ul class="list-group list-group-flush ">
-                                    <li class="list-group-item border-bottom ">Curso</li>
-                                </ul>
+                                
                                 <!-- seccion agregar modulo -->
                                 <div class="list-group py-3">
-                                    <button type="button" class="list-group-item list-group-item-action active">
-                                        Cuestionario de Respuestas
-                                    </button>
-                                    <!-- seccion otros -->
-                                    <ul class="list-group list-group-flush py-3">
-                                        <li class="list-group-item border-top-0" style="color:#495057;">Otros</li>
-                                    </ul>
+                                    
+                                    
+                                   
                                     <div class="list-group lista2 text-left">
                                         <!-- <a href="sidebarCursos.php" class="list-group-item list-group-item-action">
                                     <i class="fas fa-book"></i> Mis Cursos
                                 </a> -->
-                                        <a href="editarcurso.php?id=<?php echo $_GET['id'] ?>" class="list-group-item list-group-item-action">
-                                            <i class="fas fa-pencil-alt"></i> Editar curso
+                                        <a href="editarcurso.php?id=<?php echo $_GET['id'] ?>" class="btn btn-outline-secondary btn-back btn-sm">
+                                            <i class="fas fa-pencil-alt"></i> Editar datos del curso
                                         </a>
 
-                                        <a href="agregarModulos.php?id=<?php echo $_GET['id']; ?>" class="list-group-item list-group-item-action">
-                                            <i class="fas fa-plus-square"></i> Agregar Módulos
+                                        <a href="agregarModulos.php?id=<?php echo $_GET['id']; ?>" class="btn btn-outline-secondary btn-back btn-sm" style="position: relative; top: -50px;">
+                                            <i class="fas fa-plus-square"></i> Agregar módulos
                                         </a>
                                         <!-- <a href="ListaCursos.php?pag=1" class="list-group-item list-group-item-action">
                                     <i class="fas fa-eye"></i> Ver todos los Cursos
                                 </a> -->
-                                        <button typer="button" id="salir_public" class="list-group-item list-group-item-action" style="cursor: pointer">
-                                            <i class="fad fa-books"></i> Publicar cursos
+                                        <button type="button" id="salir_public" class="btn btn-outline-secondary btn-back btn-sm" style="cursor: pointer; position: relative; top: -100px;">
+                                            <i class="fad fa-books"></i> Ver lista de cursos no publicados
                                         </button>
 
-                                        <a class="btn btn-outline-secondary btn-back btn-sm" href="Form_pregun_cuestionario.php?id=<?php echo $_GET['id']; ?>&id_modulo=<?php echo $idmodulo=$_GET['id_modulo'];?>" role="button">
+                                        <a style="position: relative; top: -150px;" class="btn btn-outline-secondary btn-back btn-sm" href="Form_pregun_cuestionario.php?id=<?php echo $_GET['id']; ?>&id_modulo=<?php echo $idmodulo=$_GET['id_modulo'];?>" role="button">
                                             <i class="fas fa-arrow-left"></i> Atrás
                                         </a>
                                     </div>
@@ -102,15 +96,18 @@
                             <div class="col-9 pl-0">
                                 <form id="respuestas_cuestionario" action="includes/Pregunta_Respuesta/Respuesta_CRUD.php?id=<?php echo $_GET['id'] ?>&id_modulo=<?php echo $idmodulo;?>" method="POST" enctype="multipart/form-data">
 
-                                    <div class="form-row ">
-                                        <div class="form-group col-md-12">
-                                            <h5 class="font-weight-light text-justify" style="color:#495057;">
-                                                <?php echo $pregunta;?>
+                                    <div class="form-row" style="text-align: center;">
+                                        <div type="button" class="list-group-item list-group-item-action active" style="background: #4F52D6; text-align: center; font-size: 24px;">
+                                        Registro de respuestas para la pregunta del módulo:
+                                        </div>
+                                        <div class="form-group col-md-12" style="">
+                                            <h5 class="font-weight-light" style="color: black; font-weight: bold; font-size: 24px; position: relative; top: 20px;">
+                                                Pregunta: <?php echo $pregunta;?>
                                             </h5>
                                         </div>
                                     </div>
 
-                                    <div class="form-row ">
+                                    <div class="form-row " style="position: relative; top: 10px;">
                                         <div class="form-group col-md-12">
                                             <label class="form-label">Respuesta</label>
                                             <textarea type="text" class="form-control" name="respuesta" placeholder="Ingrese una respuesta" minlength="3" rows="3" required></textarea>
@@ -123,7 +120,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="form-row ">
+                                    <div class="form-row " style="position: relative; top: 10px;">
                                         <div class="form-group col-md-12">
                                             <a>
                                                 <button class="btn btn-block btn-add" type="submit"><i class="fas fa-plus"></i> Añadir</button>
@@ -132,17 +129,17 @@
                                     </div>
                                 </form>
 
-                                <form class="pt-0">
-                                    <div class="form-row">
-                                        <div class="form-group col-md-12">
-                                            <label class="form-label">Listado de Respuestas</label>
+                                <form style="  border: #4F52D6 2px solid; border-radius: 5px;" class="pt-0">
+                                    <div class="form-row" style="position: relative; top: 10px;">
+                                        <div class="form-group col-md-12" style="text-align: center;">
+                                            <label style="font-size: 24px;" class="form-label">Listado de respuestas</label>
                                         </div>
                                     </div>
 
                                     <!-- lista de preguntas - codigo php -->
                                     <!-- <div class="overflow-auto"> -->
 
-                                    <div><!--clas="scroll"-->
+                                    <div style="position: relative; top: -10px;"><!--clas="scroll"-->
                                         <div class="form-row">
 
                                             <?php
@@ -164,7 +161,7 @@
                                             <?php while($registro1 = $q1->fetch(PDO::FETCH_ASSOC)){$success = $registro1['estado'];?>
 
                                         <div class="form-group col-8 col-md-10 col-sm-8 col-lg-10 col-xl-10">
-                                            <input type="text" id="<?php if($success=='1'){$success = 'success'; echo $success;}?>" value="<?php echo $registro1['respuesta'];?>" class="form-control" disabled>
+                                            <input type="text" id="<?php if($success=='1'){$success = 'success'; echo $success;}?>" value="Respuesta: <?php echo $registro1['respuesta'];?>" class="form-control" disabled>
                                         </div>
             
                                         <!-- boton editar respuesta -->
@@ -266,12 +263,12 @@
                             <!-- fin lista de preguntas -->
 
                                 <div class="row">
-                                    <div class="col-12">
+                                    <div class="col-12" style="">
                                         <form id= "" action="includes/tema/checkAgrTema.php?id=<?php echo $_GET['id']?>&idpregunta=<?php echo $id_pregunta;?>&id_modulo=<?php echo $idmodulo;?>&pregunta=<?php echo $pregunta;?>" class="pt-0" method="POST">
 
                                             <div class="form-row">
                                                 <div class="form-group col-md-12">
-                                                    <h5 class="font-weight-light text-justify" style="color:#495057;">
+                                                    <h5 class="font-weight-light text-justify" style="font-size: 16px; font-weight: bold; font-family: Arial Black; color: #4F52D6; position: relative; top: 13px;">
                                                         Elija la respuesta correcta
                                                     </h5>
                                                 </div>

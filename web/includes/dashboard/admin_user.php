@@ -2,6 +2,48 @@
     <link rel="stylesheet" href="assets/css/plugins/bootstrap.min.css" />
     <link rel="stylesheet" href="includes/dist/css/adminlte.min.css">
     <link rel="stylesheet" href="assets/css/styledash.css">
+
+
+    <style>
+.dataTables_filter{
+
+position: relative;
+float: right;
+border-radius: 5px ; 
+border: 1px solid #57B3F7;
+background-repeat: no-repeat;
+background-image: url("./assets/img/buscar.png");
+background-position: 8px 5px;
+background-size: 25px 25px;
+
+}
+
+/*Palabra "Buscar"*/ 
+.dataTables_filter label {
+
+  position: relative;
+    top: 5px;
+    
+    left: 38px;
+    /*font-weight: bold;*/
+    width: 280px;
+
+    font-size: 15.4px;
+
+}
+
+/*Caja de texto del buscador*/ 
+.dataTables_filter label .form-control {
+
+  border: 0;
+    height: 25px;
+    position: relative;
+    left: -9px;
+    padding: 0;
+}
+
+
+    </style>
 </head>
 
 <!-- para lista de usuarios -->
@@ -18,7 +60,7 @@ $usuarios = $q3->fetchAll(PDO::FETCH_ASSOC);
     <div class="container-fluid">
         <div class="row mt-5">
             <div class="col-12">
-                <div class="title">Administrar</div>
+                <div class="title" style="color:#737BF1;">Administrar</div>
                 <div class="row">
                     <div class="col-12">
                         <nav class="navbar navbar-expand">
@@ -36,6 +78,11 @@ $usuarios = $q3->fetchAll(PDO::FETCH_ASSOC);
                                 <li class="nav-item ">
                                     <a class="nav-link" href="empredash.php">
                                         por empresas
+                                    </a>
+                                </li>
+                                <li class="nav-item ">
+                                    <a class="nav-link" href="aprobdash.php">
+                                        por aprobados
                                     </a>
                                 </li>
                             </ul>
@@ -56,8 +103,8 @@ $usuarios = $q3->fetchAll(PDO::FETCH_ASSOC);
                     <div class="card-header">
                         <div class="row mb-2">
                             <div class="col-12">
-                                <h3 class="card-title">Cantidad de usuarios
-                                    <span style="color:#C1E1EE;">(<?php echo $resultUsu['cantidad']; ?>)</span>
+                                <h3 class="card-title" style="color:#737BF1;">Cantidad de usuarios
+                                    <span style="color:#BEC1F3;">(<?php echo $resultUsu['cantidad']; ?>)</span>
                                 </h3>
                             </div>
                         </div>
@@ -67,7 +114,7 @@ $usuarios = $q3->fetchAll(PDO::FETCH_ASSOC);
                         <div class="table-responsive">
                             <table id="tableUsuarios" class="table table-borderless dt-responsive text-left" cellspacing="0" width="100%">
                                 <thead>
-                                    <tr>
+                                    <tr style="background-color:#737BF1;">
                                         <th style="border-radius: 10px 0 0 10px;">
                                             Privilegio
                                         </th>

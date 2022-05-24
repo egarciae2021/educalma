@@ -455,7 +455,7 @@ if($_SESSION['privilegio']==1 || $_SESSION['privilegio']==2){
 echo '
     <button class="btn btn-danger" onClick="AlertEliminaTodo('.$idCurso.')  ">
         
-        Borrar todos los comentarios
+        Borrar todo
 
         <i class="fas fa-trash-alt"></i>
 
@@ -601,7 +601,7 @@ while ($registro =  $stm->fetch(PDO::FETCH_ASSOC)) {
                         
                        <i id="botonBorrarComentario" style="color:white;" class="fas fa-trash-alt"></i>
 
-                       Eliminar comentario
+                       Borrar
                     
                     </button>
                     
@@ -944,7 +944,7 @@ while ($registro =  $stm->fetch(PDO::FETCH_ASSOC)) {
                             
                             <i id="botonBorrarSubcomentario" style="color:white;" class="fas fa-trash-alt"></i>
 
-                            Eliminar subcomentario
+                            Borrar
                         
                         </button>
                     ';

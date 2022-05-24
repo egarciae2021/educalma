@@ -438,9 +438,9 @@ form {
 }
 
 .btn-agregar {
-    background: #4F52D6;
-    color: white;
-    border: 1px solid #4F52D6;
+    background: white;
+    color: #4F52D6;
+    border: 2px solid #4F52D6 !important;
 }
 
 .btn-agregar:hover {

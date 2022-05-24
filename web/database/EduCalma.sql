@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 22-03-2022 a las 14:55:02
--- Versión del servidor: 10.4.22-MariaDB
--- Versión de PHP: 8.1.2
+-- Tiempo de generación: 13-05-2022 a las 23:11:02
+-- Versión del servidor: 10.4.16-MariaDB
+-- Versión de PHP: 7.4.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -133,7 +133,12 @@ CREATE TABLE `comentarioforo` (
 --
 
 INSERT INTO `comentarioforo` (`idcomentario`, `comentario`, `idcurso`, `nombreUser`, `fecha_ingreso`, `estado`, `iduser`) VALUES
-(1, 'me parecio muy bien', 3, 'ESTEFANY MATA MATOS', '2022-02-21 14:43:26', 1, 5);
+(1, 'me parecio muy bien', 3, 'ESTEFANY MATA MATOS', '2022-02-21 14:43:26', 1, 5),
+(2, 'Hola', 5, 'JULIO CESAR TELLO', '2022-05-07 11:39:36', 1, 2),
+(4, 'Hola', 6, 'JULIO CESAR TELLO', '2022-05-07 11:57:54', 1, 2),
+(5, 'hola', 4, 'JULIO CESAR TELLO', '2022-05-07 12:09:46', 1, 2),
+(6, 'Hola', 0, 'JULIO CESAR TELLO', '2022-05-07 12:38:58', 1, 2),
+(7, 'Hola', 3, 'JULIO CESAR TELLO', '2022-05-07 14:21:47', 1, 2);
 
 -- --------------------------------------------------------
 
@@ -188,20 +193,21 @@ CREATE TABLE `cursoinscrito` (
   `curso_obt` tinyint(1) NOT NULL,
   `cantidad_respuestas` int(11) NOT NULL,
   `nota` double DEFAULT NULL,
-  `avance` smallint(3) NOT NULL DEFAULT 0
+  `avance` smallint(3) NOT NULL DEFAULT 0,
+  `solicitudcertificado` varchar(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `cursoinscrito`
 --
 
-INSERT INTO `cursoinscrito` (`id_cursoInscrito`, `curso_id`, `usuario_id`, `cod_curso`, `curso_obt`, `cantidad_respuestas`, `nota`, `avance`) VALUES
-(1, 1, 3, 'P 001', 0, 0, 0, 0),
-(2, 3, 14, '', 1, 0, 0, 0),
-(3, 3, 2, '', 1, 2, 1.66666666666666, 20),
-(14, 2, 2, '', 1, 0, 2.5, 13),
-(15, 5, 2, '', 1, 4, 26.6666666666667, 100),
-(16, 6, 2, '', 1, 3, 19.9999999999997, 100);
+INSERT INTO `cursoinscrito` (`id_cursoInscrito`, `curso_id`, `usuario_id`, `cod_curso`, `curso_obt`, `cantidad_respuestas`, `nota`, `avance`, `solicitudcertificado`) VALUES
+(1, 1, 3, 'P 001', 0, 0, 0, 0, ''),
+(2, 3, 14, '', 1, 0, 0, 0, ''),
+(3, 3, 2, '', 1, 2, 0, 20, ''),
+(14, 2, 2, '', 1, 0, 2.5, 13, ''),
+(15, 5, 2, '', 1, 0, 15, 100, 'si'),
+(16, 6, 2, '', 1, 3, 19.9999999999997, 100, 'si');
 
 -- --------------------------------------------------------
 
@@ -435,7 +441,8 @@ INSERT INTO `preguntas` (`idPregunta`, `pregunta`, `id_cuestionario`) VALUES
 (113, 'Hola2', 19),
 (114, 'sdsad', 20),
 (115, 'sdsad', 20),
-(116, 'sadasd', 20);
+(116, 'sadasd', 20),
+(117, 'Pregunta 2', 18);
 
 -- --------------------------------------------------------
 
@@ -493,9 +500,10 @@ CREATE TABLE `progresocursoinscrito` (
 --
 
 INSERT INTO `progresocursoinscrito` (`idModCurso`, `id_cursoInscrito`, `idModulo`, `nota`, `intentos`) VALUES
-(47, 15, 19, 10, 1),
+(47, 15, 19, 20, 46),
 (48, 15, 20, 10, 1),
-(49, 3, 9, 20, -2);
+(49, 3, 9, 20, 30),
+(51, 0, 9, 4, 0);
 
 -- --------------------------------------------------------
 
@@ -893,7 +901,10 @@ INSERT INTO `respuestas` (`idRespuesta`, `respuesta`, `id_Pregunta`, `estado`) V
 (463, 'adsad', 115, 0),
 (464, 'asd2123e', 116, 0),
 (465, 'ad21e', 116, 0),
-(466, 'dwd2', 116, 1);
+(466, 'dwd2', 116, 1),
+(467, 'bien\r\n', 117, 0),
+(468, 'mal', 117, 0),
+(469, 'muy mal', 117, 0);
 
 -- --------------------------------------------------------
 
@@ -961,6 +972,15 @@ CREATE TABLE `sub_come_foro` (
   `estado` int(11) NOT NULL,
   `iduser` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `sub_come_foro`
+--
+
+INSERT INTO `sub_come_foro` (`idsubcomentario`, `subcomentario`, `id_curso`, `user_men`, `idcomentario`, `fecha_ingreso`, `estado`, `iduser`) VALUES
+(1, 'Que tal?\r\n', 5, 'JULIO CESAR TELLO', 2, '2022-05-07 11:39:59', 1, 2),
+(3, 'q', 6, 'JULIO CESAR TELLO', 4, '2022-05-07 12:01:38', 1, 2),
+(4, 'Esto es una prueba\r\n', 4, 'JULIO CESAR TELLO', 5, '2022-05-07 12:10:01', 1, 2);
 
 -- --------------------------------------------------------
 
@@ -1122,6 +1142,29 @@ INSERT INTO `usuarios` (`id_user`, `privilegio`, `padreEmpresa`, `hijoEmpresa`, 
 (12, 5, 0, 1, 'Evelyn Eliza', 'Velasquez', 'Condor', 'velasquezcondoreliza@gmail.com', '$2y$10$att3vAQK/y8CgkMSKggkTuItMu292B2WiE/QPXLMmd1fsd5cQ7SM6', '910905470', 1, '75400164', 2, '2000-01-01', '1', 1, 1, '2022-02-22 18:47:37', '', NULL, 0, '1'),
 (13, 3, 0, 1, 'elsa', 'elsa', 'elsa', 'estefany@glori.com', '$2y$10$3SzbHggx.aKFk7Rt2Uj2m.UJFoS7diijx.Jwiw1Loz7i60SHY2GgW', '123456789', 1, '1234567', 1, '1999-10-20', '2', 1, 1, '2022-02-25 03:48:19', '', NULL, 0, NULL),
 (14, 3, 0, 1, 'Claudia', 'Sánchez ', 'Vargas', 'clau.sanchezvargas06@gmail.com', '$2y$10$JmO1DVfOYfwD4VWcYv8OA.EfldVcYtv2RXnSN/k4Ljo2zjhBy3c8G', '952676113', 1, '72660587', 2, '1999-07-06', '1', 1, 1, '2022-02-26 06:00:26', '', NULL, 0, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura Stand-in para la vista `usuariossolicitantes`
+-- (Véase abajo para la vista actual)
+--
+CREATE TABLE `usuariossolicitantes` (
+`usuario_id` int(11)
+,`nombres` varchar(250)
+,`apellido_pat` varchar(100)
+,`solicitudcertificado` varchar(5)
+,`email` varchar(100)
+);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura para la vista `usuariossolicitantes`
+--
+DROP TABLE IF EXISTS `usuariossolicitantes`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `usuariossolicitantes`  AS SELECT `c`.`usuario_id` AS `usuario_id`, `u`.`nombres` AS `nombres`, `u`.`apellido_pat` AS `apellido_pat`, `c`.`solicitudcertificado` AS `solicitudcertificado`, `u`.`email` AS `email` FROM (`cursoinscrito` `c` join `usuarios` `u` on(`c`.`usuario_id` = `u`.`id_user`)) WHERE `c`.`solicitudcertificado` = 'si' ;
 
 --
 -- Índices para tablas volcadas
@@ -1291,7 +1334,7 @@ ALTER TABLE `certificados`
 -- AUTO_INCREMENT de la tabla `comentarioforo`
 --
 ALTER TABLE `comentarioforo`
-  MODIFY `idcomentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idcomentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `cuestionario`
@@ -1339,7 +1382,7 @@ ALTER TABLE `modulo`
 -- AUTO_INCREMENT de la tabla `preguntas`
 --
 ALTER TABLE `preguntas`
-  MODIFY `idPregunta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=117;
+  MODIFY `idPregunta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=118;
 
 --
 -- AUTO_INCREMENT de la tabla `privilegio`
@@ -1357,13 +1400,13 @@ ALTER TABLE `progresocurso`
 -- AUTO_INCREMENT de la tabla `progresocursoinscrito`
 --
 ALTER TABLE `progresocursoinscrito`
-  MODIFY `idModCurso` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+  MODIFY `idModCurso` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
 
 --
 -- AUTO_INCREMENT de la tabla `respuestas`
 --
 ALTER TABLE `respuestas`
-  MODIFY `idRespuesta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=467;
+  MODIFY `idRespuesta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=470;
 
 --
 -- AUTO_INCREMENT de la tabla `sexo`
@@ -1381,7 +1424,7 @@ ALTER TABLE `solicitud`
 -- AUTO_INCREMENT de la tabla `sub_come_foro`
 --
 ALTER TABLE `sub_come_foro`
-  MODIFY `idsubcomentario` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idsubcomentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `tema`
@@ -1423,17 +1466,3 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-
--- Listar usuarios que han solicitado su certificado
-
-ALTER TABLE `cursoinscrito` 
-  ADD `solicitudcertificado` VARCHAR(5) NOT NULL AFTER `avance`;
-
--- Vista almacenada para consultar los datos de solicitantes de certificado
-
-CREATE VIEW usuariosSolicitantes AS 
-SELECT c.usuario_id, u.nombres, u.apellido_pat, c.solicitudcertificado,u.email
-FROM cursoinscrito as c 
-inner JOIN usuarios as u 
-ON c.usuario_id=u.id_user
-WHERE c.solicitudcertificado='si'

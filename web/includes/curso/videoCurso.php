@@ -4,6 +4,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="jquery-min.js"></script>
     <link rel="stylesheet" href="././assets/css/styleprogreso.css">
+
+
+    <style>
+
+#videoTema {
+
+    width: 600px; 
+    height: 370px;
+
+    position: relative;
+    top: -70px !important;
+}
+
+#btnV2 {
+
+     
+
+}
+
+/****************************************************************************************************/
+/** =====================
+* Responsive
+========================*/
+@media only screen and (max-width: 766px) {
+
+    #videoTema {
+        width: 300px; 
+        height: 300px; 
+    }
+
+    #btnV2 {
+
+        width: 150px;
+        
+    }
+ 
+
+}
+/****************************************************************************************************/
+
+    </style>
+
+
+
+
+
+
 </head>
 <?php
 // Este codigo hace validacion para que no se pueda acceder a cualquier pagina sin estar logueado__Pablo Loyola
@@ -76,6 +123,11 @@
             $dato2 = $q2->fetch(PDO::FETCH_ASSOC);
 
     ?>
+
+
+
+
+
 <div class="container" style="margin-top: 120px;">
     <div class="row">
         <div class="col-md-1"></div>
@@ -101,7 +153,16 @@
         <div class="col-md-1"></div>
     </div>
 </div>
+
+
+
+
 <br>
+
+
+
+
+
 <div>
     <div class="container">
         <div class="row">
@@ -222,6 +283,34 @@
     $dato13=$q13->fetch(PDO::FETCH_ASSOC);
 ?>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- **************************************************************************************************** -->
+<!-- >>>>>>>>>>>>>>>>>>>>> <<<<<<<<<<<<<<<<<<< -->
 <div class="container" style="margin-top: 120px;">
     <div class="row">
         <div class="col-md-1"></div>
@@ -235,7 +324,44 @@
         <div class="col-md-1"></div>
     </div>
 </div>
+<!-- >>>>>>>>>>>>>>>>>>>>> <<<<<<<<<<<<<<<<<<< -->
+<!-- **************************************************************************************************** -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- **************************************************************************************************** -->
+<!-- ANTERIOR - SIGUIENTE -->
 <div>
     <div class="container">
         <div class="row">
@@ -250,6 +376,13 @@
                 $dato8 = $qy->fetch(PDO::FETCH_ASSOC);
                 ?>
                 <br>
+
+
+
+
+
+
+
                 <!-- Aquí están los botones "Anterior" y "Siguiente" -->
                 <button type="button" class="btn btn-outline-secondary" id="btnV"<?php if($nueva<=1){ echo "disabled";}?>
                 onclick="parent.location='video.php?id=<?php echo $id; ?>&idtema=<?php echo ($nueva-1); ?>&id_modulo=<?php echo $dato['idModulo']?>&nW=<?php echo $nW?>&idCI=<?php echo $idCI?>'"> <strong>
@@ -257,7 +390,13 @@
                     Anterior 
                 </button>
 
-                <button type="button" class="btn btn-outline-secondary" id="btnV2"> 
+
+
+
+
+
+
+                <button id="btnV2" type="button" class="btn btn-outline-secondary"> 
                     <img src="././assets/images/video_icono_32.png">
                 </button>
 
@@ -267,11 +406,22 @@
                     Siguiente<strong> > </strong>
                 </button> -->
 
+
+
+
+
                 <!-- Botón Siguiente -->
                 <button type="button" class="botonSiguiente btn btn-outline-secondary" id="btnV" <?php if($nueva>=count($resultado1)){?>onclick="parent.location='cuestionario.php?id=<?php echo $id;?>&nW=<?php echo $nW;?>&idModulo=<?php echo $_GET['id_modulo'];?>&up=0&idcues=<?php echo $dato8['idCuestionario'];?>&idCI=<?php echo $idCI?>&cuen=1&nro=0'">
                     Siguiente<strong> > </strong>
                 </button> 
                 
+
+
+
+
+
+
+
                 <?php }else{ ?>
                     
                     onclick="parent.location='video.php?id=<?php echo $id; ?>&nW=<?php echo $_GET['nW']?>&idtema=<?php echo ($nueva+1); ?>&id_modulo=<?php echo $_GET['id_modulo']?>&idCI=<?php echo $idCI?>'">Siguiente<strong> > </strong></button>
@@ -279,65 +429,57 @@
                     <?php }
                     $si=$dato8['idCuestionario'];
                     $_SESSION['idcue']=$si;
-                    //ponlo ente id y idtema  &validar=1&c_modulo=<?php echo $cont_modulo;?><!-- &c_tema=<?php //echo ($cont_tema+1);?> -->
-                
-                <!-- 
-                            
-
-                            <script>
-
-                                $('.botonSiguiente_2').click(function(){
-
-                                    Swal.fire({
-
-                                        icon: 'warning',
-
-                                        html:
-
-                                        '<h5 style="color: black;">• Se validará tu conocimiento del módulo mediante un cuestionario.</h5>'
-                                        +
-                                        '<h5 style="color: black;">• Tiene solo 3 intentos para realizarlo.</h5>'
-                                        +
-                                        '<h5 style="color: black;">• Después de 3 intentos, podrá continuar respondiendo el cuestionario, pero su calificación ya no será válida.</h5>'
-                                        +
-                                        '<h5 style="color: black;">• Preste mucha atención al video del módulo antes de responder el cuestionario.</h2>',
-             
-                                        confirmButtonText: "Ir al cuestionario",
-                                        
-                                        showCancelButton: true,
-                                        cancelButtonColor: 'red',
-                                        cancelButtonText: "Cancelar",
-                                    
-                                    }).then(resultado => {
-        
-                                        if (resultado.value) {
-
-                                            $('.botonSiguiente').trigger('click');
-            
-                                        } else {
-            
-                                        }
-    
-                                    });
-                                  
-                                });
-    
-                            </script>
-
-                            -->
- 
-
-                            
+                    //ponlo ente id y idtema  &validar=1&c_modulo=<?php echo $cont_modulo;?><!-- &c_tema=<?php //echo ($cont_tema+1);?> -->                  
                     
             </div>
             <div class="col-md-1"></div>
         </div>
     </div>
 </div>
+<!-- ANTERIOR - SIGUIENTE -->
+<!-- **************************************************************************************************** -->
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- **************************************************************************************************** -->
+<!-- VIDEO -->
 <div class="containervid">
 
-    <div class="contvid" style="width: 500px, auto; height: 270px; padding: 10px;">
+    <div id="videoTema" class="contvid">
         <?php 
               $url=$dato2['link_video'];
               function getYoutubeEmbedUrl($url){
@@ -356,6 +498,27 @@
         </iframe>
     </div>
 </div>
+<!-- VIDEO -->
+<!-- **************************************************************************************************** -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <br>
 <?php }?>

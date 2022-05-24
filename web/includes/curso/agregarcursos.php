@@ -72,20 +72,32 @@
             <div class="seccion">
                 <div class="row">
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                     <!-- primera columna -->
                     <div class="col-3 pr-0 border-right">
-                        <ul class="list-group list-group-flush ">
+                        <!--ul class="list-group list-group-flush ">
                             <li class="list-group-item border-bottom ">Curso</li>
-                        </ul>
+                        </ul-->
                         <!-- seccion donar un curso -->
-                        <div class="list-group py-3">
-                            <button type="button" class="list-group-item list-group-item-action active">
-                                Agregar un Nuevo Curso
-                            </button>
+                        <div class="list-group">
+                            
                             <!-- seccion otros -->
-                            <ul class="list-group list-group-flush py-3">
+                            <!--ul class="list-group list-group-flush py-3">
                                 <li class="list-group-item border-top-0" style="color:#495057;">Componentes del Curso</li>
-                            </ul>
+                            </ul-->
                             <div class="list-group lista2 text-left">
                             <!-- <a href="sidebarCursos.php" class="list-group-item list-group-item-action">
                                 <i class="fas fa-pencil-alt"></i> Editar curso
@@ -96,10 +108,10 @@
                                 <a href="ListaCursos.php?pag=1" class="list-group-item list-group-item-action">
                                     <i class="fas fa-eye"></i> Ver los cursos publicados
                                 </a-->
-                                <a href="publicarcursos.php?pag=1" class="list-group-item list-group-item-action">
-                                    <i class="fad fa-books"></i> Ver lista de cursos por publicar
+                                <a href="publicarcursos.php?pag=1" id="btnAtras" class="btn btn-outline-secondary btn-back btn-sm" style="width:auto;">
+                                    <i class="fad fa-books"></i> Ver cursos no publicados
                                 </a><br>
-                                <a id="btnAtras" class="btn btn-outline-secondary btn-back btn-sm" style="width:auto;" href="sidebarCursos.php" role="button">
+                                <a href="sidebarCursos.php" id="btnAtras" class="btn btn-outline-secondary btn-back btn-sm" style="width:auto; position: relative; top: -70px;" role="button">
                                     <i class="fas fa-arrow-left" ></i> Atrás
                                 </a>
                             </div>
@@ -108,9 +120,26 @@
                     </div>
                     <!-- fin primera columna -->
 
+
+
+
+
+
+
+
+
+
+
+
+
+
                     <!-- segunda columna -->
                     <div class="col-9 pl-0">
+                        
                         <form name="formulario" id="newUserForm" method="POST" action="includes/Cursos_crud/Cursos_CRUD.php"  onsubmit="return comprobarDatosFormulario()" enctype="multipart/form-data">
+                            <div type="button" class="list-group-item list-group-item-action active" style="background: #4F52D6; text-align: center; font-size: 35px; position: relative; top: -30px;">
+                                Registro de curso nuevo
+                            </div>
                             <div class="form-row ">
                                 <div class="form-group col-md-6 ">
                                     <label class="form-label">Nombre del curso</label>
@@ -187,13 +216,24 @@
 
                             <div class="form-row">
                                 <div class="form-group col-12">
-                                    <input type="submit" class="btn btn-block btn-agregar" value="Agregar">
+                                    <input type="submit" class="btn btn-block btn-agregar" value="Guardar datos">
                                 </div>
                             </div>
 
                         </form>
                     </div>
                     <!-- fin segunda columna -->
+
+
+
+
+
+
+
+
+
+
+                    
                 </div>
             </div>
         </div>

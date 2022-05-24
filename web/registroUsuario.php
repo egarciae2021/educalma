@@ -10,6 +10,8 @@
   <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <link rel="stylesheet" href="assets/lib/bootstrap.min.css" />
+
+<link rel="shortcut icon" href="assets/images/logo_edu.png">
   <script src="assets/lib/jquery.min.js"></script>
   <script src="assets/lib/popper.min.js"></script>
   <script src="assets/lib/bootstrap.min.js"></script>
@@ -35,7 +37,7 @@
       <div class="col h-auto mx-auto align-self-center" style="max-width: 400px">
         <div class="col-12 mb-4">
           <a href="./iniciosesion.php">
-            <img style="max-width: 150px" src="assets/img/logo_educalma.svg" alt="Logo Educalma" />
+            <img style="max-width: 150px" src="assets/images/logo_educalma.png" alt="Logo Educalma" />
           </a>
         </div>
         <h5 class="col d-block">¡Únete y comienza a potenciar tu carrera!</h5>

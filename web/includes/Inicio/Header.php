@@ -86,7 +86,7 @@ require_once 'database/databaseConection.php';
                                         <a href="user-sidebar.php">Dashboard</a>
                                     </li>
                                     <li class="dropdown-link">
-                                        <a href="sidebarCursos.php">Ir a Cursos</a>
+                                        <a href="sidebarCursos.php">Cursos Comprados</a>
                                     </li>
                                     <!-- <li class="dropdown-link">
                                         <a href="InfoCurso.php?pag=1">Información Cursos</a>

@@ -16,6 +16,25 @@
 
     <?php require_once "includes/Inicio/Head.php"; ?>    
 
+
+    <style>
+
+        
+    .boton3 {
+  color: #9A80F3 !important;
+  padding: 0.5em 1.2em;
+  background: rgba(0,0,0,0);
+  border-radius:10px;
+  border: 2px solid;
+  border-color: #9A80F3;
+  transition: all 1s ease;
+  position: relative;
+}
+.boton3:hover {
+  background: #9A80F3;
+  color: white !important;
+}
+    </style>
    
 </head>
 <body>
@@ -26,17 +45,9 @@
  if(isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)){
 ?>
     <div class="container">
-        <div class="row">
-            <div class="col-md-1"></div>
-            <div class="col-md-10">
-                <div class="titlemc"></div>
-            </div>
-            <div class="col-md-1"></div>
-        </div>
+        
     </div>
-    <br>
-    <br>
-    <br>
+
     <!-- <br>
     <br> -->
     <!--contenido-->
@@ -49,10 +60,10 @@
         <!--contenido de los cursos -->
 
     <!--tabla de curso -->
-            <div class="col-12 mt-5 text-center">
+            <div class="col-12 text-center">
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title">Listado de Cursos por Publicar</h3>
+                        <h3 class="card-title">Lista de Cursos No Publicados</h3>
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body">
@@ -91,16 +102,19 @@
                         ?>
                         <div class="table-responsive">
                 
-                             <table id="example1" class="table table-borderless text-center dt-responsive text-center" cellspacing="0" width="100%" >
-                                <thead >
-                                    <tr >
+                             <table id="example1" class="table table-borderless dt-responsive text-center" cellspacing="0" width="100%" >
+                                <thead>
+                                    <tr>
                                         <th style="border-radius: 10px 0 0  10px;">Nombre</th>
                                         <th>Categoría</th>
                                         <th>Público dirigido</th>
                                         <th>Imagen</th>
                                         <th>Descripción</th>
                                         <th>Precio</th>
-                                        <th style="border-radius: 0 10px 10px 0;">Acciones</th>
+                                        <th>N° Módulos</th>
+                                        <th>N° Temas</th>
+                                        <th>N° Cuestionarios</th>
+                                        <th style="border-radius: 0 10px 10px 0;" colspan="3">Acciones</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -114,54 +128,160 @@
                                         $q4->execute(array());
                                         $datoCate = $q4->fetch(PDO::FETCH_ASSOC)
                                     ?>
+
+                                    <?php
+
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        $idCurso = $curso['idCurso'];
+
+        //Cantidad de modulos del curso
+        $pdo13 = Database::connect();
+        $q13 = $pdo13->query("SELECT count(*) FROM modulo WHERE id_curso='$idCurso'");
+        $cantidad_modulos = $q13->fetchColumn();
+
+        //Cantidad de temas
+        $pdo14 = Database::connect();
+        $q14 = $pdo14->query("SELECT  COUNT(tema.idTema) AS 'TEMA' from tema 
+                                                    INNER JOIN modulo ON tema.id_modulo = modulo.idModulo
+                                                    INNER JOIN  cursos ON cursos.idCurso = modulo.id_curso
+                                                    WHERE cursos.idCurso = '$idCurso'
+                                                    GROUP BY cursos.idCurso");
+        $cantidad_temas = $q14->fetchColumn();
+
+        //Cantidad de Cuestionarios
+        $pdo15 = Database::connect();
+        $q15 = $pdo15->query("SELECT  COUNT(cuestionario.idCuestionario) AS 'Cuestionario'  from cursos 
+                                                    INNER JOIN modulo ON cursos.idCurso = modulo.id_curso
+                                                    INNER JOIN  cuestionario ON cuestionario.id_modulo = modulo.idModulo
+                                                    WHERE cursos.idCurso = '$idCurso'
+                                                    GROUP BY cursos.idCurso");
+        $cantidad_cuestionarios = $q15->fetchColumn();
+
+        //Cantidad de preguntas
+        $pdo16 = Database::connect();
+        $q16 = $pdo16->query("SELECT COUNT(preguntas.idPregunta) AS 'preguntas'  from cursos 
+                                                    INNER JOIN modulo ON cursos.idCurso = modulo.id_curso
+                                                    INNER JOIN cuestionario ON cuestionario.id_modulo = modulo.idModulo
+                                                    INNER JOIN preguntas on cuestionario.idcuestionario = preguntas.id_cuestionario
+                                                    WHERE cursos.idCurso = '$idCurso'
+                                                    GROUP BY cursos.idCurso");
+        $cantidad_preguntas = $q16->fetchColumn();
+
+        //Cantidad de respuestas
+        $pdo5 = Database::connect();
+        $q5=$pdo5->query("SELECT count(*) FROM respuestas res INNER JOIN preguntas pre ON res.id_Pregunta=pre.idPregunta
+                                                    INNER JOIN cuestionario cues ON cues.idCuestionario=pre.id_cuestionario
+                                                    INNER JOIN modulo mo ON mo.idModulo=cues.id_modulo
+                                                    INNER JOIN cursos cur ON cur.idCurso= mo.id_curso
+                                                    where cur.idCurso='$idCurso' and res.estado=1");
+                                                    
+        $cantidad_respuestas= $q5->fetchColumn();
+
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                                    ?>
                                         <tr class="h-100 justify-content-center align-items-center">
+
                                             <td><?php echo $curso['nombreCurso']; ?></td>
+                                            
                                             <td><?php echo $datoCate['nombreCategoria']; ?></td>
+                                            
                                             <td><?php echo $curso['dirigido']; ?></td>
+                                            
                                             <td>
                                                 <?php    
                                                     if($curso['imagenDestacadaCurso']!=null){
                                                 ?>
-                                                        <img height="50px" src="data:image/*;base64,<?php echo base64_encode($curso['imagenDestacadaCurso']) ?>">
+                                                        <img style="height:40px;" src="data:image/*;base64,<?php echo base64_encode($curso['imagenDestacadaCurso']) ?>">
                                                 <?php
                                                     }else{
                                                 ?>
-                                                        <img height="50px"  src="./assets/images/curso_educalma.png">
+                                                        <img  style="height:40px;" src="./assets/images/curso_educalma.png">
                                                 <?php
                                                     }
                                                 ?>      
                                             </td>
+
                                             <td><?php echo substr($curso['descripcionCurso'],0,100)."..."; ?></td>
+                                            
                                             <td><?php echo $curso['costoCurso'];?></td>
-                                            <td>
+                                            
+                                            <td><?php 
+                                            
+                                            if($cantidad_modulos<1){
+
+                                                echo "0";
+                                            }else{
+
+                                                echo $cantidad_modulos;
+                                            }
+                                            
+                                            
+                                            ?></td>
+
+                                            <td><?php 
+                                            
+                                            if($cantidad_temas<1){
+
+                                                echo "0";
+                                            }else{
+
+                                                echo $cantidad_temas;
+                                            }
+
+                                            ?></td>
+
+                                            <td><?php
+                                            
+                                            if($cantidad_cuestionarios<1){
+
+                                                echo "0";
+                                            }else{
+
+                                                echo $cantidad_cuestionarios;
+                                            }
+
+                                            ?></td>
+
+                                            
                                                 <?php
 
                     
                                                 ?>
+                                                <td>
                                                     <!--para agregar modulo-->
-                                                    <a href="agregarModulos.php?id=<?php echo $curso['idCurso']; ?>">
-                                                        <button class="btn btn-add" type="button"><i class="far fa-plus-square"></i> </button>
+                                                    <a style="color:blue;" href="agregarModulos.php?id=<?php echo $curso['idCurso']; ?>">
+                                                        <i class="far fa-plus-square fa-lg"></i> 
                                                     </a>
+
+                                                    </td>    
+
+                                                    <td>
                                                     <!--para editar curso-->
-                                                    <a href="editarcurso.php?id=<?php echo $curso['idCurso']; ?>">
-                                                        <button class="btn btn-edit" type="button"><i class="far fa-edit"></i></button>
+                                                    <a style="color:green;" href="editarcurso.php?id=<?php echo $curso['idCurso']; ?>">
+                                                        <i class="far fa-edit fa-lg"></i>
                                                     </a>
+                                                    </td>
                                                     <!--para quitar curso-->
                                                     <!-- <a href="includes/Cursos_crud/Cursos_CRUD.php?id_curso=<?php echo $curso['idCurso']; ?>">
                                                         <button class="boton_personalizado" type="button"><i class="far fa-bell-slash fa-2x"></i></button>
                                                     </a> -->
+
+                                                
+                                                <td>
                                                 <?php
                                                  if($_SESSION['privilegio'] == 1) {
+
                                                 ?>
-                                                    <!--para quitar curso-->
-                                                    <a href="includes/Cursos_crud/aceptarCurso.php?id_curso=<?php echo $curso['idCurso']; ?>&pag=<?php echo $_GET['pag'];?>">
-                                                        <button id="btnPublicarCurso" class="btn btn-upload" type="button" hidden multiple>Publicar</button>
+                                                    <!--para publicar curso-->
+                                                    <a style="" href="includes/Cursos_crud/aceptarCurso.php?id_curso=<?php echo $curso['idCurso']; ?>&pag=<?php echo $_GET['pag'];?>">
+                                                        <button  id="btnPublicarCurso" class="btn btn-upload" type="button" hidden multiple>Publicar</button>
                                                     </a>
-
+                                               
                                                     <a>
-                                                        <button id="" class="btn btn-upload" type="button" onclick="alertaCursoPublicado()">Publicar Curso</button>
+                                                        <button id="" class="boton3" type="button" onclick="alertaCursoPublicado()">Publicar Curso</button>
                                                     </a>
-
+                                                 </td>
                                                 <?php
 
                                                 }
@@ -171,7 +291,7 @@
                                                 <!-- <a href="curso.php?id=<?php echo $curso['idCurso']; ?>">
                                                     <i class="far fa-eye fa-2x"></i>
                                                 </a> -->
-                                            </td>
+                                            
 
                                         </tr>
                                         
@@ -535,11 +655,25 @@
     <script>
         $(function() {
             $("#example1").DataTable({
+                "fnInitComplete": function(){
+                    // Enable THEAD scroll bars
+                    $('.dataTables_scrollHead').css('overflow', 'auto');
+  
+                    // Sync THEAD scrolling with TBODY
+                    $('.dataTables_scrollHead').on('scroll', function () {
+                    $('.dataTables_scrollBody').scrollLeft($(this).scrollLeft());
+                    });                    
+                },
+                scrollY: 854, 
+                scrollX: 200, 
+
                 "responsive": true,
                 "lengthChange": false,
                 "autoWidth": false,
+                dom: '<"top"flBp>t<"bottom"pBl>',
                 "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
             }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+            
             $('#example2').DataTable({
                 "paging": true,
                 "lengthChange": false,
@@ -548,7 +682,7 @@
                 "info": true,
                 "autoWidth": false,
                 "responsive": true,
-            });
+            }),
         });
     </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -563,37 +697,60 @@
 ?>
 
 <script>
-        
-        //Mensaje de alerta para publicar curso
-        function alertaCursoPublicado(){
-            Swal.fire({
-                icon: 'warning',
-                title: 'Tienes que agregar temas para el curso',
-                allowOutsideClick: false,
-                confirmButtonText: "Ya lo hice",
-                                            
-                showCancelButton: true,
-                cancelButtonColor: 'red',
-                cancelButtonText: "No lo hice",
-            }).then((result) => {
-                if (result.isConfirmed) {
 
-                    Swal.fire({
-                        icon: 'success',
-                        title: 'Curso publicado correctamente',
-                        allowOutsideClick: false,
-                        allowOutsideClick: false,
-                        confirmButtonText: "Ok",
-                    }).then((result) => {
-                        if (result.isConfirmed) {
-                            $('#btnPublicarCurso').trigger('click');
-                        } else if (result.isDenied) {
-                        }
-                    })
-                } else if (result.isDenied) {
-                }
-            })
+        //Mensaje de alerta curso publicado
+        function alertaCursoPublicado(){
+
+                                        Swal.fire({
+
+                                            icon: 'warning',
+
+                                            title: '¿Está seguro que desea publicar el curso?',
+
+                                            allowOutsideClick: false,
+
+                                            confirmButtonText: "Sí",
+                                            
+                                            showCancelButton: true,
+                                            cancelButtonColor: 'red',
+                                            cancelButtonText: "No",
+
+                                        }).then((result) => {
+
+                                            if (result.isConfirmed) {
+    
+                                                Swal.fire({
+
+                                                    icon: 'success',
+
+                                                    title: 'Curso publicado correctamente',
+
+                                                    allowOutsideClick: false,
+
+                                                    allowOutsideClick: false,
+
+                                                    confirmButtonText: "Ok",
+
+                                                }).then((result) => {
+
+                                                    if (result.isConfirmed) {
+
+                                                        $('#btnPublicarCurso').trigger('click');
+
+                                                    } else if (result.isDenied) {
+
+ 
+                                                    }
+                                                })
+
+                                            } else if (result.isDenied) {
+
+ 
+                                            }
+                                        })
+
         }
+        
 
 </script>
 
