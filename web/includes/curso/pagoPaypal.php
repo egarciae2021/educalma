@@ -345,6 +345,7 @@ $id = $_GET['id'];
 
             <!-- Tarjeta -->
             <section class="tarjeta" id="tarjeta">
+
                 <div class="delantera">
                     <div class="logo-marca" id="logo-marca">
                         <!-- <img src="assets/img/logos/visa.png" alt=""> -->
@@ -384,6 +385,7 @@ $id = $_GET['id'];
                     <p class="leyenda">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus exercitationem, voluptates illo.</p>
                     <a href="#" class="link-banco">www.tubanco.com</a>
                 </div>
+                
             </section>
 
             <!-- Contenedor Boton Abrir Formulario -->
