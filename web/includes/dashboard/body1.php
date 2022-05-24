@@ -54,20 +54,16 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                         </a>
                         
                         <div style="position: relative; left: 8px;" class="nav__dropdown-dashboard">
-                            <a href="#" class="nav__link-dashboard">
-                                <i class="far fa-user-circle nav__icon-dashboard" style="color:#5499C7;"></i>
+                            <a href="user-sidebar.php" class="nav__link-dashboard">
+                                <i class="fa fa-chart-line nav__icon-dashboard" style="color:#5499C7;"></i>
                                 <!-- <i class="far fa-bookmark nav__icon"></i> -->
-                                <span class="nav__name-dashboard">Perfil</span>
+                                <span class="nav__name-dashboard">Dashboard</span>
                                 <!-- <i class='bx bx-chevron-down nav__icon nav__dropdown-icon'></i> -->
-                                <i class="fas fa-caret-down nav__icon-dashboard nav__dropdown-icon-dashboard"></i>
+                                
                             </a>
 
-                            <div class="nav__dropdown-collapse-dashboard">
-                                <div class="nav__dropdown-content-dashboard">
-                                    <a href="user-sidebar.php" class="nav__dropdown-item-dashboard nav__link-dashboard">Dashboard</a>
-                                </div>
-                            </div>
                         </div>
+                       
 
 
                         <div style="position: relative; left: 8px;" class="nav__dropdown-dashboard">
@@ -88,6 +84,7 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                                     ?>
                                         <a href="publicarcursos.php?pag=1" class="nav__dropdown-item-dashboard nav__link-dashboard">Cursos No Publicados</a>
                                         <a href="agregarcurso.php" class="nav__dropdown-item-dashboard nav__link-dashboard">Agregar Un Nuevo Curso</a>
+                                        <!--<a href="aprobadosCurso.php" class="nav__dropdown-item-dashboard nav__link-dashboard">Aprobados</a>-->
                                     <?php
                                     }
                                     ?>

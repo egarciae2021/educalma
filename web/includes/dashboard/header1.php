@@ -31,12 +31,61 @@ ob_start();
             }
         ?>
             
-            <a href="#" class="header__logo" style="color:white; padding-left:500px;">
+            <a href="#" class="header__logo" style="color:white; padding-left:700px;">
                 <?php
                 if (isset($_SESSION['Logueado']) && $_SESSION['Logueado'] === true) {
-                    echo $_SESSION['nombres'];
+                    
                     ?>
-                    &nbsp; <img src="./assets/img/user-admi.jpg" class=" header__img" alt="foto_curso">
+                    <!--echo $_SESSION['nombres'];-->
+                    &nbsp; 
+                    
+                     
+                    <!--Administrador-->
+                    <?php if ($_SESSION['privilegio'] == 1) {?>
+
+                        &nbsp; <img src="./assets/img/user-admi.jpg" class="header__img" alt="foto_curso">
+               
+                    <?php } ?>
+
+                    <!--Profesor-->
+                    <?php if ($_SESSION['privilegio'] == 2) {?>
+
+                        <img src="./assets/img/user-prof.png" class="header__img" alt="foto_curso">
+
+                    <?php } ?>
+
+                    <!--Usuario Normal-->
+                    <?php if ($_SESSION['privilegio'] == 3) {?>
+
+                        <img src="./assets/img/user-user.png" class="header__img" alt="foto_curso">
+
+                    <?php } ?>
+
+                    <!--Empresa-->
+                    <?php if ($_SESSION['privilegio'] == 4) {?>
+
+                        <img src="./assets/img/user-emp.png" class="header__img" alt="foto_curso">
+
+                    <?php } ?>
+
+                    <!--Usuario - Empresa-->
+                    <?php if ($_SESSION['privilegio'] == 5) {?>
+
+                        <img src="./assets/img/user-emp.png" class="header__img" alt="foto_curso">
+                       
+                    <?php } ?>
+
+                    <!--Superadmin-->
+                    <?php if ($_SESSION['privilegio'] == 6) {?>
+
+                        <img src="./assets/img/user-sup-admin.png" class="header__img" alt="foto_curso">
+
+                    <?php } ?>
+
+
+
+
+
 
 
                     <!--if ($_SESSION['privilegio'] == 1) {

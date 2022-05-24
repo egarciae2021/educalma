@@ -32,19 +32,23 @@
 
 <body class="h-100 w-100">
   <div class="row row-cols-1 row-cols-md-2 h-100 w-100 m-0">
-    <div class="col h-md-100 bg-light row row-cols-1 m-0 p-5">
-      <div class="col"></div>
-      <div class="col h-auto mx-auto align-self-center" style="max-width: 400px">
-        <div class="col-12 mb-4">
+    <div class="col h-md-100 row row-cols-1 m-0 p-5" style="background-color: #744DFA;">
+    <div class="col-12 mb-2">
+          <center>
           <a href="./iniciosesion.php">
-            <img style="max-width: 150px" src="assets/images/logo_educalma.png" alt="Logo Educalma" />
+            <img style="max-width: 150px" src="assets/images/educalma-logo blanco.png" alt="Logo Educalma" />
           </a>
+          </center>
         </div>
-        <h5 class="col d-block">¡Únete y comienza a potenciar tu carrera!</h5>
-        <form autocomplete="off" id="form_data">
+        <center>
+      <div class="" style="padding:40px; border-radius:20px; padding-left:2px; padding-right:2px; max-width: 500px; background-color: white;">
+      <div class="col h-auto mx-auto align-self-center" >
+        
+        <h4 class="col d-block" style="color: #683CFD;">¡Únete y comienza a potenciar tu carrera!</h4>
+        <form autocomplete="off" id="form_data" >
           <div class="col-12 p-0" id="first-data">
             <div class="col my-3">
-              <label for="txtEmail" id="lblEmail">Valida tu correo electrónico</label>
+              <label for="txtEmail" id="lblEmail" style="color: #744DFA;">Valida tu correo electrónico</label>
               <input type="email" class="form-control" id="txtEmail" autocomplete="off" required />
               <div class="invalid-feedback">
                 <span id="correoMessage"></span>
@@ -181,7 +185,7 @@
 
           <!-- Button -->
           <div class="col">
-            <button class="col-12 btn btn-primary my-3" id="btnSubmit" style="background-color: #99ccff;border: none;">CONTINUAR →</button>
+            <button class="col-12 btn btn-primary my-3" id="btnSubmit" style="background-color: #EBCB70;border: none;">CONTINUAR →</button>
           </div>
         </form>
       </div>
@@ -192,9 +196,12 @@
         </div>
       </div>
     </div>
+    </div>
+    </center>
     <div class="col h-100 p-0 overflow-hidden" style="
-          background: url('./assets/img/image01.png');
-          background-size: cover;
+          background: url('./assets/img/logo-inicio.png');
+          background-size: 60%;
+          background-repeat: no-repeat;
           background-position: 50%;
         "></div>
   </div>

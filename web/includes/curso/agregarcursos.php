@@ -182,6 +182,7 @@
                                     </div>
                                 </div>
 
+<<<<<<< HEAD
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
                                         <label class="form-label">Descripción del curso</label>
@@ -206,6 +207,20 @@
                                         <label class="form-label">*Agregar imagen del curso</label>
                                         <br>
                                         <!-- <button type="button " class="btn btn-outline-danger  ">
+=======
+                            <div class="form-row ">
+
+                                <div class="form-group col-md-6 ">
+                                    <label class="form-label">Costo Curso</label>
+                                    <input type="number" id="precio-curso" name="prec_curso" placeholder="Ingrese Costo del Curso" class="form-control" aria-label="preci_curso" aria-describedby="names-addon">
+                                </div>
+
+
+                                <div class="form-group col-md-6 ">
+                                    <label class="form-label">*Agregar imagen del curso</label>
+                                    <br>
+                                    <!-- <button type="button " class="btn btn-outline-danger  ">
+>>>>>>> bccd988d599424259ed8aee6ccf706848b1cd497
                                         <i class="fas fa-cloud-upload-alt " aria-hidden="true "></i>
                                         Insertar imagen
                                     </button> -->
@@ -222,6 +237,16 @@
                                         </div>
                                     </div>
                                 </div>
+<<<<<<< HEAD
+=======
+
+                                <div class="form-group col-md-6 ">
+                                    <label class="form-label">Público Dirigido</label>
+                                    <input type="text " id="publico_dirigidoo" name="publico_dirigido" placeholder="Ingrese público dirigido" class="form-control" aria-label="Dirigido" aria-describedby="names-addon">
+                                </div>
+                                
+                            </div>
+>>>>>>> bccd988d599424259ed8aee6ccf706848b1cd497
 
                                 <div class="form-row">
                                     <div class="form-group col-12">

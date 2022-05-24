@@ -9,6 +9,10 @@ $id = $_GET['id'];
     <!-- <link rel="stylesheet" href="assets/css/tarjeta.css" /> -->
     <link rel="stylesheet" href="assets/css/tarjetaCredito.css">
     <link rel="stylesheet" href="assets/js/plugins/sweetalert2.min.css">
+
+    <link rel="stylesheet" href="assets/css/modalPagarVisa.css">
+    <link rel="stylesheet" href="assets/css/formPagarVisa.css">
+
 </head>
 
 <body>
@@ -44,7 +48,7 @@ $id = $_GET['id'];
         <div class="container-header navbar-fixed-top" style="max-width: 95rem;">
             <input type="checkbox" name="" id="check">
             <div class="logo-container">
-                <a href="index.php"><img src="assets/images/Logo.svg" alt=""></a>
+                <a href="index.php"><img src="assets/images/logo_educalma.png" alt=""></a>
             </div>
             <div class="nav-btn-header">
                 <div class="nav-links-header">
@@ -109,7 +113,7 @@ $id = $_GET['id'];
                                         <!-- -->
                                         <div>
                                             <!--<button id="cardBtn" onclick="location.href='pay.php?id=<?php echo $idUserr; ?>'" class="btn btn-primary btn-lg btn-block" type="button">Pagar con tarjeta de credito o debito <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-credit-card" viewBox="0 -2 16 16" style="width: 23; height: 23; @media only screen and (max-width: 768px){width: 23; height: 23;}"><path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v1h14V4a1 1 0 0 0-1-1H2zm13 4H1v5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V7z"/><path d="M2 10a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-1z"/></svg></button>-->
-                                            <button id="cardBtn" onclick='Swal.fire("Falta implementar.");' class="btn btn-primary btn-lg btn-block" type="button">Pagar con tarjeta de credito o debito <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-credit-card" viewBox="0 -2 16 16" style="width: 23; height: 23; @media only screen and (max-width: 768px){width: 23; height: 23;}"><path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v1h14V4a1 1 0 0 0-1-1H2zm13 4H1v5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V7z"/><path d="M2 10a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-1z"/></svg></button>
+                                            <button data-open="modal1" id="cardBtn" class="btn btn-primary btn-lg btn-block" type="button">Pagar con tarjeta de credito o debito <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-credit-card" viewBox="0 -2 16 16" style="width: 23; height: 23; @media only screen and (max-width: 768px){width: 23; height: 23;}"><path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v1h14V4a1 1 0 0 0-1-1H2zm13 4H1v5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V7z"/><path d="M2 10a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-1z"/></svg></button>
                                         </div>
 
                                         
@@ -145,7 +149,7 @@ $id = $_GET['id'];
             <div class="col-12 col-sm-12 col-md-5 col-lg-4 col-xl-4">
                 <div class="container-info-course" style="background-color: white;">
                     <div class="px-4 py-2">
-                        <h5>Detalles del pedido</h5>
+                    <h4  style="color: #4D1BF8; font-weight: bold;">Detalles del pedido</h4>
                         <!-- <p class="m-0">Curso:</p> -->
                         <div class="d-flex flex-column">
                             <span>Nombre del curso: <?php echo $dato['nombreCurso'];?></span>
@@ -154,13 +158,13 @@ $id = $_GET['id'];
                         </div>
                     </div>
                 </div>
-                <div class="container-info-resumen mt-3" style="background-color: white;">
+                <div class="container-info-resumen mt-3" style="background-color: white; border: 2px solid #737BF1; border-radius: 15px;">
                     <div class="px-4 py-3">
-                        <h5>Resumen de pedido</h5>
+                        <h4 style="color: #4D1BF8; font-weight: bold;">Resumen de pedido</h4>
                         <!-- <p class="m-0">Curso:</p> -->
                         <div class="row">
-                            <div class="col-6">Producto</div>
-                            <div class="col-6 text-right"><span>$.<?php echo $dato['costoCurso'];?></span></div>
+                            <div class="col-6" style="font-weight: bold;">Producto</div>
+                            <div class="col-6 text-right" style="font-weight: bold;"><span>$.<?php echo $dato['costoCurso'];?></span></div>
                         </div>
                         <div class="row mt-3">
                             <div class="col-5 col-lg-6 col-xl-5">
@@ -181,15 +185,15 @@ $id = $_GET['id'];
 
                                 </div>
                             </div>
-                            <div class="col-7 col-lg-6 col-xl-7 text-leftt"><span><?php echo $dato['nombreCurso'];?></span>
-                                <p class="font-weight-bold text-danger">$.<?php echo $dato['costoCurso'];?></p>
+                            <div class="col-7 col-lg-6 col-xl-7 font-weight-bold text-leftt" style="font-size: 16px;"><span><?php echo $dato['nombreCurso'];?></span>
+                                <p class="font-weight-bold text-danger" >$.<?php echo $dato['costoCurso'];?></p>
                                 <?php $_SESSION['costoPay']=$dato['costoCurso'];?>
                             </div>
                         </div>
                         <hr>
                         <div class="mt-2">
-                            <h4 style="font-size: 10px;">Los productos podrán ser descargados una vez que se procede el pago</h4>
-                            <h5 class="font-weight-bold" style="font-size: 8px;">(Para aclaraciones giancarlosuggardaddy@gmail.com)</h5>
+                            <h3 style="font-size: 13px;">Los productos podrán ser descargados una vez que se procede el pago</h3>
+                            <h3 class="font-weight-bold" style="font-size: 10px;">(Para aclaraciones giancarlosuggardaddy@gmail.com)</h3>
                         </div>
                     </div>
 
@@ -308,6 +312,175 @@ $id = $_GET['id'];
             })
         }*/
     </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+<div class="modal" id="modal1" data-animation="slideInOutLeft">
+    <section class="modal-content">
+
+        <div class="contenedor">
+
+            <!-- Tarjeta -->
+            <section class="tarjeta" id="tarjeta">
+
+                <div class="delantera">
+                    <div class="logo-marca" id="logo-marca">
+                        <!-- <img src="assets/img/logos/visa.png" alt=""> -->
+                    </div>
+                    <img src="assets/img/chip-tarjeta.png" class="chip" alt="">
+                    <div class="datos">
+                        <div class="grupo" id="numero">
+                            <p class="label">Número Tarjeta</p>
+                            <p class="numero">#### #### #### ####</p>
+                        </div>
+                        <div class="flexbox">
+                            <div class="grupo" id="nombre">
+                                <p class="label">Nombre Tarjeta</p>
+                                <p class="nombre">Nombre</p>
+                            </div>
+
+                            <div class="grupo" id="expiracion">
+                                <p class="label">Expiracion</p>
+                                <p class="expiracion"><span class="mes">MM</span> / <span class="year">AA</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="trasera">
+                    <div class="barra-magnetica"></div>
+                    <div class="datos">
+                        <div class="grupo" id="firma">
+                            <p class="label">Firma</p>
+                            <div class="firma"><p></p></div>
+                        </div>
+                        <div class="grupo" id="ccv">
+                            <p class="label">CCV</p>
+                            <p class="ccv"></p>
+                        </div>
+                    </div>
+                    <p class="leyenda">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus exercitationem, voluptates illo.</p>
+                    <a href="#" class="link-banco">www.tubanco.com</a>
+                </div>
+                
+            </section>
+
+            <!-- Contenedor Boton Abrir Formulario -->
+            <div class="contenedor-btn">
+                <button class="btn-abrir-formulario" id="btn-abrir-formulario">
+                    <i class="fas fa-plus"></i>
+                </button>
+            </div>
+
+            <!-- Formulario -->
+            <form action="" id="formulario-tarjeta" class="formulario-tarjeta">
+                <div class="grupo">
+                    <label class="numeroTarjeta" for="inputNumero">Número Tarjeta</label>
+                    <input type="text" id="inputNumero" maxlength="19" autocomplete="off">
+                </div>
+                <div class="grupo">
+                    <label for="inputNombre">Nombre</label>
+                    <input type="text" id="inputNombre" maxlength="19" autocomplete="off">
+                </div>
+                <div class="flexbox">
+                    <div class="grupo expira">
+                        <label for="selectMes">Expiracion</label>
+                        <div class="flexbox">
+                            <div class="grupo-select">
+                                <select name="mes" id="selectMes">
+                                    <option disabled selected>Mes</option>
+                                </select>
+                                <i class="fas fa-angle-down"></i>
+                            </div>
+                            <div class="grupo-select">
+                                <select name="year" id="selectYear">
+                                    <option disabled selected>Año</option>
+                                </select>
+                                <i class="fas fa-angle-down"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grupo ccv">
+                        <label for="inputCCV">CCV</label>
+                        <input type="text" id="inputCCV" maxlength="3">
+                    </div>
+                </div>
+                <button type="submit" class="btn-enviar">Enviar</button>
+                <button type="button" class="btnCancelar" aria-label="close modal" data-close>Cancelar</button>
+            </form>
+        </div>
+
+    </section>
+  </div>
+</div>
+
+
+ 
+
+
+
+
+
+<script src="assets/js/modalPagarVisa.js"></script>
+<script src="assets/js/formPagarVisa.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 </body>
 
