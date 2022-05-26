@@ -101,7 +101,7 @@ a {
     border-radius: 50%;
 
     position: relative;
-    left: 25px !important;
+    left: 15px !important;
 }
 
 .header__img__logo {
@@ -397,7 +397,7 @@ a {
         transition: .3s;
     }
     .nav-dashboard:hover {
-        width: 400px;
+        width: 300px;
     }
     .nav-dashboard:hover .nav__logo-name-dashboard {
         opacity: 1;

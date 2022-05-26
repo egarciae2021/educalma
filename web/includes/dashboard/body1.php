@@ -37,7 +37,7 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                             ?>
                         </h3>
 
-                        <h4 style="position: relative; left: 22px; top: -15px;"class="nav__subtitle-dashboard">
+                        <h4 style="position: relative; left: 14px; top: -15px;"class="nav__subtitle-dashboard">
                             <?php
                             if (isset($_SESSION['Logueado']) && $_SESSION['Logueado'] === true) {
                                 echo $_SESSION['nombres'];
