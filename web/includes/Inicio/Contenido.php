@@ -280,7 +280,6 @@ if (!isset($_GET['pag'])) {
 <!-- EMPRESAS -->
 <div class="container-bussines container">
   <div class="info col-12 my-auto mb-2">
-    <div></div>
     <h2 class="text-center">Educalma para empresas</h2>
     <ul>
       <li><i class="fas fa-check mr-3" style="color:#7249F3;"></i>Mide y analiza los resultados de tu equipo con nuestro servicio.
