@@ -21,7 +21,7 @@
       </div>
       <div class="col-lg-6 container-formulario">
         <a href="index.php">
-          <img src="./assets/images/Logo.svg" class="logo-img" alt="image">
+          <img src="./assets/images/logo_educalma.png" class="logo-img" alt="image">
         </a>
         <h1 class="font-weight-bold py-3">Bienvenido de nuevo!</h1>
         <form id="form_login" action="includes/login/checklogin.php" method="POST">
