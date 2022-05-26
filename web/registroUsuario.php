@@ -27,6 +27,7 @@
     #basic-addon2 {
       cursor: pointer;
     }
+
   </style>
 </head>
 
@@ -48,14 +49,14 @@
         <form autocomplete="off" id="form_data" >
           <div class="col-12 p-0" id="first-data">
             <div class="col my-3">
-              <label for="txtEmail" id="lblEmail" style="color: #744DFA;">Valida tu correo electrónico</label>
+              <label for="txtEmail" id="lblEmail" style="color: #744DFA; float:left;">Valida tu correo electrónico</label>
               <input type="email" class="form-control" id="txtEmail" autocomplete="off" required />
               <div class="invalid-feedback">
                 <span id="correoMessage"></span>
               </div>
             </div>
             <div class="col my-3 d-none" id="passBox">
-              <label for="txtPass">Crea tu contraseña</label>
+              <label for="txtPass" style="float:left;">Crea tu contraseña</label>
               <div class="input-group">
                 <input type="password" class="form-control" id="txtPass" required />
                 <div class="input-group-append">
@@ -77,7 +78,7 @@
             </div>
             <!-- Nombres -->
             <div class="col my-3">
-              <label for="txtNombres">Nombres</label>
+              <label for="txtNombres" style="float:left;">Nombres</label>
               <input type="text" class="form-control" id="txtNombres" required />
               <div class="invalid-feedback">
                 <span>¡Este es un campo requerido!</span>
@@ -85,14 +86,14 @@
             </div>
             <!-- Apellidos -->
             <div class="col my-3">
-              <label for="txtAPaterno">Ap. paterno</label>
+              <label for="txtAPaterno" style="float:left;">Ap. paterno</label>
               <input type="text" class="form-control" id="txtAPaterno" required />
               <div class="invalid-feedback">
                 <span>¡Este es un campo requerido!</span>
               </div>
             </div>
             <div class="col my-3">
-              <label for="txtAMaterno">Ap. materno</label>
+              <label for="txtAMaterno" style="float:left;">Ap. materno</label>
               <input type="text" class="form-control" id="txtAMaterno" required />
               <div class="invalid-feedback">
                 <span>¡Este es un campo requerido!</span>
@@ -100,7 +101,7 @@
             </div>
             <!-- Tipo de documento -->
             <div class="col my-3">
-              <label for="cmbTDocumento">T. documento</label>
+              <label for="cmbTDocumento" style="float:left;">T. documento</label>
               <select id="cmbTDocumento" class="form-control">
                 <option value="">Seleccionar</option>
                 <option value="1">DNI</option>
@@ -113,7 +114,7 @@
             </div>
             <!-- Documento -->
             <div class="col my-3">
-              <label for="txtDocumento">Documento</label>
+              <label for="txtDocumento" style="float:left;">Documento</label>
               <input type="number" class="form-control" id="txtDocumento">
               <div class="invalid-feedback">
                 <span>¡Este es un campo requerido!</span>
@@ -129,7 +130,7 @@
             </div>
             <!-- F. Nacimiento -->
             <div class="col my-3">
-              <label for="txtNacimiento">F. nacimiento</label>
+              <label for="txtNacimiento" style="float:left;">F. nacimiento</label>
               <input type="date" class="form-control" id="txtNacimiento" required>
               <div class="invalid-feedback">
                 <span>¡Debe ser mayor de 18 años!</span>
@@ -137,7 +138,7 @@
             </div>
             <!-- Celular -->
             <div class="col my-3">
-              <label for="txtCelular">Celular</label>
+              <label for="txtCelular" style="float:left;">Celular</label>
               <input type="number" class="form-control" id="txtCelular">
               <div class="invalid-feedback">
                 <span>¡Este es un campo requerido!</span>
@@ -145,7 +146,7 @@
             </div>
             <!-- Pais -->
             <div class="col my-3">
-              <label for="cmbPais">Pais</label>
+              <label for="cmbPais" style="float:left;">Pais</label>
               <select id="cmbPais" class="form-control">
                 <option value="">Seleccionar</option>
                 <?php
@@ -164,7 +165,7 @@
             </div>
             <!-- Genero -->
             <div class="col my-3">
-              <label for="cmbGenero">Género</label>
+              <label for="cmbGenero" style="float:left;">Género</label>
               <select id="cmbGenero" class="form-control">
                 <option value="">Seleccionar</option>
                 <option value="1">Masculino</option>
@@ -178,7 +179,7 @@
             </div>
             <!-- Codigo Empresa -->
             <div class="col my-3">
-              <label for="txtcodigo">Codigo Emp.</label>
+              <label for="txtcodigo" style="float:left;">Codigo Emp.</label>
               <input type="text" style="display: block; width: 100%; height:calc(1.5em + .75rem + 2px); padding: 0.375rem 0.75rem; font-size: 1rem; font-weight: 400; line-height: 1.5; background-clip: padding-box; border: 1px solid #ced4da; border-radius: 0.25rem; transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out" id="txtcode" placeholder="Ingrese el codigo de su empresa" />
             </div>
           </div>
