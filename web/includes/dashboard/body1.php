@@ -66,6 +66,15 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                        
 
 
+
+
+
+
+
+
+
+
+
                         <div style="position: relative; left: 8px;" class="nav__dropdown-dashboard">
                             <a href="sidebarCursos.php" class="nav__link-dashboard">
                                 <i class="far fa-folder-open nav__icon-dashboard" style="color:#F1C40F;"></i>
@@ -77,13 +86,26 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
 
                             <div class="nav__dropdown-collapse-dashboard">
                                 <div class="nav__dropdown-content-dashboard">
+
+                                    <?php
+                                    if ($_SESSION['privilegio'] != 1 && $_SESSION['privilegio'] != 6) {
+                                    ?>
+
                                     <a href="sidebarCursos.php" class="nav__dropdown-item-dashboard nav__link-dashboard">Cursos Comprados</a>
+
+                                    <?php
+                                    }
+                                    ?>
+                                    
                                     <a href="ListaCursos.php?pag=1" class="nav__dropdown-item-dashboard nav__link-dashboard">Cursos Publicados</a>
+
                                     <?php
                                     if ($_SESSION['privilegio'] == 1 || $_SESSION['privilegio'] == 6) {
                                     ?>
                                         <a href="publicarcursos.php?pag=1" class="nav__dropdown-item-dashboard nav__link-dashboard">Cursos No Publicados</a>
+
                                         <a href="agregarcurso.php" class="nav__dropdown-item-dashboard nav__link-dashboard">Agregar Un Nuevo Curso</a>
+
                                         <!--<a href="aprobadosCurso.php" class="nav__dropdown-item-dashboard nav__link-dashboard">Aprobados</a>-->
                                     <?php
                                     }
@@ -91,6 +113,15 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                                 </div>
                             </div>
                         </div>
+
+
+
+
+
+
+
+
+
 
                         <?php
                         if ($_SESSION['privilegio'] == 1 || $_SESSION['privilegio'] == 6) {

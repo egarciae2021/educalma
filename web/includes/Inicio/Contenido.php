@@ -23,12 +23,31 @@ if (!isset($_GET['pag'])) {
         <div class="button-panel">
 
     <?php
-    if (isset($_SESSION['Logueado']) && $_SESSION['Logueado'] === true){
+
+    
+    if (isset($_SESSION['Logueado']) && $_SESSION['Logueado'] === true && $_SESSION['privilegio'] == 2){
+      
       echo "<a href='sidebarCursos.php' type='button' class='btn btn_registrar_panel'>Cursos comprados</a>";
     }
-    else{
-      echo "<a href='registroUsuario.php' type='button' class='btn btn_registrar_panel'>Regístrate!</a>";
+    else if(isset($_SESSION['Logueado']) && $_SESSION['Logueado'] === true && $_SESSION['privilegio'] == 3){
       
+      echo "<a href='sidebarCursos.php' type='button' class='btn btn_registrar_panel'>Cursos comprados</a>";
+
+    }else if(isset($_SESSION['Logueado']) && $_SESSION['Logueado'] === true && $_SESSION['privilegio'] == 4){
+
+      echo "<a href='sidebarCursos.php' type='button' class='btn btn_registrar_panel'>Cursos comprados</a>";
+
+    }else if(isset($_SESSION['Logueado']) && $_SESSION['Logueado'] === true && $_SESSION['privilegio'] == 5){
+
+      echo "<a href='sidebarCursos.php' type='button' class='btn btn_registrar_panel'>Cursos comprados</a>";
+
+    }else if(isset($_SESSION['Logueado']) && $_SESSION['Logueado'] === true && $_SESSION['privilegio'] == 1){
+
+      echo "<a href='user-sidebar.php' type='button' class='btn btn_registrar_panel'>Dashboard</a>";
+    
+    }else if(isset($_SESSION['Logueado']) && $_SESSION['Logueado'] === true && $_SESSION['privilegio'] == 6){
+      
+      echo "<a href='user-sidebar.php' type='button' class='btn btn_registrar_panel'>Dashboard</a>";
     }
 
     
