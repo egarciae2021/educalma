@@ -46,7 +46,7 @@
     ?>
         <br>
         <div class="title_miscursos">
-            <h3>Mis Cursos</h3>
+            <h3>Cursos Comprados</h3>
         </div>
         <br>
 

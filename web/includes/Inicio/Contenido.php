@@ -23,12 +23,31 @@ if (!isset($_GET['pag'])) {
         <div class="button-panel">
 
     <?php
-    if (isset($_SESSION['Logueado']) && $_SESSION['Logueado'] === true){
-      echo "<a href='sidebarCursos.php' type='button' class='btn btn_registrar_panel'>Mis cursos</a>";
-    }
-    else{
-      echo "<a href='registroUsuario.php' type='button' class='btn btn_registrar_panel'>Regístrate!</a>";
+
+    
+    if (isset($_SESSION['Logueado']) && $_SESSION['Logueado'] === true && $_SESSION['privilegio'] == 2){
       
+      echo "<a href='sidebarCursos.php' type='button' class='btn btn_registrar_panel'>Cursos comprados</a>";
+    }
+    else if(isset($_SESSION['Logueado']) && $_SESSION['Logueado'] === true && $_SESSION['privilegio'] == 3){
+      
+      echo "<a href='sidebarCursos.php' type='button' class='btn btn_registrar_panel'>Cursos comprados</a>";
+
+    }else if(isset($_SESSION['Logueado']) && $_SESSION['Logueado'] === true && $_SESSION['privilegio'] == 4){
+
+      echo "<a href='sidebarCursos.php' type='button' class='btn btn_registrar_panel'>Cursos comprados</a>";
+
+    }else if(isset($_SESSION['Logueado']) && $_SESSION['Logueado'] === true && $_SESSION['privilegio'] == 5){
+
+      echo "<a href='sidebarCursos.php' type='button' class='btn btn_registrar_panel'>Cursos comprados</a>";
+
+    }else if(isset($_SESSION['Logueado']) && $_SESSION['Logueado'] === true && $_SESSION['privilegio'] == 1){
+
+      echo "<a href='user-sidebar.php' type='button' class='btn btn_registrar_panel'>Dashboard</a>";
+    
+    }else if(isset($_SESSION['Logueado']) && $_SESSION['Logueado'] === true && $_SESSION['privilegio'] == 6){
+      
+      echo "<a href='user-sidebar.php' type='button' class='btn btn_registrar_panel'>Dashboard</a>";
     }
 
     
@@ -50,6 +69,8 @@ if (!isset($_GET['pag'])) {
   </div>
 </div>
 
+
+
 <!-- CARDS BRINDA -->
 <div class="container container-fluid-brida">
   <div class="row">
@@ -61,8 +82,9 @@ if (!isset($_GET['pag'])) {
       </div>
       <div class="row">
         <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
-          <div class="card">
-            <div class="card-image">
+
+          <div class="card card-cursos">
+            <div class="card-image cursos">
               <img src="./assets/images/cur.png" alt="" />
             </div>
             <div class="card-title">
@@ -75,10 +97,12 @@ if (!isset($_GET['pag'])) {
               </p>
             </div>
           </div>
+
         </div>
         <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
-          <div class="card">
-            <div class="card-image">
+
+          <div class="card card-desarrollo-personal">
+            <div class="card-image desarrollo-personal">
               <img src="./assets/images/curso culminad.png" alt="" />
             </div>
             <div class="card-title">
@@ -90,10 +114,12 @@ if (!isset($_GET['pag'])) {
               </p>
             </div>
           </div>
+
         </div>
         <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
-          <div class="card">
-            <div class="card-image">
+
+          <div class="card card-certificados">
+            <div class="card-image certificados">
               <img src="./assets/images/certificad.png" alt="" />
             </div>
             <div class="card-title">
@@ -105,6 +131,7 @@ if (!isset($_GET['pag'])) {
               </p>
             </div>
           </div>
+
         </div>
       </div>
       <br>
@@ -118,6 +145,9 @@ if (!isset($_GET['pag'])) {
     </div>
   </div>
 </div>
+
+
+
 <!-- CARDS CURSOS -->
 <div class="container container-fluid-course">
   <div class="row">

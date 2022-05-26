@@ -96,7 +96,7 @@ $(document).ready(function () {
 
 //Tabla para administrar admins
 $(document).ready(function () {
-  $("#tableAdmins").DataTable({
+  $("#example1").DataTable({
     //"responsive": true, 
     "lengthChange": false, 
     "autoWidth": false,

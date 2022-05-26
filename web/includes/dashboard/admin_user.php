@@ -7,8 +7,12 @@
     <style>
 .dataTables_filter{
 
-position: relative;
-float: right;
+/*Centrando el buscador de "Por Usuarios".*/
+position: relative;  
+left: -140px;
+float: left;
+/**/
+
 border-radius: 5px ; 
 border: 1px solid #57B3F7;
 background-repeat: no-repeat;
@@ -100,6 +104,8 @@ $usuarios = $q3->fetchAll(PDO::FETCH_ASSOC);
 
                 <!-- TABLA DE USUARIOS  -->
                 <div class="card mt-2">
+
+                
                     <div class="card-header">
                         <div class="row mb-2">
                             <div class="col-12">
