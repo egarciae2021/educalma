@@ -19,6 +19,47 @@
 
     <style>
 
+.dataTables_filter{
+
+/*Centrando el buscador de "Lista de Cursos No Publicados".*/
+position: relative;  
+left: -140px;
+float: left;
+/**/
+
+border-radius: 5px ; 
+border: 1px solid #57B3F7;
+background-repeat: no-repeat;
+background-image: url("./assets/img/buscar.png");
+background-position: 8px 5px;
+background-size: 25px 25px;
+
+}
+
+/*Palabra "Buscar"*/ 
+.dataTables_filter label {
+
+  position: relative;
+    top: 5px;
+    
+    left: 38px;
+    /*font-weight: bold;*/
+    width: 280px;
+
+    font-size: 15.4px;
+
+}
+
+/*Caja de texto del buscador*/ 
+.dataTables_filter label .form-control {
+
+  border: 0;
+    height: 25px;
+    position: relative;
+    left: -9px;
+    padding: 0;
+}
+
         
     .boton3 {
   color: #737BF1 !important;
@@ -59,13 +100,32 @@
     </div> -->
         <!--contenido de los cursos -->
 
+
+
+
+
+
+
+
+
+
+
+        
     <!--tabla de curso -->
             <div class="col-12 text-center">
+                
+            
                 <div class="card">
+
+
                     <div class="card-header">
                         <h3 class="card-title">Lista de Cursos No Publicados</h3>
                     </div>
-                    <!-- /.card-header -->
+
+
+
+
+               
                     <div class="card-body">
                         <?php
                         require_once 'database/databaseConection.php';
@@ -102,7 +162,7 @@
                         ?>
                         <div class="table-responsive">
                 
-                             <table id="example1" class="table table-borderless dt-responsive text-center" cellspacing="0" width="100%" >
+                             <table id="tablaCursos" class="table table-borderless dt-responsive" cellspacing="0" width="100%" >
                                 <thead>
                                     <tr style="background-color:#737BF1">
                                         <th style="border-radius: 10px 0 0  10px;">Nombre</th>
@@ -114,7 +174,7 @@
                                         <th>N° Módulos</th>
                                         <th>N° Temas</th>
                                         <th>N° Cuestionarios</th>
-                                        <th style="border-radius: 0 10px 10px 0;" colspan="3">Acciones</th>
+                                        <th style="border-radius: 0 10px 10px 0;">Acciones</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -254,21 +314,19 @@
                                                         <i class="far fa-plus-square fa-lg"></i> 
                                                     </a>
 
-                                                    </td>    
-
-                                                    <td>
+                                                  
                                                     <!--para editar curso-->
                                                     <a style="color:green;" href="editarcurso.php?id=<?php echo $curso['idCurso']; ?>">
                                                         <i class="far fa-edit fa-lg"></i>
                                                     </a>
-                                                    </td>
+                                                     
                                                     <!--para quitar curso-->
                                                     <!-- <a href="includes/Cursos_crud/Cursos_CRUD.php?id_curso=<?php echo $curso['idCurso']; ?>">
                                                         <button class="boton_personalizado" type="button"><i class="far fa-bell-slash fa-2x"></i></button>
                                                     </a> -->
 
                                                 
-                                                <td>
+                                                
                                                 <?php
                                                  if($_SESSION['privilegio'] == 1) {
 
@@ -753,6 +811,47 @@
         
 
 </script>
+
+ <!-- <script src="./assets/js/plugins/jquery.min.js"></script> -->
+    <!-- ALL JS FILES -->
+    <script src="./assets/js/plugins/jquery.min.js"></script>
+    <script src="./assets/js/plugins//popper.min.js"></script>
+    <script src="./assets/js/plugins/bootstrap.min.js"></script>
+    <script src="./assets/js/plugins/sweetalert2.all.min.js"></script>
+    <script src="./assets/js/validarRegisCateg.js"></script>
+    <script src="./assets/js/home.js"></script>
+
+    <script src="./assets/js/main.js"></script>
+    <!-- DataTables  & Plugins -->
+    <script src="includes/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="includes/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+    <script src="includes/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="includes/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+    <script src="includes/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+    <script src="includes/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+    <script src="includes/plugins/jszip/jszip.min.js"></script>
+    <script src="includes/plugins/pdfmake/pdfmake.min.js"></script>
+    <script src="includes/plugins/pdfmake/vfs_fonts.js"></script>
+    <script src="includes/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+    <script src="includes/plugins/datatables-buttons/js/buttons.print.min.js"></script>
+    <script src="includes/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+
+    <!-- <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap4.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.2.9/js/responsive.bootstrap4.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.0.1/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.0.1/js/buttons.bootstrap4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.0.1/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.0.1/js/buttons.print.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.0.1/js/buttons.colVis.min.js"></script> -->
+    
+    
+
+    <script src="./assets/js/datatableFunctions.js"></script>
 
 
 
