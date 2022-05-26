@@ -32,7 +32,7 @@
 
 <body class="h-100 w-100">
   <div class="row row-cols-1 row-cols-md-2 h-100 w-100 m-0">
-    <div class="col h-md-100 row row-cols-1 m-0 p-5" style="background-color: #744DFA;">
+    <div class="col h-md-100 row row-cols-1 m-0 p-5" style="background: url('./assets/images/fondo1e_3.png'); background-size:100%; background-repeat: no-repeat;">
     <div class="col-12 mb-2">
           <center>
           <a href="./iniciosesion.php">
@@ -41,7 +41,7 @@
           </center>
         </div>
         <center>
-      <div class="" style="padding:40px; border-radius:20px; padding-left:2px; padding-right:2px; max-width: 500px; background-color: white;">
+      <div class="" style="padding:40px; border-radius:20px; padding-left:5px; padding-right:5px; max-width: 500px; background-color: white;">
       <div class="col h-auto mx-auto align-self-center" >
         
         <h4 class="col d-block" style="color: #683CFD;">¡Únete y comienza a potenciar tu carrera!</h4>
@@ -189,9 +189,9 @@
           </div>
         </form>
       </div>
-      <div class="col align-self-end p-5 text-center">
+      <div class="col align-self-end pt-5 text-center">
         <div class="d-inline-block border p-3 rounded">
-          <span>¿Ya tienes cuenta?</span>
+          <span style="color: #5FBBEF;">¿Ya tienes cuenta?</span>
           <a id="toLogin" href="./iniciosesion.php">Inicia sesión aquí</a>
         </div>
       </div>
