@@ -12,6 +12,7 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
     <link rel="stylesheet" href="includes/dist/css/adminlte.min.css">
     <script src="assets/js/clipboard.min.js"></script>
     <script src="assets/js/funciones.js"></script>
+    <script src="./assets/js/plugins/sweetalert2.all.min.js"></script>
 </head>
 <br>
 <br>
@@ -21,6 +22,12 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
 //https://educalma.fundacioncalma.org/
 // echo $envio=substr($url, strrpos($url, 'h') - 1);
 ?>
+<script> 
+    const params = new URLSearchParams(window.location.search)
+    if (params.has("error")) {
+        Swal.fire("Completa los datos")
+    }
+</script>
 <form action="includes/Business/addcurso.php" method="POST">
     <div class="container">
         <div class="row">
