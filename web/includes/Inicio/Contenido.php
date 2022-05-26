@@ -50,6 +50,8 @@ if (!isset($_GET['pag'])) {
   </div>
 </div>
 
+
+
 <!-- CARDS BRINDA -->
 <div class="container container-fluid-brida">
   <div class="row">
@@ -61,7 +63,8 @@ if (!isset($_GET['pag'])) {
       </div>
       <div class="row">
         <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
-          <div class="card">
+
+          <div class="card card-cursos">
             <div class="card-image cursos">
               <img src="./assets/images/cur.png" alt="" />
             </div>
@@ -75,9 +78,11 @@ if (!isset($_GET['pag'])) {
               </p>
             </div>
           </div>
+
         </div>
         <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
-          <div class="card">
+
+          <div class="card card-desarrollo-personal">
             <div class="card-image desarrollo-personal">
               <img src="./assets/images/curso culminad.png" alt="" />
             </div>
@@ -90,9 +95,11 @@ if (!isset($_GET['pag'])) {
               </p>
             </div>
           </div>
+
         </div>
         <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
-          <div class="card">
+
+          <div class="card card-certificados">
             <div class="card-image certificados">
               <img src="./assets/images/certificad.png" alt="" />
             </div>
@@ -105,6 +112,7 @@ if (!isset($_GET['pag'])) {
               </p>
             </div>
           </div>
+
         </div>
       </div>
       <br>
@@ -118,6 +126,9 @@ if (!isset($_GET['pag'])) {
     </div>
   </div>
 </div>
+
+
+
 <!-- CARDS CURSOS -->
 <div class="container container-fluid-course">
   <div class="row">

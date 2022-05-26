@@ -85,6 +85,12 @@
     .description-panel {
         padding-right: 0rem;
     }
+
+    .certificados {
+        position: relative;
+        left: -9px;
+    }
+    
 }
 
 @media (max-width: 1450px) {
@@ -96,6 +102,11 @@
         width: 600px;
         transition: all 0.3s ease;
     }
+
+    .certificados {
+        position: relative;
+        left: -9px;
+    }
 }
 
 @media (max-width: 1250px) {
@@ -106,12 +117,22 @@
         width: 600px;
         transition: all 0.3s ease;
     }
+
+    .certificados {
+        position: relative;
+        left: -9px;
+    }
 }
 
 @media (max-width: 1240px) {
     .container-image-panel img {
         width: 540px;
         transition: all 0.3s ease;
+    }
+
+    .certificados {
+        position: relative;
+        left: -9px;
     }
 }
 
@@ -120,8 +141,15 @@
         width: 430px;
         transition: all 0.3s ease;
     }
+
+    .certificados {
+        position: relative;
+        left: -9px;
+    }
+    
 }
 
+/*---------------------------------------------------------------------------------------------------*/
 @media (max-width: 767px) {
     .container-panel-image {
         display: none;
@@ -129,6 +157,31 @@
     .description-panel {
         padding-right: 20rem;
     }
+
+    .certificados {
+        position: relative;
+        left: -9px;
+    }
+
+    /****************/
+    .card-cursos {
+
+    }
+
+    .card-desarrollo-personal {
+
+        background: relative; 
+        top: 50px;
+
+    }
+
+    .card-certificados {
+
+        background: relative; 
+        top: 100px;
+
+    }
+    /****************/
 }
 
 @media (max-width: 650px) {
@@ -137,6 +190,11 @@
     }
     .description-panel {
         padding-right: 10rem;
+    }
+
+    .certificados {
+        position: relative;
+        left: -9px;
     }
 }
 
@@ -155,6 +213,11 @@
         font-size: 14px;
         background-color: #7c83fd;
     }
+
+    .certificados {
+        position: relative;
+        left: -9px;
+    }
 }
 
 @media (max-width: 450px) {
@@ -172,6 +235,11 @@
         font-size: 14px;
         background-color: #7c83fd;
     }
+
+    .certificados {
+        position: relative;
+        left: -9px;
+    }
 }
 
 @media (max-width: 300px) {
@@ -188,6 +256,11 @@
     .btn_registrar_panel {
         font-size: 13px;
         background-color: #7c83fd;
+    }
+
+    .certificados {
+        position: relative;
+        left: -9px;
     }
 }
 
@@ -285,6 +358,11 @@
     .col-md-6 .img_nueva {
         margin: 100px auto;
     }
+
+    .certificados {
+        position: relative;
+        left: -9px;
+    }
 }
 
 
@@ -311,6 +389,8 @@
     font-size: 36px;
     font-weight: bold;
     text-transform: uppercase;
+    position: relative;
+    top: -30px;
 }
 
 .container .row .col-12 .section-title span {
@@ -406,11 +486,58 @@
     .container-fluid-brida .row .col-12 .section-title {
         font-size: 26px;
     }
+
+    .certificados {
+        position: relative;
+        left: -9px;
+    }
+
+    /*
+    .card .cursos {
+        background-color: red;
+        position: relative;
+        top: 50px;
+    }
+    */
+
+   
+    /****************/
+    .card-cursos {
+
+    }
+
+    .card-desarrollo-personal {
+
+        background: relative; 
+        top: 50px;
+
+    }
+
+    .card-certificados {
+
+        background: relative; 
+        top: 100px;
+
+    }
+
+    .container .row .col-12 .section-title h2 {
+    font-size: 36px;
+    font-weight: bold;
+    text-transform: uppercase;
+    position: relative;
+    top: -20px;
+}
+    /****************/
 }
 
 @media (max-width: 450px) {
     .container-fluid-brida .row .col-12 .section-title {
         font-size: 20px;
+    }
+
+    .certificados {
+        position: relative;
+        left: -9px;
     }
 }
 
@@ -500,6 +627,10 @@
     .container-fluid-course .row .card .row .col-lg-8 {
         padding: 1rem;
     }
+    .certificados {
+        position: relative;
+        left: -9px;
+    }
 }
 
 @media (max-width: 991px) {
@@ -512,6 +643,10 @@
     .container-fluid-course .row .card .row a {
         font-size: 12px;
     }
+    .certificados {
+        position: relative;
+        left: -9px;
+    }
 }
 
 @media (max-width: 767px) {
@@ -520,6 +655,10 @@
     }
     .container-fluid-course .row .card .row .col-lg-8 {
         padding: 0;
+    }
+    .certificados {
+        position: relative;
+        left: -9px;
     }
 }
 
@@ -536,6 +675,10 @@
     .container-fluid-course .row .card .row .col-lg-8 {
         padding: 0 15px;
     }
+    .certificados {
+        position: relative;
+        left: -9px;
+    }
 }
 
 @media (max-width: 333px) {
@@ -551,6 +694,10 @@
     }
     .container-fluid-course .row .card .row a {
         font-size: 8px;
+    }
+    .certificados {
+        position: relative;
+        left: -9px;
     }
 }
 
@@ -920,6 +1067,10 @@
         grid-template-columns: 50% 50%;
         position: relative;
     }
+    .certificados {
+        position: relative;
+        left: -9px;
+    }
 }
 
 @media screen and (min-width: 768px) {
@@ -933,6 +1084,10 @@
         grid-template-columns: 100%;
         position: relative;
     }
+    .certificados {
+        position: relative;
+        left: -9px;
+    }
 }
 
 @media screen and (min-width: 992px) {
@@ -940,6 +1095,10 @@
         display: grid;
         grid-template-columns: 50% 50%;
         position: relative;
+    }
+    .certificados {
+        position: relative;
+        left: -9px;
     }
 }@media screen and (min-width: 360px) {
     .container-bussines>.send-data .box-rotate {
@@ -949,6 +1108,10 @@
         transition: transform 2s;
         transform: rotateY(0);
         perspective: 1000px;
+    }
+    .certificados {
+        position: relative;
+        left: -9px;
     }
     
 }
@@ -961,4 +1124,9 @@
         transform: rotateY(0);
         perspective: 1000px;
     }
+    .certificados {
+        position: relative;
+        left: -9px;
+    }
 }
+
