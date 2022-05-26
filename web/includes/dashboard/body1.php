@@ -78,16 +78,6 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                             </a>
 
                         </div>
-                       
-
-
-
-
-
-
-
-
-
 
 
                         <div style="position: relative; left: 8px;" class="nav__dropdown-dashboard">
