@@ -309,13 +309,15 @@ if (!isset($_GET['pag'])) {
 </div>
 <!-- EMPRESAS -->
 <div class="container-bussines container">
-  <div class="info col-12 my-auto mb-2">
+  <div class="info col-12 mt-5">
+    <br><br>
     <h2 class="text-center">Educalma para empresas</h2>
+    <br>
     <ul>
-      <li><i class="fas fa-check mr-3" style="color:#7249F3;"></i>Mide y analiza los resultados de tu equipo con nuestro servicio.
+      <li style="color:#5FB2EF;"><i class="fas fa-check fa-lg mr-3 " style="color:#7249F3;"></i>Mide y analiza los resultados de tu equipo con nuestro servicio.
       </li>
-      <li><i class="fas fa-check mr-3" style="color:#7249F3;"></i>Acompañamiento y seguimiento por un Ejecutivo de Cuenta.</li>
-      <li><i class="fas fa-check mr-3" style="color:#7249F3;"></i>Certificaciones por cada curso del plan completado.</li>
+      <li style="color:#5FB2EF;"><i class="fas fa-check fa-lg mr-3" style="color:#7249F3;"></i>Acompañamiento y seguimiento por un Ejecutivo de Cuenta.</li>
+      <li style="color:#5FB2EF;"><i class="fas fa-check fa-lg mr-3" style="color:#7249F3;"></i>Certificaciones por cada curso del plan completado.</li>
     </ul>
     <div class="box-email">
 
@@ -324,9 +326,9 @@ if (!isset($_GET['pag'])) {
       <!--<div class="input-data">-->
 
         <!--<input type="email" placeholder="Escribe tu correo empresarial" id="txtEmail" />-->
-        
-        <button id="btnAction" style="position: relative; background-color:#737BF1; font-weight:bold;">MÁS INFORMACIÓN</button>
-      
+        <br>
+        <button id="btnAction" style="position: relative; background-color:#737BF1; font-weight:bold; width:auto; float:right;">MÁS INFORMACIÓN</button>
+      <br>
       <!--</div>-->
       <span class="msg-error">Debe ser un correo corporativo.</span>
     </div>
