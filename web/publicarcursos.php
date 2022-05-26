@@ -11,14 +11,17 @@
 
 <body id="home" data-spy="scroll" data-target="#navbar-wd" data-offset="98"> <!--id="home" data-spy="scroll" data-target="#navbar-wd" data-offset="98"-->
 
-
-
 <?php include_once 'includes/dashboard/header1.php' ?>
+
 <?php include_once 'includes/dashboard/body1.php' ?>
 
 <?php include_once 'includes/curso/listarcurso.php' ?>
+
 <link rel="stylesheet" href="assets/css/style2.css">
 <link rel="stylesheet" href="assets/css/style1.css">
+
 <script src="assets/js/home.js"></script>
 <script src="./assets/js/m.dashboard.js"></script>
+
+
 </body>

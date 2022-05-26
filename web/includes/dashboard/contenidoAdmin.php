@@ -13,8 +13,12 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
     <style>
 .dataTables_filter{
 
-position: relative;
-float: right;
+/*Centrando el buscador de "Por Cursos".*/
+position: relative;  
+left: -140px;
+float: left;
+/**/
+
 border-radius: 5px ; 
 border: 1px solid #57B3F7;
 background-repeat: no-repeat;
