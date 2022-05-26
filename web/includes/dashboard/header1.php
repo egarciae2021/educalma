@@ -31,7 +31,7 @@ ob_start();
             }
         ?>
             
-            <a href="#" class="header__logo" style="color:white; padding-left:500px;">
+            <a href="#" class="header__logo">
                 <?php
                 if (isset($_SESSION['Logueado']) && $_SESSION['Logueado'] === true) {
                     
@@ -43,7 +43,7 @@ ob_start();
                     <!--Administrador-->
                     <?php if ($_SESSION['privilegio'] == 1) {?>
 
-                        &nbsp; <img src="./assets/img/user-admi.jpg" class="header__img" alt="foto_curso">
+                        &nbsp; <img src="./assets/img/user-admi.jpg" class="header__img" cellspacing="0" width="auto" alt="foto_curso">
                
                     <?php } ?>
 
