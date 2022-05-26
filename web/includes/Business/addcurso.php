@@ -17,7 +17,7 @@ elseif(isset($_GET['emp'])){
 }
 elseif(isset($_GET['ent'])){
     function genera_codigo ($longitud) {
-        $caracteres = array("0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z");
+        $caracteres = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
         $codigo = '';
     
         for ($i = 1; $i <= $longitud; $i++) {
@@ -80,16 +80,20 @@ elseif(isset($_GET['ent'])){
     // echo $prube;
 }
 else{
-    
-$pdo = Database::connect();  
-$curso=$_POST['curso'];
-$usuario=$_POST['usuario'];
-
-$veri4=$pdo->prepare("INSERT INTO `temp`(cod_empre,cod_curse)VALUES($usuario,$curso)");
-    // $veri4->bindParam(":idEmp",$id_sol,PDO::PARAM_INT);
-    // $veri4->bindParam(":idCur",$curseIns,PDO::PARAM_INT);
-    // $veri4->bindParam(":idCode",$codeCurse,PDO::PARAM_STR);
-    $veri4->execute();
-echo '<script>window.location="../../curseEmp.php?sol='.$usuario.'"</script>';
+      
+    if (isset($_POST['curso']) && isset($_POST['usuario'])) {
+        $curso = $_POST ['curso'];
+        $usuario=$_POST['usuario'];
+        $pdo = Database::connect();    
+        # code...
+        $veri4 = $pdo->prepare("INSERT INTO `temp`(cod_empre,cod_curse)VALUES($usuario,$curso)");
+            //$veri4->bindParam(":idEmp",$id_sol,PDO::PARAM_INT);
+            //$veri4->bindParam(":idCur",$curseIns,PDO::PARAM_INT);
+            //$veri4->bindParam(":idCode",$codeCurse,PDO::PARAM_STR);
+            $veri4->execute();
+        echo '<script>window.location="../../curseEmp.php?sol='.$usuario.'"</script>';
+    }else{
+        echo '<script>window.location="../../curseEmp.php?error=Es un error"</script>';
+    }
 }
 ?>
