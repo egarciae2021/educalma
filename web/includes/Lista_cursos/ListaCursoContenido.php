@@ -3,17 +3,41 @@
 </head>
 <br><br><br>
 
+<!------------------------------------------------------------->
 <div class="container-fluid">
-    <!-- CURSOS DESTACADOS -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- CURSOS PUBLICADOS MÁS DESTACADOS -->
     <div class="row">
         <div class="col-12">
-            <div class="row mb-4 mt-4" style="background-color: #e7f4ff;">
+
+            <div class="row mb-4 mt-4" style="background-color: #e7f4ff; margin-left: 25px; margin-right: 25px; border-radius: 50px;">
                 <div class="container section-title-course">
-                    <i class="fas fa-shapes mr-3"></i>Cursos destacados
+                    <i class="fas fa-shapes mr-3"></i>Cursos publicados más destacados
                     <hr>
                 </div>
             </div>
+
             <div class="row container" style="margin: 0 auto;">
+
                 <?php
                 $pdo = Database::connect();
                 $sql2 = "SELECT * FROM cursos WHERE permisoCurso=1 ORDER BY cursos.idCurso DESC";
@@ -57,14 +81,24 @@
                         $paginaRed = "detallecurso";
                     }
                 ?>
+
+                    <!--Lista de cursos publicados más destacados-->
+                    <!--Contenedor de los cursos publicados más destacados-->
                     <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
                         <div class="card">
                             <div class="row">
+
+
+                                <!--Primer Contenedor interno-->
                                 <div class="col-5">
+
+                                    <!--Contenedor de la imagen-->
                                     <div class="container-image">
+                                        
                                         <?php
                                         if ($dato['imagenDestacadaCurso'] != null) {
                                         ?>
+                                            <!--Imagen-->
                                             <img src="data:image/*;base64,<?php echo base64_encode($dato['imagenDestacadaCurso']); ?>" alt="">
                                         <?php
                                         } else {
@@ -76,16 +110,25 @@
 
                                     </div>
                                 </div>
+
+                                <!--Segundo Contenedor interno-->
                                 <div class="col-7">
+
+                                    <!--Nombre del curso comprado más destacado-->
                                     <div class="container-title">
                                         <a><strong><?php echo $dato['nombreCurso']; ?></strong></a>
                                     </div>
+                                    
+                                    <!--Descripción del curso comprado más destacado-->
                                     <div class="container-card-description">
                                         <p><?php echo substr($dato['descripcionCurso'], 0, 30) . "..."; ?></p>
                                     </div>
+                                    
+                                    <!--Link "Ver información"-->
                                     <div class="container-link">
                                         <a href="<?php echo $paginaRed ?>.php?id=<?php echo $dato['idCurso']; ?><?php if(!empty($dato2)){?>&idCI=<?php echo $dato2['id_cursoInscrito']; }?>">Ver informaci&oacute;n -></a>
                                     </div>
+                                
                                 </div>
                             </div>
                         </div>
@@ -94,23 +137,57 @@
                 <?php
                 }
                 ?>
-            </div>
-            <!-- FIN CURSOS EN FILA-->
 
+            </div>
+            
         </div>
     </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--CURSOS PUBLICADOS (aquí está solo el título y el buscador)-->
     <div class="container-fluid px-0">
+
+
+        <!--Título-->
         <div class="row">
             <div class="col-12">
-                <div class="row mb-4 mt-4" style="background-color: #e7f4ff;">
+                <div class="row mb-4 mt-4" style="background-color: #e7f4ff; margin-left: 25px; margin-right: 25px; border-radius: 50px;">
                     <div class="container section-title-course">
-                        <i class="fas fa-shapes mr-3"></i>Cursos
+                        <i class="fas fa-shapes mr-3"></i>Cursos publicados
                         <hr>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Búsqueda -->
+
+
+
+        <!--Buscador-->
         <div class="container mb-4">
             <div class="col-12">
                 <div class="row mb-2">
@@ -166,100 +243,306 @@
                 </div> 
              -->
         <!--Fin de Búsqueda-->
+
+
     </div>
+    <!--FIN DE CURSOS PUBLICADOS (aquí está solo el título y el buscador)-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </div>
-<!-- FIN CURSOS DESTACADOS -->
-<!-- SECCIÓN CURSOS -->
+<!------------------------------------------------------------->
+
+
+
+
+
+
+<!--CURSOS PUBLICADOS (aquí está la lista de cursos)-->
 <div class="container-fluid px-0" id="result">
+
+
+
+
+
+
+
+
     <div class="container-card-course">
         <div class="row pt-1 container" style="margin: 0 auto;">
-            <?php
-            error_reporting(0);
-            $idcategoria = $_GET['idcate'];
-            $sql2 = "SELECT * FROM cursos WHERE permisoCurso=1";
-            $query2 = $pdo->prepare($sql2);
-            $query2->execute();
-            $contar = $query2->rowCount();
-            //con este codigo se hara la division 
-            //para generar las paginas necesarias 
-            //con respecto al numero que tenga y a los campos que halla
-            $cantidad_paginas = 8;
-            $page = $contar / $cantidad_paginas;
-            $page = ceil($page);
-            //seguimos con el paginador 
-            if ($contar > 0) {
-                if ($_GET['pag'] > $page || $_GET['pag'] < 1) {
-                    header('Location:ListaCursos.php?pag=1');
-                }
-            }
-            $inicio = ($_GET['pag'] - 1) * $cantidad_paginas;
-            $sql3 = "SELECT * FROM cursos WHERE permisoCurso=1 LIMIT :iniciar,:narticulos";
 
-            $query3 = $pdo->prepare($sql3);
-            $query3->bindParam(':iniciar', $inicio, PDO::PARAM_INT);
-            $query3->bindParam(':narticulos', $cantidad_paginas, PDO::PARAM_INT);
-            $query3->execute();
-            $conteo = 0;
-            while ($dato = $query3->fetch(PDO::FETCH_ASSOC)) {
-                $conteo = $conteo + 1;
-                //ALGORITMO CURSO INSCRITO Y NO INSCRITO
-                if (isset($_SESSION['codUsuario'])) {
-                    $cursoID = $dato['idCurso'];
-                    $userID = $_SESSION['codUsuario'];
-                    $sql4 = "SELECT * FROM cursoinscrito where curso_id='$cursoID' and usuario_id = '$userID' ";
-                    $query4 = $pdo->prepare($sql4);
-                    $query4->execute(array());
-                    $dato2 = $query4->fetch(PDO::FETCH_ASSOC);
-                    if (empty($dato2)) {
-                        $paginaRed = "detallecurso";
-                    } else {
-                        $paginaRed = "curso";
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+                <?php
+                error_reporting(0);
+                $idcategoria = $_GET['idcate'];
+                $sql2 = "SELECT * FROM cursos WHERE permisoCurso=1";
+                $query2 = $pdo->prepare($sql2);
+                $query2->execute();
+                $contar = $query2->rowCount();
+                //con este codigo se hara la division 
+                //para generar las paginas necesarias 
+                //con respecto al numero que tenga y a los campos que halla
+                $cantidad_paginas = 8;
+                $page = $contar / $cantidad_paginas;
+                $page = ceil($page);
+                //seguimos con el paginador 
+                if ($contar > 0) {
+                    if ($_GET['pag'] > $page || $_GET['pag'] < 1) {
+                        header('Location:ListaCursos.php?pag=1');
                     }
-                } else {
-                    $paginaRed =
-                        "detallecurso";
                 }
-            ?>
+                $inicio = ($_GET['pag'] - 1) * $cantidad_paginas;
+                $sql3 = "SELECT * FROM cursos WHERE permisoCurso=1 LIMIT :iniciar,:narticulos";
 
+                $query3 = $pdo->prepare($sql3);
+                $query3->bindParam(':iniciar', $inicio, PDO::PARAM_INT);
+                $query3->bindParam(':narticulos', $cantidad_paginas, PDO::PARAM_INT);
+                $query3->execute();
+                $conteo = 0;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                while ($dato = $query3->fetch(PDO::FETCH_ASSOC)) {
+
+                    $conteo = $conteo + 1;
+
+                    //ALGORITMO CURSO INSCRITO Y NO INSCRITO
+                    if (isset($_SESSION['codUsuario'])) {
+                        $cursoID = $dato['idCurso'];
+                        $userID = $_SESSION['codUsuario'];
+                        $sql4 = "SELECT * FROM cursoinscrito where curso_id='$cursoID' and usuario_id = '$userID' ";
+                        $query4 = $pdo->prepare($sql4);
+                        $query4->execute(array());
+                        $dato2 = $query4->fetch(PDO::FETCH_ASSOC);
+                        if (empty($dato2)) {
+                            $paginaRed = "detallecurso";
+                        } else {
+                            $paginaRed = "curso";
+                        }
+                    } else {
+                        $paginaRed =
+                            "detallecurso";
+                    }
+                ?>
+
+
+                <!--Contenedor del curso publicado-->
                 <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3">
+
+
                     <div class="card">
-                        <div class="container-card-image">
+
+                        <!--Contenedor de la imagen-->
+                        <div style="background: red;" class="container-card-image">
                             <?php
                             if ($dato['imagenDestacadaCurso'] != null) {
                             ?>
+                                <!--Imagen elegida-->
                                 <img heigth="10px" ; src="data:image/*;base64,<?php echo base64_encode($dato['imagenDestacadaCurso']); ?>" alt="">
                             <?php
                             } else {
                             ?>
+                                <!--Imagen por default-->
                                 <img heigth="10px" ; src="./assets/images/curso_educalma.png">
                             <?php
                             }
                             ?>
-
                         </div>
+
+                        <!--Contenedor del nombre del curso publicado-->
                         <div class="container-card-title">
                             <a>
+                                <!--Nombre-->
                                 <center><strong><?php echo $dato['nombreCurso']; ?></strong></center>
                             </a>
                         </div>
+
+
+                        <!--Contenedor de la descripción del curso-->
                         <div class="container-card-description">
+                            <!--Descripción-->
                             <p><?php echo substr($dato['descripcionCurso'], 0, 80) . "..."; ?></p>
                         </div>
+
+
+                        <!-- Link "Ver Información"-->
                         <div class="container-card-link">
                             <a href="<?php echo $paginaRed ?>.php?id=<?php echo $dato['idCurso']; ?><?php if(!empty($dato2)){?>&idCI=<?php echo $dato2['id_cursoInscrito']; }?>">
                                 <center><strong>Ver Informaci&oacute;n -> </strong> </center>
                             </a>
                         </div>
+
+
+
                     </div>
                 </div>
-            <?php
-            }
-            ?>
+                <!--Fin del contenedor del curso publicado-->
+
+                <?php
+                }
+                ?>
+
+
+
+
+
         </div>
     </div>
-    <!-- Hasta aqui son las muestras -->
+   
+
+
+
+
+
+
+
+
+
 </div>
-<!-- FIN DE CURSOS -->
+<!--FIN DE CURSOS PUBLICADOS (aquí está la lista de cursos)-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <!--PAGINADOR-->
 <div class="row container py-4" style="margin: 0 auto;">
@@ -282,5 +565,3 @@
     </div>
 </div>
 <!--FIN DE PAGINADOR-->
-
-</div>

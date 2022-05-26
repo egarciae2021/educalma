@@ -348,6 +348,13 @@
     transition: width 1s ease;
 }
 
+/*Ponemos el nombre de esta clase sola para que funciones, pues detrás hay estilos de Bootstrap.*/
+/*.container-fluid-brida .row .col-12 .card-image .certificados-> De esta manera NO.*/
+.certificados {
+    position: relative;
+    left: -11px;
+}
+
 .container-fluid-brida .row .col-12 .card-title {
     font-family: "Poppins", sans-serif;
     font-size: 18px;

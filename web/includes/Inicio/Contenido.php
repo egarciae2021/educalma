@@ -24,7 +24,7 @@ if (!isset($_GET['pag'])) {
 
     <?php
     if (isset($_SESSION['Logueado']) && $_SESSION['Logueado'] === true){
-      echo "<a href='sidebarCursos.php' type='button' class='btn btn_registrar_panel'>Mis cursos</a>";
+      echo "<a href='sidebarCursos.php' type='button' class='btn btn_registrar_panel'>Cursos comprados</a>";
     }
     else{
       echo "<a href='registroUsuario.php' type='button' class='btn btn_registrar_panel'>Regístrate!</a>";
@@ -62,7 +62,7 @@ if (!isset($_GET['pag'])) {
       <div class="row">
         <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
           <div class="card">
-            <div class="card-image">
+            <div class="card-image cursos">
               <img src="./assets/images/cur.png" alt="" />
             </div>
             <div class="card-title">
@@ -78,7 +78,7 @@ if (!isset($_GET['pag'])) {
         </div>
         <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
           <div class="card">
-            <div class="card-image">
+            <div class="card-image desarrollo-personal">
               <img src="./assets/images/curso culminad.png" alt="" />
             </div>
             <div class="card-title">
@@ -93,7 +93,7 @@ if (!isset($_GET['pag'])) {
         </div>
         <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
           <div class="card">
-            <div class="card-image">
+            <div class="card-image certificados">
               <img src="./assets/images/certificad.png" alt="" />
             </div>
             <div class="card-title">
