@@ -3,43 +3,56 @@
 </head>
 <br><br><br>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!------------------------------------------------------------->
-<div class="container-fluid">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<div class="container-fluid px-0">
 
 
     <!-- CURSOS PUBLICADOS MÁS DESTACADOS -->
+
+    <!--Título-->
     <div class="row">
         <div class="col-12">
-
             <div class="row mb-4 mt-4" style="background-color: #e7f4ff; margin-left: 25px; margin-right: 25px; border-radius: 50px;">
                 <div class="container section-title-course">
                     <i class="fas fa-shapes mr-3"></i>Cursos publicados más destacados
                     <hr>
                 </div>
             </div>
+        </div>
+    </div>
 
-            <div class="row container" style="margin: 0 auto;">
+
+
+
+
+
+
+
+        <div class="container-card-course">
+            <div class="row pt-1 container" style="margin: 0 auto;">
 
                 <?php
                 $pdo = Database::connect();
+                error_reporting(0);
+                $idcategoria = $_GET['idcate'];
                 $sql2 = "SELECT * FROM cursos WHERE permisoCurso=1 ORDER BY cursos.idCurso DESC";
                 $query2 = $pdo->prepare($sql2);
                 $query2->execute();
@@ -64,7 +77,10 @@
                 $query3->execute();
                 $conteo = 0;
                 while ($dato = $query3->fetch(PDO::FETCH_ASSOC)) {
+
                     $conteo = $conteo + 1;
+
+                    //ALGORITMO CURSO INSCRITO Y NO INSCRITO
                     if (isset($_SESSION['codUsuario'])) {
                         $cursoID = $dato['idCurso'];
                         $userID = $_SESSION['codUsuario'];
@@ -81,19 +97,22 @@
                         $paginaRed = "detallecurso";
                     }
                 ?>
+                
 
-                    <!--Lista de cursos publicados más destacados-->
-                    <!--Contenedor de los cursos publicados más destacados-->
+               
+                    <!--Contenedor del curso publicado más destacado-->
                     <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
                         <div class="card">
-                            <div class="row">
 
 
-                                <!--Primer Contenedor interno-->
-                                <div class="col-5">
+
+                          
+
+
+                              
 
                                     <!--Contenedor de la imagen-->
-                                    <div class="container-image">
+                                    <div class="container-card-image">
                                         
                                         <?php
                                         if ($dato['imagenDestacadaCurso'] != null) {
@@ -109,28 +128,52 @@
                                         ?>
 
                                     </div>
-                                </div>
+                               
 
-                                <!--Segundo Contenedor interno-->
-                                <div class="col-7">
+                                
 
                                     <!--Nombre del curso comprado más destacado-->
-                                    <div class="container-title">
-                                        <a><strong><?php echo $dato['nombreCurso']; ?></strong></a>
+                                    <div class="container-card-title" style="color: black;">
+                                        <a style="float: left;"><center><strong><?php echo $dato['nombreCurso']; ?></strong><center></a>
                                     </div>
                                     
                                     <!--Descripción del curso comprado más destacado-->
-                                    <div class="container-card-description">
-                                        <p><?php echo substr($dato['descripcionCurso'], 0, 30) . "..."; ?></p>
+                                    <div class="container-card-description" style="font-size: 12px; position: relative; top: -15px;">
+                                        <p><?php echo substr($dato['descripcionCurso'], 0, 80) . "..."; ?></p>
+                                        
                                     </div>
+
+
+                                    <!--Contenedor del costo del curso y mensaje si se compró o no el curso.-->
+                                    <div class="container-card-description" style="font-weight: bold; font-size: 15px; color: black; position: relative; top: -45px;">
+                                    
+                                    <?php if($dato2['id_cursoInscrito'] == NULL){ ?>
+            
+                                        <p>S/.<?php echo $dato['costoCurso'] ?></p>
+            
+                                    <?php }else{ ?>
+            
+                                        <p>S/.<?php echo $dato['costoCurso'],"","<spand style='position: relative; left: 185px; color: #63F70E;'>Comprado</spand>" ?></p>
+            
+                                    <?php } ?>
+                                    
+                                    </div>
+
+                                    
+
+
+
+                                    
                                     
                                     <!--Link "Ver información"-->
-                                    <div class="container-link">
-                                        <a href="<?php echo $paginaRed ?>.php?id=<?php echo $dato['idCurso']; ?><?php if(!empty($dato2)){?>&idCI=<?php echo $dato2['id_cursoInscrito']; }?>">Ver informaci&oacute;n -></a>
+                                    <div class="container-card-link" style="margin: auto;">
+                                        <a href="<?php echo $paginaRed ?>.php?id=<?php echo $dato['idCurso']; ?><?php if(!empty($dato2)){?>&idCI=<?php echo $dato2['id_cursoInscrito']; }?>">
+                                        <center><strong>Ver informaci&oacute;n -></strong></center>
+                                        </a>
                                     </div>
                                 
-                                </div>
-                            </div>
+                            
+                            
                         </div>
                     </div>
 
@@ -139,28 +182,8 @@
                 ?>
 
             </div>
-            
-        </div>
-    </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        </div>    
+ 
 
 
 
@@ -194,7 +217,7 @@
                     <div class="col-12">
                         <div class="search_wrap search_wrap_3">
                             <div class="search_box">
-                                <input type="text" class="input" id="buscar" name="buscar" placeholder="Busca un curso...">
+                                <input type="text" class="input" id="buscar" name="buscar" placeholder="Busca un curso publicado...">
                                 <div class="btn btn_common">
                                     <i class="fas fa-search"></i>
                                 </div>
@@ -248,36 +271,17 @@
     </div>
     <!--FIN DE CURSOS PUBLICADOS (aquí está solo el título y el buscador)-->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </div>
 <!------------------------------------------------------------->
+
+
+
+
+
+
+
+
+
 
 
 
@@ -288,28 +292,24 @@
 <div class="container-fluid px-0" id="result">
 
 
-
-
-
-
-
-
     <div class="container-card-course">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         <div class="row pt-1 container" style="margin: 0 auto;">
 
-
-
-
-
-
-
-
-
-
-
-
-
-        
 
                 <?php
                 error_reporting(0);
@@ -340,71 +340,6 @@
                 $conteo = 0;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                 while ($dato = $query3->fetch(PDO::FETCH_ASSOC)) {
 
                     $conteo = $conteo + 1;
@@ -423,38 +358,35 @@
                             $paginaRed = "curso";
                         }
                     } else {
-                        $paginaRed =
-                            "detallecurso";
+                        $paginaRed = "detallecurso";
                     }
                 ?>
 
 
                 <!--Contenedor del curso publicado-->
                 <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3">
-
-
                     <div class="card">
 
                         <!--Contenedor de la imagen-->
-                        <div style="background: red;" class="container-card-image">
+                        <div class="container-card-image">
                             <?php
                             if ($dato['imagenDestacadaCurso'] != null) {
                             ?>
                                 <!--Imagen elegida-->
-                                <img heigth="10px" ; src="data:image/*;base64,<?php echo base64_encode($dato['imagenDestacadaCurso']); ?>" alt="">
+                                <img heigth="10px"; src="data:image/*;base64,<?php echo base64_encode($dato['imagenDestacadaCurso']); ?>" alt="">
                             <?php
                             } else {
                             ?>
                                 <!--Imagen por default-->
-                                <img heigth="10px" ; src="./assets/images/curso_educalma.png">
+                                <img heigth="10px"; src="./assets/images/curso_educalma.png">
                             <?php
                             }
                             ?>
                         </div>
 
                         <!--Contenedor del nombre del curso publicado-->
-                        <div class="container-card-title">
-                            <a>
+                        <div class="container-card-title" style="color: black;">
+                            <a style="float: left;">
                                 <!--Nombre-->
                                 <center><strong><?php echo $dato['nombreCurso']; ?></strong></center>
                             </a>
@@ -462,17 +394,38 @@
 
 
                         <!--Contenedor de la descripción del curso-->
-                        <div class="container-card-description">
+                        <div class="container-card-description" style="font-size: 13px; position: relative; top: -15px;">
                             <!--Descripción-->
                             <p><?php echo substr($dato['descripcionCurso'], 0, 80) . "..."; ?></p>
                         </div>
 
+                        <!--Contenedor del costo del curso y mensaje si se compró o no el curso.-->
+                        <div class="container-card-description" style="font-weight: bold; font-size: 15px; color: black; position: relative; top: -45px;">
+                                    
+                            <?php if($dato2['id_cursoInscrito'] == NULL){ ?>
+            
+                                <p>S/.<?php echo $dato['costoCurso'] ?></p>
+            
+                            <?php }else{ ?>
+            
+                                <p>S/.<?php echo $dato['costoCurso'],"","<spand style='position: relative; left: 185px; color: #63F70E;'>Comprado</spand>" ?></p>
+            
+                            <?php } ?>
+            
+                        </div>
+
+                         
+                        
+
+                     
 
                         <!-- Link "Ver Información"-->
-                        <div class="container-card-link">
+                        <div class="container-card-link" style="margin: auto;">
+
                             <a href="<?php echo $paginaRed ?>.php?id=<?php echo $dato['idCurso']; ?><?php if(!empty($dato2)){?>&idCI=<?php echo $dato2['id_cursoInscrito']; }?>">
                                 <center><strong>Ver Informaci&oacute;n -> </strong> </center>
                             </a>
+
                         </div>
 
 
@@ -485,21 +438,9 @@
                 }
                 ?>
 
-
-
-
-
         </div>
     </div>
    
-
-
-
-
-
-
-
-
 
 </div>
 <!--FIN DE CURSOS PUBLICADOS (aquí está la lista de cursos)-->

@@ -124,8 +124,6 @@ background-size: 25px 25px;
 
 
 
-
-               
                     <div class="card-body">
                         <?php
                         require_once 'database/databaseConection.php';
@@ -367,7 +365,7 @@ background-size: 25px 25px;
         </div>
     </div>
                                     <!--PAGINADOR-->       
-                                    <nav aria-label="Page navigation calma" class="pdt50">
+                                    <!--nav aria-label="Page navigation calma" class="pdt50">
                         <ul class="pagination justify-content-end">
                             <li class="page-item <?php if($_GET['pag']<=1)echo 'disabled'?>">
                                 <a class="page-link" href="publicarcursos.php?pag=<?php echo $_GET['pag']-1;?>">
@@ -382,7 +380,7 @@ background-size: 25px 25px;
                             <a class="page-link" href="publicarcursos.php?pag=<?php echo $_GET['pag']+1;?>">Siguiente</a>
                         </li>
                         </ul>
-                    </nav>
+                    </nav-->
                     <!--PAGINADOR-->
     <!--
                     ======================================

@@ -7,7 +7,7 @@ require_once '../../database/databaseConection.php';
     {
     ?>
 
-        <div class="container-card-course ">
+        <div class="container-card-course">
             <div class="row pt-4 container d-flex justify-content-center" style="margin: 0 auto;">
                 <?php
                 $pdo2 = Database::connect();
@@ -60,7 +60,7 @@ require_once '../../database/databaseConection.php';
                                     
                                 </div>
                                 <div class="container-card-title">
-                                    <a style="font-size:18px; color: black">
+                                    <a>
                                         <center><strong><?php echo $dato['nombreCurso']; ?></strong> </center>
                                     </a>
                                 </div>
