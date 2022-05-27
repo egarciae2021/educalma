@@ -7,9 +7,9 @@
 .dataTables_filter{
 
 /*Centrando el buscador de "Por Cursos".*/
-position: relative;  
-left: -140px;
-float: left;
+position: relative;
+text-align: center;
+max-width: 275px;
 /**/
 
 border-radius: 5px ; 
