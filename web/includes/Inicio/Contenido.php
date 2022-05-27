@@ -327,7 +327,7 @@ if (!isset($_GET['pag'])) {
 
         <!--<input type="email" placeholder="Escribe tu correo empresarial" id="txtEmail" />-->
         <br>
-        <button id="btnAction" style="position: relative; background-color:#737BF1; font-weight:bold; width:auto; float:right;">MÁS INFORMACIÓN</button>
+        <button id="btnAction" style="position: relative; background-color:#737BF1; font-weight:bold;">MÁS INFORMACIÓN</button>
       <br>
       <!--</div>-->
       <span class="msg-error">Debe ser un correo corporativo.</span>
