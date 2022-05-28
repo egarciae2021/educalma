@@ -104,11 +104,11 @@ background-size: 25px 25px;
                       por empresas
                     </a>
                   </li>
-                  <li class="nav-item ">
+                  <!--li class="nav-item ">
                       <a class="nav-link" href="aprobdash.php">
                         por aprobados
                       </a>
-                  </li>
+                  </li-->
                 </ul>
               </nav>
             </div>

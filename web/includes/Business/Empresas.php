@@ -124,12 +124,11 @@ WHERE us.privilegio=4 order by id_user DESC;";
                                                 <a class="nav-link active" href="empredash.php">
                                                 por empresas
                                             </a>
-                                            <li class="nav-item ">
-                                                <!-- <a class="nav-link " href="#" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree"> -->
+                                            <!--li class="nav-item ">
                                                 <a class="nav-link" href="aprobdash.php">
                                                 por aprobados
                                             </a>
-                                            </li>
+                                            </li-->
                                         </ul>
                                     </nav>
                                 </div>

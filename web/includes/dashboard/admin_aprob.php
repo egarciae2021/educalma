@@ -60,9 +60,9 @@ background-size: 25px 25px;
     <div class="container-fluid">
         <div class="row mt-5">
             <div class="col-12">
-                <div class="title" style="color:#737BF1;">Administrar</div>
+                <div class="title" style="color:#737BF1;">Aprobados</div>
                 <div class="row">
-                    <div class="col-12">
+                    <!--div class="col-12">
                         <nav class="navbar navbar-expand">
                             <ul class="navbar-nav">
                                 <li class="nav-item">
@@ -87,7 +87,7 @@ background-size: 25px 25px;
                                 </li>
                             </ul>
                         </nav>
-                    </div>
+                    </div-->
                 </div>
 
                 <!-- cambiar de usuarios a aprobados -->

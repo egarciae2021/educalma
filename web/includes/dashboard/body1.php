@@ -92,21 +92,12 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                             <div class="nav__dropdown-collapse-dashboard">
                                 <div class="nav__dropdown-content-dashboard">
 
-                                    <?php
-                                    if ($_SESSION['privilegio'] != 1 && $_SESSION['privilegio'] != 6) {
-                                    ?>
-
-                                    <a href="sidebarCursos.php" class="nav__dropdown-item-dashboard nav__link-dashboard">Cursos Comprados</a>
-
-                                    <?php
-                                    }
-                                    ?>
-                                    
-                                    <a href="ListaCursos.php?pag=1" class="nav__dropdown-item-dashboard nav__link-dashboard">Cursos Publicados</a>
 
                                     <?php
                                     if ($_SESSION['privilegio'] == 1 || $_SESSION['privilegio'] == 6) {
                                     ?>
+                                        <a href="sidebarCursos.php" class="nav__dropdown-item-dashboard nav__link-dashboard">Cursos Comprados</a>
+                                        <a href="ListaCursos.php?pag=1" class="nav__dropdown-item-dashboard nav__link-dashboard">Cursos Publicados</a>
                                         <a href="publicarcursos.php?pag=1" class="nav__dropdown-item-dashboard nav__link-dashboard">Cursos No Publicados</a>
 
                                         <a href="agregarcurso.php" class="nav__dropdown-item-dashboard nav__link-dashboard">Agregar Un Nuevo Curso</a>
@@ -197,7 +188,10 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                         }
                         */
                         ?>
-                        
+                        <a style="position: relative; left: 8px;" href="aprobdash.php" class="nav__link-dashboard">
+                            <i class="fas fa-clipboard nav__icon-dashboard" style="color:#E6B0AA;"></i>
+                            <span class="nav__name-dashboard">Reporte</span>
+                        </a>
 
                         <a style="position: relative; left: 8px;" href="sidebarEditar.php" class="nav__link-dashboard">
                             <i class="fas fa-cog nav__icon-dashboard" style="color:#AAB7B8;"></i>

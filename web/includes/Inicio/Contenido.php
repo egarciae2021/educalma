@@ -199,7 +199,7 @@ if (!isset($_GET['pag'])) {
               <div class="col-8 col-sm-8 col-md-12 col-lg-8 col-xl-8">
 
                 <h4><?php echo $dato['nombreCurso'];?></h4>
-                <h5><?php echo substr($dato['descripcionCurso'], 0, 70) . "..."; ?></h5>
+                <h5 style="height:60px;"><?php echo substr($dato['descripcionCurso'], 0, 70) . "..."; ?></h5>
                 <a href="#" class="btn btn-success mt-2" data-toggle="modal" data-target=".bd-example-modal-lg<?php echo $dato['idCurso'];?>">ver
                   informaci&oacute;n ></a>
               </div>
