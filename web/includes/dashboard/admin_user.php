@@ -9,8 +9,8 @@
 
 /*Centrando el buscador de "Por Usuarios".*/
 position: relative;  
-left: -140px;
-float: left;
+text-align: center;
+max-width: 275px;
 /**/
 
 border-radius: 5px ; 

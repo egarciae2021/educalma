@@ -11,10 +11,11 @@ class Database
   */
 
   private static $dbName = 'educalma' ;
-  private static $dbHost = 'mysqleducalma';
-	private static $dbUsername = '994896741';
-  private static $dbUserPassword = 'HVc$DhzpSweC';
+  private static $dbHost = '20.226.29.168';
+	private static $dbUsername = 'root';
+  private static $dbUserPassword = '';
 // datooooo
+
 
 	private static $cont  = null;
 

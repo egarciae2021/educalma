@@ -16,9 +16,9 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
 .dataTables_filter{
 
 /*Centrando el buscador de "Por Empresas".*/
-position: relative;  
-left: -140px;
-float: left;
+position: relative;
+text-align: center;
+max-width: 275px;
 /**/
 
 border-radius: 5px ; 
