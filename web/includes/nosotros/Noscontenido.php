@@ -1,6 +1,8 @@
 <head>
     <link rel="stylesheet" href="assets/css/nosotros.css" />
 </head>
+
+
 <!-- PANEL -->
 <div class="container-fluid div-container-panel-nosotros">
     <div class="row">
@@ -62,7 +64,8 @@
                     <div class="card-header border-0" data-toggle="collapse" href="#collapseOne" aria-controls="collapse1">
                         <a class="card-text" style="font-weight: bold;">
                             ¿Cómo puedo inscribirme a un curso de EDUCALMA?
-                            <i class="fas fa-angle-down rotate-icon fa-2x" style="float:right;"></i>
+                            <i id="btnRefresh" class="fas fa-angle-down rotate-icon fa-2x" style="float:right;"></i>
+
                         </a>
                     </div>
                     <div id="collapseOne" class="collapse" data-parent="#accordion">

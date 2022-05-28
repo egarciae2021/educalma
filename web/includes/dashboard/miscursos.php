@@ -98,7 +98,7 @@
                                     <div class="container-card-title px-2">
                                     ' . $dato3['nombreCurso'] . '
                                     </div>
-                                    <div class="container-card-description px-2">
+                                    <div class="container-card-description px-2" style="width:180px;">
                                     ' . substr($dato3['descripcionCurso'], 0, 90) . "..." . '
                                     </div>
                                     <div class="container-card-link px-2">
@@ -121,7 +121,7 @@
                                     <div class="container-card-title px-2">
                                     ' . $dato3['nombreCurso'] . '
                                     </div>
-                                    <div class="container-card-description">
+                                    <div class="container-card-description px-2" style="width:180px;">
                                     ' . substr($dato3['descripcionCurso'], 0, 90) . "..." . '
                                     </div>
                                     <div class="container-card-link px-2">

@@ -4,23 +4,6 @@
 <br><br><br>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!------------------------------------------------------------->
 <div class="container-fluid px-0">
 
@@ -105,12 +88,6 @@
                         <div class="card">
 
 
-
-                          
-
-
-                              
-
                                     <!--Contenedor de la imagen-->
                                     <div class="container-card-image">
                                         
@@ -138,14 +115,14 @@
                                     </div>
                                     
                                     <!--Descripción del curso comprado más destacado-->
-                                    <div class="container-card-description" style="font-size: 12px; position: relative; top: -15px;">
+                                    <div class="container-card-description" style="font-size: 12px; position: relative; ">
                                         <p><?php echo substr($dato['descripcionCurso'], 0, 80) . "..."; ?></p>
                                         
                                     </div>
 
 
                                     <!--Contenedor del costo del curso y mensaje si se compró o no el curso.-->
-                                    <div class="container-card-description" style="font-weight: bold; font-size: 15px; color: black; position: relative; top: -45px;">
+                                    <div class="container-card-description" style="font-weight: bold; font-size: 15px; color: black; position: relative; ">
                                     
                                     <?php if($dato2['id_cursoInscrito'] == NULL){ ?>
             
@@ -153,26 +130,19 @@
             
                                     <?php }else{ ?>
             
-                                        <p>S/.<?php echo $dato['costoCurso'],"","<spand style='position: relative; left: 185px; color: #63F70E;'>Comprado</spand>" ?></p>
+                                        <p>S/.<?php echo $dato['costoCurso'],"","<span style='position: relative; left: 155px; color: #63F70E;'>Comprado</span>" ?></p>
             
                                     <?php } ?>
-                                    
-                                    </div>
 
-                                    
-
-
-
-                                    
-                                    
                                     <!--Link "Ver información"-->
                                     <div class="container-card-link" style="margin: auto;">
                                         <a href="<?php echo $paginaRed ?>.php?id=<?php echo $dato['idCurso']; ?><?php if(!empty($dato2)){?>&idCI=<?php echo $dato2['id_cursoInscrito']; }?>">
                                         <center><strong>Ver informaci&oacute;n -></strong></center>
                                         </a>
                                     </div>
-                                
-                            
+                                    
+                                    </div>
+
                             
                         </div>
                     </div>
@@ -394,13 +364,13 @@
 
 
                         <!--Contenedor de la descripción del curso-->
-                        <div class="container-card-description" style="font-size: 13px; position: relative; top: -15px;">
+                        <div class="container-card-description" style="font-size: 13px; position: relative;">
                             <!--Descripción-->
                             <p><?php echo substr($dato['descripcionCurso'], 0, 80) . "..."; ?></p>
                         </div>
 
                         <!--Contenedor del costo del curso y mensaje si se compró o no el curso.-->
-                        <div class="container-card-description" style="font-weight: bold; font-size: 15px; color: black; position: relative; top: -45px;">
+                        <div class="container-card-description" style="font-weight: bold; font-size: 15px; color: black; position: relative;">
                                     
                             <?php if($dato2['id_cursoInscrito'] == NULL){ ?>
             
@@ -408,9 +378,18 @@
             
                             <?php }else{ ?>
             
-                                <p>S/.<?php echo $dato['costoCurso'],"","<spand style='position: relative; left: 185px; color: #63F70E;'>Comprado</spand>" ?></p>
+                                <p>S/.<?php echo $dato['costoCurso'],"","<span style='position: relative; left: 155px; color: #63F70E;'>Comprado</span>" ?></p>
             
                             <?php } ?>
+
+                            <!-- Link "Ver Información"-->
+                            <div class="container-card-link" style="margin: auto;">
+
+                            <a href="<?php echo $paginaRed ?>.php?id=<?php echo $dato['idCurso']; ?><?php if(!empty($dato2)){?>&idCI=<?php echo $dato2['id_cursoInscrito']; }?>">
+                                <center><strong>Ver Informaci&oacute;n -> </strong> </center>
+                            </a>
+
+                            </div>
             
                         </div>
 
@@ -419,14 +398,7 @@
 
                      
 
-                        <!-- Link "Ver Información"-->
-                        <div class="container-card-link" style="margin: auto;">
-
-                            <a href="<?php echo $paginaRed ?>.php?id=<?php echo $dato['idCurso']; ?><?php if(!empty($dato2)){?>&idCI=<?php echo $dato2['id_cursoInscrito']; }?>">
-                                <center><strong>Ver Informaci&oacute;n -> </strong> </center>
-                            </a>
-
-                        </div>
+                        
 
 
 
