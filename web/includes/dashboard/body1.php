@@ -43,7 +43,7 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                                 <?php } else if (isset($_SESSION['Logueado']) && $_SESSION['Logueado'] === true && $dato['sexo'] === 3) { // 3 -> No binario?>
 
                                     
-                                <?php } else if (isset($_SESSION['Logueado']) && $_SESSION['Logueado'] === true && $dato['sexo'] === 2) { // 2 -> Prefiero no decir?>
+                                <?php } else if (isset($_SESSION['Logueado']) && $_SESSION['Logueado'] === true && $dato['sexo'] === 4) { // 4 -> Prefiero no decir?>
 
 
                                 <?php } ?>
@@ -52,7 +52,7 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                             ?>
                         </h3>
 
-                        <h4 style="position: relative; left: 17px; top: -15px;"class="nav__subtitle-dashboard">
+                        <h4 style="position: relative; left: 20px; top: -15px;" class="nav__subtitle-dashboard">
                             <?php
                             if (isset($_SESSION['Logueado']) && $_SESSION['Logueado'] === true) {
                                 echo $_SESSION['nombres'];
@@ -94,10 +94,20 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
 
 
                                     <?php
+                                    if ($_SESSION['privilegio'] != 1 && $_SESSION['privilegio'] != 6) {
+                                    ?>
+
+                                    <a href="sidebarCursos.php" class="nav__dropdown-item-dashboard nav__link-dashboard">Cursos Comprados</a>
+
+                                    <?php
+                                    }
+                                    ?>
+                                    
+                                    <a href="ListaCursos.php?pag=1" class="nav__dropdown-item-dashboard nav__link-dashboard">Cursos Publicados</a>
+
+                                    <?php
                                     if ($_SESSION['privilegio'] == 1 || $_SESSION['privilegio'] == 6) {
                                     ?>
-                                        <a href="sidebarCursos.php" class="nav__dropdown-item-dashboard nav__link-dashboard">Cursos Comprados</a>
-                                        <a href="ListaCursos.php?pag=1" class="nav__dropdown-item-dashboard nav__link-dashboard">Cursos Publicados</a>
                                         <a href="publicarcursos.php?pag=1" class="nav__dropdown-item-dashboard nav__link-dashboard">Cursos No Publicados</a>
 
                                         <a href="agregarcurso.php" class="nav__dropdown-item-dashboard nav__link-dashboard">Agregar Un Nuevo Curso</a>
@@ -106,6 +116,12 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                                     <?php
                                     }
                                     ?>
+
+    
+
+
+
+                                    
                                 </div>
                             </div>
                         </div>
@@ -188,7 +204,7 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                         }
                         */
                         ?>
-                        <a style="position: relative; left: 8px;" href="aprobdash.php" class="nav__link-dashboard">
+                        <a style="position: relative; left: 12px;" href="aprobdash.php" class="nav__link-dashboard">
                             <i class="fas fa-clipboard nav__icon-dashboard" style="color:#E6B0AA;"></i>
                             <span class="nav__name-dashboard">Reporte</span>
                         </a>
