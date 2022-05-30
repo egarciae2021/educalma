@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         text: 'Revise su bandeja de entrada',
                         icon: 'success',
                     }).then(() => {
-                        window.location.href = "./iniciosesion.php";
+                        // window.location.href = "./iniciosesion.php";
                     })
 
                 } else if (data == 2) {
