@@ -37,7 +37,7 @@
             <button type="submit" class="btn btn-primary w-100">INGRESAR</button>
           </div>
           <div class="form-group my-3" style="text-align: center;">
-            <a href="nuevopass.php">¿Olvidaste tu Contraseña?</a>
+            <a href="recuperar.php">¿Olvidaste tu Contraseña?</a>
             <br>
             <p class="parr mr-2">¿Aún no tienes cuenta?</p><a href="registroUsuario.php" class="links">Registrarse</a>
           </div>
