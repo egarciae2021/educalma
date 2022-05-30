@@ -8,5 +8,5 @@
 </head>
 
 <body>
-  <?php include_once 'includes/dashboard/pages/index1.php' ?>
+  <?php include_once 'includes/dashboard/pages/reporteEmpresa2.php' ?>
 </body>
