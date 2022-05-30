@@ -52,7 +52,7 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                             ?>
                         </h3>
 
-                        <h4 style="position: relative; left: 17px; top: -15px;"class="nav__subtitle-dashboard">
+                        <h4 style="position: relative; left: 20px; top: -15px;" class="nav__subtitle-dashboard">
                             <?php
                             if (isset($_SESSION['Logueado']) && $_SESSION['Logueado'] === true) {
                                 echo $_SESSION['nombres'];
@@ -188,7 +188,7 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                         }
                         */
                         ?>
-                        <a style="position: relative; left: 8px;" href="aprobdash.php" class="nav__link-dashboard">
+                        <a style="position: relative; left: 12px;" href="aprobdash.php" class="nav__link-dashboard">
                             <i class="fas fa-clipboard nav__icon-dashboard" style="color:#E6B0AA;"></i>
                             <span class="nav__name-dashboard">Reporte</span>
                         </a>
