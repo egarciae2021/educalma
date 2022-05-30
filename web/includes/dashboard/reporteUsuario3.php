@@ -36,35 +36,35 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
   ?>
 
   <main>
-    <!-- Por cursos -->
+
     <div class="container-fluid">
       <div class="row mt-5">
         <div class="col-12">
-        <div class="title" style="color:#737BF1;">Administrar</div>
+        <div class="title" style="color:#737BF1;">Reporte</div>
           <div class="row">
             <div class="col-12">
               <nav class="navbar navbar-expand">
                 <ul class="navbar-nav">
                   <li class="nav-item">
-                    <a class="nav-link active" href="user-sidebar.php">
-                      por cursos
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="userdash.php">
+                    <a class="nav-link active" href="reporteUsuario.php">
                       por usuarios
                     </a>
                   </li>
-                  <li class="nav-item ">
-                    <a class="nav-link" href="empredash.php">
+                  <li class="nav-item">
+                    <a class="nav-link" href="reporteEmpresa.php">
                       por empresas
                     </a>
                   </li>
-                  <!--li class="nav-item ">
-                      <a class="nav-link" href="aprobdash.php">
-                        por aprobados
-                      </a>
-                  </li-->
+                  <li class="nav-item ">
+                    <a class="nav-link" href="reporteAprobado.php">
+                      por aprobados
+                    </a>
+                  </li>
+                  <li class="nav-item ">
+                    <a class="nav-link" href="reporteDesaprobado.php">
+                      por desaprobados
+                    </a>
+                  </li>
                 </ul>
               </nav>
             </div>
@@ -165,7 +165,6 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                             <?php echo $curso['fechaPulicacion']; ?>
                           </td>
                           <td>
-                            
                             <!--para editar curso-->
                             <div class="btn-group" role="group">
                               <a href="editarcurso.php?id=<?php echo $curso['idCurso']; ?>">
@@ -174,15 +173,13 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                                 </button>
                               </a>
                             </div>
-
                             <!-- para quitar curso -->
                             <div class="btn-group" role="group">
                               <button type="button" class="btn btn-quitar" data-toggle="modal" data-target="#ModalquitarCurso<?php echo $curso['idCurso']; ?>">
-                                <img src="./assets/images/visible.png">
+                                <i class="fas fa-trash-alt"></i>
                               </button>
                               </a>
                             </div>
-
                             <div class="modal fade" id="ModalquitarCurso<?php echo $curso['idCurso']; ?>" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                               <div class="modal-dialog modal-dialog-centered">
                                 <div class="modal-content">

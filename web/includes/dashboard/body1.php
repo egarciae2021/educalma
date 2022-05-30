@@ -204,7 +204,7 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                         }
                         */
                         ?>
-                        <a style="position: relative; left: 12px;" href="aprobdash.php" class="nav__link-dashboard">
+                        <a style="position: relative; left: 12px;" href="reporteUsuario.php" class="nav__link-dashboard">
                             <i class="fas fa-clipboard nav__icon-dashboard" style="color:#E6B0AA;"></i>
                             <span class="nav__name-dashboard">Reporte</span>
                         </a>
