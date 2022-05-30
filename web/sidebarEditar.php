@@ -9,9 +9,11 @@
 </head>
 
 <body>
+    
     <?php include_once 'includes/dashboard/header1.php' ?>
 
     <?php include_once 'includes/dashboard/body1.php' ?>
+
     <?php include_once 'includes/dashboard/editarusuario1.php' ?>
 
     <script src="./assets/js/main.js"></script>
