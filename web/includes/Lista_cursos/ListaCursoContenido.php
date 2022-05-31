@@ -85,11 +85,11 @@
                
                     <!--Contenedor del curso publicado más destacado-->
                     <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
-                        <div class="card">
+                        <div style="border-radius: 30px;" class="card">
 
 
                                     <!--Contenedor de la imagen-->
-                                    <div class="container-card-image">
+                                    <div style="border-radius: 30px 30px 0 0;" class="container-card-image">
                                         
                                         <?php
                                         if ($dato['imagenDestacadaCurso'] != null) {
@@ -335,10 +335,10 @@
 
                 <!--Contenedor del curso publicado-->
                 <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3">
-                    <div class="card">
+                    <div style="border-radius: 30px;" class="card">
 
                         <!--Contenedor de la imagen-->
-                        <div class="container-card-image">
+                        <div style="border-radius: 30px 30px 0 0;" class="container-card-image">
                             <?php
                             if ($dato['imagenDestacadaCurso'] != null) {
                             ?>
