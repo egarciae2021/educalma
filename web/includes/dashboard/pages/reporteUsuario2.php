@@ -15,9 +15,11 @@ ob_start();
             include_once 'includes/dashboard/reporteUsuario3.php';
         }
         elseif ($_SESSION['privilegio'] == 4){
+
             include_once 'empleados.php';
         }
         else{
+            
             include_once 'includes/dashboard/contenido.php';
         }
     ?>

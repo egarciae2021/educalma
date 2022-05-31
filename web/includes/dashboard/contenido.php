@@ -8,10 +8,10 @@ ob_start();
 <main>
     <section class="about" id="about">
         <div class="image col">
-            <img src="./assets/images/about-img.png" alt="">
+            <img style="position: relative; top: 80px;" src="./assets/images/tu_tablero.jpg" alt="">
         </div>
 
-        <div class="content col">
+        <div class="content col" style="position: relative; top: 80px;">
             <span>Tu tablero</span>
             <h3 class="title">¡El secreto real del éxito es el entusiasmo!</h3>
 
