@@ -181,7 +181,7 @@
 
                             <div class="form-row">
                                 <div class="form-group col-12">
-                                    <input type="submit" class="btn btn-block btn-agregar" value="Guardar datos">
+                                    <input style="background-color: #74F077;" type="submit" class="btn btn-block btn-agregar" value="Agregar nuevo curso">
                                 </div>
                             </div>
 
