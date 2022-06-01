@@ -15,7 +15,7 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
   <?php
   $pdo3 = Database::connect();
 
-  $sqlz = "SELECT * FROM cursos where permisoCurso=1 order by idCurso DESC ";
+  $sqlz = "SELECT * FROM cursos where permisoCurso=1 and estado=1 order by idCurso DESC ";
   $qz = $pdo3->prepare($sqlz);
   $qz->execute();
 
@@ -26,7 +26,7 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
     $sql3 = "SELECT * FROM cursos WHERE id_userprofesor='$idProfe' order by idCurso DESC";
   } else {
     $idProfe = $_SESSION['codUsuario'];
-    $sql3 = "SELECT * FROM cursos WHERE permisoCurso=1 order by idCurso DESC ";
+    $sql3 = "SELECT * FROM cursos WHERE permisoCurso=1 and estado=1 order by idCurso DESC ";
   }
 
   $q3 = $pdo3->prepare($sql3);
@@ -72,7 +72,7 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
 
           <?php
           $pdo3 = Database::connect();
-          $sqlCur = "SELECT COUNT(*) AS cantidad FROM cursos WHERE permisoCurso = 1;";
+          $sqlCur = "SELECT COUNT(*) AS cantidad FROM cursos WHERE permisoCurso = 1 AND estado = 1;";
           $qCur = $pdo3->prepare($sqlCur);
           $qCur->execute(array());
           $resultCurs = $qCur->fetch(PDO::FETCH_ASSOC);
@@ -187,7 +187,7 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                               <div class="modal-dialog modal-dialog-centered">
                                 <div class="modal-content">
                                   <div class="modal-header">
-                                    <h6 class="modal-title">Eliminar Curso</h6>
+                                    <h6 class="modal-title">Cambiar Visibilidad</h6>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                       <span aria-hidden="true">&times;</span>
                                     </button>
@@ -195,13 +195,13 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                                   <form name="formulario" id="form-eliminarCurso" target="dummyframe" method="POST">
                                     <div class="modal-body px-4">
                                       <center>
-                                        <h6>¿Estás seguro de eliminar este curso?</h6>
+                                        <h6>¿Desea cambiar la visibilidad del curso?</h6>
                                       </center>
                                       <input type="text" class="form-control" value="<?php echo $curso['nombreCurso']; ?>" aria-label="CursoAgr" disabled>
                                       <input type="hidden" name="idcurso" value="<?php echo $curso['idCurso']; ?>">
                                     </div>
                                     <div class="modal-footer">
-                                      <a href="includes/Cursos_crud/Cursos_CRUD.php?id_eliminar=<?php echo $curso['idCurso']; ?>" type="button" class="btn btn-danger"><i class="fas fa-trash-alt"></i>Si, Eliminar</a>
+                                      <a href="includes/Cursos_crud/Cursos_CRUD.php?id_eliminar=<?php echo $curso['idCurso']; ?>" type="button" class="btn btn-danger"><i class="fas fa-trash-alt"></i>Si, Cambiar</a>
                                       <button type="button" class="btn btn-light" data-dismiss="modal">Cerrar</button>
                                     </div>
                                   </form>
