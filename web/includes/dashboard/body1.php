@@ -9,10 +9,6 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
         <nav class="nav__container-dashboard">
             <div>
                 <a href="index.php" class="nav__link-dashboard nav__logo-dashboard">
-                    
-                    <!-- <img src="./assets/images/imagen_2021-10-28_233347.png" alt="" class="header__img__logo"> -->
-
-                    <!-- <span class="nav__logo-name-dashboard"> Educalma</span> -->
 
                     <img style="width: 40px; height: 35px;" src="./assets/images/logo_edu.png" alt="" class="header__img__logo">
                     <img style="position: relative; left: 3px; width: 140px; height: 30px;" src="./assets/images/logo_edu_2.png" alt="" class="header__img__logo">
@@ -22,8 +18,7 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                     <div class="nav__items-dashboard">
                         <h3 class="nav__subtitle__img-dashboard">
 
-                            <!-- <img src="./assets/images/imagen_2021-10-29_000020.png" alt="" class="header__img__side"></h3> -->
-                            
+
                             <?php    
                                 if($dato['mifoto']!=null){
                             ?>
@@ -81,6 +76,7 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
 
 
                         <div style="position: relative; left: 8px;" class="nav__dropdown-dashboard">
+
                             <a href="sidebarCursos.php" class="nav__link-dashboard">
                                 <i class="far fa-folder-open nav__icon-dashboard" style="color:#F1C40F;"></i>
                                 <!-- <i class="far fa-bookmark nav__icon"></i> -->
@@ -112,28 +108,17 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
 
                                         <a href="agregarcurso.php" class="nav__dropdown-item-dashboard nav__link-dashboard">Agregar Un Nuevo Curso</a>
 
-                                        <!--<a href="aprobadosCurso.php" class="nav__dropdown-item-dashboard nav__link-dashboard">Aprobados</a>-->
                                     <?php
                                     }
                                     ?>
 
-    
 
 
 
-                                    
                                 </div>
                             </div>
+                            
                         </div>
-
-
-
-
-
-
-
-
-
 
                         <?php
                         if ($_SESSION['privilegio'] == 1 || $_SESSION['privilegio'] == 6) {
