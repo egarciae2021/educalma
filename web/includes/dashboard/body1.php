@@ -43,7 +43,7 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                                 <?php } else if (isset($_SESSION['Logueado']) && $_SESSION['Logueado'] === true && $dato['sexo'] === 3) { // 3 -> No binario?>
 
                                     
-                                <?php } else if (isset($_SESSION['Logueado']) && $_SESSION['Logueado'] === true && $dato['sexo'] === 2) { // 2 -> Prefiero no decir?>
+                                <?php } else if (isset($_SESSION['Logueado']) && $_SESSION['Logueado'] === true && $dato['sexo'] === 4) { // 4 -> Prefiero no decir?>
 
 
                                 <?php } ?>
@@ -181,45 +181,30 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                         <?php
                         }
                         ?>
-                        <?/*php
-                        if ($_SESSION['privilegio'] == 4) {
-                        */?>
-                            <!-- <div class="nav__dropdown-dashboard">
-                                <a alt="Empresas" class="nav__link-dashboard" style="cursor:pointer;">
-                                    <i class="fas fa-building" style="color:0x272735;"> </i>
-                                    <span class="nav__name-dashboard">&nbsp;&nbsp; Empresa</span> -->
-                                    <!-- <i class='bx bx-chevron-down nav__icon nav__dropdown-icon'></i> -->
-                                    <!-- <i class="fas fa-caret-down nav__icon-dashboard nav__dropdown-icon-dashboard"></i>
-                                </a>
-                                <div class="nav__dropdown-collapse-dashboard">
-                                    <div class="nav__dropdown-content-dashboard">
 
-                                        <a href="empleados.php" class="nav__dropdown-item-dashboard nav__link-dashboard">Control de Empresas</a> -->
-                                        <!-- <a href="#" class="nav__dropdown-item-dashboard nav__link-dashboard">Control de Empleados</a> -->
-
-                                    <!-- </div>
-                                </div>
-                            </div> -->
-                        <?/*php
-                        }
-                        */
+                        <?php
+                            if ($_SESSION['privilegio'] == 1 || $_SESSION['privilegio'] == 6) {
                         ?>
-                        <a style="position: relative; left: 12px;" href="reporteUsuario.php" class="nav__link-dashboard">
-                            <i class="fas fa-clipboard nav__icon-dashboard" style="color:#E6B0AA;"></i>
-                            <span class="nav__name-dashboard">Reporte</span>
-                        </a>
+
+                            <a style="position: relative; left: 12px;" href="reporteUsuario.php" class="nav__link-dashboard">
+                                <i class="fas fa-clipboard nav__icon-dashboard" style="color:#E6B0AA;"></i>
+                                <span class="nav__name-dashboard">Reporte</span>
+                            </a>
+
+                        <?php
+                            }else{
+                        ?>
+
+                        <?php
+                            }
+                        ?>
 
                         <a style="position: relative; left: 8px;" href="sidebarEditar.php" class="nav__link-dashboard">
                             <i class="fas fa-cog nav__icon-dashboard" style="color:#AAB7B8;"></i>
                             <span class="nav__name-dashboard">Ajustes</span>
                         </a>
-                        <!-- <a href="#" class="nav__link">
-                         <i class="fas fa-question-circle nav__icon"></i>
-                         <span class="nav__name">Ayuda</span>
-                     </a> -->
 
                         <a style="position: relative; left: 8px;" href="includes/login/logout.php" class="nav__link-dashboard nav__logout-dashboard">
-                            <!-- <i class='bx bx-log-out nav__icon'></i> -->
                             <i class="fas fa-sign-out-alt nav__icon-dashboard" style="color:red;"></i>
                             <span class="nav__name-dashboard">Salir</span>
                         </a>
