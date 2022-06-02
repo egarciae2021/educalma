@@ -292,10 +292,14 @@
                                         ?>
 
                                             <div class="form-group col-12">
+
+                                                
+
                                                 <input type="text" class="form-control" value="Módulo: <?php echo $dato2['nombreModulo'] ?>" aria-label="Recipient's username with two button addons" disabled>
 
                                                 <!--agregar temas-->
                                                 <div class="caja-opciones">
+
                                                     <!-- boton agregar tema -->
                                                     <a href="agregartema.php?idCurso=<?php echo $_GET['id'] ?>&id_mo=<?php echo $dato2['idModulo'] ?>">
                                                         <button style="background-color: #74F077" class="btn btn-modulos" type="button">
@@ -383,6 +387,8 @@
                                                             <i class="fas fa-plus"></i> Agregar Cuestionario
                                                         </button>
                                                     </a>
+
+                                                    <br>
 
                                                 </div>
                                                 <!-- fin agregar temas -->
