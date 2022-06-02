@@ -2,8 +2,9 @@
 class Database
 {
   private static $dbName = 'educalma' ;
-  private static $dbHost = '20.226.29.168';
-	private static $dbUsername = 'root';
+  /*private static $dbHost = '20.226.29.168';*/
+	private static $dbHost = 'localhost';
+  private static $dbUsername = 'root';
   private static $dbUserPassword = '';
 
 	private static $cont  = null;
