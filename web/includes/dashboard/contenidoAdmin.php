@@ -13,26 +13,25 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
 
   <!-- para lista de cursos -->
   <?php
-  $pdo3 = Database::connect();
+      $pdo3 = Database::connect();
 
-  $sqlz = "SELECT * FROM cursos where permisoCurso=1 and estado=1 order by idCurso DESC ";
-  $qz = $pdo3->prepare($sqlz);
-  $qz->execute();
+      $sqlz = "SELECT * FROM cursos where permisoCurso=1 and estado=1 order by idCurso DESC ";
+      $qz = $pdo3->prepare($sqlz);
+      $qz->execute();
 
-  $contar = $qz->rowCount();
+      $contar = $qz->rowCount();
 
-  if ($_SESSION['privilegio'] == 2) {
-    $idProfe = $_SESSION['codUsuario'];
-    $sql3 = "SELECT * FROM cursos WHERE id_userprofesor='$idProfe' order by idCurso DESC";
-  } else {
-    $idProfe = $_SESSION['codUsuario'];
-    $sql3 = "SELECT * FROM cursos WHERE permisoCurso=1 and estado=1 order by idCurso DESC ";
-  }
+      if ($_SESSION['privilegio'] == 2) {
+        $idProfe = $_SESSION['codUsuario'];
+        $sql3 = "SELECT * FROM cursos WHERE id_userprofesor='$idProfe' order by idCurso DESC";
+      } else {
+        $idProfe = $_SESSION['codUsuario'];
+        $sql3 = "SELECT * FROM cursos WHERE permisoCurso=1 and estado=1 order by idCurso DESC ";
+      }
 
-  $q3 = $pdo3->prepare($sql3);
-  $q3->execute();
-  $curso = $q3->fetchAll(PDO::FETCH_ASSOC);
-
+      $q3 = $pdo3->prepare($sql3);
+      $q3->execute();
+      $curso = $q3->fetchAll(PDO::FETCH_ASSOC);
   ?>
 
   <main>
@@ -115,6 +114,7 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                         <th>Dirigido</th>
                         <th>Costo</th>
                         <th>Publicado</th>
+                        <th>Visible</th>
                         <th style="border-radius: 0 10px 10px 0;">Acciones</th>
                       </tr>
                     </thead>
@@ -158,11 +158,24 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                           <td>
                             <?php echo $curso['dirigido']; ?>
                           </td>
-                          <td>
+                          <td style="text-align: center;">
                             <?php echo $curso['costoCurso']; ?>
                           </td>
                           <td>
                             <?php echo $curso['fechaPulicacion']; ?>
+                          </td>
+                          <td style="text-align: center;">
+
+                            <?php if($curso['permisoCurso']===0){ ?>
+
+                              <?php echo "No"; ?>
+
+                            <?php }else{ ?>
+
+                              <?php echo "Sí"; ?>
+
+                            <?php } ?>
+
                           </td>
                           <td>
                             
