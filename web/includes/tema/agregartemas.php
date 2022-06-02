@@ -72,23 +72,34 @@
                                 <li class="list-group-item border-top-0" style="color:#495057;">Otros</li>
                             </ul-->
                             <div class="list-group lista2 text-left">
+
                                 <!-- <a href="sidebarCursos.php" class="list-group-item list-group-item-action">
                                     <i class="fas fa-book"></i> Mis Cursos
                                 </a> -->
+
+                                <!--
                                 <a href="editarcurso.php?id=<?php echo $_GET['idCurso']; ?>" class="btn btn-outline-secondary btn-back btn-sm" style="">
                                     <i class="fas fa-pencil-alt"></i> Editar datos del curso
                                 </a>
+                                -->
 
+                                <!--
                                 <a href="agregarModulos.php?id=<?php echo $_GET['idCurso']; ?>" class="btn btn-outline-secondary btn-back btn-sm" style="position: relative; top: -50px;">
                                     <i class="fas fa-plus-square"></i> Agregar módulos al curso
                                 </a>
+                                -->
+
                                 <!-- <a href="ListaCursos.php?pag=1" class="list-group-item list-group-item-action">
                                     <i class="fas fa-eye"></i> Ver todos los Cursos
                                 </a> -->
+
+                                <!--
                                 <button typer="button" id="salir_public" class="btn btn-outline-secondary btn-back btn-sm" style="cursor: pointer; position: relative; top: -100px;">
                                     <i class="fad fa-books"></i> Ver cursos no publicados
                                 </button>
-                                <a style="cursor: pointer; position: relative; top: -150px;" class="btn btn-outline-secondary btn-back btn-sm" href="agregarModulos.php?id=<?php echo $idCurso=$_GET['idCurso'];?>" role="button">
+                                -->
+
+                                <a style="cursor: pointer;" class="btn btn-outline-secondary btn-back btn-sm" href="agregarModulos.php?id=<?php echo $idCurso=$_GET['idCurso'];?>" role="button">
                                     <i class="fas fa-arrow-left"></i> Atrás
                                 </a>
                             </div>
@@ -103,7 +114,7 @@
                         <form name="formulario" id="form-agretemas2" method="POST" action="includes/tema/checkAgrTema.php?idCurso=<?php echo $idCurso;?>&id_mo=<?php echo $idModulo;?>">
                     
                             <div type="button" class="list-group-item list-group-item-action active" style="margin-bottom: 20px; background: #4F52D6; text-align: center; font-size: 24px;">
-                                Registro de temas del módulo: <?php echo $dato2['nombreModulo'];?>
+                                Registro de temas del módulo: <br> <span style="color: black;"> <?php echo $dato2['nombreModulo'];?> <span>
                             </div>
 
                             <div class="form-row ">
@@ -131,7 +142,7 @@
                             <div class="form-row">
                                 <div class="form-group col-12">
                                     <a>
-                                        <button type="submit" class="btn btn-block btn-add">
+                                        <button style="background-color: #74F077" type="submit" class="btn btn-block btn-add">
                                             <i class="fas fa-plus"></i> Agregar
                                         </button>
                                     </a>
@@ -143,7 +154,7 @@
 
                             <div class="form-row">
                                 <div class="form-group col-12" style="text-align: center;">
-                                    <label style="font-size: 24px;" class="form-label">Listado de temas del módulo: <?php echo $dato2['nombreModulo'];?></label>
+                                    <label style="font-size: 24px;" class="form-label">Listado de temas del módulo: <br> <span style="color: black;"> <?php echo $dato2['nombreModulo'];?> </span> </label>
                                 </div>
                             </div>
 

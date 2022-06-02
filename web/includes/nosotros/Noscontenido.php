@@ -1,5 +1,6 @@
 <head>
     <link rel="stylesheet" href="assets/css/nosotros.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/'-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 
@@ -62,6 +63,36 @@
             <div class="accordion" id="accordion" style="font-family:'Work Sans',sans-serif;">
                 <div class="card border-0 rounded my-4 card-questions-box">
                     <div class="card-header border-0" data-toggle="collapse" href="#collapseOne" aria-controls="collapse1">
+                        <style>
+                            .fa-angle-down{transition: transform .3s;}
+                            .rotate-90{transform: rotate(180deg); }
+                        </style>
+                        <script>
+                            function toggleClass(elem,className){
+                                if (elem.className.indexOf(className) !== -1){
+                                    elem.className = elem.className.replace(className,'');
+                                }
+                                else{
+                                    elem.className = elem.className.replace(/\s+/g,' ') + 	' ' + className;
+                                }
+                            }
+                            function toggleMenuDisplay(e){
+                                const accordion = e.currentTarget.parentNode;
+                                /* const menu = dropdown.querySelector('.menu'); */
+                                const icon = accordion.querySelector('.fa-angle-down');
+
+                                /* toggleClass(menu,'hide'); */
+                                toggleClass(icon,'rotate-90');
+                            }
+
+                            function handleOptionSelected(e){
+                                const icon = document.querySelector('.fa');
+                                titleElem.appendChild(icon);
+                                setTimeout(() => toggleClass(icon,'rotate-90',0));
+                            }
+                            const dropdownTitle = document.querySelector('.accordion .card-header');
+                            dropdownTitle.addEventListener('click', toggleMenuDisplay);
+                        </script>
                         <a class="card-text" style="font-weight: bold;">
                             ¿Cómo puedo inscribirme a un curso de EDUCALMA?
                             <i id="btnRefresh" class="fas fa-angle-down rotate-icon fa-2x" style="float:right;"></i>
@@ -81,6 +112,33 @@
 
                 <div class="card border-0 rounded mb-4 card-questions-box">
                     <div class="card-header border-0" data-toggle="collapse" href="#collapseTwo">
+                    <style>
+                            .fa-angle-down{transition: transform .3s;}
+                            .rotate-90{transform: rotate(180deg); }
+                        </style>
+                        <script>
+                            function toggleClass(elem,className){
+                                if (elem.className.indexOf(className) !== -1){
+                                    elem.className = elem.className.replace(className,'');
+                                }
+                                else{
+                                    elem.className = elem.className.replace(/\s+/g,' ') + 	' ' + className;
+                                }
+                            }
+                            function toggleMenuDisplay(e){
+                                const accordion = e.currentTarget.parentNode;
+                                const icon = accordion.querySelector('.fa-angle-down');
+                                toggleClass(icon,'rotate-90');
+                            }
+
+                            function handleOptionSelected(e){
+                                const icon = document.querySelector('.fa');
+                                titleElem.appendChild(icon);
+                                setTimeout(() => toggleClass(icon,'rotate-90',0));
+                            }
+                            const dropdownTitle = document.querySelector('.accordion .card-header');
+                            dropdownTitle.addEventListener('click', toggleMenuDisplay);
+                        </script>
                         <a class="collapsed card-text" style="font-weight: bold;">
                             ¿Cuántas sesiones tiene un curso?
                             <i class="fas fa-angle-down rotate-icon fa-2x" style="float:right;"></i>
@@ -150,6 +208,7 @@
                         </div>
                     </div>
                 </div>
+                
             </div>
         </div>
     </div>

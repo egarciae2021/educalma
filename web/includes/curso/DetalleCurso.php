@@ -17,7 +17,7 @@
   position: relative;
 }
 .boton4:hover {
-  color: rgba(255, 255, 255, 1) !important;
+  color: rgba(255, 255, 255, ) !important;
   box-shadow: 0 4px 16px rgba(49, 138, 172, 1);
   transition: all 0.2s ease;
 }
@@ -370,7 +370,7 @@ body {
 
 
                                 <!-- ////////////////// -->
-                                <a style="background: #7c83fd;" class="card-header card-link" data-toggle="collapse" href="<?php echo '#collapseOne' . $i  ?>">
+                                <a style="background: #7c83fd;" class="card-header card-link" data-toggle="collapse" href="<?php echo '#collapse' . $i  ?>" aria-controls="collapse">
                                     <span><i class="fas fa-sort-down mr-3"></i>Módulo: <?php echo $modulosC['nombreModulo'] ?></span>
                                 </a>
 
@@ -388,21 +388,16 @@ body {
 
                                 while ($temasC = $q7->fetch(PDO::FETCH_ASSOC)) {
                                 ?>
-                                    <div id="<?php echo 'collapseOne' . $i ?>" class="collapse show" data-parent="#accordion">
-
-
+                                    <div id="<?php echo 'collapse' . $i ?>" class="collapse show" data-parent="#accordion">
                                         <!-- ////////////////// -->
                                         <div id="nombreTemaCss" style="background: white;" class="card-body">
                                             Tema: <?php echo $temasC['nombreTema'] ?>
                                         </div>
-
-
-                                        
                                     </div>
                                 <?php
                                 }
                                 ?>
-                                <div id="<?php echo 'collapseOne' . $i  ?>" class="collapse show" data-parent="#accordion">
+                                <div id="<?php echo 'collapse' . $i  ?>" class="collapse" data-parent="#accordion">
 
 
 
@@ -963,23 +958,23 @@ body {
 
     <!-- ALL JS FILES -->
     <script src="assets/js/plugins/jquery.min.js"></script>
-        <script src="assets/js/plugins//popper.min.js"></script>
-        <script src="assets/js/plugins/bootstrap.min.js"></script>
-        <!-- FORO -->
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-        <script src="./assets/js/plugins/eliminarforo.js"></script>
-        <!-- ALL PLUGINS -->
-        <script src="assets/js/plugins/jquery.magnific-popup.min.js"></script>
-        <script src="assets/js/plugins/jquery.pogo-slider.min.js"></script>
-        <script src="assets/js/plugins/slider-index.js"></script>
-        <script src="assets/js/plugins/smoothscroll.js"></script>
-        <script src="assets/js/plugins/form-validator.min.js"></script>
-        <script src="assets/js/plugins/contact-form-script.js"></script>
-        <script src="assets/js/plugins/isotope.min.js"></script>
-        <script src="assets/js/plugins/images-loded.min.js"></script>
-        <script src="assets/js/plugins/custom.js"></script>
-        <script src="./assets/js/plugins/sweetalert2.all.min.js"></script>
+    <script src="assets/js/plugins//popper.min.js"></script>
+    <script src="assets/js/plugins/bootstrap.min.js"></script>
+    <!-- FORO -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./assets/js/plugins/eliminarforo.js"></script>
+    <!-- ALL PLUGINS -->
+    <script src="assets/js/plugins/jquery.magnific-popup.min.js"></script>
+    <script src="assets/js/plugins/jquery.pogo-slider.min.js"></script>
+    <script src="assets/js/plugins/slider-index.js"></script>
+    <script src="assets/js/plugins/smoothscroll.js"></script>
+    <script src="assets/js/plugins/form-validator.min.js"></script>
+    <script src="assets/js/plugins/contact-form-script.js"></script>
+    <script src="assets/js/plugins/isotope.min.js"></script>
+    <script src="assets/js/plugins/images-loded.min.js"></script>
+    <script src="assets/js/plugins/custom.js"></script>
+    <script src="./assets/js/plugins/sweetalert2.all.min.js"></script>
 
 </body>
 

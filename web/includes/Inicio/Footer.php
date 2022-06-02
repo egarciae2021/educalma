@@ -1,10 +1,15 @@
 <style>
 
+  .textEduCalma:hover {
+
+    color: #4D54C8 !important;
+  }
+
   .footer--light {
 
-  background-color: #e7f4ff;
-  position: relative; 
-  top: 30px;
+    background-color: #e7f4ff;
+    position: relative; 
+    top: 30px;
   }
   
   @media (max-width: 940px) {
@@ -90,7 +95,7 @@
         <div class="row">
           <div class="col-md-8 col-sm-6 col-12">
             <p class="copyright-text"style="color: #7c83fd; ">Copyright © 2021 All Rights Reserved by
-              <a href="#">EduCalma</a>
+              <a class="textEduCalma" href="#">EduCalma</a>
             </p>
           </div>
 

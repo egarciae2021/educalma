@@ -181,7 +181,7 @@
         $id=$_GET['id_eliminar'];
 
         $pdo = Database::connect();  
-        $veri="UPDATE cursos SET permisoCurso='0' WHERE idCurso = '$id' ";
+        $veri="UPDATE cursos SET estado='0' WHERE idCurso = '$id' ";
         $q = $pdo->prepare($veri);
         $q->execute(array());
         $dato=$q->fetch(PDO::FETCH_ASSOC);

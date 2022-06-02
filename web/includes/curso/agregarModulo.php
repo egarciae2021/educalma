@@ -21,7 +21,7 @@
             font-size: 16px;
             padding-top: 5px;
             /* max-width:300px; 
-        padding: 10px;*/
+            padding: 10px;*/
             margin: 0;
         }
     </style>
@@ -113,20 +113,20 @@
                                 </ul> -->
 
                                 <div class="list-group lista2 text-left">
+
+                                    <!--
                                     <a href="editarcurso.php?id=<?php echo $envio ?>" class="btn btn-outline-secondary btn-back btn-sm">
                                         <i class="fas fa-pencil-alt"></i> Editar datos del curso
                                     </a>
-                                    <!-- <a href="sidebarCursos.php" class="list-group-item list-group-item-action">
-                                                <i class="fas fa-book"></i> Mis Cursos
-                                            </a>
-                                            <a href="ListaCursos.php?pag=1" class="list-group-item list-group-item-action">
-                                                <i class="fas fa-eye"></i> Ver todos los Cursos
-                                            </a> -->
+                                    -->
+
+                                    <!--
                                     <button typer="button" id="salir_public" class="btn btn-outline-secondary btn-back btn-sm" style="cursor: pointer; position: relative; top: -40px;">
                                         <i class="fad fa-books"></i> Ver cursos no publicados
                                     </button>
+                                    -->
 
-                                    <a class="btn btn-outline-secondary btn-back btn-sm" href="agregarcurso.php" role="button" style="position: relative; top: -80px;">
+                                    <a style="" class="btn btn-outline-secondary btn-back btn-sm" href="javascript:history.back()" role="button" style="position: relative; top: -20px;">
                                         <i class="fas fa-arrow-left"></i> Atrás
                                     </a>
                                 </div>
@@ -213,8 +213,8 @@
 
                                 <div class="form-row">
                                     <div class="form-group col-6 col-md-6 "><input type="hidden">
-                                        <button type="button" id="actumodulo_2" class="btn btn-modulos" onclick="alertaModulo()">
-                                            <i class="fas fa-plus"></i> Añadir
+                                        <button style="background-color: #74F077" type="button" id="actumodulo_2" class="btn btn-modulos" onclick="alertaModulo()">
+                                            <i class="fas fa-plus"></i> Agregar Módulo
                                         </button>
                                     </div>
 
@@ -251,17 +251,17 @@
                                         }
                                     </script>
 
-                                    <div class="form-group col-6 col-md-6 ">
-                                        <button type="button" id="salir_agregar" class="btn btn-block btn-dark">
-                                            <i class="fas fa-sign-out-alt"></i> Finalizar
-                                        </button>
-                                    </div>
+                                    
                                 </div>
 
                             </form>
 
+
+<div style="border: #4F52D6 2px solid; border-radius: 5px;">
+
+
                             <!-- añadido nuevo -->
-                            <form style="border: #4F52D6 2px solid; border-radius: 5px;" class="pt-0">
+                            <form style="" class="pt-0">
                                 <div style="position: relative; top: 30px;" class="form-row">
                                     <div class="form-group col-12" style="text-align: center;">
                                         <label style="font-size: 24px; position: relative; top: -10px;" class="form-label">Listado de módulos del curso:</label>
@@ -292,13 +292,17 @@
                                         ?>
 
                                             <div class="form-group col-12">
+
+                                                
+
                                                 <input type="text" class="form-control" value="Módulo: <?php echo $dato2['nombreModulo'] ?>" aria-label="Recipient's username with two button addons" disabled>
 
                                                 <!--agregar temas-->
                                                 <div class="caja-opciones">
+
                                                     <!-- boton agregar tema -->
                                                     <a href="agregartema.php?idCurso=<?php echo $_GET['id'] ?>&id_mo=<?php echo $dato2['idModulo'] ?>">
-                                                        <button class="btn btn-modulos" type="button">
+                                                        <button style="background-color: #74F077" class="btn btn-modulos" type="button">
                                                             <i class="fas fa-plus"></i> Agregar Tema
                                                         </button>
                                                     </a>
@@ -379,14 +383,19 @@
 
                                                     <!--boton agregar cuestionario-->
                                                     <a href="Form_pregun_cuestionario.php?id=<?php echo $_GET['id'] ?>&id_modulo=<?php echo $dato2['idModulo'] ?>">
-                                                        <button class="btn btn-modulos" type="button">
+                                                        <button style="background-color: #74F077" class="btn btn-modulos" type="button">
                                                             <i class="fas fa-plus"></i> Agregar Cuestionario
                                                         </button>
                                                     </a>
 
+                                                    <br>
+
                                                 </div>
                                                 <!-- fin agregar temas -->
+                                                
                                             </div>
+
+                                            
 
                                         <?php
                                         }
@@ -394,12 +403,29 @@
                                         ?>
 
                                     </div>
+
+
+
+                                    </div>
+
+                                    
+                                    
                                 </div>
                             </form>
                             <!-- fin añadido nuevo -->
+
+
+                            <div class="btn">
+                                <button style="width: 200px;" type="button" id="salir_agregar" class="btn btn-block btn-dark">
+                                    <i class="fas fa-sign-out-alt"></i> Finalizar registro
+                                </button>
+                            </div>
+
+
                         </div>
                         <!-- fin segunda columna -->
 
+                        
 
 
 

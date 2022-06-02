@@ -71,19 +71,23 @@
                                 <a href="editarcurso.php?id=<?php echo $_GET['id']?>" class="btn btn-outline-secondary btn-back btn-sm" style="">
                                     <i class="fas fa-pencil-alt"></i> Editar datos del curso
                                 </a>
+
+                                <!--
                                 <a href="agregarModulos.php?id=<?php echo $_GET['id'] ?>" class="btn btn-outline-secondary btn-back btn-sm" style="position: relative; top: -50px;">
                                         <i class="fas fa-plus-square"></i> Agregar módulos y/o temas
                                 </a>
+                                -->
+
                                     <!-- <a href="sidebarCursos.php" class="list-group-item list-group-item-action">
                                         <i class="fas fa-book"></i> Mis Cursos
                                     </a> -->
                                     <!-- <a href="ListaCursos.php?pag=1" class="list-group-item list-group-item-action">
                                         <i class="fas fa-eye"></i> Ver todos los Cursos
                                     </a> -->
-                                <button typer="button" id="salir_public" class="btn btn-outline-secondary btn-back btn-sm" style="cursor: pointer; position: relative; top: -100px;">
-                                    <i class="fad fa-books"></i> Ver cursos no publicados
+                                <button typer="button" id="salir_public" class="btn btn-outline-secondary btn-back btn-sm" style="cursor: pointer; position: relative; top: -50px;">
+                                    <i class="fad fa-books"></i> Ver lista de cursos <br> No publicados
                                 </button>
-                                <a class="btn btn-outline-secondary btn-back btn-sm" style="cursor: pointer; position: relative; top: -150px;" href="agregarModulos.php?id=<?php echo $id=$_SESSION['ids'];?>" role="button">
+                                <a class="btn btn-outline-secondary btn-back btn-sm" style="cursor: pointer;" href="agregarModulos.php?id=<?php echo $id=$_SESSION['ids'];?>" role="button">
                                     <i class="fas fa-arrow-left"></i> Atrás
                                 </a>
                             </div>
@@ -131,7 +135,7 @@
                             <div class="form-row">
                                 <div class="form-group col-12">
                                     <a>
-                                        <button style="position: relative; top: 10px;" class="btn btn-block btn-add" type="submit"><i class="fas fa-plus"></i> Añadir</button>
+                                        <button style="background-color: #74F077; position: relative; top: 10px;" class="btn btn-block btn-add" type="submit"><i class="fas fa-plus"></i> Añadir</button>
                                     </a>
                                 </div>
                             </div>
@@ -174,7 +178,7 @@
 
                                     <!-- boton agregar respuesta -->
                                     <div class="form-group col-2 col-md-3 col-sm-1 col-lg-3 col-xl-2">
-                                        <a class="btn btn-block btn-add" href="Form_respue_cuestionario.php?id=<?php echo $_GET['id']; ?>&id_pregunta=<?php echo $registro1['idPregunta']?>&id_modulo=<?php echo $idmodulo;?>&pregunta=<?php echo $registro1['pregunta']?>">
+                                        <a style="background-color: #74F077;" class="btn btn-block btn-add" href="Form_respue_cuestionario.php?id=<?php echo $_GET['id']; ?>&id_pregunta=<?php echo $registro1['idPregunta']?>&id_modulo=<?php echo $idmodulo;?>&pregunta=<?php echo $registro1['pregunta']?>">
                                             <i class="fas fa-plus-square"></i> Respuesta
                                         </a>
                                     </div>

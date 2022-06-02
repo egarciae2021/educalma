@@ -96,22 +96,28 @@
                                 <li class="list-group-item border-top-0" style="color:#495057;">Componentes del Curso</li>
                             </ul>-->
                                 <div class="list-group lista2 text-left">
-                                    <!-- <a href="editarcurso.php" class="list-group-item list-group-item-action">
-                                <i class="fas fa-pencil-alt"></i> Editar curso
-                                </a> -->
-                                    <!-- <a href="sidebarCursos.php" class="list-group-item list-group-item-action">
-                                    <i class="fas fa-book"></i> Mis Cursos
-                                </a> -->
-                                    <a href="agregarModulos.php?id=<?php echo $id ?>" class="btn btn-outline-secondary btn-back btn-sm" style="cursor: pointer; position: relative;">
-                                        <i class="fas fa-plus-square"></i> Agregar módulos al curso
+                              
+                                    <!--
                                     </a>
+                                        <a href="sidebarCursos.php" class="list-group-item list-group-item-action">
+                                        <i class="fas fa-book"></i> Mis Cursos
+                                    </a> 
+                                    -->
+                                    
+                                    <a href="agregarModulos.php?id=<?php echo $id ?>" class="btn btn-outline-secondary btn-back btn-sm" style="background-color: #2BD82E; height: 80px; cursor: pointer; position: relative;">
+                                        <i class="fas fa-plus-square"></i> <br> Agregar módulos, temas <br> y cuestionarios
+                                    </a>
+
+                                    <!--
                                     <button typer="button" id="salir_public" class="btn btn-outline-secondary btn-back btn-sm" style="cursor: pointer; position: relative; top: -50px;">
-                                        <i class="fad fa-books"></i> Ver lista de cursos no publicados
+                                        <i class="fad fa-books"></i> Ver lista de cursos <br> No publicados
                                     </button>
+                                    -->
+
                                     <!-- <a href="publicarcursos.php?pag=1" class="list-group-item list-group-item-action">
                                     <i class="fad fa-books"></i> Publicar cursos
                                 </a> -->
-                                    <a class="btn btn-outline-secondary btn-back btn-sm" href="user-sidebar.php" role="button" style="cursor: pointer; position: relative; top: -100px;">
+                                    <a class="btn btn-outline-secondary btn-back btn-sm" href="javascript:history.back()" role="button" style="cursor: pointer;">
                                         <i class="fas fa-arrow-left"></i> Atrás
                                     </a>
                                 </div>
@@ -138,7 +144,7 @@
                             <form name="formulario" id="form-leditcursos" method="POST" enctype="multipart/form-data" action="includes/Cursos_crud/Cursos_CRUD.php?id=<?php echo $dato2['idCurso']; ?>">
 
                                 <div type="button" class="list-group-item list-group-item-action active" style="position: relative; top: -30px; background: #4F52D6; text-align: center; font-size: 24px;">
-                                    <i class="fas fa-pencil-alt"></i> Editar datos del curso: <?php echo $dato2['nombreCurso']; ?>
+                                    <i class="fas fa-pencil-alt"></i> Editar datos del curso: <br> <span style="color: black;"> <?php echo $dato2['nombreCurso']; ?> <span>
                                 </div>
                                 <div class="row">
                                     <div class="col-12 col-lg-6">
@@ -200,7 +206,7 @@
 
                             <div class="form-group col-12">
                                 <input type="hidden" name="idcurso">
-                                <button type="submit" id="actucurso_2" class="btn btn-block btn-agregar" onclick="alertaCursoActualizado()"><i class="fas fa-redo"></i> Guardar nuevos datos</button>
+                                <button style="background-color: #2BD82E;" type="submit" id="actucurso_2" class="btn btn-block btn-agregar" onclick="alertaCursoActualizado()"><i class="fas fa-redo"></i> Guardar nuevos datos</button>
                             </div>
 
                     

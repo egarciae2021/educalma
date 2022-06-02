@@ -23,7 +23,7 @@
         </div>
         <div class="col-lg-6 px-5 pt-5">
           <a href="index.php">
-            <img src="./assets/images/Logo.svg" class="logo-img" alt="image">
+            <img src="./assets/images/logo_educalma.png" class="logo-img" alt="image">
           </a>
           <h1 class="font-weight-bold py-3" style="font-weight: 900;">Reestablecer contraseña!</h1>
           <!-- <h4>¡Que bueno verte de nuevo por aquí!</h4> -->

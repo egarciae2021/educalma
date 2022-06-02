@@ -66,23 +66,29 @@
                                    
                                     <div class="list-group lista2 text-left">
                                         <!-- <a href="sidebarCursos.php" class="list-group-item list-group-item-action">
-                                    <i class="fas fa-book"></i> Mis Cursos
-                                </a> -->
+                                            <i class="fas fa-book"></i> Mis Cursos
+                                        </a> -->
+
+                                        <!--
                                         <a href="editarcurso.php?id=<?php echo $_GET['id'] ?>" class="btn btn-outline-secondary btn-back btn-sm">
                                             <i class="fas fa-pencil-alt"></i> Editar datos del curso
                                         </a>
+                                        -->
 
+                                        <!--
                                         <a href="agregarModulos.php?id=<?php echo $_GET['id']; ?>" class="btn btn-outline-secondary btn-back btn-sm" style="position: relative; top: -50px;">
                                             <i class="fas fa-plus-square"></i> Agregar módulos
                                         </a>
+                                        -->
+
                                         <!-- <a href="ListaCursos.php?pag=1" class="list-group-item list-group-item-action">
                                     <i class="fas fa-eye"></i> Ver todos los Cursos
                                 </a> -->
-                                        <button type="button" id="salir_public" class="btn btn-outline-secondary btn-back btn-sm" style="cursor: pointer; position: relative; top: -100px;">
-                                            <i class="fad fa-books"></i> Ver lista de cursos no publicados
+                                        <button type="button" id="salir_public" class="btn btn-outline-secondary btn-back btn-sm" style="cursor: pointer; position: relative; top: -30px;">
+                                            <i class="fad fa-books"></i> Ver lista de cursos <br> No publicados
                                         </button>
 
-                                        <a style="position: relative; top: -150px;" class="btn btn-outline-secondary btn-back btn-sm" href="Form_pregun_cuestionario.php?id=<?php echo $_GET['id']; ?>&id_modulo=<?php echo $idmodulo=$_GET['id_modulo'];?>" role="button">
+                                        <a style="position: relative; top: -40px;" class="btn btn-outline-secondary btn-back btn-sm" href="Form_pregun_cuestionario.php?id=<?php echo $_GET['id']; ?>&id_modulo=<?php echo $idmodulo=$_GET['id_modulo'];?>" role="button">
                                             <i class="fas fa-arrow-left"></i> Atrás
                                         </a>
                                     </div>
@@ -123,7 +129,7 @@
                                     <div class="form-row " style="position: relative; top: 10px;">
                                         <div class="form-group col-md-12">
                                             <a>
-                                                <button class="btn btn-block btn-add" type="submit"><i class="fas fa-plus"></i> Añadir</button>
+                                                <button style="background-color: #74F077" class="btn btn-block btn-add" type="submit"><i class="fas fa-plus"></i> Añadir</button>
                                             </a>
                                         </div>
                                     </div>
