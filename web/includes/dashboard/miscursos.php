@@ -372,8 +372,8 @@
 
                                 echo '
                                     <div class="col-10 col-sm-12 col-md-4 col-lg-4 col-xl-3">
-                                        <div class="card">
-                                            <div class="container-card-image">
+                                        <div style="border-radius: 30px;" class="card">
+                                            <div style="border-radius: 30px;" class="container-card-image">
                                                 <img src="data:image/*;base64,' . base64_encode($dato3['imagenDestacadaCurso']) . '" alt="foto_curso" >
                                             </div>
                                     
@@ -396,8 +396,8 @@
 
                                 echo '
                                     <div class="col-10 col-sm-12 col-md-4 col-lg-4 col-xl-3">
-                                        <div class="card">
-                                            <div class="container-card-image">
+                                        <div style="border-radius: 30px;" class="card">
+                                            <div style="border-radius: 30px;" class="container-card-image">
                                                 <img src="./assets/images/curso_educalma.png" alt="foto_curso" >
                                             </div>
                                     
