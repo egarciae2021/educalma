@@ -267,8 +267,10 @@
         }
 
     .container-card-link{
-        text-align: center;
-        }
+      position: relative;
+      left: 10px;
+        
+    }
 
     .card{
         width: 294.42px;
@@ -281,16 +283,16 @@
         padding: 10px;
         margin-top: 10px;
         text-decoration: none;
-        color: #2fb4cc;
-        border: 1px solid #2fb4cc;
-        border-radius: 4px;
+        color: #e7e7e7;
+        background-color:#168eb3;
+        border-radius: 50px;
         transition: all 400ms ease;
         margin-bottom: 5px;
+        width: 150px;
     }
 
     .card .container-card-link a:hover{
-        background: #2fb4cc;
-        color: #fff;
+        background-color: #127b9b;
     }
 
     .container-fluid
