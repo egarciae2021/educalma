@@ -63,13 +63,20 @@ require_once 'database/databaseConection.php';
 
 
 
-            if (isset($_SESSION['Logueado']) && $_SESSION['Logueado'] === true && $_SESSION['privilegio'] != 1 && $_SESSION['privilegio'] != 6 && $_SESSION['privilegio'] != 2) {
 
 
 
 
 
 
+
+
+
+
+
+
+          
+            if (isset($_SESSION['Logueado']) && $_SESSION['Logueado'] === true && $_SESSION['privilegio'] == 1) {
 
 
 
@@ -83,22 +90,15 @@ require_once 'database/databaseConection.php';
                 Database::disconnect();
                 $nom=$dato['nombres'];
             ?>
-                <!-- LOGUEADO -->
-                <div class="log-sign" style="--i: 1.8s">
+
+            <!-- LOGUEADO -->
+            <div class="log-sign" style="--i: 1.8s">
                     <ul>
                         <li class="nav-link" style="--i: .85s">
-                            <a href="#"><?php echo $nom ?><i class="fas fa-caret-down"></i></a>
+                            <a href="#"><?php echo $nom ?>&nbsp;(Administrador)<i class="fas fa-caret-down"></i></a>
                             <div class="dropdown">
                                 <ul>
-                                    <li class="dropdown-link">
-                                        <a href="user-sidebar.php">Dashboard</a>
-                                    </li>
-                                    <!--<li class="dropdown-link">
-                                        <a href="sidebarCursos.php">Cursos Comprados</a>
-                                    </li>-->
-                                    <!-- <li class="dropdown-link">
-                                        <a href="InfoCurso.php?pag=1">Información Cursos</a>
-                                    </li> -->
+                                  
                                     <li class="dropdown-link">
                                         <a href="includes/login/logout.php">Cerrar Sesión</a>
                                     </li>
@@ -107,69 +107,14 @@ require_once 'database/databaseConection.php';
                             </div>
                         </li>
                     </ul>
-                </div>
+            </div>
 
-
-
-
-
+            <?php } ?>
 
 
             <?php
-            } else if(isset($_SESSION['Logueado']) && $_SESSION['Logueado'] === true && $_SESSION['privilegio'] == 1 || $_SESSION['privilegio'] == 6 || $_SESSION['privilegio'] == 2){
 
-
-
-
-
-
-                $pdo = Database::connect();
-                $idUsuario = $_SESSION['codUsuario'];
-                $sql = "SELECT * FROM usuarios WHERE id_user = '$idUsuario'";
-                $q = $pdo->prepare($sql);
-                $q->execute(array());
-                $dato = $q->fetch(PDO::FETCH_ASSOC);
-                Database::disconnect();
-                $nom=$dato['nombres'];
-            ?>
-
-                <!-- LOGUEADO -->
-                <div class="log-sign" style="--i: 1.8s">
-                    <ul>
-                        <li class="nav-link" style="--i: .85s">
-                            <a href="#"><?php echo $nom ?><i class="fas fa-caret-down"></i></a>
-                            <div class="dropdown">
-                                <ul>
-                                    <!--
-                                    <li class="dropdown-link">
-                                        <a href="user-sidebar.php">Dashboard</a>
-                                    </li>
-                                    -->
-                                    
-                                    <!--<li class="dropdown-link">
-                                        <a href="sidebarCursos.php">Cursos Comprados</a>
-                                    </li>-->
-                                    <!-- <li class="dropdown-link">
-                                        <a href="InfoCurso.php?pag=1">Información Cursos</a>
-                                    </li> -->
-                                    <li class="dropdown-link">
-                                        <a href="includes/login/logout.php">Cerrar Sesión</a>
-                                    </li>
-                                    <div class="arrow"></div>
-                                </ul>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-
-
-
-
-
-                <?php
-            } else if(isset($_SESSION['Logueado']) && $_SESSION['Logueado'] === true && $_SESSION['privilegio'] == 6){
-
-
+            if (isset($_SESSION['Logueado']) && $_SESSION['Logueado'] === true && $_SESSION['privilegio'] == 2) {
 
 
 
@@ -184,23 +129,14 @@ require_once 'database/databaseConection.php';
                 $nom=$dato['nombres'];
             ?>
 
-                <!-- LOGUEADO -->
-                <div class="log-sign" style="--i: 1.8s">
+            <!-- LOGUEADO -->
+            <div class="log-sign" style="--i: 1.8s">
                     <ul>
                         <li class="nav-link" style="--i: .85s">
-                            <a href="#"><?php echo $nom ?><i class="fas fa-caret-down"></i></a>
+                            <a href="#"><?php echo $nom ?>&nbsp;(Profesor)<i class="fas fa-caret-down"></i></a>
                             <div class="dropdown">
                                 <ul>
-                                    <li class="dropdown-link">
-                                        <a href="user-sidebar.php">Dashboard</a>
-                                    </li>
-                                    
-                                    <!--<li class="dropdown-link">
-                                        <a href="sidebarCursos.php">Cursos Comprados</a>
-                                    </li>-->
-                                    <!-- <li class="dropdown-link">
-                                        <a href="InfoCurso.php?pag=1">Información Cursos</a>
-                                    </li> -->
+                    
                                     <li class="dropdown-link">
                                         <a href="includes/login/logout.php">Cerrar Sesión</a>
                                     </li>
@@ -209,30 +145,168 @@ require_once 'database/databaseConection.php';
                             </div>
                         </li>
                     </ul>
-                </div>
+            </div>
 
+            <?php } ?>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-                <!-- REGISTRO Y LOGIN 
-                <div class="log-sign" style="--i: 1.8s">
-                    <a href="iniciosesion.php" class="btn transparent">Iniciar Sesi&oacute;n</a>
-                    <a href="registroUsuario.php" class="btn solid">Registrate!</a>
-                </div>-->
             <?php
-            }
+
+            if (isset($_SESSION['Logueado']) && $_SESSION['Logueado'] === true && $_SESSION['privilegio'] == 3) {
+
+
+
+
+                $pdo = Database::connect();
+                $idUsuario = $_SESSION['codUsuario'];
+                $sql = "SELECT * FROM usuarios WHERE id_user = '$idUsuario'";
+                $q = $pdo->prepare($sql);
+                $q->execute(array());
+                $dato = $q->fetch(PDO::FETCH_ASSOC);
+                Database::disconnect();
+                $nom=$dato['nombres'];
             ?>
+
+            <!-- LOGUEADO -->
+            <div class="log-sign" style="--i: 1.8s">
+                    <ul>
+                        <li class="nav-link" style="--i: .85s">
+                            <a href="#"><?php echo $nom ?>&nbsp;(Estudiante)<i class="fas fa-caret-down"></i></a>
+                            <div class="dropdown">
+                                <ul>
+                                    <li class="dropdown-link">
+                                        <a href="user-sidebar.php">Dashboard</a>
+                                    </li>
+
+                                    <li class="dropdown-link">
+                                        <a href="includes/login/logout.php">Cerrar Sesión</a>
+                                    </li>
+                                    <div class="arrow"></div>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+            </div>
+
+            <?php } ?>
+
+            <?php
+
+            if (isset($_SESSION['Logueado']) && $_SESSION['Logueado'] === true && $_SESSION['privilegio'] == 4) {
+
+
+
+
+                $pdo = Database::connect();
+                $idUsuario = $_SESSION['codUsuario'];
+                $sql = "SELECT * FROM usuarios WHERE id_user = '$idUsuario'";
+                $q = $pdo->prepare($sql);
+                $q->execute(array());
+                $dato = $q->fetch(PDO::FETCH_ASSOC);
+                Database::disconnect();
+                $nom=$dato['nombres'];
+            ?>
+
+            <!-- LOGUEADO -->
+            <div class="log-sign" style="--i: 1.8s">
+                    <ul>
+                        <li class="nav-link" style="--i: .85s">
+                            <a href="#"><?php echo $nom ?>&nbsp;(Empresa)<i class="fas fa-caret-down"></i></a>
+                            <div class="dropdown">
+                                <ul>
+                                    <li class="dropdown-link">
+                                        <a href="user-sidebar.php">Dashboard</a>
+                                    </li>
+                  
+                                    <li class="dropdown-link">
+                                        <a href="includes/login/logout.php">Cerrar Sesión</a>
+                                    </li>
+                                    <div class="arrow"></div>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+            </div>
+
+            <?php } ?>
+
+            <?php
+
+            if (isset($_SESSION['Logueado']) && $_SESSION['Logueado'] === true && $_SESSION['privilegio'] == 5) {
+
+
+
+
+                $pdo = Database::connect();
+                $idUsuario = $_SESSION['codUsuario'];
+                $sql = "SELECT * FROM usuarios WHERE id_user = '$idUsuario'";
+                $q = $pdo->prepare($sql);
+                $q->execute(array());
+                $dato = $q->fetch(PDO::FETCH_ASSOC);
+                Database::disconnect();
+                $nom=$dato['nombres'];
+            ?>
+
+            <!-- LOGUEADO -->
+            <div class="log-sign" style="--i: 1.8s">
+                    <ul>
+                        <li class="nav-link" style="--i: .85s">
+                            <a href="#"><?php echo $nom ?>&nbsp;(Usuario - Empresa)<i class="fas fa-caret-down"></i></a>
+                            <div class="dropdown">
+                                <ul>
+                                    <li class="dropdown-link">
+                                        <a href="user-sidebar.php">Dashboard</a>
+                                    </li>
+                                    
+                                    <li class="dropdown-link">
+                                        <a href="includes/login/logout.php">Cerrar Sesión</a>
+                                    </li>
+                                    <div class="arrow"></div>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+            </div>
+
+            <?php } ?>
+
+            <?php
+
+            if (isset($_SESSION['Logueado']) && $_SESSION['Logueado'] === true && $_SESSION['privilegio'] == 6) {
+
+
+
+
+                $pdo = Database::connect();
+                $idUsuario = $_SESSION['codUsuario'];
+                $sql = "SELECT * FROM usuarios WHERE id_user = '$idUsuario'";
+                $q = $pdo->prepare($sql);
+                $q->execute(array());
+                $dato = $q->fetch(PDO::FETCH_ASSOC);
+                Database::disconnect();
+                $nom=$dato['nombres'];
+            ?>
+
+            <!-- LOGUEADO -->
+            <div class="log-sign" style="--i: 1.8s">
+                    <ul>
+                        <li class="nav-link" style="--i: .85s">
+                            <a href="#"><?php echo $nom ?>&nbsp;(Super Administrador)<i class="fas fa-caret-down"></i></a>
+                            <div class="dropdown">
+                                <ul>
+                                    <li class="dropdown-link">
+                                        <a href="includes/login/logout.php">Cerrar Sesión</a>
+                                    </li>
+                                    <div class="arrow"></div>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+            </div>
+
+            <?php } ?>
+
+
+ 
 
 
 
