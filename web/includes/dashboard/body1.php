@@ -89,24 +89,52 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                                 <div class="nav__dropdown-content-dashboard">
 
 
+                                    <!-- 1 -> Administrador     -->
+                                    <!-- 2 -> Profesor          -->
+                                    <!-- 3 -> Usuario Normal    -->
+                                    <!-- 4 -> Empresa           -->
+                                    <!-- 5 -> Usuario (Empresa) -->
+                                    <!-- 6 -> Super Admin       -->
+
+
+                                    
                                     <?php
-                                    if ($_SESSION['privilegio'] != 1 && $_SESSION['privilegio'] != 6) {
+                                    if ($_SESSION['privilegio'] != 1 && $_SESSION['privilegio'] != 2 && $_SESSION['privilegio'] != 6) {
                                     ?>
 
-                                    <a href="sidebarCursos.php" class="nav__dropdown-item-dashboard nav__link-dashboard">Cursos Comprados</a>
+                                        <!--//-->
+                                        <a href="sidebarCursos.php" class="nav__dropdown-item-dashboard nav__link-dashboard">Cursos Comprados</a>
+
+                                        <!--//-->
+                                        <a href="comprarCursoCodEmpresa.php" class="nav__dropdown-item-dashboard nav__link-dashboard">Comprar Curso por Código de Empresa</a>
 
                                     <?php
                                     }
                                     ?>
                                     
+                                    <!--//-->
                                     <a href="ListaCursos.php?pag=1" class="nav__dropdown-item-dashboard nav__link-dashboard">Cursos Publicados</a>
 
-                                    <?php
-                                    if ($_SESSION['privilegio'] == 1 || $_SESSION['privilegio'] == 6) {
-                                    ?>
-                                        <a href="publicarcursos.php?pag=1" class="nav__dropdown-item-dashboard nav__link-dashboard">Cursos No Publicados</a>
 
+                                    
+                                    <?php
+                                    if ($_SESSION['privilegio'] != 1 && $_SESSION['privilegio'] != 2 && $_SESSION['privilegio'] != 6) {
+                                    ?>
+
+                                        
+
+                                        
+
+
+                                    <?php
+                                    }else{
+                                    ?>
+
+                                        <!--//-->
                                         <a href="agregarcurso.php" class="nav__dropdown-item-dashboard nav__link-dashboard">Agregar Un Nuevo Curso</a>
+
+                                        <!--//-->
+                                        <a href="publicarcursos.php?pag=1" class="nav__dropdown-item-dashboard nav__link-dashboard">Cursos No Publicados</a>
 
                                     <?php
                                     }
@@ -168,7 +196,7 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                         ?>
 
                         <?php
-                            if ($_SESSION['privilegio'] == 1 || $_SESSION['privilegio'] == 6) {
+                            if ($_SESSION['privilegio'] == 1 || $_SESSION['privilegio'] == 2 || $_SESSION['privilegio'] == 6) {
                         ?>
 
                             <a style="position: relative; left: 12px;" href="reporteUsuario.php" class="nav__link-dashboard">

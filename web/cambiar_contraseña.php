@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.js"></script>
+    <script src="//unpkg.com/sweetalert/dist/sweetalert.min.js"></script> 
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+
     <title>Cambiar contraseña</title>
     <style>
         @import url(https://fonts.googleapis.com/css?family=Roboto:300);
@@ -116,19 +122,55 @@
 <body>
 <div class="login-page">
   <div class="form">
-    <form class="login-form">
-      <input type="password" placeholder="Ingrese una nueva contraseña"/>
+    <form class="login-form" method="POST" action="<?php echo $_SERVER['PHP_SELF'];?>">
+      <input type="password" id="new_pass" name="new_pass" placeholder="Ingrese una nueva contraseña"/>
       <input type="password" placeholder="Vuelva a ingresar la nueva contraseña"/>
-      <button>Cambiar contraseña</button>
+      <input value="<?php $toks = $_GET["token"]; echo$toks;?>" name = "token" type="hidden">
+      <button type="submit" >Cambiar contraseña</button>
       <!--<p class="message">Not registered? <a href="#">Create an account</a></p>-->
     </form>
   </div>
 </div>
 
+
+<?php
+
+
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  
+    $passn = $_POST['new_pass']; 
+    $tok = $_POST['token'];  
+    $password = password_hash($passn, PASSWORD_BCRYPT);
+ 
+     $enlace = new mysqli('20.226.29.168', 'root', '', 'educalma');
+     $querys=("Select * from recover_password where token ='".$tok."'");
+     $resultado = $enlace->query($querys); 
+    
+    $resultado2 = mysqli_fetch_row($resultado);
+    $send_correo = $resultado2[2];
+
+     $num_filas = mysqli_num_rows($resultado);
+      if($num_filas==1){
+                            if($enlace){ 
+                                      $querys= ("UPDATE usuarios SET  `pass`='".$password."' WHERE `email`='".$send_correo."'");
+                                      $enlace->query($querys);  
+                                      echo "<script>alert('Se actulizo correctamente la clave, inicia sesión')</script>";
+                                      echo '<script>window.location="index.php";</script>';   
+                                } 
+                        }
+      elseif($num_filas==0)
+      {echo "<script>alert('No se encontro la cuenta de correo asociada')</script>";} 
+}
+?>
+  
+
 <script>
     $('.message a').click(function(){
         $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
     });
+
+   
 </script>
 </body>
 </html>

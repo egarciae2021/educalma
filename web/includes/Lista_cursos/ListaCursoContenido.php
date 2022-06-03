@@ -5,7 +5,7 @@
 
 
 <!------------------------------------------------------------->
-<div class="container-fluid px-0">
+<div style="position: relative; top: -70px;" class="container-fluid px-0">
 
 
     <!-- CURSOS PUBLICADOS MÁS DESTACADOS -->
@@ -36,7 +36,7 @@
                 $pdo = Database::connect();
                 error_reporting(0);
                 $idcategoria = $_GET['idcate'];
-                $sql2 = "SELECT * FROM cursos WHERE permisoCurso=1 ORDER BY cursos.idCurso DESC";
+                $sql2 = "SELECT * FROM cursos WHERE permisoCurso=1 AND estado=1 ORDER BY cursos.idCurso DESC";
                 $query2 = $pdo->prepare($sql2);
                 $query2->execute();
                 $contar = $query2->rowCount();
@@ -51,7 +51,7 @@
                 }
 
                 $inicio = ($_GET['pag'] - 1) * $cantidad_paginas;
-                $sql3 = "SELECT * FROM cursos where permisoCurso=1 order by idCurso desc LIMIT 3";
+                $sql3 = "SELECT * FROM cursos where permisoCurso=1 AND estado=1 order by idCurso desc LIMIT 3";
                 // SELECT * FROM `cursos`order by idCurso DESC LIMIT 3 
 
                 $query3 = $pdo->prepare($sql3);
@@ -188,7 +188,7 @@
                         <div class="search_wrap search_wrap_3">
                             <div class="search_box">
                                 <input type="text" class="input" id="buscar" name="buscar" placeholder="Busca un curso publicado...">
-                                <div class="btn btn_common">
+                                <div style="position: relative; top: -15px; float: right;" class="btn btn_common">
                                     <i class="fas fa-search"></i>
                                 </div>
                             </div>
@@ -257,13 +257,11 @@
 
 
 
-
 <!--CURSOS PUBLICADOS (aquí está la lista de cursos)-->
-<div class="container-fluid px-0" id="result">
+<div style="position: relative; top: -90px;" class="container-fluid px-0" id="result">
 
 
     <div class="container-card-course">
-
 
 
 
@@ -284,7 +282,7 @@
                 <?php
                 error_reporting(0);
                 $idcategoria = $_GET['idcate'];
-                $sql2 = "SELECT * FROM cursos WHERE permisoCurso=1";
+                $sql2 = "SELECT * FROM cursos WHERE permisoCurso=1 AND estado=1";
                 $query2 = $pdo->prepare($sql2);
                 $query2->execute();
                 $contar = $query2->rowCount();
@@ -301,7 +299,7 @@
                     }
                 }
                 $inicio = ($_GET['pag'] - 1) * $cantidad_paginas;
-                $sql3 = "SELECT * FROM cursos WHERE permisoCurso=1 LIMIT :iniciar,:narticulos";
+                $sql3 = "SELECT * FROM cursos WHERE permisoCurso=1 AND estado=1 LIMIT :iniciar,:narticulos";
 
                 $query3 = $pdo->prepare($sql3);
                 $query3->bindParam(':iniciar', $inicio, PDO::PARAM_INT);
@@ -458,7 +456,7 @@
 
 
 <!--PAGINADOR-->
-<div class="row container py-4" style="margin: 0 auto;">
+<div class="row container py-4" style="margin: 0 auto; position: relative; top: -80px;">
     <div class="col-12 mx-auto">
         <nav aria-label="Page navigation calma">
             <ul class="pagination justify-content-end">

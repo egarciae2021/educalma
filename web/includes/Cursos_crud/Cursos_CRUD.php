@@ -179,10 +179,12 @@
 
     if(isset($_GET['id_eliminar'])){
         $id=$_GET['id_eliminar'];
+        $estado=$_GET['estado'];
+        if($estado==0) $consultaSQL= "UPDATE cursos SET estado='1' WHERE idCurso = '$id' ";
+        else $consultaSQL= "UPDATE cursos SET estado='0' WHERE idCurso = '$id' ";
 
         $pdo = Database::connect();  
-        $veri="UPDATE cursos SET estado='0' WHERE idCurso = '$id' ";
-        $q = $pdo->prepare($veri);
+        $q = $pdo->prepare($consultaSQL);
         $q->execute(array());
         $dato=$q->fetch(PDO::FETCH_ASSOC);
         Database::disconnect();

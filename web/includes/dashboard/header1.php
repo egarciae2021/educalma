@@ -36,72 +36,51 @@ ob_start();
                 if (isset($_SESSION['Logueado']) && $_SESSION['Logueado'] === true) {
                     
                     ?>
-                    <!--echo $_SESSION['nombres'];-->
-                    &nbsp; 
-                    
                      
                     <!--Administrador-->
                     <?php if ($_SESSION['privilegio'] == 1) {?>
 
-                        &nbsp; <img src="./assets/img/user-admi.jpg" class="header__img" cellspacing="0" width="auto" alt="foto_curso">
+                        <img src="./assets/img/user-admi.jpg" class="header__img" cellspacing="0" width="auto" alt="foto_curso"> ADMINISTRADOR
                
                     <?php } ?>
 
                     <!--Profesor-->
                     <?php if ($_SESSION['privilegio'] == 2) {?>
 
-                        <img src="./assets/img/user-prof.png" class="header__img" alt="foto_curso">
+                        <img src="./assets/img/user-prof.png" class="header__img" cellspacing="0" width="auto" alt="foto_curso">&nbsp;&nbsp;<span style="position: relative; top: -15px;">PROFESOR</span>
 
                     <?php } ?>
 
                     <!--Usuario Normal-->
                     <?php if ($_SESSION['privilegio'] == 3) {?>
 
-                        <img src="./assets/img/user-user.png" class="header__img" alt="foto_curso">
+                        <img src="./assets/img/user-user.png" class="header__img" cellspacing="0" width="auto" alt="foto_curso">&nbsp;&nbsp;<span style="position: relative; top: -15px;">ESTUDIANTE</span>
 
                     <?php } ?>
 
                     <!--Empresa-->
                     <?php if ($_SESSION['privilegio'] == 4) {?>
 
-                        <img src="./assets/img/user-emp.png" class="header__img" alt="foto_curso">
+                        <img src="./assets/img/user-emp.png" class="header__img" cellspacing="0" width="auto" alt="foto_curso"> EMPRESA
 
                     <?php } ?>
 
                     <!--Usuario - Empresa-->
                     <?php if ($_SESSION['privilegio'] == 5) {?>
 
-                        <img src="./assets/img/user-emp.png" class="header__img" alt="foto_curso">
+                        <img src="./assets/img/user-emp.png" class="header__img" cellspacing="0" width="auto" alt="foto_curso">&nbsp;&nbsp;<span style="position: relative; top: -15px;">USUARIO - EMPRESA</span>
                        
                     <?php } ?>
 
                     <!--Superadmin-->
                     <?php if ($_SESSION['privilegio'] == 6) {?>
 
-                        <img src="./assets/img/user-sup-admin.png" class="header__img" alt="foto_curso">
+                        <img src="./assets/img/user-sup-admin.png" class="header__img" cellspacing="0" width="auto" alt="foto_curso">&nbsp;&nbsp;<span style="position: relative; top: -15px;">SUPER ADMINISTRADOR</span>
 
                     <?php } ?>
 
 
 
-
-
-
-
-                    <!--if ($_SESSION['privilegio'] == 1) {
-                        $privilegioNombre = 'Administrador';
-                    } else if ($_SESSION['privilegio'] == 2) {
-                        $privilegioNombre = 'Profesor';
-                    } else if ($_SESSION['privilegio'] == 3) {
-                        $privilegioNombre = 'normal';
-                    } else if ($_SESSION['privilegio'] == 4) {
-                        $privilegioNombre = 'empresa';
-                    } else if ($_SESSION['privilegio'] == 5) {
-                        $privilegioNombre = 'user';
-                    } else if ($_SESSION['privilegio'] == 6) {
-                        $privilegioNombre = 'superadmin';
-                    }
-                    echo "<center>" . $privilegioNombre;-->
 
                     <?php   
 
