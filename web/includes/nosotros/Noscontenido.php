@@ -167,7 +167,7 @@
                     <div class=" card-header border-0" data-toggle="collapse" href="#collapseFive">
                         <a class=" collapsed card-text" style="font-weight: bold;"> 
                             ¿Los Certificados están reconocidos?
-                            <i class="list_arrow fas fa-angle-down rotate-icon fa-2x" style="float:right;"></i>
+                            <i class="list_a fas fa-angle-down rotate-icon fa-2x" style="float:right;"></i>
                         </a>
                     </div>
                     <div id="collapseFive" class="collapse" data-parent="#accordion">
@@ -181,16 +181,16 @@
                     </div>
                 </div>
                 <style>
-                    .fa-angle-down .list_arrow{
+                    .fa-angle-down .list_a{
                         transform: rotate(180deg);
                     }
 
-                    .list_arrow{
+                    .list_a{
                         transition: transform .3s;
                     }
                 </style>
                <script>
-                   let listElements = document.querySelectorAll('.list__button--click');
+                   let listElements = document.querySelectorAll('.list__button');
 
                    listElements.forEach(listElement => {
                        listElement.addEventListener('click', ()=>{
