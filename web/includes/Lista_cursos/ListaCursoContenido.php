@@ -137,7 +137,7 @@
                                     <!--Link "Ver información"-->
                                     <div class="container-card-link" style="margin: auto;">
                                         <a href="<?php echo $paginaRed ?>.php?id=<?php echo $dato['idCurso']; ?><?php if(!empty($dato2)){?>&idCI=<?php echo $dato2['id_cursoInscrito']; }?>">
-                                        <center><strong>Ver informaci&oacute;n -></strong></center>
+                                        <center><strong>Leer Más</strong></center>
                                         </a>
                                     </div>
                                     
@@ -384,7 +384,7 @@
                             <div class="container-card-link" style="margin: auto;">
 
                             <a href="<?php echo $paginaRed ?>.php?id=<?php echo $dato['idCurso']; ?><?php if(!empty($dato2)){?>&idCI=<?php echo $dato2['id_cursoInscrito']; }?>">
-                                <center><strong>Ver Informaci&oacute;n -> </strong> </center>
+                                <center><strong>Leer Más</strong> </center>
                             </a>
 
                             </div>

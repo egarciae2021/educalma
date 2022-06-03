@@ -5,7 +5,7 @@ ob_start();
 <?php include_once 'includes/dashboard/head1.php' ?>
 
 <head>
-<link rel="shortcut icon" href="assets/images/logo_edu.png">
+    <link rel="shortcut icon" href="assets/images/logo_edu.png">
 </head>
 
 <body>
