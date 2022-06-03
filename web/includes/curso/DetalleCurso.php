@@ -364,18 +364,13 @@ body {
                     $i = 0;
                     while ($modulosC = $q6->fetch(PDO::FETCH_ASSOC)) {
                     ?>
-                        <div id="accordion">
+                        <div id="accordion" class="accordion">
                             <div class="card">
-
-
-
                                 <!-- ////////////////// -->
-                                <a style="background: #7c83fd;" class="card-header card-link" data-toggle="collapse" href="<?php echo '#collapse' . $i  ?>" aria-controls="collapse">
-                                    <span><i class="fas fa-sort-down mr-3"></i>Módulo: <?php echo $modulosC['nombreModulo'] ?></span>
-                                </a>
-
-
-
+                                <div style="background: #7c83fd; cursor:pointer;" class="card-header border-0" data-toggle="collapse"  href="<?php echo '#collapseOne' . $i  ?>" aria-controls="collapse1">
+                                    <span><i class="fas fa-sort-down mr-3 cart-text"></i>Módulo: <?php echo $modulosC['nombreModulo'] ?></span>
+                                </div>
+                                
                                 <?php
 
                                 $idModuloC = $modulosC['idModulo'];
@@ -388,16 +383,20 @@ body {
 
                                 while ($temasC = $q7->fetch(PDO::FETCH_ASSOC)) {
                                 ?>
-                                    <div id="<?php echo 'collapse' . $i ?>" class="collapse show" data-parent="#accordion">
-                                        <!-- ////////////////// -->
-                                        <div id="nombreTemaCss" style="background: white;" class="card-body">
-                                            Tema: <?php echo $temasC['nombreTema'] ?>
+                                    <div id="<?php echo 'collapseOne' . $i ?>" class="collapse" data-parent="#accordion">
+                                        <div class="card-body py-0" id="nombreTemaCss" style="background: white;" >
+                                            
+                                            <ul class="px-0">
+                                                <ul class="card-body pb-3" >
+                                                    Tema: <?php echo $temasC['nombreTema'] ?>
+                                                </ul>
+                                            </ul>
                                         </div>
                                     </div>
                                 <?php
                                 }
                                 ?>
-                                <div id="<?php echo 'collapse' . $i  ?>" class="collapse" data-parent="#accordion">
+                                <div id="<?php echo 'collapseOne' . $i  ?>" class="collapse" data-parent="#accordion">
 
 
 
