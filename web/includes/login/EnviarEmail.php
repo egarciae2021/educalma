@@ -25,7 +25,7 @@
           <a href="index.php">
             <img src="./assets/images/logo_educalma.png" class="logo-img" alt="image">
           </a>
-          <h1 class="font-weight-bold py-3" style="font-weight: 900;">Reestablecer contraseña!</h1>
+          <h1 class="font-weight-bold py-3" style="font-weight: 900;">Reestablecer contraseña!111</h1>
           <!-- <h4>¡Que bueno verte de nuevo por aquí!</h4> -->
           <form id="formEnviarEmail" action="./includes/login/checkenviar.php" onsubmit="cargandoEnviar()" method="POST">
 
