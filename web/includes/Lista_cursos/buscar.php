@@ -12,7 +12,7 @@ require_once '../../database/databaseConection.php';
                 <?php
                 $pdo2 = Database::connect();
                 $busqueda = $_POST['buscar'];
-                $sql = "SELECT * FROM cursos WHERE permisoCurso=1 AND nombreCurso LIKE '%" . $busqueda . "%'";
+                $sql = "SELECT * FROM cursos WHERE estado=1 AND permisoCurso=1 AND nombreCurso LIKE '%" . $busqueda . "%'";
                 $q = $pdo2->query($sql);
                 $q->execute(array());
                 $contar = $q->rowCount();
