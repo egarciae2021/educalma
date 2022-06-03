@@ -161,7 +161,7 @@ if (!isset($_GET['pag'])) {
       <div class="row">
         <?php
           $pdo= Database::connect();
-          $sql = 'SELECT * FROM cursos c inner join categorias a on a.idCategoria=c.categoriaCurso where c.permisoCurso=1 ORDER BY idCurso DESC LIMIT 3';
+          $sql = 'SELECT * FROM cursos c inner join categorias a on a.idCategoria=c.categoriaCurso where c.permisoCurso=1 AND estado=1 ORDER BY idCurso DESC LIMIT 3';
           $query = $pdo->prepare($sql);
           $query->execute();
           $conteo=0;

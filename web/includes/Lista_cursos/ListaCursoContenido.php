@@ -36,7 +36,7 @@
                 $pdo = Database::connect();
                 error_reporting(0);
                 $idcategoria = $_GET['idcate'];
-                $sql2 = "SELECT * FROM cursos WHERE permisoCurso=1 ORDER BY cursos.idCurso DESC";
+                $sql2 = "SELECT * FROM cursos WHERE permisoCurso=1 AND estado=1 ORDER BY cursos.idCurso DESC";
                 $query2 = $pdo->prepare($sql2);
                 $query2->execute();
                 $contar = $query2->rowCount();
@@ -51,7 +51,7 @@
                 }
 
                 $inicio = ($_GET['pag'] - 1) * $cantidad_paginas;
-                $sql3 = "SELECT * FROM cursos where permisoCurso=1 order by idCurso desc LIMIT 3";
+                $sql3 = "SELECT * FROM cursos where permisoCurso=1 AND estado=1 order by idCurso desc LIMIT 3";
                 // SELECT * FROM `cursos`order by idCurso DESC LIMIT 3 
 
                 $query3 = $pdo->prepare($sql3);
@@ -282,7 +282,7 @@
                 <?php
                 error_reporting(0);
                 $idcategoria = $_GET['idcate'];
-                $sql2 = "SELECT * FROM cursos WHERE permisoCurso=1";
+                $sql2 = "SELECT * FROM cursos WHERE permisoCurso=1 AND estado=1";
                 $query2 = $pdo->prepare($sql2);
                 $query2->execute();
                 $contar = $query2->rowCount();
@@ -299,7 +299,7 @@
                     }
                 }
                 $inicio = ($_GET['pag'] - 1) * $cantidad_paginas;
-                $sql3 = "SELECT * FROM cursos WHERE permisoCurso=1 LIMIT :iniciar,:narticulos";
+                $sql3 = "SELECT * FROM cursos WHERE permisoCurso=1 AND estado=1 LIMIT :iniciar,:narticulos";
 
                 $query3 = $pdo->prepare($sql3);
                 $query3->bindParam(':iniciar', $inicio, PDO::PARAM_INT);
