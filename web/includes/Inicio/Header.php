@@ -17,17 +17,9 @@ require_once 'database/databaseConection.php';
                         <a href="nosotros.php">Nosotros</a>
                     </li>
                     <li class="nav-link" style="--i: .6s">
-                    <!-- <?php
-                    //if(isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)){
-                    ?> -->
-                        <a href="ListaCursos.php?pag=1">Cursos</a>
-                    <!-- <?php
-                    //}else{
-                    ?>
-                        <a href="login.php">Cursos</a>
-                    <?php
-                    //}   
-                    ?> -->
+               
+                    <a href="ListaCursos.php?pag=1">Cursos</a>
+            
                     </li>
                 </ul>
                 <?php
@@ -38,17 +30,9 @@ require_once 'database/databaseConection.php';
                         <a href="nosotros.php">Nosotros</a>
                     </li>
                     <li class="nav-link" style="--i: .6s">
-                    <!-- <?php
-                    //if(isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)){
-                    ?> -->
+               
                         <a href="ListaCursos.php?pag=1">Cursos</a>
-                    <!-- <?php
-                    //}else{
-                    ?>
-                        <a href="login.php">Cursos</a>
-                    <?php
-                    //}   
-                    ?> -->
+                    
                     </li>
                     <div class="log-sign" style="--i: 1.8s">
                         <a href="iniciosesion.php" class="btn transparent">Iniciar Sesi&oacute;n</a>
@@ -79,7 +63,7 @@ require_once 'database/databaseConection.php';
 
 
 
-            if (isset($_SESSION['Logueado']) && $_SESSION['Logueado'] === true && $_SESSION['privilegio'] != 1 && $_SESSION['privilegio'] != 6) {
+            if (isset($_SESSION['Logueado']) && $_SESSION['Logueado'] === true && $_SESSION['privilegio'] != 1 && $_SESSION['privilegio'] != 6 && $_SESSION['privilegio'] != 2) {
 
 
 
@@ -109,9 +93,9 @@ require_once 'database/databaseConection.php';
                                     <li class="dropdown-link">
                                         <a href="user-sidebar.php">Dashboard</a>
                                     </li>
-                                    <li class="dropdown-link">
+                                    <!--<li class="dropdown-link">
                                         <a href="sidebarCursos.php">Cursos Comprados</a>
-                                    </li>
+                                    </li>-->
                                     <!-- <li class="dropdown-link">
                                         <a href="InfoCurso.php?pag=1">Información Cursos</a>
                                     </li> -->
@@ -132,7 +116,7 @@ require_once 'database/databaseConection.php';
 
 
             <?php
-            } else if(isset($_SESSION['Logueado']) && $_SESSION['Logueado'] === true && $_SESSION['privilegio'] == 1){
+            } else if(isset($_SESSION['Logueado']) && $_SESSION['Logueado'] === true && $_SESSION['privilegio'] == 1 || $_SESSION['privilegio'] == 6 || $_SESSION['privilegio'] == 2){
 
 
 
@@ -156,9 +140,11 @@ require_once 'database/databaseConection.php';
                             <a href="#"><?php echo $nom ?><i class="fas fa-caret-down"></i></a>
                             <div class="dropdown">
                                 <ul>
+                                    <!--
                                     <li class="dropdown-link">
                                         <a href="user-sidebar.php">Dashboard</a>
                                     </li>
+                                    -->
                                     
                                     <!--<li class="dropdown-link">
                                         <a href="sidebarCursos.php">Cursos Comprados</a>

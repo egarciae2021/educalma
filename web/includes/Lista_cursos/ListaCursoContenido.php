@@ -5,7 +5,7 @@
 
 
 <!------------------------------------------------------------->
-<div class="container-fluid px-0">
+<div style="position: relative; top: -70px;" class="container-fluid px-0">
 
 
     <!-- CURSOS PUBLICADOS MÁS DESTACADOS -->
@@ -188,7 +188,7 @@
                         <div class="search_wrap search_wrap_3">
                             <div class="search_box">
                                 <input type="text" class="input" id="buscar" name="buscar" placeholder="Busca un curso publicado...">
-                                <div class="btn btn_common">
+                                <div style="position: relative; top: -15px; float: right;" class="btn btn_common">
                                     <i class="fas fa-search"></i>
                                 </div>
                             </div>
@@ -257,13 +257,11 @@
 
 
 
-
 <!--CURSOS PUBLICADOS (aquí está la lista de cursos)-->
-<div class="container-fluid px-0" id="result">
+<div style="position: relative; top: -90px;" class="container-fluid px-0" id="result">
 
 
     <div class="container-card-course">
-
 
 
 
@@ -458,7 +456,7 @@
 
 
 <!--PAGINADOR-->
-<div class="row container py-4" style="margin: 0 auto;">
+<div class="row container py-4" style="margin: 0 auto; position: relative; top: -80px;">
     <div class="col-12 mx-auto">
         <nav aria-label="Page navigation calma">
             <ul class="pagination justify-content-end">
