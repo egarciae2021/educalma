@@ -61,7 +61,7 @@
                 </div>
             </div>
             <div class="accordion" id="accordion" style="font-family:'Work Sans',sans-serif;">
-                <div class="list__button--click card border-0 rounded my-4 card-questions-box">
+                <div class="list__button card border-0 rounded my-4 card-questions-box">
                     <div class="card-header border-0" data-toggle="collapse" href="#collapseOne" aria-controls="collapse1">
                         <!-- <style>
                             .fa-angle-down{transition: transform .3s;}
@@ -95,7 +95,7 @@
                         </script> -->
                         <a class="card-text" style="font-weight: bold;">
                             ¿Cómo puedo inscribirme a un curso de EDUCALMA?
-                            <i class=" list_arrow fas fa-angle-down rotate-icon fa-2x" style="float:right;"></i>
+                            <i class="  fas fa-angle-down rotate-icon fa-2x list_a" style="float:right;"></i>
 
                         </a>
                     </div>
@@ -110,10 +110,10 @@
                     </div>
                 </div>
                         <div class="card border-0 rounded mb-4 card-questions-box">
-                    <div class="list__button--click card-header border-0" data-toggle="collapse" href="#collapseTwo">
+                    <div class="list__button card-header border-0" data-toggle="collapse" href="#collapseTwo">
                         <a class="collapsed card-text" style="font-weight: bold;">
                             ¿Cuántas sesiones tiene un curso?
-                            <i class="list_arrow fas fa-angle-down rotate-icon fa-2x" style="float:right;"></i>
+                            <i class="list_a fas fa-angle-down rotate-icon fa-2x" style="float:right;"></i>
                         </a>
                     </div>
                     <div id="collapseTwo" class="collapse mt-0" data-parent="#accordion">
@@ -127,11 +127,11 @@
                     </div>
                 </div>
 
-                <div class="list__button--click card border-0 rounded mb-4 card-questions-box">
+                <div class="list__button card border-0 rounded mb-4 card-questions-box">
                     <div class="card-header border-0" data-toggle="collapse" href="#collapseThree">
                         <a class="collapsed card-text" style="font-weight: bold;">
                             ¿Cuántas son las preguntas que tiene el test?
-                            <i class="list_arrow fas fa-angle-down rotate-icon fa-2x" style="float:right;"></i>
+                            <i class="list_a fas fa-angle-down rotate-icon fa-2x" style="float:right;"></i>
                         </a>
                     </div>
                     <div id="collapseThree" class="collapse" data-parent="#accordion">
@@ -145,11 +145,11 @@
                     </div>
                 </div>
 
-                <div class="list__button--click card border-0 rounded mb-4 card-questions-box">
+                <div class="list__button card border-0 rounded mb-4 card-questions-box">
                     <div class="card-header border-0" data-toggle="collapse" href="#collapseFour">
                         <a class="collapsed card-text" style="font-weight: bold;">
                             ¿Tiene un pago para inscribirse?
-                            <i class="list_arrow fas fa-angle-down rotate-icon fa-2x" style="float:right;"></i>
+                            <i class="list_a fas fa-angle-down rotate-icon fa-2x" style="float:right;"></i>
                         </a>
                     </div>
                     <div id="collapseFour" class="collapse" data-parent="#accordion">
@@ -163,11 +163,11 @@
                     </div>
                 </div>
 
-                <div class="list__button--click card border-0 rounded mb-4 card-questions-box">
+                <div class="card border-0 rounded mb-4 card-questions-box">
                     <div class=" card-header border-0" data-toggle="collapse" href="#collapseFive">
                         <a class=" collapsed card-text" style="font-weight: bold;"> 
                             ¿Los Certificados están reconocidos?
-                            <i class="list_a fas fa-angle-down rotate-icon fa-2x" style="float:right;"></i>
+                            <i class="fas fa-angle-down rotate-icon fa-2x" style="float:right;"></i>
                         </a>
                     </div>
                     <div id="collapseFive" class="collapse" data-parent="#accordion">
@@ -181,16 +181,16 @@
                     </div>
                 </div>
                 <style>
-                    .fa-angle-down .list_a{
+                    .fa-angle-down .rotate-icon{
                         transform: rotate(180deg);
                     }
 
-                    .list_a{
+                    .rotate-icon{
                         transition: transform .3s;
                     }
                 </style>
                <script>
-                   let listElements = document.querySelectorAll('.list__button');
+                   const listElements = document.querySelectorAll('.card');
 
                    listElements.forEach(listElement => {
                        listElement.addEventListener('click', ()=>{
