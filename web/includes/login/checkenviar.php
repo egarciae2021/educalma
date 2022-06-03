@@ -15,8 +15,7 @@
     $port = "465";
     $username = 'notificaciones.mail.1S@gmail.com';
     $password = 'amaterasu1';
-
-    $variable = "te quelo";
+ 
 
     $subject = "test";
   
@@ -48,6 +47,8 @@
                 if($enlace){
                     $email_user = $_POST["email_user"];
                     $querys=("Select * from usuarios where email ='".$email_user."'");
+                    $querys2= ("Update recover_password SET Estado = 0 where Estado = 1 and correo='".$email_user."'");
+                    $resultado=$enlace->query($querys2);
                     $resultado = $enlace->query($querys); 
                     $num_filas = mysqli_num_rows($resultado);
 
