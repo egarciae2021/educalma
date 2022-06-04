@@ -93,7 +93,7 @@
     
 </head>
 
-<body id="home" data-spy="scroll" data-target="#navbar-wd" data-offset="98">
+<body style="background-color: white;" id="home" data-spy="scroll" data-target="#navbar-wd" data-offset="98">
 
     <?php //include_once 'includes/inicio/Loader.php' ?>
 
