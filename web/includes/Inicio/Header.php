@@ -35,8 +35,8 @@ require_once 'database/databaseConection.php';
                     
                     </li>
                     <div class="log-sign" style="--i: 1.8s">
-                        <a href="iniciosesion.php" class="btn transparent">Iniciar Sesi&oacute;n</a>
-                        <a href="registroUsuario.php" class="btn solid">Registrate!</a>
+                        <a href="iniciosesion.php" class="btn transparent">Iniciar Sesión</a>
+                        <a href="registroUsuario.php" class="btn solid">Regístrate!</a>
                     </div>
                 </ul>
                 <?php

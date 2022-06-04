@@ -402,9 +402,15 @@ header.btn.solid:hover {
     display: none;
   }
 
-  .nav-link:hover > .dropdown,
+  li.nav-link > .dropdown,
   .dropdown-link:hover > .dropdown {
     display: block;
+  }
+
+  .nav-link {
+
+    position: relative;
+    left: -60px;
   }
 
   .nav-link:hover > a > i,

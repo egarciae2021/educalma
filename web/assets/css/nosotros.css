@@ -2,6 +2,7 @@
     @import url("https://fonts.googleapis.com/css2?family=Old+Standard+TT&display=swap");
     @import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap");
     @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap");
+    
     * {
         margin: 0;
         padding: 0;
@@ -80,6 +81,62 @@
         width: 800px;
     }
     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     @media only screen and (max-width: 1458px) {
         .container-panel-image-nosotros img {
             width: 880px;
@@ -133,6 +190,8 @@
         .title-panel {
             font-size: 52px;
             transition: all 0.3s ease;
+            /*position: relative;
+            top: 500px;*/
         }
         .description-panel {
             font-size: 16px;
@@ -205,13 +264,92 @@
         }
     }
     
+
+
+
+
     @media (max-width: 360px) {
         .title-panel {
             font-size: 42px;
             transition: all 0.3s ease;
+
+            position: relative; 
+            top: -120px;
+        }
+        .description-panel {
+            position: relative; 
+            top: -120px;
+        }
+        .button-panel {
+            position: relative; 
+            top: -120px;
+        }
+        .container-video {
+            position: relative; 
+            top: -140px;
+        }
+        .container-questions {
+            position: relative; 
+            top: -180px;
         }
     }
     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     .container-video {
         background-image: url(../images/nosotros.png);
         background-repeat: no-repeat;
