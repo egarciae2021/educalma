@@ -77,7 +77,7 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
 
                         <div style="position: relative; left: 8px;" class="nav__dropdown-dashboard">
 
-                            <a href="sidebarCursos.php" class="nav__link-dashboard">
+                            <a class="nav__link-dashboard">
                                 <i class="far fa-folder-open nav__icon-dashboard" style="color:#F1C40F;"></i>
                                 <!-- <i class="far fa-bookmark nav__icon"></i> -->
                                 <span style="position: relative; left: -3px;" class="nav__name-dashboard">Cursos</span>
@@ -170,7 +170,7 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
 
                             </div> -->
                             <div style="position: relative; left: 8px;" class="nav__dropdown-dashboard">
-                                <a alt="Empresas" class="nav__link-dashboard" style="cursor:pointer;">
+                                <a alt="Empresas" class="nav__link-dashboard">
                                     <i class="fas fa-city" style="color:#6495ED;"> </i>
                                     <span style="position: relative; left: -8px;" class="nav__name-dashboard">&nbsp;&nbsp; Empresas</span>
                                     <!-- <i class='bx bx-chevron-down nav__icon nav__dropdown-icon'></i> -->
@@ -200,7 +200,7 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                         ?>
 
                             <a style="position: relative; left: 12px;" href="reporteUsuario.php" class="nav__link-dashboard">
-                                <i class="fas fa-clipboard nav__icon-dashboard" style="color:#E6B0AA;"></i>
+                                <i class="fas fa-clipboard nav__icon-dashboard" style="color: #424242;"></i>
                                 <span class="nav__name-dashboard">Reporte</span>
                             </a>
 
