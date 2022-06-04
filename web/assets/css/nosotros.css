@@ -265,33 +265,11 @@
     }
     
 
-
-
-
     @media (max-width: 360px) {
         .title-panel {
             font-size: 42px;
-            transition: all 0.3s ease;
-
-            position: relative; 
-            top: -120px;
-        }
-        .description-panel {
-            position: relative; 
-            top: -120px;
-        }
-        .button-panel {
-            position: relative; 
-            top: -120px;
-        }
-        .container-video {
-            position: relative; 
-            top: -140px;
-        }
-        .container-questions {
-            position: relative; 
-            top: -180px;
-        }
+            transition: all 0.3s ease;       
+        }    
     }
     
 

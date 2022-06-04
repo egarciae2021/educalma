@@ -17,7 +17,7 @@
 <?php include_once 'includes/nosotros/Noscontenido.php' ?>
 
 <?php include_once 'includes/Inicio/Footer.php' ?>
-<script src="assets/js/home.js"></script>
 
+<script src="assets/js/home.js"></script>
 
 </body>
