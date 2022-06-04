@@ -8,7 +8,8 @@ ob_start();
 <link rel="shortcut icon" href="assets/images/logo_edu.png">
 </head>
 
-<body>
+<body style="background: white;">
+
     <?php include_once 'includes/dashboard/header1.php' ?>
 
     <?php include_once 'includes/dashboard/body1.php' ?>

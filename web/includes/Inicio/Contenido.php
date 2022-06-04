@@ -314,8 +314,7 @@ if (!isset($_GET['pag'])) {
     <h2 class="text-center">Educalma para empresas</h2>
     <br>
     <ul>
-      <li style="color:#5FB2EF;"><i class="fas fa-check fa-lg mr-3 " style="color:#7249F3;"></i>Mide y analiza los resultados de tu equipo con nuestro servicio.
-      </li>
+      <li style="color:#5FB2EF;"><i class="fas fa-check fa-lg mr-3 " style="color:#7249F3;"></i>Mide y analiza los resultados de tu equipo con nuestro servicio.</li>
       <li style="color:#5FB2EF;"><i class="fas fa-check fa-lg mr-3" style="color:#7249F3;"></i>Acompañamiento y seguimiento por un Ejecutivo de Cuenta.</li>
       <li style="color:#5FB2EF;"><i class="fas fa-check fa-lg mr-3" style="color:#7249F3;"></i>Certificaciones por cada curso del plan completado.</li>
     </ul>
@@ -327,24 +326,49 @@ if (!isset($_GET['pag'])) {
 
         <!--<input type="email" placeholder="Escribe tu correo empresarial" id="txtEmail" />-->
         <br>
-        <button id="btnAction" style="position: relative; background-color:#737BF1; font-weight:bold;">MÁS INFORMACIÓN</button>
-      <br>
+          <button id="btnAction" style="position: relative; background-color:#737BF1; font-weight:bold;">MÁS INFORMACIÓN</button>
+        <br>
+
       <!--</div>-->
       <span class="msg-error">Debe ser un correo corporativo.</span>
     </div>
   </div>
 
-  <div class="send-data col-12 my-auto">
+
+
+
+
+
+
+
+
+
+
+
+  
+  <div class="send-data col-12 my-auto" id="sendData">
+
     <div class="box-rotate my-5" id="boxRotate">
-      <div class="front w-100">
+      
+
+
+
+      <div class="front w-100" id="front">
+        
         <div class="box-image d-flex align-items-center justify-content-center w-100">
           &nbsp;&nbsp; <img class="img-fluid" src="./assets/images/EDU-EMP.png" alt="" />
         </div>
+
       </div>
+
+
+
+
+      
       <div class="back">
         <div class="header w-100">
           <div class="box-image">
-            <<img src="./assets/images/Rectangle 51.png" alt="" />
+            <img src="./assets/images/Rectangle 51.png" alt="" />
           </div>
           <div class="box-text">
             <h3>CAPACITA A TU EQUIPO</h3>
@@ -516,6 +540,17 @@ if (!isset($_GET['pag'])) {
       </div>
     </div>
   </div>
+
+
+
+
+
+
+
+
+
+
+
 </div>
 <!-- EMPRESAS SHEYLA -->
 <!-- <div class="container container-fluid-empresa" style="border: 1px solid red;">

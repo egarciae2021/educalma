@@ -12,27 +12,14 @@
     top: 30px;
   }
   
-  @media (max-width: 940px) {
+  @media (max-width: 768px) {
       
     .footer--light {
 
       background-color: #e7f4ff;
-      position: relative; 
-      top: 180px;
     }
       
   }
-
-  @media (max-width: 1100px) {
-      
-      .footer--light {
-  
-        background-color: #e7f4ff;
-        position: relative; 
-        top: 140px;
-      }
-        
-    }
 
 </style>
 

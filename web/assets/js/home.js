@@ -26,31 +26,26 @@ document.addEventListener("DOMContentLoaded", () => {
     return exists;
   }
 
-  // Verificar si es correo corporativo
+  // 
   $("#btnAction").click((e) => {
     
-    //if (!validEmail()) {
-      
-      
-      //if (validarEmail($("#txtEmail").val())) {
-
-
-        //window.location.href = "./#boxRotate";
         scrollTo(scrollX, scrollY - 100);
+
         $(".back input").first().focus();
+
         $("#boxRotate").addClass("active");
+
         $($("")[0]).removeClass("show")
+
         setTimeout(function () {
+
           $("#boxRotate > .front").remove();
+
         }, 2000);
 
-
-      //}
-
-    //} else
-    
-      //$($(".box-email > .msg-error")[0]).addClass("show")
   })
+
+
 
   // Mostrar Paises
   $("#btnPais").click(() => {
