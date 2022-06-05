@@ -28,7 +28,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
     </head>
-    <body style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+    <body>
         <header>
             <!--Con word-wrap: break-word; evitamos el desbordamiento del contenido del div.-->
             <div style="color: white; text-align: center; font-family: arial; background-color: #7c83fd; padding: 30px; word-wrap: break-word; font-size: 25px;">
@@ -46,7 +46,7 @@
                 </p>
     
                 <div style="text-align: center; background-color: #7c83fd; padding: 10px; width: 180px; margin-left: 20px;">
-                    <a style="text-decoration: none; color: white; padding: 10px;" href=http://20.226.29.168/cambiar_contrase%C3%B1a.php?token='.$tok.' class="es-button" target="_blank">Restablecer contraseña</a>
+                    <a style="text-decoration: none; color: white; padding: 10px;" href=http://20.226.29.168/educalma/cambiar_contrase%C3%B1a.php?token='.$tok.' class="es-button" target="_blank">Restablecer contraseña</a>
                 </div>
                 
                 <p style="color: #BBBBBB; font-family: arial; font-size: 14px; margin-left: 20px; margin-bottom: 20px;"><i>Ignore este correo electrónico si no solicitó un cambio de contraseña.</i></p>
@@ -54,7 +54,7 @@
     
         </section>
         <footer>
-            <div style="background-color: #7c83fd; padding: 30px 170px 30px;"><span>Company &#169; All Rights Reserved</span> </div>
+            <div style="background-color: #7c83fd; padding: 30px 120px 30px;"><span>Company &#169; All Rights Reserved</span> </div>
         </footer>
         
     </body>
