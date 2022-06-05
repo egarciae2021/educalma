@@ -173,13 +173,21 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                      <td></td>
-                                      <td></td>
-                                      <td></td>
-                                      <td></td>
-                                      <td></td>
-                                    </tr>
+                                  <?php             
+                                    $pdo4 = Database::connect();
+                                    $sql4 = "SELECT * FROM `aprobados`";
+                                    foreach($pdo->query($sql4) as $aprobados){ //= $q4->fetch(PDO::FETCH_ASSOC)
+                                      echo '<tr class="h-100 justify-content-center align-items-center">';
+                                      echo '
+                                          <td>'. $aprobados['nombres'].'</td>
+                                          <td>'. $aprobados['nombreCurso'].'</td> 
+                                          <td>'. $aprobados['avance'].'</td> 
+                                          <td>'. $aprobados['nota'].'</td>
+                                          <td>'. $aprobados['fecha'].'</td>
+                                      ';
+                                          }
+                                    Database::disconnect();
+                                  ?>  
                                 </tbody>
                             </table>
                         </div>
