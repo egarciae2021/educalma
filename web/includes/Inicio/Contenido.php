@@ -80,7 +80,7 @@ if (!isset($_GET['pag'])) {
           <h2>¿Qué te ofrece <span>Educalma</span>?</h2>
         </div>
       </div>
-      <div class="row">
+      <div class="row tresCards">
         <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
 
           <div class="card card-cursos">
@@ -137,7 +137,7 @@ if (!isset($_GET['pag'])) {
       <br>
       <div class="row">
         <div class="section-button">
-          <a href="ListaCursos.php?pag=1" type="button" class="btn btn-primary">
+          <a href="ListaCursos.php?pag=1" type="button" class="btn btn-primary btnCom">
             Comienza a ver los cursos
           </a>
         </div>
@@ -150,14 +150,18 @@ if (!isset($_GET['pag'])) {
 
 <!-- CARDS CURSOS -->
 <div class="container container-fluid-course">
+
+
   <div class="row">
     <div class="col-12">
       <div class="row">
         <div class="section-title">
           <div class=""></div>
-          <h2>Cursos destacados</h2>
+          <h2 class="txtCurDes" >Cursos destacados</h2>
         </div>
       </div>
+
+
       <div class="row">
         <?php
           $pdo= Database::connect();
@@ -188,6 +192,8 @@ if (!isset($_GET['pag'])) {
           }
               
         ?>
+
+
         <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 mb-4">
           <div class="card">
             <div class="row">
@@ -319,7 +325,7 @@ if (!isset($_GET['pag'])) {
   </div>
 </div>
 <!-- EMPRESAS -->
-<div class="container-bussines container">
+<div class="container-bussines container divEmp">
   <div class="info col-12 mt-5">
     <br><br>
     <h2 class="text-center">Educalma para empresas</h2>
