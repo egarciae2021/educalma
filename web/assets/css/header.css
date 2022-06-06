@@ -306,6 +306,10 @@ header.btn.solid:hover {
   #check {
     display: block;
   }
+
+  .log-sign .btnIni {
+    margin-left: -50px;
+  }
   @media (min-width: 1000px) {
     .container-header {
       max-width: 65rem;
@@ -315,7 +319,11 @@ header.btn.solid:hover {
       position: relative;
       background-color:none;
     }
+
+    .log-sign .btnIni {
+      margin-left: -50px;
     }
+  }
     @media (min-width: 320px) {
       .container-header {
         height: 80px;
@@ -326,14 +334,18 @@ header.btn.solid:hover {
         position: relative;
         background-color:#e7f4ff;
         position: relative;
-    top: -10px;
+        top: -10px;
 
       }
       .logo-container a img{
         position: relative;
         top: 5px;
       }
+
+      .log-sign .btnIni {
+        margin-left: -50px;
       }
+    }
     
 
 
