@@ -614,6 +614,8 @@
     border: 2px solid #33c6e7;
 }
 
+
+
 @media (max-width: 1173px) and (min-width: 992px) {
     .container-fluid-course .row .card .row h4 {
         font-size: 16px;
