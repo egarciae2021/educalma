@@ -40,20 +40,20 @@ ob_start();
                     <!--Administrador-->
                     <?php if ($_SESSION['privilegio'] == 1) {?>
 
-                        <img src="./assets/img/user-admi.jpg" class="header__img" cellspacing="0" width="auto" alt="foto_curso">&nbsp;&nbsp;<h2 style="float: right; margin:0; padding: 0; font-family: cursive;">ADMINISTRADOR</h2>
+                        <img src="./assets/img/user-admi.jpg" class="header__img" cellspacing="0" width="auto" alt="foto_curso">
                
                     <?php } ?>
 
                     <!--Profesor-->
                     <?php if ($_SESSION['privilegio'] == 2) {?>
 
-                        <img src="./assets/img/user-prof.png" class="header__img" cellspacing="0" width="auto" alt="foto_curso">&nbsp;&nbsp;<h2 style="float: right; margin:0; padding: 0; font-family: cursive;">PROFESOR</h2>
+                        <img src="./assets/img/user-prof.png" class="header__img" cellspacing="0" width="auto" alt="foto_curso">
                     <?php } ?>
 
                     <!--Usuario Normal-->
                     <?php if ($_SESSION['privilegio'] == 3) {?>
 
-                        <img src="./assets/img/user-user.png" class="header__img" cellspacing="0" width="auto" alt="foto_curso">&nbsp;&nbsp;<h2 style="float: right; margin:0; padding: 0; font-family: cursive;">ESTUDIANTE</h2>
+                        <img src="./assets/img/user-user.png" class="header__img" cellspacing="0" width="auto" alt="foto_curso">
                         
                         
                     <?php } ?>
@@ -61,21 +61,21 @@ ob_start();
                     <!--Empresa-->
                     <?php if ($_SESSION['privilegio'] == 4) {?>
 
-                        <img src="./assets/img/user-emp.png" class="header__img" cellspacing="0" width="auto" alt="foto_curso">&nbsp;&nbsp;<h2 style="float: right; margin:0; padding: 0; font-family: cursive;">EMPRESA</h2>
+                        <img src="./assets/img/user-emp.png" class="header__img" cellspacing="0" width="auto" alt="foto_curso">
 
                     <?php } ?>
 
                     <!--Usuario - Empresa-->
                     <?php if ($_SESSION['privilegio'] == 5) {?>
 
-                        <img src="./assets/img/user-emp.png" class="header__img" cellspacing="0" width="auto" alt="foto_curso">&nbsp;&nbsp;<h2 style="float: right; margin:0; padding: 0; font-family: cursive;">USUARIO - EMPRESA</h2>
+                        <img src="./assets/img/user-emp.png" class="header__img" cellspacing="0" width="auto" alt="foto_curso">
                        
                     <?php } ?>
 
                     <!--Superadmin-->
                     <?php if ($_SESSION['privilegio'] == 6) {?>
 
-                        <img src="./assets/img/user-sup-admin.png" class="header__img" cellspacing="0" width="auto" alt="foto_curso">&nbsp;&nbsp;<h2 style="float: right; margin:0; padding: 0; font-family: cursive;">SUPER ADMINISTRADOR</h2>
+                        <img src="./assets/img/user-sup-admin.png" class="header__img" cellspacing="0" width="auto" alt="foto_curso">
 
                     <?php } ?>
 
