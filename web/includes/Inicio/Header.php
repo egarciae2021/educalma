@@ -76,8 +76,9 @@ require_once 'database/databaseConection.php';
                         
                         </li>
 
-                        <div class="log-sign" style="--i: 1.8s">
-                            <a href="iniciosesion.php" class="btn transparent">Iniciar Sesión</a>
+                        <div class="log-sign" style="--i: 1.8s;">
+                            <a href="iniciosesion.php" class="btn transparent btnIni">Iniciar Sesión</a>
+                      
                             <a href="registroUsuario.php" class="btn solid">Regístrate!</a>
                         </div>
 
@@ -136,7 +137,7 @@ require_once 'database/databaseConection.php';
             ?>
 
             <!-- LOGUEADO -->
-            <div class="log-sign" style="--i: 1.8s; position: relative; top: -100px;">
+            <div class="log-sign" style="--i: 1.8s;">
                     <ul>
                         <li class="nav-link" style="--i: .85s">
                             
@@ -184,7 +185,7 @@ require_once 'database/databaseConection.php';
 
             <!-- LOGUEADO -->
             <div class="log-sign" style="--i: 1.8s">
-                    <ul style="margin-left: 25px;">
+                    <ul>
                         <li class="nav-link" style="--i: .85s">
                             <a href="#"><?php echo $nom ?>&nbsp;(Profesor)<i class="fas fa-caret-down"></i></a>
                             <div class="dropdown">
@@ -228,7 +229,7 @@ require_once 'database/databaseConection.php';
 
             <!-- LOGUEADO -->
             <div class="log-sign" style="--i: 1.8s">
-                    <ul style="margin-left: 25px;">
+                    <ul>
                         <li class="nav-link" style="--i: .85s">
                             <a href="#"><?php echo $nom ?>&nbsp;(Estudiante)<i class="fas fa-caret-down"></i></a>
                             <div class="dropdown">
@@ -272,7 +273,7 @@ require_once 'database/databaseConection.php';
 
             <!-- LOGUEADO -->
             <div class="log-sign" style="--i: 1.8s">
-                    <ul style="margin-left: 25px;">
+                    <ul>
                         <li class="nav-link" style="--i: .85s">
                             <a href="#"><?php echo $nom ?>&nbsp;(Empresa)<i class="fas fa-caret-down"></i></a>
                             <div class="dropdown">
@@ -316,7 +317,7 @@ require_once 'database/databaseConection.php';
 
             <!-- LOGUEADO -->
             <div class="log-sign" style="--i: 1.8s">
-                    <ul style="margin-left: 25px;">
+                    <ul>
                         <li class="nav-link" style="--i: .85s">
                             <a href="#"><?php echo $nom ?>&nbsp;(Usuario - Empresa)<i class="fas fa-caret-down"></i></a>
                             <div class="dropdown">
