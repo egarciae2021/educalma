@@ -80,7 +80,7 @@ if (!isset($_GET['pag'])) {
           <h2>¿Qué te ofrece <span>Educalma</span>?</h2>
         </div>
       </div>
-      <div class="row">
+      <div class="row tresCards">
         <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
 
           <div class="card card-cursos">
@@ -137,7 +137,7 @@ if (!isset($_GET['pag'])) {
       <br>
       <div class="row">
         <div class="section-button">
-          <a href="ListaCursos.php?pag=1" type="button" class="btn btn-primary">
+          <a href="ListaCursos.php?pag=1" type="button" class="btn btn-primary btnCom">
             Comienza a ver los cursos
           </a>
         </div>
@@ -150,14 +150,18 @@ if (!isset($_GET['pag'])) {
 
 <!-- CARDS CURSOS -->
 <div class="container container-fluid-course">
+
+
   <div class="row">
     <div class="col-12">
       <div class="row">
         <div class="section-title">
           <div class=""></div>
-          <h2>Cursos destacados</h2>
+          <h2 class="txtCurDes" >Cursos destacados</h2>
         </div>
       </div>
+
+
       <div class="row">
         <?php
           $pdo= Database::connect();
@@ -188,24 +192,29 @@ if (!isset($_GET['pag'])) {
           }
               
         ?>
+
+
         <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 mb-4">
           <div class="card">
             <div class="row">
               <div class="col-4 col-sm-4 col-md-12 col-lg-4 col-xl-4">
                 <div class="container-image-course">
-                  <img src="./assets/images/2232688.png" alt="" />
+                  <img class="imgCurso" style="" src="./assets/images/2232688.png" alt="" />
                 </div>
               </div>
               <div class="col-8 col-sm-8 col-md-12 col-lg-8 col-xl-8">
 
                 <h4><?php echo $dato['nombreCurso'];?></h4>
-                <h5 style="height:60px;"><?php echo substr($dato['descripcionCurso'], 0, 70) . "..."; ?></h5>
-                <a href="#" class="btn btn-success mt-2" data-toggle="modal" data-target=".bd-example-modal-lg<?php echo $dato['idCurso'];?>">ver
-                  informaci&oacute;n ></a>
+                <h5 style="height: 60px;"><?php echo substr($dato['descripcionCurso'], 0, 70) . "..."; ?></h5>
+                <a style="margin-top: 10px; margin-bottom: 10px;" href="#" class="btn btn-success mt-2" data-toggle="modal" data-target=".bd-example-modal-lg<?php echo $dato['idCurso'];?>">
+                ver información >
+                </a>
+                
               </div>
             </div>
           </div>
         </div>
+
         <!-- MODAL -->
 <div class="modal fade bd-example-modal-lg<?php echo $dato['idCurso'];?>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered  modal-xl">
@@ -221,10 +230,14 @@ if (!isset($_GET['pag'])) {
               <span class="button_close" aria-hidden="true">&times;</span>
           </div>
           <!-- col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6"> -->
-          <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+          <div class="">
+
+
+
+          
             <div class="cont_titulos">
-              <h4 class="titulo"><?php echo substr($dato['nombreCurso'], 0, 9) . "...";?></h4>
-              <span class="descripcion"><?php echo substr($dato['descripcionCurso'], 0, 100) . "..."; ?></span>
+              <h4 class="titulo"><?php echo $dato['nombreCurso'];?></h4>
+              <span class="descripcion"><?php echo substr($dato['descripcionCurso'], 0, 500) . "..."; ?></span>
               <br><br>
               <?php
                if(isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)){
@@ -244,8 +257,12 @@ if (!isset($_GET['pag'])) {
                }
               ?>
             </div>
+
+
+
+
           </div>
-          <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+          <div class="">
             <?php    
                 if($dato['imagenDestacadaCurso']!=null){
             ?>
@@ -308,7 +325,7 @@ if (!isset($_GET['pag'])) {
   </div>
 </div>
 <!-- EMPRESAS -->
-<div class="container-bussines container">
+<div class="container-bussines container divEmp">
   <div class="info col-12 mt-5">
     <br><br>
     <h2 class="text-center">Educalma para empresas</h2>

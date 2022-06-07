@@ -126,11 +126,19 @@
                                     
                                     <?php if($dato2['id_cursoInscrito'] == NULL){ ?>
             
-                                        <p>S/.<?php echo $dato['costoCurso'] ?></p>
+                                        <p>
+                                            <?php
+                                                if($dato['costoCurso']!=0 && $dato['costoCurso'] != "Gratis"){
+                                                    echo 'S/ ' . $dato['costoCurso'];
+                                                }else{
+                                                    echo 'Gratis';
+                                                }
+                                            ?>
+                                        </p>
             
                                     <?php }else{ ?>
             
-                                        <p>S/.<?php echo $dato['costoCurso'],"","<span style='position: relative; left: 155px; color: #63F70E;'>Comprado</span>" ?></p>
+                                        <p>S/.<?php echo $dato['costoCurso'],"","<span style='position: relative; left: 100px; color: #63F70E;'>Comprado</span>" ?></p>
             
                                     <?php } ?>
 
@@ -372,11 +380,28 @@
                                     
                             <?php if($dato2['id_cursoInscrito'] == NULL){ ?>
             
-                                <p>S/.<?php echo $dato['costoCurso'] ?></p>
+                                <p>
+                                    <?php
+                                        if($dato['costoCurso']!=0 && $dato['costoCurso'] != "Gratis"){
+                                            echo 'S/ ' . $dato['costoCurso'];
+                                        }else{
+                                            echo 'Gratis';
+                                        }
+                                    ?>
+                                </p>
             
                             <?php }else{ ?>
             
-                                <p>S/.<?php echo $dato['costoCurso'],"","<span style='position: relative; left: 155px; color: #63F70E;'>Comprado</span>" ?></p>
+                                <p>
+                                    <?php
+                                        if($dato['costoCurso']!=0 && $dato['costoCurso'] != "Gratis"){
+                                            echo 'S/ ' . $dato['costoCurso'],"","<span style='position: relative; left: 100px; color: #63F70E;'>Comprado</span>";
+                                        }else{
+                                            echo 'Gratis',"","<span style='position: relative; left: 100px; color: #63F70E;'>Comprado</span>";
+                                        }
+                                    ?>
+                                </p>
+                                <!--<p>S/.<?php echo $dato['costoCurso'],"","<span style='position: relative; left: 100px; color: #63F70E;'>Comprado</span>" ?></p>-->
             
                             <?php } ?>
 

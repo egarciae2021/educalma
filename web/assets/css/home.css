@@ -146,6 +146,36 @@
         position: relative;
         left: -9px;
     }
+
+    .container .row .col-12 .section-title h2 {
+        font-size: 36px;
+        font-weight: bold;
+        text-transform: uppercase;
+        position: relative;
+        top: -180px;
+        }
+
+        .container .row .col-12 .section-title h2 {
+            font-size: 36px;
+            font-weight: bold;
+            text-transform: uppercase;
+            position: relative;
+            top: -160px;
+        }
+    
+        .tresCards {
+            position: relative; 
+            top: -160px;
+        }
+
+        .btnCom {
+            visibility: hidden;
+        }
+
+        .divEmp {
+            margin-top: -160px; 
+            margin-bottom: -100px;
+        }
     
 }
 
@@ -182,6 +212,50 @@
 
     }
     /****************/
+
+    .container .row .col-12 .section-title h2 {
+        font-size: 36px;
+        font-weight: bold;
+        text-transform: uppercase;
+        position: relative;
+        top: -180px;
+        }
+
+        .container .row .col-12 .section-title h2 {
+            font-size: 36px;
+            font-weight: bold;
+            text-transform: uppercase;
+            position: relative;
+            top: -160px;
+        }
+    
+        .tresCards {
+            position: relative; 
+            top: -160px;
+        }
+
+        .btnCom {
+            visibility: hidden;
+        }
+
+        .divEmp {
+            margin-top: -160px; 
+            margin-bottom: -100px;
+        }
+
+        .container-fluid-course .row .card {
+            background-color: #ecf1ff;
+            max-width: 378px;
+            margin: 0 auto;
+            min-height: 170px;
+            align-items: center;
+            align-content: center;
+            border: none;
+            cursor: pointer;
+        
+            position: relative;
+            top: -150px;
+        }
 }
 
 @media (max-width: 650px) {
@@ -195,6 +269,42 @@
     .certificados {
         position: relative;
         left: -9px;
+    }
+
+    .container .row .col-12 .section-title h2 {
+        font-size: 36px;
+        font-weight: bold;
+        text-transform: uppercase;
+        position: relative;
+        top: -160px;
+    }
+
+    .tresCards {
+        position: relative; 
+        top: -160px;
+    }
+
+    .btnCom {
+        visibility: hidden;
+    }
+
+    .divEmp {
+        margin-top: -160px; 
+        margin-bottom: -100px;
+    }
+
+    .container-fluid-course .row .card {
+        background-color: #ecf1ff;
+        max-width: 378px;
+        margin: 0 auto;
+        min-height: 170px;
+        align-items: center;
+        align-content: center;
+        border: none;
+        cursor: pointer;
+    
+        position: relative;
+        top: -150px;
     }
 }
 
@@ -218,6 +328,60 @@
         position: relative;
         left: -9px;
     }
+
+    .tresCards {
+        position: relative; 
+        top: -120px;
+    }
+
+    .btnCom {
+        visibility: hidden;
+    }
+
+    .divEmp {
+        margin-top: -160px; 
+        margin-bottom: -100px;
+    }
+
+    .container-fluid-course .row .card {
+        background-color: #ecf1ff;
+        max-width: 378px;
+        margin: 0 auto;
+        min-height: 170px;
+        align-items: center;
+        align-content: center;
+        border: none;
+        cursor: pointer;
+    
+        position: relative;
+        top: -150px;
+    }
+
+    .container .row .col-12 .section-title h2 {
+        font-size: 36px;
+        font-weight: bold;
+        text-transform: uppercase;
+        position: relative;
+        top: -160px;
+    }
+
+    .container .row .col-12 .section-title h2 {
+        font-size: 36px;
+        font-weight: bold;
+        text-transform: uppercase;
+        position: relative;
+        top: -160px;
+    }
+
+    .tresCards {
+        position: relative; 
+        top: -160px;
+    }
+
+    .divEmp {
+        margin-top: -160px; 
+        margin-bottom: -100px;
+    }
 }
 
 @media (max-width: 450px) {
@@ -240,6 +404,50 @@
         position: relative;
         left: -9px;
     }
+
+    .container .row .col-12 .section-title h2 {
+        font-size: 36px;
+        font-weight: bold;
+        text-transform: uppercase;
+        position: relative;
+        top: -180px;
+        }
+
+        .container .row .col-12 .section-title h2 {
+            font-size: 36px;
+            font-weight: bold;
+            text-transform: uppercase;
+            position: relative;
+            top: -160px;
+        }
+    
+        .tresCards {
+            position: relative; 
+            top: -160px;
+        }
+
+        .btnCom {
+            visibility: hidden;
+        }
+
+        .divEmp {
+            margin-top: -160px; 
+            margin-bottom: -100px;
+        }
+
+        .container-fluid-course .row .card {
+            background-color: #ecf1ff;
+            max-width: 378px;
+            margin: 0 auto;
+            min-height: 170px;
+            align-items: center;
+            align-content: center;
+            border: none;
+            cursor: pointer;
+        
+            position: relative;
+            top: -150px;
+        }
 }
 
 @media (max-width: 300px) {
@@ -262,6 +470,50 @@
         position: relative;
         left: -9px;
     }
+
+    .container .row .col-12 .section-title h2 {
+        font-size: 36px;
+        font-weight: bold;
+        text-transform: uppercase;
+        position: relative;
+        top: -180px;
+        }
+
+        .container .row .col-12 .section-title h2 {
+            font-size: 36px;
+            font-weight: bold;
+            text-transform: uppercase;
+            position: relative;
+            top: -160px;
+        }
+    
+        .tresCards {
+            position: relative; 
+            top: -160px;
+        }
+
+        .btnCom {
+            visibility: hidden;
+        }
+
+        .divEmp {
+            margin-top: -160px; 
+            margin-bottom: -100px;
+        }
+
+        .container-fluid-course .row .card {
+            background-color: #ecf1ff;
+            max-width: 378px;
+            margin: 0 auto;
+            min-height: 170px;
+            align-items: center;
+            align-content: center;
+            border: none;
+            cursor: pointer;
+        
+            position: relative;
+            top: -150px;
+        }
 }
 
 
@@ -525,9 +777,45 @@
     font-weight: bold;
     text-transform: uppercase;
     position: relative;
-    top: -20px;
-}
+    top: -180px;
+    }
     /****************/
+
+    .container .row .col-12 .section-title h2 {
+        font-size: 36px;
+        font-weight: bold;
+        text-transform: uppercase;
+        position: relative;
+        top: -160px;
+    }
+
+    .tresCards {
+        position: relative; 
+        top: -160px;
+    }
+
+    .btnCom {
+        visibility: hidden;
+    }
+
+    .divEmp {
+        margin-top: -160px; 
+        margin-bottom: -100px;
+    }
+
+    .container-fluid-course .row .card {
+        background-color: #ecf1ff;
+        max-width: 378px;
+        margin: 0 auto;
+        min-height: 170px;
+        align-items: center;
+        align-content: center;
+        border: none;
+        cursor: pointer;
+    
+        position: relative;
+        top: -150px;
+    }
 }
 
 @media (max-width: 450px) {
@@ -538,6 +826,34 @@
     .certificados {
         position: relative;
         left: -9px;
+    }
+
+    .tresCards {
+        position: relative; 
+        top: -120px;
+    }
+
+    .btnCom {
+        visibility: hidden;
+    }
+
+    .divEmp {
+        margin-top: -160px; 
+        margin-bottom: -100px;
+    }
+
+    .container-fluid-course .row .card {
+        background-color: #ecf1ff;
+        max-width: 378px;
+        margin: 0 auto;
+        min-height: 170px;
+        align-items: center;
+        align-content: center;
+        border: none;
+        cursor: pointer;
+    
+        position: relative;
+        top: -150px;
     }
 }
 
@@ -573,6 +889,7 @@
     border: 2px solid #33c6e7;
 }
 
+/*//////////////////////////////////////////////////////*/
 .container-fluid-course .row .card .row {
     min-height: 170px;
     align-items: center;
@@ -614,6 +931,8 @@
     border: 2px solid #33c6e7;
 }
 
+
+
 @media (max-width: 1173px) and (min-width: 992px) {
     .container-fluid-course .row .card .row h4 {
         font-size: 16px;
@@ -647,6 +966,41 @@
         position: relative;
         left: -9px;
     }
+    .container .row .col-12 .section-title h2 {
+        font-size: 36px;
+        font-weight: bold;
+        text-transform: uppercase;
+        position: relative;
+        top: -160px;
+    }
+
+    .tresCards {
+        position: relative; 
+        top: -160px;
+    }
+
+    .btnCom {
+        visibility: hidden;
+    }
+
+    .divEmp {
+        margin-top: -160px; 
+        margin-bottom: -100px;
+    }
+
+    .container-fluid-course .row .card {
+        background-color: #ecf1ff;
+        max-width: 378px;
+        margin: 0 auto;
+        min-height: 170px;
+        align-items: center;
+        align-content: center;
+        border: none;
+        cursor: pointer;
+    
+        position: relative;
+        top: -150px;
+    }
 }
 
 @media (max-width: 767px) {
@@ -659,6 +1013,41 @@
     .certificados {
         position: relative;
         left: -9px;
+    }
+    .container .row .col-12 .section-title h2 {
+        font-size: 36px;
+        font-weight: bold;
+        text-transform: uppercase;
+        position: relative;
+        top: -160px;
+    }
+
+    .tresCards {
+        position: relative; 
+        top: -160px;
+    }
+
+    .btnCom {
+        visibility: hidden;
+    }
+
+    .divEmp {
+        margin-top: -160px; 
+        margin-bottom: -100px;
+    }
+
+    .container-fluid-course .row .card {
+        background-color: #ecf1ff;
+        max-width: 378px;
+        margin: 0 auto;
+        min-height: 170px;
+        align-items: center;
+        align-content: center;
+        border: none;
+        cursor: pointer;
+    
+        position: relative;
+        top: -150px;
     }
 }
 
@@ -679,6 +1068,41 @@
         position: relative;
         left: -9px;
     }
+    .container .row .col-12 .section-title h2 {
+        font-size: 36px;
+        font-weight: bold;
+        text-transform: uppercase;
+        position: relative;
+        top: -160px;
+    }
+
+    .tresCards {
+        position: relative; 
+        top: -160px;
+    }
+
+    .btnCom {
+        visibility: hidden;
+    }
+
+    .divEmp {
+        margin-top: -160px; 
+        margin-bottom: -100px;
+    }
+
+    .container-fluid-course .row .card {
+        background-color: #ecf1ff;
+        max-width: 378px;
+        margin: 0 auto;
+        min-height: 170px;
+        align-items: center;
+        align-content: center;
+        border: none;
+        cursor: pointer;
+    
+        position: relative;
+        top: -150px;
+    }
 }
 
 @media (max-width: 333px) {
@@ -698,6 +1122,41 @@
     .certificados {
         position: relative;
         left: -9px;
+    }
+    .container .row .col-12 .section-title h2 {
+        font-size: 36px;
+        font-weight: bold;
+        text-transform: uppercase;
+        position: relative;
+        top: -160px;
+    }
+
+    .tresCards {
+        position: relative; 
+        top: -160px;
+    }
+
+    .btnCom {
+        visibility: hidden;
+    }
+
+    .divEmp {
+        margin-top: -160px; 
+        margin-bottom: -100px;
+    }
+
+    .container-fluid-course .row .card {
+        background-color: #ecf1ff;
+        max-width: 378px;
+        margin: 0 auto;
+        min-height: 170px;
+        align-items: center;
+        align-content: center;
+        border: none;
+        cursor: pointer;
+    
+        position: relative;
+        top: -150px;
     }
 }
 
@@ -832,6 +1291,8 @@
 .container-bussines>.send-data .back {
     width: 100%;
     height: 100%;
+
+
     top: 0;
     left: 0;
     position: relative;
@@ -1159,8 +1620,40 @@
         position: relative;
         top: -80px !important;
     }
+
+    .container .row .col-12 .section-title h2 {
+        font-size: 36px;
+        font-weight: bold;
+        text-transform: uppercase;
+        position: relative;
+        top: -160px;
+    }
+
+    .tresCards {
+        position: relative; 
+        top: -160px;
+    }
+
+    .btnCom {
+        visibility: hidden;
+    }
+
+    .divEmp {
+        margin-top: -160px; 
+        margin-bottom: -100px;
+    }
+
+    .container-fluid-course .row .card {
+        background-color: #ecf1ff;
+        max-width: 378px;
+        margin: 0 auto;
+        min-height: 170px;
+        align-items: center;
+        align-content: center;
+        border: none;
+        cursor: pointer;
+    
+        position: relative;
+        top: -150px;
+    }
 }
-
-
-
-

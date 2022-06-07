@@ -9,8 +9,44 @@ require_once 'database/databaseConection.php';
         <div class="logo-container">
             <a href="index.php"><img style="width: 200px;" src="assets/images/logo_educalma.png" alt=""></a>
         </div>
-        <div class="nav-btn-header">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!--////////////////////-->
+        <div style="margin: 20px;" class="nav-btn-header">
+
             <div class="nav-links-header">
+
+
                 <?php if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {?>
                     <ul style="margin-left: 25px;">
 
@@ -40,8 +76,9 @@ require_once 'database/databaseConection.php';
                         
                         </li>
 
-                        <div class="log-sign" style="--i: 1.8s">
-                            <a href="iniciosesion.php" class="btn transparent">Iniciar Sesión</a>
+                        <div class="log-sign" style="--i: 1.8s;">
+                            <a href="iniciosesion.php" class="btn transparent btnIni">Iniciar Sesión</a>
+                      
                             <a href="registroUsuario.php" class="btn solid">Regístrate!</a>
                         </div>
 
@@ -52,6 +89,7 @@ require_once 'database/databaseConection.php';
 
                 
             </div>
+
             <?php
             Database::disconnect();
 
@@ -99,14 +137,22 @@ require_once 'database/databaseConection.php';
             ?>
 
             <!-- LOGUEADO -->
-            <div class="log-sign" style="--i: 1.8s">
-                    <ul style="margin-left: 25px;">
+            <div class="log-sign" style="--i: 1.8s;">
+                    <ul>
                         <li class="nav-link" style="--i: .85s">
                             
                             <a href="#"><?php echo $nom ?>&nbsp;(Administrador)<i class="fas fa-caret-down"></i></a>
                             
                             <div class="dropdown">
                                 <ul>
+                                    <li class="dropdown-link">
+                                        <a href="user-sidebar.php">Dashboard</a>
+                                    </li>
+
+                                    <li class="dropdown-link">
+                                        <a href="ListaCursos.php?pag=1">Cursos Publicados</a>
+                                    </li>
+
                                     <li class="dropdown-link">
                                         <a href="includes/login/logout.php">Cerrar Sesión</a>
                                     </li>
@@ -139,11 +185,18 @@ require_once 'database/databaseConection.php';
 
             <!-- LOGUEADO -->
             <div class="log-sign" style="--i: 1.8s">
-                    <ul style="margin-left: 25px;">
+                    <ul>
                         <li class="nav-link" style="--i: .85s">
                             <a href="#"><?php echo $nom ?>&nbsp;(Profesor)<i class="fas fa-caret-down"></i></a>
                             <div class="dropdown">
                                 <ul>
+                                    <li class="dropdown-link">
+                                        <a href="user-sidebar.php">Dashboard</a>
+                                    </li>
+
+                                    <li class="dropdown-link">
+                                        <a href="ListaCursos.php?pag=1">Cursos Publicados</a>
+                                    </li>
                     
                                     <li class="dropdown-link">
                                         <a href="includes/login/logout.php">Cerrar Sesión</a>
@@ -176,13 +229,17 @@ require_once 'database/databaseConection.php';
 
             <!-- LOGUEADO -->
             <div class="log-sign" style="--i: 1.8s">
-                    <ul style="margin-left: 25px;">
+                    <ul>
                         <li class="nav-link" style="--i: .85s">
                             <a href="#"><?php echo $nom ?>&nbsp;(Estudiante)<i class="fas fa-caret-down"></i></a>
                             <div class="dropdown">
                                 <ul>
                                     <li class="dropdown-link">
                                         <a href="user-sidebar.php">Dashboard</a>
+                                    </li>
+
+                                    <li class="dropdown-link">
+                                        <a href="ListaCursos.php?pag=1">Cursos Publicados</a>
                                     </li>
 
                                     <li class="dropdown-link">
@@ -216,13 +273,17 @@ require_once 'database/databaseConection.php';
 
             <!-- LOGUEADO -->
             <div class="log-sign" style="--i: 1.8s">
-                    <ul style="margin-left: 25px;">
+                    <ul>
                         <li class="nav-link" style="--i: .85s">
                             <a href="#"><?php echo $nom ?>&nbsp;(Empresa)<i class="fas fa-caret-down"></i></a>
                             <div class="dropdown">
                                 <ul>
                                     <li class="dropdown-link">
                                         <a href="user-sidebar.php">Dashboard</a>
+                                    </li>
+
+                                    <li class="dropdown-link">
+                                        <a href="ListaCursos.php?pag=1">Cursos Publicados</a>
                                     </li>
                   
                                     <li class="dropdown-link">
@@ -256,13 +317,17 @@ require_once 'database/databaseConection.php';
 
             <!-- LOGUEADO -->
             <div class="log-sign" style="--i: 1.8s">
-                    <ul style="margin-left: 25px;">
+                    <ul>
                         <li class="nav-link" style="--i: .85s">
                             <a href="#"><?php echo $nom ?>&nbsp;(Usuario - Empresa)<i class="fas fa-caret-down"></i></a>
                             <div class="dropdown">
                                 <ul>
                                     <li class="dropdown-link">
                                         <a href="user-sidebar.php">Dashboard</a>
+                                    </li>
+
+                                    <li class="dropdown-link">
+                                        <a href="ListaCursos.php?pag=1">Cursos Publicados</a>
                                     </li>
                                     
                                     <li class="dropdown-link">
@@ -295,12 +360,20 @@ require_once 'database/databaseConection.php';
             ?>
 
             <!-- LOGUEADO -->
-            <div class="log-sign" style="--i: 1.8s">
-                    <ul style="margin-left: 25px;">
+            <div style="margin: auto;" class="log-sign" style="--i: 1.8s">
+                    <ul>
                         <li class="nav-link" style="--i: .85s">
                             <a href="#"><?php echo $nom ?>&nbsp;(Super Administrador)<i class="fas fa-caret-down"></i></a>
                             <div class="dropdown">
                                 <ul>
+                                    <li class="dropdown-link">
+                                        <a href="user-sidebar.php">Dashboard</a>
+                                    </li>
+
+                                    <li class="dropdown-link">
+                                        <a href="ListaCursos.php?pag=1">Cursos Publicados</a>
+                                    </li>
+
                                     <li class="dropdown-link">
                                         <a href="includes/login/logout.php">Cerrar Sesión</a>
                                     </li>
