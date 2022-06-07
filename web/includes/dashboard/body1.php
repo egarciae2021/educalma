@@ -20,7 +20,7 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                 
                 </a>
 
-                <div class="nav__list-dashboard">
+                <div style="margin-bottom: 100px;" class="nav__list-dashboard">
                     <div class="nav__items-dashboard">
                         <h3 class="nav__subtitle__img-dashboard">
 
@@ -223,7 +223,7 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                             <span class="nav__name-dashboard">Ajustes</span>
                         </a>
 
-                        <a style="position: relative; left: 8px;" href="includes/login/logout.php" class="nav__link-dashboard nav__logout-dashboard">
+                        <a style="position: relative; left: 8px; margin-top: 10px;" href="includes/login/logout.php" class="nav__link-dashboard nav__logout-dashboard">
                             <i class="fas fa-sign-out-alt nav__icon-dashboard" style="color:red;"></i>
                             <span class="nav__name-dashboard">Salir</span>
                         </a>
