@@ -86,7 +86,7 @@
           </div>
 
           <div class="col-md-4 col-sm-6 col-12">
-            <ul class="social-icons">
+            <ul style="margin-right: 105px;" class="social-icons">
               <li><a target="_blank" class="facebook" href="https://www.facebook.com/fundacioncalma.org/"><i class="fab fa-facebook-f"></i></a></li>
               <li><a target="_blank" class="twitter" href="https://twitter.com/fundacioncalma2 "><i class="fab fa-twitter"></i></a></li>
               <li><a target="_blank" class="youtube" href="https://www.youtube.com/channel/UCsEmW0is_Q-d_IMfux0pfEw"><i class="fab fa-youtube"></i></a></li>
