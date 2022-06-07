@@ -5,6 +5,7 @@ ob_start();
 
 
 <header class="header" style="background-color:#737BF1;">
+
     <div class="header__container">
         <?php
         if (isset($_SESSION['Logueado']) && $_SESSION['Logueado'] === true) {
@@ -48,13 +49,13 @@ ob_start();
                     <?php if ($_SESSION['privilegio'] == 2) {?>
 
                         <img src="./assets/img/user-prof.png" class="header__img" cellspacing="0" width="auto" alt="foto_curso">
+
                     <?php } ?>
 
                     <!--Usuario Normal-->
                     <?php if ($_SESSION['privilegio'] == 3) {?>
 
                         <img src="./assets/img/user-user.png" class="header__img" cellspacing="0" width="auto" alt="foto_curso">
-                        
                         
                     <?php } ?>
 
