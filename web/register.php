@@ -14,6 +14,11 @@ $fecha = $_POST['fecha_registrar'];
 $pais = $_POST['pais_registrar'];
 $codigo=$_POST['codigo_registrar'];
 $estatus=5;
+
+
+
+
+
 if(empty($codigo)){
     $codigo=null;
     $estatus=3;
