@@ -18,12 +18,16 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                     <div class="nav__items-dashboard">
                         <h3 class="nav__subtitle__img-dashboard">
 
+                            
 
                             <?php    
+                            
                                 if($dato['mifoto']!=null){
                             ?>
-                                    <img src="data:image/*;base64,<?php echo base64_encode($dato['mifoto']); ?>" alt="foto_curso" class="header__img__side-dashboard">
-                            <?php
+                                
+                               <img src="data:image/*;base64,<?php echo base64_encode($dato['mifoto']); ?>" alt="foto_curso" class="header__img__side-dashboard">  
+                          
+                          <?php
                                 }else{
                             ?>
 
@@ -232,7 +236,7 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
 
     <!--========== CONTENTS ==========-->
 <?php
-} else {
+}else {
     header('Location: ../../iniciosesion.php');
 }
 ?>
