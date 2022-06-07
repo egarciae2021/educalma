@@ -1,10 +1,5 @@
 <style>
 
-  .textEduCalma:hover {
-
-    color: #4D54C8 !important;
-  }
-
   .footer--light {
 
     background-color: #e7f4ff;
@@ -17,8 +12,12 @@
     .footer--light {
 
       background-color: #e7f4ff;
-    }
-      
+    }  
+  }
+
+  a:hover {
+
+    color: #545DFF !important;
   }
 
 </style>
@@ -40,13 +39,13 @@
                
                 <ul>
                   <li>
-                    <a href="https://fundacioncalma.org/%C2%BFqui%C3%A9nes-somos%3F">Qui&eacute;nes Somos</a>
+                    <a href="https://fundacioncalma.org/%C2%BFqui%C3%A9nes-somos%3F">Quiénes Somos</a>
                   </li>
                   <li>
-                    <a href="https://fundacioncalma.org/contacto">Cont&aacute;ctanos</a>
+                    <a href="https://fundacioncalma.org/contacto">Contáctanos</a>
                   </li>
                   <li>
-                    <a href="https://fundacioncalma.org/%C2%BFc%C3%B3mo-ayudo%3F">Ay&uacute;danos</a>
+                    <a href="https://fundacioncalma.org/%C2%BFc%C3%B3mo-ayudo%3F">Ayúdanos</a>
                   </li>
                 </ul>
               </div>
@@ -61,7 +60,7 @@
                     <a href="https://fundacioncalma.org/" >Blog</a>
                   </li>
                   <li>
-                    <a href="certi.php">Validaci&oacute;n de Certificado</a>
+                    <a href="certi.php">Validación de Certificado</a>
                   </li>
                   <li>
                     <!-- <a href="recursos1.php">Presentaci&oacute;n</a> -->

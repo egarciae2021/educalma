@@ -46,11 +46,11 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
         /*Caja de texto del buscador*/ 
         .dataTables_filter label .form-control {
 
-        border: 0;
-        height: 25px;
-        position: relative;
-        left: -9px;
-        padding: 0;
+            border: 0;
+            height: 25px;
+            position: relative;
+            left: -9px;
+            padding: 0;
         }
 
         @media screen and (max-width: 720px) {
@@ -65,12 +65,12 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
 
         @media screen and (max-width: 640px) {
 
-        .dataTables_filter{
+          .dataTables_filter{
 
-            float: right;
-            position: relative;
-            left: 25px;
-        }
+              float: right;
+              position: relative;
+              left: 25px;
+          }
         }
 
   </style>
@@ -234,11 +234,11 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
 
                             <?php if($curso['estado']==0){ ?>
 
-                              <?php echo "No"; ?>
+                              <spand style="font-weight: bold; color: red;"><?php echo "No"; ?></spand>
 
                             <?php }else{ ?>
 
-                              <?php echo "Sí"; ?>
+                              <spand style="font-weight: bold; color: #3DD72A;"><?php echo "Sí"; ?></spand>
 
                             <?php } ?>
 

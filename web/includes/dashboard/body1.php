@@ -4,17 +4,23 @@
 if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
 
 ?>
+
     <!--========== NAV ==========-->
     <div class="nav-dashboard" id="navbar">
+
         <nav class="nav__container-dashboard">
+            
             <div>
+         
                 <a href="index.php" class="nav__link-dashboard nav__logo-dashboard">
 
                     <img style="width: 40px; height: 35px;" src="./assets/images/logo_edu.png" alt="" class="header__img__logo">
                     <img style="position: relative; left: 3px; width: 140px; height: 30px;" src="./assets/images/logo_edu_2.png" alt="" class="header__img__logo">
                     <i style="margin-left: 9rem; display: none;" class='bx bx-menu' id="header-toggle"></i>
+                
                 </a>
-                <div class="nav__list-dashboard">
+
+                <div style="margin-bottom: 100px;" class="nav__list-dashboard">
                     <div class="nav__items-dashboard">
                         <h3 class="nav__subtitle__img-dashboard">
 
@@ -217,7 +223,7 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                             <span class="nav__name-dashboard">Ajustes</span>
                         </a>
 
-                        <a style="position: relative; left: 8px;" href="includes/login/logout.php" class="nav__link-dashboard nav__logout-dashboard">
+                        <a style="position: relative; left: 8px; margin-top: 10px;" href="includes/login/logout.php" class="nav__link-dashboard nav__logout-dashboard">
                             <i class="fas fa-sign-out-alt nav__icon-dashboard" style="color:red;"></i>
                             <span class="nav__name-dashboard">Salir</span>
                         </a>
@@ -225,7 +231,6 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                     </div>
                 </div>
             </div>
-
 
         </nav>
     </div>

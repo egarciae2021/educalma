@@ -36,7 +36,6 @@
     }
 }
 
-
 /*========== BASE ==========*/
 
 *,
@@ -367,8 +366,6 @@ a {
         margin:auto;
     }
 
-
-
     .header__img {
         width: 40px;
         height: 40px;
@@ -416,4 +413,16 @@ a {
     .nav-dashboard:hover .nav__dropdown-icon-dashboard {
         opacity: 1;
     }
+}
+
+.nav-dashboard {
+
+    margin-top: 64px;
+}
+
+.fa-bars:hover {
+
+    background-color: rgba(214, 214, 214, 0.418);
+    padding: 15px;
+    margin-left: -15px;
 }
