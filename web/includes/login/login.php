@@ -23,7 +23,7 @@
         <a href="index.php">
           <img src="./assets/images/logo_educalma.png" class="logo-img" alt="image">
         </a>
-        <h1 class="font-weight-bold py-3">Bienvenido de !</h1>
+        <h1 class="font-weight-bold py-3">Bienvenido de nuev0!</h1>
         <form id="form_login" action="includes/login/checklogin.php" method="POST">
           <div class="form-group">
             <label for="email">Ingresa tu correo: </label>
