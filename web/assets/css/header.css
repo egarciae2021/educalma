@@ -395,10 +395,7 @@ header.btn.solid:hover {
     padding: 1.6rem 2rem;
   }
 
-  .nav-link:hover > a {
-    transform: scale(1);
-    background-color: #dfefff;
-  }
+  
 
   .dropdown,
   .dropdown.second {
