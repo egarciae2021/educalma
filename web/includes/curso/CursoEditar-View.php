@@ -150,22 +150,22 @@
                                     <div class="col-12 col-lg-6">
                                         <div class="form-group col-md-12 col-lg-12">
                                             <label class="form-label">Nombre del curso: <?php echo $dato2['nombreCurso']; ?></label>
-                                            <input style="background: #EAE7FA; color: black;" type="text" name="nomb_actu_cursos" id="names-agrecursos" class="form-control " value="<?php echo $dato2['nombreCurso']; ?>" aria-label="Nombrecurso" aria-describedby="names-addon">
+                                            <input required style="background: #EAE7FA; color: black;" type="text" name="nomb_actu_cursos" id="names-agrecursos" class="form-control " value="<?php echo $dato2['nombreCurso']; ?>" aria-label="Nombrecurso" aria-describedby="names-addon">
                                         </div>
 
                                         <div class="form-group col-md-12 col-lg-12">
                                             <label class="form-label">Costo del curso</label>
-                                            <input style="background: #EAE7FA; color: black;" type="number" step="any" id="precio-curso" name="prec_curso" class="form-control" value="<?php echo $dato2['costoCurso']; ?>" aria-label="Dirigido" aria-describedby="names-addon">
+                                            <input required style="background: #EAE7FA; color: black;" type="number" min='0' step="any" id="precio-curso" name="prec_curso" class="form-control" value="<?php echo $dato2['costoCurso']; ?>" aria-label="Dirigido" aria-describedby="names-addon">
                                         </div>
 
                                         <div class="form-group col-md-12 col-lg-12">
                                             <label class="form-label">Público Dirigido</label>
-                                            <input style="background: #EAE7FA; color: black;" type="text" name="publi_cursos" id="publicar_cursos" class="form-control " value="<?php echo $dato2['dirigido']; ?>" aria-label="Nombrecurso" aria-describedby="names-addon">
+                                            <input required style="background: #EAE7FA; color: black;" type="text" name="publi_cursos" id="publicar_cursos" class="form-control " value="<?php echo $dato2['dirigido']; ?>" aria-label="Nombrecurso" aria-describedby="names-addon">
                                         </div>
 
                                         <div class="form-group col-md-12">
                                             <label class="form-label">Descripción del curso</label>
-                                            <textarea style="background: #EAE7FA; color: black;" class="form-control" id="desc-curso" name="desc_curso" rows="4"><?php echo $dato2['descripcionCurso']; ?></textarea>
+                                            <textarea required style="background: #EAE7FA; color: black;" class="form-control" id="desc-curso" name="desc_curso" rows="4"><?php echo $dato2['descripcionCurso']; ?></textarea>
                                         </div>
 
                                     </div>
@@ -191,7 +191,7 @@
                                         </div>
                                         <div class="form-group col-md-12">
                                             <label class="form-label">Introducción del Curso: </label>
-                                            <textarea style="background: #EAE7FA; color: black;" class="form-control" name="intRR_cursos" rows="5"><?php echo $dato2['introduccion']; ?></textarea>
+                                            <textarea required style="background: #EAE7FA; color: black;" class="form-control" name="intRR_cursos" rows="5"><?php echo $dato2['introduccion']; ?></textarea>
                                         </div>
                                     </div>
 
