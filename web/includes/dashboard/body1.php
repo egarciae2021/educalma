@@ -24,8 +24,6 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                     <div class="nav__items-dashboard">
                         <h3 class="nav__subtitle__img-dashboard">
 
-                            
-
                             <?php    
                             
                                 if($dato['mifoto']!=null){
