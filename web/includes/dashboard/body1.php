@@ -72,7 +72,7 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                         </a>
                         
                         <div style="position: relative; left: 8px;" class="nav__dropdown-dashboard">
-                            <a href="user-sidebar.php" class="nav__link-dashboard">
+                            <a href="sidebarEditar.php" class="nav__link-dashboard">
                                 <i class="fa fa-chart-line nav__icon-dashboard" style="color:#5499C7;"></i>
                                 <!-- <i class="far fa-bookmark nav__icon"></i> -->
                                 <span class="nav__name-dashboard">Dashboard</span>

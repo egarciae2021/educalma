@@ -84,8 +84,8 @@
             Database::disconnect();
             */
         }
-        
-        
+    
+
         echo'
             <script>
                 //alert("respuesta correcta");

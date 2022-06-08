@@ -43,7 +43,7 @@ require_once '../../database/databaseConection.php';
         echo'
         <script>
             //alert ("editado perfectamente");
-            window.location = "../../user-sidebar.php?iduser='.$id.'";
+            window.location = "../../sidebarEditar.php?iduser='.$id.'";
         </script>
     ';
 
@@ -60,7 +60,7 @@ require_once '../../database/databaseConection.php';
         echo'
             <script>
                 //alert ("editado perfectamente");
-                window.location = "../../user-sidebar.php";
+                window.location = "../../sidebarEditar.php";
             </script>
         ';
     }
