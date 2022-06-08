@@ -11,13 +11,56 @@
       
     .footer--light {
 
-      background-color: #e7f4ff;
+        background-color: #e7f4ff;
     }  
   }
 
-  a:hover {
+ 
 
-    color: #545DFF !important;
+  .footer-menu li, .textEduCalma {
+
+      -webkit-transform: scale(1,1);
+      -webkit-transition-timing-function: ease-out;
+      -webkit-transition-duration: 250ms;
+      -moz-transform: scale(1,1);
+      -moz-transition-timing-function: ease-out;
+      -moz-transition-duration: 250ms;
+  }
+
+  .footer-menu li:hover, .textEduCalma:hover {
+
+      -webkit-transform: scale(1.12,1.12);
+      -webkit-transition-timing-function: ease-out;
+      -webkit-transition-duration: 1.2;
+      -moz-transform: scale(1.12,1.12);
+      -moz-transition-timing-function: ease-out;
+      -moz-transition-duration: 100ms;
+
+      padding-left: 20px;
+  }
+
+  p .textEduCalma {
+
+      -webkit-transform: scale(1,1);
+      -webkit-transition-timing-function: ease-out;
+      -webkit-transition-duration: 250ms;
+      -moz-transform: scale(1,1);
+      -moz-transition-timing-function: ease-out;
+      -moz-transition-duration: 250ms;
+  }
+
+  p .textEduCalma:hover {
+
+      -webkit-transform: scale(1.12,1.12);
+      -webkit-transition-timing-function: ease-out;
+      -webkit-transition-duration: 1.2;
+      -moz-transform: scale(1.12,1.12);
+      -moz-transition-timing-function: ease-out;
+      -moz-transition-duration: 100ms;
+
+      padding-left: 0;
+
+      color: #545DFF !important;
   }
 
 </style>
@@ -80,7 +123,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-8 col-sm-6 col-12">
-            <p class="copyright-text"style="color: #7c83fd; ">Copyright © 2021 All Rights Reserved by
+            <p class="copyright-text" style="color: #7c83fd;">Copyright © 2021 All Rights Reserved by
               <a class="textEduCalma" href="#">EduCalma</a>
             </p>
           </div>
