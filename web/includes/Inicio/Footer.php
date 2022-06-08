@@ -15,9 +15,7 @@
     }  
   }
 
- 
-
-  .footer-menu li, .textEduCalma {
+  .footer-menu li{
 
       -webkit-transform: scale(1,1);
       -webkit-transition-timing-function: ease-out;
@@ -27,7 +25,7 @@
       -moz-transition-duration: 250ms;
   }
 
-  .footer-menu li:hover, .textEduCalma:hover {
+  .footer-menu li:hover{
 
       -webkit-transform: scale(1.12,1.12);
       -webkit-transition-timing-function: ease-out;
@@ -37,30 +35,6 @@
       -moz-transition-duration: 100ms;
 
       padding-left: 20px;
-  }
-
-  p .textEduCalma {
-
-      -webkit-transform: scale(1,1);
-      -webkit-transition-timing-function: ease-out;
-      -webkit-transition-duration: 250ms;
-      -moz-transform: scale(1,1);
-      -moz-transition-timing-function: ease-out;
-      -moz-transition-duration: 250ms;
-  }
-
-  p .textEduCalma:hover {
-
-      -webkit-transform: scale(1.12,1.12);
-      -webkit-transition-timing-function: ease-out;
-      -webkit-transition-duration: 1.2;
-      -moz-transform: scale(1.12,1.12);
-      -moz-transition-timing-function: ease-out;
-      -moz-transition-duration: 100ms;
-
-      padding-left: 0;
-
-      color: #545DFF !important;
   }
 
 </style>
@@ -116,20 +90,27 @@
         </div>
       </div>
     </div>
+
+    <div class="enviar_inicio">
+      <a href="#"><img class="enviar_inicio" src="./assets/images/enviar_inicio.png" alt=""/></a>
+    </div>
+
     <div class="site-footer">
       <div class="container">
         <hr class="small">
       </div>
       <div class="container">
+
         <div class="row">
-          <div class="col-md-8 col-sm-6 col-12">
-            <p class="copyright-text" style="color: #7c83fd;">Copyright © 2021 All Rights Reserved by
-              <a class="textEduCalma" href="#">EduCalma</a>
-            </p>
+
+          <div class="col-md-8 col-sm-6 col-12" style="margin: auto; text-align: center; width: 400px;">
+
+            <p class="copyright-text" style="color: #7c83fd;">Copyright © 2021 All Rights Reserved by EduCalma</p>
+          
           </div>
 
           <div class="col-md-4 col-sm-6 col-12">
-            <ul style="margin-right: 105px;" class="social-icons">
+            <ul class="social-icons">
               
               <li><a target="_blank" class="facebook" href="https://www.facebook.com/fundacioncalma.org/"><i class="fab fa-facebook-f"></i></a></li>
               <li><a target="_blank" class="twitter" href="https://twitter.com/fundacioncalma2 "><i class="fab fa-twitter"></i></a></li>
@@ -141,6 +122,7 @@
             </ul>
           </div>
         </div>
+
       </div>
   </footer>
 
