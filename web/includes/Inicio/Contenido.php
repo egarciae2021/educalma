@@ -199,7 +199,7 @@ if (!isset($_GET['pag'])) {
             <div class="row">
               <div class="col-4 col-sm-4 col-md-12 col-lg-4 col-xl-4">
                 <div class="container-image-course">
-                  <img class="imgCurso" style="" src="./assets/images/2232688.png" alt="" />
+                  <img class="imgCurso" style="" src="./assets/images/imagen_curso_destacado.png" alt="" />
                 </div>
               </div>
               <div class="col-8 col-sm-8 col-md-12 col-lg-8 col-xl-8">
