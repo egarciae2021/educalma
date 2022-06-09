@@ -46,7 +46,13 @@
           <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
             <div class="footer-widget">
               <div class="widget-about">
-                <img src="assets/images/logo_educalma.png" alt="" class="img-fluid">
+                
+              
+              
+                <img style="" src="assets/images/logo_educalma.png" alt="" class="img-fluid">
+              
+              
+              
               </div>
             </div>
           </div>
@@ -96,16 +102,18 @@
     </div>
 
     <div class="site-footer">
+
       <div class="container">
         <hr class="small">
       </div>
+      
       <div class="container">
 
         <div class="row">
 
           <div class="col-md-8 col-sm-6 col-12" style="margin: auto; text-align: center; width: 400px;">
 
-            <p class="copyright-text" style="color: #7c83fd;">Copyright © 2021 All Rights Reserved by EduCalma</p>
+            <p style="font-size: 16px; color: #7c83fd;" class="copyright-text">Copyright © 2021 All Rights Reserved by EduCalma</p>
           
           </div>
 
@@ -124,6 +132,8 @@
         </div>
 
       </div>
+    </div>
+
   </footer>
 
 
