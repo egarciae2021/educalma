@@ -8,13 +8,13 @@
     function enviar_correo($t,$em){ 
     
     $tok = $t;
-    $from = "garcia4014@gmail.com";
+    $from = "notificaciones.mail.1S@gmail.com";
     $to = $em;
 
-    $host = "smtp-relay.sendinblue.com";
-    $port = "587";
-    $username = 'garcia4014@gmail.com';
-    $password = 'Atento2019*';
+    $host = "ssl://smtp.gmail.com";
+    $port = "465";
+    $username = 'notificaciones.mail.1S@gmail.com';
+    $password = 'amaterasu1';
  
 
     $subject = "test";
