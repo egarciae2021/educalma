@@ -81,7 +81,7 @@
 
     $num_filas=0;
             if(isset($_POST["email_user"])){
-                $enlace = new mysqli('20.226.29.168', 'root', '', 'educalma');
+                $enlace = new mysqli('20.226.29.168', 'root', 'T3$t1ng.C4lm4', 'educalma');
                 if($enlace){
                     $email_user = $_POST["email_user"];
                     $querys=("Select * from usuarios where email ='".$email_user."'");
