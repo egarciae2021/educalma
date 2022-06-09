@@ -11,7 +11,7 @@
     $from = "garcia4014@gmail.com";
     $to = $em;
 
-    $host = "smtp-relay.sendinblue.com";
+    $host = "ssl://smtp-relay.sendinblue.com";
     $port = "587";
     $username = 'garcia4014@gmail.com';
     $password = 'Atento2019*';
