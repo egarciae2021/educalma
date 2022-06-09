@@ -98,7 +98,7 @@
                             $token = bin2hex(random_bytes(50)); 
                             $querys= ("INSERT INTO recover_password (`token`,`correo`) VALUES ('".$token."','".$email_user."')");
                             $enlace->query($querys); 
-                            // enviar_correo($token,$email_user);
+                            enviar_correo($token,$email_user);
                             echo 1;
                         }
                 }
