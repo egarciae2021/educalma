@@ -1,6 +1,7 @@
 <?php
 
-require_once "Mail.php";
+include_once "Mail.php";
+include_once "Mail/mime.php";
     
   
     
