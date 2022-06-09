@@ -150,7 +150,7 @@ require_once 'database/databaseConection.php';
                                     </li>
 
                                     <li class="dropdown-link">
-                                        <a href="ListaCursos.php?pag=1">Cursos Publicados</a>
+                                        <a href="sidebarEditar.php">Ajustes</a>
                                     </li>
 
                                     <li class="dropdown-link">
@@ -195,7 +195,7 @@ require_once 'database/databaseConection.php';
                                     </li>
 
                                     <li class="dropdown-link">
-                                        <a href="ListaCursos.php?pag=1">Cursos Publicados</a>
+                                        <a href="sidebarEditar.php">Ajustes</a>
                                     </li>
                     
                                     <li class="dropdown-link">
@@ -239,7 +239,7 @@ require_once 'database/databaseConection.php';
                                     </li>
 
                                     <li class="dropdown-link">
-                                        <a href="ListaCursos.php?pag=1">Cursos Publicados</a>
+                                        <a href="sidebarEditar.php">Ajustes</a>
                                     </li>
 
                                     <li class="dropdown-link">
@@ -283,7 +283,7 @@ require_once 'database/databaseConection.php';
                                     </li>
 
                                     <li class="dropdown-link">
-                                        <a href="ListaCursos.php?pag=1">Cursos Publicados</a>
+                                        <a href="sidebarEditar.php">Ajustes</a>
                                     </li>
                   
                                     <li class="dropdown-link">
@@ -327,7 +327,7 @@ require_once 'database/databaseConection.php';
                                     </li>
 
                                     <li class="dropdown-link">
-                                        <a href="ListaCursos.php?pag=1">Cursos Publicados</a>
+                                        <a href="sidebarEditar.php">Ajustes</a>
                                     </li>
                                     
                                     <li class="dropdown-link">
@@ -371,7 +371,7 @@ require_once 'database/databaseConection.php';
                                     </li>
 
                                     <li class="dropdown-link">
-                                        <a href="ListaCursos.php?pag=1">Cursos Publicados</a>
+                                        <a href="sidebarEditar.php">Ajustes</a>
                                     </li>
 
                                     <li class="dropdown-link">

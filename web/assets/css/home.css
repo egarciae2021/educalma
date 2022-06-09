@@ -137,22 +137,25 @@
 }
 
 @media (max-width: 940px) {
-    .container-image-panel img {
-        width: 430px;
-        transition: all 0.3s ease;
-    }
 
-    .certificados {
-        position: relative;
-        left: -9px;
-    }
+        .container-image-panel img {
 
-    .container .row .col-12 .section-title h2 {
-        font-size: 36px;
-        font-weight: bold;
-        text-transform: uppercase;
-        position: relative;
-        top: -180px;
+            width: 430px;
+            transition: all 0.3s ease;
+        }
+
+        .certificados {
+
+            position: relative;
+            left: -9px;
+        }
+
+        .container .row .col-12 .section-title h2 {
+            font-size: 36px;
+            font-weight: bold;
+            text-transform: uppercase;
+            position: relative;
+            top: -180px;
         }
 
         .container .row .col-12 .section-title h2 {
@@ -176,7 +179,6 @@
             margin-top: -160px; 
             margin-bottom: -100px;
         }
-    
 }
 
 /*---------------------------------------------------------------------------------------------------*/
@@ -191,11 +193,6 @@
     .certificados {
         position: relative;
         left: -9px;
-    }
-
-    /****************/
-    .card-cursos {
-
     }
 
     .card-desarrollo-personal {
@@ -649,6 +646,15 @@
     color: #99ccff;
 }
 
+
+
+
+
+
+
+
+
+
 .container-fluid-brida .row .col-12 .card {
     max-width: 318px;
     margin: auto;
@@ -680,12 +686,53 @@
     transition: width 1s ease;
 }
 
-/*Ponemos el nombre de esta clase sola para que funciones, pues detrás hay estilos de Bootstrap.*/
-/*.container-fluid-brida .row .col-12 .card-image .certificados-> De esta manera NO.*/
-.certificados {
-    position: relative;
-    left: -11px;
+
+
+.card-cursos {
+
+    width: 280px;
+    height: 280px;
 }
+
+.card-cursos .cursos img{
+
+    width: 100px;
+    height: 100px;
+}
+
+.card-desarrollo-personal {
+
+    width: 280px;
+    height: 280px;
+}
+
+.card-desarrollo-personal .desarrollo-personal img{
+
+    width: 70px;
+    height: 100px;
+}
+
+.card-certificados {
+
+    width: 280px;
+    height: 280px;
+}
+
+.card-certificados .certificados img{
+
+    width: 90px;
+    height: 90px;
+
+    position: relative;
+    left: 8px;
+    top: 6px;
+}
+
+
+
+
+
+
 
 .container-fluid-brida .row .col-12 .card-title {
     font-family: "Poppins", sans-serif;
@@ -754,9 +801,6 @@
 
    
     /****************/
-    .card-cursos {
-
-    }
 
     .card-desarrollo-personal {
 
@@ -1639,7 +1683,7 @@
     }
 
     .divEmp {
-        margin-top: -160px; 
+        margin-top: -85px; 
         margin-bottom: -100px;
     }
 
@@ -1656,4 +1700,27 @@
         position: relative;
         top: -150px;
     }
+}
+
+
+@media (min-width: 1000px) {
+
+
+    .container-fluid-brida .divBrinda {
+        margin-top: 30px;
+    }
+
+    .container-fluid-course .divCursosDestacados {
+        margin-top: 70px;
+    }
+
+    .divEmp .info {
+        padding-top: 110px;
+    }
+    
+    .front {
+        position: relative;
+        top: 40px;
+    }
+
 }

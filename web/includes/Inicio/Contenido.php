@@ -24,7 +24,7 @@ if (!isset($_GET['pag'])) {
 
     <?php
 
-    
+    /*
     if (isset($_SESSION['Logueado']) && $_SESSION['Logueado'] === true && $_SESSION['privilegio'] == 1){
       
       echo "<a href='user-sidebar.php' type='button' class='btn btn_registrar_panel'>Dashboard</a>";
@@ -49,6 +49,7 @@ if (!isset($_GET['pag'])) {
       
       echo "<a href='user-sidebar.php' type='button' class='btn btn_registrar_panel'>Dashboard</a>";
     }
+    */
 
     
     ?>
@@ -75,14 +76,21 @@ if (!isset($_GET['pag'])) {
 <div class="container container-fluid-brida">
   <div class="row">
     <div class="col-12">
-      <div class="row">
+      
+      <div class="divBrinda row"> <!--/////////////////////////-->
         <div class="section-title">
           <h2>¿Qué te ofrece <span>Educalma</span>?</h2>
         </div>
       </div>
-      <div class="row tresCards">
-        <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
 
+
+
+      <!--Tres Cards-->
+      <div class="row tresCards">  
+
+
+        <!--CURSOS-->
+        <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
           <div class="card card-cursos">
             <div class="card-image cursos">
               <img src="./assets/images/cur.png" alt="" />
@@ -97,10 +105,12 @@ if (!isset($_GET['pag'])) {
               </p>
             </div>
           </div>
-
         </div>
-        <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
 
+
+
+        <!--DESARROLLO PERSONAL-->
+        <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
           <div class="card card-desarrollo-personal">
             <div class="card-image desarrollo-personal">
               <img src="./assets/images/curso culminad.png" alt="" />
@@ -114,10 +124,12 @@ if (!isset($_GET['pag'])) {
               </p>
             </div>
           </div>
-
         </div>
-        <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
 
+
+
+        <!--CERTIFICADOS-->
+        <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
           <div class="card card-certificados">
             <div class="card-image certificados">
               <img src="./assets/images/certificad.png" alt="" />
@@ -131,10 +143,20 @@ if (!isset($_GET['pag'])) {
               </p>
             </div>
           </div>
-
         </div>
+
+
       </div>
-      <br>
+      <!--Fin de Tres Cards.-->
+
+
+
+
+      <br><br>
+
+
+
+
       <div class="row">
         <div class="section-button">
           <a href="ListaCursos.php?pag=1" type="button" class="btn btn-primary btnCom">
@@ -142,6 +164,8 @@ if (!isset($_GET['pag'])) {
           </a>
         </div>
       </div>
+
+
     </div>
   </div>
 </div>
@@ -154,7 +178,8 @@ if (!isset($_GET['pag'])) {
 
   <div class="row">
     <div class="col-12">
-      <div class="row">
+
+      <div class="divCursosDestacados row"> <!--/////////////////////////-->
         <div class="section-title">
           <div class=""></div>
           <h2 class="txtCurDes" >Cursos destacados</h2>
@@ -326,8 +351,10 @@ if (!isset($_GET['pag'])) {
 </div>
 <!-- EMPRESAS -->
 <div class="container-bussines container divEmp">
-  <div class="info col-12 mt-5">
-    <br><br>
+
+
+  <div class="info col-12 mt-5"> <!--/////////////////////////-->
+
     <h2 class="text-center">Educalma para empresas</h2>
     <br>
     <ul>
@@ -370,9 +397,9 @@ if (!isset($_GET['pag'])) {
 
 
 
-      <div class="front w-100" id="front">
+      <div class="front" id="front">
         
-        <div class="box-image d-flex align-items-center justify-content-center w-100">
+        <div class="box-image d-flex align-items-center justify-content-center">
           &nbsp;&nbsp; <img class="img-fluid" src="./assets/images/EDU-EMP.png" alt="" />
         </div>
 
@@ -382,7 +409,7 @@ if (!isset($_GET['pag'])) {
 
 
       
-      <div class="back">
+      <div style="" class="back">
         <div class="header w-100">
           <div class="box-image">
             <img src="./assets/images/Rectangle 51.png" alt="" />
