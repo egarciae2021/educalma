@@ -30,7 +30,7 @@ ob_start();
                     <!--Administrador-->
                     <?php if ($_SESSION['privilegio'] == 1) {?>
 
-                        <img src="./assets/img/isotipo_negativo.png" style="width: 40px; height: 35px;" class="header__img" cellspacing="0" width="auto" alt="foto_curso">
+                        <img src="./assets/img/user-user.png" class="header__img" cellspacing="0" width="auto" alt="foto_curso">
                
                     <?php } ?>
 
