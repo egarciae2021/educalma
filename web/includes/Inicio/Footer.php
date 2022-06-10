@@ -27,14 +27,12 @@
 
   .footer-menu li:hover{
 
-      -webkit-transform: scale(1.12,1.12);
+      -webkit-transform: scale(1.10,1.10);
       -webkit-transition-timing-function: ease-out;
       -webkit-transition-duration: 1.2;
-      -moz-transform: scale(1.12,1.12);
+      -moz-transform: scale(1.10,1.10);
       -moz-transition-timing-function: ease-out;
-      -moz-transition-duration: 100ms;
-
-      padding-left: 20px;
+      -moz-transition-duration: 250ms;
   }
 
 </style>
