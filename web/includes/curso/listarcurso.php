@@ -738,7 +738,7 @@ background-size: 25px 25px;
                 "info": true,
                 "autoWidth": false,
                 "responsive": true,
-            }),
+            })
         });
     </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

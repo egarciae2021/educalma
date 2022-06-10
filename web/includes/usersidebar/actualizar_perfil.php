@@ -15,11 +15,11 @@ require_once '../../database/databaseConection.php';
     $fecha=$_POST['fecha_naci'];
     $pais=$_POST['pais'];
 
-    $revisar = getimagesize($_FILES["imagen"]["tmp_name"]);
+   // $revisar = getimagesize($_FILES["imagen"]["tmp_name"]);
 
     // $password = password_hash($pass, PASSWORD_BCRYPT);
 
-        if($revisar !== false){
+        if(/*$revisar !== false*/ $_FILES['imagen']['size']>0){
             $imga=$_FILES['imagen']['tmp_name'];
             $imagen = addslashes(file_get_contents($imga));
           

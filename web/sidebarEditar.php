@@ -22,6 +22,7 @@
         function cambiarImg() {
             var pdrs = document.getElementById('inputGroupFile04').files[0].name;
             document.getElementById('infoImg').innerHTML = pdrs;
+            console.log()
         }
     </script>
 </body>
