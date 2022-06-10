@@ -121,12 +121,12 @@
 
                                 <div class="form-group col-md-6 ">
                                     <label class="form-label">Nombre del tema</label>
-                                    <input type="text" class="form-control" name="temas_agregar" id="" placeholder="Ingrese un nombre" aria-label="TemaAgr" aria-describedby="temaAgr-addon" required>
+                                    <input type="text" class="form-control" name="temas_agregar" id="temas_agregar" placeholder="Ingrese un nombre" aria-label="TemaAgr" aria-describedby="temaAgr-addon" required>
                                 </div>
 
                                 <div class="form-group col-md-6 ">
                                     <label class="form-label">Link del vídeo</label>
-                                    <input type="text" class="form-control" name="link" id="apellidoMat-registro" placeholder="Ingrese un link" aria-label="ApellidosMat" aria-describedby="apellidoMat-addon" required>
+                                    <input type="text" class="form-control" name="link" id="link" placeholder="Ingrese un link" aria-label="ApellidosMat" aria-describedby="apellidoMat-addon" required>
                                 </div>
 
                             </div>
@@ -135,19 +135,56 @@
 
                                 <div class="form-group col-12">
                                     <label class="form-label">Descripción del tema</label>
-                                    <textarea class="form-control" placeholder="Añadir descripción" rows="3" id="descripcio-tema" name="descripcio_tema" required></textarea>
+                                    <textarea class="form-control" placeholder="Añadir descripción" rows="3" id="descripcio_tema" name="descripcio_tema" required></textarea>
                                 </div>
                             </div>
 
                             <div class="form-row">
                                 <div class="form-group col-12">
                                     <a>
-                                        <button style="background-color: #74F077" type="submit" class="btn btn-block btn-add">
+                                        <button style="background-color: #74F077" type="submit" class="btn btn-block btn-add" onclick="alertaAgregar()">
                                             <i class="fas fa-plus"></i> Agregar
                                         </button>
                                     </a>
                                 </div>
                             </div>
+
+                            <!-- Mensaje de alerta agregar -->
+ 
+                                    <!-- Mensaje de alerta  -->
+                                    <script>
+                                        function alertaAgregar() {
+ 
+                                            const agregar = document.querySelector('#descripcio_tema,#link,temas_agregar');
+                                            let formulario = document.querySelector('#o');
+                                            if (agregar.value.length != 0 && agregar.value.length != 1) {
+                                                Swal.fire({
+ 
+                                                    icon: 'success',
+ 
+                                                    title: 'Agregado Correctamente',
+ 
+                                                    allowOutsideClick: false,
+ 
+                                                    confirmButtonText: "Ok",
+ 
+                                                }).then((result) => {
+ 
+                                                    if (result.isConfirmed) {
+ 
+                                                        formulario.submit();
+ 
+                                                    } else if (result.isDenied) {}
+                                                });
+                                            } else {
+                                                event.preventDefault();
+                                                event.stopPropagation();
+                                            }
+ 
+                                        }
+                                    </script>
+
+
                         </form>
 
                         <form style="border: #4F52D6 2px solid; border-radius: 5px;" class="pt-0">
@@ -211,13 +248,13 @@
                                     <form name="formulario" class="p-0 bg-0" style="background: transparent;" id="editando_preguntas" method="POST" action="includes/tema/checkAgrTema.php?idCur=<?php echo $idCurso;?>&id_mod=<?php echo $idModulo;?>">
                                         <div class="modal-body px-4">
                                             <h6>Nombre del Tema:</h6>
-                                            <input  type="text" name="actu_tema" class="form-control" value="<?php echo $dato3['nombreTema'];?>" required>
+                                            <input  type="text" name="actu_tema" id="nombreTema" class="form-control" value="<?php echo $dato3['nombreTema'];?>" required>
                                             
                                             <h6 class="pt-3">Descripción:</h6>
-                                            <textarea  class="form-control" rows="3" name="descripcionT" required><?php echo $dato3['descripcionTema'];?></textarea>
+                                            <textarea  class="form-control" rows="3" id="descripcionTema" name="descripcionT" required><?php echo $dato3['descripcionTema'];?></textarea>
                                 
                                             <h6 class="pt-3">Link del vídeo:</h6>
-                                            <input  type="text" name="linkT" class="form-control" value="<?php echo $dato3['link_video'];?>" required>
+                                            <input  type="text" name="linkT" id="idTema"class="form-control" value="<?php echo $dato3['link_video'];?>" required>
                                             
                                             <input type="hidden" name="idTema" value="<?php echo $dato3['idTema'];?>">
                                         </div>
@@ -226,6 +263,11 @@
                                             <button type="submit" class="btn btn-add"><i class="fas fa-redo"></i> Actualizar</button>
                                             <button type="button" class="btn btn-light" data-dismiss="modal">Cerrar</button>
                                         </div>
+
+                                        <button type="submit" class="btn btn-primary btn-lg btn-block" id="actualizar" onclick="alertaActualizar()">
+        <i class="fas fa-redo" ></i> Actualizar</button>
+       
+ 
                                     </form>
                                 </div>
                             </div>

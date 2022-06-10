@@ -114,7 +114,7 @@
                                         function alertaActualizar() {
 
                                             const agregar = document.querySelector('#inputGroupFile04');
-                                            let formulario = document.querySelector('#Nombre');
+                                            let formulario = document.querySelector('#e');
                                             if (agregar.value.length != 0 && agregar.value.length != 1) {
                                                 Swal.fire({
 

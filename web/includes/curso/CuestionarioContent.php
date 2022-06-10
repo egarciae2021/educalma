@@ -359,13 +359,18 @@
                             
                             $qiUAvance = $pdo162->prepare($sqlitUAvance);
                             $qiUAvance->execute();
-                            Database::disconnect(); 
+                            Database::disconnect();
+
+                            //Verificar si el curso ha sido calificado por el usuario.
+                            $pdo140 = Database::connect();
+                            $idUser=$_SESSION['codUsuario'];
+                            $sqlitRating = "SELECT COUNT(id_puntaje) Cantidad FROM puntaje_curso WHERE id_curso = $id AND id_user=$idUser";
+                            $qiRating = $pdo140->prepare($sqlitRating);
+                            $qiRating->execute();
+                            $datoRating = $qiRating -> fetch(PDO::FETCH_ASSOC);
+                            $ConsultaRating = $datoRating['Cantidad'];
+                            Database::disconnect();
                     ?>
-
-
-
-
-
 
                     <h4 style="text-align: right; ">
                     <span style="text-align: center; color: #9383F3;">Avance de curso : </span> 
@@ -382,17 +387,22 @@
                     
                         <h6 style="text-align: center; font-weight: bolder;">Fin de cuestionario</h6>
                         <div style="text-align: center;">
-                            
-
-
-
-
-
+                            <?php
+                                if($ConsultaRating<1){
+                            ?>
 
                             <button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#btnTerminar">Terminar</button>
-
+                            <?php
+                                }else{
+                            ?>
+                            <a href="curso.php?id=<?php echo $id;?>&idCI=<?php echo $idCI;?>"><button id="botonTerminar" type="button" class="btn btn-outline-secondary">Terminar</button></a>
+                            <?php
+                                }
+                            ?>
                             <!-- Modal -->
-                            <?php if($AvanceFinal == 100){ ?>
+                            <?php
+                                if($AvanceFinal == 100){
+                            ?>
                             <div class="modal fade" id="btnTerminar" tabindex="-1" role="dialog" aria-labelledby="btnTerminarTitle" aria-hidden="true">
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
@@ -544,7 +554,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <?php }else{?>
+                            <?php
+                                }else{?>
                                 <div class="modal fade" id="btnTerminar" tabindex="-1" role="dialog" aria-labelledby="btnTerminarTitle" aria-hidden="true">
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
