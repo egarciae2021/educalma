@@ -1,8 +1,12 @@
 <?php
 
+echo "aun no supero las liberias";
+
 require_once 'Mail.php';
 require_once 'Mail/mime.php';
 require_once 'Mail/mail.php';
+
+echo "supero las liberias";
     
     $tok = '1111111';
     $from = 'garcia4014@gmail.com';
