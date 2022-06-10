@@ -1,9 +1,8 @@
 <?php
 
-include_once "Mail.php";
-include_once "Mail/mime.php";
-    
-  
+require_once 'Mail.php';
+require_once 'Mail/mime.php';
+require_once 'Mail/mail.php';
     
     $tok = '1111111';
     $from = 'garcia4014@gmail.com';
