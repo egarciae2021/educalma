@@ -153,8 +153,8 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
               <div class="card-header">
                 <div class="row mb-2">
                   <div class="col-12">
-                    <h3 class="card-title" style="color:#737BF1;">Cantidad de cursos
-                      <span style="color:#BEC1F3;">(<?php echo $resultCurs['cantidad']; ?>)</span>
+                    <h3 class="card-title" style="color:#737BF1;">Cantidad de cursos 
+                      <span style="color:#BEC1F3;">(<?php echo $resultCurs['cantidad']; ?>)</span> 
                     </h3>
                   </div>
                 </div>
@@ -471,6 +471,7 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                           ?>
                         </tbody>
                       </table>
+                      
                       <!-- paginador de categorías-->
                       <div class="col-12">
                         <div class="row pag">
@@ -495,7 +496,7 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                             </ul>
                           </nav>
                         </div>
-                      </div>
+                      </div>-->
                       <!--fin paginador -->
                     </div>
                   </div>
