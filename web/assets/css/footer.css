@@ -1,5 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
+@media (min-width: 1000px) {
+
+  .footer--light {
+
+    margin-top: 100px;
+  
+  }
+
+
+}
+
 footer ul {
   padding: 0;
   margin: 0;
@@ -27,7 +38,7 @@ footer a:hover {
   color: #7c83fd;
 }
 .footer-menu ul li a {
-  font-size: 18px;
+  font-size: 16px;
   line-height: 32px;
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
@@ -108,9 +119,7 @@ footer a:hover {
     border-radius: 100%;
     background-color: #7C83FD;
   }
-  .copyright-text {
-    margin: 0;
-  }
+  
   @media (max-width: 991px) {
     .site-footer [class^="col-"] {
       margin-bottom: 30px;
@@ -125,6 +134,39 @@ footer a:hover {
       text-align: center;
     }
   }
+
+
+
+
+
+
+
+
+  @media (min-width: 1200px) {
+
+
+
+
+    .social-icons {
+      padding-right: 50px;
+    }
+
+
+
+    .footer-widget .footer-menu {
+      
+      float: right;
+      margin: 0;
+    }
+
+
+  }
+
+
+
+
+
+
   .social-icons {
     padding-left: 0;
     margin-bottom: 0;
@@ -171,7 +213,22 @@ footer a:hover {
     background-color: #00bb2d;
   }
   .social-icons a.youtube:hover {
-    background-color: red
-    ;
+    background-color: red;
   }
   
+  .site-footer .row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+  }
+
+  .enviar_inicio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    text-align: center; 
+    width: 40px;
+    height: 50px;
+  }

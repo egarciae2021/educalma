@@ -6,12 +6,12 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Fundación Calma</title>
+    <title>EduCalma</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <!-- Site Icons -->
-    <link rel="shortcut icon" href="assets/images/educalmalogo.svg">
+    <link rel="shortcut icon" href="assets/images/logo_edu.svg">
     <!-- <link rel="shortcut icon" href="assets/images/nuevo_logo.jpg"> -->
     <link rel="apple-touch-icon" href="#" />
 

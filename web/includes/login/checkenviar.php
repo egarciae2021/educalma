@@ -8,13 +8,13 @@
     function enviar_correo($t,$em){ 
     
     $tok = $t;
-    $from = "notificaciones.mail.1S@gmail.com";
+    $from = "garcia4014@gmail.com";
     $to = $em;
 
-    $host = "ssl://smtp.gmail.com";
-    $port = "465";
-    $username = 'notificaciones.mail.1S@gmail.com';
-    $password = 'amaterasu1';
+    $host = "ssl://smtp-relay.sendinblue.com";
+    $port = "587";
+    $username = 'garcia4014@gmail.com';
+    $password = 'Atento2019*';
  
 
     $subject = "test";
@@ -81,7 +81,7 @@
 
     $num_filas=0;
             if(isset($_POST["email_user"])){
-                $enlace = new mysqli('20.226.29.168', 'root', '', 'educalma');
+                $enlace = new mysqli('20.226.29.168', 'root', 'T3$t1ng.C4lm4', 'educalma');
                 if($enlace){
                     $email_user = $_POST["email_user"];
                     $querys=("Select * from usuarios where email ='".$email_user."'");

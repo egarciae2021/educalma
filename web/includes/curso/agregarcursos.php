@@ -147,7 +147,7 @@
 
                                 <div class="form-group col-md-6 ">
                                     <label class="form-label">Costo Curso</label>
-                                    <input type="number" id="precio-curso" name="prec_curso" placeholder="Ingrese Costo del Curso" class="form-control" aria-label="preci_curso" aria-describedby="names-addon">
+                                    <input min='0' type="number" id="precio-curso" name="prec_curso" placeholder="Ingrese Costo del Curso" class="form-control" aria-label="preci_curso" aria-describedby="names-addon">
                                 </div>
 
 
