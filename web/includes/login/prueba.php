@@ -5,20 +5,7 @@ error_reporting (E_ALL ^ E_NOTICE);
 
 try{
  
-    $pdo = Database::connect();  
-    $veri="INSERT INTO `cursos` (`idCurso`, `nombreCurso`, `descripcionCurso`, `categoriaCurso`, `dirigido`, `costoCurso`, `imagenDestacadaCurso`, `permisoCurso`, `introduccion`, `id_userprofesor`, `fechaPulicacion`, `estado`) VALUES
-    (41, 'prueba', 'test_alerta', 1, 'prueba', 12.00, '', 0, 'test_alerta', 20, NULL, 1)";    
-    $q = $pdo->prepare($veri);
-    $q->execute(array());
-    $dato=$q->fetch(PDO::FETCH_ASSOC);
 
-
-    Database::disconnect();
-
-
-
-
- 
 require_once 'Mail.php';
 require_once 'Mail/mime.php';
 require_once 'Mail/mail.php';
