@@ -10,11 +10,15 @@
 <body id="home" data-spy="scroll" data-target="#navbar-wd" data-offset="98">
     
     <?php include_once 'includes/Inicio/Loader.php' ?>
+
     <?php include_once 'includes/Inicio/Header.php' ?>
     
     <?php include_once 'includes/curso/CursoContenido.php' ?>
+    
     <?php include_once 'includes/curso/rating.php'?>
+    
     <?php include_once 'includes/Inicio/Footer.php' ?>
+
 <script src="assets/js/home.js"></script>
 
 </body>

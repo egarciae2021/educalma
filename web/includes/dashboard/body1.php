@@ -1,4 +1,4 @@
-<?php
+ <?php
 // Este codigo hace validacion para que no se pueda acceder a cualquier pagina sin estar logueado__Pablo Loyola
 
 if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
@@ -29,7 +29,27 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                                 if($dato['mifoto']!=null){
                             ?>
                                 
-                               <img src="data:image/*;base64,<?php echo base64_encode($dato['mifoto']); ?>" alt="foto_curso" class="header__img__side-dashboard">  
+                               <img id="miFoto"  src="data:image/*;base64,<?php echo base64_encode($dato['mifoto']); ?>" alt="foto_curso" class="header__img__side-dashboard" >  
+                               <!-- <style>
+                                   #miFoto{
+                                    border-radius: 50%;
+                                    border-left: 5px solid #8184f6;
+                                    border-right: 5px solid #e1c6e0;
+                                    
+                                    -webkit-box-sizing: border-box;
+                                    -moz-box-sizing: border-box;
+                                    box-sizing: border-box;
+                                    background-position: 0 0, 0 100% ;
+                                    background-repeat: no-repeat;
+                                    -webkit-background-size: 100% 5px;
+                                    -moz-background-size: 100% 5px;
+                                    background-size: 100% 5px;
+                                    background-image: -webkit-linear-gradient(left, #3acfd5 0%, #3a4ed5 100%), -webkit-linear-gradient(left, #3acfd5 0%, #3a4ed5 100%);
+                                    background-image: -moz-linear-gradient(left, #3acfd5 0%, #3a4ed5 100%), -moz-linear-gradient(left, #3acfd5 0%, #3a4ed5 100%);
+                                    background-image: -o-linear-gradient(left, #3acfd5 0%, #3a4ed5 100%), -o-linear-gradient(left, #3acfd5 0%, #3a4ed5 100%);
+                                    background-image: linear-gradient(to right, #3acfd5 0%, #3a4ed5 100%), linear-gradient(to right, #3acfd5 0%, #3a4ed5 100%);
+                                    }
+                               </style> -->
                           
                           <?php
                                 }else{
@@ -67,13 +87,13 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
 
                         <a style="position: relative; left: 8px;" href="index.php" class="nav__link-dashboard">
                             <!-- <i class='bx bx-home nav__icon'></i> -->
-                            <i class="fas fa-home nav__icon-dashboard" style="color:#92D161;"></i>
+                            <i class="fas fa-home nav__icon-dashboard" style="color:#7d83fc;"></i>
                             <span style="position: relative; left: -3px;" class="nav__name-dashboard">Inicio</span>
                         </a>
                         
                         <div style="position: relative; left: 8px;" class="nav__dropdown-dashboard">
                             <a href="user-sidebar.php" class="nav__link-dashboard">
-                                <i class="fa fa-chart-line nav__icon-dashboard" style="color:#5499C7;"></i>
+                                <i class="fa fa-chart-line nav__icon-dashboard" style="color:#7d83fc;"></i>
                                 <!-- <i class="far fa-bookmark nav__icon"></i> -->
                                 <span class="nav__name-dashboard">Dashboard</span>
                                 <!-- <i class='bx bx-chevron-down nav__icon nav__dropdown-icon'></i> -->
@@ -86,14 +106,14 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                         <div style="position: relative; left: 8px;" class="nav__dropdown-dashboard">
 
                             <a class="nav__link-dashboard">
-                                <i class="far fa-folder-open nav__icon-dashboard" style="color:#F1C40F;"></i>
+                                <img class="nav__icon-dashboard" src="./assets/images/cur.png" width="25" heigth="25">
                                 <!-- <i class="far fa-bookmark nav__icon"></i> -->
                                 <span style="position: relative; left: -3px;" class="nav__name-dashboard">Cursos</span>
                                 <!-- <i class='bx bx-chevron-down nav__icon nav__dropdown-icon'></i> -->
                                 <i class="fas fa-caret-down nav__icon-dashboard nav__dropdown-icon-dashboard"></i>
                             </a>
 
-                            <div class="nav__dropdown-collapse-dashboard">
+                            <div class="nav__dropdown-collapse-dashboard" style="background-color: #e0c7e5;">
                                 <div class="nav__dropdown-content-dashboard">
 
 
@@ -179,12 +199,12 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                             </div> -->
                             <div style="position: relative; left: 8px;" class="nav__dropdown-dashboard">
                                 <a alt="Empresas" class="nav__link-dashboard">
-                                    <i class="fas fa-city" style="color:#6495ED;"> </i>
+                                    <i class="fas fa-city" style="color:#7d83fc;"> </i>
                                     <span style="position: relative; left: -8px;" class="nav__name-dashboard">&nbsp;&nbsp; Empresas</span>
                                     <!-- <i class='bx bx-chevron-down nav__icon nav__dropdown-icon'></i> -->
                                     <i class="fas fa-caret-down nav__icon-dashboard nav__dropdown-icon-dashboard"></i>
                                 </a>
-                                <div class="nav__dropdown-collapse-dashboard">
+                                <div class="nav__dropdown-collapse-dashboard" style="background-color: #e0c7e5;">
                                     <!-- <div class="nav__dropdown-content-dashboard">
 
                                         <a href="Enterprise.php" class="nav__dropdown-item-dashboard nav__link-dashboard">Control de Empresas</a>
@@ -208,7 +228,7 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                         ?>
 
                             <a style="position: relative; left: 12px;" href="reporteUsuario.php" class="nav__link-dashboard">
-                                <i class="fas fa-clipboard nav__icon-dashboard" style="color: #424242;"></i>
+                                <i class="fas fa-clipboard nav__icon-dashboard" style="color:#7d83fc;"></i>
                                 <span class="nav__name-dashboard">Reporte</span>
                             </a>
 
@@ -221,13 +241,14 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                         ?>
 
                         <a style="position: relative; left: 8px;" href="sidebarEditar.php" class="nav__link-dashboard">
-                            <i class="fas fa-cog nav__icon-dashboard" style="color:#AAB7B8;"></i>
+                            <i class="fas fa-cog nav__icon-dashboard" style="color:#7d83fc;"></i>
                             <span class="nav__name-dashboard">Ajustes</span>
                         </a>
 
-                        <a style="position: relative; left: 8px; margin-top: 10px;" href="includes/login/logout.php" class="nav__link-dashboard nav__logout-dashboard">
-                            <i class="fas fa-sign-out-alt nav__icon-dashboard" style="color:red;"></i>
-                            <span class="nav__name-dashboard">Salir</span>
+                        <a style="position: relative; left: 8px; margin-top: 10px;border-color: #7d83fc;" href="includes/login/logout.php" class="nav__link-dashboard nav__logout-dashboard">
+                            <button style="background-color:#7d83fc; color:azure; height: 45px; width:80px; ">
+                                <i class="fa fa-arrow-right nav__icon-dashboard" style="float: left;"></i><span class="nav__name-dashboard" style="float:left;">Salir </span>  
+                            </button>
                         </a>
 
                     </div>
@@ -236,7 +257,7 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
 
         </nav>
     </div>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"></script>
     <!--========== CONTENTS ==========-->
 <?php
 }else {

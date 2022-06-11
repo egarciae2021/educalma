@@ -3,7 +3,7 @@
 </head>
 
     <style>
-        @import url(https://fonts.googleapis.com/css?family=Roboto:300);
+        @import url('https://fonts.googleapis.com/css?family=Roboto:300');
 
         .login-page {
         width: 360px;
@@ -95,9 +95,12 @@
         color: #EF3B3A;
         }
         body {
- 
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;      
+            background-image: url("./assets/img/fondop33.jpg");
+            /* width: 1313px;
+            height: 724px; */
+            /* background-color: red; */
+            
+    
         }
 
         @media only screen and (max-width: 620px) {
@@ -110,47 +113,35 @@
         }
     </style>
 
-<body style="background-color: #fff;">
+<body>
+    <?php
+        if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
+    ?>
+
+    <div class="login-page">
+        <div class="form">
+            <form class="login-form">
+                <!-- Codigo Empresa -->
+                <div class="col my-3">
+                    <label for="txtcodigo" style="float:left;"><strong>Código de Empresa</strong></label>
+                    <br>
+                    <input type="text" style="display: block; width: 100%; height:calc(1.5em + .75rem + 2px); padding: 0.375rem 0.75rem; font-size: 1rem; font-weight: 400; line-height: 1.5; background-clip: padding-box; border: 1px solid #ced4da; transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out" id="txtcode" placeholder="Ingresar código" />
+                </div>
+                <button><strong>Validar</strong></button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        $('.message a').click(function(){
+            $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
+        });
+    </script>
 
     <?php
-    if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
+
+        } else {
+            header('Location:iniciosesion.php');
+        }
     ?>
-        
-
-
-
-
-
-
-        <div class="login-page">
-            <div class="form">
-                <form class="login-form">
-                    <!-- Codigo Empresa -->
-                    <div class="col my-3">
-                        <label for="txtcodigo" style="float:left;">Código de Empresa</label>
-                        <br>
-                        <input type="text" style="display: block; width: 100%; height:calc(1.5em + .75rem + 2px); padding: 0.375rem 0.75rem; font-size: 1rem; font-weight: 400; line-height: 1.5; background-clip: padding-box; border: 1px solid #ced4da; border-radius: 0.25rem; transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out" id="txtcode" placeholder="Ingrese el codigo de su empresa" />
-                    </div>
-                    <button>Validar Código</button>
-                </form>
-            </div>
-        </div>
-
-        <script>
-            $('.message a').click(function(){
-                $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
-            });
-        </script>
-
-
-
-
-
-
-            <?php
-
-                } else {
-                    header('Location:iniciosesion.php');
-                }
-            ?>
 </body>
