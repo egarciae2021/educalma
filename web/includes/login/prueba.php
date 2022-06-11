@@ -1,13 +1,20 @@
 <?php
 
+error_reporting (E_ALL ^ E_NOTICE);
+
+
+try{
  
- 
+
 require_once 'Mail.php';
 require_once 'Mail/mime.php';
 require_once 'Mail/mail.php';
  
 echo "supero las liberias";
     
+
+
+
     $tok = '1111111';
     $from = 'garcia4014@gmail.com';
     $to = '73246932@certus.edu.pe';
@@ -80,5 +87,10 @@ echo "supero las liberias";
     }  
 
     else {echo "Todo ok ";}
+
+}
+
+catch(Exception $e){echo $e->getMessage();}
+
 
     ?>

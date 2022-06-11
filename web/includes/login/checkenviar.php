@@ -14,7 +14,7 @@
     $host = "ssl://smtp-relay.sendinblue.com";
     $port = "587";
     $username = 'garcia4014@gmail.com';
-    $password = 'Atento2019*';
+    $password = '7LGjIaWFQkUH8ATK';
  
 
     $subject = "test";

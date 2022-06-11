@@ -86,8 +86,10 @@
                 <div class="column">
                     <label for="Tipos">Tipo de Sexo</label>
                     <select class="seleccionador" name="sexo" id="Tipos">
-                        <option value="1">Mujer</option>
-                        <option value="2">Hombre</option>
+                        
+  <option value="1">Masculino</option>
+                                <option value="2">Femenino</option>
+
                         <option value="3">Otros... </option>
                     </select>
                 </div>

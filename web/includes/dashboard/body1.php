@@ -141,7 +141,7 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                                     ?>
                                     
                                     <!--//-->
-                                    <a href="ListaCursos.php?pag=1" class="nav__dropdown-item-dashboard nav__link-dashboard">Cursos Publicados</a>
+                                    <a href="ListaCursos.php?pag=1" class="nav__dropdown-item-dashboard nav__link-dashboard"><i class="fa fa-angle-right" aria-hidden="true"></i>  Cursos Publicados</a>
 
 
                                     
@@ -159,10 +159,10 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                                     ?>
 
                                         <!--//-->
-                                        <a href="agregarcurso.php" class="nav__dropdown-item-dashboard nav__link-dashboard">Agregar Un Nuevo Curso</a>
+                                        <a href="agregarcurso.php" class="nav__dropdown-item-dashboard nav__link-dashboard"><i class="fa fa-angle-right" aria-hidden="true"></i>Agregar Un Nuevo Curso</a>
 
                                         <!--//-->
-                                        <a href="publicarcursos.php?pag=1" class="nav__dropdown-item-dashboard nav__link-dashboard">Cursos No Publicados</a>
+                                        <a href="publicarcursos.php?pag=1" class="nav__dropdown-item-dashboard nav__link-dashboard"><i class="fa fa-angle-right" aria-hidden="true"></i>Cursos No Publicados</a>
 
                                     <?php
                                     }
@@ -213,7 +213,7 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                                     </div> -->
                                     <div class="nav__dropdown-content-dashboard">
 
-                                        <a href="curseEmp.php" class="nav__dropdown-item-dashboard nav__link-dashboard">Cursos para Empresas</a>
+                                        <a href="curseEmp.php" class="nav__dropdown-item-dashboard nav__link-dashboard"><i class="fa fa-angle-right" aria-hidden="true"></i>Cursos para Empresas</a>
                                         <!-- <a href="#" class="nav__dropdown-item-dashboard nav__link-dashboard">Control de Empleados</a> -->
 
                                     </div>
