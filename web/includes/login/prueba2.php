@@ -14,7 +14,7 @@ $enlace = new mysqli('20.226.29.168', 'root', 'T3$t1ng.C4lm4', 'educalma');
             $querys= ("INSERT INTO recover_password (`token`,`correo`) VALUES ('".$token."','".$email_user."')");
             $enlace->query($querys); 
             enviar_correo($token,$email_user);
-            echo 2;
+            echo 1;
  
 
 
