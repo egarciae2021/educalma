@@ -159,11 +159,15 @@ footer a:hover {
       margin: 0;
     }
 
+    /*Mover el logo del footer.*/
+    .footer-widget .widget-about .img-fluid {
+
+      margin-left: 80px;
+      
+    }
+
 
   }
-
-
-
 
 
 

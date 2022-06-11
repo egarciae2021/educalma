@@ -92,13 +92,8 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                         </a>
                         
                         <div style="position: relative; left: 8px;" class="nav__dropdown-dashboard">
-<<<<<<< HEAD
-                            <a href="sidebarEditar.php" class="nav__link-dashboard">
-                                <i class="fa fa-chart-line nav__icon-dashboard" style="color:#5499C7;"></i>
-=======
                             <a href="user-sidebar.php" class="nav__link-dashboard">
                                 <i class="fa fa-chart-line nav__icon-dashboard" style="color:#7d83fc;"></i>
->>>>>>> c8a4c6fb14df68c8c23a489cca61e145a3eff948
                                 <!-- <i class="far fa-bookmark nav__icon"></i> -->
                                 <span class="nav__name-dashboard">Dashboard</span>
                                 <!-- <i class='bx bx-chevron-down nav__icon nav__dropdown-icon'></i> -->
