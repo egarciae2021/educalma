@@ -15,7 +15,7 @@ echo "supero las liberias";
 
 
 
-    $tok = '111112211';
+    $tok = 'asd';
     $from = 'garcia4014@gmail.com';
     $to = '73246932@certus.edu.pe';
 
