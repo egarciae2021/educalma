@@ -19,7 +19,7 @@ echo "supero las liberias";
     $from = 'garcia4014@gmail.com';
     $to = '73246932@certus.edu.pe';
 
-    $host = "ssl://smtp-relay.sendinblue.com";
+    $host = "smtp-relay.sendinblue.com";
     $port = "587";
     $username = 'garcia4014@gmail.com';
     $password = 'xsmtpsib-0c133d4e0985fcf1cb9032796695f9084443f760333022d7f2c1950244d13d34-PBqXz5Dh9m6cVGxr';
