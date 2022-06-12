@@ -8,16 +8,16 @@
     function enviar_correo($t,$em){ 
     
     $tok = $t;
-    $from = "garcia4014@gmail.com";
+    $from = 'notificaciones.mail.1s@gmail.com';
     $to = $em;
 
-    $host = "ssl://smtp-relay.sendinblue.com";
+     $host = "smtp-relay.sendinblue.com";
     $port = "587";
-    $username = 'garcia4014@gmail.com';
-    $password = '7LGjIaWFQkUH8ATK';
+    $username = 'notificaciones.mail.1s@gmail.com';
+    $password = 'pwqKXgG1QtZyvr0a';
  
 
-    $subject = "test";
+    $subject = "Recupera tu accceso a EduCalma";
   
 
     $body = '<!DOCTYPE html>
