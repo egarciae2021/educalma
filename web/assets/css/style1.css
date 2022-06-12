@@ -239,7 +239,7 @@ a {
 
 .nav__link-dashboard:hover {
     color: var(--title-color);
-    font-size: 16px;
+    /* font-size: 16px; */
     text-decoration: none;
 }
 
@@ -291,6 +291,7 @@ a {
 
 .nav__dropdown-item-dashboard:hover {
     color: var(--title-color);
+    background-color: #58555e64;
 }
 
 .nav__dropdown-icon-dashboard {

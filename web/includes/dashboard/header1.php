@@ -30,11 +30,7 @@ ob_start();
                     <!--Administrador-->
                     <?php if ($_SESSION['privilegio'] == 1) {?>
 
-<<<<<<< HEAD
-                        <img src="./assets/img/user-user.png" class="header__img" cellspacing="0" width="auto" alt="foto_curso">
-=======
                         <img src="./assets/img/user-admi.jpg" class="header__img" cellspacing="0" width="auto" alt="foto_curso">
->>>>>>> 0f0c814ea2e92f9c9114d3dd896520cec5d6c9b0
                
                     <?php } ?>
 
