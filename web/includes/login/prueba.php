@@ -16,13 +16,13 @@ echo "supero las liberias";
 
 
     $tok = 'asd';
-    $from = 'garcia4014@gmail.com';
+    $from = 'notificaciones.mail.1s@gmail.com';
     $to = '73246932@certus.edu.pe';
 
-    $host = "in-v3.mailjet.com";
+    $host = "smtp-relay.sendinblue.com";
     $port = "587";
-    $username = 'garcia4014@gmail.com';
-    $password = 'bfc1a939545cce9958134265c5096c7e';
+    $username = 'notificaciones.mail.1s@gmail.com';
+    $password = 'pwqKXgG1QtZyvr0a';
    
 
     $subject = "test";
