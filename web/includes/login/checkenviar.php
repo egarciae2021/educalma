@@ -4,6 +4,8 @@
     session_start();
     
     require_once "Mail.php";
+	require_once 'Mail/mime.php';
+	require_once 'Mail/mail.php';
     
     function enviar_correo($t,$em){ 
     
@@ -77,6 +79,8 @@
     if (PEAR::isError($mail)) {
     echo($mail->getMessage());
     } 
+	echo 1;
+	
     }
 
     $num_filas=0;
@@ -99,7 +103,7 @@
                             $querys= ("INSERT INTO recover_password (`token`,`correo`) VALUES ('".$token."','".$email_user."')");
                             $enlace->query($querys); 
                             enviar_correo($token,$email_user);
-                            echo 1;
+                            
                         }
                 }
             }
