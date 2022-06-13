@@ -126,6 +126,7 @@
             $intentos=$datoIntentos['intentos'];//$fila4['intentos'];
          }
          
+         
 
 
         $pdo = Database::connect();
@@ -263,6 +264,7 @@
                             $cantidad=$datoii['cantidad'];
                             Database::disconnect();
                             $intentos = 3;
+                            $intentoParaModal = $intentos;
                             //Dependiendo de la verificación se procede a insertar o actualizar valores.
                             if($cantidad<1){
                                 $pdo2 = Database::connect();
@@ -283,7 +285,7 @@
                                 $intentos=$datoIntNotas['intentos'];//$fila4['intentos'];
                                 $notaSFinal = $datoIntNotas['nota'];
                                 $estadoMod = $datoIntNotas['estado'];
-                                
+                                $intentoParaModal = $intentos;
                                 if($notaSFinal < $notaFinal){
                                     $notaSFinal = $notaFinal;
                                 }
@@ -570,7 +572,7 @@
 
                             
                             <!-- -->
-                            <?php if($intentos==0){?>
+                            <?php if($intentoParaModal==0){?>
 
                                 <script>
     
