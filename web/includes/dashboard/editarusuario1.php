@@ -1,4 +1,3 @@
-
 <div class="container-contformulario">
     <?php
 
@@ -23,16 +22,16 @@
                 </div>
                 <div class="inputBox">
                     <h3>Apellido Paterno</h3>
-                    <input type="text" id="Apellido_Paterno" name="Apellido_Paterno" value="<?php echo $dato2['apellido_pat']; ?>">
+                    <input type="text" id="Apellidop" name="Apellido_Paterno" value="<?php echo $dato2['apellido_pat']; ?>">
                 </div>
                 <div class="inputBox">
                     <h3>Apellido Materno</h3>
-                    <input type="text" id="Apellido_Materno" name="Apellido_Materno" value="<?php echo $dato2['apellido_mat']; ?>">
+                    <input type="text" id="Apellidom" name="Apellido_Materno" value="<?php echo $dato2['apellido_mat']; ?>">
                 </div>
                 <div class="inputBox">
                     <h3>Pa&iacute;s</h3>
                     <!-- <input type="text" id="Pais" name="pais" value="<?php # echo $dato2['pais']; ?>"> -->
-                    <select id="pais" name="pais" class="form-control">
+                    <select id="cmbPais" name="pais" class="form-control">
                         <option value="">Seleccionar</option>
                         <?php
                         
@@ -77,8 +76,8 @@
                 <div class="inputBox">
                     <h3>Tipo de sexo</h3>
                     <select class="seleccionador" name="sexo" id="Tipos">
-                        <option value="1" <?php if(1 == $dato2['sexo']){echo 'selected';};?>>Hombre</option>
-                        <option value="2" <?php if(2 == $dato2['sexo']){echo 'selected';};?>>Mujer</option>
+                        <option value="1" <?php if(1 == $dato2['sexo']){echo 'selected';};?>>Mujer</option>
+                        <option value="2" <?php if(2 == $dato2['sexo']){echo 'selected';};?>>Hombre</option>
                         <option value="3" <?php if(3 == $dato2['sexo']){echo 'selected';};?>>Otros... </option>
                     </select>
                     <!-- <input type="text"> -->
@@ -101,52 +100,7 @@
                         <div id="infoImg"></div>
                     </div>
                 </div>
-
-                <!--actualizar con alerta de validacion-->
-                
-      <button type="submit" class="btn btn-primary btn-lg btn-block"  id="actualizar" onclick="alertaActualizar()">
-        <i class="fas fa-redo" ></i> Actualizar</button>
-       
- <!-- Mensaje de alerta modulo agregado -->
-
-                                    <!-- Mensaje de alerta si o si actualizar su foto -->
-                                    <script>
-                                        function alertaActualizar() {
-
-                                            const agregar = document.querySelector('#inputGroupFile04');
-                                            let formulario = document.querySelector('#e');
-                                            if (agregar.value.length != 0 && agregar.value.length != 1) {
-                                                Swal.fire({
-
-                                                    icon: 'success',
-
-                                                    title: 'Actualizado Correctamente',
-
-                                                    allowOutsideClick: false,
-
-                                                    confirmButtonText: "Ok",
-
-                                                    
-
-                                                }).then((result) => {
-
-                                                    if (result.isConfirmed) {
-
-                                                        formulario.submit();
-
-                                                    } else if (result.isDenied) {}
-                                                });
-                                            } else {
-                                                event.preventDefault();
-                                                event.stopPropagation();
-                                            }
-
-                                        }
-                                    </script>
-
-
-
-
+                <input type="submit" class="btn" value="Actualizar">
             </form>
         </div>
     </div>
