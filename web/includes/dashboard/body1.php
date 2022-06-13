@@ -131,10 +131,10 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                                     ?>
 
                                         <!--//-->
-                                        <a href="sidebarCursos.php" class="nav__dropdown-item-dashboard nav__link-dashboard">Cursos Comprados</a>
+                                        <a href="sidebarCursos.php" class="nav__dropdown-item-dashboard nav__link-dashboard"><i class="fa fa-angle-right" aria-hidden="true"></i>Cursos Comprados</a>
 
                                         <!--//-->
-                                        <a href="comprarCursoCodEmpresa.php" class="nav__dropdown-item-dashboard nav__link-dashboard">Comprar Curso por Código de Empresa</a>
+                                        <a href="comprarCursoCodEmpresa.php" class="nav__dropdown-item-dashboard nav__link-dashboard"><i class="fa fa-angle-right" aria-hidden="true"></i>Comprar Curso por Código de Empresa</a>
 
                                     <?php
                                     }
