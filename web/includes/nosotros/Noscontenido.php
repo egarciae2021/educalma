@@ -31,26 +31,7 @@
         </div>
     </div>
 </div>
-<!-- VIDEO -->
-<div class="container-fluid container-video">
-    <div class="container">
-        <h1 class="text-center mb-4 title-video" style="color: #7c83fd" id="video">
-            ¡EduCalma desarrollo para el tiempo!
-        </h1>
-        <p class="col-12 text-center px-5 text-title-video" style="font-family: 'Poppins', sans-serif; color: #a2a2a2">
-            Construimos en las personas un carácter sólido para mitigar la
-            violencia, el mañana pertenece a las personas que se preparan para hoy.
-        </p>
-        <div class="row">
-            <div class="col-12 col-md-12 my-2 container-video-educalma"  >
-                <div class="video-youtube">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/U7JlQWtidOo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-            </div>
-            
-        </div>
-    </div>
-</div>
+
 <!-- PREGUNTAS -->
 <div class="container container-questions">
     <div class="row my-4">
@@ -199,6 +180,26 @@
                    });
                </script> 
             </div>
+        </div>
+    </div>
+</div>
+ <!-- VIDEO -->
+ <div class="container-fluid container-video">
+    <div class="container">
+        <h1 class="text-center mb-4 title-video" style="color: #7c83fd" id="video">
+            ¡EduCalma desarrollo para el tiempo!
+        </h1>
+        <p class="col-12 text-center px-5 text-title-video" style="font-family: 'Poppins', sans-serif; color: #a2a2a2">
+            Construimos en las personas un carácter sólido para mitigar la
+            violencia, el mañana pertenece a las personas que se preparan para hoy.
+        </p>
+        <div class="row">
+            <div class="col-12 col-md-12 my-2 container-video-educalma"  >
+                <div class="video-youtube">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/U7JlQWtidOo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+            
         </div>
     </div>
 </div>
