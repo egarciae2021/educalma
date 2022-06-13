@@ -5,7 +5,8 @@
     $codA=$_POST['cod_alumno'];
     $codC=$_POST['cod_curso'];
      
-    $font = "C:\Windows\Fonts\LSANSD.TTF"; 
+    //$font = "C:\Windows\Fonts\LSANSD.TTF"; 
+	$font = "C:\Windows\Fonts\ARIAL.TTF"; 
     $fonti = "C:\Windows\Fonts\seguihis.ttf"; 
     $image= imagecreatefromjpeg("certificate.jpg");
     $color= imagecolorallocate($image,25,39,175);
