@@ -43,10 +43,10 @@ try{
     $verif->bindParam(":pais",$pais,PDO::PARAM_STR);
     $verif->bindParam(":codigo",$codigo,PDO::PARAM_STR);
 	
-	if($sexo==1){
+	if($sexo=1){
 		 $verif->bindParam(":mifot",$hombre,PDO::PARAM_STR);
 	}
-	elseif($sexo==2){
+	elseif($sexo=2){
 		 $verif->bindParam(":mifot",$mujer,PDO::PARAM_STR);
 	} 
 	else {
