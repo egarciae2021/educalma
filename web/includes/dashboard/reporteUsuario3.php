@@ -165,11 +165,11 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                             <table id="tableUsuarios" class="table table-borderless dt-responsive text-left" cellspacing="0" width="100%">
                                 <thead>
                                     <tr style="background-color:#737BF1;">
-                                        <th style="border-radius: 10px 0 0 10px;">Nombres</th>
-                                        <th scope="col">Cursos</th>
-                                        <th>Progreso</th>
-                                        <th>Estado</th>
-                                        <th style="border-radius: 0 10px 10px 0;">Fecha Finalización</th>
+                                        <th style="border-radius: 10px 0 0 10px;">ID Usuario</th>
+                                        <th scope="col">Nombre Completo</th>
+                                        <th>Curso</th>
+                                        <th>Avance</th>
+                                        <th>Nota</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -179,11 +179,11 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                                     foreach($pdo->query($sql4) as $aprobados){ //= $q4->fetch(PDO::FETCH_ASSOC)
                                       echo '<tr class="h-100 justify-content-center align-items-center">';
                                       echo '
-                                          <td>'. $aprobados['nombres'].'</td>
+                                          <td>'. $aprobados['idUsuario'].'</td>
+                                          <td>'. $aprobados['nombres'].'</td> 
                                           <td>'. $aprobados['nombreCurso'].'</td> 
-                                          <td>'. $aprobados['avance'].'</td> 
+                                          <td>'. $aprobados['avance'].'</td>
                                           <td>'. $aprobados['nota'].'</td>
-                                          <td>'. $aprobados['fecha'].'</td>
                                       ';
                                           }
                                     Database::disconnect();

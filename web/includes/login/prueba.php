@@ -1,22 +1,29 @@
 <?php
 
+error_reporting (E_ALL ^ E_NOTICE);
+
+
+try{
  
- 
+
 require_once 'Mail.php';
 require_once 'Mail/mime.php';
 require_once 'Mail/mail.php';
  
 echo "supero las liberias";
     
-    $tok = '1111111';
-    $from = 'garcia4014@gmail.com';
+
+
+
+    $tok = 'asd';
+    $from = 'notificaciones.mail.1s@gmail.com';
     $to = '73246932@certus.edu.pe';
 
-    $host = "ssl://smtp-relay.sendinblue.com";
+    $host = "smtp-relay.sendinblue.com";
     $port = "587";
-    $username = 'garcia4014@gmail.com';
-    $password = 'xsmtpsib-0c133d4e0985fcf1cb9032796695f9084443f760333022d7f2c1950244d13d34-PBqXz5Dh9m6cVGxr';
- 
+    $username = 'notificaciones.mail.1s@gmail.com';
+    $password = 'pwqKXgG1QtZyvr0a';
+   
 
     $subject = "test";
   
@@ -80,5 +87,10 @@ echo "supero las liberias";
     }  
 
     else {echo "Todo ok ";}
+
+}
+
+catch(Exception $e){echo $e->getMessage();}
+
 
     ?>

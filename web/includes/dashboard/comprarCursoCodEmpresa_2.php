@@ -95,12 +95,14 @@
         color: #EF3B3A;
         }
         body {
-            background-image: url("./assets/img/fondop33.jpg");
+            /* background-image: url("./assets/img/fondop33.jpg"); */
             /* width: 1313px;
             height: 724px; */
             /* background-color: red; */
-            
-    
+            background-image: url("./assets/img/fondop3-min.jpg");
+            background-size: 200px 200px;
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
         }
 
         @media only screen and (max-width: 620px) {

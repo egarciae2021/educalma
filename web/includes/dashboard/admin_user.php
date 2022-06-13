@@ -475,8 +475,9 @@ $usuarios = $q3->fetchAll(PDO::FETCH_ASSOC);
                         <label class="col-lg-2 col-md-3 col-sm-3 col-xs-4 control-label">Sexo:</label>
                         <div class="col-lg-7 col-md-5 col-sm-5 col-xs-6">
                             <select class="form-control" class="seleccionador" name="sexo" id="Tipos">
-                                <option value="1">Masculino</option>
+                            <option value="1"  >Masculino</option>
                                 <option value="2">Femenino</option>
+
                                 <option value="3">No Binario</option>
                                 <option value="4">Prefiero No Decir</option>
                             </select>

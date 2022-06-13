@@ -4,20 +4,22 @@
     session_start();
     
     require_once "Mail.php";
+	require_once 'Mail/mime.php';
+	require_once 'Mail/mail.php';
     
     function enviar_correo($t,$em){ 
     
     $tok = $t;
-    $from = "garcia4014@gmail.com";
+    $from = 'notificaciones.mail.1s@gmail.com';
     $to = $em;
 
-    $host = "ssl://smtp-relay.sendinblue.com";
+     $host = "smtp-relay.sendinblue.com";
     $port = "587";
-    $username = 'garcia4014@gmail.com';
-    $password = 'Atento2019*';
+    $username = 'notificaciones.mail.1s@gmail.com';
+    $password = 'pwqKXgG1QtZyvr0a';
  
 
-    $subject = "test";
+    $subject = "Recupera tu accceso a EduCalma";
   
 
     $body = '<!DOCTYPE html>
@@ -77,6 +79,8 @@
     if (PEAR::isError($mail)) {
     echo($mail->getMessage());
     } 
+	echo 1;
+	
     }
 
     $num_filas=0;
@@ -99,7 +103,7 @@
                             $querys= ("INSERT INTO recover_password (`token`,`correo`) VALUES ('".$token."','".$email_user."')");
                             $enlace->query($querys); 
                             enviar_correo($token,$email_user);
-                            echo 1;
+                            
                         }
                 }
             }
