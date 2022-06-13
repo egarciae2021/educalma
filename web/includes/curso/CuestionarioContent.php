@@ -602,7 +602,7 @@
                             <!-- -->
                             <?php 
                             
-                            if($intentoParaModal==1){?>
+                            if($intentos==1){?>
                                 
                                 <script>
 
@@ -649,7 +649,7 @@
 
                             <?php
                             
-                            } else if($intentoParaModal==2){?>
+                            } else if($intentos==2){?>
                                 
                                 <script>
 
