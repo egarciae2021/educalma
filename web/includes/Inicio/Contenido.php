@@ -220,11 +220,11 @@ if (!isset($_GET['pag'])) {
 
 
         <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 mb-4">
-          <div class="card">
-            <div class="row">
-              <div class="col-4 col-sm-4 col-md-12 col-lg-4 col-xl-4">
+          <div class="card destacados">
+            <div class="row ">
+              <div class="col-4 col-sm-4 col-md-12 col-lg-4 col-xl-4 ">
                 <div class="container-image-course">
-                  <img class="imgCurso" style="" src="./assets/images/imagen_curso_destacado.png" alt="" />
+                  <img class="imgCurso" src="./assets/images/imagen_curso_destacado.png" alt="" />
                 </div>
               </div>
               <div class="col-8 col-sm-8 col-md-12 col-lg-8 col-xl-8">
@@ -237,6 +237,12 @@ if (!isset($_GET['pag'])) {
                 
               </div>
             </div>
+              <style>
+                .destacados:hover{
+                  box-shadow: 5px 5px 20px rgba(0,0,0,0.4);
+	                transform: translateY(-3%);
+                }
+              </style>
           </div>
         </div>
 
