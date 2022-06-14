@@ -170,13 +170,51 @@
                             class="fas fa-star m-1"></i><i class="fas fa-star m-1"></i>
                         <span class="ml-4">20</span> Opiniones
                     </div>
-                    <div class="description-course puntos-suspensivos">
+
+
+                    <!--Código para obtener el nombre del profesor-->
+                    <?php 
+                      
+                    $idUsuario = $dato4['id_userprofesor'];
+                    $sql = "SELECT * FROM usuarios WHERE id_user = '$idUsuario'";
+                    $q = $pdo->prepare($sql);
+                    $q->execute(array());
+                    $dato20 = $q->fetch(PDO::FETCH_ASSOC);
+                    ?>
+
+
+
+                    <?php 
+                        if($dato20['privilegio']==1){
+                    ?>
+
+                            <span style="color: #565656; font-size: 14px;">Creado por la Fundación CALMA.</span>
+
+                    <?php 
+                        }
+
+                        if($dato20['privilegio']==2){
+                    ?>
+                            <span style="color: #565656; font-size: 14px;">Creado por <?php echo " " . $dato20['nombres'] . " " . $dato20['apellido_pat'] . " " . $dato20['apellido_mat'] . "."?></span>
+                    <?php 
+                        }
+                    ?>    
+
+
+
+
+
+
+
+
+                    <div style="padding-top: 40px;" class="description-course puntos-suspensivos">
                         <?php echo $dato4['descripcionCurso']; ?>
                     </div>
+
+
+
                     <div class="start-course mt-5">
 
-
-                    
                         <div class="row container-start-course py-2 ml-1 my-3" style="position: relative; left: -10px;">
 
                             <div class="col-6 pr-0">
