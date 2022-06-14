@@ -124,13 +124,25 @@
                                             $q = $pdo->prepare($sql);
                                             $q->execute(array());
                                             $dato5 = $q->fetch(PDO::FETCH_ASSOC);
-                                            $nombresProf = $dato5['nombres'];
-                                            $apepaternoProf = $dato5['apellido_pat'];
-                                            $apematernoProf = $dato5['apellido_mat'];
                                         ?>
 
                                         <a>
-                                            Creado por <?php echo " " . $nombresProf . " " . $apepaternoProf . " " . $apematernoProf . "."?>
+
+                                            <?php 
+                                                if($dato5['privilegio']==1){
+                                            ?>
+
+                                                    <span style="color: #565656;">Creado por la Fundación CALMA.</span>
+
+                                            <?php 
+                                                }
+
+                                                if($dato5['privilegio']==2){
+                                            ?>
+                                                    <span style="color: #565656;">Creado por <?php echo " " . $dato5['nombres'] . " " . $dato5['apellido_pat'] . " " . $dato5['apellido_mat'] . "."?></span>
+                                            <?php 
+                                                }
+                                            ?>
                                         </a>
                                     </div>
 
@@ -416,7 +428,21 @@
                             ?>
 
                             <a>
-                                Creado por <?php echo " " . $nombresProf . " " . $apepaternoProf . " " . $apematernoProf . "."?>
+                                            <?php 
+                                                if($dato5['privilegio']==1){
+                                            ?>
+
+                                                    <span style="color: #565656;">Creado por la Fundación CALMA.</span>
+
+                                            <?php 
+                                                }
+
+                                                if($dato5['privilegio']==2){
+                                            ?>
+                                                    <span style="color: #565656;">Creado por <?php echo " " . $dato5['nombres'] . " " . $dato5['apellido_pat'] . " " . $dato5['apellido_mat'] . "."?></span>
+                                            <?php 
+                                                }
+                                            ?>
                             </a>
                         </div>
 
