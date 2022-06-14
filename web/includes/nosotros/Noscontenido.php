@@ -83,7 +83,7 @@
                     <div id="collapseOne" class="collapse" data-parent="#accordion">
                         <div class="card-body py-0">
                             <ul class="px-0">
-                                <ul class="card-body pb-3" ><i class="far fa-check-circle mr-2"></i>Dirígete hacia el
+                                <ul class="card-body pb-3" style="font-size: 16px">Dirígete hacia el
                                     ícono Regístrate y haciendo eso podrás elegir el abanico de cursos que tenemos
                                     para ofrecerte.</ul>
                             </ul>
@@ -100,7 +100,7 @@
                     <div id="collapseTwo" class="collapse mt-0" data-parent="#accordion">
                         <div class="card-body py-0">
                             <ul class="px-0">
-                                <li class="card-body pb-3"><i class="far fa-check-circle mr-2"></i>No todo los
+                                <li class="card-body pb-3" style="font-size: 16px">No todo los
                                     cursos tienen la misma cantidad de sesiones pero lo máximo de sesiones son 9 o 12
                                     y cada una tiene un test para completar.</li>
                             </ul>
@@ -118,7 +118,7 @@
                     <div id="collapseThree" class="collapse" data-parent="#accordion">
                         <div class="card-body py-0">
                             <ul class="px-0">
-                                <li class="card-body pb-3"><i class="far fa-check-circle mr-2"></i>Cada test tiene
+                                <li class="card-body pb-3" style="font-size: 16px"></i>Cada test tiene
                                     entre 10 a 15 preguntas laboradas por el profesor o especialista de acuerdo a la
                                     sesión aprendida.</li>
                             </ul>
@@ -136,7 +136,7 @@
                     <div id="collapseFour" class="collapse" data-parent="#accordion">
                         <div class="card-body py-0">
                             <ul class="px-0">
-                                <li class="card-body pb-3"><i class="far fa-check-circle mr-2"></i>Los cursos de los
+                                <li class="card-body pb-3" style="font-size: 16px">Los cursos de los
                                     cuales tenemos por ahora los puedes obtener de manera gratuita con todo los
                                     beneficios.</li>
                             </ul>
@@ -154,7 +154,7 @@
                     <div id="collapseFive" class="collapse" data-parent="#accordion">
                         <div class="card-body py-0">
                             <ul class="px-0">
-                                <li class="card-body pb-3"><i class="far fa-check-circle mr-2"></i>Cada curso tiene
+                                <li class="card-body pb-3" style="font-size: 16px">Cada curso tiene
                                     Certificados reconocidos por la fundacion internacional Calma, los cuales cada curso
                                     han sido evaluados y aprobados.</li>
                             </ul>
