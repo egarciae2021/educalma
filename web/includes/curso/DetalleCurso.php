@@ -517,18 +517,27 @@ body {
 
                                 <div>
                                     <i class="far fa-file text-center" style="width: 1.5rem;"></i>
-                                    <span class="ml-3"><?php echo $modulos; ?> Módulos</span>
+                                    <span class="ml-3"><?php echo $modulos; ?> Módulos con sus respectivos</span>
                                 </div>
 
+                                <div style="padding-left: 28px;">
+                                    
+                                    <span class="ml-3">temas y cuestionarios</span>
+                                </div>
+
+                                <!--
                                 <div>
                                     <i class="far fa-folder text-center" style="width: 1.5rem;"></i>
                                     <span class="ml-3"><?php echo $temas; ?> Temas</span>
                                 </div>
+                                -->
 
+                                <!--
                                 <div>
                                     <i class="far fa-list-alt text-center" style="width: 1.5rem;"></i>
                                     <span class="ml-3"><?php echo $cuestionarios; ?> Cuestionarios</span>
                                 </div>
+                                -->
 
                                 <div>
                                     <i class="fas fa-graduation-cap text-center" style="width: 1.5rem;"></i>
