@@ -175,6 +175,7 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                       <tr style="background-color:#737BF1;">
                         <th style="border-radius: 10px 0 0 10px;">Imagen</th>
                         <th>Nombre</th>
+                        <th>Creado Por</th>
                         <th>Descripción</th>
                         <th>Categoría</th>
                         <th>Dirigido</th>
@@ -215,6 +216,65 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                           <td>
                             <?php echo $curso['nombreCurso']; ?>
                           </td>
+
+
+
+
+
+                          <td>
+
+                          <!--Código para obtener el nombre del profesor-->
+                          <?php 
+                            
+                            $idUsuario = $curso['id_userprofesor'];
+                            $sql = "SELECT * FROM usuarios WHERE id_user = '$idUsuario'";
+                            $q = $pdo->prepare($sql);
+                            $q->execute(array());
+                            $dato20 = $q->fetch(PDO::FETCH_ASSOC);
+                            ?>
+        
+        
+        
+                            <?php 
+                                if($dato20['privilegio']==1){
+                            ?>
+        
+                                    <span style="color: #565656; font-size: 14px;">Fundación CALMA</span>
+        
+                            <?php 
+                                }
+        
+                                if($dato20['privilegio']==2){
+                            ?>
+                                    <span style="color: #565656; font-size: 14px;"><?php echo " " . $dato20['nombres'] . " " . $dato20['apellido_pat'] . " " . $dato20['apellido_mat'] . "."?></span>
+                            <?php 
+                                }
+                            ?>  
+  
+
+                          </td>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                           <td width="330" height="80">
                             <?php echo substr($curso['descripcionCurso'], 0, 70) . "..."; ?>
                           </td>
