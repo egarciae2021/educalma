@@ -11,26 +11,26 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
     <link rel="stylesheet" href="assets/css/styledash.css">
 
 
-  <style>
-        .dataTables_filter{
+    <style>
+      .dataTables_filter {
 
         /*Centrando el buscador de "Por Empresas".*/
-        position: relative;  
+        position: relative;
         left: -140px;
         float: left;
         /**/
 
-        border-radius: 5px ; 
+        border-radius: 5px;
         border: 1px solid #57B3F7;
         background-repeat: no-repeat;
         background-image: url("./assets/img/buscar.png");
         background-position: 8px 5px;
         background-size: 25px 25px;
 
-        }
+      }
 
-        /*Palabra "Buscar"*/ 
-        .dataTables_filter label {
+      /*Palabra "Buscar"*/
+      .dataTables_filter label {
 
         position: relative;
         top: 5px;
@@ -41,63 +41,62 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
 
         font-size: 15.4px;
 
+      }
+
+      /*Caja de texto del buscador*/
+      .dataTables_filter label .form-control {
+
+        border: 0;
+        height: 25px;
+        position: relative;
+        left: -9px;
+        padding: 0;
+      }
+
+      @media screen and (max-width: 720px) {
+
+        .dataTables_filter {
+
+          float: right;
+          position: relative;
+          left: 25px;
         }
+      }
 
-        /*Caja de texto del buscador*/ 
-        .dataTables_filter label .form-control {
+      @media screen and (max-width: 640px) {
 
-            border: 0;
-            height: 25px;
-            position: relative;
-            left: -9px;
-            padding: 0;
+        .dataTables_filter {
+
+          float: right;
+          position: relative;
+          left: 25px;
         }
-
-        @media screen and (max-width: 720px) {
-
-        .dataTables_filter{
-
-            float: right;
-            position: relative;
-            left: 25px;
-        }
-        }
-
-        @media screen and (max-width: 640px) {
-
-          .dataTables_filter{
-
-              float: right;
-              position: relative;
-              left: 25px;
-          }
-        }
-
-  </style>
+      }
+    </style>
 
   </head>
 
   <!-- para lista de cursos -->
   <?php
-      $pdo3 = Database::connect();
+  $pdo3 = Database::connect();
 
-      $sqlz = "SELECT * FROM cursos where permisoCurso=1 order by idCurso DESC ";
-      $qz = $pdo3->prepare($sqlz);
-      $qz->execute();
+  $sqlz = "SELECT * FROM cursos where permisoCurso=1 order by idCurso DESC ";
+  $qz = $pdo3->prepare($sqlz);
+  $qz->execute();
 
-      $contar = $qz->rowCount();
+  $contar = $qz->rowCount();
 
-      if ($_SESSION['privilegio'] == 2) {
-        $idProfe = $_SESSION['codUsuario'];
-        $sql3 = "SELECT * FROM cursos WHERE id_userprofesor='$idProfe' order by idCurso DESC";
-      } else {
-        $idProfe = $_SESSION['codUsuario'];
-        $sql3 = "SELECT * FROM cursos WHERE permisoCurso=1 order by idCurso DESC ";
-      }
+  if ($_SESSION['privilegio'] == 2) {
+    $idProfe = $_SESSION['codUsuario'];
+    $sql3 = "SELECT * FROM cursos WHERE id_userprofesor='$idProfe' order by idCurso DESC";
+  } else {
+    $idProfe = $_SESSION['codUsuario'];
+    $sql3 = "SELECT * FROM cursos WHERE permisoCurso=1 order by idCurso DESC ";
+  }
 
-      $q3 = $pdo3->prepare($sql3);
-      $q3->execute();
-      $curso = $q3->fetchAll(PDO::FETCH_ASSOC);
+  $q3 = $pdo3->prepare($sql3);
+  $q3->execute();
+  $curso = $q3->fetchAll(PDO::FETCH_ASSOC);
   ?>
 
   <main>
@@ -105,7 +104,7 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
     <div class="container-fluid">
       <div class="row mt-5">
         <div class="col-12">
-        <div class="title" style="color:#737BF1;">Administrar</div>
+          <div class="title" style="color:#737BF1;">Administrar</div>
           <div class="row">
             <div class="col-12">
               <nav class="navbar navbar-expand">
@@ -153,8 +152,8 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
               <div class="card-header">
                 <div class="row mb-2">
                   <div class="col-12">
-                    <h3 class="card-title" style="color:#737BF1;">Cantidad de cursos 
-                      <span style="color:#BEC1F3;">(<?php echo $resultCurs['cantidad']; ?>)</span> 
+                    <h3 class="card-title" style="color:#737BF1;">Cantidad de cursos
+                      <span style="color:#BEC1F3;">(<?php echo $resultCurs['cantidad']; ?>)</span>
                     </h3>
                   </div>
                 </div>
@@ -232,11 +231,11 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                           </td>
                           <td style="text-align: center;">
 
-                            <?php if($curso['estado']==0){ ?>
+                            <?php if ($curso['estado'] == 0) { ?>
 
                               <spand style="font-weight: bold; color: red;"><?php echo "No"; ?></spand>
 
-                            <?php }else{ ?>
+                            <?php } else { ?>
 
                               <spand style="font-weight: bold; color: #3DD72A;"><?php echo "Sí"; ?></spand>
 
@@ -244,7 +243,7 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
 
                           </td>
                           <td>
-                            
+
                             <!--para editar curso-->
                             <div class="btn-group" role="group">
                               <a href="editarcurso.php?id=<?php echo $curso['idCurso']; ?>">
@@ -305,6 +304,7 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
 
             <?php
             $pdo3 = Database::connect();
+
             $sql3 = "SELECT COUNT(*) AS cantidad FROM categorias";
             $q3 = $pdo3->prepare($sql3);
             $q3->execute(array());
@@ -361,11 +361,11 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
               <!-- fin tabla añadir categorias -->
 
               <!-- tabla accion categorias -->
-              <div class="col-12 col-md-6">
+              <div class="col-12 col-md-6" id="">
                 <div class="card pt-0">
                   <div class="card-body">
                     <div class="table-responsive">
-                      <table id="" class="table table-borderless text-center dt-responsive text-center" cellspacing="0" width="100%">
+                      <table id="tablaCategorias" class="table table-borderless text-center dt-responsive text-center" cellspacing="0" width="100%">
                         <thead>
                           <tr style="background-color:#737BF1;">
                             <th style="border-radius: 10px 0 0 10px;">
@@ -471,32 +471,9 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                           ?>
                         </tbody>
                       </table>
-                      
+
                       <!-- paginador de categorías-->
-                      <div class="col-12">
-                        <div class="row pag">
-                          <nav>
-                            <ul class="pagination mt-3">
-                              <li class="page-item <?php if ($pagina <= 1) echo 'disabled' ?>">
-                                <a class="page-link text-info" href="user-sidebar.php?pag=<?php echo $pagina - 1; ?>">
-                                  Anterior
-                                </a>
-                              </li>
-
-                              <?php for ($i = 0; $i < $page; $i++) : ?>
-                                <li class="page-item  <?php echo $pagina == $i + 1 ? 'activate' : '' ?>">
-                                  <a class="page-link text-info num" href="user-sidebar.php?pag=<?php echo $i + 1; ?>"><?php echo $i + 1; ?></a>
-                                </li>
-                              <?php endfor ?>
-
-                              <li class="page-item <?php if ($pagina >= $page) echo 'disabled' ?>">
-                                <a class="page-link text-info" href="user-sidebar.php?pag=<?php echo $pagina + 1; ?>">Siguiente</a>
-                              </li>
-
-                            </ul>
-                          </nav>
-                        </div>
-                      </div>-->
+                      
                       <!--fin paginador -->
                     </div>
                   </div>
@@ -595,6 +572,27 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
 
       });
     }
+    $(document).ready(function() {
+      $("#tablaCategorias").DataTable({
+        //"responsive": true, 
+        "lengthChange": false,
+        "autoWidth": true,
+        "scrollX": true,
+        "language": {
+          "lengthMenu": "Display _MENU_ records per page",
+          "zeroRecords": "Nada que ver. Lo sentimos.",
+          "info": "Mostrando página _PAGE_ de _PAGES_",
+          "infoEmpty": "Sin datos disponibles.",
+          "infoFiltered": "(Filtrado de _MAX_ datos totales.)",
+          "paginate": {
+            "first": 'Pimero',
+            "previous": "Anterior",
+            "next": "Siguiente",
+            "last": "Último",
+          }
+        }
+      }).buttons().container().appendTo('#tablaCategorias_wrapper .col-md-6:eq(0)');
+    });
 
     function actualizarUser() {
       var cod_user = document.getElementById('id_userV').value;
