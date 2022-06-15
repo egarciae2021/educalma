@@ -228,10 +228,13 @@ require_once 'database/databaseConection.php';
             ?>
 
             <!-- LOGUEADO -->
-            <div class="log-sign" style="--i: 1.8s">
+            <div class="log-sign" style="--i: 1.8s; width: 400px;">
                     <ul>
                         <li class="nav-link" style="--i: .85s">
+                           
                             <a href="#"><?php echo $nom ?>&nbsp;(Estudiante)<i class="fas fa-caret-down"></i></a>
+                             
+                            
                             <div class="dropdown">
                                 <ul>
                                     <li class="dropdown-link">
@@ -248,6 +251,7 @@ require_once 'database/databaseConection.php';
                                     <div class="arrow"></div>
                                 </ul>
                             </div>
+
                         </li>
                     </ul>
             </div>

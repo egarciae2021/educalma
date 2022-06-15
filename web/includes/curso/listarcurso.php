@@ -19,62 +19,63 @@
 
     <style>
 
-.dataTables_filter{
+        .dataTables_filter{
 
-/*Centrando el buscador de "Lista de Cursos No Publicados".*/
-position: relative;  
-left: -140px;
-float: left;
-/**/
+        /*Centrando el buscador de "Lista de Cursos No Publicados".*/
+        position: relative;  
+        left: -140px;
+        float: left;
+        /**/
 
-border-radius: 5px ; 
-border: 1px solid #57B3F7;
-background-repeat: no-repeat;
-background-image: url("./assets/img/buscar.png");
-background-position: 8px 5px;
-background-size: 25px 25px;
+        border-radius: 5px ; 
+        border: 1px solid #57B3F7;
+        background-repeat: no-repeat;
+        background-image: url("./assets/img/buscar.png");
+        background-position: 8px 5px;
+        background-size: 25px 25px;
 
-}
+        }
 
-/*Palabra "Buscar"*/ 
-.dataTables_filter label {
+        /*Palabra "Buscar"*/ 
+        .dataTables_filter label {
 
-  position: relative;
-    top: 5px;
-    
-    left: 38px;
-    /*font-weight: bold;*/
-    width: 280px;
+        position: relative;
+            top: 5px;
+            
+            left: 38px;
+            /*font-weight: bold;*/
+            width: 280px;
 
-    font-size: 15.4px;
+            font-size: 15.4px;
 
-}
+        }
 
-/*Caja de texto del buscador*/ 
-.dataTables_filter label .form-control {
+        /*Caja de texto del buscador*/ 
+        .dataTables_filter label .form-control {
 
-  border: 0;
-    height: 25px;
-    position: relative;
-    left: -9px;
-    padding: 0;
-}
+        border: 0;
+            height: 25px;
+            position: relative;
+            left: -9px;
+            padding: 0;
+        }
 
+                
+            .boton3 {
+        color: #737BF1 !important;
+        padding: 0.5em 1.2em;
+        background: rgba(0,0,0,0);
+        border-radius:10px;
+        border: 2px solid;
+        border-color: #737BF1;
+        transition: all 1s ease;
+        position: relative;
+        }
+        .boton3:hover {
+        background: #737BF1;
+        color: white !important;
+        }
         
-    .boton3 {
-  color: #737BF1 !important;
-  padding: 0.5em 1.2em;
-  background: rgba(0,0,0,0);
-  border-radius:10px;
-  border: 2px solid;
-  border-color: #737BF1;
-  transition: all 1s ease;
-  position: relative;
-}
-.boton3:hover {
-  background: #737BF1;
-  color: white !important;
-}
     </style>
    
 </head>
