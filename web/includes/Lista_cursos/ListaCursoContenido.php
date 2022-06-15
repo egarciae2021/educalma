@@ -174,7 +174,7 @@
             
                                     <?php }else{ ?>
             
-                                        <p>S/.<?php echo $dato['costoCurso'],"","<span style='margin-left: 110px; color: #63F70E;'>Comprado</span>" ?></p>
+                                        <p>S/.<?php echo $dato['costoCurso'],"","<span style='margin-left: 167px; color: #63F70E;'>Comprado</span>" ?></p>
             
                                     <?php } ?>
 

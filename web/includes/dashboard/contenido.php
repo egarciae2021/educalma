@@ -29,10 +29,12 @@ ob_start();
                     <img src="./assets/images/serv-3.png" alt="">
                     <h3>Cursos inscritos</h3>
                 </a>
-                <a class="icons" id="open-modal3">
+
+                <!--<a class="icons" id="open-modal3">
                     <img src="./assets/images/serv-3.png" alt="">
                     <h3>Tus profesores</h3>
-                </a>
+                </a>-->
+                
             </div>
         </div>
     </section>

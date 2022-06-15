@@ -47,7 +47,7 @@ $id = $_GET['id'];
     <header style="background-color: #ffffff77;">
         <div class="container-header navbar-fixed-top" style="max-width: 95rem;">
             <input type="checkbox" name="" id="check">
-            <div class="logo-container">
+            <div class="logo-container" id="PagePay">
                 <a href="index.php"><img src="assets/images/logo_educalma.png" alt=""></a>
             </div>
             <div class="nav-btn-header">

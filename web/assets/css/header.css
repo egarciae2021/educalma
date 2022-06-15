@@ -501,8 +501,17 @@ header.scrolled {
 
   .logo-container {
 
+<<<<<<< HEAD
     margin-left: -70px;
     margin-right: 250px;    
+=======
+    margin-left: -85px;
+    margin-right: 270px;
+>>>>>>> 34c63c636ac438f1d814819f9ea8d51b21eb6f52
   }
 
+  #PagePay{
+    margin-left: 20px;
+    margin-right: 270px;
+  }
 }

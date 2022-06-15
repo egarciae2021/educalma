@@ -172,7 +172,7 @@
 
 
 
-                            <!-- Mensaje de alerta agregar -->
+                            <!-- Mensaje de alerta  -->
  
                                     <!-- Mensaje de alerta  -->
                                     <script>
