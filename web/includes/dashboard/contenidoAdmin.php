@@ -425,7 +425,8 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                 <div class="card pt-0">
                   <div class="card-body">
                     <div class="table-responsive">
-                      <table id="tablaCategorias" class="table table-borderless text-center dt-responsive text-center" cellspacing="0" width="100%">
+                      <!--Paginacion con datatable, la configuracion esta en el archivo datatableFunctions.js para configurar la cantidad de registros que se ve modificar el atributo data-page-length='3'-->
+                      <table id="tablaCategorias" data-page-length='3' class="table table-borderless text-center dt-responsive text-center display" cellspacing="0" width="100%">
                         <thead>
                           <tr style="background-color:#737BF1;">
                             <th style="border-radius: 10px 0 0 10px;">
@@ -447,23 +448,8 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
 
                           $contar = $qz->rowCount();
                           $cantidad_paginas = 3;
-                          $page = $contar / $cantidad_paginas;
-                          $page = ceil($page);
-
-                          if (isset($_GET['pag'])) {
-                            $pagina = $_GET['pag'];
-                          } else {
-                            $pagina = 1;
-                          }
-
-                          if ($contar > 0) {
-                            if ($pagina > $page || $pagina < 1) {
-                              header('Location:user-sidebar.php?pag=1');
-                            }
-                          }
-                          $inicio = ($pagina - 1) * $cantidad_paginas;
-
-                          $sql3 = "SELECT * FROM categorias order by idCategoria DESC LIMIT $inicio,$cantidad_paginas";
+                       
+                          $sql3 = "SELECT * FROM categorias order by idCategoria ";
                           $q3 = $pdo3->prepare($sql3);
                           $q3->execute();
 
@@ -632,27 +618,7 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
 
       });
     }
-    $(document).ready(function() {
-      $("#tablaCategorias").DataTable({
-        //"responsive": true, 
-        "lengthChange": false,
-        "autoWidth": true,
-        "scrollX": true,
-        "language": {
-          "lengthMenu": "Display _MENU_ records per page",
-          "zeroRecords": "Nada que ver. Lo sentimos.",
-          "info": "Mostrando página _PAGE_ de _PAGES_",
-          "infoEmpty": "Sin datos disponibles.",
-          "infoFiltered": "(Filtrado de _MAX_ datos totales.)",
-          "paginate": {
-            "first": 'Pimero',
-            "previous": "Anterior",
-            "next": "Siguiente",
-            "last": "Último",
-          }
-        }
-      }).buttons().container().appendTo('#tablaCategorias_wrapper .col-md-6:eq(0)');
-    });
+  
 
     function actualizarUser() {
       var cod_user = document.getElementById('id_userV').value;
