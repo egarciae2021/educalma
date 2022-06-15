@@ -215,16 +215,74 @@ body {
             <div class="row py-5">
 
 
+            
+
+
                 <div class="col-12 col-sm-12 col-md-7 col-lg-8 col-xl-9 ">
+                    
                     <br><br><br><br>
+
                     <span>Cursos</span><i class="fas fa-angle-right mx-2"></i>
+                    
                     <span>Categoría</span><i class="fas fa-angle-right mx-2"></i>
-                    <span>nombre del curso</span>
+                    
+                    <span>Nombre del curso</span>
+                    
                     <h2 class="my-2 font-weight-bold"><?php echo $dato4['nombreCurso']; ?></h2>
-                    <p><?php echo $dato4['descripcionCurso']; ?></p>
+                    
+
+
+
+
+
+
+
+
+                                        <!--Código para obtener el nombre del profesor-->
+                                        <?php 
+
+                                            
+                                            
+                                            $idUsuario = $dato4['id_userprofesor'];
+                                            $sql = "SELECT * FROM usuarios WHERE id_user = '$idUsuario'";
+                                            $q = $pdo->prepare($sql);
+                                            $q->execute(array());
+                                            $dato20 = $q->fetch(PDO::FETCH_ASSOC);
+                                        ?>
+
+                    
+
+                                            <?php 
+                                                if($dato20['privilegio']==1){
+                                            ?>
+
+                                                    <span style="color: #565656; font-size: 15px;">Creado por la Fundación CALMA.</span>
+
+                                            <?php 
+                                                }
+
+                                                if($dato20['privilegio']==2){
+                                            ?>
+                                                    <span style="color: #565656; font-size: 15px;">Creado por <?php echo " " . $dato20['nombres'] . " " . $dato20['apellido_pat'] . " " . $dato20['apellido_mat'] . "."?></span>
+                                            <?php 
+                                                }
+                                            ?>                    
+                    
+
+
+
+
+
+
+
+                    <p style="padding-top: 30px;"><?php echo $dato4['descripcionCurso']; ?></p>
+                    
                     <i class="fas fa-stopwatch mr-2"></i><span>Fecha: <?php echo $dato4['fechaPulicacion']; ?></span>
+                    
                     <i class="fas fa-globe ml-4 mr-2"></i><span>Español</span>
+                    
                     <i class="fas fa-closed-captioning ml-4 mr-2"></i><span>Español [automático]</span>
+
                 </div>
 
 
@@ -517,18 +575,27 @@ body {
 
                                 <div>
                                     <i class="far fa-file text-center" style="width: 1.5rem;"></i>
-                                    <span class="ml-3"><?php echo $modulos; ?> Módulos</span>
+                                    <span class="ml-3"><?php echo $modulos; ?> Módulos con sus respectivos</span>
                                 </div>
 
+                                <div style="padding-left: 28px;">
+                                    
+                                    <span class="ml-3">temas y cuestionarios</span>
+                                </div>
+
+                                <!--
                                 <div>
                                     <i class="far fa-folder text-center" style="width: 1.5rem;"></i>
                                     <span class="ml-3"><?php echo $temas; ?> Temas</span>
                                 </div>
+                                -->
 
+                                <!--
                                 <div>
                                     <i class="far fa-list-alt text-center" style="width: 1.5rem;"></i>
                                     <span class="ml-3"><?php echo $cuestionarios; ?> Cuestionarios</span>
                                 </div>
+                                -->
 
                                 <div>
                                     <i class="fas fa-graduation-cap text-center" style="width: 1.5rem;"></i>
