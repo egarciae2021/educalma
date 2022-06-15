@@ -478,9 +478,8 @@ border-radius: 10px;
 }
 
 .container-card-link{
-
     text-align: center;
-    float: left;
+    /*float: left;*/
 }
 
 .card .container-card-link a{

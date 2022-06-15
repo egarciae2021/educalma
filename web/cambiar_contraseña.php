@@ -143,7 +143,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $tok = $_POST['token'];  
     $password = password_hash($passn, PASSWORD_BCRYPT);
  
-     $enlace = new mysqli('20.226.29.168', 'root', '', 'educalma');
+     $enlace = new mysqli('20.226.29.168', 'root', 'T3$t1ng.C4lm4', 'educalma');
      $querys=("Select * from recover_password where token ='".$tok."'");
      $resultado = $enlace->query($querys); 
     

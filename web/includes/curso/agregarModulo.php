@@ -190,15 +190,16 @@
                             <form name="formulario" id="form-agretemas" method="POST" action="includes/modulo/Modulo_CRUD.php?id=<?php echo $dato['idCurso']; ?>">
                                 
                                 <div type="button" class="list-group-item list-group-item-action active" style="background: #4F52D6; text-align: center; font-size: 26px;">
-                                    Registro de módulos del curso:
+                                    Agregar módulo
                                 </div>    
 
                             
 
                                 <div style="position: relative; top: 10px;" class="form-row pb-2">
-                                    <div class="form-group col-12">
+                                    
+                                    <div class="form-group col-12" hidden multiple>
                                         <label class="form-label">Nombre del módulo</label>
-                                        <input type="text" class="form-control" name="modulo_agregar" id="modulo_agregar" placeholder="Ingrese un nombre" aria-label="ModuloAgr" aria-describedby="ModuloAgr" aria-describedby="moduloAgr-addon" minlength="2" required>
+                                        <input type="text" class="form-control" name="modulo_agregar" id="modulo_agregar" placeholder="Ingrese un nombre" aria-label="ModuloAgr" aria-describedby="ModuloAgr" aria-describedby="moduloAgr-addon" minlength="2" value="Módulo #" required>
                                     </div>
 
                                     <!-- <div class="form-group col-4 col-xl-2 col-lg-2" >
@@ -212,7 +213,7 @@
 
 
                                 <div class="form-row">
-                                    <div class="form-group col-6 col-md-6 "><input type="hidden">
+                                    <div style="margin-top: 20px; margin-left: auto; margin-right: auto;" class="form-group col-6 col-md-6 "><input type="hidden">
                                         <button style="background-color: #74F077" type="button" id="actumodulo_2" class="btn btn-modulos" onclick="alertaModulo()">
                                             <i class="fas fa-plus"></i> Agregar Módulo
                                         </button>
@@ -220,11 +221,14 @@
 
                                     <!-- Mensaje de alerta modulo agregado -->
                                     <script>
+
                                         function alertaModulo() {
 
                                             const agregar = document.querySelector('#modulo_agregar');
                                             let formulario = document.querySelector('#form-agretemas');
+
                                             if (agregar.value.length != 0 && agregar.value.length != 1) {
+
                                                 Swal.fire({
 
                                                     icon: 'success',
@@ -243,12 +247,14 @@
 
                                                     } else if (result.isDenied) {}
                                                 });
+
                                             } else {
                                                 event.preventDefault();
                                                 event.stopPropagation();
                                             }
 
                                         }
+
                                     </script>
 
                                     
@@ -261,11 +267,15 @@
 
 
                             <!-- añadido nuevo -->
-                            <form style="" class="pt-0">
+                            <form style="margin-top: 20px;" class="pt-0">
                                 <div style="position: relative; top: 30px;" class="form-row">
+
+                                    <!--
                                     <div class="form-group col-12" style="text-align: center;">
                                         <label style="font-size: 24px; position: relative; top: -10px;" class="form-label">Listado de módulos del curso:</label>
                                     </div>
+                                    -->
+
                                 </div>
 
                                 <!-- lista - codigo php -->
@@ -295,7 +305,7 @@
 
                                                 
 
-                                                <input type="text" class="form-control" value="Módulo: <?php echo $dato2['nombreModulo'] ?>" aria-label="Recipient's username with two button addons" disabled>
+                                                <input style="background-color: #C4C5FB;" type="text" class="form-control" value="<?php echo $dato2['nombreModulo'] ?>" aria-label="Recipient's username with two button addons" disabled>
 
                                                 <!--agregar temas-->
                                                 <div class="caja-opciones">
@@ -346,11 +356,13 @@
                                                     </div>
 
                                                     <!-- boton editar modulo-->
+                                                    <!--
                                                     <a>
                                                         <button class="btn btn-modulos" type="button" data-toggle="modal" data-target="#ModalEditarModulo<?php echo $dato2['idModulo']; ?>">
                                                             <i class="fas fa-edit"></i> Editar Módulo
                                                         </button>
                                                     </a>
+                                                    -->
 
                                                     <!-- modal editar modulo -->
                                                     <div class="modal fade" id="ModalEditarModulo<?php echo $dato2['idModulo']; ?>" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">

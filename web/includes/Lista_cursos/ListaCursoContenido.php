@@ -109,20 +109,56 @@
 
                                 
 
-                                    <!--Nombre del curso comprado más destacado-->
-                                    <div class="container-card-title" style="color: black;">
+                                    <!--Nombre del curso publicado más destacado-->
+                                    <div class="container-card-title" style="padding-bottom: 1px; color: black;">
                                         <a style="float: left;"><center><strong><?php echo $dato['nombreCurso']; ?></strong><center></a>
                                     </div>
+
+                                    <!--Contenedor del nombre del profesor del curso publicado más destacado-->
+                                    <div class="container-card-description" style="margin-top: 1px; padding-top: 1px; font-size: 11px;">
+
+                                        <!--Código para obtener el nombre del profesor-->
+                                        <?php 
+                                            $idUsuario = $dato['id_userprofesor'];
+                                            $sql = "SELECT * FROM usuarios WHERE id_user = '$idUsuario'";
+                                            $q = $pdo->prepare($sql);
+                                            $q->execute(array());
+                                            $dato5 = $q->fetch(PDO::FETCH_ASSOC);
+                                        ?>
+
+                                        <a>
+
+                                            <?php 
+                                                if($dato5['privilegio']==1){
+                                            ?>
+
+                                                    <span style="color: #565656;">Creado por la Fundación CALMA.</span>
+
+                                            <?php 
+                                                }
+
+                                                if($dato5['privilegio']==2){
+                                            ?>
+                                                    <span style="color: #565656;">Creado por <?php echo " " . $dato5['nombres'] . " " . $dato5['apellido_pat'] . " " . $dato5['apellido_mat'] . "."?></span>
+                                            <?php 
+                                                }
+                                            ?>
+                                        </a>
+                                    </div>
+
+
+
+
                                     
                                     <!--Descripción del curso comprado más destacado-->
-                                    <div class="container-card-description" style="font-size: 12px; position: relative; ">
-                                        <p><?php echo substr($dato['descripcionCurso'], 0, 80) . "..."; ?></p>
+                                    <div class="container-card-description" style="padding-bottom: 1px; margin-bottom: 1px; font-size: 13px; position: relative;">
+                                        <p><?php echo substr($dato['descripcionCurso'], 0, 50) . "..."; ?></p>
                                         
                                     </div>
 
 
                                     <!--Contenedor del costo del curso y mensaje si se compró o no el curso.-->
-                                    <div class="container-card-description" style="font-weight: bold; font-size: 15px; color: black; position: relative; ">
+                                    <div class="container-card-description" style="padding-top: 1px; margin-top: 1px; font-weight: bold; font-size: 15px; color: black; position: relative;">
                                     
                                     <?php if($dato2['id_cursoInscrito'] == NULL){ ?>
             
@@ -138,7 +174,7 @@
             
                                     <?php }else{ ?>
             
-                                        <p>S/.<?php echo $dato['costoCurso'],"","<span style='position: relative; left: 100px; color: #63F70E;'>Comprado</span>" ?></p>
+                                        <p>S/.<?php echo $dato['costoCurso'],"","<span style='margin-left: 110px; color: #63F70E;'>Comprado</span>" ?></p>
             
                                     <?php } ?>
 
@@ -336,6 +372,12 @@
                     } else {
                         $paginaRed = "detallecurso";
                     }
+
+
+
+
+                   
+                    
                 ?>
 
 
@@ -361,7 +403,7 @@
                         </div>
 
                         <!--Contenedor del nombre del curso publicado-->
-                        <div class="container-card-title" style="color: black;">
+                        <div class="container-card-title" style="padding-bottom: 1px; color: black;">
                             <a style="float: left;">
                                 <!--Nombre-->
                                 <center><strong><?php echo $dato['nombreCurso']; ?></strong></center>
@@ -369,14 +411,59 @@
                         </div>
 
 
+
+                        <!--Contenedor del nombre del profesor del curso publicado-->
+                        <div class="container-card-description" style="margin-top: 1px; padding-top: 1px; font-size: 11px;">
+
+                            <!--Código para obtener el nombre del profesor-->
+                            <?php 
+                                $idUsuario = $dato['id_userprofesor'];
+                                $sql = "SELECT * FROM usuarios WHERE id_user = '$idUsuario'";
+                                $q = $pdo->prepare($sql);
+                                $q->execute(array());
+                                $dato5 = $q->fetch(PDO::FETCH_ASSOC);
+                                $nombresProf = $dato5['nombres'];
+                                $apepaternoProf = $dato5['apellido_pat'];
+                                $apematernoProf = $dato5['apellido_mat'];
+                            ?>
+
+                            <a>
+                                            <?php 
+                                                if($dato5['privilegio']==1){
+                                            ?>
+
+                                                    <span style="color: #565656;">Creado por la Fundación CALMA.</span>
+
+                                            <?php 
+                                                }
+
+                                                if($dato5['privilegio']==2){
+                                            ?>
+                                                    <span style="color: #565656;">Creado por <?php echo " " . $dato5['nombres'] . " " . $dato5['apellido_pat'] . " " . $dato5['apellido_mat'] . "."?></span>
+                                            <?php 
+                                                }
+                                            ?>
+                            </a>
+                        </div>
+
+
+
+
+
+
+
+
+
+
+
                         <!--Contenedor de la descripción del curso-->
-                        <div class="container-card-description" style="font-size: 13px; position: relative;">
+                        <div class="container-card-description" style="padding-bottom: 1px; margin-bottom: 1px; font-size: 13px; position: relative;">
                             <!--Descripción-->
-                            <p><?php echo substr($dato['descripcionCurso'], 0, 80) . "..."; ?></p>
+                            <p><?php echo substr($dato['descripcionCurso'], 0, 50) . "..."; ?></p>
                         </div>
 
                         <!--Contenedor del costo del curso y mensaje si se compró o no el curso.-->
-                        <div class="container-card-description" style="font-weight: bold; font-size: 15px; color: black; position: relative;">
+                        <div class="container-card-description" style="padding-top: 1px; margin-top: 1px; font-weight: bold; font-size: 15px; color: black; position: relative;">
                                     
                             <?php if($dato2['id_cursoInscrito'] == NULL){ ?>
             
@@ -397,7 +484,7 @@
                                         if($dato['costoCurso']!=0 && $dato['costoCurso'] != "Gratis"){
                                             echo 'S/ ' . $dato['costoCurso'],"","<span style='position: relative; left: 100px; color: #63F70E;'>Comprado</span>";
                                         }else{
-                                            echo 'Gratis',"","<span style='position: relative; left: 100px; color: #63F70E;'>Comprado</span>";
+                                            echo 'Gratis',"","<span style='margin-left: 110px; color: #63F70E;'>Comprado</span>";
                                         }
                                     ?>
                                 </p>

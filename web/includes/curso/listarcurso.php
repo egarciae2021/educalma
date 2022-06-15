@@ -164,6 +164,7 @@ background-size: 25px 25px;
                                 <thead>
                                     <tr style="background-color:#737BF1">
                                         <th style="border-radius: 10px 0 0  10px;">Nombre</th>
+                                        <th>Creado Por</th>
                                         <th>Categoría</th>
                                         <th>Público dirigido</th>
                                         <th>Imagen</th>
@@ -241,6 +242,48 @@ background-size: 25px 25px;
                                         <tr class="h-100 justify-content-center align-items-center">
 
                                             <td><?php echo $curso['nombreCurso']; ?></td>
+
+
+                                            <td>
+
+                                                <!--Código para obtener el nombre del profesor-->
+                                                <?php 
+                                                
+                                                $idUsuario = $curso['id_userprofesor'];
+                                                $sql = "SELECT * FROM usuarios WHERE id_user = '$idUsuario'";
+                                                $q = $pdo->prepare($sql);
+                                                $q->execute(array());
+                                                $dato20 = $q->fetch(PDO::FETCH_ASSOC);
+                                                ?>
+
+
+
+                                                <?php 
+                                                    if($dato20['privilegio']==1){
+                                                ?>
+
+                                                        <span style="color: #565656; font-size: 14px;">Fundación CALMA</span>
+
+                                                <?php 
+                                                    }
+
+                                                    if($dato20['privilegio']==2){
+                                                ?>
+                                                        <span style="color: #565656; font-size: 14px;"><?php echo " " . $dato20['nombres'] . " " . $dato20['apellido_pat'] . " " . $dato20['apellido_mat'] . "."?></span>
+                                                <?php 
+                                                    }
+                                                ?>  
+
+
+                                            </td>
+
+
+
+
+
+
+
+
                                             
                                             <td><?php echo $datoCate['nombreCategoria']; ?></td>
                                             

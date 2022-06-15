@@ -110,12 +110,28 @@
 
                     <!-- Segunda columna -->
                     <div class="col-9 pl-0">
+
+
+
+
                         <!-- form temas -->
                         <form name="formulario" id="form-agretemas2" method="POST" action="includes/tema/checkAgrTema.php?idCurso=<?php echo $idCurso;?>&id_mo=<?php echo $idModulo;?>">
                     
                             <div type="button" class="list-group-item list-group-item-action active" style="margin-bottom: 20px; background: #4F52D6; text-align: center; font-size: 24px;">
-                                Registro de temas del módulo: <br> <span style="color: black;"> <?php echo $dato2['nombreModulo'];?> <span>
+                                Tema del <?php echo $dato2['nombreModulo'];?>
                             </div>
+
+
+
+
+
+
+
+
+
+
+
+                            <!--/////////////////-->
 
                             <div class="form-row ">
 
@@ -148,6 +164,13 @@
                                     </a>
                                 </div>
                             </div>
+                                
+                            <!--/////////////////-->
+
+
+
+
+
 
                             <!-- Mensaje de alerta  -->
  
@@ -187,16 +210,36 @@
 
                         </form>
 
-                        <form style="border: #4F52D6 2px solid; border-radius: 5px;" class="pt-0">
+                
 
-                            <div class="form-row">
-                                <div class="form-group col-12" style="text-align: center;">
-                                    <label style="font-size: 24px;" class="form-label">Listado de temas del módulo: <br> <span style="color: black;"> <?php echo $dato2['nombreModulo'];?> </span> </label>
-                                </div>
-                            </div>
 
-                            <!-- Listado de Temas -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <form class="pt-0">
+
+                            
+
+                            <!-- Tema registrado -->
                             <div class="scroll">
+
                                 <div class="form-row">
 
                                     <?php
@@ -211,12 +254,16 @@
                                         while($dato3=$q3->fetch(PDO::FETCH_ASSOC)){                                        
                                     ?>
 
+                                    <!--//////-->
                                     <div class="form-group col-8 col-md-10 col-sm-8 col-lg-10 col-xl-10">
-                                        <input type="text" class="form-control" value="Tema: <?php echo $dato3['nombreTema'] ?>" aria-label="Recipient's username with two button addons" disabled>
+                                        <span style="color: red;">Tema registrado: </span>
+                                        <br>
+                                        <input style="color: black;" type="text" class="form-control" value="<?php echo $dato3['nombreTema'] ?>" aria-label="Recipient's username with two button addons" disabled>
                                     </div>
 
                                     <!-- boton editar tema -->
                                     <div class="form-group col-2 col-md-1 col-sm-2 col-lg-1 col-xl-1">
+                                        <br>
                                         <a>
                                             <button class="btn btn-block btn-outline-success" type="button" data-toggle="modal" data-target="#ModaleditarTema<?php echo $dato3['idTema']?>">
                                                 <i class="far fa-edit"></i>
@@ -226,6 +273,7 @@
 
                                     <!-- boton borrar tema -->              
                                     <div class="form-group col-2 col-md-1 col-sm-2 col-lg-1 col-xl-1">
+                                        <br>
                                         <a>
                                             <button class="btn btn-block btn-outline-danger" type="button" data-toggle="modal" data-target="#ModalquitarTema<?php echo $dato3['idTema']?>">
                                             <i class="fas fa-trash-alt"></i></button>
@@ -245,8 +293,21 @@
                                         </button>
                                     </div>
 
+
+
+
+
+
+
+
+
+
+
                                     <form name="formulario" class="p-0 bg-0" style="background: transparent;" id="editando_preguntas" method="POST" action="includes/tema/checkAgrTema.php?idCur=<?php echo $idCurso;?>&id_mod=<?php echo $idModulo;?>">
+                                        
                                         <div class="modal-body px-4">
+
+
                                             <h6>Nombre del Tema:</h6>
                                             <input  type="text" name="actu_tema" id="nombreTema" class="form-control" value="<?php echo $dato3['nombreTema'];?>" required>
                                             
@@ -255,7 +316,8 @@
                                 
                                             <h6 class="pt-3">Link del vídeo:</h6>
                                             <input  type="text" name="linkT" id="idTema"class="form-control" value="<?php echo $dato3['link_video'];?>" required>
-                                            
+
+
                                             <input type="hidden" name="idTema" value="<?php echo $dato3['idTema'];?>">
                                         </div>
 
@@ -265,10 +327,17 @@
                                         </div>
 
                                         <button type="submit" class="btn btn-primary btn-lg btn-block" id="actualizar" onclick="alertaActualizar()">
-        <i class="fas fa-redo" ></i> Actualizar</button>
+                                        <i class="fas fa-redo" ></i> Actualizar</button>
        
- 
                                     </form>
+
+
+
+
+
+
+
+
                                 </div>
                             </div>
                         </div>

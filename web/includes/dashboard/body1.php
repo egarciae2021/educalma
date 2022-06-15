@@ -57,8 +57,9 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
 
                                 <?php  //if (isset($_SESSION['Logueado']) && $_SESSION['Logueado'] === true && $dato['sexo'] === 1) { // 1 -> Masculino?>
 
-                                    <img src="./assets/images/avatar_hombre.png" alt="foto_curso" class="header__img__side-dashboard">
-                            
+                                    <!--<img src="./assets/images/avatar_hombre.png" alt="foto_curso" class="header__img__side-dashboard"> -->
+                                    <img src="" alt="foto_curso" class="header__img__side-dashboard">
+
                                 <?php // } else if (isset($_SESSION['Logueado']) && $_SESSION['Logueado'] === true && $dato['sexo'] === 2) { // 2 -> Femenino?>
 
                                     <!-- <img src="./assets/images/avatar_mujer.png" alt="foto_curso" class="header__img__side-dashboard"> -->
@@ -131,17 +132,17 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                                     ?>
 
                                         <!--//-->
-                                        <a href="sidebarCursos.php" class="nav__dropdown-item-dashboard nav__link-dashboard">Cursos Comprados</a>
+                                        <a href="sidebarCursos.php" class="nav__dropdown-item-dashboard nav__link-dashboard"><i class="fa fa-angle-right" aria-hidden="true"></i>Cursos Comprados</a>
 
                                         <!--//-->
-                                        <a href="comprarCursoCodEmpresa.php" class="nav__dropdown-item-dashboard nav__link-dashboard">Comprar Curso por Código de Empresa</a>
+                                        <a href="comprarCursoCodEmpresa.php" class="nav__dropdown-item-dashboard nav__link-dashboard"><i class="fa fa-angle-right" aria-hidden="true"></i>Comprar Curso por Código de Empresa</a>
 
                                     <?php
                                     }
                                     ?>
                                     
                                     <!--//-->
-                                    <a href="ListaCursos.php?pag=1" class="nav__dropdown-item-dashboard nav__link-dashboard"><i class="fa fa-angle-right" aria-hidden="true"></i>  Cursos Publicados</a>
+                                    <a href="ListaCursos.php?pag=1" class="nav__dropdown-item-dashboard nav__link-dashboard"><i class="fa fa-angle-right" aria-hidden="true"></i>Cursos Publicados</a>
 
 
                                     

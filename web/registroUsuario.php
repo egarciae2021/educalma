@@ -33,7 +33,8 @@
 
 <body class="h-100 w-100">
   <div class="row row-cols-1 row-cols-md-2 h-100 w-100 m-0">
-    <div class="col h-md-100 row row-cols-1 m-0 p-5" style="background: url('./assets/images/fondo1e_3.png'); background-size:100%; background-repeat: no-repeat;">
+    <!--<div class="col h-md-100 row row-cols-1 m-0 p-5" style="background: url('./assets/images/fondo1e_3.png'); background-size:100%; background-repeat: no-repeat;">-->
+    <div class="col h-md-100 row row-cols-1 m-0 p-5" style="background: url('./assets/images/registrar_usuario.png'); background-size:cover; background-repeat: no-repeat;">
     <div class="col-12 mb-2">
           <center>
           <a href="./iniciosesion.php">
