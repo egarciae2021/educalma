@@ -13,6 +13,18 @@ $id = $_GET['id'];
     <link rel="stylesheet" href="assets/css/modalPagarVisa.css">
     <link rel="stylesheet" href="assets/css/formPagarVisa.css">
 
+    <style>
+
+    @media screen and (min-width: 1000px) {
+
+        .logo-container {
+            margin-left: -85px;
+            margin-right: 270px;
+        }
+    }
+
+    </style>
+
 </head>
 
 <body>
