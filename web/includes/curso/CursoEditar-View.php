@@ -104,8 +104,8 @@
                                     </a> 
                                     -->
                                     
-                                    <a href="agregarModulos.php?id=<?php echo $id ?>" class="btn btn-outline-secondary btn-back btn-sm" style="background-color: #2BD82E; height: 80px; cursor: pointer; position: relative;">
-                                        <i class="fas fa-plus-square"></i> <br> Agregar módulos, temas <br> y cuestionarios
+                                    <a href="agregarModulos.php?id=<?php echo $id ?>" class="btn btn-outline-secondary btn-back btn-sm" style="background-color: #2BD82E; cursor: pointer; position: relative;">
+                                        <i class="fas fa-plus-square"></i> Editar módulos
                                     </a>
 
                                     <!--

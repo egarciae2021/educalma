@@ -157,13 +157,32 @@ if (!isset($_GET['pag'])) {
 
 
 
-      <div class="row">
-        <div class="section-button">
-          <a href="ListaCursos.php?pag=1" type="button" class="btn btn-primary btnCom">
-            Comienza a ver los cursos
-          </a>
-        </div>
-      </div>
+
+                <?php if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {?>
+                     
+                    <div class="row">
+                      <div class="section-button">
+                        <a href="ListaCursos.php?pag=1" type="button" class="btn btn-primary btnCom">
+                          Comienza a ver los cursos
+                        </a>
+                      </div>
+                    </div>
+
+                <?php
+                    }else{
+                ?>
+                    <div class="row">
+                      <div class="section-button">
+                        <a href="cursosPublicados.php" type="button" class="btn btn-primary btnCom">
+                          Comienza a ver los cursos
+                        </a>
+                      </div>
+                    </div>
+                <?php
+                    }
+                ?>
+
+
 
 
     </div>
