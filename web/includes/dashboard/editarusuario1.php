@@ -3,7 +3,7 @@
 
 
     $pdo2 = Database::connect();
-    $veri2 = "SELECT * FROM usuarios WHERE id_user = '$id' ";
+    $veri2 = "SELECT * FROM usuarios WHERE id_user = '$_SESSION[codUsuario]' ";
     $q2 = $pdo2->prepare($veri2);
     $q2->execute(array());
     $dato2 = $q2->fetch(PDO::FETCH_ASSOC);
