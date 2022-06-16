@@ -40,6 +40,7 @@
     <title>Educalma Dashboard</title>
 </head>
 <?php
+/*
 @session_start();
 require_once 'database/databaseConection.php';
 
@@ -65,5 +66,5 @@ $q12 = $pdo12->prepare($sql12);
 $q12->execute();
 $cuenta12 = $q12->rowCount();
 $dato12 = $q12->fetch(PDO::FETCH_ASSOC)
-
+*/
 ?>

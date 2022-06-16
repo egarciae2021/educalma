@@ -1,6 +1,6 @@
 <?php   
     //ob_start();
-    @session_start();
+    //@session_start();
     //if(isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)){
 ?>
 
@@ -8,12 +8,12 @@
 
 <?php include_once 'includes/dashboard/head1.php' ?>
 
+
 <body>
 
 
-    <?php include_once 'includes/dashboard/header1.php' ?>
+    <?php include_once 'includes/Inicio/Header.php' ?>
 
-    <?php include_once 'includes/dashboard/body1.php' ?>
 
     <?php include_once 'includes/Lista_cursos/ListaCursoContenido.php' ?>
 

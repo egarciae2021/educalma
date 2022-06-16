@@ -13,34 +13,6 @@ require_once 'database/databaseConection.php';
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         <!--////////////////////-->
         <div style="margin: 20px;" class="nav-btn-header">
 
@@ -72,7 +44,7 @@ require_once 'database/databaseConection.php';
 
                         <li class="nav-link" style="--i: .6s">
                 
-                            <a href="ListaCursos.php?pag=1">Cursos</a>
+                            <a href="cursosPublicados.php">Cursos</a>
                         
                         </li>
 
