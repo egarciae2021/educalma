@@ -459,7 +459,7 @@
                             <p><?php echo substr($dato['descripcionCurso'], 0, 50) . "..."; ?></p>
                         </div>
 
-                        <!--Contenedor del costo del curso, mensaje si se compró o no el curso y del link "Leer Más".-->
+                        <!--Contenedor del costo del curso y mensaje si se compró o no el curso.-->
                         <div class="container-card-description" style="padding-top: 1px; margin-top: 1px; font-weight: bold; font-size: 15px; color: black; position: relative;">
                                     
                             <?php if($dato2['id_cursoInscrito'] == NULL){ ?>
@@ -489,7 +489,7 @@
             
                             <?php } ?>
 
-                            <!-- Link "Leer Más"-->
+                            <!-- Link "Ver Información"-->
                             <div class="container-card-link" style="margin: auto;">
 
                             <a href="<?php echo $paginaRed ?>.php?id=<?php echo $dato['idCurso']; ?><?php if(!empty($dato2)){?>&idCI=<?php echo $dato2['id_cursoInscrito']; }?>">

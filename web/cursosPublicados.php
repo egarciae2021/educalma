@@ -22,7 +22,7 @@
         <?php //include_once 'includes/dashboard/body1.php' ?>
     <?php include_once 'includes/Lista_cursos/ListaCursoContenido.php' ?>
 
-    <?php include_once 'includes/Inicio/Footer.php' ?>
+    <?php //include_once 'includes/Inicio/Footer.php' ?>
     <!-- <link rel="stylesheet" href="assets/css/style2.css">
     <link rel="stylesheet" href="assets/css/style1.css"> -->
     <script src="assets/js/home.js"></script>
