@@ -253,7 +253,7 @@ if (!isset($_GET['pag'])) {
       <div class="modal-body">
         <div class="row">
           <div class="col-12">
-            <img src="./assets/images/2232688.png" alt="" width="28px">
+            <img src="./assets/images/imagen_curso_destacado.png" alt="" width="28px">
             <span class="title-modal">Cursos > Categoría ></span>
             <!-- <h5><?php //echo $dato['nombreCurso'];?></h5> -->
             <span class="title-modal"><?php echo $dato['nombreCategoria']; ?></span>
@@ -268,7 +268,7 @@ if (!isset($_GET['pag'])) {
           
             <div class="cont_titulos">
               <h4 class="titulo"><?php echo $dato['nombreCurso'];?></h4>
-              <span class="descripcion"><?php echo substr($dato['descripcionCurso'], 0, 500) . "..."; ?></span>
+              <span class="descripcion"><?php echo substr($dato['descripcionCurso'], 0, 500); ?></span>
               <br><br>
               <?php
                if(isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)){
