@@ -15,6 +15,7 @@
     <?php include_once 'includes/Inicio/Header.php' ?>
 
     <?php include_once 'includes/curso/CuestionarioContent.php' ?>
+    <?php include_once 'includes/Inicio/Footer.php' ?>
     
     
     
