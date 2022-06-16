@@ -328,17 +328,23 @@
     <?php
     if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
     ?>
-        <br>
-        <div class="title_miscursos">
-            <h3>Cursos Comprados</h3>
+    <div style="position: relative; top: 20px;" class="container-fluid px-0">
+        <div class="row">
+            <div class="col-12">
+                <div class="row mb-4 mt-4" style="background-color: #e7f4ff; margin-left: 25px; margin-right: 25px; border-radius: 50px;">
+                    <div class="container section-title-course">
+                        <i class="fas fa-shapes mr-3"></i>  Cursos Comprados
+                        <hr>
+                    </div>
+                </div>
+            </div>
         </div>
-        <br>
 
         <!-- la direccion de la nueva imagen para cursos es assets/images/curso_educalma.png -->
 
         <div class="container-fluid px-0">
             <div class="container-card-course">
-                <div class="row pt-1 container order-card-custom" style="margin:0 auto;">
+                <div class="row pt-1 container order-card-custom" style="margin:10px auto;">
 
                     <?php
                     error_reporting(0);
@@ -375,7 +381,7 @@
                                 echo '
                                     <div class="col-10 col-sm-12 col-md-4 col-lg-4 col-xl-3">
                                         <div style="border-radius: 30px;" class="card">
-                                            <div style="border-radius: 30px;" class="container-card-image">
+                                            <div style="border-radius: 30px 30px 0 0;" class="container-card-image">
                                                 <img src="data:image/*;base64,' . base64_encode($dato3['imagenDestacadaCurso']) . '" alt="foto_curso" >
                                             </div>
                                     
@@ -435,4 +441,5 @@
                 header('Location:iniciosesion.php');
             }
                 ?>
+    </div>
 </body>
