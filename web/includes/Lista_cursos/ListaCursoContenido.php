@@ -178,14 +178,30 @@
             
                                     <?php } ?>
 
-                                    <!--Link "Ver información"-->
-                                    <div class="container-card-link" style="margin: auto;">
-                                        <a href="<?php echo $paginaRed ?>.php?id=<?php echo $dato['idCurso']; ?><?php if(!empty($dato2)){?>&idCI=<?php echo $dato2['id_cursoInscrito']; }?>">
-                                        <center><strong>Leer Más</strong></center>
-                                        </a>
-                                    </div>
+                                    <?php
+                                    if(isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)){
+                                    ?>
+                                        <!--Link "Leer Más"-->
+                                        <div class="container-card-link" style="margin: auto;">
+                                            <a href="<?php echo $paginaRed ?>.php?id=<?php echo $dato['idCurso']; ?><?php if(!empty($dato2)){?>&idCI=<?php echo $dato2['id_cursoInscrito']; }?>">
+                                            <center><strong>Leer Más</strong></center>
+                                            </a>
+                                        </div>
+                                    <?php
+                                    }else{
+                                    ?>
                                     
-                                    </div>
+                                        <!--Link "Leer Más"-->
+                                        <div class="container-card-link" style="margin: auto;">
+                                            <a href="iniciosesion.php">
+                                            <center><strong>Leer Más</strong></center>
+                                            </a>
+                                        </div>
+                                    <?php
+                                    }
+                                    ?>
+                                    
+                                </div>
 
                             
                         </div>
@@ -489,14 +505,28 @@
             
                             <?php } ?>
 
-                            <!-- Link "Leer Más"-->
-                            <div class="container-card-link" style="margin: auto;">
-
-                            <a href="<?php echo $paginaRed ?>.php?id=<?php echo $dato['idCurso']; ?><?php if(!empty($dato2)){?>&idCI=<?php echo $dato2['id_cursoInscrito']; }?>">
-                                <center><strong>Leer Más</strong> </center>
-                            </a>
-
-                            </div>
+                                    <?php
+                                    if(isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)){
+                                    ?>
+                                        <!--Link "Leer Más"-->
+                                        <div class="container-card-link" style="margin: auto;">
+                                            <a href="<?php echo $paginaRed ?>.php?id=<?php echo $dato['idCurso']; ?><?php if(!empty($dato2)){?>&idCI=<?php echo $dato2['id_cursoInscrito']; }?>">
+                                            <center><strong>Leer Más</strong></center>
+                                            </a>
+                                        </div>
+                                    <?php
+                                    }else{
+                                    ?>
+                                    
+                                        <!--Link "Leer Más"-->
+                                        <div class="container-card-link" style="margin: auto;">
+                                            <a href="iniciosesion.php">
+                                            <center><strong>Leer Más</strong></center>
+                                            </a>
+                                        </div>
+                                    <?php
+                                    }
+                                    ?>
             
                         </div>
 
