@@ -324,16 +324,15 @@
 
 
                 <?php
+                $pdo = Database::connect();
                 error_reporting(0);
                 $idcategoria = $_GET['idcate'];
-                $sql2 = "SELECT * FROM cursos WHERE permisoCurso=1 AND estado=1";
+                $sql2 = "SELECT * FROM cursos WHERE permisoCurso=1 AND estado=1 ORDER BY cursos.idCurso DESC";
                 $query2 = $pdo->prepare($sql2);
                 $query2->execute();
                 $contar = $query2->rowCount();
-                //con este codigo se hara la division 
-                //para generar las paginas necesarias 
-                //con respecto al numero que tenga y a los campos que halla
-                $cantidad_paginas = 8;
+
+                $cantidad_paginas = 3;
                 $page = $contar / $cantidad_paginas;
                 $page = ceil($page);
                 //seguimos con el paginador 
@@ -343,15 +342,13 @@
                     }
                 }
                 $inicio = ($_GET['pag'] - 1) * $cantidad_paginas;
-                $sql3 = "SELECT * FROM cursos WHERE permisoCurso=1 AND estado=1 LIMIT :iniciar,:narticulos";
+                $sql3 = "SELECT * FROM cursos WHERE permisoCurso=1 AND estado=1";
 
                 $query3 = $pdo->prepare($sql3);
-                $query3->bindParam(':iniciar', $inicio, PDO::PARAM_INT);
-                $query3->bindParam(':narticulos', $cantidad_paginas, PDO::PARAM_INT);
+                //$query3->bindParam(':iniciar', $inicio, PDO::PARAM_INT);
+                //$query3->bindParam(':narticulos', $cantidad_paginas, PDO::PARAM_INT);
                 $query3->execute();
                 $conteo = 0;
-
-
                 while ($dato = $query3->fetch(PDO::FETCH_ASSOC)) {
 
                     $conteo = $conteo + 1;
