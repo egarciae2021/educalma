@@ -56,7 +56,11 @@ if($registrationForm.length){
           publico_dirigido: {
               required: 'Por favor, Ingrese el Público que se Dirige!',
               minlength: "Público debe ser de por lo menos 4 caracteres"
+          },
+          prec_curso:{
+            min: 'Por favor. Ingrese un valor mayor o igual a 0'
           }
+
       },
   });
 }
