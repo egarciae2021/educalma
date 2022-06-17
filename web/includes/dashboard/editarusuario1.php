@@ -7,9 +7,12 @@
     $q2 = $pdo2->prepare($veri2);
     $q2->execute(array());
     $dato2 = $q2->fetch(PDO::FETCH_ASSOC);
+    $id = $dato2['id_user'];
+    
     Database::disconnect();
 
     ?>
+
     <div class="contformulario" id="contformulario">
         <div class="row">
             <div class="image">
@@ -100,11 +103,58 @@
                         <div id="infoImg"></div>
                     </div>
                 </div>
-                <input type="submit" class="btn" value="Actualizar">
+
+                <!--Escondido-->
+                <input style="position: absolute; visibility: hidden;" id="btnActualizar" type="submit" class="btn" value="Actualizar">
+                
+                <input id="btnActualizar_2" type="button" class="btn" value="Actualizar">
             </form>
         </div>
     </div>
 </div>
+
+
+                            <script>
+
+                                $('#btnActualizar_2').click(function(){
+
+                                    Swal.fire({
+
+                                        icon: 'warning',
+
+                                        title: '¿Está seguro que desea actualizar sus datos?',
+
+                                        confirmButtonText: "Sí",
+                                        
+                                        showCancelButton: true,
+                                        cancelButtonColor: 'red',
+                                        cancelButtonText: "No",
+                                    
+                                    }).then(resultado => {
+        
+                                        if (resultado.value) {
+
+                                            $('#btnActualizar').trigger('click');
+
+                                            Swal.fire({
+                                                icon: 'success',
+                                                title: 'Datos actualizados correctamente',
+                            
+                                            }) 
+            
+                                        } else {
+            
+                                        }
+    
+                                    });
+                                  
+                                });
+
+                                
+    
+                            </script>
+
+
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="./assets/js/plugins/sweetalert2.all.min.js"></script>
