@@ -43,7 +43,7 @@ body {
 
 .caja-opciones {
     display: grid;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: auto auto auto;
     width: 100%;
     gap: 10px;
     padding-top: .5rem;
@@ -89,6 +89,7 @@ body {
     background-color: transparent;
     color: var(--orange);
     font-size: .8rem;
+    height: 38px;
 }
 
 .btn-modulos:hover {
@@ -276,7 +277,7 @@ textarea:focus {
     }
     .caja-opciones {
         display: grid;
-        grid-template-columns: auto auto;
+        grid-template-columns: auto;
         width: 100%;
         gap: 10px;
     }
@@ -331,6 +332,27 @@ textarea:focus {
         gap: 5px;
     }
 }
+
+@media (min-width: 768px){
+    .col-md-6 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    }
+    
+    @media (min-width: 200px){
+        .col-md-6 {
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
+    }
+    
+    @media (max-width: 744px){
+        .bton1 {
+            display: flex;
+            justify-content: center;
+        }
+    }
 
 
 /*form Donar Curso*/

@@ -427,7 +427,7 @@
                             <!-- fin añadido nuevo -->
 
 
-                            <div class="btn">
+                            <div class="btn bton1">
                                 <button style="width: 200px;" type="button" id="salir_agregar" class="btn btn-block btn-dark">
                                     <i class="fas fa-sign-out-alt"></i> Finalizar registro
                                 </button>
