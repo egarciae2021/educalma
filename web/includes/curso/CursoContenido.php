@@ -293,11 +293,12 @@
                     if($dato['nota']>=18){
                         echo '<a style="cursor: pointer;" id="solcert" onclick="con_certificado()">Certificado</a>';     
                         //'<a style="cursor: pointer;" data-filter=".seo" href="plugins/ejemplo.php?idCurso='.$id.'&idUsu='.$idUser56.'">Certificado</a>';
-                        $validar=1;
+                        $validar=1;/*
                         $pdo21 = Database::connect();
                         $verif21=$pdo21->prepare("UPDATE `cursoinscrito` SET `solicitudcertificado`='si' WHERE `id_cursoInscrito`=$idCI AND `usuario_id`=$idUser56;");
                         $verif21->execute();
-                        Database::disconnect();  
+                        Database::disconnect(); 
+                        */ 
                         //break;
                     }
                     else {
