@@ -354,7 +354,7 @@
                             $AvanceFinal = number_format($Avance);
                             $pdo162 = Database::connect();
                             if($AvanceFinal == 100){
-                                $sqlitUAvance = "UPDATE cursoinscrito SET avance = $AvanceFinal, nota = ROUND((SELECT AVG(nota) FROM progresocursoinscrito WHERE id_cursoInscrito = $idCI), 2), solicitudcertificado=(CASE WHEN nota>18 THEN 2 ELSE 1 END), fechaFinalizacion = NOW() WHERE id_cursoInscrito = $idCI";
+                                $sqlitUAvance = "UPDATE cursoinscrito SET avance = $AvanceFinal, nota = ROUND((SELECT AVG(nota) FROM progresocursoinscrito WHERE id_cursoInscrito = $idCI), 2), solicitudcertificado=(CASE WHEN nota>=18 THEN 2 ELSE 1 END), fechaFinalizacion = NOW() WHERE id_cursoInscrito = $idCI";
                             }else{
                                 $sqlitUAvance = "UPDATE cursoinscrito SET avance = $AvanceFinal, nota = 0 WHERE id_cursoInscrito = $idCI";
                             }
