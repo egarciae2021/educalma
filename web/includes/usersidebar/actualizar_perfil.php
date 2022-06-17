@@ -15,14 +15,12 @@ require_once '../../database/databaseConection.php';
     $fecha=$_POST['fecha_naci'];
     $pais=$_POST['pais'];
 
-   // $revisar = getimagesize($_FILES["imagen"]["tmp_name"]);
 
     // $password = password_hash($pass, PASSWORD_BCRYPT);
 
-        if(/*$revisar !== false*/ $_FILES['imagen']['size']>0){
+        if($_FILES['imagen']['size']>0){
             $imga=$_FILES['imagen']['tmp_name'];
             $imagen = addslashes(file_get_contents($imga));
-          
 
             $pdo2 = Database::connect();  
             $veri2="UPDATE usuarios SET nombres='$nombre', apellido_pat='$ape_pater', apellido_mat='$ape_mater', email='$correo', telefono='$telefono', tipo_doc='$tipo_docu',nro_doc='$num_docume',sexo='$sexo',fecha_nacimiento	='$fecha',pais ='$pais',mifoto = '$imagen' WHERE id_user = '$id' ";
@@ -38,16 +36,13 @@ require_once '../../database/databaseConection.php';
      
 
         Database::disconnect();
- 
 
         echo'
-        <script>
-            //alert ("editado perfectamente");
-            window.location = "../../sidebarEditar.php?iduser='.$id.'";
-        </script>
-    ';
-
-
+            <script>
+                //alert ("editado perfectamente");
+                window.location = "../../user-sidebar.php?iduser='.$id.'";
+            </script>
+        ';
     
     }else if(isset($_GET['id_eliminar'])){
         $id=$_GET['id_eliminar'];
@@ -60,7 +55,7 @@ require_once '../../database/databaseConection.php';
         echo'
             <script>
                 //alert ("editado perfectamente");
-                window.location = "../../sidebarEditar.php";
+                window.location = "../../user-sidebar.php";
             </script>
         ';
     }
