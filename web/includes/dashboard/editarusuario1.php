@@ -3,7 +3,7 @@
 
 
     $pdo2 = Database::connect();
-    $veri2 = "SELECT * FROM usuarios WHERE id_user = '$_SESSION[codUsuario]' ";
+    $veri2 = "SELECT * FROM usuarios WHERE id_user = '$id' ";
     $q2 = $pdo2->prepare($veri2);
     $q2->execute(array());
     $dato2 = $q2->fetch(PDO::FETCH_ASSOC);
@@ -76,8 +76,8 @@
                 <div class="inputBox">
                     <h3>Tipo de sexo</h3>
                     <select class="seleccionador" name="sexo" id="Tipos">
-                        <option value="1" <?php if(1 == $dato2['sexo']){echo 'selected';};?>>Hombre</option>
-                        <option value="2" <?php if(2 == $dato2['sexo']){echo 'selected';};?>>Mujer</option>
+                        <option value="1" <?php if(1 == $dato2['sexo']){echo 'selected';};?>>Mujer</option>
+                        <option value="2" <?php if(2 == $dato2['sexo']){echo 'selected';};?>>Hombre</option>
                         <option value="3" <?php if(3 == $dato2['sexo']){echo 'selected';};?>>Otros... </option>
                     </select>
                     <!-- <input type="text"> -->
