@@ -90,11 +90,14 @@
                     <input type="date" id="Fecha" name="fecha_naci" value="<?php echo $dato2['fecha_nacimiento']; ?>">
                 </div>
                 <div class="inputBox">
+
                     <h3>Inserta tu foto</h3>
-                    <div class="column" style="margin:auto;">
-                        <label for="inputGroupFile04" class="subir">
-                            <i class="fas fa-cloud-upload-alt" aria-hidden="true"></i>
-                            Inserta tu Foto
+                    
+                    <div class="column" style="margin: auto; position: relative; top: -20px;">
+                        
+                        <label for="inputGroupFile04" class="subir btn" style="color: black;">
+                            <i style="position: relative; left: 40px;" class="fas fa-cloud-upload-alt" aria-hidden="true"></i>
+                            <span style="position: relative; left: 40px;">Subir imagen</span>
                         </label>
                         <input type="file" name="imagen" accept="image/*" id="inputGroupFile04" onchange="cambiarImg()" aria-describedby="inputGroupFileAddon04" style="display: none;" aria-label="Upload" ; multiple>
 
