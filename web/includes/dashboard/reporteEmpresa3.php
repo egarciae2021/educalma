@@ -98,6 +98,18 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
               width: 270px;
             }
 
+            @media (max-width: 429px) {
+            .filtro_1{
+              display: block;
+            }
+            }
+
+            @media (max-width: 429px) {
+            .cbofiltroApDes{
+              right: 11px;
+            }
+            }
+
         </style>
 
   

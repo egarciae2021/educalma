@@ -76,10 +76,26 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                             ?>
                         </h3>
 
+
+                        <?php
+                        $pdo = Database::connect();
+                        $idUsuario = $_SESSION['codUsuario'];
+                        $sql = "SELECT * FROM usuarios WHERE id_user = '$idUsuario'";
+                        $q = $pdo->prepare($sql);
+                        $q->execute(array());
+                        $dato = $q->fetch(PDO::FETCH_ASSOC);
+                        Database::disconnect();
+                        $nom=$dato['nombres'];
+                        $apepat=$dato['apellido_pat'];
+                        $apemat=$dato['apellido_mat'];
+                        ?>
+
+
+
                         <h4 style="position: relative; left: 20px; top: -15px;" class="nav__subtitle-dashboard">
                             <?php
                             if (isset($_SESSION['Logueado']) && $_SESSION['Logueado'] === true) {
-                                echo $_SESSION['nombres'];
+                                echo $nom." ".$apepat." ".$apemat;
                             } else {
                                 echo '';
                             }

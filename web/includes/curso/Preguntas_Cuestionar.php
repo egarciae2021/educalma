@@ -67,7 +67,7 @@
                                 <li class="list-group-item border-top-0" style="color:#495057;">Componentes del curso</li>
                             </ul-->
 
-                            <div class="list-group lista2 text-left">
+                            <div class="list-group lista2 text-left form-row">
                                 <a href="editarcurso.php?id=<?php echo $_GET['id']?>" class="btn btn-outline-secondary btn-back btn-sm" style="">
                                     <i class="fas fa-pencil-alt"></i> Editar datos del curso
                                 </a>
