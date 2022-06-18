@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET')
   $sql->execute(); 
 
   $userData = array();
-
+  $userData2 = array();
     while($row=$sql->fetch(PDO::FETCH_ASSOC)){ 
 
           //  $temp = mb_convert_encoding($row, 'UTF8', 'Windows-1252');
@@ -41,14 +41,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET')
 
     http_response_code(200);
 
- 
-    echo json_encode($userData,JSON_FORCE_OBJECT); 
+    $userData2 = array("data"=>$userData);
+    
+    echo json_encode($userData2,JSON_FORCE_OBJECT); 
    
   exit();
 
 }
- 
-
-//En caso de que ninguna de las opciones anteriores se haya ejecutado
-// header("HTTP/1.1 400 Bad Request");
 ?>
