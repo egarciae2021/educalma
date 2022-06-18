@@ -1,6 +1,15 @@
 <?php
 include "config.php";
 include "utils.php";
+
+
+header("Access-Control-Allow-Origin: *");
+header("Content-Type: application/json; charset=UTF-8");
+header("Access-Control-Allow-Methods: GET, OPTIONS");
+header("Allow: GET, OPTIONS");
+header("Access-Control-Max-Age: 3600");
+header("Access-Control-Allow-Headers: Content-Type, Origin, Access-Control-Allow-Headers, Authorization, X-Requested-With");
+
 $dbConn =  connect($db);
 /*
   listar todos los posts o solo uno
@@ -30,8 +39,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET')
     }
   
 
-    header("HTTP/1.1 200 OK");
+    http_response_code(200);
+
+    echo "<pre>";
     echo json_encode($userData,JSON_FORCE_OBJECT); 
+    echo "</pre>";
   exit();
 
 }
