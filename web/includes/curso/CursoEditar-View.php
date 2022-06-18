@@ -155,7 +155,7 @@
 
                                         <div class="form-group col-md-12 col-lg-12">
                                             <label class="form-label">Costo del curso</label>
-                                            <input required style="background: #EAE7FA; color: black;" type="number" min='0.00' step="0.10" id="precio-curso" name="prec_curso" class="form-control" value="<?php echo number_format($dato2['costoCurso'],2); ?>" aria-label="Dirigido" aria-describedby="names-addon">
+                                            <input required style="background: #EAE7FA; color: black;" type="number" min='0.00' max= '999' step="0.10" id="precio-curso" name="prec_curso" class="form-control" value="<?php echo number_format($dato2['costoCurso'],2); ?>" aria-label="Dirigido" aria-describedby="names-addon">
                                         </div>
 
                                         <div class="form-group col-md-12 col-lg-12">

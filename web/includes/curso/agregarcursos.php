@@ -77,19 +77,6 @@
 
 
 
- 
-
-
-
-
-
-
-
-
-
-
-
-
                     <!-- segunda columna -->
                     <div class="pl-0" style="width: 97.2%; position: relative; left: 15px;">
                         
@@ -147,7 +134,7 @@
 
                                 <div class="form-group col-md-6 ">
                                     <label class="form-label">Costo Curso</label>
-                                    <input min='0' type="number" id="precio-curso" name="prec_curso" placeholder="Ingrese Costo del Curso" class="form-control" aria-label="preci_curso" aria-describedby="names-addon">
+                                    <input min='0' max='999' type="number" id="precio-curso" name="prec_curso" placeholder="Ingrese Costo del Curso" class="form-control" aria-label="preci_curso" aria-describedby="names-addon">
                                 </div>
 
 
