@@ -95,7 +95,7 @@
                             <ul class="list-group list-group-flush py-3">
                                 <li class="list-group-item border-top-0" style="color:#495057;">Componentes del Curso</li>
                             </ul>-->
-                                <div class="list-group lista2 text-left">
+                                <div class="list-group lista2 text-left form-row">
                               
                                     <!--
                                     </a>
