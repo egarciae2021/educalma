@@ -1,4 +1,7 @@
 <?php
+
+
+    require('fpdf2.php');
      
     $alumno= $_POST['nombre_estudiante'];
     $curso= $_POST['nombre_curso'];
@@ -24,15 +27,15 @@
     imagettftext($image,40,0,260,1340,$color2,$font,$codAlumno);
     imagettftext($image,40,0,470,1340,$color2,$font,$codCurso);
 
-    imagejpeg($image,"/opt/lampp/htdocs/git_clone/test-educalma/web/plugins/certificate/".$nomAlumno.".jpg");
+    imagejpeg($image, "./".$nomAlumno.".jpg");
                 
-    require('fpdf2.php');
+
     $pdf = new FPDF('L','in',[11.7,8.27]);
     $pdf->Addpage();
 
-    $pdf->Image("/opt/lampp/htdocs/git_clone/test-educalma/web/plugins/".$nomAlumno.".jpg",0,0,11.7,8.27);
-    $pdf->Output("/opt/lampp/htdocs/git_clone/test-educalma/web/plugins/certificate/".$nomAlumno.".pdf","F");
-    $pdf->Output("/opt/lampp/htdocs/git_clone/test-educalma/web/plugins/certificate/".$nomAlumno.".pdf","D");
+    $pdf->Image("./".$nomAlumno.".jpg",0,0,11.7,8.27);
+    $pdf->Output("./".$nomAlumno.".pdf","F");
+    $pdf->Output("./".$nomAlumno.".pdf","D");
     $pdf->Output();
 
     imagedestroy($image);
