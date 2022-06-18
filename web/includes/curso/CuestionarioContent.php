@@ -571,8 +571,14 @@
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
                                         <div class="modal-body">
-                                            <i class="fa fa-exclamation-triangle fa-5x" aria-hidden="true"></i>
-                                            <p>Completa todos los módulos para completar el curso.</p>
+                                            <script>
+                                                Swal.fire({
+                                                    icon: 'warning',
+                                                    text: 'Completa todos los módulos para completar el curso'
+                                                })
+                                            </script>
+                                            <!-- <i class="fa fa-exclamation-triangle fa-5x" aria-hidden="true"></i>
+                                            <p>Completa todos los módulos para completar el curso.</p> -->
                                         </div> 
                                     </div> 
                                 </div>
