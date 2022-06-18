@@ -27,15 +27,15 @@
     imagettftext($image,40,0,260,1340,$color2,$font,$codAlumno);
     imagettftext($image,40,0,470,1340,$color2,$font,$codCurso);
 
-    imagejpeg($image, "./".$nomAlumno.".jpg");
+    imagejpeg($image, $nomAlumno.".jpg");
                 
 
     $pdf = new FPDF('L','in',[11.7,8.27]);
     $pdf->Addpage();
 
-    $pdf->Image("./".$nomAlumno.".jpg",0,0,11.7,8.27);
-    $pdf->Output("./".$nomAlumno.".pdf","F");
-    $pdf->Output("./".$nomAlumno.".pdf","D");
+    $pdf->Image($nomAlumno.".jpg",0,0,11.7,8.27);
+    $pdf->Output($nomAlumno.".pdf","F");
+    $pdf->Output($nomAlumno.".pdf","D");
     $pdf->Output();
 
     imagedestroy($image);
