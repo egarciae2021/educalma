@@ -182,6 +182,8 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                                         <th style="border-radius: 10px 0 0 10px;">ID Usuario</th>
                                         <th scope="col">Nombre Completo</th>
                                         <th>Curso</th>
+                                        <th>Fecha de Inscripción</th>
+                                        <th>Fecha de Finalización</th>
                                         <th>Avance</th>
                                         <th>Nota</th>
                                     </tr>
@@ -195,7 +197,9 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                                       echo '
                                           <td>'. $aprobados['idUsuario'].'</td>
                                           <td>'. $aprobados['nombres'].'</td> 
-                                          <td>'. $aprobados['nombreCurso'].'</td> 
+                                          <td>'. $aprobados['nombreCurso'].'</td>
+                                          <td>'. $aprobados['fechaInscripcion'].'</td> 
+                                          <td>'. $aprobados['fechaFinalizacion'].'</td>  
                                           <td>'. $aprobados['avance'].'</td>
                                           <td>'. $aprobados['nota'].'</td>
                                       ';

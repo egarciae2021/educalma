@@ -74,7 +74,7 @@ try{
     $dato3 = $q1->fetchAll(PDO::FETCH_ASSOC);
     for ($i=0; $i <$suma ; ++$i) { 
         $Curso=$dato3[$i]['id_Curso'];
-        $veri=$pdo->prepare("INSERT INTO `cursoinscrito`(curso_id, usuario_id, cod_curso, curso_obt, cantidad_respuestas) VALUES (:curso,:id,'', 1, 0)");
+        $veri=$pdo->prepare("INSERT INTO `cursoinscrito`(curso_id, usuario_id, cod_curso, curso_obt, cantidad_respuestas, `fechaInscripcion`) VALUES (:curso,:id,'', 1, 0, NOW())");
         $veri->bindParam(":curso",$Curso,PDO::PARAM_INT);
         $veri->bindParam(":id",$idCurso,PDO::PARAM_INT);
         $veri->execute();

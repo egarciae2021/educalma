@@ -354,7 +354,7 @@
                             $AvanceFinal = number_format($Avance);
                             $pdo162 = Database::connect();
                             if($AvanceFinal == 100){
-                                $sqlitUAvance = "UPDATE cursoinscrito SET avance = $AvanceFinal, nota = ROUND((SELECT AVG(nota) FROM progresocursoinscrito WHERE id_cursoInscrito = $idCI), 2) WHERE id_cursoInscrito = $idCI";
+                                $sqlitUAvance = "UPDATE cursoinscrito SET avance = $AvanceFinal, nota = ROUND((SELECT AVG(nota) FROM progresocursoinscrito WHERE id_cursoInscrito = $idCI), 2), solicitudcertificado=(CASE WHEN nota>=18 THEN 2 ELSE 1 END), fechaFinalizacion = NOW() WHERE id_cursoInscrito = $idCI";
                             }else{
                                 $sqlitUAvance = "UPDATE cursoinscrito SET avance = $AvanceFinal, nota = 0 WHERE id_cursoInscrito = $idCI";
                             }
@@ -372,6 +372,15 @@
                             $datoRating = $qiRating -> fetch(PDO::FETCH_ASSOC);
                             $ConsultaRating = $datoRating['Cantidad'];
                             Database::disconnect();
+
+                            /*Verificar Aprobación del Curso
+                            $pdoConsultaCurso = Database::connect();
+                            $sqlConsultaCurso= "SELECT nota, avance FROM cursoinscrito WHERE id_cursoInscrito = $idCI";
+                            $qConsultaCurso = $pdoConsultaCurso->prepare($sqlConsultaCurso);
+                            $qConsultaCurso->execute();
+                            $datoConsultaCurso = $qConsultaCurso -> fetch(PDO::FETCH_ASSOC);
+                            $notaCurso = $datoConsultaCurso['Cantidad'];
+                            Database::disconnect();*/
                     ?>
 
                     <h4 style="text-align: right; ">
@@ -562,8 +571,14 @@
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
                                         <div class="modal-body">
-                                            <i class="fa fa-exclamation-triangle fa-5x" aria-hidden="true"></i>
-                                            <p>Completa todos los módulos para completar el curso.</p>
+                                            <script>
+                                                Swal.fire({
+                                                    icon: 'warning',
+                                                    text: 'Completa todos los módulos para completar el curso'
+                                                })
+                                            </script>
+                                            <!-- <i class="fa fa-exclamation-triangle fa-5x" aria-hidden="true"></i>
+                                            <p>Completa todos los módulos para completar el curso.</p> -->
                                         </div> 
                                     </div> 
                                 </div>
