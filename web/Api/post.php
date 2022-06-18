@@ -41,9 +41,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET')
 
     http_response_code(200);
 
-    echo "<pre>";
+ 
     echo json_encode($userData,JSON_FORCE_OBJECT); 
-    echo "</pre>";
+   
   exit();
 
 }
