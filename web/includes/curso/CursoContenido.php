@@ -951,24 +951,19 @@
       
       
               const Url="/plugins/ejemplo2.php";
-              const data = {      
-                // 'nombre_estudiante':<?php $dato20['nombres'] ?>,
-                //                   'nombre_curso':<?php $dato4['nombreCurso'] ?>,
-                //                   'cod_alumno': <?php $dato20['codigo_alumno'] ?> ,
-                //                   'cod_curso': <?php $dato['cod_curso'] ?>
-                'nombre_estudiante':1,
-                                  'nombre_curso':2,
-                                  'cod_alumno':3 ,
-                                  'cod_curso': 4
 
-                                  };
+              var formData = new FormData();
+              formData.append('nombre_curso', :<?php $dato4['nombreCurso'] ?>);
+              formData.append('cod_alumno', <?php $dato20['codigo_alumno'] ?>);
+              formData.append('username', <?php $dato['cod_curso'] ?>);
+              formData.append('nombre_estudiante', <?php $dato20['nombres'] ?>); 
       
               fetch(Url, {
               method: 'POST',  
               headers: {
               "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
               },
-              body: JSON.stringify(data),
+              body: formData,
               })
               .then(response => response.text()) 
       
