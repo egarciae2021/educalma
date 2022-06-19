@@ -110,21 +110,7 @@
       
       //********************* *//
       $con = Database::connect();
-      $idusuario=$_SESSION['iduser'];
-
-
-
-            //info del alumno
-            $pdo = Database::connect();
-            $sql = "SELECT * FROM usuarios WHERE id_user = '$idUsuario'";
-            $q = $pdo->prepare($sql);
-            $q->execute(array());
-            $dato21 = $q->fetch(PDO::FETCH_ASSOC); 
-
-
-
-
-
+      $idusuario=$_SESSION['iduser']; 
       $ver = "SELECT curso_obt FROM cursoinscrito WHERE curso_id=$id AND usuario_id=$idusuario";
       $veremos = $con->prepare($ver);
       $veremos->setFetchMode(PDO::FETCH_ASSOC);
@@ -151,6 +137,15 @@
       
       Database::disconnect();
       
+      
+            //info del alumno
+            $pdo = Database::connect();
+            $sql = "SELECT * FROM usuarios WHERE id_user = '$idUsuario'";
+            $q = $pdo->prepare($sql);
+            $q->execute(array());
+            $dato21 = $q->fetch(PDO::FETCH_ASSOC); 
+
+ 
       ?>
    <br><br>
    <br><br>
@@ -964,10 +959,10 @@
       
       
               const Url="./plugins/ejemplo2.php";
-              const data = {      'nombre_estudiante': $dato21['nombres'] ,
-                                  'nombre_curso':$dato4['nombreCurso'] ,
-                                  'cod_alumno':  $dato21['codigo_alumno']  ,
-                                  'cod_curso': $dato['cod_curso'] 
+              const data = {      'nombre_estudiante': <?php $dato21['nombres'] ?> ,
+                                  'nombre_curso': <?php   $dato4['nombreCurso'] ?> ,
+                                  'cod_alumno':  <?php  $dato21['codigo_alumno'] ?> ,
+                                  'cod_curso': <?php  $dato['cod_curso'] ?> 
                                   };
       
               fetch(Url, {
