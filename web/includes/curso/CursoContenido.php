@@ -1007,10 +1007,7 @@
               ) 
       
               .then(data => { 
-               var f_download ="http://test-apicalma.site/plugins/certificate/<?php echo  $dato90['codigo_alumno']; ?><?php echo $dato['cod_curso'] ;?>+.pdf";
-
-              console.log(f_download); 
-
+     
 
               // alert(data.trim());  
               // window.location.assign("index.php")
