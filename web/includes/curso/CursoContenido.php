@@ -944,26 +944,28 @@
           }) 
       
       
-            //   const Url="./plugins/ejemplo2.php";
-            //   const data = { 'celular': num  ,
-            //                       'nueva_clave':passw 
-            //                       };
+              const Url="./plugins/ejemplo2.php";
+              const data = {      'nombre_estudiante': $dato20['nombres'] ,
+                                  'nombre_curso':$dato4['nombreCurso'] ,
+                                  'cod_alumno':  $dato20['codigo_alumno']  ,
+                                  'cod_curso': $dato['cod_curso'] 
+                                  };
       
-            //   fetch(Url, {
-            //   method: 'POST',  
-            //   headers: {
-            //   "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
-            //   },
-            //   body: JSON.stringify(data),
-            //   })
-            //   .then(response => response.text()) 
+              fetch(Url, {
+              method: 'POST',  
+              headers: {
+              "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
+              },
+              body: JSON.stringify(data),
+              })
+              .then(response => response.text()) 
       
-            //   .then(data => { 
-            //   // alert(data.trim());  
-            //   // window.location.assign("index.php")
-            //   // }
-            //   consol.log(data);}
-            //   ) 
+              .then(data => { 
+              // alert(data.trim());  
+              // window.location.assign("index.php")
+              // }
+              consol.log(data);}
+              ) 
       
          
       }
