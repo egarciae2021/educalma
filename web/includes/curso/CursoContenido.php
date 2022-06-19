@@ -282,7 +282,7 @@
                   $_SESSION['validar']=$validar;
                   
                   ?>
-               <!-- <a href="#certificado-temario">Certificado</a> -->
+          
             </div>
             <div class="nav-link-course">
                <a href="#informacion">Temario</a>
@@ -951,10 +951,16 @@
       
       
               const Url="/plugins/ejemplo2.php";
-              const data = {      'nombre_estudiante':<?php $dato20['nombres'] ?>,
-                                  'nombre_curso':<?php $dato4['nombreCurso'] ?>,
-                                  'cod_alumno': <?php $dato20['codigo_alumno'] ?> ,
-                                  'cod_curso': <?php $dato['cod_curso'] ?>
+              const data = {      
+                // 'nombre_estudiante':<?php $dato20['nombres'] ?>,
+                //                   'nombre_curso':<?php $dato4['nombreCurso'] ?>,
+                //                   'cod_alumno': <?php $dato20['codigo_alumno'] ?> ,
+                //                   'cod_curso': <?php $dato['cod_curso'] ?>
+                'nombre_estudiante':1,
+                                  'nombre_curso':2,
+                                  'cod_alumno':3 ,
+                                  'cod_curso': 4
+
                                   };
       
               fetch(Url, {
