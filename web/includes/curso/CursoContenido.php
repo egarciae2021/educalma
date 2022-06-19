@@ -998,6 +998,7 @@
             {
                console.log("Respuesta del servidor"); 
                var Url2 = "http://test-apicalma.site/plugins/certificate/<?php echo  $dato90['codigo_alumno']; ?><?php echo $dato['cod_curso'] ;?>.pdf"
+               setTimeout(function(){Console.log("Se esta descargando el certificado")}, 2000);
                window.open(Url2, '_blank');
             }
             else
