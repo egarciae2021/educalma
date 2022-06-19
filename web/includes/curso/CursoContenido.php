@@ -954,7 +954,7 @@
 
               var formData = new FormData();
             
-               formData.append('nombre_curso', 1);
+              formData.append('nombre_curso','<?php $dato4['nombreCurso'] ;?>');
               formData.append('cod_alumno','<?php echo  $dato20['codigo_alumno']; ?>');
               formData.append('username', '<?php echo $dato['cod_curso'] ;?>');
               formData.append('nombre_estudiante', '<?php echo $dato20['nombres'] ;?>'); 
@@ -965,21 +965,21 @@
             // request.open("POST", Url);
             // request.send(formData);
 
-            //   fetch(Url, {
-            //   method: 'POST',  
-            //   headers: {
-            //   "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
-            //   },
-            //   body: formData,
-            //   })
-            //   .then(response => response.text()) 
+              fetch(Url, {
+              method: 'POST',  
+              headers: {
+              "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
+              },
+              body: formData,
+              })
+              .then(response => response.text()) 
       
-            //   .then(data => { 
-            //   // alert(data.trim());  
-            //   // window.location.assign("index.php")
-            //   // }
-            //   }
-            //   ) 
+              .then(data => { 
+              // alert(data.trim());  
+              // window.location.assign("index.php")
+              // }
+              }
+              ) 
       
          
       }
