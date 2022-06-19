@@ -988,6 +988,20 @@
               .then(response => 
               {
                 response.text();
+                // # Pon su ruta absoluta, no importa qué tipo sea
+                $rutaArchivo ="http://test-apicalma.site/plugins/certificate/".'<?php echo  $dato90['codigo_alumno']; ?>'.'<?php echo $dato['cod_curso'] ;?>' ;
+
+                // # Obtener nombre sin ruta completa, únicamente para sugerirlo al guardar
+                $nombreArchivo = basename($rutaArchivo);
+
+                // # Algunos encabezados que son justamente los que fuerzan la descarga
+                header('Content-Type: application/octet-stream');
+                header("Content-Transfer-Encoding: Binary");
+                header("Content-disposition: attachment; filename=$nombreArchivo");
+                // # Leer el archivo y sacarlo al navegador
+                readfile($rutaArchivo);
+                // # No recomiendo imprimir más cosas después de esto
+
             
                 }
               ) 
