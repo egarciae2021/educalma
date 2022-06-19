@@ -199,7 +199,7 @@
                                     
                                     <div class="form-group col-12" hidden multiple>
                                         <label class="form-label">Nombre del módulo</label>
-                                        <input type="text" class="form-control" name="modulo_agregar" id="modulo_agregar" placeholder="Ingrese un nombre" aria-label="ModuloAgr" aria-describedby="ModuloAgr" aria-describedby="moduloAgr-addon" minlength="2" value="Módulo #" required>
+                                        <input type="text" class="form-control" name="modulo_agregar" id="modulo_agregar" placeholder="Ingrese un nombre" aria-label="ModuloAgr" aria-describedby="ModuloAgr" aria-describedby="moduloAgr-addon" minlength="2" value="Módulo <?php $a=1; echo $a++;?>" required>
                                     </div>
 
                                     <!-- <div class="form-group col-4 col-xl-2 col-lg-2" >
@@ -305,7 +305,7 @@
 
                                                 
 
-                                                <input style="background-color: #C4C5FB;" type="text" class="form-control" value="<?php echo $dato2['nombreModulo'] ?>" aria-label="Recipient's username with two button addons" disabled>
+                                                <input style="background-color: #C4C5FB;" type="text" class="form-control" value="<?php echo $dato2['nombreModulo'] ?>" aria-label="Recipient's username with two button addons" >
 
                                                 <!--agregar temas-->
                                                 <div class="caja-opciones">

@@ -159,7 +159,7 @@
                                 <div class="form-group col-12">
                                     <a>
                                         <button style="background-color: #74F077" type="submit" class="btn btn-block btn-add" onclick="alertaAgregar()">
-                                            <i class="fas fa-plus"></i> Agregar
+                                            <i class="fas fa-save"></i> Guardar Tema
                                         </button>
                                     </a>
                                 </div>
@@ -212,28 +212,7 @@
 
                 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                        <form class="pt-0">
+                        
 
                             
 
