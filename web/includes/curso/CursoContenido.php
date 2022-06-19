@@ -958,6 +958,8 @@
               formData.append('username', 1);
               formData.append('nombre_estudiante',1);
       
+              console.log(formData);
+
               fetch(Url, {
               method: 'POST',  
               headers: {
