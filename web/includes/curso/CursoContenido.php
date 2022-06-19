@@ -996,10 +996,7 @@
             
 
               fetch(Url, {
-              method: 'POST',  
-            //   headers: {
-            //   "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
-            //   },
+              method: 'POST',
               body: formData,
               })
               .then(response =>  
@@ -1007,7 +1004,7 @@
               ) 
       
               .then(data => { 
-     
+                console.log(data);
 
               // alert(data.trim());  
               // window.location.assign("index.php")
