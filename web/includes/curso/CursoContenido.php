@@ -953,11 +953,12 @@
               const Url="/plugins/ejemplo2.php";
 
               var formData = new FormData();
-              formData.append('nombre_curso', 1);
-              formData.append('cod_alumno', 1);
-              formData.append('username', 1);
-              formData.append('nombre_estudiante',1);
-      
+            
+               formData.append('nombre_curso', :<?php $dato4['nombreCurso'] ?>);
+              formData.append('cod_alumno', <?php $dato20['codigo_alumno'] ?>);
+              formData.append('username', <?php $dato['cod_curso'] ?>);
+              formData.append('nombre_estudiante', <?php $dato20['nombres'] ?>); 
+
               console.log(formData);
 
               var request = new XMLHttpRequest();
