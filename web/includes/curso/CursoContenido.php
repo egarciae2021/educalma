@@ -950,7 +950,7 @@
           }) 
       
       
-              const Url="./plugins/ejemplo2.php";
+              const Url="/plugins/ejemplo2.php";
               const data = {      'nombre_estudiante':<?php $dato20['nombres'] ?>,
                                   'nombre_curso':<?php $dato4['nombreCurso'] ?>,
                                   'cod_alumno': <?php $dato20['codigo_alumno'] ?> ,
