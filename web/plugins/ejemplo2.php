@@ -9,7 +9,7 @@
     $codC=$_POST['cod_curso'];
      
     //$font = "C:\Windows\Fonts\LSANSD.TTF"; 
-	$font = "/usr/local/share/fonts/Work-Sans-1.6/fonts/webfonts/ttf/WorkSans-Regular.ttf";
+	$font = "/opt/lampp/htdocs/git_clone/test-educalma/web/assets/fonts/Montserrat/Montserrat-Thin.ttf";
     $fonti = "/opt/lampp/htdocs/git_clone/test-educalma/web/assets/css/fonts/Flaticon.ttf";
     $image= imagecreatefromjpeg("certificate.jpg");
     $color= imagecolorallocate($image,25,39,175);
