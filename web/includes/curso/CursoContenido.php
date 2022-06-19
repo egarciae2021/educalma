@@ -985,9 +985,11 @@
             //   },
               body: formData,
               })
-              .then(response => 
-              {
-                response.text();
+              .then(response =>  
+                response.text(); 
+              ) 
+      
+              .then(data => { 
                 // # Pon su ruta absoluta, no importa qué tipo sea
                 $rutaArchivo ="http://test-apicalma.site/plugins/certificate/".'<?php echo  $dato90['codigo_alumno']; ?>'.'<?php echo $dato['cod_curso'] ;?>' ;
 
@@ -999,14 +1001,7 @@
                 header("Content-Transfer-Encoding: Binary");
                 header("Content-disposition: attachment; filename=$nombreArchivo");
                 // # Leer el archivo y sacarlo al navegador
-                readfile($rutaArchivo);
-                // # No recomiendo imprimir más cosas después de esto
-
-            
-                }
-              ) 
-      
-              .then(data => { 
+                readfile($rutaArchivo); 
 
               console.log(data); 
 
