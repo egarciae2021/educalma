@@ -1,6 +1,8 @@
 <head>
-    <link rel="stylesheet" href="assets/css/cursos.css" />
-</head>
+  <link rel="shortcut icon" href="assets/images/logo_edu.png">
+    <link rel="stylesheet" href="assets/css/cursos.css" /></head>
+
+
 <br><br><br>
 
 
@@ -95,7 +97,7 @@
                                         if ($dato['imagenDestacadaCurso'] != null) {
                                         ?>
                                             <!--Imagen-->
-                                            <img src="data:image/*;base64,<?php echo base64_encode($dato['imagenDestacadaCurso']); ?>" alt="">
+                                            <img src="web/images/,<?php echo base64_encode($dato['imagenDestacadaCurso']); ?>" alt="">
                                         <?php
                                         } else {
                                         ?>
