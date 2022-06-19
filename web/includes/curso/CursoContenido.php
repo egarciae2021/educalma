@@ -242,7 +242,7 @@
             <div class="nav-link-course">
                <?php 
                   // PONER EN EL BOTON DEL CERTIFICADO
-                  if($dato['nota']>=18){
+                  if($dato['nota']>=18 && $dato['avance']>=99 ){
                       echo '<a style="cursor: pointer;" id="solcert" onclick="con_certificado()">Certificado</a>';     
                       //'<a style="cursor: pointer;" data-filter=".seo" href="plugins/ejemplo.php?idCurso='.$id.'&idUsu='.$idUser56.'">Certificado</a>';
                       $validar=1;/*
