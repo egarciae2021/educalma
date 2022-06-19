@@ -1546,6 +1546,26 @@ modal para ingresar mensaje
             }
 
             function con_certificado() {
+
+                    const Url="./includes/login/checkenviar_certificado.php";
+                    const data = { 'celular': num  ,
+                                        'nueva_clave':passw 
+                                        };
+
+                    fetch(Url, {
+                    method: 'POST',  
+                    headers: {
+                    "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
+                    },
+                    body: JSON.stringify(data),
+                    })
+                    .then(response => response.text()) 
+
+                    .then(data => { 
+                    alert(data.trim());  
+                    window.location.assign("index.php")
+                    }) 
+        
                 Swal.fire({
                     icon: 'success',
                     title: 'Nota minima alcanzada',
