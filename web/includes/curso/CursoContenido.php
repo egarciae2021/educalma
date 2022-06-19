@@ -959,27 +959,26 @@
               formData.append('username', '<?php echo $dato['cod_curso'] ;?>');
               formData.append('nombre_estudiante', '<?php echo $dato20['nombres'] ;?>'); 
 
-              console.log(formData);
 
-            //   var request = new XMLHttpRequest();
-            // request.open("POST", Url);
-            // request.send(formData);
+            var request = new XMLHttpRequest();
+            request.open("POST", Url);
+            request.send(formData);
 
-              fetch(Url, {
-              method: 'POST',  
-              headers: {
-              "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
-              },
-              body: formData,
-              })
-              .then(response => response.text()) 
+            //   fetch(Url, {
+            //   method: 'POST',  
+            //   headers: {
+            //   "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
+            //   },
+            //   body: formData,
+            //   })
+            //   .then(response => response.text()) 
       
-              .then(data => { 
-              // alert(data.trim());  
-              // window.location.assign("index.php")
-              // }
-              }
-              ) 
+            //   .then(data => { 
+            //   // alert(data.trim());  
+            //   // window.location.assign("index.php")
+            //   // }
+            //   }
+            //   ) 
       
          
       }
