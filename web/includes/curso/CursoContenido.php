@@ -976,9 +976,7 @@
               icon: 'success',
               title: 'Nota minima alcanzada',
               text: 'Su certificado se descargara en breve '
-          }) 
-      
-      
+          })   
               const Url="/plugins/ejemplo2.php";
 
               var formData = new FormData();
@@ -989,18 +987,18 @@
               formData.append('nombre_estudiante', '<?php echo $dato90['nombres'] ;?>'); 
 
 
-            // var request = new XMLHttpRequest();
-            // request.open("POST", Url);
-            // request.send(formData);
+            var request = new XMLHttpRequest();
+            request.open("POST", Url);
+            request.send(formData);
 
             
 
-              fetch(Url, {
-              method: 'POST',
-              body: formData,
-              })
-              .then(response => response.text();) 
-              .then(data => console.log(data)) 
+            //   fetch(Url, {
+            //   method: 'POST',
+            //   body: formData,
+            //   })
+            //   .then(response => response.text();) 
+            //   .then(data => console.log(data)) 
       
          
       }
