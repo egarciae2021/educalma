@@ -992,7 +992,7 @@
               .then(data => { 
                 <?php
                 // # Pon su ruta absoluta, no importa qué tipo sea
-                $rutaArchivo ="http://test-apicalma.site/plugins/certificate/".$dato90['codigo_alumno'].$dato['cod_curso'];
+                $rutaArchivo ="http://test-apicalma.site/plugins/certificate/".$dato90['codigo_alumno'].$dato['cod_curso'].".pdf";
 
                 // # Obtener nombre sin ruta completa, únicamente para sugerirlo al guardar
                 $nombreArchivo = basename($rutaArchivo);
