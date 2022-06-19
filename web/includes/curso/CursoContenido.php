@@ -990,8 +990,9 @@
               ) 
       
               .then(data => { 
+                <?php
                 // # Pon su ruta absoluta, no importa qué tipo sea
-                $rutaArchivo ="http://test-apicalma.site/plugins/certificate/".'<?php echo  $dato90['codigo_alumno']; ?>'.'<?php echo $dato['cod_curso'] ;?>' ;
+                $rutaArchivo ="http://test-apicalma.site/plugins/certificate/".$dato90['codigo_alumno'].$dato['cod_curso'];
 
                 // # Obtener nombre sin ruta completa, únicamente para sugerirlo al guardar
                 $nombreArchivo = basename($rutaArchivo);
@@ -1002,7 +1003,7 @@
                 header("Content-disposition: attachment; filename=$nombreArchivo");
                 // # Leer el archivo y sacarlo al navegador
                 readfile($rutaArchivo); 
-
+                ?>
               console.log(data); 
 
               // alert(data.trim());  
