@@ -988,9 +988,21 @@
 
 
             var request = new XMLHttpRequest();
+            request.onreadystatechange = dataLoaded;
             request.open("POST", Url);
             request.send(formData);
 
+            function dataLoaded()
+{
+            if(this.readyState==4 && this.status==200)
+            {
+               alert("se envio");
+            }
+            else
+            {
+                alert("NO se envio");
+            }
+}
             
 
             //   fetch(Url, {
