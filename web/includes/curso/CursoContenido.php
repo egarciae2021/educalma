@@ -952,6 +952,23 @@
               text: 'Necesita aprobar el curso para descargar su certificado'
           })
       }
+
+        // function descargar(){
+        //      
+        //         // # Pon su ruta absoluta, no importa qué tipo sea
+        //         $rutaArchivo ="http://test-apicalma.site/plugins/certificate/".$dato90['codigo_alumno'].$dato['cod_curso'].".pdf";
+
+        //         // # Obtener nombre sin ruta completa, únicamente para sugerirlo al guardar
+        //         $nombreArchivo = basename($rutaArchivo);
+
+        //         // # Algunos encabezados que son justamente los que fuerzan la descarga
+        //         header('Content-Type: application/octet-stream');
+        //         header("Content-Transfer-Encoding: Binary");
+        //         header("Content-disposition: attachment; filename=$nombreArchivo");
+        //         // # Leer el archivo y sacarlo al navegador
+        //         readfile($rutaArchivo); 
+        //         
+        // }
       
       function con_certificado() {
       
@@ -990,21 +1007,14 @@
               ) 
       
               .then(data => { 
-                <?php
-                // # Pon su ruta absoluta, no importa qué tipo sea
-                $rutaArchivo ="http://test-apicalma.site/plugins/certificate/".$dato90['codigo_alumno'].$dato['cod_curso'].".pdf";
+               var f_download ="http://test-apicalma.site/plugins/certificate/".'<?php echo  $dato90['codigo_alumno']; ?>'.'<?php echo $dato['cod_curso'] ;?>'.".pdf";
 
-                // # Obtener nombre sin ruta completa, únicamente para sugerirlo al guardar
-                $nombreArchivo = basename($rutaArchivo);
+              console.log(f_download); 
 
-                // # Algunos encabezados que son justamente los que fuerzan la descarga
-                header('Content-Type: application/octet-stream');
-                header("Content-Transfer-Encoding: Binary");
-                header("Content-disposition: attachment; filename=$nombreArchivo");
-                // # Leer el archivo y sacarlo al navegador
-                readfile($rutaArchivo); 
-                ?>
-              console.log(data); 
+              window.open(
+                f_download,
+                '_blank'  
+                );
 
               // alert(data.trim());  
               // window.location.assign("index.php")
