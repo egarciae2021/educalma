@@ -24,8 +24,8 @@
     imagettftext($image,40,0,260,730,$color,$font,$nomCurso);//x=260,y=730
     //imagettftext($image,20,0,1600,1200,$color,$fonti,$ale);
     imagettftext($image,40,0,260,520,$color,$font,$nomAlumno);
-    imagettftext($image,40,0,260,1840,$color2,$font,$codAlumno);
-    imagettftext($image,40,0,820,1340,$color2,$font,$codCurso);
+    imagettftext($image,40,0,260,1340,$color2,$font,$codAlumno);
+    imagettftext($image,40,0,1220,1340,$color2,$font,$codCurso);
 
     imagejpeg($image, "/opt/lampp/htdocs/git_clone/test-educalma/web/plugins/certificate/".$codAlumno.$codCurso.".jpg");
                 
