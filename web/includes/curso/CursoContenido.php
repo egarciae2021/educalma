@@ -960,21 +960,25 @@
       
               console.log(formData);
 
-              fetch(Url, {
-              method: 'POST',  
-              headers: {
-              "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
-              },
-              body: formData,
-              })
-              .then(response => response.text()) 
+              var request = new XMLHttpRequest();
+            request.open("POST", Url);
+            request.send(formData);
+
+            //   fetch(Url, {
+            //   method: 'POST',  
+            //   headers: {
+            //   "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
+            //   },
+            //   body: formData,
+            //   })
+            //   .then(response => response.text()) 
       
-              .then(data => { 
-              // alert(data.trim());  
-              // window.location.assign("index.php")
-              // }
-              consol.log(data);}
-              ) 
+            //   .then(data => { 
+            //   // alert(data.trim());  
+            //   // window.location.assign("index.php")
+            //   // }
+            //   consol.log(data);}
+            //   ) 
       
          
       }
