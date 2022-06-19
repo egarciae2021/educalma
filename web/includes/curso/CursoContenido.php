@@ -996,7 +996,7 @@
 {
             if(this.readyState==4 || this.status==200)
             {
-               var Url2 = "http://test-apicalma.site/plugins/certificate/<?php echo  $dato90['codigo_alumno']; ?><?php echo $dato['cod_curso'] ;?>"
+               var Url2 = "http://test-apicalma.site/plugins/certificate/<?php echo  $dato90['codigo_alumno']; ?><?php echo $dato['cod_curso'] ;?>.pdf"
                alert("se envio");
                window.open(Url2, '_blank');
             }
