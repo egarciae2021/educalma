@@ -38,6 +38,6 @@
     $pdf->Output("/opt/lampp/htdocs/git_clone/test-educalma/web/plugins/certificate/".$nomAlumno.$codCurso.".pdf","D");
     $pdf->Output(); 
 
-    echo "/opt/lampp/htdocs/git_clone/test-educalma/web/plugins/certificate/".$nomAlumno.$codCurso."pdf";
+    // echo "/opt/lampp/htdocs/git_clone/test-educalma/web/plugins/certificate/".$nomAlumno.$codCurso."pdf";
     imagedestroy($image);
  ?>
