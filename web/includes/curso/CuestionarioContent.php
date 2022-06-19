@@ -255,6 +255,16 @@
                                 $notaFinal = number_format($notaFi);
                             }
 
+                            //Verificar si ya aprobó el curso.
+
+                            $pdoAprobado = Database::connect(); 
+                            $sqlAprobado="SELECT solicitudcertificado FROM cursoinscrito where id_cursoInscrito=$idCI";
+                            $qiAprobado = $pdoAprobado->prepare($sqlAprobado);
+                            $qiAprobado->execute();
+                            $datoAprobado = $qiAprobado->fetch(PDO::FETCH_ASSOC);
+                            $esAprobado=$datoAprobado['solicitudcertificado'];
+                            Database::disconnect();
+
                             //Verificar si existe registro de haber realizado el modulo.
                             $pdo150 = Database::connect(); 
                             $sqlit="SELECT COUNT(idModCurso) cantidad FROM progresocursoinscrito where id_cursoInscrito=$idCI and idModulo = $idModulo";
@@ -266,69 +276,59 @@
                             $intentos = 3;
                             $intentoParaModal = $intentos;
                             //Dependiendo de la verificación se procede a insertar o actualizar valores.
-                            if($cantidad<1){
-                                $pdo2 = Database::connect();
-                                try{
-                                    $verif2=$pdo2->prepare("INSERT INTO `progresocursoinscrito` (`id_cursoInscrito`, idModulo, nota, intentos)VALUES ($idCI, $idModulo, $notaFinal, $intentos) ");
-                                    $verif2->execute();
-                                }catch(PDOException $e){
-                                    echo $e->getMessage();
-                                }
-                                Database::disconnect();
-                            }else{
-
-                                $pdo1 = Database::connect();
-                                $sqlitIntNotas="SELECT intentos, nota, estado FROM progresocursoinscrito WHERE idModulo='$idModulo' AND id_cursoInscrito = '$idCI' ";
-                                $qiIntNotas=$pdo1 -> prepare($sqlitIntNotas);
-                                $qiIntNotas->execute();
-                                $datoIntNotas= $qiIntNotas-> fetch(PDO::FETCH_ASSOC);
-                                $intentos=$datoIntNotas['intentos'];//$fila4['intentos'];
-                                $notaSFinal = $datoIntNotas['nota'];
-                                $estadoMod = $datoIntNotas['estado'];
-                                $intentoParaModal = $intentos;
-                                if($notaSFinal < $notaFinal){
-                                    $notaSFinal = $notaFinal;
-                                }
-
-
-                               
-
-
-
-
-
-                            
-
-
-                                if($intentos>0){
-                                    if($estadoMod == 3){
-                                        $intentos--; ///////////////
-                                        $estadoMod = 1;
-                                        $pdo2 = Database::connect();
-                                        try{
-                                            $verif2=$pdo2->prepare("UPDATE `progresocursoinscrito` SET `nota` = $notaSFinal, `intentos` = $intentos, `estado` = $estadoMod WHERE `id_cursoInscrito`=$idCI AND `idModulo`=$idModulo");
-                                            $verif2->execute();
-                                        }catch(PDOException $e){
-                                            echo $e->getMessage();
-                                        }
-                                        Database::disconnect();  
-                                    }else if($estadoMod == 2){
-                                        $estadoMod = 1;
-                                        $pdo2 = Database::connect();
-                                        try{
-                                            $verif2=$pdo2->prepare("UPDATE `progresocursoinscrito` SET `estado` = $estadoMod WHERE `id_cursoInscrito`=$idCI AND `idModulo`=$idModulo");
-                                            $verif2->execute();
-                                        }catch(PDOException $e){
-                                            echo $e->getMessage();
-                                        }
-                                        Database::disconnect(); 
+                            if($esAprobado!=2){
+                                if($cantidad<1){
+                                    $pdo2 = Database::connect();
+                                    try{
+                                        $verif2=$pdo2->prepare("INSERT INTO `progresocursoinscrito` (`id_cursoInscrito`, idModulo, nota, intentos)VALUES ($idCI, $idModulo, $notaFinal, $intentos) ");
+                                        $verif2->execute();
+                                    }catch(PDOException $e){
+                                        echo $e->getMessage();
                                     }
-                                    
-
-                                      
-                                
+                                    Database::disconnect();
+                                }else{
+    
+                                    $pdo1 = Database::connect();
+                                    $sqlitIntNotas="SELECT intentos, nota, estado FROM progresocursoinscrito WHERE idModulo='$idModulo' AND id_cursoInscrito = '$idCI' ";
+                                    $qiIntNotas=$pdo1 -> prepare($sqlitIntNotas);
+                                    $qiIntNotas->execute();
+                                    $datoIntNotas= $qiIntNotas-> fetch(PDO::FETCH_ASSOC);
+                                    $intentos=$datoIntNotas['intentos'];//$fila4['intentos'];
+                                    $notaSFinal = $datoIntNotas['nota'];
+                                    $estadoMod = $datoIntNotas['estado'];
+                                    $intentoParaModal = $intentos;
+                                    if($notaSFinal < $notaFinal){
+                                        $notaSFinal = $notaFinal;
+                                    }
+    
+                                    if($intentos>0){
+                                        if($estadoMod == 3){
+                                            $intentos--; ///////////////
+                                            $estadoMod = 1;
+                                            $pdo2 = Database::connect();
+                                            try{
+                                                $verif2=$pdo2->prepare("UPDATE `progresocursoinscrito` SET `nota` = $notaSFinal, `intentos` = $intentos, `estado` = $estadoMod WHERE `id_cursoInscrito`=$idCI AND `idModulo`=$idModulo");
+                                                $verif2->execute();
+                                            }catch(PDOException $e){
+                                                echo $e->getMessage();
+                                            }
+                                            Database::disconnect();  
+                                        }else if($estadoMod == 2){
+                                            $estadoMod = 1;
+                                            $pdo2 = Database::connect();
+                                            try{
+                                                $verif2=$pdo2->prepare("UPDATE `progresocursoinscrito` SET `estado` = $estadoMod WHERE `id_cursoInscrito`=$idCI AND `idModulo`=$idModulo");
+                                                $verif2->execute();
+                                            }catch(PDOException $e){
+                                                echo $e->getMessage();
+                                            }
+                                            Database::disconnect(); 
+                                        }
+                                        
+                                    }
                                 }
                             }
+                            
 
                             //Calcular Avance de Curso y almacenarlo en BD
                             $pdo160 = Database::connect(); 
@@ -346,23 +346,25 @@
                             $datoProgreP = $qiProgreP -> fetch(PDO::FETCH_ASSOC);
                             $ProgreP = $datoProgreP['Parcial'];
                             Database::disconnect();
-    
+                            
                             if($ProgreP>0)
                                 $Avance = $ProgreP/$ProgreT * 100;
                             else
                                 $Avance = 0;
                             $AvanceFinal = number_format($Avance);
-                            $pdo162 = Database::connect();
-                            if($AvanceFinal == 100){
-                                $sqlitUAvance = "UPDATE cursoinscrito SET avance = $AvanceFinal, nota = ROUND((SELECT AVG(nota) FROM progresocursoinscrito WHERE id_cursoInscrito = $idCI), 2), solicitudcertificado=(CASE WHEN nota>=18 THEN 2 ELSE 1 END), fechaFinalizacion = NOW() WHERE id_cursoInscrito = $idCI";
-                            }else{
-                                $sqlitUAvance = "UPDATE cursoinscrito SET avance = $AvanceFinal, nota = 0 WHERE id_cursoInscrito = $idCI";
+                            if($esAprobado!=2){
+                                $pdo162 = Database::connect();
+                                if($AvanceFinal == 100){
+                                    $sqlitUAvance = "UPDATE cursoinscrito SET avance = $AvanceFinal, nota = ROUND((SELECT AVG(nota) FROM progresocursoinscrito WHERE id_cursoInscrito = $idCI), 2), solicitudcertificado=(CASE WHEN nota>=18 THEN 2 ELSE 1 END), fechaFinalizacion = NOW() WHERE id_cursoInscrito = $idCI";
+                                }else{
+                                    $sqlitUAvance = "UPDATE cursoinscrito SET avance = $AvanceFinal, nota = 0 WHERE id_cursoInscrito = $idCI";
+                                }
+                                
+                                $qiUAvance = $pdo162->prepare($sqlitUAvance);
+                                $qiUAvance->execute();
+                                Database::disconnect();
                             }
                             
-                            $qiUAvance = $pdo162->prepare($sqlitUAvance);
-                            $qiUAvance->execute();
-                            Database::disconnect();
-
                             //Verificar si el curso ha sido calificado por el usuario.
                             $pdo140 = Database::connect();
                             $idUser=$_SESSION['codUsuario'];
@@ -393,8 +395,7 @@
                         <strong>Cuestionario</strong>
                     </h1>
                     
-                    
-                    <p style ="text-align: center;">Reintentos: <?php echo $intentos;?></p> 
+                    <p style ="text-align: center;">Reintentos: <?php if($esAprobado!=2){echo $intentos;}else{echo "Ilimitados";}?></p> 
                     
                         <h6 style="text-align: center; font-weight: bolder;">Fin de cuestionario</h6>
                         <div style="text-align: center;">
