@@ -27,7 +27,7 @@
     imagettftext($image,40,0,260,1340,$color2,$font,$codAlumno);
     imagettftext($image,40,0,470,1340,$color2,$font,$codCurso);
 
-    imagejpeg($image, "/opt/lampp/htdocs/git_clone/test-educalma/web/plugins/".$nomAlumno.".jpg");
+    imagejpeg($image, "/opt/lampp/htdocs/git_clone/test-educalma/web/plugins/certificate/".$nomAlumno.".jpg");
                 
 
     $pdf = new FPDF('L','in',[11.7,8.27]);
