@@ -985,13 +985,16 @@
             //   },
               body: formData,
               })
-              .then(response => response.text()) 
+              .then(response => 
+              {
+                response.text();
+            
+                }
+              ) 
       
               .then(data => { 
 
-              console.log(data);
- 
-              file_put_contents($fichero, $actual);
+              console.log(data); 
 
               // alert(data.trim());  
               // window.location.assign("index.php")
