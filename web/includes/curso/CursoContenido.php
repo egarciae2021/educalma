@@ -96,6 +96,18 @@
       $q6->execute(array());
       $dato=$q6->fetch(PDO::FETCH_ASSOC);
       
+    //   datos del usuario actual
+      $pdo16 = Database::connect();
+      $idUser67=$_SESSION['iduser'];
+      $sql6 = "SELECT * FROM usuarios WHERE id_user= '$idUser67'";
+      $q60 = $pdo16->prepare($sql6);
+      $q60->execute(array());
+      $dato90=$q60->fetch(PDO::FETCH_ASSOC);
+
+
+
+
+
       // $cantidad_respuesta_acertadas=1;
       
       $cantidad_respuesta_acertadas=$dato['cantidad_respuestas'];
@@ -955,9 +967,9 @@
               var formData = new FormData();
             
               formData.append('nombre_curso','<?php echo $dato4['nombreCurso'] ;?>');
-              formData.append('cod_alumno','<?php echo  $dato20['codigo_alumno']; ?>');
-              formData.append('cod_alumno', '<?php echo $dato['cod_curso'] ;?>');
-              formData.append('nombre_estudiante', '<?php echo $dato20['nombres'] ;?>'); 
+              formData.append('cod_alumno','<?php echo  $dato90['codigo_alumno']; ?>');
+              formData.append('cod_curso', '<?php echo $dato['cod_curso'] ;?>');
+              formData.append('nombre_estudiante', '<?php echo $dato90['nombres'] ;?>'); 
 
 
             var request = new XMLHttpRequest();
