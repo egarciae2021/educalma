@@ -961,9 +961,9 @@
 
               console.log(formData);
 
-              var request = new XMLHttpRequest();
-            request.open("POST", Url);
-            request.send(formData);
+            //   var request = new XMLHttpRequest();
+            // request.open("POST", Url);
+            // request.send(formData);
 
             //   fetch(Url, {
             //   method: 'POST',  
