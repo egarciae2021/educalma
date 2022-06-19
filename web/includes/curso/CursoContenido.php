@@ -36,7 +36,8 @@
       $pdo13 = Database::connect();
       $q13 = $pdo13->query("SELECT count(*) FROM modulo WHERE id_curso='$id'");
       $modulos = $q13->fetchColumn();
-      
+
+ 
       //Cantidad de temas
       $pdo14 = Database::connect();
       $q14 = $pdo14->query("SELECT  COUNT(tema.idTema) AS 'TEMA' from tema 
@@ -54,6 +55,10 @@
                                                   WHERE cursos.idCurso = '$id'
                                                   GROUP BY cursos.idCurso");
       $cuestionarios = $q15->fetchColumn();
+
+
+
+        
       
       //Cantidad de preguntas
       $pdo16 = Database::connect();
@@ -106,6 +111,20 @@
       //********************* *//
       $con = Database::connect();
       $idusuario=$_SESSION['iduser'];
+
+
+
+            //info del alumno
+            $pdo = Database::connect();
+            $sql = "SELECT * FROM usuarios WHERE id_user = '$idUsuario'";
+            $q = $pdo->prepare($sql);
+            $q->execute(array());
+            $dato21 = $q->fetch(PDO::FETCH_ASSOC); 
+
+
+
+
+
       $ver = "SELECT curso_obt FROM cursoinscrito WHERE curso_id=$id AND usuario_id=$idusuario";
       $veremos = $con->prepare($ver);
       $veremos->setFetchMode(PDO::FETCH_ASSOC);
@@ -945,9 +964,9 @@
       
       
               const Url="./plugins/ejemplo2.php";
-              const data = {      'nombre_estudiante': $dato20['nombres'] ,
+              const data = {      'nombre_estudiante': $dato21['nombres'] ,
                                   'nombre_curso':$dato4['nombreCurso'] ,
-                                  'cod_alumno':  $dato20['codigo_alumno']  ,
+                                  'cod_alumno':  $dato21['codigo_alumno']  ,
                                   'cod_curso': $dato['cod_curso'] 
                                   };
       
