@@ -978,7 +978,7 @@
             //   // alert(data.trim());  
             //   // window.location.assign("index.php")
             //   // }
-            //   consol.log(data);}
+            //   }
             //   ) 
       
          
