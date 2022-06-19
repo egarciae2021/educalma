@@ -965,21 +965,21 @@
                                   'cod_curso': <?php  $dato['cod_curso'] ?> 
                                   };
       
-              fetch(Url, {
-              method: 'POST',  
-              headers: {
-              "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
-              },
-              body: JSON.stringify(data),
-              })
-              .then(response => response.text()) 
+            //   fetch(Url, {
+            //   method: 'POST',  
+            //   headers: {
+            //   "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
+            //   },
+            //   body: JSON.stringify(data),
+            //   })
+            //   .then(response => response.text()) 
       
-              .then(data => { 
-              // alert(data.trim());  
-              // window.location.assign("index.php")
-              // }
-              consol.log(data);}
-              ) 
+            //   .then(data => { 
+            //   // alert(data.trim());  
+            //   // window.location.assign("index.php")
+            //   // }
+            //   consol.log(data);}
+            //   ) 
       
          
       }
