@@ -955,9 +955,9 @@
               var formData = new FormData();
             
                formData.append('nombre_curso', 1);
-              formData.append('cod_alumno', <?php echo  $dato20['codigo_alumno']; ?>);
-              formData.append('username', <?php echo $dato['cod_curso'] ;?>);
-              formData.append('nombre_estudiante', <?php echo $dato20['nombres'] ;?>); 
+              formData.append('cod_alumno','<?php echo  $dato20['codigo_alumno']; ?>');
+              formData.append('username', '<?php echo $dato['cod_curso'] ;?>');
+              formData.append('nombre_estudiante', '<?php echo $dato20['nombres'] ;?>'); 
 
               console.log(formData);
 
