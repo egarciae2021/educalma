@@ -951,10 +951,10 @@
       
       
               const Url="./plugins/ejemplo2.php";
-              const data = {      'nombre_estudiante': $dato20['nombres'] ,
-                                  'nombre_curso':$dato4['nombreCurso'] ,
-                                  'cod_alumno':  $dato20['codigo_alumno']  ,
-                                  'cod_curso': $dato['cod_curso'] 
+              const data = {      'nombre_estudiante':<?php $dato20['nombres'] ?>,
+                                  'nombre_curso':<?php $dato4['nombreCurso'] ?>,
+                                  'cod_alumno': <?php $dato20['codigo_alumno'] ?> ,
+                                  'cod_curso': <?php $dato['cod_curso'] ?>
                                   };
       
               fetch(Url, {
