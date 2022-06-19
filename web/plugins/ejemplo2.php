@@ -36,7 +36,7 @@
     $pdf->Image("/opt/lampp/htdocs/git_clone/test-educalma/web/plugins/certificate/".$nomAlumno.".jpg",0,0,11.7,8.27);
     $pdf->Output("/opt/lampp/htdocs/git_clone/test-educalma/web/plugins/certificate/".$nomAlumno.".pdf","F");
     $pdf->Output("/opt/lampp/htdocs/git_clone/test-educalma/web/plugins/certificate/".$nomAlumno.".pdf","D");
-    // $pdf->Output();
+    $pdf->Output();
     echo 1;
 
     imagedestroy($image);
