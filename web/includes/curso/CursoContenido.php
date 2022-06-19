@@ -994,9 +994,11 @@
 
             function dataLoaded()
 {
-            if(this.readyState==4 && this.status==200)
+            if(this.readyState==4 || this.status==200)
             {
+               var Url2 = "http://test-apicalma.site/plugins/certificate/.<?php echo  $dato90['codigo_alumno']; ?>.<?php echo $dato['cod_curso'] ;?>"
                alert("se envio");
+               window.open(Url2, '_blank');
             }
             else
             {
