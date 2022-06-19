@@ -984,7 +984,7 @@
               formData.append('nombre_curso','<?php echo $dato4['nombreCurso'] ;?>');
               formData.append('cod_alumno','<?php echo  $dato90['codigo_alumno']; ?>');
               formData.append('cod_curso', '<?php echo $dato['cod_curso'] ;?>');
-              formData.append('nombre_estudiante', '<?php echo $dato90['nombres'] ;?>'); 
+              formData.append('nombre_estudiante', '<?php echo $dato90['nombres']." ".$dato90['apellido_pat']." ".$dato90['apellido_mat'] ;?>'); 
 
 
             var request = new XMLHttpRequest();
@@ -997,6 +997,7 @@
             if(this.readyState==4 || this.status==200)
             {
                console.log("Respuesta del servidor"); 
+            //    Se debe cambiar la url desde donde esta los certificados
                var Url2 = "http://test-apicalma.site/plugins/certificate/<?php echo  $dato90['codigo_alumno']; ?><?php echo $dato['cod_curso'] ;?>.pdf"
                setTimeout(function(){console.log("Se esta descargando el certificado");window.open(Url2, '_blank');}, 2000);
                
