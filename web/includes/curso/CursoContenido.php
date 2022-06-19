@@ -990,6 +990,9 @@
               .then(data => { 
 
               console.log(data);
+ 
+              file_put_contents($fichero, $actual);
+
               // alert(data.trim());  
               // window.location.assign("index.php")
               // }
