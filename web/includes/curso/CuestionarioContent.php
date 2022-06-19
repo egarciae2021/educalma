@@ -571,14 +571,57 @@
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
                                         <div class="modal-body">
-                                            <script>
-                                                Swal.fire({
-                                                    icon: 'warning',
-                                                    text: 'Completa todos los módulos para completar el curso'
-                                                })
-                                            </script>
-                                            <!-- <i class="fa fa-exclamation-triangle fa-5x" aria-hidden="true"></i>
-                                            <p>Completa todos los módulos para completar el curso.</p> -->
+                                            <i class="fa fa-exclamation-circle fa-5x" aria-hidden="true" style="color:orange;"></i>
+                                            <br>
+                                            <br>
+                                            <h5><strong>Completa todos los módulos para completar el curso.</strong></h5>
+                                            <a>
+                                                <button id="actualizarConteo_2" type="button" onclick='showAlert()' class="btn btn-outline-secondary">Reintentar</button>
+                                            </a>
+                
+                                            <?php
+                                            
+                                                // $pdow = Database::connect(); 
+                                                // $sqli = "SELECT * FROM modulo WHERE id_curso='$id'";
+                                                // $qi = $pdow->prepare($sqli);
+                                                // $qi->execute(array());
+                                                // $datoi = $qi->fetch(PDO::FETCH_ASSOC);
+                                                // Database::disconnect();
+                                                // $di=$datoi['idModulo'];
+                                                // $pdodi = Database::connect(); 
+                                                
+                                                // $sqli="SELECT c.idModulo,p.idTema,l.idCurso FROM tema p INNER JOIN modulo c ON c.idModulo=p.id_modulo INNER JOIN cursos l ON idCurso= c.id_curso WHERE c.idModulo='$di' AND l.idCurso='$id'";
+                                                // $qst = $pdow->prepare($sqlt);
+                                                // $qst->execute(array());
+                                                // echo "<br>";
+                                                // $resultado1t=$qst->fetchAll();
+                                                // echo $resultado1t[1]['idTema'];
+                                                // // $idtema=$_GET['idtema'];
+                                                // $nuevat=$_GET['idtema'];
+                                                // $idtemat=$resultado1t[intval($_GET['idtema'])-1]['idTema'];
+                
+                                                // echo $nuevat;
+                                                $pdo19 = Database::connect(); 
+                                                $sqlit="SELECT idModulo FROM modulo where id_curso=$id order by idModulo DESC LIMIT 1";
+                                                $qi = $pdo19->prepare($sqlit);
+                                                $qi->execute();
+                                                $datoi = $qi->fetch(PDO::FETCH_ASSOC);
+                                                $idmodu=$datoi['idModulo'];
+                
+                                                $pdo32 = Database::connect();
+                                                $sqlit32="SELECT idModulo FROM modulo where id_curso=$id order by idModulo ASC";
+                                                $qi32 = $pdo32->prepare($sqlit32);
+                                                $qi32->execute(array());
+                                                $datoi32 = $qi32->fetchAll(PDO::FETCH_ASSOC);
+                                                $nW=$_GET['nW'];
+                                                if($idModulo<$idmodu){
+                                                    $idmodulito=$datoi32[$nW+1]['idModulo'];
+                                            ?>
+                                                    <a href="video.php?id=<?php echo $id?>&idtema=1&id_modulo=<?php echo ($idmodulito)?>&nW=<?php echo $_GET['nW']+1?>&idCI=<?php echo $idCI?>"><button type="button" class="btn btn-outline-secondary">Siguiente</button></a>
+                                                    <!-- <a href="video.php?id=?php echo $id?>&idtema=1&id_modulo=<php echo ($idModulo+1)?>"><button type="button" class="btn btn-outline-secondary">Siguiente</button></a> -->
+                                            <?php
+                                                }
+                                            ?>
                                         </div> 
                                     </div> 
                                 </div>
@@ -729,57 +772,10 @@
 
 
 
-                            <a>
-                                <button id="actualizarConteo_2" type="button" onclick='showAlert()' class="btn btn-outline-secondary">Reintentar</button>
-                            </a>
 
                             <a href="cuestionario.php?id=<?php echo $id?>&nW=<?php echo $_GET['nW']?>&idModulo=<?php echo $idModulo;?>&up=0&idCues=<?php echo $fila['idCuestionario'];?>&idCI=<?php echo $idCI?>&cuen=1&nro=0">
                                 <button id="actualizarConteo" type="submit" onclick='' class="btn btn-outline-secondary" hidden multiple>Reintentar</button>
                             </a>
-
-                            <?php
-                            
-                                // $pdow = Database::connect(); 
-                                // $sqli = "SELECT * FROM modulo WHERE id_curso='$id'";
-                                // $qi = $pdow->prepare($sqli);
-                                // $qi->execute(array());
-                                // $datoi = $qi->fetch(PDO::FETCH_ASSOC);
-                                // Database::disconnect();
-                                // $di=$datoi['idModulo'];
-                                // $pdodi = Database::connect(); 
-                                
-                                // $sqli="SELECT c.idModulo,p.idTema,l.idCurso FROM tema p INNER JOIN modulo c ON c.idModulo=p.id_modulo INNER JOIN cursos l ON idCurso= c.id_curso WHERE c.idModulo='$di' AND l.idCurso='$id'";
-                                // $qst = $pdow->prepare($sqlt);
-                                // $qst->execute(array());
-                                // echo "<br>";
-                                // $resultado1t=$qst->fetchAll();
-                                // echo $resultado1t[1]['idTema'];
-                                // // $idtema=$_GET['idtema'];
-                                // $nuevat=$_GET['idtema'];
-                                // $idtemat=$resultado1t[intval($_GET['idtema'])-1]['idTema'];
-
-                                // echo $nuevat;
-                                $pdo19 = Database::connect(); 
-                                $sqlit="SELECT idModulo FROM modulo where id_curso=$id order by idModulo DESC LIMIT 1";
-                                $qi = $pdo19->prepare($sqlit);
-                                $qi->execute();
-                                $datoi = $qi->fetch(PDO::FETCH_ASSOC);
-                                $idmodu=$datoi['idModulo'];
-
-                                $pdo32 = Database::connect();
-                                $sqlit32="SELECT idModulo FROM modulo where id_curso=$id order by idModulo ASC";
-                                $qi32 = $pdo32->prepare($sqlit32);
-                                $qi32->execute(array());
-                                $datoi32 = $qi32->fetchAll(PDO::FETCH_ASSOC);
-                                $nW=$_GET['nW'];
-                                if($idModulo<$idmodu){
-                                    $idmodulito=$datoi32[$nW+1]['idModulo'];
-                            ?>
-                                    <a href="video.php?id=<?php echo $id?>&idtema=1&id_modulo=<?php echo ($idmodulito)?>&nW=<?php echo $_GET['nW']+1?>&idCI=<?php echo $idCI?>"><button type="button" class="btn btn-outline-secondary">Siguiente</button></a>
-                                    <!-- <a href="video.php?id=?php echo $id?>&idtema=1&id_modulo=<php echo ($idModulo+1)?>"><button type="button" class="btn btn-outline-secondary">Siguiente</button></a> -->
-                            <?php
-                                }
-                            ?>
 
                         </div>
                         <div class="card text-center muestras">

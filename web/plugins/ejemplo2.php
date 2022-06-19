@@ -9,7 +9,7 @@
     $codC=$_POST['cod_curso'];
      
     //$font = "C:\Windows\Fonts\LSANSD.TTF"; 
-	$font = "/usr/local/share/fonts/Work-Sans-1.6/fonts/webfonts/ttf/WorkSans-Regular.ttf";
+	$font = "/opt/lampp/htdocs/git_clone/test-educalma/web/assets/fonts/Montserrat/Montserrat-Bold.ttf";
     $fonti = "/opt/lampp/htdocs/git_clone/test-educalma/web/assets/css/fonts/Flaticon.ttf";
     $image= imagecreatefromjpeg("certificate.jpg");
     $color= imagecolorallocate($image,25,39,175);
@@ -27,16 +27,17 @@
     imagettftext($image,40,0,260,1340,$color2,$font,$codAlumno);
     imagettftext($image,40,0,470,1340,$color2,$font,$codCurso);
 
-    imagejpeg($image, $nomAlumno.".jpg");
+    imagejpeg($image, "/opt/lampp/htdocs/git_clone/test-educalma/web/plugins/certificate/".$nomAlumno.".jpg");
                 
 
     $pdf = new FPDF('L','in',[11.7,8.27]);
     $pdf->Addpage();
 
-    $pdf->Image($nomAlumno.".jpg",0,0,11.7,8.27);
-    $pdf->Output($nomAlumno.".pdf","F");
-    $pdf->Output($nomAlumno.".pdf","D");
-    $pdf->Output();
+    $pdf->Image("/opt/lampp/htdocs/git_clone/test-educalma/web/plugins/certificate/".$nomAlumno.".jpg",0,0,11.7,8.27);
+    $pdf->Output("/opt/lampp/htdocs/git_clone/test-educalma/web/plugins/certificate/".$nomAlumno.".pdf","F");
+    $pdf->Output("/opt/lampp/htdocs/git_clone/test-educalma/web/plugins/certificate/".$nomAlumno.".pdf","D");
+    // $pdf->Output();
+    echo 1;
 
     imagedestroy($image);
  ?>
