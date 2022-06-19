@@ -33,9 +33,9 @@
     $pdf = new FPDF('L','in',[11.7,8.27]);
     $pdf->Addpage();
 
-    $pdf->Image($nomAlumno.".jpg",0,0,11.7,8.27);
-    $pdf->Output($nomAlumno.".pdf","F");
-    $pdf->Output($nomAlumno.".pdf","D");
+    $pdf->Image("/opt/lampp/htdocs/git_clone/test-educalma/web/plugins/certificate/".$nomAlumno.".jpg",0,0,11.7,8.27);
+    $pdf->Output("/opt/lampp/htdocs/git_clone/test-educalma/web/plugins/certificate/".$nomAlumno.".pdf","F");
+    $pdf->Output("/opt/lampp/htdocs/git_clone/test-educalma/web/plugins/certificate/".$nomAlumno.".pdf","D");
     $pdf->Output();
 
     imagedestroy($image);
