@@ -395,7 +395,6 @@
                         <strong>Cuestionario</strong>
                     </h1>
                     
-                    
                     <p style ="text-align: center;">Reintentos: <?php if($esAprobado!=2){echo $intentos;}else{echo "Ilimitados";}?></p> 
                     
                         <h6 style="text-align: center; font-weight: bolder;">Fin de cuestionario</h6>
