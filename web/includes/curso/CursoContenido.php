@@ -999,18 +999,8 @@
               method: 'POST',
               body: formData,
               })
-              .then(response =>  
-                response.text(); 
-              ) 
-      
-              .then(data => { 
-                console.log(data);
-
-              // alert(data.trim());  
-              // window.location.assign("index.php")
-              // }
-              }
-              ) 
+              .then(response => response.text();) 
+              .then(data => console.log(data)) 
       
          
       }
