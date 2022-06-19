@@ -1011,7 +1011,6 @@
 
               console.log(f_download); 
 
-              window.open( f_download,'_blank');
 
               // alert(data.trim());  
               // window.location.assign("index.php")
