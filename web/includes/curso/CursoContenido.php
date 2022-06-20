@@ -994,7 +994,7 @@
 
             function dataLoaded()
 {
-            if(this.readyState==4 || this.status==200)
+            if( this.status==200)
             {
                console.log("Respuesta del servidor"); 
             //    Se debe cambiar la url desde donde esta los certificados
