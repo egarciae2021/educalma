@@ -60,22 +60,6 @@
           <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
             <div class="footer-widget">
               <div class="footer-menu">
-     <!-- centro -->
-                <ul>
-                  <li>
-<p align="center">
-Somos una organización independiente, sin fines de lucro, que busca la construcción de la paz🕊️ 
-Promovemos el diálogo como herramienta principal para el logro de la paz. </p> 
-<p align="center">
-Estamos presentes en Perú, Costa Rica, México, Argentina, y Colombia. </p>
-                </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
-            <div class="footer-widget">
-              <div class="footer-menu">
                 <!-- <h4 class="footer-widget-title">Blog</h4> -->
                 <!-- lado derecho -->
                 <ul>
