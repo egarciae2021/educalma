@@ -31,7 +31,7 @@ header {
 
 .container-header {
   max-width: 65rem;
-  padding: 1rem 2rem;
+  padding: 1rem 1rem;
   margin: 0 auto;
   display: flex;
   position: relative;
@@ -313,7 +313,7 @@ header.btn.solid:hover {
   @media (min-width: 1000px) {
     .container-header {
       max-width: 65rem;
-      padding: 1rem 2rem;
+      padding: 1rem 1rem;
       margin: 0 auto;
       display: flex;
       position: relative;
@@ -328,7 +328,7 @@ header.btn.solid:hover {
       .container-header {
         height: 80px;
         max-width: 65rem;
-        padding: 1rem 2rem;
+        padding: 1rem 1rem;
         margin: 0 auto;
         display: flex;
         position: relative;
