@@ -1,84 +1,42 @@
-<style>
-
-  .footer--light {
-
-    background-color: #e7f4ff;
-    position: relative; 
-    top: 30px;
-  }
-  
-  @media (max-width: 768px) {
-      
-    .footer--light {
-
-        background-color: #e7f4ff;
-    }  
-  }
-
-  .footer-menu li{
-
-      -webkit-transform: scale(1,1);
-      -webkit-transition-timing-function: ease-out;
-      -webkit-transition-duration: 250ms;
-      -moz-transform: scale(1,1);
-      -moz-transition-timing-function: ease-out;
-      -moz-transition-duration: 250ms;
-  }
-
-  .footer-menu li:hover{
-
-      -webkit-transform: scale(1.10,1.10);
-      -webkit-transition-timing-function: ease-out;
-      -webkit-transition-duration: 1.2;
-      -moz-transform: scale(1.10,1.10);
-      -moz-transition-timing-function: ease-out;
-      -moz-transition-duration: 250ms;
-  }
-
- 
-
-</style>
-
-<footer class="footer--light">
+<footer class="footer--light " style="background-color: #e7f4ff; position: relative; top: 170px;">
     <div class="footer-big">
       <div class="container">
         <div class="row">
           <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
             <div class="footer-widget">
               <div class="widget-about">
-                
-              <!--imagen de educalma empresas-->
-              
-                <img style="" src="assets/images/logo_educalma.png" alt="" class="img-fluid">
-              
+                <img src="assets/images/Logo.svg" alt="" class="img-fluid">
               </div>
             </div>
           </div>
-
-
-
+          <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
+            <div class="footer-widget">
+              <div class="footer-menu">
+               
+                <ul>
+                  <li>
+                    <a href="https://fundacioncalma.org/%C2%BFqui%C3%A9nes-somos%3F">Qui&eacute;nes Somos</a>
+                  </li>
+                  <li>
+                    <a href="https://fundacioncalma.org/contacto">Cont&aacute;ctanos</a>
+                  </li>
+                  <li>
+                    <a href="https://fundacioncalma.org/%C2%BFc%C3%B3mo-ayudo%3F">Ay&uacute;danos</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
           <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
             <div class="footer-widget">
               <div class="footer-menu">
                 <!-- <h4 class="footer-widget-title">Blog</h4> -->
-                <!-- lado derecho -->
-                <ul>
-                  <li>
-                    <a href="https://fundacioncalma.org/%C2%BFqui%C3%A9nes-somos%3F">Quiénes Somos</a>
-                  </li>
-                  <li>
-                    <a href="https://fundacioncalma.org/contacto">Contáctanos</a>
-                  </li>
-                  <li>
-                    <a href="https://fundacioncalma.org/%C2%BFc%C3%B3mo-ayudo%3F">Ayúdanos</a>
-                  </li>
-                </ul>
                 <ul>
                   <li>
                     <a href="https://fundacioncalma.org/" >Blog</a>
                   </li>
                   <li>
-                    <a href="certi.php">Validación de Certificado</a>
+                    <a href="certi.php">Validaci&oacute;n de Certificado</a>
                   </li>
                   <li>
                     <!-- <a href="recursos1.php">Presentaci&oacute;n</a> -->
@@ -91,44 +49,30 @@
         </div>
       </div>
     </div>
-
-    <div class="enviar_inicio">
-      <a href="#"><img class="enviar_inicio" src="./assets/images/enviar_inicio.png" alt=""/></a>
-    </div>
-
     <div class="site-footer">
-
       <div class="container">
         <hr class="small">
       </div>
-      
       <div class="container">
-
         <div class="row">
-
-          <div class="col-md-8 col-sm-6 col-12" style="margin: auto; text-align: center; width: 400px;">
-
-            <p style="font-size: 16px; color: #7c83fd;" class="copyright-text">Copyright © 2022 Fundación CALMA - Todos los derechos reservados.</p>
-          
+          <div class="col-md-8 col-sm-6 col-12">
+            <p class="copyright-text"style="color: #7c83fd; ">Copyright © 2021 All Rights Reserved by
+              <a href="#">EduCalma</a>
+            </p>
           </div>
 
           <div class="col-md-4 col-sm-6 col-12">
             <ul class="social-icons">
-              
               <li><a target="_blank" class="facebook" href="https://www.facebook.com/fundacioncalma.org/"><i class="fab fa-facebook-f"></i></a></li>
               <li><a target="_blank" class="twitter" href="https://twitter.com/fundacioncalma2 "><i class="fab fa-twitter"></i></a></li>
               <li><a target="_blank" class="youtube" href="https://www.youtube.com/channel/UCsEmW0is_Q-d_IMfux0pfEw"><i class="fab fa-youtube"></i></a></li>
               <li><a target="_blank" class="instagram" href="https://www.instagram.com/fundacioncalma/?hl=es"><i class="fab fa-instagram"></i></a></li>
               <li><a target="_blank" class="whatsapp" href="https://api.whatsapp.com/send?phone=51910571087&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20los%20cursos%20."><i class="fab fa-whatsapp"></i></a></li>
               <li><a target="_blank" class="envelope" href="https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&su=Educalma+-+Consulta&to=fundacioncalma5@gmail.com&body=Vi%20su%20plataforma%20y%20me%20pareci%C3%B3%20muy%20bueno%20pero%20tengo%20la%20siguiente%20duda:"><i class="far fa-envelope"></i></i></a></li>
-              
-            </ul>
+              </ul>
           </div>
         </div>
-
       </div>
-    </div>
-
   </footer>
 
 
