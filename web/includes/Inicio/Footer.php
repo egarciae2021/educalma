@@ -35,8 +35,6 @@
       -moz-transition-duration: 250ms;
   }
 
- 
-
 </style>
 
 <footer class="footer--light">
@@ -47,21 +45,19 @@
             <div class="footer-widget">
               <div class="widget-about">
                 
-              <!--imagen de educalma empresas-->
+              
               
                 <img style="" src="assets/images/logo_educalma.png" alt="" class="img-fluid">
+              
+              
               
               </div>
             </div>
           </div>
-
-
-
           <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
             <div class="footer-widget">
               <div class="footer-menu">
-                <!-- <h4 class="footer-widget-title">Blog</h4> -->
-                <!-- lado derecho -->
+               
                 <ul>
                   <li>
                     <a href="https://fundacioncalma.org/%C2%BFqui%C3%A9nes-somos%3F">Quiénes Somos</a>
@@ -73,6 +69,13 @@
                     <a href="https://fundacioncalma.org/%C2%BFc%C3%B3mo-ayudo%3F">Ayúdanos</a>
                   </li>
                 </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
+            <div class="footer-widget">
+              <div class="footer-menu">
+                <!-- <h4 class="footer-widget-title">Blog</h4> -->
                 <ul>
                   <li>
                     <a href="https://fundacioncalma.org/" >Blog</a>
@@ -108,7 +111,7 @@
 
           <div class="col-md-8 col-sm-6 col-12" style="margin: auto; text-align: center; width: 400px;">
 
-            <p style="font-size: 16px; color: #7c83fd;" class="copyright-text">Copyright © 2022 Fundación CALMA - Todos los derechos reservados.</p>
+            <p style="font-size: 16px; color: #7c83fd;" class="copyright-text">Copyright © 2021 All Rights Reserved by EduCalma</p>
           
           </div>
 
@@ -297,3 +300,4 @@ jQuery(function($) {
 </body>
 
 </html>
+
