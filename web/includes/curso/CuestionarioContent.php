@@ -7,9 +7,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet" />
     <link rel=StyleSheet href="assets/css/ratingEstrella.css" type="text/css" media=screen>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Mukta:wght@600&display=swap" rel="stylesheet">
+
+    
+
     <script src="./assets/js/plugins/sweetalert2.all.min.js"></script>
 
     <style>
+
+ 
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Mukta:wght@600&display=swap');
+ 
+
         /* WEBKIT BROWSERS - CHROME, OPERA AND SAFARI */
        progress::-webkit-progress-bar {
            background-color: #E3E8E2;
@@ -38,6 +50,26 @@
            border-radius: 18px;
            background: repeating-linear-gradient(45deg, #5BF543, #5BF543 10px,#5BF543 10px, #5BF543 20px);
        }
+
+
+
+       .opciones {
+            margin-top: -65px;
+            text-align: right;
+            
+       }
+
+        @media (max-width: 720px){
+
+            .opciones {
+                margin-top: 10px;
+                text-align: center;
+            }
+       }
+
+
+
+
     </style>
 
     <link rel="stylesheet" href="././assets/css/stylecuestionario.css">
@@ -53,7 +85,7 @@
     <title>Cuestionario</title>
 </head>
 
-<body>
+<body style="background: linear-gradient(to bottom, #FFFFFF 10%, #E0C7E5, #E7F4FF 100%);">
     <?php
     // Este codigo hace validacion para que no se pueda acceder a cualquier pagina sin estar logueado__Pablo Loyola
 
@@ -229,7 +261,7 @@
             <div>
                 <div class="container" style="margin-top: 120px;"></div>
 
-                <div style="background: #ECFCFE; width: 80%; margin: auto;">
+                <div style="background: none; width: 80%; margin: auto; margin-bottom: 50px;">
                     <div class="col-md-12" style="background-color: white; padding-bottom: 40px;">
                         <div class="infoMin">
                             <a href="">
@@ -391,26 +423,38 @@
                     <span style="text-align: center; color: #9383F3;"><?php echo($AvanceFinal)?>%</span>
                         </h4> 
 
-                        <h1 style="color: #4F52D6; font-size: 30px; padding: 15px; text-align: center;">
-                        <strong>Cuestionario</strong>
+                   
+                    <h1 style="color: #4F52D6; font-size: 30px; padding: 15px; text-align: center;">
+                        <strong style="font-weight: bold; color: #7C83FD;">Cuestionario</strong>
                     </h1>
                     
-                    <p style ="text-align: center;">Reintentos: <?php if($esAprobado!=2){echo $intentos;}else{echo "Ilimitados";}?></p> 
+                    <div class="opciones">
+                        <!---->
+                        <p style ="margin-right: 60px;">Reintentos: <?php if($esAprobado!=2){echo $intentos;}else{echo "Ilimitados";}?></p> 
                     
-                        <h6 style="text-align: center; font-weight: bolder;">Fin de cuestionario</h6>
-                        <div style="text-align: center;">
-                            <?php
+                        <!---->
+                        <h6 style="font-weight: bold;">Fin de cuestionario</h6>
+                        
+                        <!---->
+                        <div style="">
+                        <?php
                                 if($ConsultaRating<1){
                             ?>
 
-                            <button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#btnTerminar">Terminar</button>
+                            <button style="width: 160px; background: #7C83FD; border: #7C83FD; color: white;" type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#btnTerminar">Terminar</button>
                             <?php
                                 }else{
                             ?>
                             <a href="curso.php?id=<?php echo $id;?>&idCI=<?php echo $idCI;?>"><button id="botonTerminar" type="button" class="btn btn-outline-secondary">Terminar</button></a>
                             <?php
                                 }
-                            ?>
+                        ?>
+                        </div>
+                    </div>
+
+                         
+                        <div style="text-align: center;">
+                            
                             <!-- Modal -->
                             <?php
                                 if($AvanceFinal == 100){
@@ -534,35 +578,47 @@
                                 </div>
                             </div>
                                     </div>
+
+
+
+
+
+
                                     <div class="modal-footer">
 <!--                                     <a href="curso.php?id=<?php echo $id;?>&idCI=<?php echo $idCI;?>"><button id="botonTerminar" type="button" data-toggle="modal" class="btn btn-outline-secondary" data-target="#btnTerminar">Guardar</button></a>
  -->     
-                                    <button id="botonTerminar" type="button" data-toggle="modal" class="btn btn-outline-secondary" data-target="#btnTerminar" >Guardar</button>
-                                    <script>
-                                        $("#botonTerminar").click((event)=>{
-                                            const rating = $("input[name='rating']:checked").val()
-                                            console.log(rating)
-                        
-                                            const coment = $("#coment1").val()
-                                            console.log(coment)
-                                            const queryString = new URLSearchParams()
-                                            queryString.append('rating', rating)
-                                            queryString.append('coment', coment)
-                                            const prepQuery = new URLSearchParams(window.location.search)
-                                            queryString.append('id',prepQuery.get('id'))
-                                            queryString.append('idCI',prepQuery.get('idCI'))
-                                            window.location="curso.php?"+queryString
-                                            /* window.location.search = queryString.toString()  */
-                                            console.log(queryString.toString())
-                                           /*  window.location="./rating.php" */
+                                        <button id="botonTerminar" type="button" data-toggle="modal" class="btn btn-outline-secondary" data-target="#btnTerminar" >Guardar</button>
+                                        <script>
+                                            $("#botonTerminar").click((event)=>{
+                                                const rating = $("input[name='rating']:checked").val()
+                                                console.log(rating)
+                            
+                                                const coment = $("#coment1").val()
+                                                console.log(coment)
+                                                const queryString = new URLSearchParams()
+                                                queryString.append('rating', rating)
+                                                queryString.append('coment', coment)
+                                                const prepQuery = new URLSearchParams(window.location.search)
+                                                queryString.append('id',prepQuery.get('id'))
+                                                queryString.append('idCI',prepQuery.get('idCI'))
+                                                window.location="curso.php?"+queryString
+                                                /* window.location.search = queryString.toString()  */
+                                                console.log(queryString.toString())
+                                            /*  window.location="./rating.php" */
 
-                                        })
+                                            })
 
+                                            
                                         
-                                       
-                                    </script>   
-                                    
-                               </div>
+                                        </script>   
+                                        
+                                    </div>
+
+
+
+
+
+
                                     </div>
                                 </div>
                             </div>
@@ -779,13 +835,15 @@
                             </a>
 
                         </div>
-                        <div class="card text-center muestras">
-                            <div class="card-header">
+
+
+                        <div style="margin-top: 40px;">
+                            <div style="border-radius: 20px 20px 0 0; background: #7C83FD; color: white;" class="card-header">
                                 Resultado de las
                                 <?php echo $cuenta2;?> preguntas
                             </div>
-                            <div class="card-body" style="background-color: #fff;">
-                                <h5 style="font-size: large; margin-left: 10px; color:black; background-color: #fff;">Respuestas Correctas:
+                            <div class="card-body" style="background-color: #fff; border-radius: 0 0 20px 20px;">
+                                <h5 style="font-size: large; margin-left: 10px; margin-bottom: 30px; color: #7C83FD; background-color: #fff;">Respuestas Correctas:
                                     <?php echo $correcta;?>
                                 </h5>
                                 <?php
@@ -821,31 +879,53 @@
                                     }
                                 ?>
                                     <!-- nuevo -->
-                                    <div class="card c-rpta mx-7 mt-2">
-                                        <div class="card-header">
+                                    <div style="background: #E7F4FF;" class="card c-rpta mx-7 mt-2">
+                                        <div style="background: #7C83FD;" class="card-header">
                                                 <div class="row">
                                                     <!--div class="col-sm-6 text-left"></div-->
-                                                    <div class="col-sm-12 text-right" style="color:#768EE8;">Puntos: &nbsp; <?php echo (($puntaje)?''.round($puntRes).'/'.round($puntRes).' pts':'0/'.round($puntRes).' pts')?> </div>
+                                                    <div class="col-sm-12 text-right" style="color:#768EE8; color: white; font-weight: 900;">Puntos: &nbsp; <?php echo (($puntaje)?''.round($puntRes).'/'.round($puntRes).' pts':'0/'.round($puntRes).' pts')?> </div>
                                                 </div> 
                                         </div>
-                                        <div class="list-group list-group-flush small text-left text-secondary font-weight-normal my-3" style="margin-left:10px;">
+                                        <div class="list-group list-group-flush small text-left text-secondary font-weight-normal my-3" style="color: black !important; font-weight: bold; font-size: 20px; margin-left:10px;">
                                             <?php echo $filaCor['pregunta'];?>
                                         </div>
-                                        <ul class="list-group list-group-flush text-justify">
+                                        <ul style="background: #E7F4FF;" class="list-group list-group-flush text-justify">
                                         
                                             <?php while($fila23=$q23->fetch(PDO::FETCH_ASSOC)){
                                             ?>
 
-                                                <label class="list-group-item small form-control">
-                                                    <div class="form-check" >
+                                                <label style="color: black;">
+                                                    <div class="form-check" style="">
                                                         <?php if($fila23['idRespuesta'] == $idrespuesta){?>
-                                                            <label class="form-check-label" for="exampleRadios1" <?php echo (($fila23['estado']==1)?'style="background:#C4F3C0; width:100%; height:auto; padding:1px;"':'style="background:#EFAE9B; width:100%; height:auto; padding:1px;"')?>>
-                                                            <input type="checkbox" name="verif_resp" disabled  checked value="<?php echo $fila23['idRespuesta'];?>">
+
+                                                            <label class="form-check-label" for="exampleRadios1" <?php echo (($fila23['estado']==1)?'style="font-family: Mukta; background:#C7D8B8; width:100%; height:auto; padding:1px;"':'style="font-family: Mukta; background:#DD95EB; width:100%; height:auto; padding:1px;"')?>>
+                                                            <input type="checkbox" name="verif_resp" disabled  checked value="<?php echo $fila23['idRespuesta'];?>" style="width: 1.3em;
+    height: 1.3em;
+    background-color: #B5B5B5;
+    border-radius: 50%;
+    vertical-align: middle;
+    border: 1px solid #7C83FD;
+    appearance: none;
+    -webkit-appearance: none;
+    outline: none;
+    cursor: pointer;">
                                                              <?php echo  $fila23['respuesta'];?> </label>
+
                                                         <?php }else{?>
-                                                            <label class="form-check-label" for="exampleRadios1" <?php echo (($fila23['estado']==1)?'style="background:#C4F3C0; width:100%; height:auto; padding:1px;"':'style="color:black; width:100%; height:auto; padding:1px;"')?>>
-                                                            <input type="checkbox" name="verif_resp" disabled  value="<?php echo $fila23['idRespuesta'];?>">
+
+                                                            <label class="form-check-label" for="exampleRadios1" <?php echo (($fila23['estado']==1)?'style="font-family: Mukta; background:#C7D8B8; width:100%; height:auto; padding:1px;"':'style="color:black; font-family: Mukta; width:100%; height:auto; padding:1px;"')?>>
+                                                            <input type="checkbox" name="verif_resp" disabled  value="<?php echo $fila23['idRespuesta'];?>" style="width: 1.3em;
+    height: 1.3em;
+    background-color: white;
+    border-radius: 50%;
+    vertical-align: middle;
+    border: 1px solid #7C83FD;
+    appearance: none;
+    -webkit-appearance: none;
+    outline: none;
+    cursor: pointer;">
                                                              <?php echo  $fila23['respuesta'];?> </label>
+                                                             
                                                         <?php }?>
                                                     </div>
                                                 </label>

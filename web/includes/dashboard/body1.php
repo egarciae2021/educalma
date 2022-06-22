@@ -268,6 +268,8 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                             </button>
                         </a>
 
+                        <img style="position: relative; top: 20px;" src="./assets/images/ilu_niño.png">
+
                     </div>
                 </div>
             </div>
