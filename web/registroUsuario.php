@@ -144,6 +144,7 @@
               <select id="cmbPais" class="form-control">
                 <option value="">Seleccionar</option>
 <<<<<<< HEAD
+<<<<<<< HEAD
                 </div>
                 
                 <!-- Celular -->
@@ -155,6 +156,9 @@
               </div>
             </div>
             <?php
+=======
+                <?php
+>>>>>>> d76d573ca7aaca9d66b985ee107b433f54aba036
 =======
                 <?php
 >>>>>>> d76d573ca7aaca9d66b985ee107b433f54aba036
