@@ -142,7 +142,7 @@
               <label for="cmbPais" style="float:left;">Pais</label>
               <select id="cmbPais" class="form-control">
                 <option value="">Seleccionar</option>
-                
+                </div>
                 
                 <!-- Celular -->
             <div class="col my-3">

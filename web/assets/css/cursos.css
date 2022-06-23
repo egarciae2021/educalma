@@ -1,4 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;300;500&display=swap");
+
+body {
+    background-color: #fff;
+}
+
 .container-fluid .row .col-12 .section-title-course {
     font-family: "Inter", sans-serif;
     font-style: normal;

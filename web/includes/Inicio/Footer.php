@@ -35,78 +35,66 @@
       -moz-transition-duration: 250ms;
   }
 
- 
-
 </style>
 
 <footer class="footer--light">
-    <div class="footer-big">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
-            <div class="footer-widget">
-              <div class="widget-about">
-                
+  <div class="footer-big">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
+          <div class="footer-widget">
+            <div class="widget-about">
               <!--imagen de educalma empresas-->
-              
-                <img style="" src="assets/images/logo_educalma.png" alt="" class="img-fluid">
-              
-              </div>
+              <img src="assets/images/logo_educalma.png" alt="" class="img-fluid" style="padding: 15px;">
             </div>
           </div>
-
-
-
-          <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
-            <div class="footer-widget">
-              <div class="footer-menu">
-     <!-- centro -->
-                <ul>
-                  <li>
-<p align="center">
-Somos una organización independiente, sin fines de lucro, que busca la construcción de la paz🕊️ 
-Promovemos el diálogo como herramienta principal para el logro de la paz. </p> 
-<p align="center">
-Estamos presentes en Perú, Costa Rica, México, Argentina, y Colombia. </p>
+        </div>
+        <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
+          <div class="footer-widget">
+            <div class="footer-menu">
+              <!-- centro -->
+              <ul>
+                <li>
+                  <a href="https://fundacioncalma.org/%C2%BFqui%C3%A9nes-somos%3F"><i class="fas fa-question-circle"></i> ¿Quiénes Somos?</a>
                 </li>
-                </ul>
-              </div>
+                <li>
+                  <a href="https://fundacioncalma.org/contacto"><i class="fas fa-comment-dots"></i> Contáctanos</a>
+                </li>
+                <li>
+                  <a href="https://fundacioncalma.org/%C2%BFc%C3%B3mo-ayudo%3F"><i class="fas fa-hands-helping"></i> Ayúdanos</a>
+                </li>
+              </ul>
             </div>
           </div>
-          <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
-            <div class="footer-widget">
-              <div class="footer-menu">
-                <!-- <h4 class="footer-widget-title">Blog</h4> -->
-                <!-- lado derecho -->
-                <ul>
-                  <li>
-                    <a href="https://fundacioncalma.org/%C2%BFqui%C3%A9nes-somos%3F">Quiénes Somos</a>
-                  </li>
-                  <li>
-                    <a href="https://fundacioncalma.org/contacto">Contáctanos</a>
-                  </li>
-                  <li>
-                    <a href="https://fundacioncalma.org/%C2%BFc%C3%B3mo-ayudo%3F">Ayúdanos</a>
-                  </li>
-                </ul>
-                <ul>
-                  <li>
-                    <a href="https://fundacioncalma.org/" >Blog</a>
-                  </li>
-                  <li>
-                    <a href="certi.php">Validación de Certificado</a>
-                  </li>
-                  <li>
-                    <!-- <a href="recursos1.php">Presentaci&oacute;n</a> -->
-                    <a href="recursos1.php">Comparte tu curso</a>
-                  </li>
-                </ul>
-              </div>
+        </div>
+        <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
+          <div class="footer-widget">
+            <div class="footer-menu">
+              <!-- <h4 class="footer-widget-title">Blog</h4> -->
+              <!-- lado derecho -->
+              <ul>
+                <li>
+                  <a href="https://fundacioncalma.org/"><i class="fas fa-newspaper"></i> Blog</a>
+                </li>
+                <li>
+                  <a href="certi.php"><i class="fas fa-id-card"></i> Validación de Certificado</a>
+                </li>
+                <li>
+                  <!-- <a href="recursos1.php">Presentaci&oacute;n</a> -->
+                  <a href="recursos1.php"><i class="fas fa-bullhorn"></i> Comparte tu curso</a>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
+
+<!--  <p align="center">
+Somos una organización independiente, sin fines de lucro, que busca la construcción de la paz🕊️ 
+Promovemos el diálogo como herramienta principal para el logro de la paz. 
+Estamos presentes en Perú, Costa Rica, México, Argentina, y Colombia. </p> -->
 
     <div class="enviar_inicio">
       <a href="#"><img class="enviar_inicio" src="./assets/images/enviar_inicio.png" alt=""/></a>
@@ -122,7 +110,7 @@ Estamos presentes en Perú, Costa Rica, México, Argentina, y Colombia. </p>
 
         <div class="row">
 
-          <div class="col-md-8 col-sm-6 col-12" style="margin: auto; text-align: center; width: 400px;">
+          <div class="col-md-8 col-sm-6 col-12" style="margin: auto; text-align: center; width: 800px;">
 
             <p style="font-size: 16px; color: #7c83fd;" class="copyright-text">Copyright © 2022 Fundación CALMA - Todos los derechos reservados.</p>
           
