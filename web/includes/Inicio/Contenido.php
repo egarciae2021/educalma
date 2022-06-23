@@ -6,60 +6,80 @@ if (!isset($_GET['pag'])) {
 
 ?>
 
+
+
 <head>
   <link rel="stylesheet" href="assets/css/home.css" />
 </head>
-<!-- PANEL -->
+
+
+
+<!--Inicio del Hero-->
 <div class="container-fluid div-container-panel">
   <div class="row">
     <div class="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-6 container-panel">
       <div class="container-title-panel">
+
+
+
+        <!--Título-->
         <div class="title-panel">
-          Bienvenido! <br> <span>EduCalma</span>
+          <span class="txtBienvenido">BIENVENIDO! </span> 
+          <br> 
+          <span class="txtEducalma">EduCalma</span>
         </div>
+
+
+
+        <!--Descripción-->
         <div class="description-panel">
           ¡Impulsa tu aprendizaje junto a los mejores especialistas en EduCalma desde hoy!
         </div>
+
+
+
+        <!---->
         <div class="button-panel">
+            <?php
 
-    <?php
+                /*
+                if (isset($_SESSION['Logueado']) && $_SESSION['Logueado'] === true && $_SESSION['privilegio'] == 1){
+                  
+                  echo "<a href='user-sidebar.php' type='button' class='btn btn_registrar_panel'>Dashboard</a>";
+                }
+                else if(isset($_SESSION['Logueado']) && $_SESSION['Logueado'] === true && $_SESSION['privilegio'] == 2){
+                  
+                  echo "<a href='user-sidebar.php' type='button' class='btn btn_registrar_panel'>Dashboard</a>";
 
-    /*
-    if (isset($_SESSION['Logueado']) && $_SESSION['Logueado'] === true && $_SESSION['privilegio'] == 1){
-      
-      echo "<a href='user-sidebar.php' type='button' class='btn btn_registrar_panel'>Dashboard</a>";
-    }
-    else if(isset($_SESSION['Logueado']) && $_SESSION['Logueado'] === true && $_SESSION['privilegio'] == 2){
-      
-      echo "<a href='user-sidebar.php' type='button' class='btn btn_registrar_panel'>Dashboard</a>";
+                }else if(isset($_SESSION['Logueado']) && $_SESSION['Logueado'] === true && $_SESSION['privilegio'] == 3){
 
-    }else if(isset($_SESSION['Logueado']) && $_SESSION['Logueado'] === true && $_SESSION['privilegio'] == 3){
+                  echo "<a href='sidebarCursos.php' type='button' class='btn btn_registrar_panel'>Cursos comprados</a>";
 
-      echo "<a href='sidebarCursos.php' type='button' class='btn btn_registrar_panel'>Cursos comprados</a>";
+                }else if(isset($_SESSION['Logueado']) && $_SESSION['Logueado'] === true && $_SESSION['privilegio'] == 4){
 
-    }else if(isset($_SESSION['Logueado']) && $_SESSION['Logueado'] === true && $_SESSION['privilegio'] == 4){
+                  echo "<a href='sidebarCursos.php' type='button' class='btn btn_registrar_panel'>Cursos comprados</a>";
 
-      echo "<a href='sidebarCursos.php' type='button' class='btn btn_registrar_panel'>Cursos comprados</a>";
+                }else if(isset($_SESSION['Logueado']) && $_SESSION['Logueado'] === true && $_SESSION['privilegio'] == 5){
 
-    }else if(isset($_SESSION['Logueado']) && $_SESSION['Logueado'] === true && $_SESSION['privilegio'] == 5){
+                  echo "<a href='sidebarCursos.php' type='button' class='btn btn_registrar_panel'>Cursos comprados</a>";
+                
+                }else if(isset($_SESSION['Logueado']) && $_SESSION['Logueado'] === true && $_SESSION['privilegio'] == 6){
+                  
+                  echo "<a href='user-sidebar.php' type='button' class='btn btn_registrar_panel'>Dashboard</a>";
+                }
+                */
 
-      echo "<a href='sidebarCursos.php' type='button' class='btn btn_registrar_panel'>Cursos comprados</a>";
-    
-    }else if(isset($_SESSION['Logueado']) && $_SESSION['Logueado'] === true && $_SESSION['privilegio'] == 6){
-      
-      echo "<a href='user-sidebar.php' type='button' class='btn btn_registrar_panel'>Dashboard</a>";
-    }
-    */
-
-    
-    ?>
-         
-
-
-
+            ?>
         </div>
+
+
+
       </div>
     </div>
+
+
+
+    <!--Imagen-->
     <div class="col-12 col-sm-12 col-md-7 col-lg-7 col-xl-6 container-panel-image">
       <div class="container-image-panel">
         <div class="image-panel">
@@ -67,8 +87,12 @@ if (!isset($_GET['pag'])) {
         </div>
       </div>
     </div>
+
+
+
   </div>
 </div>
+<!--Fin del Hero-->
 
 
 
@@ -96,10 +120,10 @@ if (!isset($_GET['pag'])) {
               <img src="./assets/images/cur.png" alt="" />
             </div>
             <div class="card-title">
-              <p>Cursos</p>
+              <p style="font-weight: bold; color: #7C83FD">Cursos</p>
             </div>
             <div class="card-descripti">
-              <p>
+              <p style="color: black; font-weight: 500;">
                 Otorgamos cursos calificados para que el alumno aprenda y
                 desarrolle nuevas habilidades.
               </p>
@@ -116,10 +140,10 @@ if (!isset($_GET['pag'])) {
               <img src="./assets/images/curso culminad.png" alt="" />
             </div>
             <div class="card-title">
-              <p>Desarrollo Personal</p>
+              <p style="font-weight: bold; color: #7C83FD">Desarrollo Personal</p>
             </div>
             <div class="card-descripti">
-              <p>
+              <p style="color: black; font-weight: 500;">
                 Cada tema enseñado será de buena ayuda en los test de cada sesión.
               </p>
             </div>
@@ -135,10 +159,10 @@ if (!isset($_GET['pag'])) {
               <img src="./assets/images/certificad.png" alt="" />
             </div>
             <div class="card-title">
-              <p>Certificados</p>
+              <p style="font-weight: bold; color: #7C83FD">Certificados</p>
             </div>
             <div class="card-descripti">
-              <p>
+              <p style="color: black; font-weight: 500;">
                 Al concluir el curso se les entregará un certificado por todo lo aprendido en cada sesión.
               </p>
             </div>
@@ -163,7 +187,7 @@ if (!isset($_GET['pag'])) {
                     <div class="row">
                       <div class="section-button">
                         <a href="ListaCursos.php?pag=1" type="button" class="btn btn-primary btnCom">
-                          Comienza a ver los cursos
+                          MIRA LOS CURSOS
                         </a>
                       </div>
                     </div>
@@ -174,7 +198,7 @@ if (!isset($_GET['pag'])) {
                     <div class="row">
                       <div class="section-button">
                         <a href="cursosPublicados.php" type="button" class="btn btn-primary btnCom">
-                          Comienza a ver los cursos
+                          MIRA LOS CURSOS
                         </a>
                       </div>
                     </div>
@@ -239,19 +263,21 @@ if (!isset($_GET['pag'])) {
 
 
         <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 mb-4">
-          <div class="card destacados">
+          <div  style="background: #E7F4FF; border-radius: 20px; color: #282C71;" class="card destacados">
             <div class="row ">
               <div class="col-4 col-sm-4 col-md-12 col-lg-4 col-xl-4 ">
+
                 <div class="container-image-course">
-                  <img class="imgCurso" src="./assets/images/imagen_curso_destacado.png" alt="" />
+                  <img class="imgCurso" src="./assets/images/icono_libro_1.png" alt="" />
                 </div>
+
               </div>
               <div class="col-8 col-sm-8 col-md-12 col-lg-8 col-xl-8">
 
-                <h4><?php echo $dato['nombreCurso'];?></h4>
-                <h5 style="height: 60px;"><?php echo substr($dato['descripcionCurso'], 0, 70) . "..."; ?></h5>
-                <a style="margin-top: 10px; margin-bottom: 10px;" href="#" class="btn btn-success mt-2" data-toggle="modal" data-target=".bd-example-modal-lg<?php echo $dato['idCurso'];?>">
-                ver información >
+                <h4 style="font-weight: 600;"><?php echo $dato['nombreCurso'];?></h4>
+                <h5 style="color: #282C71;" style="height: 60px;"><?php echo substr($dato['descripcionCurso'], 0, 30) . "..."; ?></h5>
+                <a style="font-size: 13px; margin-top: 10px; margin-bottom: 10px; padding: 10px;" href="#" class="btn btn-success mt-2" data-toggle="modal" data-target=".bd-example-modal-lg<?php echo $dato['idCurso'];?>">
+                VER INFORMACIÓN >
                 </a>
                 
               </div>
@@ -380,12 +406,12 @@ if (!isset($_GET['pag'])) {
 
   <div class="info col-12 mt-5"> <!--/////////////////////////-->
 
-    <h2 class="text-center">Educalma para empresas</h2>
+    <h2 style="position: relative; top: 30px;" class="text-center">Educalma para empresas</h2>
     <br>
-    <ul>
-      <li style="color:#5FB2EF;"><i class="fas fa-check fa-lg mr-3 " style="color:#7249F3;"></i>Mide y analiza los resultados de tu equipo con nuestro servicio.</li>
-      <li style="color:#5FB2EF;"><i class="fas fa-check fa-lg mr-3" style="color:#7249F3;"></i>Acompañamiento y seguimiento por un Ejecutivo de Cuenta.</li>
-      <li style="color:#5FB2EF;"><i class="fas fa-check fa-lg mr-3" style="color:#7249F3;"></i>Certificaciones por cada curso del plan completado.</li>
+    <ul style="margin-left: 40px;">
+      <li style="color:#282C71;"><i class="fas fa-check fa-lg mr-3 " style="color: #7c83fd;"></i>Mide y analiza los resultados de tu equipo con nuestro servicio.</li>
+      <li style="color:#282C71;"><i class="fas fa-check fa-lg mr-3" style="color: #7c83fd;"></i>Acompañamiento y seguimiento por un Ejecutivo de Cuenta.</li>
+      <li style="color:#282C71;"><i class="fas fa-check fa-lg mr-3" style="color: #7c83fd;"></i>Certificaciones por cada curso del plan completado.</li>
     </ul>
     <div class="box-email">
 
@@ -395,7 +421,7 @@ if (!isset($_GET['pag'])) {
 
         <!--<input type="email" placeholder="Escribe tu correo empresarial" id="txtEmail" />-->
         <br>
-          <button id="btnAction" style="position: relative; background-color:#737BF1; font-weight:bold;">MÁS INFORMACIÓN</button>
+          <button id="btnAction" style="width: 200px; position: relative; top: -50px; margin-left: 50px; background-color:#737BF1; font-weight:500;">MÁS INFORMACIÓN</button>
         <br>
 
       <!--</div>-->
