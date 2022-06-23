@@ -3,14 +3,17 @@ ob_start();
 @session_start();
 require_once 'database/databaseConection.php';
 ?>
-<header>
-    <div class="container-header navbar-fixed-top">
+<header style="background: linear-gradient(to right, #7C83FD, #E0C7E5) !important; height: 90px;">
+    
+    <div style="position: relative; top: -20px; background: none;" class="container-header navbar-fixed-top">
+
         <input type="checkbox" name="" id="check">
+
         <div class="logo-container">
-            <a href="index.php"><img style="width: 200px;" src="assets/images/logo_educalma.png" alt=""></a>
+            
+            <a href="index.php"><img style="width: 200px;" src="assets/images/educalma_logo_blanco.png" alt=""></a>
+        
         </div>
-
-
 
 
         <!--////////////////////-->
@@ -24,12 +27,12 @@ require_once 'database/databaseConection.php';
 
                         <li class="nav-link" style="--i: .6s">
 
-                            <a href="nosotros.php">Nosotros</a>
+                            <a style="color: white;" href="nosotros.php">Nosotros</a>
                         </li>
                         
                         <li class="nav-link" style="--i: .6s">
                 
-                            <a href="ListaCursos.php?pag=1">Cursos</a>
+                            <a style="color: white;" href="ListaCursos.php?pag=1">Cursos</a>
                 
                         </li>
                     </ul>
@@ -39,19 +42,19 @@ require_once 'database/databaseConection.php';
                     <ul style="margin-left: 25px;">
                     
                         <li class="nav-link" style="--i: .6s">
-                            <a href="nosotros.php">Nosotros</a>
+                            <a style="color: white;" href="nosotros.php">Nosotros</a>
                         </li>
 
                         <li class="nav-link" style="--i: .6s">
                 
-                            <a href="cursosPublicados.php">Cursos</a>
+                            <a style="color: white;" href="cursosPublicados.php">Cursos</a>
                         
                         </li>
 
                         <div class="log-sign" style="--i: 1.8s;">
-                            <a href="iniciosesion.php" class="btn transparent btnIni">Iniciar Sesión</a>
+                            <a style="color: white;" href="iniciosesion.php" class="btn transparent btnIni">Iniciar Sesión</a>
                       
-                            <a href="registroUsuario.php" class="btn solid">Regístrate!</a>
+                            <a style="color: white;" href="registroUsuario.php" class="btn solid">Regístrate!</a>
                         </div>
 
                     </ul>
@@ -113,20 +116,20 @@ require_once 'database/databaseConection.php';
                     <ul>
                         <li class="nav-link" style="--i: .85s">
                             
-                            <a href="#"><?php echo $nom ?>&nbsp;(Administrador)<i class="fas fa-caret-down"></i></a>
+                            <a style="color: white;" href="#"><?php echo $nom ?>&nbsp;(Administrador)<i class="fas fa-caret-down"></i></a>
                             
                             <div class="dropdown">
                                 <ul>
                                     <li class="dropdown-link">
-                                        <a href="user-sidebar.php">Dashboard</a>
+                                        <a style="color: white;" href="user-sidebar.php">Dashboard</a>
                                     </li>
 
                                     <li class="dropdown-link">
-                                        <a href="sidebarEditar.php">Ajustes</a>
+                                        <a style="color: white;" href="sidebarEditar.php">Ajustes</a>
                                     </li>
 
                                     <li class="dropdown-link">
-                                        <a href="includes/login/logout.php">Cerrar Sesión</a>
+                                        <a style="color: white;" href="includes/login/logout.php">Cerrar Sesión</a>
                                     </li>
                                     <div class="arrow"></div>
                                 </ul>
@@ -159,19 +162,19 @@ require_once 'database/databaseConection.php';
             <div class="log-sign" style="--i: 1.8s">
                     <ul>
                         <li class="nav-link" style="--i: .85s">
-                            <a href="#"><?php echo $nom ?>&nbsp;(Profesor)<i class="fas fa-caret-down"></i></a>
+                            <a style="color: white;" href="#"><?php echo $nom ?>&nbsp;(Profesor)<i class="fas fa-caret-down"></i></a>
                             <div class="dropdown">
                                 <ul>
                                     <li class="dropdown-link">
-                                        <a href="user-sidebar.php">Dashboard</a>
+                                        <a style="color: white;" href="user-sidebar.php">Dashboard</a>
                                     </li>
 
                                     <li class="dropdown-link">
-                                        <a href="sidebarEditar.php">Ajustes</a>
+                                        <a style="color: white;"href="sidebarEditar.php">Ajustes</a>
                                     </li>
                     
                                     <li class="dropdown-link">
-                                        <a href="includes/login/logout.php">Cerrar Sesión</a>
+                                        <a style="color: white;" href="includes/login/logout.php">Cerrar Sesión</a>
                                     </li>
                                     <div class="arrow"></div>
                                 </ul>
@@ -204,21 +207,21 @@ require_once 'database/databaseConection.php';
                     <ul>
                         <li class="nav-link" style="--i: .85s">
                            
-                            <a href="#"><?php echo $nom ?>&nbsp;(Estudiante)<i class="fas fa-caret-down"></i></a>
+                            <a style="color: white;" href="#"><?php echo $nom ?>&nbsp;(Estudiante)<i class="fas fa-caret-down"></i></a>
                              
                             
                             <div class="dropdown">
                                 <ul>
                                     <li class="dropdown-link">
-                                        <a href="user-sidebar.php">Dashboard</a>
+                                        <a style="color: white;" href="user-sidebar.php">Dashboard</a>
                                     </li>
 
                                     <li class="dropdown-link">
-                                        <a href="sidebarEditar.php">Ajustes</a>
+                                        <a style="color: white;" href="sidebarEditar.php">Ajustes</a>
                                     </li>
 
                                     <li class="dropdown-link">
-                                        <a href="includes/login/logout.php">Cerrar Sesión</a>
+                                        <a style="color: white;" href="includes/login/logout.php">Cerrar Sesión</a>
                                     </li>
                                     <div class="arrow"></div>
                                 </ul>
@@ -251,19 +254,19 @@ require_once 'database/databaseConection.php';
             <div class="log-sign" style="--i: 1.8s">
                     <ul>
                         <li class="nav-link" style="--i: .85s">
-                            <a href="#"><?php echo $nom ?>&nbsp;(Empresa)<i class="fas fa-caret-down"></i></a>
+                            <a style="color: white;" href="#"><?php echo $nom ?>&nbsp;(Empresa)<i class="fas fa-caret-down"></i></a>
                             <div class="dropdown">
                                 <ul>
                                     <li class="dropdown-link">
-                                        <a href="user-sidebar.php">Dashboard</a>
+                                        <a style="color: white;" href="user-sidebar.php">Dashboard</a>
                                     </li>
 
                                     <li class="dropdown-link">
-                                        <a href="sidebarEditar.php">Ajustes</a>
+                                        <a style="color: white;" href="sidebarEditar.php">Ajustes</a>
                                     </li>
                   
                                     <li class="dropdown-link">
-                                        <a href="includes/login/logout.php">Cerrar Sesión</a>
+                                        <a style="color: white;" href="includes/login/logout.php">Cerrar Sesión</a>
                                     </li>
                                     <div class="arrow"></div>
                                 </ul>
@@ -295,19 +298,19 @@ require_once 'database/databaseConection.php';
             <div class="log-sign" style="--i: 1.8s">
                     <ul>
                         <li class="nav-link" style="--i: .85s">
-                            <a href="#"><?php echo $nom ?>&nbsp;(Usuario - Empresa)<i class="fas fa-caret-down"></i></a>
+                            <a style="color: white;" href="#"><?php echo $nom ?>&nbsp;(Usuario - Empresa)<i class="fas fa-caret-down"></i></a>
                             <div class="dropdown">
                                 <ul>
                                     <li class="dropdown-link">
-                                        <a href="user-sidebar.php">Dashboard</a>
+                                        <a style="color: white;" href="user-sidebar.php">Dashboard</a>
                                     </li>
 
                                     <li class="dropdown-link">
-                                        <a href="sidebarEditar.php">Ajustes</a>
+                                        <a style="color: white;" href="sidebarEditar.php">Ajustes</a>
                                     </li>
                                     
                                     <li class="dropdown-link">
-                                        <a href="includes/login/logout.php">Cerrar Sesión</a>
+                                        <a style="color: white;" href="includes/login/logout.php">Cerrar Sesión</a>
                                     </li>
                                     <div class="arrow"></div>
                                 </ul>
@@ -339,19 +342,19 @@ require_once 'database/databaseConection.php';
             <div style="margin: auto;" class="log-sign" style="--i: 1.8s">
                     <ul>
                         <li class="nav-link" style="--i: .85s">
-                            <a href="#"><?php echo $nom ?>&nbsp;(Super Administrador)<i class="fas fa-caret-down"></i></a>
+                            <a style="color: white;" href="#"><?php echo $nom ?>&nbsp;(Super Administrador)<i class="fas fa-caret-down"></i></a>
                             <div class="dropdown">
                                 <ul>
                                     <li class="dropdown-link">
-                                        <a href="user-sidebar.php">Dashboard</a>
+                                        <a style="color: white;" href="user-sidebar.php">Dashboard</a>
                                     </li>
 
                                     <li class="dropdown-link">
-                                        <a href="sidebarEditar.php">Ajustes</a>
+                                        <a style="color: white;" href="sidebarEditar.php">Ajustes</a>
                                     </li>
 
                                     <li class="dropdown-link">
-                                        <a href="includes/login/logout.php">Cerrar Sesión</a>
+                                        <a style="color: white;" href="includes/login/logout.php">Cerrar Sesión</a>
                                     </li>
                                     <div class="arrow"></div>
                                 </ul>

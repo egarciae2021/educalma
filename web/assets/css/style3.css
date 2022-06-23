@@ -8,13 +8,13 @@
   font-size: 1.7rem;
   cursor: pointer;
   color: #fff;
-  background: #27ae60;
+  /* background: #27ae60; */
   border-radius: 0.5rem;
 }
 
-.btn:hover {
-  background: #130f40;
-}
+/* .btn:hover {
+  background: #6f77f2;
+} */
 
 #menu-btn {
   display: none;

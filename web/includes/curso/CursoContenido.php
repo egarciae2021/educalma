@@ -96,6 +96,18 @@
       $q6->execute(array());
       $dato=$q6->fetch(PDO::FETCH_ASSOC);
       
+    //   datos del usuario actual
+      $pdo16 = Database::connect();
+      $idUser67=$_SESSION['iduser'];
+      $sql6 = "SELECT * FROM usuarios WHERE id_user= '$idUser67'";
+      $q60 = $pdo16->prepare($sql6);
+      $q60->execute(array());
+      $dato90=$q60->fetch(PDO::FETCH_ASSOC);
+
+
+
+
+
       // $cantidad_respuesta_acertadas=1;
       
       $cantidad_respuesta_acertadas=$dato['cantidad_respuestas'];
@@ -940,6 +952,23 @@
               text: 'Necesita aprobar el curso para descargar su certificado'
           })
       }
+
+        // function descargar(){
+        //      
+        //         // # Pon su ruta absoluta, no importa qué tipo sea
+        //         $rutaArchivo ="http://test-apicalma.site/plugins/certificate/".$dato90['codigo_alumno'].$dato['cod_curso'].".pdf";
+
+        //         // # Obtener nombre sin ruta completa, únicamente para sugerirlo al guardar
+        //         $nombreArchivo = basename($rutaArchivo);
+
+        //         // # Algunos encabezados que son justamente los que fuerzan la descarga
+        //         header('Content-Type: application/octet-stream');
+        //         header("Content-Transfer-Encoding: Binary");
+        //         header("Content-disposition: attachment; filename=$nombreArchivo");
+        //         // # Leer el archivo y sacarlo al navegador
+        //         readfile($rutaArchivo); 
+        //         
+        // }
       
       function con_certificado() {
       
@@ -947,32 +976,45 @@
               icon: 'success',
               title: 'Nota minima alcanzada',
               text: 'Su certificado se descargara en breve '
-          }) 
-      
-      
+          })   
               const Url="/plugins/ejemplo2.php";
 
               var formData = new FormData();
-              formData.append('nombre_curso', 1);
-              formData.append('cod_alumno', 1);
-              formData.append('username', 1);
-              formData.append('nombre_estudiante',1);
-      
-              fetch(Url, {
-              method: 'POST',  
-              headers: {
-              "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
-              },
-              body: formData,
-              })
-              .then(response => response.text()) 
-      
-              .then(data => { 
-              // alert(data.trim());  
-              // window.location.assign("index.php")
-              // }
-              consol.log(data);}
-              ) 
+            
+              formData.append('nombre_curso','<?php echo $dato4['nombreCurso'] ;?>');
+              formData.append('cod_alumno','<?php echo  $dato90['codigo_alumno']; ?>');
+              formData.append('cod_curso', '<?php echo $dato['cod_curso'] ;?>');
+              formData.append('nombre_estudiante', '<?php echo $dato90['nombres']." ".$dato90['apellido_pat']." ".$dato90['apellido_mat'] ;?>'); 
+
+
+            var request = new XMLHttpRequest();
+            request.onreadystatechange = dataLoaded;
+            request.open("POST", Url);
+            request.send(formData);
+
+            function dataLoaded()
+{
+            if( this.status==200)
+            {
+               console.log("Respuesta del servidor"); 
+            //    Se debe cambiar la url desde donde esta los certificados
+               var Url2 = "http://test-apicalma.site/plugins/certificate/<?php echo  $dato90['codigo_alumno']; ?><?php echo $dato['cod_curso'] ;?>.pdf"
+               setTimeout(function(){console.log("Se esta descargando el certificado");window.open(Url2, '_blank');}, 2000);
+               
+            }
+            else
+            {
+                console.log("Aun no hay respuesta");
+            }
+}
+            
+
+            //   fetch(Url, {
+            //   method: 'POST',
+            //   body: formData,
+            //   })
+            //   .then(response => response.text();) 
+            //   .then(data => console.log(data)) 
       
          
       }

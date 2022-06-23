@@ -25,19 +25,18 @@
     //imagettftext($image,20,0,1600,1200,$color,$fonti,$ale);
     imagettftext($image,40,0,260,520,$color,$font,$nomAlumno);
     imagettftext($image,40,0,260,1340,$color2,$font,$codAlumno);
-    imagettftext($image,40,0,470,1340,$color2,$font,$codCurso);
+    imagettftext($image,40,0,1220,1340,$color2,$font,$codCurso);
 
-    imagejpeg($image, "/opt/lampp/htdocs/git_clone/test-educalma/web/plugins/certificate/".$nomAlumno.".jpg");
+    imagejpeg($image, "/opt/lampp/htdocs/git_clone/test-educalma/web/plugins/certificate/".$codAlumno.$codCurso.".jpg");
                 
 
     $pdf = new FPDF('L','in',[11.7,8.27]);
     $pdf->Addpage();
 
-    $pdf->Image("/opt/lampp/htdocs/git_clone/test-educalma/web/plugins/certificate/".$nomAlumno.".jpg",0,0,11.7,8.27);
-    $pdf->Output("/opt/lampp/htdocs/git_clone/test-educalma/web/plugins/certificate/".$nomAlumno.".pdf","F");
-    $pdf->Output("/opt/lampp/htdocs/git_clone/test-educalma/web/plugins/certificate/".$nomAlumno.".pdf","D");
-    // $pdf->Output();
-    echo 1;
-
+    $pdf->Image("/opt/lampp/htdocs/git_clone/test-educalma/web/plugins/certificate/".$codAlumno.$codCurso.".jpg",0,0,11.7,8.27);
+    $pdf->Output("/opt/lampp/htdocs/git_clone/test-educalma/web/plugins/certificate/".$codAlumno.$codCurso.".pdf","F");
+    $pdf->Output("/opt/lampp/htdocs/git_clone/test-educalma/web/plugins/certificate/".$codAlumno.$codCurso.".pdf","D");
+    $pdf->Output(); 
+ 
     imagedestroy($image);
  ?>

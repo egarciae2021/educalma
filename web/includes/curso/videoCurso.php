@@ -128,7 +128,7 @@
 
 
 
-<div class="container" style="margin-top: 120px;">
+<div class="container">
     <div class="row">
         <div class="col-md-1"></div>
         <div class="col-md-10">
@@ -311,7 +311,7 @@
 
 <!-- **************************************************************************************************** -->
 <!-- >>>>>>>>>>>>>>>>>>>>> <<<<<<<<<<<<<<<<<<< -->
-<div class="container" style="margin-top: 120px;">
+<div class="container" style="margin-top: 160px; margin-bottom: -25px;">
     <div class="row">
         <div class="col-md-1"></div>
         <div class="col-md-10">
@@ -384,9 +384,9 @@
 
 
                 <!-- Aquí están los botones "Anterior" y "Siguiente" -->
-                <button type="button" class="btn btn-outline-secondary" id="btnV"<?php if($nueva<=1){ echo "disabled";}?>
+                <button style="background: #7C83FD; color: white; border-radius: 10px;" type="button" class="btn-outline-secondary" id="btnV"<?php if($nueva<=1){ echo "disabled";}?>
                 onclick="parent.location='video.php?id=<?php echo $id; ?>&idtema=<?php echo ($nueva-1); ?>&id_modulo=<?php echo $dato['idModulo']?>&nW=<?php echo $nW?>&idCI=<?php echo $idCI?>'"> <strong>
-                <?php if(count($resultado1)<=0){echo "No existo";}?>< </strong> 
+                <?php if(count($resultado1)<=0){echo "No existo";}?><img style="height: 20px;" src="./assets/images/flecha_anterior.png"> </strong> 
                     Anterior 
                 </button>
 
@@ -396,7 +396,7 @@
 
 
 
-                <button id="btnV2" type="button" class="btn btn-outline-secondary"> 
+                <button style="border: solid 2px #7C83FD; border-radius: 10px;" id="btnV2" type="button" class="btn btn-outline-secondary"> 
                     <img src="././assets/images/video_icono_32.png">
                 </button>
 
@@ -411,8 +411,8 @@
 
 
                 <!-- Botón Siguiente -->
-                <button type="button" class="botonSiguiente btn btn-outline-secondary" id="btnV" <?php if($nueva>=count($resultado1)){?>onclick="parent.location='cuestionario.php?id=<?php echo $id;?>&nW=<?php echo $nW;?>&idModulo=<?php echo $_GET['id_modulo'];?>&up=0&idcues=<?php echo $dato8['idCuestionario'];?>&idCI=<?php echo $idCI?>&cuen=1&nro=0'">
-                    Siguiente<strong> > </strong>
+                <button style="background: #7C83FD; color: white; border-radius: 10px;" type="button" class="botonSiguiente btn-outline-secondary" id="btnV" <?php if($nueva>=count($resultado1)){?>onclick="parent.location='cuestionario.php?id=<?php echo $id;?>&nW=<?php echo $nW;?>&idModulo=<?php echo $_GET['id_modulo'];?>&up=0&idcues=<?php echo $dato8['idCuestionario'];?>&idCI=<?php echo $idCI?>&cuen=1&nro=0'">
+                    Siguiente<strong><img style="height: 20px;" src="./assets/images/flecha_siguiente.png"> </strong>
                 </button> 
                 
 
@@ -479,7 +479,7 @@
 <!-- VIDEO -->
 <div class="containervid">
 
-    <div id="videoTema" class="contvid">
+    <div style="border: solid 4px #7C83FD; border-radius: 0 !important;" id="videoTema" class="contvid">
         <?php 
               $url=$dato2['link_video'];
               function getYoutubeEmbedUrl($url){

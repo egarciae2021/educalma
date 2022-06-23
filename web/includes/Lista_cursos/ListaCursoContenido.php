@@ -7,7 +7,7 @@
 
 
 <!------------------------------------------------------------->
-<div style="position: relative; top: -70px;" class="container-fluid px-0">
+<div style="position: relative; top: -40px;" class="container-fluid px-0">
 
 
     <!-- CURSOS PUBLICADOS MÁS DESTACADOS -->

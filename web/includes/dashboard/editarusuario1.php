@@ -1,24 +1,27 @@
 <div class="container-contformulario">
+
     <?php
-
-
-    $pdo2 = Database::connect();
-    $veri2 = "SELECT * FROM usuarios WHERE id_user = '$_SESSION[codUsuario]' ";
-    $q2 = $pdo2->prepare($veri2);
-    $q2->execute(array());
-    $dato2 = $q2->fetch(PDO::FETCH_ASSOC);
-    $id = $dato2['id_user'];
-    
-    Database::disconnect();
-
+        $pdo2 = Database::connect();
+        $veri2 = "SELECT * FROM usuarios WHERE id_user = '$_SESSION[codUsuario]' ";
+        $q2 = $pdo2->prepare($veri2);
+        $q2->execute(array());
+        $dato2 = $q2->fetch(PDO::FETCH_ASSOC);
+        $id = $dato2['id_user'];
+        
+        Database::disconnect();
     ?>
 
     <div class="contformulario" id="contformulario">
+
         <div class="row">
+
+            <!--Imaden de la mujer-->
             <div class="image">
                 <img src="./assets/images/perfilimg.png" alt="">
             </div>
-            <form action="includes/usersidebar/actualizar_perfil.php?id=<?php echo $id; ?>" method="POST" enctype="multipart/form-data">
+
+            <!--Formulario-->
+            <form style="background: white; box-shadow: 0px 0px 10px 3px #C2BBF4; border-radius: 20px;" action="includes/usersidebar/actualizar_perfil.php?id=<?php echo $id; ?>" method="POST" enctype="multipart/form-data">
                 <div class="inputBox">
                     <h3>Nombre</h3>
                     <input type="text" id="Nombre" name="Nombre" value="<?php echo $dato2['nombres']; ?>">
@@ -53,7 +56,7 @@
                 <div class="inputBox">
                     <h3>Password</h3>
                     <input type="hidden" id="cuentaEmail1" value='<?php echo $dato2['email'] ?>' readonly>
-                    <input type="Button" class="btn" style="margin-top: 0;" onclick="actualizarPass();" value="Cambiar">
+                    <input type="Button" class="btn" style="margin-top: 0; background: #7C83FD; color: white;" onclick="actualizarPass();" value="Cambiar">
                     <!-- <input type="password" id="Password" name="pass" value="<php echo $dato2['pass']; ?>"> -->
                 </div>
                 <div class="inputBox">
@@ -95,9 +98,9 @@
                     
                     <div class="column" style="margin: auto; position: relative; top: -20px;">
                         
-                        <label for="inputGroupFile04" class="subir btn" style="color: black;">
+                        <label for="inputGroupFile04" class="subir btn" style="color: white; background: #ECBE83; border: #ECBE83;">
                             <i style="position: relative; left: 40px;" class="fas fa-cloud-upload-alt" aria-hidden="true"></i>
-                            <span style="position: relative; left: 40px;">Subir imagen</span>
+                            <span style="position: relative; left: 40px;">Sube tu foto</span>
                         </label>
                         <input type="file" name="imagen" accept="image/*" id="inputGroupFile04" onchange="cambiarImg()" aria-describedby="inputGroupFileAddon04" style="display: none;" aria-label="Upload" ; multiple>
 
@@ -110,7 +113,7 @@
                 <!--Escondido-->
                 <input style="position: absolute; visibility: hidden;" id="btnActualizar" type="submit" class="btn" value="Actualizar">
                 
-                <input id="btnActualizar_2" type="button" class="btn" value="Actualizar">
+                <input style="font-weight: bold; background: #7C83FD; color: white;" id="btnActualizar_2" type="button" class="btn" value="Actualizar">
             </form>
         </div>
     </div>

@@ -136,50 +136,6 @@
                         </div>
                         <!-- fin primera columna -->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                         <!-- segunda columna -->
                         <div class="col-9 pl-0">
 
@@ -189,18 +145,43 @@
                                 -->
                             <form name="formulario" id="form-agretemas" method="POST" action="includes/modulo/Modulo_CRUD.php?id=<?php echo $dato['idCurso']; ?>">
                                 
-                                <div type="button" class="list-group-item list-group-item-action active" style="background: #4F52D6; text-align: center; font-size: 26px;">
+                                <div type="button" class="list-group-item list-group-item-action active" style="background: #4F52D6; text-align: center; font-size: 26px;" id="agregarModulos">
                                     Agregar módulo
                                 </div>    
 
-                            
+                                <!-- <script>
+                                    $("#agregarModulos").on('click', function() {
+                                        let $input = parseInt($('#modulo_agregar').val());
+                                    
+                                        if (isNaN($input)) {
+                                            $('#modulo_agregar').val("1")
+                                        } else {
+                                            $('#modulo_agregar').val("Módulo"+ $input + 1);
+                                        }
+                                    
+                                    })
+                                </script> -->
 
                                 <div style="position: relative; top: 10px;" class="form-row pb-2">
-                                    
+                                    <?php
+                                        require_once '././database/databaseConection.php';
+                                        $conection = Database::connect();
+                                        $stringsql2 = "SELECT nombreModulo FROM `modulo` WHERE nombreModulo like '%Módulo%' and id_curso = ".$_GET['id']." ORDER BY nombreModulo DESC LIMIT 1;";
+                                        $query2 = $conection->prepare($stringsql2);
+                                        /* $q2->bindValue(1,$_GET['id'],':id_curso'); */
+                                        $query2->execute();
+                                        $lastModule=$query2->fetch(PDO::FETCH_ASSOC);
+                                        if($lastModule){
+                                                $number = intVal(substr($lastModule['nombreModulo'],-2)) +1;
+                                        }else{
+                                            $number=1;
+                                        }
+                                        
+                                    ?>  
+                                    <!--Por favor no agregar más de 5 módulos :(-->
                                     <div class="form-group col-12" hidden multiple>
                                         <label class="form-label">Nombre del módulo</label>
-                                        <input type="text" class="form-control" name="modulo_agregar" id="modulo_agregar" placeholder="Ingrese un nombre" aria-label="ModuloAgr" aria-describedby="ModuloAgr" aria-describedby="moduloAgr-addon" minlength="2" value="Módulo #" required>
-                                    </div>
+                                        <input type="text" class="form-control" name="modulo_agregar" id="modulo_agregar" placeholder="Ingrese un nombre" aria-label="ModuloAgr" aria-describedby="ModuloAgr" aria-describedby="moduloAgr-addon" minlength="2" value="Módulo <?=$number?>">                              
 
                                     <!-- <div class="form-group col-4 col-xl-2 col-lg-2" >
                                                 <label class="form-label" style="color:transparent;">-</label>
@@ -210,10 +191,11 @@
                                                 </a>
                                             </div> -->
                                 </div>
+                                 
 
 
                                 <div class="form-row">
-                                    <div style="margin-top: 20px; margin-left: auto; margin-right: auto;" class="form-group col-6 col-md-6 "><input type="hidden">
+                                    <div style="margin-top: 20px; margin-left: auto; margin-right: auto;" class="form-group col-6 col-md-6 "><input type="hidden" name="sumar">
                                         <button style="background-color: #74F077" type="button" id="actumodulo_2" class="btn btn-modulos" onclick="alertaModulo()">
                                             <i class="fas fa-plus"></i> Agregar Módulo
                                         </button>
@@ -226,9 +208,9 @@
 
                                             const agregar = document.querySelector('#modulo_agregar');
                                             let formulario = document.querySelector('#form-agretemas');
-
+                                            
                                             if (agregar.value.length != 0 && agregar.value.length != 1) {
-
+                                                
                                                 Swal.fire({
 
                                                     icon: 'success',
@@ -305,7 +287,7 @@
 
                                                 
 
-                                                <input style="background-color: #C4C5FB;" type="text" class="form-control" value="<?php echo $dato2['nombreModulo'] ?>" aria-label="Recipient's username with two button addons" disabled>
+                                                <input style="background-color: #C4C5FB;" type="text" class="form-control" value="<?php echo $dato2['nombreModulo'] ?>" aria-label="Recipient's username with two button addons" >
 
                                                 <!--agregar temas-->
                                                 <div class="caja-opciones">

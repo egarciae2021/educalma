@@ -11,8 +11,8 @@
 .btn {
   display: inline-block;
   margin-top: 1rem;
-  background: var(--orange);
-  color: #fff;
+  /* background: var(--orange); */
+  color: #7C83FD;
   padding: 0.8rem 3rem;
   border: 0.2rem solid var(--orange);
   cursor: pointer;
@@ -21,11 +21,7 @@
 }
 
 .btn:hover {
-  background: #d6d6fd;
-  border-color: #d6d6fd;
-  color: #a9a9af;
-  font-weight: bold;
-  transition: 0.3s ease-in-out all;
+  color: #6f77f2;
 }
 
 .contformulario .row {
