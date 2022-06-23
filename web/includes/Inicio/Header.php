@@ -1,14 +1,18 @@
+
 <?php
 ob_start();
 @session_start();
 require_once 'database/databaseConection.php';
 ?>
-<header style="background: linear-gradient(to right, #7C83FD, #E0C7E5) !important; height: 90px;">
-    
-    <div style="position: relative; top: -20px; background: none;" class="container-header navbar-fixed-top">
 
+<!--Inicio del header /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+<header style="background: linear-gradient(to right, #7C83FD, #E0C7E5) !important; height: 90px;">
+    <div style="position: relative; top: -20px; background: none;" class="container-header navbar-fixed-top">
         <input type="checkbox" name="" id="check">
 
+
+
+        <!--Logo-->
         <div class="logo-container">
             
             <a href="index.php"><img style="width: 200px;" src="assets/images/educalma_logo_blanco.png" alt=""></a>
@@ -16,45 +20,82 @@ require_once 'database/databaseConection.php';
         </div>
 
 
-        <!--////////////////////-->
+        <!--Inicio de Nosotros, Cursos e Iniciar Sesión y Regístrate o Nombre (tipo de usuario)-->
         <div style="margin: 20px;" class="nav-btn-header">
 
+
+
+            <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////// -->
             <div class="nav-links-header">
 
 
                 <?php if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {?>
+
                     <ul style="margin-left: 25px;">
 
+                        <!--Nosotros y Cursos-->
                         <li class="nav-link" style="--i: .6s">
 
-                            <a style="color: white;" href="nosotros.php">Nosotros</a>
+                            <a href="nosotros.php">Nosotros</a>
                         </li>
                         
                         <li class="nav-link" style="--i: .6s">
                 
-                            <a style="color: white;" href="ListaCursos.php?pag=1">Cursos</a>
+                            <a href="ListaCursos.php?pag=1">Cursos</a>
                 
                         </li>
+
+                        <li class="nav-link" style="--i: .6s;">
+                    
+                            <a class="link-cel" href="user-sidebar.php">Dashboard</a>
+                    
+                        </li>
+
+                        <li class="nav-link" style="--i: .6s">
+                    
+                            <a class="link-cel" href="sidebarEditar.php">Ajustes</a>
+                    
+                        </li>
+
+                        <li class="nav-link" style="--i: .6s">
+                    
+                            <a class="link-cel" href="includes/login/logout.php">Cerrar Sesión</a>
+                    
+                        </li>
+
+                   
+
+                        <!-- LOGUEADO - Nombre (Tipo de Usuario) -->
+
+
+                                <!--El código está afuera de este div más abajo. (->) -->
+
+
+
                     </ul>
                 <?php
                     }else{
                 ?>
                     <ul style="margin-left: 25px;">
                     
+                        <!--Nosotros y Cursos-->
                         <li class="nav-link" style="--i: .6s">
-                            <a style="color: white;" href="nosotros.php">Nosotros</a>
+
+                            <a href="nosotros.php">Nosotros</a>
                         </li>
 
                         <li class="nav-link" style="--i: .6s">
                 
-                            <a style="color: white;" href="cursosPublicados.php">Cursos</a>
-                        
+                            <a href="cursosPublicados.php">Cursos</a> 
                         </li>
 
+                        <!-- NO LOGUEADO - Iniciar Sesión y Regístrate -->
                         <div class="log-sign" style="--i: 1.8s;">
-                            <a style="color: white;" href="iniciosesion.php" class="btn transparent btnIni">Iniciar Sesión</a>
+
+                            <a href="iniciosesion.php" class="btn transparent btnIni">Iniciar Sesión</a>
                       
-                            <a style="color: white;" href="registroUsuario.php" class="btn solid">Regístrate!</a>
+                            <a href="registroUsuario.php" class="btn solid">Regístrate!</a>
+                            
                         </div>
 
                     </ul>
@@ -64,11 +105,26 @@ require_once 'database/databaseConection.php';
 
                 
             </div>
+            <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+
+
+
+
+
+
+
+
+
+
+
+
 
             <?php
             Database::disconnect();
 
 
+            
 
 
 
@@ -95,7 +151,19 @@ require_once 'database/databaseConection.php';
 
 
 
-          
+
+
+
+
+
+
+
+
+
+
+
+
+            // (->) //////////////////////////////////////////////////////////////////////////////////////////////////////////
             if (isset($_SESSION['Logueado']) && $_SESSION['Logueado'] === true && $_SESSION['privilegio'] == 1) {
 
 
@@ -111,27 +179,28 @@ require_once 'database/databaseConection.php';
                 $nom=$dato['nombres'];
             ?>
 
-            <!-- LOGUEADO -->
+            <!-- LOGUEADO - Nombre (Tipo de Usuario) -->
             <div class="log-sign" style="--i: 1.8s;">
                     <ul>
                         <li class="nav-link" style="--i: .85s">
                             
                             <a style="color: white;" href="#"><?php echo $nom ?>&nbsp;(Administrador)<i class="fas fa-caret-down"></i></a>
-                            
+
+                            <!--Desplegable-->
                             <div class="dropdown">
                                 <ul>
                                     <li class="dropdown-link">
-                                        <a style="color: white;" href="user-sidebar.php">Dashboard</a>
+                                        <a style="color: black;" href="user-sidebar.php">Dashboard</a>
                                     </li>
 
                                     <li class="dropdown-link">
-                                        <a style="color: white;" href="sidebarEditar.php">Ajustes</a>
+                                        <a style="color: black;" href="sidebarEditar.php">Ajustes</a>
                                     </li>
 
                                     <li class="dropdown-link">
-                                        <a style="color: white;" href="includes/login/logout.php">Cerrar Sesión</a>
+                                        <a style="color: black;" href="includes/login/logout.php">Cerrar Sesión</a>
                                     </li>
-                                    <div class="arrow"></div>
+                              
                                 </ul>
                             </div>
                         </li>
@@ -158,7 +227,7 @@ require_once 'database/databaseConection.php';
                 $nom=$dato['nombres'];
             ?>
 
-            <!-- LOGUEADO -->
+            <!-- LOGUEADO - Nombre (Tipo de Usuario) -->
             <div class="log-sign" style="--i: 1.8s">
                     <ul>
                         <li class="nav-link" style="--i: .85s">
@@ -176,7 +245,7 @@ require_once 'database/databaseConection.php';
                                     <li class="dropdown-link">
                                         <a style="color: white;" href="includes/login/logout.php">Cerrar Sesión</a>
                                     </li>
-                                    <div class="arrow"></div>
+                                  
                                 </ul>
                             </div>
                         </li>
@@ -202,7 +271,7 @@ require_once 'database/databaseConection.php';
                 $nom=$dato['nombres'];
             ?>
 
-            <!-- LOGUEADO -->
+            <!-- LOGUEADO - Nombre (Tipo de Usuario) -->
             <div class="log-sign" style="--i: 1.8s; width: 400px;">
                     <ul>
                         <li class="nav-link" style="--i: .85s">
@@ -223,7 +292,7 @@ require_once 'database/databaseConection.php';
                                     <li class="dropdown-link">
                                         <a style="color: white;" href="includes/login/logout.php">Cerrar Sesión</a>
                                     </li>
-                                    <div class="arrow"></div>
+                            
                                 </ul>
                             </div>
 
@@ -250,7 +319,7 @@ require_once 'database/databaseConection.php';
                 $nom=$dato['nombres'];
             ?>
 
-            <!-- LOGUEADO -->
+            <!-- LOGUEADO - Nombre (Tipo de Usuario) -->
             <div class="log-sign" style="--i: 1.8s">
                     <ul>
                         <li class="nav-link" style="--i: .85s">
@@ -268,7 +337,7 @@ require_once 'database/databaseConection.php';
                                     <li class="dropdown-link">
                                         <a style="color: white;" href="includes/login/logout.php">Cerrar Sesión</a>
                                     </li>
-                                    <div class="arrow"></div>
+                                
                                 </ul>
                             </div>
                         </li>
@@ -294,7 +363,7 @@ require_once 'database/databaseConection.php';
                 $nom=$dato['nombres'];
             ?>
 
-            <!-- LOGUEADO -->
+            <!-- LOGUEADO - Nombre (Tipo de Usuario) -->
             <div class="log-sign" style="--i: 1.8s">
                     <ul>
                         <li class="nav-link" style="--i: .85s">
@@ -312,7 +381,7 @@ require_once 'database/databaseConection.php';
                                     <li class="dropdown-link">
                                         <a style="color: white;" href="includes/login/logout.php">Cerrar Sesión</a>
                                     </li>
-                                    <div class="arrow"></div>
+                                  
                                 </ul>
                             </div>
                         </li>
@@ -338,7 +407,7 @@ require_once 'database/databaseConection.php';
                 $nom=$dato['nombres'];
             ?>
 
-            <!-- LOGUEADO -->
+            <!-- LOGUEADO - Nombre (Tipo de Usuario) -->
             <div style="margin: auto;" class="log-sign" style="--i: 1.8s">
                     <ul>
                         <li class="nav-link" style="--i: .85s">
@@ -356,17 +425,36 @@ require_once 'database/databaseConection.php';
                                     <li class="dropdown-link">
                                         <a style="color: white;" href="includes/login/logout.php">Cerrar Sesión</a>
                                     </li>
-                                    <div class="arrow"></div>
+                              
                                 </ul>
                             </div>
                         </li>
                     </ul>
             </div>
 
-            <?php } ?>
+            <?php } 
+            
+            ////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            ?>
 
 
- 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -384,10 +472,20 @@ require_once 'database/databaseConection.php';
 
 
         </div>
+        <!--Fin de Nosotros, Cursos e Iniciar Sesión y Regístrate o Nombre (tipo de usuario)-->
+
+
+
+
+        <!--Botón de tres líneas para la pantalla de celulares-->
         <div class="hamburger-menu-container">
             <div class="hamburger-menu">
                 <div></div>
             </div>
         </div>
+
+
+        
     </div>
 </header>
+<!--Fin del header /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->

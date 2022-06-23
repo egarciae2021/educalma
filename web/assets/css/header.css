@@ -1,5 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Tamma+2:wght@800&family=Montserrat&family=Mukta:wght@600&display=swap');
+
+.nav-link > .link-cel {
+  display: none;
+}
 
 ul {
   list-style: none;
@@ -42,6 +47,7 @@ header {
   flex: 1;
   display: flex;
   align-items: center;
+  margin-bottom: 15px;
 }
 .logo-container a {
   align-items: center;
@@ -85,12 +91,13 @@ header .btn {
   display: inline-block;
   padding: 0.5rem 1.3rem;
   font-size: 0.8rem;
-  border: 2px solid #7c83fd;
+  border: 2px solid white;
   border-radius: 6px;
   line-height: 1;
   margin: 0 0.2rem;
   transition: 0.3s;
   text-transform: uppercase;
+  color: white;
 }
 
 header.btn.solid,
@@ -118,7 +125,7 @@ header.btn.solid:hover {
 
 .nav-link > a {
   line-height: 3rem;
-  color: rgb(0, 0, 0);
+  color: white;
   padding: 0 0.8rem;
   letter-spacing: 1px;
   font-size: 0.95rem;
@@ -165,7 +172,7 @@ header.btn.solid:hover {
 }
 
 .dropdown-link:hover > a {
-  background-color: #ffffff;
+  background-color: #A7ACF3;
   color: #7c83fd;
 }
 
@@ -223,6 +230,8 @@ header.btn.solid:hover {
   display: none;
   align-items: center;
   justify-content: flex-end;
+  margin-top: 50px;
+  margin-right: 18px;
 }
 
 .hamburger-menu {
@@ -345,6 +354,24 @@ header.btn.solid:hover {
       .log-sign .btnIni {
         margin-left: -50px;
       }
+
+      .logo-container {
+        margin-top: 40px;
+      }
+
+      .nav-link > a {
+        color: black;
+      }
+
+      .nav-link > .link-cel {
+        display: block;
+      }
+
+      .dropdown-link > a {
+      
+        display: none;
+      }      
+
     }
     
 
@@ -508,5 +535,25 @@ header.scrolled {
   #PagePay{
     margin-left: 20px;
     margin-right: 270px;
+  }
+}
+
+.links-headers {
+  color: white;
+}
+
+@media (max-width: 620px) {
+
+  header .btn {
+    display: inline-block;
+    padding: 0.5rem 1.3rem;
+    font-size: 0.8rem;
+    border: 2px solid #737BF1;
+    border-radius: 6px;
+    line-height: 1;
+    margin: 0 0.2rem;
+    transition: 0.3s;
+    text-transform: uppercase;
+    color: #737BF1;
   }
 }

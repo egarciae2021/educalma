@@ -24,7 +24,7 @@ footer a:hover {
   outline: 0;
 } 
 .footer-big {
-  padding: 3rem 0 0 0; 
+  padding: 1rem 0 0 0; 
 }
 .footer-big .footer-widget {
   margin-bottom: 40px;
@@ -233,6 +233,6 @@ footer a:hover {
     align-items: center;
     margin: auto;
     text-align: center; 
-    width: 40px;
-    height: 50px;
+    width: 20px;
+    height: 20px;
   }

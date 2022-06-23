@@ -5,6 +5,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,600;1,100&family=Zen+Antique+Soft&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;300;500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Poppins:wght@400;700&family=Work+Sans&display=swap");
+ 
+ 
 
 /* PANEL */
 
@@ -29,25 +31,33 @@
     padding: 10rem 0rem 10rem 10rem;
 }
 
-.title-panel {
-    font-family: "Inter", sans-serif;
-    font-weight: bolder;
-    font-size: 92px;
-    text-transform: uppercase;
+/*Título*/
+.title-panel .txtBienvenido {
+   
+    color: black;
+    font-family: 'Baloo Tamma 2';
+    font-size: 100px;
+    position: relative;
+    top: 55px;
 }
 
-.title-panel span {
-    color: #99ccff;
-    text-transform: none;
-    font-family: "Old Standard TT", serif;
+/*Título*/
+.title-panel .txtEducalma {
+ 
+    color: #737BF1;
+    font-family: 'Baloo Tamma 2';
+    font-size: 125px;
 }
 
 .description-panel {
     font-family: "Inter", sans-serif;
     font-style: normal;
     font-weight: normal;
-    font-size: 18px;
+    font-size: 22px;
     padding-right: 20rem;
+    position: relative;
+    top: -45px;
+    left: 10px;
 }
 
 .button-panel {
@@ -95,8 +105,7 @@
 
 @media (max-width: 1450px) {
     .title-panel {
-        font-size: 72px;
-        transition: all 0.3s ease;
+     
     }
     .container-image-panel img {
         width: 600px;
@@ -448,32 +457,33 @@
 }
 
 @media (max-width: 300px) {
-    .div-container-panel .row .container-title-panel {
-        padding: 10rem 0rem 10rem 1rem;
-    }
-    .title-panel {
-        font-size: 35px;
-    }
-    .description-panel {
-        font-size: 13px;
-        padding-right: 1.5rem;
-    }
-    .btn_registrar_panel {
-        font-size: 13px;
-        background-color: #7c83fd;
-    }
 
-    .certificados {
-        position: relative;
-        left: -9px;
-    }
+        .div-container-panel .row .container-title-panel {
+            padding: 10rem 0rem 10rem 1rem;
+        }
+        .title-panel {
+            font-size: 35px;
+        }
+        .description-panel {
+            font-size: 13px;
+            padding-right: 1.5rem;
+        }
+        .btn_registrar_panel {
+            font-size: 13px;
+            background-color: #7c83fd;
+        }
 
-    .container .row .col-12 .section-title h2 {
-        font-size: 36px;
-        font-weight: bold;
-        text-transform: uppercase;
-        position: relative;
-        top: -180px;
+        .certificados {
+            position: relative;
+            left: -9px;
+        }
+
+        .container .row .col-12 .section-title h2 {
+            font-size: 36px;
+            font-weight: bold;
+            text-transform: uppercase;
+            position: relative;
+            top: -180px;
         }
 
         .container .row .col-12 .section-title h2 {
@@ -928,9 +938,8 @@
 }
 
 .container-fluid-course .row .card .row a:hover {
-    background: #ffffff;
-    color: #33c6e7;
-    border: 2px solid #33c6e7;
+    background: #9d9fc5;
+   
 }
 
 /*//////////////////////////////////////////////////////*/
@@ -957,22 +966,21 @@
 
 .container-fluid-course .row .card .row h4 {
     font-size: 18px;
-    font-weight: bold;
+ 
 }
 
 .container-fluid-course .row .card .row h5 {
     font-size: 16px;
-    color: #b4b4b4;
 }
 
 .container-fluid-course .row .card .row a {
     font-size: 14px;
     text-decoration: none;
     margin: 0rem;
-    background: #33c6e7;
-    border-radius: 20px;
+    background: #7C83FD;
+    border-color: #7C83FD;
+    border-radius: 5px;
     color: #ffffff;
-    border: 2px solid #33c6e7;
 }
 
 
@@ -1640,6 +1648,7 @@
 
 
 @media screen and (max-width: 768px) {
+
     .container-bussines>.send-data .back {
         width: 100%;
         height: 100%;
@@ -1700,6 +1709,41 @@
         position: relative;
         top: -150px;
     }
+}
+
+@media (max-width: 620px) {
+
+    /*Título*/
+    .title-panel .txtBienvenido {
+    
+        color: black;
+        font-family: 'Baloo Tamma 2';
+        font-size: 50px;
+        position: relative;
+        top: 30px;
+        left: -30px;
+    }
+
+    /*Título*/
+    .title-panel .txtEducalma {
+    
+        color: #737BF1;
+        font-family: 'Baloo Tamma 2';
+        font-size: 65px;
+        position: relative;
+        left: -30px;
+    }
+
+    .description-panel {
+
+        font-family: "Inter", sans-serif;
+        font-style: normal;
+        font-size: 15px;
+        position: relative;
+        top: -20px;
+        left: -25px;
+    }
+
 }
 
 

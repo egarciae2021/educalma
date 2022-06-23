@@ -161,9 +161,9 @@
                         ?>
                         <div class="table-responsive">
                 
-                             <table id="tablaCursos" class="table table-borderless dt-responsive" cellspacing="0" width="100%" >
+                             <table id="tablaCursos" class="table table-borderless dt-responsive" cellspacing="0" width="100%" style="background-color:#fff;padding: 17px;border-radius: 10px;">
                                 <thead>
-                                    <tr style="background-color:#737BF1">
+                                    <tr style="background: rgb(124,131,253);background: linear-gradient(50deg, rgba(124,131,253,1) 0%, rgb(224 199 229) 100%);">
                                         <th style="border-radius: 10px 0 0  10px;">Nombre</th>
                                         <th>Creado Por</th>
                                         <th>Categoría</th>
