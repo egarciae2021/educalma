@@ -181,76 +181,11 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                     </div>
                   </div>
 
-          
-
-              
-
-                  
 
 
-
-
- 
-
-
-                  <form style="margin-left: 30px; margin-top: 30px;">
-
-                          <div class="col-12 row">
-                              <div class="col-11">
-                                          <table class="table">
-                                                  <thead>
-                                                          <tr class="filters">
-
-                                                                  <th>
-                                                                          Nombre:
-                                                                          <input type="text" id="" name="" class="form-control mt-2" value="" style="border: #bababa 1px solid; color:#000000;" >
-                                                                  </th>
-                                                                  <th>
-                                                                          Curso:
-                                                                          <input type="text" id="" name="" class="form-control mt-2" value="" style="border: #bababa 1px solid; color:#000000;" >
-                                                                  </th>
-                                                                  <th>
-                                                                          Fecha de Inscripción:
-                                                                          <input type="date" id="" name="" class="form-control mt-2" value="" style="border: #bababa 1px solid; color:#000000;" >
-                                                                  </th>
-                                                                  <th>
-                                                                          Fecha de Finalización:
-                                                                          <input type="date" id="" name="" class="form-control mt-2" value="" style="border: #bababa 1px solid; color:#000000;" >
-                                                                  </th>
-                                                                  
-                                                                  
-                                                                  <th>
-                                                                          Avance
-                                                                          <select id="" id="" name="" class="form-control mt-2" style="border: #bababa 1px solid; color:#000000;" >
-                                                                                  
-                                                                                  <option value="">Todos</option>
-                                                                                  <option value="En_Curso">En Curso</option>
-                                                                                  <option value="Terminado">Terminado (100%)</option>
-                                                                          </select>
-                                                                  </th>
-
-                                                                  <th>
-                                                                          Estado
-                                                                          <select id="" id="" name="" class="form-control mt-2" style="border: #bababa 1px solid; color:#000000;" >
-                                                                                  
-                                                                                  <option value="Todos">Todos</option>
-                                                                                  <option value="Aprobado">Aprobado</option>
-                                                                                  <option value="Desaprobado">Desaprobado</option>
-                                                                                  
-                                                                          </select>
-                                                                  </th>
-                                                          </tr>
-                                                  </thead>
-                                          </table>
-                              </div>
-
-
-<<<<<<< HEAD
 <form action="reporteUsuario.php" method="post">
         <div class="col-12 row">
 
-
-            
             <div class="col-11">
                         <table class="table">
                                 <thead>
@@ -307,26 +242,9 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
 
                 </div>
 
-
-                
             
-            
-
-
-        
         <p style="margin-left: 20px; font-weight: bold; color:#8CC9DB;"><i class="mdi mdi-file-document"></i> <?php ?> Resultados encontrados</p>
 </form>
-=======
-                              <div style="margin-top: 28px;" class="col-1">
-                                  <input type="submit" class="btn" value="Ver" style="margin-top: 38px; background-color: #7C83FD; color: white;">
-                              </div>
-                              
-                          </div>
-
-                          
-                          <p style="margin-left: 7px; font-weight: bold; color:#8CC9DB;"><i class="mdi mdi-file-document"></i> <?php ?> # Resultados encontrados</p>
-                  </form>
->>>>>>> 3aab74e168a8cb90618d0b29432f2f711054cc6f
 
 
 
