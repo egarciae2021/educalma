@@ -38,7 +38,7 @@
 </style>
 
 <footer class="footer--light">
-<<<<<<< HEAD
+
   <div class="footer-big">
     <div class="container">
       <div class="row">
@@ -85,59 +85,7 @@
                   <a href="recursos1.php"><i class="fas fa-bullhorn"></i> Comparte tu curso</a>
                 </li>
               </ul>
-=======
-    <div class="footer-big">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
-            <div class="footer-widget">
-              <div class="widget-about">
-                
-              
-              
-                <img style="" src="assets/images/logo_educalma.png" alt="" class="img-fluid">
-              
-              
-              
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
-            <div class="footer-widget">
-              <div class="footer-menu">
-               
-                <ul>
-                  <li>
-                    <a href="https://fundacioncalma.org/%C2%BFqui%C3%A9nes-somos%3F">Quiénes Somos</a>
-                  </li>
-                  <li>
-                    <a href="https://fundacioncalma.org/contacto">Contáctanos</a>
-                  </li>
-                  <li>
-                    <a href="https://fundacioncalma.org/%C2%BFc%C3%B3mo-ayudo%3F">Ayúdanos</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
-            <div class="footer-widget">
-              <div class="footer-menu">
-                <!-- <h4 class="footer-widget-title">Blog</h4> -->
-                <ul>
-                  <li>
-                    <a href="https://fundacioncalma.org/" >Blog</a>
-                  </li>
-                  <li>
-                    <a href="certi.php">Validación de Certificado</a>
-                  </li>
-                  <li>
-                    <!-- <a href="recursos1.php">Presentaci&oacute;n</a> -->
-                    <a href="recursos1.php">Comparte tu curso</a>
-                  </li>
-                </ul>
-              </div>
->>>>>>> d76d573ca7aaca9d66b985ee107b433f54aba036
+
             </div>
           </div>
         </div>
