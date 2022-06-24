@@ -97,7 +97,7 @@ $id = $_GET['id'];
                                 <h4>Elige tu medio de pago</h4>
                             </div>
                             <div class="mt-2">
-                                <span><a href=" #">¿Necesitas ayuda?</a></span>
+                                <span><a href="https://api.whatsapp.com/send?phone=51910571087&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20los%20cursos%20.">¿Necesitas ayuda?</a></span>
                             </div>
                         </div>
                         <div class="container-pay-online my-3">
