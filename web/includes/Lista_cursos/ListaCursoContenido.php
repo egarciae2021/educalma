@@ -97,7 +97,7 @@
                                         if ($dato['imagenDestacadaCurso'] != null) {
                                         ?>
                                             <!--Imagen-->
-                                            <img src="web/images/,<?php echo base64_encode($dato['imagenDestacadaCurso']); ?>" alt="">
+                                            <img src="data:image/*;base64,<?php echo base64_encode($dato['imagenDestacadaCurso']); ?>" alt="">
                                         <?php
                                         } else {
                                         ?>
@@ -341,59 +341,53 @@
         <div class="row pt-1 container" style="margin: 0 auto;">
 
 
-                <?php
-                $pdo = Database::connect();
-                error_reporting(0);
-                $idcategoria = $_GET['idcate'];
-                $sql2 = "SELECT * FROM cursos WHERE permisoCurso=1 AND estado=1 ORDER BY cursos.idCurso DESC";
-                $query2 = $pdo->prepare($sql2);
-                $query2->execute();
-                $contar = $query2->rowCount();
-
-                $cantidad_paginas = 3;
-                $page = $contar / $cantidad_paginas;
-                $page = ceil($page);
-                //seguimos con el paginador 
-                if ($contar > 0) {
-                    if ($_GET['pag'] > $page || $_GET['pag'] < 1) {
-                        header('Location:ListaCursos.php?pag=1');
-                    }
+        <?php
+            error_reporting(0);
+            $idcategoria = $_GET['idcate'];
+            $sql2 = "SELECT * FROM cursos WHERE permisoCurso=1";
+            $query2 = $pdo->prepare($sql2);
+            $query2->execute();
+            $contar = $query2->rowCount();
+            //con este codigo se hara la division 
+            //para generar las paginas necesarias 
+            //con respecto al numero que tenga y a los campos que halla
+            $cantidad_paginas = 8;
+            $page = $contar / $cantidad_paginas;
+            $page = ceil($page);
+            //seguimos con el paginador 
+            if ($contar > 0) {
+                if ($_GET['pag'] > $page || $_GET['pag'] < 1) {
+                    header('Location:ListaCursos.php?pag=1');
                 }
-                $inicio = ($_GET['pag'] - 1) * $cantidad_paginas;
-                $sql3 = "SELECT * FROM cursos WHERE permisoCurso=1 AND estado=1";
+            }
+            $inicio = ($_GET['pag'] - 1) * $cantidad_paginas;
+            $sql3 = "SELECT * FROM cursos WHERE permisoCurso=1 LIMIT :iniciar,:narticulos";
 
-                $query3 = $pdo->prepare($sql3);
-                //$query3->bindParam(':iniciar', $inicio, PDO::PARAM_INT);
-                //$query3->bindParam(':narticulos', $cantidad_paginas, PDO::PARAM_INT);
-                $query3->execute();
-                $conteo = 0;
-                while ($dato = $query3->fetch(PDO::FETCH_ASSOC)) {
-
-                    $conteo = $conteo + 1;
-
-                    //ALGORITMO CURSO INSCRITO Y NO INSCRITO
-                    if (isset($_SESSION['codUsuario'])) {
-                        $cursoID = $dato['idCurso'];
-                        $userID = $_SESSION['codUsuario'];
-                        $sql4 = "SELECT * FROM cursoinscrito where curso_id='$cursoID' and usuario_id = '$userID' ";
-                        $query4 = $pdo->prepare($sql4);
-                        $query4->execute(array());
-                        $dato2 = $query4->fetch(PDO::FETCH_ASSOC);
-                        if (empty($dato2)) {
-                            $paginaRed = "detallecurso";
-                        } else {
-                            $paginaRed = "curso";
-                        }
-                    } else {
+            $query3 = $pdo->prepare($sql3);
+            $query3->bindParam(':iniciar', $inicio, PDO::PARAM_INT);
+            $query3->bindParam(':narticulos', $cantidad_paginas, PDO::PARAM_INT);
+            $query3->execute();
+            $conteo = 0;
+            while ($dato = $query3->fetch(PDO::FETCH_ASSOC)) {
+                $conteo = $conteo + 1;
+                //ALGORITMO CURSO INSCRITO Y NO INSCRITO
+                if (isset($_SESSION['codUsuario'])) {
+                    $cursoID = $dato['idCurso'];
+                    $userID = $_SESSION['codUsuario'];
+                    $sql4 = "SELECT * FROM cursoinscrito where curso_id='$cursoID' and usuario_id = '$userID' ";
+                    $query4 = $pdo->prepare($sql4);
+                    $query4->execute(array());
+                    $dato2 = $query4->fetch(PDO::FETCH_ASSOC);
+                    if (empty($dato2)) {
                         $paginaRed = "detallecurso";
+                    } else {
+                        $paginaRed = "curso";
                     }
-
-
-
-
-                   
-                    
-                ?>
+                } else {
+                    $paginaRed =
+                        "detallecurso";
+                }
+            ?>
 
 
                 <!--Contenedor del curso publicado-->
