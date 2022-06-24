@@ -5,6 +5,12 @@
   background: url("../images/fondo1.png");
   background-size: cover;
 }
+
+.bg-dark11{
+  background-size: cover;
+  background: rgb(124,131,253);
+  background: linear-gradient(50deg, rgba(124,131,253,1) 0%, rgb(224 199 229) 100%);
+}
 .row {
   margin: 0 auto;
   max-width: 1600px;
@@ -14,17 +20,29 @@
   border-radius: 0;
   padding: 0.5rem 0;
 }
+
+.bg-dark11 .row .col-xl-4 .card .card-body .btn-outline-dark {
+  width: 100%;
+  border-radius: 0;
+  padding: 0.5rem 0;
+}
+
 .bg-light .row .info-course-left {
   display: none;
 }
 #accordion .card .card-header span {
-  color: #000000;
+  color: #fff;
   font-weight: bold;
 }
 .info-course-right {
   margin-top: 3rem;
 }
 .bg-dark1 .row .info-course-right .card {
+  position: absolute;
+  width: 90%;
+}
+
+.bg-dark11 .row .info-course-right .card {
   position: absolute;
   width: 90%;
 }
@@ -35,6 +53,7 @@
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  border-radius: 10px;
 }
 .card-img-top1 {
   height: 100%;
@@ -53,6 +72,7 @@
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    border-radius: 10px;
   }
   .card-img-top1 {
     flex-shrink: 0;
@@ -63,6 +83,12 @@
     height: 450px;
   }
   .bg-dark1 .row .info-course-right .card {
+    position: relative;
+    display: block;
+    width: 100%;
+  }
+
+  .bg-dark11 .row .info-course-right .card {
     position: relative;
     display: block;
     width: 100%;

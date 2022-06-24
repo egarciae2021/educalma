@@ -18,6 +18,12 @@
     position: relative;
 }
 
+.imagecuadr{
+  padding: 6px;
+  border-radius: 10px;
+  box-shadow: 2px 4px 4px #7c83fd;
+}
+
 .boton4:hover {
 
     color: rgba(255, 255, 255, ) !important;
@@ -33,9 +39,14 @@ body {
 
 #btnComprarAhora {
 
-    background: #99ccff;
-    color: black;
+    background: #7C83FD;
+    color: #fff;
     font-weight: bold;
+    border: none;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #btnComprarAhora:hover {
@@ -208,17 +219,17 @@ body {
     <div class="container-course bg-light" style="min-height: 100vh;">
 
         <!-- zzzz -->
-        <div class="bg-dark1">
+        <div class="bg-dark11">
 
 
             <!-- yyyy -->
-            <div class="row py-5">
+            <div class="row py-5" style="padding: 15px">
 
 
             
 
 
-                <div class="col-12 col-sm-12 col-md-7 col-lg-8 col-xl-9 ">
+                <div class="col-12 col-sm-12 col-md-7 col-lg-8 col-xl-9 " style="color: #fff;padding: 29px;margin-top: -48px;">
                     
                     <br><br><br><br>
 
@@ -288,11 +299,11 @@ body {
 
 
                 <!-- xxxxx -->
-                <div class="col-12 col-sm-12 col-md-5 col-lg-4 col-xl-3 info-course-right pt-3">
+                <div class="col-12 col-sm-12 col-md-5 col-lg-4 col-xl-3 info-course-right pt-5">
                 
 
                     <!-- CARD///////////////////////////////// -->
-                    <div class="card">
+                    <div class="card imagecuadr">
 
 
                         <div class="content-img">
@@ -314,7 +325,8 @@ body {
 
                         <!-- ///////////////////////////////// -->
                         <div class="card-body">
-                            <h4 class="card-title font-weight-bold" style="font-size: 30px;"><?php
+                            <h4 class="card-title font-weight-bold" style="font-size: 25px;display: flex;justify-content: center;color: #7C83FD;">
+                            <?php
                                                                                                 if ($dato4['costoCurso'] != 0) {
                                                                                                     echo 'S/ ' . $dato4['costoCurso'];
                                                                                                 } else {
@@ -409,7 +421,7 @@ body {
                                 if ($dato4['costoCurso'] != 0) {
                                     if(isset($_SESSION['Logueado'])){
                                 ?>
-                                    <a id="btnComprarAhora" href="pagepay.php?id=<?php echo $dato4["idCurso"]; ?>" class="btn btn-outline-dark my-3">Comprar ahora</a>
+                                    <a id="btnComprarAhora" href="pagepay.php?id=<?php echo $dato4["idCurso"]; ?>" class="btn btn-outline-dark">Comprar ahora</a>
                                 <?php
                                     }else{
                                         ?>
@@ -568,7 +580,7 @@ body {
 
 
 
-                            <p class="font-weight-bold mb-0">Este curso incluye:</p>
+                            <p class="font-weight-bold mb-0 my-3">Este curso incluye:</p>
 
 
                             <div class="my-1" style="font-size: 13px;">
@@ -635,34 +647,30 @@ body {
         </div>
         <!-- zzzz -->
 
-        <br><br><br>
-
-
-
         <!-- mmmm -->
         <div class="bg-light" style="height: 100%;">
             <div class="row py-5" style="height: 100%;">
                 <div class="col-12 col-sm-12 col-md-5 col-lg-4 col-xl-3 info-course-left" style="border: 1px solid red;">
                     <h4>Contenido del curso</h4>
                 </div>
-                <div class="col-12 col-sm-12 col-md-7 col-lg-8 col-xl-9 text-dark">
-                    <h4 class="font-weight-bold">Contenido del curso</h4>
+                <div class="col-12 col-sm-12 col-md-7 col-lg-8 col-xl-9 text-dark" style="padding: 55px;margin-top: -65px;">
+                    <h4 class="font-weight-bold" style="color: #7C83FD;">Contenido del curso</h4>
                     <div class="d-flex">
                         <div class="mr-auto p-2">
                             <span class="mr-1"><?php echo $modulos; ?></span>Módulos <i class="fas fa-circle mx-2" style="font-size: 5px;"></i>
                             <span class="mr-1"><?php echo $temas; ?></span>Temas <i class="fas fa-circle mx-2" style="font-size: 5px;"></i>
                             <span class="mr-1"><?php echo $cuestionarios; ?></span>Cuestionarios
                         </div>
-                        <div class="p-2">
+                        <!-- <div class="p-2">
                             <h6>Ampliar todas las secciones</h6>
-                        </div>
+                        </div> -->
                     </div>
 
                     <?php
                     $i = 0;
                     while ($modulosC = $q6->fetch(PDO::FETCH_ASSOC)) {
                     ?>
-                        <div id="accordion" class="accordion">
+                        <div id="accordion" class="accordion my-3">
                             <div class="card">
                                 <!-- ////////////////// -->
                                 <div style="background: #7c83fd; cursor:pointer;" class="card-header border-0" data-toggle="collapse"  href="<?php echo '#collapseOne' . $i  ?>" aria-controls="collapse1">
