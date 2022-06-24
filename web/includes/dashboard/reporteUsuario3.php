@@ -174,7 +174,7 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                     <div class="card-header">
                         <div class="row mb-2">
                             <div class="col-12">
-                                <h3 class="card-title" style="color:#737BF1;">Cantidad de Usuarios
+                                <h3 style="color:#737BF1; margin-left: 30px; font-size: 20px;">Cantidad de Usuarios
                                     <!--<span style="color:#BEC1F3;">(<?php echo $resultUsu['cantidad']; ?>)</span>-->
                                 </h3>
                             </div>
