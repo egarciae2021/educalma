@@ -47,10 +47,12 @@
 body {
     margin: var(--header-height) 0 0 0;
     padding: 1rem 1rem 0;
-    font-family: var(--body-font);
+    /* font-family: var(--body-font); */
     font-size: var(--normal-font-size);
     background: #f7f7f7;
     color: var(--text-color);
+    font-family: 'Baloo Tamma 2', cursive;
+    
 }
 
 h3 {

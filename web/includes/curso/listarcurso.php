@@ -27,12 +27,15 @@
         float: left;
         /**/
 
-        border-radius: 5px ; 
-        border: 1px solid #57B3F7;
+        border-radius: 10px ; 
+        border: 1px solid #7C83FD;
         background-repeat: no-repeat;
         background-image: url("./assets/img/buscar.png");
-        background-position: 8px 5px;
+        background-position: 310px 5px;
         background-size: 25px 25px;
+        width: 25em;
+        height: 3em;
+        left: -187px;
 
         }
 
@@ -40,9 +43,9 @@
         .dataTables_filter label {
 
         position: relative;
-            top: 5px;
+            top: 8px;
             
-            left: 38px;
+            left: -53px;
             /*font-weight: bold;*/
             width: 280px;
 
@@ -61,7 +64,7 @@
         }
 
                 
-            .boton3 {
+        .boton3 {
         color: #737BF1 !important;
         padding: 0.5em 1.2em;
         background: rgba(0,0,0,0);
@@ -75,6 +78,7 @@
         background: #737BF1;
         color: white !important;
         }
+
         
     </style>
    
