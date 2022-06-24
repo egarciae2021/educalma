@@ -1,7 +1,6 @@
 $(document).ready(()=>{
-    console.log("red");
-});
-
+    
+})
 const completarTabla = ()=>{
     //filtros
     const nombre = document.getElementById("inputNombre").value

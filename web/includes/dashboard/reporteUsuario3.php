@@ -56,19 +56,65 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
 }
 
 .filters {
-
+    padding: 2%;
     background: #7C83FD;
     /*border-radius: 20px !important;*/
 
 }
 
-@media screen and (max-width: 720px) {}
+@media screen and (max-width:500px) {
+    .btn {
+        width: 20%;
+        margin-bottom: 10%;
+    }
+}
 
-@media screen and (max-width: 640px) {}
+@media screen and (min-width:500px) {
+    .ordernarFiltros{
+        overflow: hidden;
+    }
 
-@media (max-width: 429px) {}
+    .filters {
+        width:90%;
+        float:left;
+        overflow:hidden;
+    }
 
-@media (max-width: 429px) {}
+    .form-group {
+        float:left;
+        width:130px;
+        margin-right:1%;
+    }
+
+    .btnVer{
+        margin-left:1%;
+        float:left;
+    }
+
+    .date{
+        width:180px;
+    }
+
+}
+
+@media screen and (max-width: 720px) {
+        .dataTables_filter {
+
+          float: right;
+          position: relative;
+          left: 25px;
+        }
+}
+
+@media screen and (max-width: 640px) {
+        .dataTables_filter {
+
+          float: right;
+          position: relative;
+          left: 25px;
+        }
+}
+
 </style>
 
 
@@ -99,121 +145,119 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
 
 
 
-                    <div class="col-12 row">
-
-                        <div class="col-11">
-                            <table class="table">
-                                <thead>
-                                    <tr class="filters">
-
-                                        <th>
-                                            Nombre:
-                                            <input type="text" id="inputNombre" name="nombre" class="form-control mt-2" value=""
-                                                style="border: #bababa 1px solid; color:#000000;">
-                                        </th>
-                                        <th>
-                                            Curso:
-                                            <input type="text" id="inputCurso" name="curso" class="form-control mt-2" value=""
-                                                style="border: #bababa 1px solid; color:#000000;">
-                                        </th>
-                                        <th>
-                                            Fecha de Inscripción:
-                                            <input type="date" id="inputInscripcion" name="fecha" class="form-control mt-2" value=""
-                                                style="border: #bababa 1px solid; color:#000000;">
-                                        </th>
-                                        <th>
-                                            Fecha de Finalización:
-                                            <input type="date" id="inputFinalizacion" name="fecha-final" class="form-control mt-2"
-                                                value="" style="border: #bababa 1px solid; color:#000000;">
-                                        </th>
-
-
-                                        <th>
-                                            Avance
-                                            <select  id="inputAvance" name="avance" class="form-control mt-2"
-                                                style="border: #bababa 1px solid; color:#000000;">
-
-                                                <option value="">Todos</option>
-                                                <option value=90>En Curso</option>
-                                                <option value=100>Terminado (100%)</option>
-                                            </select>
-                                        </th>
-
-                                        <th>
-                                            Estado
-                                            <select  id="inputEstado" name="estado" class="form-control mt-2"
-                                                style="border: #bababa 1px solid; color:#000000;">
-
-                                                <option value="">Todos</option>
-                                                <option value=1>Aprobado</option>
-                                                <option value=2>Desaprobado</option>
-
-                                            </select>
-                                        </th>
+                <div class=" filtros col-12 " style="width:100%;">
+                    <div class=" ml-2" >
+                        <div class="col-13 ml-4 ordernarFiltros">
+                            <div class="table">
+                                <div class="filters" style="color:white;">
+                                    <div class="form-group">
+                                        Nombre:
+                                        <input type="text" id="inputNombre" name="nombre" class="form-control mt-2"
+                                            value="" style="border: #bababa 1px solid; color:#000000;">
+                                    </div>
+                                    <div class="form-group">
+                                        Curso:
+                                        <input type="text" id="inputCurso" name="curso" class="form-control mt-2"
+                                            value="" style="border: #bababa 1px solid; color:#000000;">
+                                    </div>
+                                    <div class="form-group date">
+                                        Fecha de Inscripción:
+                                        <input type="date" id="inputInscripcion" name="fecha" class="form-control mt-2"
+                                            value="" style="border: #bababa 1px solid; color:#000000;">
+                                    </div>
+                                    <div class="form-group date">
+                                        Fecha de Finalización:
+                                        <input type="date" id="inputFinalizacion" name="fecha-final"
+                                            class="form-control mt-2" value=""
+                                            style="border: #bababa 1px solid; color:#000000;">
+                                    </div>
 
 
-                                    </tr>
-                                </thead>
-                            </table>
-                        </div>
+                                    <div class="form-group">
+                                        Avance
+                                        <select id="inputAvance" name="avance" class="form-control mt-2"
+                                            style="border: #bababa 1px solid; color:#000000;">
 
-                        <div style="margin-top: 28px; class=" col-1">
-                            <input type="submit" class="btn" value="Ver" onClick="completarTabla()"
-                                style="margin-top: 38px; background-color: #7C83FD; color: white;">
+                                            <option value="">Todos</option>
+                                            <option value=90>En Curso</option>
+                                            <option value=100>Terminado (100%)</option>
+                                        </select>
+                                    </div>
 
-                        </div>
+                                    <div class="form-group">
+                                        Estado
+                                        <select id="inputEstado" name="estado" class="form-control mt-2"
+                                            style="border: #bababa 1px solid; color:#000000;">
+
+                                            <option value="">Todos</option>
+                                            <option value=1>Aprobado</option>
+                                            <option value=2>Desaprobado</option>
+
+                                        </select>
+                                    </div>
 
 
-                        <p style="margin-left: 20px; font-weight: bold; color:#8CC9DB;"><i
-                                class="mdi mdi-file-document"></i> <?php ?> Resultados encontrados</p>
-
-
-
-
-                <div style="margin-left: 30px;" class="card mt-2">
-                    <div class="card-header">
-                        <div class="row mb-2">
-                            <div class="col-12">
-                                <h3 style="color:#737BF1; margin-left: 30px; font-size: 20px;">Cantidad de Usuarios
-                                    <!--<span style="color:#BEC1F3;">(<?php echo $resultUsu['cantidad']; ?>)</span>-->
-                                </h3>
+                                </div>
+                            </div>
+                            <div class="btnVer">
+                                <input type="submit" class="btn" value="Ver" onClick="completarTabla()"
+                                    style="background-color: #7C83FD; color: white;">
                             </div>
                         </div>
+
+
+
                     </div>
+                    <p style="margin-left: 20px; font-weight: bold; color:#8CC9DB;"><i
+                            class="mdi mdi-file-document ml-4"></i>Resultados encontrados</p>
 
-                    <div class="card-body">
-                        <div class="table-responsive">
-                            <table id="tableUsuarios" class="table table-borderless dt-responsive text-left"
-                                cellspacing="0" width="100%">
-                                <thead>
-                                    <tr style="background-color:#737BF1;">
-                                        <th style="border-radius: 10px 0 0 10px;">ID Usuario</th>
-                                        <th scope="col">Nombre Completo</th>
-                                        <th>Curso</th>
-                                        <th>Fecha de Inscripción</th>
-                                        <th>Fecha de Finalización</th>
-                                        <th>Avance</th>
-                                        <th style="border-radius: 0 10px 10px 0;">Nota</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="body-table-filter">
 
-                                </tbody>
-                            </table>
+
+
+                    <div style="margin-left: 30px;" class="card mt-2 row">
+                        <div class="card-header">
+                            <div class="row mb-2">
+                                <div class="col-12">
+                                    <h3 style="color:#737BF1; margin-left: 30px; font-size: 20px;">Cantidad de Usuarios
+                                        <!--<span style="color:#BEC1F3;">(<?php echo $resultUsu['cantidad']; ?>)</span>-->
+                                    </h3>
+                                </div>
+                            </div>
                         </div>
-                        <!-- /.card-body -->
-                    </div>
-                </div>
-              <!-- FIN DE TABLA DE APROBADOS -->
 
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table id="tablaCursos" class="table table-borderless dt-responsive text-left"
+                                    cellspacing="0" width="100%">
+                                    <thead>
+                                        <tr style="background-color:#737BF1;">
+                                            <th style="border-radius: 10px 0 0 10px;">ID Usuario</th>
+                                            <th scope="col">Nombre Completo</th>
+                                            <th>Curso</th>
+                                            <th>Fecha de Inscripción</th>
+                                            <th>Fecha de Finalización</th>
+                                            <th>Avance</th>
+                                            <th style="border-radius: 0 10px 10px 0;">Nota</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="body-table-filter">
+
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- /.card-body -->
+                        </div>
+                    </div>
+                    <!-- FIN DE TABLA DE APROBADOS -->
+
+                </div>
             </div>
         </div>
-    </div>
 
-    <br>
-    <br>
-    <br>
-<script src="assets/js/reporteUsuario.js"></script>
+        <br>
+        <br>
+        <br>
+        <script src="assets/js/reporteUsuario.js"></script>
 </main>
 
 
