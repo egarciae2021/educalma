@@ -14,7 +14,7 @@
     <style>
 
         .header {
-            margin-left: -100px;
+            margin-left: -95px;
         }
 
         .listaCursos {
