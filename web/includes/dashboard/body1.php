@@ -55,19 +55,19 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                                 }else{
                             ?>
 
-                                <?php  if (isset($_SESSION['Logueado']) && $_SESSION['Logueado'] === true && $dato['sexo'] === 1) { // 1 -> Masculino?>
+                                <?php  if ($dato['sexo'] === 1) { // 1 -> Masculino?>
 
                                     <img src="./assets/images/avatar_hombre.png" alt="foto_curso" class="header__img__side-dashboard"> 
                                   
 
-                                <?php } else if (isset($_SESSION['Logueado']) && $_SESSION['Logueado'] === true && $dato['sexo'] === 2) { // 2 -> Femenino?>
+                                <?php } else if ($dato['sexo'] === 2) { // 2 -> Femenino?>
 
                                     <img src="./assets/images/avatar_mujer.png" alt="foto_curso" class="header__img__side-dashboard">
 
-                                <?php } else if (isset($_SESSION['Logueado']) && $_SESSION['Logueado'] === true && $dato['sexo'] === 3) { // 3 -> No binario?>
+                                <?php } else if ($dato['sexo'] === 3) { // 3 -> No binario?>
 
                                     
-                                <?php } else if (isset($_SESSION['Logueado']) && $_SESSION['Logueado'] === true && $dato['sexo'] === 4) { // 4 -> Prefiero no decir?>
+                                <?php } else if ($dato['sexo'] === 4) { // 4 -> Prefiero no decir?>
 
 
                                 <?php  } ?>
