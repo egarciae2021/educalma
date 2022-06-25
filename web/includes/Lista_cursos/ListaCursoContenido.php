@@ -159,51 +159,60 @@
                                     </div>
 
 
-                                    <!--Contenedor del costo del curso y mensaje si se compró o no el curso.-->
+                                    <!--Contenedor del costo del curso, mensaje si se compró o no el curso y del link "Leer Más".-->
                                     <div class="container-card-description" style="padding-top: 1px; margin-top: 1px; font-weight: bold; font-size: 15px; color: black; position: relative;">
-                                    
-                                    <?php if($dato2['id_cursoInscrito'] == NULL){ ?>
+                                        
+                                                <?php if($dato2['id_cursoInscrito'] == NULL){ ?>
+                                
+                                                    <p>
+                                                        <?php
+                                                            if($dato['costoCurso']!=0 && $dato['costoCurso'] != "Gratis"){
+                                                                echo 'S/ ' . $dato['costoCurso'];
+                                                            }else{
+                                                                echo 'Gratis';
+                                                            }
+                                                        ?>
+                                                    </p>
+                                
+                                                <?php }else{ ?>
+                                
+                                                    <p>
+                                                        <?php
+                                                            if($dato['costoCurso']!=0 && $dato['costoCurso'] != "Gratis"){
+                                                                echo 'S/ ' . $dato['costoCurso'],"","<span style='position: relative; left: 100px; color: #63F70E;'>Comprado</span>";
+                                                            }else{
+                                                                echo 'Gratis',"","<span style='margin-left: 110px; color: #63F70E;'>Comprado</span>";
+                                                            }
+                                                        ?>
+                                                    </p>
+                                                    <!--<p>S/.<?php echo $dato['costoCurso'],"","<span style='position: relative; left: 100px; color: #63F70E;'>Comprado</span>" ?></p>-->
+                                
+                                                <?php } ?>
             
-                                        <p>
-                                            <?php
-                                                if($dato['costoCurso']!=0 && $dato['costoCurso'] != "Gratis"){
-                                                    echo 'S/ ' . $dato['costoCurso'];
+                                                <?php
+                                                if(isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)){
+                                                ?>
+                                                    <!--Link "Leer Más"-->
+                                                    <div class="container-card-link" style="margin: auto;">
+                                                        <a href="<?php echo $paginaRed ?>.php?id=<?php echo $dato['idCurso']; ?><?php if(!empty($dato2)){?>&idCI=<?php echo $dato2['id_cursoInscrito']; }?>">
+                                                        <center><strong>Leer Más</strong></center>
+                                                        </a>
+                                                    </div>
+                                                <?php
                                                 }else{
-                                                    echo 'Gratis';
+                                                ?>
+                                                
+                                                    <!--Link "Leer Más"-->
+                                                    <div class="container-card-link" style="margin: auto;">
+                                                        <a href="iniciosesion.php">
+                                                        <center><strong>Leer Más</strong></center>
+                                                        </a>
+                                                    </div>
+                                                <?php
                                                 }
-                                            ?>
-                                        </p>
-            
-                                    <?php }else{ ?>
-            
-                                        <p>S/.<?php echo $dato['costoCurso'],"","<span style='margin-left: 167px; color: #63F70E;'>Comprado</span>" ?></p>
-            
-                                    <?php } ?>
-
-                                    <?php
-                                    if(isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)){
-                                    ?>
-                                        <!--Link "Leer Más"-->
-                                        <div class="container-card-link" style="margin: auto;">
-                                            <a href="<?php echo $paginaRed ?>.php?id=<?php echo $dato['idCurso']; ?><?php if(!empty($dato2)){?>&idCI=<?php echo $dato2['id_cursoInscrito']; }?>">
-                                            <center><strong>Leer Más</strong></center>
-                                            </a>
-                                        </div>
-                                    <?php
-                                    }else{
-                                    ?>
-                                    
-                                        <!--Link "Leer Más"-->
-                                        <div class="container-card-link" style="margin: auto;">
-                                            <a href="iniciosesion.php">
-                                            <center><strong>Leer Más</strong></center>
-                                            </a>
-                                        </div>
-                                    <?php
-                                    }
-                                    ?>
-                                    
-                                </div>
+                                                ?>
+                        
+                                    </div>
 
                             
                         </div>
