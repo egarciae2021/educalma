@@ -58,7 +58,7 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                                 <?php  //if (isset($_SESSION['Logueado']) && $_SESSION['Logueado'] === true && $dato['sexo'] === 1) { // 1 -> Masculino?>
 
                                     <!--<img src="./assets/images/avatar_hombre.png" alt="foto_curso" class="header__img__side-dashboard"> -->
-                                    <img src="" alt="foto_curso" class="header__img__side-dashboard">
+                                    <img src="./assets/images/avatar_hombre.png" alt="foto_curso" class="header__img__side-dashboard">
 
                                 <?php // } else if (isset($_SESSION['Logueado']) && $_SESSION['Logueado'] === true && $dato['sexo'] === 2) { // 2 -> Femenino?>
 
