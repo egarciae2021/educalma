@@ -370,11 +370,11 @@
                 }
             }
             $inicio = ($_GET['pag'] - 1) * $cantidad_paginas;
-            $sql3 = "SELECT * FROM cursos WHERE permisoCurso=1 LIMIT :iniciar,:narticulos";
+            $sql3 = "SELECT * FROM cursos WHERE permisoCurso=1 AND estado=1";
 
             $query3 = $pdo->prepare($sql3);
-            $query3->bindParam(':iniciar', $inicio, PDO::PARAM_INT);
-            $query3->bindParam(':narticulos', $cantidad_paginas, PDO::PARAM_INT);
+            //$query3->bindParam(':iniciar', $inicio, PDO::PARAM_INT);
+            //$query3->bindParam(':narticulos', $cantidad_paginas, PDO::PARAM_INT);
             $query3->execute();
             $conteo = 0;
             while ($dato = $query3->fetch(PDO::FETCH_ASSOC)) {
