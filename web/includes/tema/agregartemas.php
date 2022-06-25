@@ -102,6 +102,7 @@
                                 <a style="cursor: pointer;" class="btn btn-outline-secondary btn-back btn-sm" href="agregarModulos.php?id=<?php echo $idCurso=$_GET['idCurso'];?>" role="button">
                                     <i class="fas fa-arrow-left"></i> Atrás
                                 </a>
+                                
                             </div>
                             <!-- fin seccion otros -->
                         </div>
@@ -121,47 +122,38 @@
                                 Tema del <?php echo $dato2['nombreModulo'];?>
                             </div>
 
-
-
-
-
-
-
-
-
-
-
                             <!--/////////////////-->
-
-                            <div class="form-row ">
-
-                                <div class="form-group col-md-6 ">
-                                    <label class="form-label">Nombre del tema</label>
-                                    <input type="text" class="form-control" name="temas_agregar" id="temas_agregar" placeholder="Ingrese un nombre" aria-label="TemaAgr" aria-describedby="temaAgr-addon" required>
+                            <div id="agregarTema" >
+                                <div class="form-row ">
+    
+                                    <div class="form-group col-md-6 ">
+                                        <label class="form-label">Nombre del tema</label>
+                                        <input type="text" class="form-control" name="temas_agregar" id="temas_agregar" placeholder="Ingrese un nombre" aria-label="TemaAgr" aria-describedby="temaAgr-addon" required>
+                                    </div>
+    
+                                    <div class="form-group col-md-6 ">
+                                        <label class="form-label">Link del vídeo</label>
+                                        <input type="text" class="form-control" name="link" id="link" placeholder="Ingrese un link" aria-label="ApellidosMat" aria-describedby="apellidoMat-addon" required>
+                                    </div>
+    
                                 </div>
-
-                                <div class="form-group col-md-6 ">
-                                    <label class="form-label">Link del vídeo</label>
-                                    <input type="text" class="form-control" name="link" id="link" placeholder="Ingrese un link" aria-label="ApellidosMat" aria-describedby="apellidoMat-addon" required>
+    
+                                <div class="form-row">
+    
+                                    <div class="form-group col-12">
+                                        <label class="form-label">Descripción del tema</label>
+                                        <textarea class="form-control" placeholder="Añadir descripción" rows="3" id="descripcio_tema" name="descripcio_tema" required></textarea>
+                                    </div>
                                 </div>
-
-                            </div>
-
-                            <div class="form-row">
-
-                                <div class="form-group col-12">
-                                    <label class="form-label">Descripción del tema</label>
-                                    <textarea class="form-control" placeholder="Añadir descripción" rows="3" id="descripcio_tema" name="descripcio_tema" required></textarea>
-                                </div>
-                            </div>
-
-                            <div class="form-row">
-                                <div class="form-group col-12">
-                                    <a>
-                                        <button style="background-color: #74F077" type="submit" class="btn btn-block btn-add" onclick="alertaAgregar()">
-                                            <i class="fas fa-save"></i> Guardar Tema
-                                        </button>
-                                    </a>
+    
+                                <div class="form-row">
+                                    <div class="form-group col-12">
+                                        <a>
+                                            <button style="background-color: #74F077" type="submit" class="btn btn-block btn-add" onclick="alertaAgregar()">
+                                                <i class="fas fa-save"></i> Guardar Tema
+                                            </button>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                                 
@@ -170,7 +162,7 @@
 
 
 
-
+                            
 
                             <!-- Mensaje de alerta  -->
  
@@ -180,6 +172,7 @@
  
                                             const agregar = document.querySelector('#descripcio_tema,#link,temas_agregar');
                                             let formulario = document.querySelector('#o');
+                                            
                                             if (agregar.value.length != 0 && agregar.value.length != 1) {
                                                 Swal.fire({
  
@@ -219,8 +212,8 @@
                             <!-- Tema registrado -->
                             <div class="scroll">
 
-                                <div class="form-row">
-
+                                <div class="form-row temaRegister">
+                                    
                                     <?php
                                         error_reporting(0);
                                         require_once 'database/databaseConection.php';
@@ -258,7 +251,17 @@
                                             <i class="fas fa-trash-alt"></i></button>
                                         </a>
                                     </div>
-                        </form>
+                                </div>
+                            </div>
+                            <script>
+                                let childs = document.querySelector('.temaRegister').childNodes;
+                                let butonIngresar = document.querySelector('#agregarTema');
+                                
+                                if (childs){
+                                    butonIngresar.classList.add('display-none');
+                                }
+                            </script>
+                        
 
                         <!-- Modal Editar tema --> 
                         <div class="modal fade" id="ModaleditarTema<?php echo $dato3['idTema']?>" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
