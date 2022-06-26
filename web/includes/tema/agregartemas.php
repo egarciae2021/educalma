@@ -133,7 +133,8 @@
     
                                     <div class="form-group col-md-6 ">
                                         <label class="form-label">Link del vídeo</label>
-                                        <input type="text" class="form-control" name="link" id="link" placeholder="Ingrese un link" aria-label="ApellidosMat" aria-describedby="apellidoMat-addon" required>
+                                        <input type="text" id="linkValidate" class="form-control" name="link" id="link" placeholder="Ingrese un link" aria-label="ApellidosMat" aria-describedby="apellidoMat-addon" required>
+                                        <label for="linkValidate" style="color:red; display:none" id="labelLinkValidate">Ingresar Link valido</label>
                                     </div>
     
                                 </div>
@@ -149,7 +150,7 @@
                                 <div class="form-row">
                                     <div class="form-group col-12">
                                         <a>
-                                            <button style="background-color: #74F077" type="submit" class="btn btn-block btn-add" onclick="alertaAgregar()">
+                                            <button style="background-color: #74F077" type="submit" class="btn btn-block btn-add" id="buttonEnviar">
                                                 <i class="fas fa-save"></i> Guardar Tema
                                             </button>
                                         </a>
@@ -168,6 +169,7 @@
  
                                     <!-- Mensaje de alerta  -->
                                     <script>
+
                                         function alertaAgregar() {
  
                                             const agregar = document.querySelector('#descripcio_tema,#link,temas_agregar');
@@ -378,6 +380,7 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.js"></script>
+<script src="assets/js/validarLink.js"></script>
 <script src="assets/js/validarCategoria.js"></script>
 <script src="assets/js/plugins/sweetalert2.all.min.js"></script>
 <script src="assets/js/validarModulo.js"></script>
