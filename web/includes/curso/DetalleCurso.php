@@ -21,7 +21,7 @@
 .imagecuadr{
   padding: 6px;
   border-radius: 10px;
-  box-shadow: 2px 4px 4px #7c83fd;
+  box-shadow: 4px 4px #7c83fda6;
 }
 
 .boton4:hover {
@@ -216,7 +216,7 @@ body {
 
 
     <!-- pppp -->
-    <div class="container-course bg-light" style="min-height: 100vh;">
+    <div class="container-course bg-light" style="min-height: 100vh;background: rgb(231,244,255);background: linear-gradient(0deg, rgba(231,244,255,1) 0%, rgba(231,244,255,1) 21%, rgba(224,199,229,1) 50%);">
 
         <!-- zzzz -->
         <div class="bg-dark11">
@@ -267,14 +267,14 @@ body {
                                                 if($dato20['privilegio']==1){
                                             ?>
 
-                                                    <span style="color: #565656; font-size: 15px;">Creado por la Fundación CALMA.</span>
+                                                    <span style="color: #fff; font-size: 15px;">Creado por la Fundación CALMA.</span>
 
                                             <?php 
                                                 }
 
                                                 if($dato20['privilegio']==2){
                                             ?>
-                                                    <span style="color: #565656; font-size: 15px;">Creado por <?php echo " " . $dato20['nombres'] . " " . $dato20['apellido_pat'] . " " . $dato20['apellido_mat'] . "."?></span>
+                                                    <span style="color: #fff; font-size: 15px;">Creado por <?php echo " " . $dato20['nombres'] . " " . $dato20['apellido_pat'] . " " . $dato20['apellido_mat'] . "."?></span>
                                             <?php 
                                                 }
                                             ?>                    
@@ -649,7 +649,7 @@ body {
 
         <!-- mmmm -->
         <div class="bg-light" style="height: 100%;">
-            <div class="row py-5" style="height: 100%;">
+            <div class="row py-5" style="height: 100%;background: rgb(224,199,229);background: linear-gradient(0deg, rgba(224,199,229,1) -2%, rgba(255,255,255,1) 77%);">
                 <div class="col-12 col-sm-12 col-md-5 col-lg-4 col-xl-3 info-course-left" style="border: 1px solid red;">
                     <h4>Contenido del curso</h4>
                 </div>
