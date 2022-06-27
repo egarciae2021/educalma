@@ -1,445 +1,405 @@
 <head>
-    <link rel="stylesheet" href="assets/css/cursos.css">
-</head>
-
-<style>
-    .order-card-custom {
-        display: grid;
-        grid-template-columns: 1fr;
-        max-width: 1600px;
-        min-width: 100px;
-       /*  gap: 10px;
-        width: 90%; */
-        /* max-width: 1270px; */
-    }
-    @media (min-width: 660px) {
-        .order-card-custom {
-            grid-template-columns: repeat(2, 1fr);
-        }
-    }
-
-    @media (min-width: 992px) {
-        .order-card-custom {
-            grid-template-columns: repeat(3, 1fr);
-        }
-    }
-
-    @media (min-width: 1300px) {
-        .order-card-custom {
-            grid-template-columns: repeat(4, 1fr);
-        }
-    }
-
-    @media (min-width: 1600px) {
-        .order-card-custom {
-            grid-template-columns: repeat(5, 1fr);
-        }
-    }
-
-    @media (min-width: 1800px) {
-        .order-card-custom {
-            grid-template-columns: repeat(5, 1fr);
-        }
-    }
-
-    @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;300;500&display=swap");
-    .container-fluid .row .col-10 .section-title-course {
-        font-family: "Inter", sans-serif;
-        font-style: normal;
-        font-weight: bold;
-        font-size: 24px;
-        text-transform: uppercase;
-        color: #7c83fd;
-        padding: 1rem 3rem 0.5rem 3rem;
-        width: 100%;
-    }
-    .container-fluid .row .col-12 .section-title-course hr {
-        width: 100%;
-        border: 2px solid #99ccff;
-        margin: 0.5rem 0rem 1rem 0rem;
-    }
-    .container-fluid .row .col-12 .card {
-        max-width: 423px;
-        max-height: 179px;
-        margin: 0 auto;
-        margin-bottom: 2rem;
-        display: flex;
-        margin-left:auto;
-        margin-right:auto;
-    }
-    .container-fluid .row .col-10 .card .col-5 .container-image {
-        width: 100%;
-        height: 165px;
-        position: relative;
-        display: flex;
-        justify-content: center;
-        overflow: hidden;
-    }
-
-    .container-fluid .row .col-10 .card .col-5 .container-image img {
-        max-height: 100%;
-        max-width: 100%;
-    }
-    .container-fluid .row .col-10 .card .col-7 {
-        padding: 1rem;
-    }
-
-    .container-fluid .row .col-10 .card .col-7 .container-title {
-        font-family: "Inter", sans-serif;
-        font-style: normal;
-        font-weight: bold;
-        font-size: 18px;
-        text-transform: uppercase;
-        color: #000000;
-        
-    }
-
-    .container-fluid .row .col-10 .card .col-7 .container-title a {
-        font-size: 18px;
-        color: #4f52d6;
-    }
-    .container-fluid .row .col-10 .card .col-7 .container-descrition {
-        font-family: "Inter", sans-serif;
-        font-weight: normal;
-        font-size: 16px;
-        color: #b4b4b4;
-        margin-top: 0.5rem;
-        padding-right: 3rem;
-        min-width: 270px;
-        min-height: 80px;
-        display: flex;
-        
-    }
-
-    .container-fluid .row .col-10 .card .col-7 .container-link {
-        font-family: "Inter", sans-serif;
-        font-weight: bold;
-        font-size: 16px;
-        color: #33c6e7;
-        margin-top: 1rem;
-        text-decoration: none;
-    }
-
-    .container-fluid .row .col-10 .card .col-7 .container-link a {
-        text-decoration: none;
-        color: #33c6e7;
-        text-align: justify;
-    }
-
-    @media (max-width: 1241px) {
-        .container-fluid .row .col-10 .card .col-7 .container-descrition {
-            font-size: 14px;
-            padding-right: 2rem;
-        }
-        .container-fluid .row .col-10 .card .col-7 .container-link {
-            font-size: 14px;
-        }
-    }
-
-    @media (max-width: 1055px) {
-        .container-fluid .row .col-10 .card .col-7 {
-            padding: 1rem 0.5rem;
-        }
-        .container-fluid .row .col-10 .card .col-7 .container-descrition {
-            font-size: 13px;
-            padding-right: 1rem;
-        }
-        .container-fluid .row .col-10 .card .col-7 .container-link {
-            font-size: 13px;
-        }
-    }
-
-    @media (max-width: 930px) {
-        .container-fluid .row .col-10 .card .col-7 .container-descrition {
-            padding-right: 1.5rem;
-        }
-    }
-
-    @media (max-width: 767px) {
-        .container-fluid .row .col-10 .card .col-7 .container-descrition {
-            font-size: 16px;
-            padding-right: 3rem;
-        }
-        .container-fluid .row .col-10 .card .col-7 .container-link {
-            font-size: 16px;
-        }
-    }
-
-    @media (max-width: 440px) {
-        .container-fluid .row .col-10 .card .col-7 .container-descrition {
-            font-size: 14px;
-            padding-right: 4rem;
-        }
-        .container-fluid .row .col-10 .card .col-7 .container-link {
-            font-size: 14px;
-        }
-    }
-
-    @media (max-width: 379px) {
-        .container-fluid .row .col-10 .card .col-7 .container-descrition {
-            font-size: 13px;
-            padding-right: 3rem;
-        }
-        .container-fluid .row .col-10 .card .col-7 .container-link {
-            font-size: 13px;
-        }
-    }
-    /*cartillas*/
-
-    .container-fluid .row .section-title-courses {
-        font-family: "Inter", sans-serif;
-        font-style: normal;
-        font-weight: bold;
-        font-size: 24px;
-        text-transform: uppercase;
-        color: #7c83fd;
-        padding: 1rem 3.5rem;
-        width: 100%;
-    }
-
-    .container-fluid .container-card-course .row {
-        margin: 0;
-        padding: 0;
-        width: 100%;
-    }
-    .container-fluid .container-card-course .row .col-10 {
-        padding: 0.8rem;
-    }
-
-    .container-fluid .container-card-course .row .col-10 .card {
-        max-width: 320px;
-        max-height: 400px;
-        height: 100%;
-        width: 100%;
-        border-radius: 0;
-        margin: 0 auto;
-        border: 1px solid lightgray;
-        text-align: justify;
-    }
-    .container-fluid
-    .container-card-course
-    .row
-    .col-10
-    .card
-    .container-card-image {
-        width: 100%;
-        height: 165px;
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        overflow: hidden;
-    }
-    .container-fluid
-    .container-card-course
-    .row
-    .col-10
-    .card
-    .container-card-image
-    img {
-        min-height: 100%;
-        min-width: 100%;
-    }
-
-    .container-fluid
-    .container-card-course
-    .row
-    .col-10
-    .card .container-card-title {
-        text-transform: uppercase;
-        color: dimgray;
-        font-family: "Inter", sans-serif;
-        font-style: normal;
-        font-weight: bold;
-        font-size: 0.8rem;
-        padding: 0.5rem 0.5rem;
-        }
-
-    .container-fluid
-    .container-card-course
-    .row
-    .col-10
-    .card .container-card-description{
-        color: gray;
-        font-family: "Inter", sans-serif;
-        font-size: 0.8rem;
-        padding: 0.5rem;
-        }
-
-    .container-card-link{
-      position: relative;
-      left: 10px;
-        
-    }
-
-    .card{
-        width: 294.42px;
-        height: 366.21px;
-        border: 1px solid gray;
-        }
-
-    .card .container-card-link a{
-        display: inline-block;
-        padding: 10px;
-        margin-top: 10px;
-        text-decoration: none;
-        color: #e7e7e7;
-        background-color:#168eb3;
-        border-radius: 50px;
-        transition: all 400ms ease;
-        margin-bottom: 5px;
-        width: 150px;
-    }
-
-    .card .container-card-link a:hover{
-        background-color: #127b9b;
-    }
-
-    .container-fluid
-    .container-card-course
-    .row
-    .col-10
-    .card
-    .container-card-image {
-        width: 100%;
-        height: 165px;
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        overflow: hidden;
-    }
-
-    .container-fluid
-    .container-card-course
-    .row
-    .col-11
-    .card
-    .container-card-image
-    img {
-        min-height: 100%;
-        min-width: 100%;
-    }
-
-</style>
+  <link rel="shortcut icon" href="assets/images/logo_edu.png">
+    <link rel="stylesheet" href="assets/css/cursos.css" /></head>
 
 
-<body style="background-color: #fff;">
-    <?php
-    if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
-    ?>
-    <div style="position: relative; top: 20px;" class="container-fluid px-0">
+<br><br><br>
+
+
+<!------------------------------------------------------------->
+<div style="position: relative; top: -40px;" class="container-fluid px-0">
+
+        <div class="container-card-course">
+            <div class="row pt-1 container" style="margin: 0 auto;">
+
+                <?php
+                $pdo = Database::connect();
+                error_reporting(0);
+                $idcategoria = $_GET['idcate'];
+                $sql2 = "SELECT * FROM cursos WHERE permisoCurso=1 AND estado=1 ORDER BY cursos.idCurso DESC";
+                $query2 = $pdo->prepare($sql2);
+                $query2->execute();
+                $contar = $query2->rowCount();
+
+                $cantidad_paginas = 3;
+                $page = $contar / $cantidad_paginas;
+                $page = ceil($page);
+                if ($contar > 0) {
+                    if ($_GET['pag'] > $page || $_GET['pag'] < 1) {
+                        header('Location:sidebarCursos.php?pag=1');
+                    }
+                }
+
+                $inicio = ($_GET['pag'] - 1) * $cantidad_paginas;
+                $sql3 = "SELECT * FROM cursos where permisoCurso=1 AND estado=1 order by idCurso desc LIMIT 3";
+                // SELECT * FROM `cursos`order by idCurso DESC LIMIT 3 
+
+                $query3 = $pdo->prepare($sql3);
+                // $query3->bindParam('iniciar', $inicio, PDO::PARAM_INT);
+                // $query3->bindParam('narticulos', $cantidad_paginas, PDO::PARAM_INT);
+                $query3->execute();
+                $conteo = 0;
+                while ($dato = $query3->fetch(PDO::FETCH_ASSOC)) {
+
+                    $conteo = $conteo + 1;
+
+                    //ALGORITMO CURSO INSCRITO Y NO INSCRITO
+                    if (isset($_SESSION['codUsuario'])) {
+                        $cursoID = $dato['idCurso'];
+                        $userID = $_SESSION['codUsuario'];
+                        $sql4 = "SELECT * FROM cursoinscrito where curso_id='$cursoID' and usuario_id = '$userID'";
+                        $query4 = $pdo->prepare($sql4);
+                        $query4->execute(array());
+                        $dato2 = $query4->fetch(PDO::FETCH_ASSOC);
+                        if (empty($dato2)) {
+                            $paginaRed = "detallecurso";
+                        } else {
+                            $paginaRed = "curso";
+                        }
+                    } else {
+                        $paginaRed = "detallecurso";
+                    }
+                ?>
+                
+                <?php
+                }
+                ?>
+
+            </div>
+        </div>    
+ 
+
+
+
+
+
+
+
+
+    <!--CURSOS COMPRADOS (aquí está solo el título y el buscador)-->
+    <div class="container-fluid px-0">
+
+
+        <!--Título-->
         <div class="row">
             <div class="col-12">
                 <div class="row mb-4 mt-4" style="background-color: #e7f4ff; margin-left: 25px; margin-right: 25px; border-radius: 50px;">
                     <div class="container section-title-course">
-                        <i class="fas fa-shapes mr-3"></i>  Cursos Comprados
+                        <i class="fas fa-shapes mr-3"></i>Cursos comprados
                         <hr>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- la direccion de la nueva imagen para cursos es assets/images/curso_educalma.png -->
-
-        <div class="container-fluid px-0">
-            <div class="container-card-course">
-                <div class="row pt-1 container order-card-custom" style="margin:10px auto;">
-
-                    <?php
-                    error_reporting(0);
-                    require_once '././database/databaseConection.php';
-                    $pdo = Database::connect();
-                    $userID = $_SESSION['codUsuario'];
-
-                    $sql = "SELECT * FROM cursoinscrito where usuario_id='$userID' ORDER BY curso_id DESC";
-                    $q = $pdo->prepare($sql);
-                    $q->execute(array());
-                    $dato = $q->fetch(PDO::FETCH_ASSOC);
 
 
-                    if (empty($dato)) {
-                    } else {
-
-                        $pdo = Database::connect();
-                        $sql = "SELECT * FROM cursoinscrito where usuario_id='$userID' ORDER BY curso_id DESC";
-                        $q = $pdo->prepare($sql);
-                        $q->execute(array());
-
-                        while ($dato2 = $q->fetch(PDO::FETCH_ASSOC)) {
-                            $cursoID = $dato2['curso_id'];
-
-                            $pdo3 = Database::connect();
-                            $sql3 = "SELECT * FROM cursos where idCurso='$cursoID'";
-                            $q3 = $pdo3->prepare($sql3);
-                            $q3->execute(array());
-                            $dato3 = $q3->fetch(PDO::FETCH_ASSOC);
-
-
-                            if ($dato3['imagenDestacadaCurso'] != null) {
-
-                                echo '
-                                    <div class="col-10 col-sm-12 col-md-4 col-lg-4 col-xl-3">
-                                        <div style="border-radius: 30px;" class="card">
-                                            <div style="border-radius: 30px 30px 0 0;" class="container-card-image">
-                                                <img src="data:image/*;base64,' . base64_encode($dato3['imagenDestacadaCurso']) . '" alt="foto_curso" >
-                                            </div>
-                                    
-                                            <div class="container-card-title" style="color: black;">
-                                                <a style="float: left;"><strong>' . $dato3['nombreCurso'] . '</strong></a>
-                                            </div>
-                                            <br>
-                                            <div class="container-card-description" style="font-size: 13px; position: relative;">
-                                            ' . substr($dato3['descripcionCurso'], 0, 90) . "..." . '
-                                            </div>
-                                        
-                                            <div class="container-card-link" style="margin: auto;">
-                                                <p><a href="curso.php?id=' . $cursoID . '&idCI='.$dato2['id_cursoInscrito'].'"><strong>Ver más <i class="fa fa-arrow-right" aria-hidden="true"></i></strong></a></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    ';
-                            } else {
-
-                                echo '
-                                    <div class="col-10 col-sm-12 col-md-4 col-lg-4 col-xl-3">
-                                        <div style="border-radius: 30px;" class="card">
-                                            <div style="border-radius: 30px;" class="container-card-image">
-                                                <img src="./assets/images/curso_educalma.png" alt="foto_curso" >
-                                            </div>
-                                    
-                                            <div class="container-card-title" style="color: black;">
-                                                <a style="float: left;"><strong>' . $dato3['nombreCurso'] . '</strong></a>
-                                            </div>
-                                            <br>
-                                            <div class="container-card-description" style="font-size: 13px; position: relative; align-items:justify;">
-                                            ' . substr($dato3['descripcionCurso'], 0, 90) . "..." . '
-                                            </div>
-                                            
-                                            <div class="container-card-link" style="margin: auto;">
-                                                 <p><a href="curso.php?id=' . $cursoID .'&idCI='.$dato2['id_cursoInscrito'].'"><strong>Ver más <i class="fa fa-arrow-right" aria-hidden="true"></i></strong></a></p>
-                                            </div>
-                                    
-                                        </div>
-                                    </div>
-                                    
-                                ';
-                            }
-                        }
-                    }
-                    echo ' </div>
+        <!--Buscador-->
+        <div class="container mb-4">
+            <div class="col-12">
+                <div class="row mb-2">
+                    <div class="col-12">
+                        <div class="search_wrap search_wrap_3">
+                            <div class="search_box">
+                                <input type="text" class="input" id="buscar" name="buscar" placeholder="Buscar un curso comprado...">
+                                <div style="position: relative; top: -15px; float: right;" class="btn btn_common">
+                                    <i class="fas fa-search"></i>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>';
+                </div>
+            </div>
+            <div class="col-12">
+    
+            </div>
+        </div>
+    </div>
+    <!--FIN DE CURSOS COMPRADOS (aquí está solo el título y el buscador)-->
 
-                    Database::disconnect();
+</div>
+<!------------------------------------------------------------->
 
-                    ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--CURSOS COMPRADOS (aquí está la lista de cursos)-->
+<div style="position: relative; top: -90px;" class="container-fluid px-0" id="result">
+
+
+    <div class="container-card-course">
+
+
+
+
+        <div class="row pt-1 container" style="margin: 0 auto;">
+
+
+        <?php
+            error_reporting(0);
+            $idcategoria = $_GET['idcate'];
+            $sql2 = "SELECT * FROM cursos WHERE permisoCurso=1";
+            $query2 = $pdo->prepare($sql2);
+            $query2->execute();
+            $contar = $query2->rowCount();
+            //con este codigo se hara la division 
+            //para generar las paginas necesarias 
+            //con respecto al numero que tenga y a los campos que halla
+            $cantidad_paginas = 8;
+            $page = $contar / $cantidad_paginas;
+            $page = ceil($page);
+            //seguimos con el paginador 
+            if ($contar > 0) {
+                if ($_GET['pag'] > $page || $_GET['pag'] < 1) {
+                    header('Location:sidebarCursos.php?pag=1');
+                }
+            }
+            $inicio = ($_GET['pag'] - 1) * $cantidad_paginas;
+            $sql3 = "SELECT * FROM cursos WHERE permisoCurso=1 LIMIT :iniciar,:narticulos";
+
+            $query3 = $pdo->prepare($sql3);
+            $query3->bindParam(':iniciar', $inicio, PDO::PARAM_INT);
+            $query3->bindParam(':narticulos', $cantidad_paginas, PDO::PARAM_INT);
+            $query3->execute();
+            $conteo = 0;
+            while ($dato = $query3->fetch(PDO::FETCH_ASSOC)) {
+                $conteo = $conteo + 1;
+                //ALGORITMO CURSO INSCRITO Y NO INSCRITO
+                if (isset($_SESSION['codUsuario'])) {
+                    $cursoID = $dato['idCurso'];
+                    $userID = $_SESSION['codUsuario'];
+                    $sql4 = "SELECT * FROM cursoinscrito where curso_id='$cursoID' and usuario_id = '$userID' ";
+                    $query4 = $pdo->prepare($sql4);
+                    $query4->execute(array());
+                    $dato2 = $query4->fetch(PDO::FETCH_ASSOC);
+                    if (empty($dato2)) {
+                        $paginaRed = "detallecurso";
+                    } else {
+                        $paginaRed = "curso";
+                    }
+                } else {
+                    $paginaRed =
+                        "detallecurso";
+                }
+            ?>
+
+            <?php if($dato2['id_cursoInscrito'] != NULL){ ?>  
+
+                <!--Contenedor del curso comprado-->
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3">
+                    <div style="border-radius: 30px;" class="card">
+
+                        <!--Contenedor de la imagen-->
+                        <div style="border-radius: 30px 30px 0 0;" class="container-card-image">
+                            <?php
+                            if ($dato['imagenDestacadaCurso'] != null) {
+                            ?>
+                                <!--Imagen elegida-->
+                                <img heigth="10px"; src="data:image/*;base64,<?php echo base64_encode($dato['imagenDestacadaCurso']); ?>" alt="">
+                            <?php
+                            } else {
+                            ?>
+                                <!--Imagen por default-->
+                                <img heigth="10px"; src="./assets/images/curso_educalma.png">
+                            <?php
+                            }
+                            ?>
+                        </div>
+
+                        <!--Contenedor del nombre del curso publicado-->
+                        <div class="container-card-title" style="padding-bottom: 1px; color: black;">
+                            <a style="float: left;">
+                                <!--Nombre-->
+                                <center><strong><?php echo $dato['nombreCurso']; ?></strong></center>
+                            </a>
+                        </div>
+
+
+
+                        <!--Contenedor del nombre del profesor del curso publicado-->
+                        <div class="container-card-description" style="margin-top: 1px; padding-top: 1px; font-size: 11px;">
+
+                            <!--Código para obtener el nombre del profesor-->
+                            <?php 
+                                $idUsuario = $dato['id_userprofesor'];
+                                $sql = "SELECT * FROM usuarios WHERE id_user = '$idUsuario'";
+                                $q = $pdo->prepare($sql);
+                                $q->execute(array());
+                                $dato5 = $q->fetch(PDO::FETCH_ASSOC);
+                                $nombresProf = $dato5['nombres'];
+                                $apepaternoProf = $dato5['apellido_pat'];
+                                $apematernoProf = $dato5['apellido_mat'];
+                            ?>
+
+                            <a>
+                                            <?php 
+                                                if($dato5['privilegio']==1){
+                                            ?>
+
+                                                    <span style="color: #565656;">Creado por la Fundación CALMA.</span>
+
+                                            <?php 
+                                                }
+
+                                                if($dato5['privilegio']==2){
+                                            ?>
+                                                    <span style="color: #565656;">Creado por <?php echo " " . $dato5['nombres'] . " " . $dato5['apellido_pat'] . " " . $dato5['apellido_mat'] . "."?></span>
+                                            <?php 
+                                                }
+                                            ?>
+                            </a>
+                        </div>
+
+
+
+
+
+
+
+
+
+
+
+                        <!--Contenedor de la descripción del curso-->
+                        <div class="container-card-description" style="padding-bottom: 1px; margin-bottom: 1px; font-size: 13px; position: relative;">
+                            <!--Descripción-->
+                            <p><?php echo substr($dato['descripcionCurso'], 0, 50) . "..."; ?></p>
+                        </div>
+
+                        <!-- Link "Iniciar curso" -->
+                        <div class="container-card-description" style="padding-top: 1px; margin-top: 1px; font-weight: bold; font-size: 15px; color: black; position: relative;">
+                                    
+                            <?php if($dato2['id_cursoInscrito'] == NULL){ ?>
+            
+                                
+            
+                            <?php }else{ ?>
+            
+                                
+            
+                            <?php } ?>
+
+                                    <?php
+                                    if(isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)){
+                                    ?>
+                                        <!--Link "Iniciar Curso"-->
+                                        <div class="container-card-link" style="margin: auto;">
+                                            <a href="<?php echo $paginaRed ?>.php?id=<?php echo $dato['idCurso']; ?><?php if(!empty($dato2)){?>&idCI=<?php echo $dato2['id_cursoInscrito']; }?>">
+                                            <center><strong>Iniciar Curso</strong></center>
+                                            </a>
+                                        </div>
+                                    <?php
+                                    }else{
+                                    ?>
+                                    
+                                        <!--Link "Iniciar Curso"-->
+                                        <div class="container-card-link" style="margin: auto;">
+                                            <a href="iniciosesion.php">
+                                            <center><strong>Iniciar Curso</strong></center>
+                                            </a>
+                                        </div>
+                                    <?php
+                                    }
+                                    ?>
+            
+                        </div>
+
+                         
+                        
+
+                     
+
+                        
+
+
+
+                    </div>
+                </div>
+                <!--Fin del contenedor del curso comprado-->
 
                 <?php
-            } else {
-                header('Location:iniciosesion.php');
-            }
+                }
                 ?>
+
+                <?php
+                }
+                ?>
+
+        </div>
     </div>
-</body>
+   
+
+</div>
+<!--FIN DE CURSOS PUBLICADOS (aquí está la lista de cursos)-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--PAGINADOR-->
+<div class="row container py-4" style="margin: 0 auto; position: relative; top: -80px;">
+    <div class="col-12 mx-auto">
+        <nav aria-label="Page navigation calma">
+            <ul class="pagination justify-content-end">
+                <li class="page-item <?php if ($_GET['pag'] <= 1) echo 'disabled' ?>">
+                    <a class="page-link" href="sidebarCursos.php?pag=<?php echo $_GET['pag'] - 1; ?>&idcate=<?php echo $_GET['$idcate']; ?>" tabindex="-1">
+                        Anterior
+                    </a>
+                </li>
+                <?php for ($i = 0; $i < $page; $i++) : ?>
+                    <li class="page-item <?php echo $_GET['pag'] == $i + 1 ? 'activate' : '' ?>"><a class="page-link" href="sidebarCursos.php?pag=<?php echo $i + 1; ?>&idcate=<?php echo $_GET['idcate']; ?>"><?php echo $i + 1; ?></a></li>
+                <?php endfor ?>
+                <li class="page-item <?php if ($_GET['pag'] >= $page) echo 'disabled' ?>">
+                    <a class="page-link" href="sidebarCursos.php?pag=<?php echo $_GET['pag'] + 1; ?>&idcate=<?php echo $_GET['idcate']; ?>">Siguiente</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>
+<!--FIN DE PAGINADOR-->

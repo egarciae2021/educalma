@@ -379,3 +379,7 @@ textarea {
     height: 10rem;
     overflow: auto;
 }
+
+.display-none{
+    display: none;
+}
