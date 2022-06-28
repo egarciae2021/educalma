@@ -11,14 +11,12 @@ class Database
   
 
   /*Para conectarse a la BD local*/
-  /*
-  private static $dbName = 'educalma' ;
-  private static $dbHost = 'localhost'; 
-  private static $dbUsername = 'root';
-  private static $dbUserPassword = ''; 
-  */
-
-
+  
+  // private static $dbName = 'educalma' ;
+  // private static $dbHost = 'localhost'; 
+  // private static $dbUsername = 'root';
+  // private static $dbUserPassword = ''; 
+  
 	private static $cont  = null;
 
 	public function __construct() {
