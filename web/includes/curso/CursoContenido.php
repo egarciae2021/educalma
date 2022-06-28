@@ -11,6 +11,9 @@
    box-shadow: 0 4px 16px rgba(49, 138, 172, 1);
    transition: all 0.2s ease;
    }
+   .color1{
+      color: #7c83fd8a;
+   }
 </style>
 <body>
    <?php
@@ -162,13 +165,16 @@
                   <div class="col-auto icon-course pr-0">
                      <img src="assets/images/curso-por-internet.png" class="mr-2" alt="" style="height: 100px;">
                   </div>
-                  <div class="col title-course">
+                  <div class="col title-course" style="color: #6c74f5;">
                      <?php echo $dato4['nombreCurso']; ?>
                   </div>
                </div>
+               <div style="padding-top: 25px;color:#000" class="description-course puntos-suspensivos">
+                  <?php echo $dato4['descripcionCurso']; ?>
+               </div>
                <div class="rankin-course my-3">
-                  <i class="fas fa-star m-1"></i><i class="fas fa-star m-1"></i><i class="fas fa-star m-1"></i><i
-                     class="fas fa-star m-1"></i><i class="fas fa-star m-1"></i>
+                  <i class="fas fa-star m-1 color1"></i><i class="fas fa-star m-1 color1"></i><i class="fas fa-star m-1 color1"></i><i
+                     class="fas fa-star m-1 color1"></i><i class="fas fa-star m-1 color1"></i>
                   <span class="ml-4">20</span> Opiniones
                </div>
                <!--Código para obtener el nombre del profesor-->
@@ -191,16 +197,13 @@
                <span style="color: #565656; font-size: 14px;">Creado por <?php echo " " . $dato20['nombres'] . " " . $dato20['apellido_pat'] . " " . $dato20['apellido_mat'] . "."?></span>
                <?php 
                   }
-                  ?>    
-               <div style="padding-top: 40px;" class="description-course puntos-suspensivos">
-                  <?php echo $dato4['descripcionCurso']; ?>
-               </div>
+                  ?>
                <div class="start-course mt-5">
                   <div class="row container-start-course py-2 ml-1 my-3" style="position: relative; left: -10px;">
-                     <div class="col-6 pr-0">
+                     <div class="col-6 pr-0" style="display: flex;justify-content: space-around;">
                         <h5 class="m-0">Mira la primera clase de este curso!</h5>
                      </div>
-                     <div class="col-6">
+                     <div class="col-6" style="display: flex;justify-content: space-around;">
                         <a class="hvr-radial-out button-theme" href="Cursoiniciar.php?id=<?php echo $id;?>&idCI=<?php echo $idCI?>"<?php if ($query==0 || $vere==false) {
                            echo 'style="pointer-events: none;"';}?> >
                         <button id="btnComienzaAhora" type="button" class="btn container-button" hidden multiple>
