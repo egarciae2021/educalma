@@ -356,8 +356,8 @@
                   </div>
                </div>
             </div>
-            <div class="col-12"   style="width:760px; height:auto; float:left; position: relative; " id="certificado-temario">
-               <h5>Temario del curso</h5>
+            <div class="col-12 respons1"   style="width:760px; height:auto; float:left; position: relative; " id="certificado-temario">
+               <h5 style="color: #7C83FD;font-weight: 600;font-size: 24px;">Temario del curso</h5>
                <?php 
                   $nW=0;
                       while ($modulosC = $q6->fetch(PDO::FETCH_ASSOC)) {
@@ -366,7 +366,7 @@
                <div class="w-100">
                   <a id="btnInicioModulo" href="video.php?id=<?php echo $id;?>&idtema=<?php echo 1;?>&id_modulo=<?php echo $modulosC['idModulo']?>&nW=<?php echo $nW-1?>&idCI=<?php echo $idCI?>" class="btn px-4 mb-2 puntos-suspensivos"  style="background:#DCECFA; width:100%; text-align:left;">
                   <i class="fas fa-play mr-3"></i>
-                  <span style="color:black; width:100%;    white-space: initial;"><?php echo $modulosC['nombreModulo'] ?></span>
+                  <span style="color:black; width:100%;white-space: initial;"><?php echo $modulosC['nombreModulo'] ?></span>
                   </a>
                </div>
                <?php 
@@ -374,8 +374,8 @@
                   ?>
             </div>
             <div class="col-md-5 col-lg-5 order-1 " style="width:auto; float:right; position: relative; " >
-               <h5>Certificación del curso</h5>
-               <img src="assets/images/certificado.jpg" class="img-fluid "alt="">
+               <h5 style="color: #7C83FD;font-weight: 600;font-size: 23px;">Certificación del curso</h5>
+               <img src="assets/images/certificado.jpg" class="img-fluid"alt="">
                <div class="info">
                   <!--Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse sapiente, harum, vero molestiae magnam
                      blanditiis cum omnis magni-->

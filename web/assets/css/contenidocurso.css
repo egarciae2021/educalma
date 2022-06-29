@@ -203,7 +203,7 @@ body {
 @media (min-width:300px){
     .container-fluid .container-detalle-informacion .col-8{
     position: relative;
-    left: 45px;
+    left: 30px;
     
     margin-bottom: 20px;
     width: 300px;
@@ -261,8 +261,8 @@ body {
 @media(min-width: 950px){
 
     .col-lg-5{
-        position: relative;
-    left: 10px;
+    position: relative;
+    right: 100px;
     }
     .container-fluid .container-detalle-informacion .col-8 .container-info-course-detalle{
         width: 600px;
@@ -281,6 +281,21 @@ body {
     
        
     } */
+}
+
+@media(min-width: 950px){
+
+    .respons1{
+    position: relative;
+    left: 154px;
+    }
+}
+
+@media(min-width: 950px){
+
+    .img-fluid{
+    margin-top: 2em;
+    }
 }
 
     
