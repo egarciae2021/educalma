@@ -102,7 +102,7 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                         <h4 style="color: black; font-weight: 550; font-size: 16px; position: relative; left: 20px; top: -15px;" class="nav__subtitle-dashboard">
                             <?php
                             if (isset($_SESSION['Logueado']) && $_SESSION['Logueado'] === true) {
-                                echo $nom." ".$apepat." ".$apemat;
+                                echo $nom." "."<br>".$apepat." ".$apemat;
                             } else {
                                 echo '';
                             }
