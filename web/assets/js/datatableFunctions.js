@@ -52,6 +52,7 @@ $("#tableUsuarios").DataTable({
   "lengthChange": false, 
   "autoWidth": true,
   "scrollX": true,
+  "searching": false,
   "language": {
     "lengthMenu": "Display _MENU_ records per page",
     "zeroRecords": "Nada que ver. Lo sentimos.",
