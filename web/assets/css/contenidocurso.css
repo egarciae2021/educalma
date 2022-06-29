@@ -242,8 +242,10 @@ body {
 @media (min-width:1000px){
     .container-fluid .container-detalle-informacion .col-8  {
       position:relative;
-      left: 1px;
-      margin-bottom:25px;align-self: flex-end; margin-right:-310px;
+      /* left: 1px; */
+      margin-bottom:25px;
+      align-self: auto; 
+      margin-right:-310px;
       width: 750px;
     }
     .container-padre .col-8{
@@ -263,16 +265,22 @@ body {
     left: 10px;
     }
     .container-fluid .container-detalle-informacion .col-8 .container-info-course-detalle{
-        width: 857px;
+        width: 600px;
     }
     .comments-container .btn-danger{
         position: relative;
         left: 250px;
     }
-    .comments-container .btn-primary{
+
+    @media(min-width: 950px){
+
+        .respons{
+            margin-left: 140px;
+        }
+    /* .comments-container .btn-primary{
     
        
-    }
+    } */
 }
 
     
@@ -280,7 +288,8 @@ body {
 
 .container-fluid .container-detalle-informacion .col-8 .container-info-course-detalle h5 {
     font-size: 18px;
-    color: #597c9b;
+    color: #7C83FD;
+    text-transform: capitalize;
 }
 
 .container-fluid .container-detalle-informacion .col-8 .container-info-course-detalle .row {

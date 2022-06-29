@@ -312,21 +312,21 @@
       <div class="container-detalle-informacion">
          <div class="container"  style="width:auto; overflow:hidden;">
             <div class="container"  style="width:auto; overflow:hidden;">
-               <div class="row py-0  "style="display:flex; flex-direction:row ;margin-top:25px ;">
+               <div class="row py-0 respons"style="display:flex; flex-direction:row ;margin-top:25px ;">
                   <!-- <div class="col-4">
                      <img src="assets/img/cursophp.png" alt=""> 
                      </div>-->
                   <!--div class="col-md-5 col-lg-5 order-1 "style="align-self: flex-end; margin-top:25px;" -->
                   <div class="col col-md-4"  id="informacion">
-                     <h5>Introducción</h5>
-                     <p><?php echo $dato4['introduccion']; ?></p>
+                     <h5 style="color: #7C83FD;font-weight: 600;font-size: 24px;">Introducción</h5>
+                     <p style="margin-top: 15px;text-align: justify"><?php echo $dato4['introduccion']; ?></p>
                   </div>
                   <!--div class="col-8"-->
                   <div class="col-8"  id="informacion">
-                     <h5>¿Que incluye este curso?</h5>
-                     <div class="container-info-course-detalle">
+                     <h5 style="color: #7C83FD;font-weight: 600;text-transform: capitalize;">¿Que incluye este curso?</h5>
+                     <div class="container-info-course-detalle" style="margin-top: 1em;border-radius: 20px;border: 2px solid #7C83FD;">
                         <h5>Tabla de contenido del curso</h5>
-                        <div class="row pt-2">
+                        <div class="row pt-2" style="color: #000;">
                            <div class="col-12 col-sm-6 col-lg-6">
                               <div><i class="far fa-file"></i></div>
                               <?php echo $modulos; ?> Modulos
