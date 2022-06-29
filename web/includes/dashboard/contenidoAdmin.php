@@ -72,6 +72,25 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
           left: 25px;
         }
       }
+
+      .numCursos {
+          color: #7C83FD;
+          float: left; 
+          position: relative; 
+          top: 50px; 
+          font-size: 20px;
+      }
+
+      @media (max-width: 620px) {
+
+        .card-body .numCursos {
+          color: #7C83FD;
+          float: left; 
+          position: relative; 
+          top: 15px; 
+          font-size: 20px;
+        }
+      }
     </style>
 
   </head>
@@ -104,11 +123,11 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
     <div class="container-fluid">
       <div class="row mt-5">
         <div class="col-12">
-          <div class="title" style="color:#737BF1;">Administrar</div>
+          <div class="title" style="color:#737BF1; margin-left: 27px;">Administrar</div>
           <div class="row">
             <div class="col-12">
               <nav class="navbar navbar-expand">
-                <ul class="navbar-nav">
+                <ul style="margin-left: 21px;" class="navbar-nav">
                   <li class="nav-item">
                     <a class="nav-link active" href="user-sidebar.php">
                       por cursos
@@ -143,28 +162,22 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
           ?>
 
           <!-- TABLA DE CURSOS -->
-          <div class="col-12 mt-5 text-center">
+          <div style="position: relative; top: -70px;" class="col-12 mt-5 text-center">
             <div class="card">
 
 
 
 
-              <div class="card-header">
-                <div class="row mb-2">
-                  <div class="col-12">
-                    <h3 class="card-title" style="color:#737BF1;">Cantidad de cursos
-                      <span style="color:#BEC1F3;">(<?php echo $resultCurs['cantidad']; ?>)</span>
-                    </h3>
-                  </div>
-                </div>
-              </div>
+              
 
 
 
               <!-- /.card-header -->
               <div class="card-body">
 
-
+                <p class="numCursos">Cantidad de cursos
+                      <span style="color:#BEC1F3;">(<?php echo $resultCurs['cantidad']; ?>)</span>
+                </p>
 
                 <div class="table-responsive">
                   <!--class="standard-grid1 full-width content-scrollable"-->
@@ -374,14 +387,14 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
             <!-- tablas (2) categorias  -->
             <div class="row">
               <div class="col-12">
-                <h3 class="card-title my-3" style="color:#737BF1;">Cantidad de categorías
-                  <span style="color:#BEC1F3;">(<?php echo $resultCa['cantidad']; ?>)</span>
+                <!--<h3 class="card-title my-3" style="color:#737BF1;">Cantidad de categorías-->
+                  <!--<span style="color:#BEC1F3;">(<?php echo $resultCa['cantidad']; ?>)</span>-->
                 </h3>
               </div>
             </div>
             <div class="row">
               <!-- tabla añadir categorias -->
-              <div class="col-12 col-md-6">
+              <div style="position: relative; top: 7px;" class="col-12 col-md-6">
                 <div class="card t-categ">
                   <div class="card-body">
                     <div class="table-responsive">
