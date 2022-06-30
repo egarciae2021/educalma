@@ -112,6 +112,13 @@ body {
   }
 
 }
+
+@media (min-width: 1300px){
+  .responsv1 {
+     margin-left: 60px;
+  }
+
+}
 /****************************************************************************************************/
 
 
@@ -216,7 +223,7 @@ body {
 
 
     <!-- pppp -->
-    <div class="container-course bg-light" style="min-height: 100vh;background: rgb(231,244,255);background: linear-gradient(0deg, rgba(231,244,255,1) 0%, rgba(231,244,255,1) 21%, rgba(224,199,229,1) 50%);">
+    <div class="container-course bg-light" style="min-height: 100vh;background: rgb(231,244,255);background: linear-gradient(0deg, rgba(231,244,255,1) 0%, rgba(231,244,255,1) 21%, rgba(224,199,229,1) 30%);">
 
         <!-- zzzz -->
         <div class="bg-dark11">
@@ -753,9 +760,9 @@ body {
     
     <?php
     if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
-    ?>
+    ?>  
 
-        <div class="comments-container" style="background-color: #F1F7F7; border-radius: 40px;" id="foro-curso">
+        <div class="comments-container responsv1" style="background-color: #F1F7F7; border-radius: 40px; margin-top: auto" id="foro-curso">
 
 
         <h1 style="text-align: center">Foro Educalma <?php echo $_SESSION['iduser']?></h1>

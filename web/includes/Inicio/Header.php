@@ -45,7 +45,7 @@ require_once 'database/databaseConection.php';
                 
                         </li>
 
-                        <li class="nav-link" style="--i: .6s;">
+                        <!-- <li class="nav-link" style="--i: .6s;">
                     
                             <a class="link-cel" href="user-sidebar.php">Dashboard</a>
                     
@@ -61,7 +61,7 @@ require_once 'database/databaseConection.php';
                     
                             <a class="link-cel" href="includes/login/logout.php">Cerrar Sesión</a>
                     
-                        </li>
+                        </li> -->
 
                    
 
@@ -272,7 +272,7 @@ require_once 'database/databaseConection.php';
             ?>
 
             <!-- LOGUEADO - Nombre (Tipo de Usuario) -->
-            <div class="log-sign" style="--i: 1.8s; width: 400px;">
+            <div class="log-sign" style="--i: 1.8s">
                     <ul>
                         <li class="nav-link" style="--i: .85s">
                            
