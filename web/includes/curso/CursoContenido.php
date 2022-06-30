@@ -264,7 +264,7 @@
                <?php 
                   // PONER EN EL BOTON DEL CERTIFICADO
                   if($dato['nota']>=18 && $dato['avance']>=99 ){
-                     log("Hola1");
+                     /*
                      $codCertificado = $dato90['codigo_alumno']+$dato['cod_curso'];
                      $codAlumnoC = $dato90['codigo_alumno'];
                      $codCursoC = $dato['cod_curso'];
@@ -274,10 +274,9 @@
                      $qiConsultaC->execute();
                      $datoConsulta = $qiConsultaC -> fetch(PDO::FETCH_ASSOC);
                      $CantidadCertificado = $datoConsulta['Cantidad'];
-                     Database::disconnect();
+                     Database::disconnect();*/
 
-                     if($CantidadCertificado < 1){
-                        log("Hola2");
+                     //if($CantidadCertificado < 1){
                         $pdo2 = Database::connect();
                         try{
                               $verif2=$pdo2->prepare("INSERT INTO `certificados` (`codCertificado`, `codAlumno`, `codCurso`) VALUES ($codCertificado, $codAlumnoC, $codCursoC)");
@@ -286,7 +285,7 @@
                               echo $e->getMessage();
                         }
                         Database::disconnect();
-                     }
+                     //}
 
                       echo '<a style="cursor: pointer;" id="solcert" onclick="con_certificado()">Certificado</a>';     
                       //'<a style="cursor: pointer;" data-filter=".seo" href="plugins/ejemplo.php?idCurso='.$id.'&idUsu='.$idUser56.'">Certificado</a>';
