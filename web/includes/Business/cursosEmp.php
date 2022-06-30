@@ -13,6 +13,40 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
     <script src="assets/js/clipboard.min.js"></script>
     <script src="assets/js/funciones.js"></script>
     <script src="./assets/js/plugins/sweetalert2.all.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Baloo+Tamma+2:wght@400;500;600;700;800&display=swap');
+        body {
+            font-family: 'Baloo Tamma 2', cursive;
+        }
+        .head-pago{
+            background: rgb(124,131,253);
+            background: linear-gradient(90deg, rgba(124,131,253,1) 0%, rgba(224,199,229,1) 100%);
+            color:white;
+        }
+        #addtbl{
+            background-color: #7C83FD;
+            font-size: 1.2rem;
+            font-weight: 600;
+            padding-bottom: 0.2rem;
+            border: none;
+        }
+        #tabla thead tr {
+            color: #7C83FD;
+            font-size: 1.1rem;
+        }
+        .btn-generarp{
+            background-color: #7C83FD;
+            border: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+        .btn-limpiar{
+            font-size: 1.2rem;
+            font-weight: 600;
+            padding-bottom: 0.2rem;
+            border: none;
+        }
+    </style>
 </head>
 <br>
 <br>
@@ -128,7 +162,7 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                                         $ent = $_GET['sol'];
                                     ?>
                                         <div class="col-12 col-md-4 col-lg-3 pb-3">
-                                            <a href="includes/Business/addcurso.php?emp=<?php echo $ent; ?>" type="button" class="btn btn-danger m-0 ">LIMPIAR</a>
+                                            <a href="includes/Business/addcurso.php?emp=<?php echo $ent; ?>" type="button" class="btn btn-danger m-0 btn-limpiar">LIMPIAR</a>
                                         </div>
                                     <?php
                                     }
@@ -153,7 +187,7 @@ if (isset($_GET['sol'])) {
 
                 <div class="table-responsive">
                     <table id="tabla" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
-                        <thead style="background-color:#AED6F1;">
+                        <thead style="background-color:#E0C7E5;">
                             <tr>
                                 <th>Nombre-Empresa</th>
                                 <th class="col-lg-6">Curso(s)</th>
@@ -211,15 +245,15 @@ if (isset($_GET['sol'])) {
     <div class="col-12 text-center">
 
         <div class="card">
-            <div class="card-header" style="background-color:#5499C7 ; color:white;">
-                <h3 class="card-title"><strong>CONTROL DE PAGO</strong></h3>
+            <div class="card-header head-pago pb-1">
+                <h3 class="card-title" style="font-size: 1.2rem; font-weight: 700;">CONTROL DE PAGO</h3>
             </div>
             <div class="card-body">
                 <div class="row">
                     <div class="col-12 col-md-4 col-lg-4 pb-3 ">
                         <div class="card">
-                            <div class="card-header" style="background-color:#5c5dc4; color:white;">
-                                <h5 style="font-size: 14px;" class="card-title"><strong>CANTIDAD DE CURSOS</strong></h5>
+                            <div class="card-header pb-1" style="background-color:#7C83FD; color:white;">
+                                <h5 style="font-size: 1rem;" class="card-title">CANTIDAD DE CURSOS</h5>
                             </div>
                             <?php
                             if (isset($_GET['sol'])) {
@@ -238,8 +272,8 @@ if (isset($_GET['sol'])) {
                             ?>
                         </div>
                         <div class="card">
-                            <div class="card-header" style="background-color:#5c5dc4; color:white;">
-                                <h5 style="font-size: 14px;" class="card-title"><strong>CANTIDAD DE SUSCRIPCIONES</strong></h5>
+                            <div class="card-header pb-1" style="background-color:#7C83FD; color:white;">
+                                <h5 style="font-size: 1rem;" class="card-title">CANTIDAD DE SUSCRIPCIONES</h5>
                             </div>
                             <?php
                             if (isset($_GET['sol'])) {
@@ -293,13 +327,13 @@ if (isset($_GET['sol'])) {
                         ?>
                     </div>
                     <div class="col-12 col-md-4 col-lg-3 pb-3 " style="display: flex; align-items: center; justify-content: center;">
-                        <a  href="includes/Business/addcurso.php?ent= <?php echo $ent;?>" <?php
+                        <a  href="includes/Business/addcurso.php?ent= " <?php
                                                                                             if (!isset($_GET['sol'])) {
                                                                                                 echo 'style="width:100%;cursor: not-allowed;pointer-events: none;"';
                                                                                             } else {
                                                                                                 echo 'style="width:100%;"';
                                                                                             }
-                                                                                            ?> class="btn btn-primary m-0 ">GENERAR PAGO</a>
+                                                                                            ?> class="btn btn-primary m-0 btn-generarp pt-2 pb-1">GENERAR PAGO</a>
                     </div>
                 </div>
             </div>
