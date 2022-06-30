@@ -9,6 +9,7 @@
     $codC=$_POST['cod_curso'];
     $codCertificado = $codA+$codC;
 
+    /*
     //Inserción en la BD
     $pdoConsultaC = Database::connect();
     $sqlConsultaC = "SELECT COUNT(codCertificado) Cantidad FROM certificados WHERE codCertificado = $codCertificado";
@@ -27,7 +28,7 @@
             echo $e->getMessage();
         }
         Database::disconnect();
-    }
+    }*/
      
     //$font = "C:\Windows\Fonts\LSANSD.TTF"; 
 	$font = "/opt/lampp/htdocs/git_clone/test-educalma/web/assets/fonts/Montserrat/Montserrat-Bold.ttf";
