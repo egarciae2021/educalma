@@ -7,30 +7,6 @@
     $curso= $_POST['nombre_curso'];
     $codA=$_POST['cod_alumno'];
     $codC=$_POST['cod_curso'];
-    $codCertificado = $codA+$codC;
-
-    
-    //Inserción en la BD
-    $pdoConsultaC = Database::connect();
-    $sqlConsultaC = "SELECT COUNT(codCertificado) Cantidad FROM certificados WHERE codCertificado = $codCertificado";
-    $qiConsultaC = $pdoConsultaC->prepare($sqlConsultaC);
-    $qiConsultaC->execute();
-    $datoConsulta = $qiConsultaC -> fetch(PDO::FETCH_ASSOC);
-    $CantidadCertificado = $datoConsulta['Cantidad'];
-    Database::disconnect();
-
-    if($CantidadCertificado < 1){
-        echo "Hola";
-        /*
-        $pdo2 = Database::connect();
-        try{
-            $verif2=$pdo2->prepare("INSERT INTO `certificados` (`codCertificado`, codAlumno, codCurso) VALUES ($codCertificado, $codA, $codC)");
-            $verif2->execute();
-        }catch(PDOException $e){
-            echo $e->getMessage();
-        }
-        Database::disconnect();*/
-    }
      
     //$font = "C:\Windows\Fonts\LSANSD.TTF"; 
 	$font = "/opt/lampp/htdocs/git_clone/test-educalma/web/assets/fonts/Montserrat/Montserrat-Bold.ttf";
