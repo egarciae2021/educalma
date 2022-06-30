@@ -1,6 +1,16 @@
 <head>
-  <link rel="shortcut icon" href="assets/images/logo_edu.png">
-    <link rel="stylesheet" href="assets/css/cursos.css" /></head>
+    <link rel="shortcut icon" href="assets/images/logo_edu.png">
+    <link rel="stylesheet" href="assets/css/cursos.css" />
+
+    <style>
+
+        .imgCurso:hover {
+            filter: brightness(50%);
+
+        }
+
+    </style>
+</head>
 
 
 <br><br><br>
@@ -82,13 +92,15 @@
                         $paginaRed = "detallecurso";
                     }
                 ?>
-                
 
+                <!--Este checkbox se activa después de hacer clic en la imagen de un curso, cuyo for de la imagen es igual al ID del checkbox para que lo active.-->
+                <!--<input type="checkbox" id="activarModal" data-toggle="modal" data-target=".bd-example-modal-lg<?php echo $dato['idCurso'];?>">-->
+                
+                    
                
                     <!--Contenedor del curso publicado más destacado-->
                     <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
                         <div style="border-radius: 30px;" class="card">
-
 
                                     <!--Contenedor de la imagen-->
                                     <div style="border-radius: 30px 30px 0 0;" class="container-card-image">
@@ -97,16 +109,18 @@
                                         if ($dato['imagenDestacadaCurso'] != null) {
                                         ?>
                                             <!--Imagen-->
-                                            <img src="data:image/*;base64,<?php echo base64_encode($dato['imagenDestacadaCurso']); ?>" alt="">
+                                            <a data-toggle="modal" data-target=".bd-example-modal-lg<?php echo $dato['idCurso'];?>"><img class="imgCurso" src="data:image/*;base64,<?php echo base64_encode($dato['imagenDestacadaCurso']); ?>" alt=""></a>
                                         <?php
                                         } else {
                                         ?>
-                                            <img src="./assets/images/curso_educalma.png">
+                                            <a data-toggle="modal" data-target=".bd-example-modal-lg<?php echo $dato['idCurso'];?>"><img class="imgCurso" src="./assets/images/curso_educalma.png"></a>
                                         <?php
                                         }
                                         ?>
 
                                     </div>
+
+                                    
                                
 
                                 
@@ -396,7 +410,28 @@
                     $paginaRed =
                         "detallecurso";
                 }
+                
             ?>
+
+            <!--Este checkbox se activa después de hacer clic en la imagen de un curso, cuyo for de la imagen es igual al ID del checkbox para que lo active.-->
+            <!--<input type="checkbox" id="activarModal" data-toggle="modal" data-target=".bd-example-modal-lg<?php echo $dato['idCurso'];?>">-->
+
+                
+  
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
                 <!--Contenedor del curso publicado-->
@@ -409,12 +444,12 @@
                             if ($dato['imagenDestacadaCurso'] != null) {
                             ?>
                                 <!--Imagen elegida-->
-                                <img heigth="10px"; src="data:image/*;base64,<?php echo base64_encode($dato['imagenDestacadaCurso']); ?>" alt="">
+                                <a data-toggle="modal" data-target=".bd-example-modal-lg<?php echo $dato['idCurso'];?>"><img class="imgCurso" heigth="10px"; src="data:image/*;base64,<?php echo base64_encode($dato['imagenDestacadaCurso']); ?>" alt=""></a>
                             <?php
                             } else {
                             ?>
                                 <!--Imagen por default-->
-                                <img heigth="10px"; src="./assets/images/curso_educalma.png">
+                                <a data-toggle="modal" data-target=".bd-example-modal-lg<?php echo $dato['idCurso'];?>"><img class="imgCurso" heigth="10px"; src="./assets/images/curso_educalma.png"></a>
                             <?php
                             }
                             ?>
@@ -535,6 +570,9 @@
             
                         </div>
 
+
+                        
+
                          
                         
 
@@ -547,6 +585,45 @@
                     </div>
                 </div>
                 <!--Fin del contenedor del curso publicado-->
+
+
+
+
+
+
+
+
+                        <!-- MODAL -->
+                        <!-- Este modal es para mostrar la información del un curso publicado. También para mostrar la información de un curso publicado destacado. -->
+                        <!-- Este modal se activa después de hacer clic en una imagen que está dentro de un elemento a. -->
+                        <div class="modal fade bd-example-modal-lg<?php echo $dato['idCurso'];?>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered  modal-xl">
+                            <div class="modal-content">
+                            <div class="modal-body">
+
+
+
+
+                                <!--Contenedor del nombre del curso publicado-->
+                                <div class="container-card-title" style="padding-bottom: 1px; color: black;">
+                                    <a style="float: left;">
+                                        <!--Nombre-->
+                                        <center><strong><?php echo $dato['nombreCurso']; ?></strong></center>
+                                    </a>
+                                </div>
+
+
+                                
+                            </div>
+                            </div>
+                        </div>
+                        </div>
+
+
+
+
+
+
 
                 <?php
                 }
@@ -620,3 +697,22 @@
     </div>
 </div>
 <!--FIN DE PAGINADOR-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
