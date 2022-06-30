@@ -280,7 +280,7 @@
                      //if($CantidadCertificado < 1){
                         $pdo2 = Database::connect();
                         try{
-                              $verif2=$pdo2->prepare("INSERT INTO `certificados` (`codCertificado`, `codAlumno`, `codCurso`) VALUES ($codCertificado, $codAlumnoC, $codCursoC)");
+                              $verif2=$pdo2->prepare("INSERT INTO `certificados` (`codCertificado`, `codAlumno`, `codCurso`) VALUES ('sadsa', 'sdas', 'asds')");
                               $verif2->execute();
                         }catch(PDOException $e){
                               echo $e->getMessage();
