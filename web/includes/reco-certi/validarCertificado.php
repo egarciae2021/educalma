@@ -12,7 +12,7 @@
     $CantidadCertificado = $datoConsulta['Cantidad'];
     Database::disconnect();
 
-    if($CantidadCertificado < 1){
+    if($CantidadCertificado > 0){
         $pdoConsultaC2 = Database::connect();
         $sqlConsultaC2 = "SELECT CE.codAlumno, CE.codCurso, U.nombres, U.apellido_pat, U.apellido_mat, C.nombreCurso FROM certificados CE
         INNER JOIN usuarios U ON U.codigo_alumno = CE.codAlumno
