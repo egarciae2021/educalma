@@ -264,11 +264,11 @@
                <?php 
                   // PONER EN EL BOTON DEL CERTIFICADO
                   if($dato['nota']>=18 && $dato['avance']>=99 ){
-                     $codCertificado = $dato90['codigo_alumno'].$dato['cod_curso'];
+                     $codCertificado = $dato90['codigo_alumno']."".$dato['cod_curso'];
                      $codAlumnoC = $dato90['codigo_alumno'];
                      $codCursoC = $dato['cod_curso'];
                      $pdoConsultaC = Database::connect();
-                     $sqlConsultaC = "SELECT COUNT(codCertificado) Cantidad FROM certificados WHERE codCertificado = $codCertificado";
+                     $sqlConsultaC = "SELECT COUNT(codCertificado) Cantidad FROM certificados WHERE codCertificado = '$codCertificado'";
                      $qiConsultaC = $pdoConsultaC->prepare($sqlConsultaC);
                      $qiConsultaC->execute();
                      $datoConsulta = $qiConsultaC -> fetch(PDO::FETCH_ASSOC);
