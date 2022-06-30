@@ -264,29 +264,27 @@
                <?php 
                   // PONER EN EL BOTON DEL CERTIFICADO
                   if($dato['nota']>=18 && $dato['avance']>=99 ){
-                     
-                     $codCertificado = $dato90['codigo_alumno']+$dato['cod_curso'];
+                     $codCertificado = $dato90['codigo_alumno'].$dato['cod_curso'];
                      $codAlumnoC = $dato90['codigo_alumno'];
                      $codCursoC = $dato['cod_curso'];
-                     /*
                      $pdoConsultaC = Database::connect();
                      $sqlConsultaC = "SELECT COUNT(codCertificado) Cantidad FROM certificados WHERE codCertificado = $codCertificado";
                      $qiConsultaC = $pdoConsultaC->prepare($sqlConsultaC);
                      $qiConsultaC->execute();
                      $datoConsulta = $qiConsultaC -> fetch(PDO::FETCH_ASSOC);
                      $CantidadCertificado = $datoConsulta['Cantidad'];
-                     Database::disconnect();*/
+                     Database::disconnect();
 
-                     //if($CantidadCertificado < 1){
+                     if($CantidadCertificado < 1){
                         $pdo2 = Database::connect();
                         try{
-                              $verif2=$pdo2->prepare("INSERT INTO `certificados` (`codCertificado`, `codAlumno`, `codCurso`) VALUES ('sadsa', 'sdas', 'asds')");
+                              $verif2=$pdo2->prepare("INSERT INTO `certificados` (`codCertificado`, `codAlumno`, `codCurso`) VALUES ($codCertificado, $codAlumnoC, $codCursoC)");
                               $verif2->execute();
                         }catch(PDOException $e){
                               echo $e->getMessage();
                         }
                         Database::disconnect();
-                     //}
+                     }
 
                       echo '<a style="cursor: pointer;" id="solcert" onclick="con_certificado()">Certificado</a>';     
                       //'<a style="cursor: pointer;" data-filter=".seo" href="plugins/ejemplo.php?idCurso='.$id.'&idUsu='.$idUser56.'">Certificado</a>';
