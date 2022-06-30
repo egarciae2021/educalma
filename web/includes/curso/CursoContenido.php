@@ -989,6 +989,31 @@
               formData.append('cod_curso', '<?php echo $dato['cod_curso'] ;?>');
               formData.append('nombre_estudiante', '<?php echo $dato90['nombres']." ".$dato90['apellido_pat']." ".$dato90['apellido_mat'] ;?>'); 
 
+              <?php
+               $codCertificado = $dato90['codigo_alumno']+$dato['cod_curso'];
+               $codAlumnoC = $dato90['codigo_alumno'];
+               $codCursoC = $dato['cod_curso'];
+               $pdoConsultaC = Database::connect();
+               $sqlConsultaC = "SELECT COUNT(codCertificado) Cantidad FROM certificados WHERE codCertificado = $codCertificado";
+               $qiConsultaC = $pdoConsultaC->prepare($sqlConsultaC);
+               $qiConsultaC->execute();
+               $datoConsulta = $qiConsultaC -> fetch(PDO::FETCH_ASSOC);
+               $CantidadCertificado = $datoConsulta['Cantidad'];
+               Database::disconnect();
+
+               if($CantidadCertificado < 1){
+                  $pdo2 = Database::connect();
+                  try{
+                        $verif2=$pdo2->prepare("INSERT INTO `certificados` (`codCertificado`, codAlumno, codCurso) VALUES ($codCertificado, $codAlumnoC, $codCursoC)");
+                        $verif2->execute();
+                  }catch(PDOException $e){
+                        echo $e->getMessage();
+                  }
+                  Database::disconnect();
+               }
+
+              ?>
+
 
             var request = new XMLHttpRequest();
             request.onreadystatechange = dataLoaded;
