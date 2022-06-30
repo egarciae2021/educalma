@@ -278,7 +278,10 @@
                      if($CantidadCertificado < 1){
                         $pdo2 = Database::connect();
                         try{
-                              $verif2=$pdo2->prepare("INSERT INTO `certificados` (`codCertificado`, `codAlumno`, `codCurso`) VALUES ($codCertificado, $codAlumnoC, $codCursoC)");
+                              $verif2=$pdo2->prepare("INSERT INTO `certificados` (`codCertificado`, `codAlumno`, `codCurso`) VALUES (:codCer, :codA, :codC)");
+                              $verif2->bindParam(":codCer",$codCertificado,PDO::PARAM_STR);
+                              $verif2->bindParam(":codA",$codAlumnoC,PDO::PARAM_STR);
+                              $verif2->bindParam(":codC",$codCursoC,PDO::PARAM_STR);
                               $verif2->execute();
                         }catch(PDOException $e){
                               echo $e->getMessage();
