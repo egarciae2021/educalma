@@ -27,36 +27,9 @@
         $nom = $datoConsulta2['nombres']." ".$datoConsulta2['apellido_pat']." ".$datoConsulta2['apellido_mat'];
         $nomCurso = $datoConsulta2['nombreCurso'];
         Database::disconnect();
-        echo '<script>
-
-        var formData = new FormData();
-            
-              formData.append("nombre_curso",'.$nomCurso.');
-              formData.append("cod_alumno",'.$codA.');
-              formData.append("cod_curso",'.$codC.');
-              formData.append("nombre_estudiante",'.$nom.');
-
-            var request = new XMLHttpRequest();
-            request.onreadystatechange = dataLoaded;
-            request.open("POST", Url);
-            request.send(formData);
-
-            function dataLoaded()
-{
-            if( this.status==200)
-            {
-               console.log("Respuesta del servidor"); 
-               var Url2 = "http://test-apicalma.site/plugins/certificate/'.$codA.$codC.'pdf"
-               setTimeout(function(){console.log("Se esta descargando el certificado");window.open(Url2, "_blank");}, 2000);
-               
-            }
-            else
-            {
-                console.log("Aun no hay respuesta");
-            }
-}
+        header('Location:http://test-apicalma.site/plugins/certificate/'.$codA.$codC.'.pdf');
         
-        </script>';
+
     }else{
         echo '<script>
    
