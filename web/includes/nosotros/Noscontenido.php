@@ -76,7 +76,7 @@
                         </script> -->
                         <a class="card-text" style="font-weight: bold;">
                             ¿Cómo puedo inscribirme a un curso de EDUCALMA?
-                            <i class="  fas fa-angle-down rotate-icon fa-2x list_a" style="float:right;"></i>
+                            <i class="  fas fa-angle-down fa-2x list_a" style="float:right;"></i>
 
                         </a>
                     </div>
@@ -94,7 +94,7 @@
                     <div class="list__button card-header border-0" data-toggle="collapse" href="#collapseTwo">
                         <a class="collapsed card-text" style="font-weight: bold;">
                             ¿Cuántas sesiones tiene un curso?
-                            <i class="list_a fas fa-angle-down rotate-icon fa-2x" style="float:right;"></i>
+                            <i class="list_a fas fa-angle-down fa-2x" style="float:right;"></i>
                         </a>
                     </div>
                     <div id="collapseTwo" class="collapse mt-0" data-parent="#accordion">
@@ -112,7 +112,7 @@
                     <div class="card-header border-0" data-toggle="collapse" href="#collapseThree">
                         <a class="collapsed card-text" style="font-weight: bold;">
                             ¿Cuántas son las preguntas que tiene el test?
-                            <i class="list_a fas fa-angle-down rotate-icon fa-2x" style="float:right;"></i>
+                            <i class="list_a fas fa-angle-down fa-2x" style="float:right;"></i>
                         </a>
                     </div>
                     <div id="collapseThree" class="collapse" data-parent="#accordion">
@@ -130,7 +130,7 @@
                     <div class="card-header border-0" data-toggle="collapse" href="#collapseFour">
                         <a class="collapsed card-text" style="font-weight: bold;">
                             ¿Tiene un pago para inscribirse?
-                            <i class="list_a fas fa-angle-down rotate-icon fa-2x" style="float:right;"></i>
+                            <i class="list_a fas fa-angle-down fa-2x" style="float:right;"></i>
                         </a>
                     </div>
                     <div id="collapseFour" class="collapse" data-parent="#accordion">
@@ -148,7 +148,7 @@
                     <div class=" card-header border-0" data-toggle="collapse" href="#collapseFive">
                         <a class=" collapsed card-text" style="font-weight: bold;"> 
                             ¿Los Certificados están reconocidos?
-                            <i class="fas fa-angle-down rotate-icon fa-2x" style="float:right;"></i>
+                            <i class="fas fa-angle-down fa-2x" style="float:right;"></i>
                         </a>
                     </div>
                     <div id="collapseFive" class="collapse" data-parent="#accordion">
@@ -162,11 +162,16 @@
                     </div>
                 </div>
                 <style>
-                    .fa-angle-down .rotate-icon{
-                        transform: rotate(180deg);
+                    div[id^='collapse']{
+                        transition: all linear .14s;
+                    }
+
+                    .fa-angle-down{
+                        transition: transform .3s;
                     }
 
                     .rotate-icon{
+                        transform: rotate(180deg);
                         transition: transform .3s;
                     }
                 </style>
@@ -175,10 +180,17 @@
 
                    listElements.forEach(listElement => {
                        listElement.addEventListener('click', ()=>{
-                           listElement.classList.toggle('fa-angle-down');
-                       })
-                   });
-               </script> 
+                        
+                           listElement.querySelector('i').classList.add('rotate-icon');
+
+                           listElements.forEach(listElement => {
+                                if(listElement.lastElementChild.classList.contains('show')){
+                                    listElement.querySelector('i').classList.remove('rotate-icon');
+                                }
+                           });
+                        });
+                    });
+               </script>
             </div>
         </div>
     </div>
