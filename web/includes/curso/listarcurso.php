@@ -67,7 +67,7 @@
         .boton3 {
         color: #737BF1 !important;
         padding: 0.5em 1.2em;
-        background: rgba(0,0,0,0);
+        background: #E7F4FF;
         border-radius:10px;
         border: 2px solid;
         border-color: #737BF1;
@@ -356,13 +356,13 @@
                                                 ?>
                                                 <td>
                                                     <!--para agregar modulo-->
-                                                    <a style="color:blue;" href="agregarModulos.php?id=<?php echo $curso['idCurso']; ?>">
+                                                    <a style="color:#7C83FD;" href="agregarModulos.php?id=<?php echo $curso['idCurso']; ?>">
                                                         <i class="far fa-plus-square fa-lg"></i> 
                                                     </a>
 
                                                   
                                                     <!--para editar curso-->
-                                                    <a style="color:green;" href="editarcurso.php?id=<?php echo $curso['idCurso']; ?>">
+                                                    <a style="color:#ECBE83;" href="editarcurso.php?id=<?php echo $curso['idCurso']; ?>">
                                                         <i class="far fa-edit fa-lg"></i>
                                                     </a>
                                                      

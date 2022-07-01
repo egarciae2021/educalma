@@ -60,14 +60,14 @@
     
     .card-title {
         /* text-align: left; */
-        font-size: 23px;
+        font-size: 25px;
         /* letter-spacing: -0.02em; */
         color: #fff;
         padding-bottom: .5rem;
         background: rgb(124,131,253);
         background: linear-gradient(50deg, rgba(124,131,253,1) 0%, rgba(224,199,229,0.6054796918767507) 100%);
         border-radius: 10px;
-        padding: 7px;
+        padding: 9px;
         height: 58px;
         margin-left: 26px;
         margin-right: 19px;
