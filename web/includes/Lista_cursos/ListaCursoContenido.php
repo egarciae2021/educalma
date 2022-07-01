@@ -5,11 +5,20 @@
     <style>
 
         .txtTrailer {
-            visibility: hidden;
+            padding: 100px 130px 100px 130px; 
+            position: absolute; 
+            background: rgba(0,0,0,0.6);  
+            font-size: 16px; 
+            font-weight: bold;
+            opacity: 0; 
         }
 
-        .imgCurso:hover {
-            filter: brightness(50%);
+        .txtTrailer:hover {
+            opacity: 1;
+        }
+
+        label {
+            color: white;
         }
 
     </style>
@@ -113,26 +122,26 @@
                                         if ($dato['imagenDestacadaCurso'] != null) {
                                         ?>
                                             <!--Imagen-->
-                                            <a data-toggle="modal" data-target=".bd-example-modal-lg<?php echo $dato['idCurso'];?>"><img class="imgCurso" src="data:image/*;base64,<?php echo base64_encode($dato['imagenDestacadaCurso']); ?>" alt=""></a>
-                                            <label class="txtTrailer" style="position: absolute; color: #FFFF; font-size: 18px; font-weight: bold;">Ver Trailer</label>
+                                            <img class="imgCurso" style="" src="data:image/*;base64,<?php echo base64_encode($dato['imagenDestacadaCurso']); ?>" alt="">
+                                            <a class="txtTrailer" data-toggle="modal" data-target=".bd-example-modal-lg<?php echo $dato['idCurso'];?>"><label>Ver Trailer</label></a>
                                         <?php
                                         } else {
                                         ?>
-                                            <a data-toggle="modal" data-target=".bd-example-modal-lg<?php echo $dato['idCurso'];?>"><img class="imgCurso" src="./assets/images/curso_educalma.png"></a>
-                                            <label class="txtTrailer" style="position: absolute; color: #FFFF; font-size: 18px; font-weight: bold;">Ver Trailer</label>
+                                            <img class="imgCurso" src="./assets/images/curso_educalma.png">
+                                            <a class="txtTrailer" data-toggle="modal" data-target=".bd-example-modal-lg<?php echo $dato['idCurso'];?>"><label>Ver Trailer</label></a>
                                         <?php
                                         }
                                         ?>
 
 
                                         <script>
-                                            
+                                            /*
                                             $(".imgCurso").hover(function(){
                                                 $('.txtTrailer').css("visibility", "visible");
                                                 }, function(){
                                                 $('.txtTrailer').css("visibility", "hidden");
                                             });
-
+                                            */
                                         </script>
 
                                     </div>
@@ -219,28 +228,29 @@
                                                     <!--<p>S/.<?php echo $dato['costoCurso'],"","<span style='position: relative; left: 100px; color: #63F70E;'>Comprado</span>" ?></p>-->
                                 
                                                 <?php } ?>
-            
+                                                
+                                                
                                                 <?php
-                                                if(isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)){
+                                                //if(isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)){
                                                 ?>
                                                     <!--Link "Leer Más"-->
-                                                    <div class="container-card-link" style="margin: auto;">
+                                                    <!--<div class="container-card-link" style="margin: auto;">
                                                         <a href="<?php echo $paginaRed ?>.php?id=<?php echo $dato['idCurso']; ?><?php if(!empty($dato2)){?>&idCI=<?php echo $dato2['id_cursoInscrito']; }?>">
                                                         <center><strong>Leer Más</strong></center>
                                                         </a>
-                                                    </div>
+                                                    </div>-->
                                                 <?php
-                                                }else{
+                                                //}else{
                                                 ?>
                                                 
                                                     <!--Link "Leer Más"-->
-                                                    <div class="container-card-link" style="margin: auto;">
+                                                    <!--<div class="container-card-link" style="margin: auto;">
                                                         <a href="iniciosesion.php">
                                                         <center><strong>Leer Más</strong></center>
                                                         </a>
-                                                    </div>
+                                                    </div>-->
                                                 <?php
-                                                }
+                                                //}
                                                 ?>
                         
                                     </div>
@@ -468,26 +478,26 @@
                             ?>
                             
                                 <!--Imagen elegida-->
-                                <a data-toggle="modal" data-target=".bd-example-modal-lg<?php echo $dato['idCurso'];?>"><img class="imgCurso" heigth="10px"; src="data:image/*;base64,<?php echo base64_encode($dato['imagenDestacadaCurso']); ?>" alt=""></a>
-                                <label class="txtTrailer" style="position: absolute; color: #FFFF; font-size: 18px; font-weight: bold;">Ver Trailer</label>
+                                <img class="imgCurso" heigth="10px"; src="data:image/*;base64,<?php echo base64_encode($dato['imagenDestacadaCurso']); ?>" alt="">
+                                <a class="txtTrailer" data-toggle="modal" data-target=".bd-example-modal-lg<?php echo $dato['idCurso'];?>"><label>Ver Trailer</label></a>
                             <?php
                             } else {
                             ?>
                                 <!--Imagen por default-->
-                                <a data-toggle="modal" data-target=".bd-example-modal-lg<?php echo $dato['idCurso'];?>"><img class="imgCurso" heigth="10px"; src="./assets/images/curso_educalma.png"></a>
-                                <label class="txtTrailer" style="position: absolute; color: #FFFF; font-size: 18px; font-weight: bold;">Ver Trailer</label>
+                                <img class="imgCurso" heigth="10px"; src="./assets/images/curso_educalma.png">
+                                <a class="txtTrailer" data-toggle="modal" data-target=".bd-example-modal-lg<?php echo $dato['idCurso'];?>"><label>Ver Trailer</label></a>
                             <?php
                             }
                             ?>
 
                                         <script>
-                                            
+                                            /*
                                             $(".imgCurso").hover(function(){
                                                 $('.txtTrailer').css("visibility", "visible");
                                                 }, function(){
                                                 $('.txtTrailer').css("visibility", "hidden");
                                             });
-
+                                            */
                                         </script>
                         </div>
 
@@ -582,26 +592,26 @@
                             <?php } ?>
 
                                     <?php
-                                    if(isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)){
+                                    //if(isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)){
                                     ?>
                                         <!--Link "Leer Más"-->
-                                        <div class="container-card-link" style="margin: auto;">
+                                        <!--<div class="container-card-link" style="margin: auto;">
                                             <a href="<?php echo $paginaRed ?>.php?id=<?php echo $dato['idCurso']; ?><?php if(!empty($dato2)){?>&idCI=<?php echo $dato2['id_cursoInscrito']; }?>">
                                             <center><strong>Leer Más</strong></center>
                                             </a>
-                                        </div>
+                                        </div>-->
                                     <?php
-                                    }else{
+                                    //}else{
                                     ?>
                                     
                                         <!--Link "Leer Más"-->
-                                        <div class="container-card-link" style="margin: auto;">
+                                        <!--<div class="container-card-link" style="margin: auto;">
                                             <a href="iniciosesion.php">
                                             <center><strong>Leer Más</strong></center>
                                             </a>
-                                        </div>
+                                        </div>-->
                                     <?php
-                                    }
+                                    //}
                                     ?>
             
                         </div>
