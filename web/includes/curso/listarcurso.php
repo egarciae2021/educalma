@@ -44,7 +44,7 @@
 
         position: relative;
             top: 8px;
-            
+            color: #000;
             left: -53px;
             /*font-weight: bold;*/
             width: 280px;
