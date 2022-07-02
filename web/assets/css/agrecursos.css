@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Tamma+2:wght@400;500;600;700;800&display=swap');
 html {
     font-family: 'Poppins', sans-serif;
     overflow-x: hidden;
@@ -212,6 +213,9 @@ textarea:focus {
         display: block;
         margin: 0 16rem 0 5rem;
     }
+    form#newUserForm div.list-group-item{
+        font-size: 2rem !important;
+    }
 }
 
 @media (max-width:850px) {
@@ -323,7 +327,8 @@ textarea {
 }
 
 .form-label {
-    color: #4F52D6;
+    color: #4F52D6;/*#7C83FD*/
+    font-size: 1.1rem;
     font-weight: bold;
 }
 
@@ -335,7 +340,7 @@ textarea {
     width: 100%;
     background: white;
     border: lightgray 1px solid;
-    font-family: 'Poppins', serif;
+    font-family: 'Baloo Tamma 2', cursive;
     -webkit-box-shadow: 6px 2px 8px -3px rgba(212, 212, 212, 1);
     -moz-box-shadow: 6px 2px 8px -3px rgba(212, 212, 212, 1);
     box-shadow: 6px 2px 8px -3px rgba(212, 212, 212, 1);
@@ -437,17 +442,27 @@ form {
     color: #fff;
 }
 
-.btn-agregar {
+.btn-insertar {
     background: white;
     color: #4F52D6;
     border: 2px solid #4F52D6 !important;
 }
 
-.btn-agregar:hover {
+.btn-agregar {
+    background: rgb(124,131,253);
+    background: linear-gradient(90deg, rgba(124,131,253,1) 0%, rgba(224,199,229,1) 100%);
+    border-radius: 10px !important;
+    font-weight: 500 !important;
+    font-size: 1.26rem !important;
+    color: white;
+}
+
+.btn-agregar:hover,.btn-insertar:hover {
     background: #3c3ea5;
     color: white;
     border: 1px solid #3c3ea5;
 }
+
 
 .btn-back {
     margin-top: 5rem;

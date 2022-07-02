@@ -66,6 +66,25 @@
                 }
             }
 
+            .numUsers {
+                color: #7C83FD;
+                float: left; 
+                position: relative; 
+                top: 50px; 
+                font-size: 20px;
+            }
+
+            @media (max-width: 620px) {
+
+                .numUsers {
+                color: #7C83FD;
+                float: left; 
+                position: relative; 
+                top: 15px; 
+                font-size: 20px;
+                }
+            }
+
 
         </style>
 </head>
@@ -84,11 +103,11 @@ $usuarios = $q3->fetchAll(PDO::FETCH_ASSOC);
     <div class="container-fluid">
         <div class="row mt-5">
             <div class="col-12">
-                <div class="title" style="color:#737BF1;">Administrar</div>
+                <div class="title" style="color:#737BF1; margin-left: 27px;">Administrar</div>
                 <div class="row">
                     <div class="col-12">
                         <nav class="navbar navbar-expand">
-                            <ul class="navbar-nav">
+                            <ul style="margin-left: 21px;" class="navbar-nav">
                                 <li class="nav-item">
                                     <a class="nav-link" href="user-sidebar.php">
                                         por cursos
@@ -125,20 +144,13 @@ $usuarios = $q3->fetchAll(PDO::FETCH_ASSOC);
                 <!-- TABLA DE USUARIOS  -->
                 <div class="card mt-2">
 
-                
-                    <div class="card-header">
-                        <div class="row mb-2">
-                            <div class="col-12">
-                                <h3 class="card-title" style="color:#737BF1;">Cantidad de usuarios
-                                    <span style="color:#BEC1F3;">(<?php echo $resultUsu['cantidad']; ?>)</span>
-                                </h3>
-                            </div>
-                        </div>
-                    </div>
-
                     <div class="card-body">
+                    <p class="numUsers">Cantidad de usuarios
+                                    <span style="color:#BEC1F3;">(<?php echo $resultUsu['cantidad']; ?>)</span>
+                                </p>
+
                         <div class="table-responsive">
-                            <table id="tableUsuarios" class="table table-borderless dt-responsive text-left" cellspacing="0" width="100%">
+                            <table id="tablaCursos" class="table table-borderless dt-responsive text-left" cellspacing="0" width="100%">
                                 <thead>
                                     <tr style="background-color:#737BF1;">
                                         <th style="border-radius: 10px 0 0 10px;">

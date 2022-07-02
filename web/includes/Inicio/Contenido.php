@@ -275,7 +275,9 @@ if (!isset($_GET['pag'])) {
               <div class="col-8 col-sm-8 col-md-12 col-lg-8 col-xl-8">
 
                 <h4 style="font-weight: 600;"><?php echo $dato['nombreCurso'];?></h4>
+
                 <h5 style="color: #282C71;" style="height: 60px;"><?php echo substr($dato['descripcionCurso'], 0, 30) . "..."; ?></h5>
+                
                 <a style="font-size: 13px; margin-top: 10px; margin-bottom: 10px; padding: 10px;" href="#" class="btn btn-success mt-2" data-toggle="modal" data-target=".bd-example-modal-lg<?php echo $dato['idCurso'];?>">
                 VER INFORMACIÓN >
                 </a>
@@ -291,7 +293,7 @@ if (!isset($_GET['pag'])) {
           </div>
         </div>
 
-        <!-- MODAL -->
+<!-- MODAL -->
 <div class="modal fade bd-example-modal-lg<?php echo $dato['idCurso'];?>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered  modal-xl">
     <div class="modal-content">

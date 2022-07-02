@@ -354,6 +354,11 @@ textarea:focus {
         }
     }
 
+    @media (max-width: 400px) {
+        .atras {
+          display: none;
+        }
+      }
 
 /*form Donar Curso*/
 

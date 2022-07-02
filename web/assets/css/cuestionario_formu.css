@@ -238,6 +238,12 @@ textarea:focus {
     }
 }
 
+@media (max-width: 400px) {
+    .atras .cursos .editar{
+      display: none;
+    }
+
+  }
 
 /*form cuestionario*/
 

@@ -11,6 +11,17 @@
    box-shadow: 0 4px 16px rgba(49, 138, 172, 1);
    transition: all 0.2s ease;
    }
+   .color1{
+      color: #7c83fd8a;
+   }
+
+   @media (max-width: 767px) {
+      .responsv1 {
+     width: 100%;
+  }
+
+}
+
 </style>
 <body>
    <?php
@@ -162,13 +173,16 @@
                   <div class="col-auto icon-course pr-0">
                      <img src="assets/images/curso-por-internet.png" class="mr-2" alt="" style="height: 100px;">
                   </div>
-                  <div class="col title-course">
+                  <div class="col title-course" style="color: #6c74f5;">
                      <?php echo $dato4['nombreCurso']; ?>
                   </div>
                </div>
+               <div style="padding-top: 25px;color:#000" class="description-course puntos-suspensivos">
+                  <?php echo $dato4['descripcionCurso']; ?>
+               </div>
                <div class="rankin-course my-3">
-                  <i class="fas fa-star m-1"></i><i class="fas fa-star m-1"></i><i class="fas fa-star m-1"></i><i
-                     class="fas fa-star m-1"></i><i class="fas fa-star m-1"></i>
+                  <i class="fas fa-star m-1 color1"></i><i class="fas fa-star m-1 color1"></i><i class="fas fa-star m-1 color1"></i><i
+                     class="fas fa-star m-1 color1"></i><i class="fas fa-star m-1 color1"></i>
                   <span class="ml-4">20</span> Opiniones
                </div>
                <!--Código para obtener el nombre del profesor-->
@@ -191,16 +205,13 @@
                <span style="color: #565656; font-size: 14px;">Creado por <?php echo " " . $dato20['nombres'] . " " . $dato20['apellido_pat'] . " " . $dato20['apellido_mat'] . "."?></span>
                <?php 
                   }
-                  ?>    
-               <div style="padding-top: 40px;" class="description-course puntos-suspensivos">
-                  <?php echo $dato4['descripcionCurso']; ?>
-               </div>
+                  ?>
                <div class="start-course mt-5">
                   <div class="row container-start-course py-2 ml-1 my-3" style="position: relative; left: -10px;">
-                     <div class="col-6 pr-0">
+                     <div class="col-6 pr-0" style="display: flex;justify-content: space-around;">
                         <h5 class="m-0">Mira la primera clase de este curso!</h5>
                      </div>
-                     <div class="col-6">
+                     <div class="col-6" style="display: flex;justify-content: space-around;">
                         <a class="hvr-radial-out button-theme" href="Cursoiniciar.php?id=<?php echo $id;?>&idCI=<?php echo $idCI?>"<?php if ($query==0 || $vere==false) {
                            echo 'style="pointer-events: none;"';}?> >
                         <button id="btnComienzaAhora" type="button" class="btn container-button" hidden multiple>
@@ -261,6 +272,31 @@
                <?php 
                   // PONER EN EL BOTON DEL CERTIFICADO
                   if($dato['nota']>=18 && $dato['avance']>=99 ){
+                     $codCertificado = $dato90['codigo_alumno']."".$dato['cod_curso'];
+                     $codAlumnoC = $dato90['codigo_alumno'];
+                     $codCursoC = $dato['cod_curso'];
+                     $pdoConsultaC = Database::connect();
+                     $sqlConsultaC = "SELECT COUNT(codCertificado) Cantidad FROM certificados WHERE codCertificado = '$codCertificado'";
+                     $qiConsultaC = $pdoConsultaC->prepare($sqlConsultaC);
+                     $qiConsultaC->execute();
+                     $datoConsulta = $qiConsultaC -> fetch(PDO::FETCH_ASSOC);
+                     $CantidadCertificado = $datoConsulta['Cantidad'];
+                     Database::disconnect();
+
+                     if($CantidadCertificado < 1){
+                        $pdo2 = Database::connect();
+                        try{
+                              $verif2=$pdo2->prepare("INSERT INTO `certificados` (`codCertificado`, `codAlumno`, `codCurso`) VALUES (:codCer, :codA, :codC)");
+                              $verif2->bindParam(":codCer",$codCertificado,PDO::PARAM_STR);
+                              $verif2->bindParam(":codA",$codAlumnoC,PDO::PARAM_STR);
+                              $verif2->bindParam(":codC",$codCursoC,PDO::PARAM_STR);
+                              $verif2->execute();
+                        }catch(PDOException $e){
+                              echo $e->getMessage();
+                        }
+                        Database::disconnect();
+                     }
+
                       echo '<a style="cursor: pointer;" id="solcert" onclick="con_certificado()">Certificado</a>';     
                       //'<a style="cursor: pointer;" data-filter=".seo" href="plugins/ejemplo.php?idCurso='.$id.'&idUsu='.$idUser56.'">Certificado</a>';
                       $validar=1;/*
@@ -309,21 +345,21 @@
       <div class="container-detalle-informacion">
          <div class="container"  style="width:auto; overflow:hidden;">
             <div class="container"  style="width:auto; overflow:hidden;">
-               <div class="row py-0  "style="display:flex; flex-direction:row ;margin-top:25px ;">
+               <div class="row py-0 respons"style="display:flex; flex-direction:row ;margin-top:25px ;">
                   <!-- <div class="col-4">
                      <img src="assets/img/cursophp.png" alt=""> 
                      </div>-->
                   <!--div class="col-md-5 col-lg-5 order-1 "style="align-self: flex-end; margin-top:25px;" -->
                   <div class="col col-md-4"  id="informacion">
-                     <h5>Introducción</h5>
-                     <p><?php echo $dato4['introduccion']; ?></p>
+                     <h5 style="color: #7C83FD;font-weight: 600;font-size: 24px;">Introducción</h5>
+                     <p style="margin-top: 15px;text-align: justify"><?php echo $dato4['introduccion']; ?></p>
                   </div>
                   <!--div class="col-8"-->
                   <div class="col-8"  id="informacion">
-                     <h5>¿Que incluye este curso?</h5>
-                     <div class="container-info-course-detalle">
+                     <h5 style="color: #7C83FD;font-weight: 600;text-transform: capitalize;">¿Que incluye este curso?</h5>
+                     <div class="container-info-course-detalle" style="margin-top: 1em;border-radius: 20px;border: 2px solid #7C83FD;">
                         <h5>Tabla de contenido del curso</h5>
-                        <div class="row pt-2">
+                        <div class="row pt-2" style="color: #000;">
                            <div class="col-12 col-sm-6 col-lg-6">
                               <div><i class="far fa-file"></i></div>
                               <?php echo $modulos; ?> Modulos
@@ -353,17 +389,17 @@
                   </div>
                </div>
             </div>
-            <div class="col-12"   style="width:760px; height:auto; float:left; position: relative; " id="certificado-temario">
-               <h5>Temario del curso</h5>
+            <div class="col-12 respons1"   style="width:760px; height:auto; float:left; position: relative; " id="certificado-temario">
+               <h5 style="color: #7C83FD;font-weight: 600;font-size: 24px;">Temario del curso</h5>
                <?php 
                   $nW=0;
                       while ($modulosC = $q6->fetch(PDO::FETCH_ASSOC)) {
                           $nW=$nW+1;
                   ?>
                <div class="w-100">
-                  <a id="btnInicioModulo" href="video.php?id=<?php echo $id;?>&idtema=<?php echo 1;?>&id_modulo=<?php echo $modulosC['idModulo']?>&nW=<?php echo $nW-1?>&idCI=<?php echo $idCI?>" class="btn px-4 mb-2 puntos-suspensivos"  style="background:#DCECFA; width:100%; text-align:left;">
+                  <a id="btnInicioModulo" href="video.php?id=<?php echo $id;?>&idtema=<?php echo 1;?>&id_modulo=<?php echo $modulosC['idModulo']?>&nW=<?php echo $nW-1?>&idCI=<?php echo $idCI?>" class="btn px-4 mb-2 puntos-suspensivos responsv1"  style="background:#DCECFA; width:55%; text-align:left;">
                   <i class="fas fa-play mr-3"></i>
-                  <span style="color:black; width:100%;    white-space: initial;"><?php echo $modulosC['nombreModulo'] ?></span>
+                  <span style="color:black; width:100%;white-space: initial;"><?php echo $modulosC['nombreModulo'] ?></span>
                   </a>
                </div>
                <?php 
@@ -371,8 +407,8 @@
                   ?>
             </div>
             <div class="col-md-5 col-lg-5 order-1 " style="width:auto; float:right; position: relative; " >
-               <h5>Certificación del curso</h5>
-               <img src="assets/images/certificado.jpg" class="img-fluid "alt="">
+               <h5 style="color: #7C83FD;font-weight: 600;font-size: 23px;">Certificación del curso</h5>
+               <img src="assets/images/certificado.jpg" class="img-fluid"alt="">
                <div class="info">
                   <!--Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse sapiente, harum, vero molestiae magnam
                      blanditiis cum omnis magni-->
@@ -985,7 +1021,6 @@
               formData.append('cod_alumno','<?php echo  $dato90['codigo_alumno']; ?>');
               formData.append('cod_curso', '<?php echo $dato['cod_curso'] ;?>');
               formData.append('nombre_estudiante', '<?php echo $dato90['nombres']." ".$dato90['apellido_pat']." ".$dato90['apellido_mat'] ;?>'); 
-
 
             var request = new XMLHttpRequest();
             request.onreadystatechange = dataLoaded;

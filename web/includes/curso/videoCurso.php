@@ -145,7 +145,9 @@
                 ?></h2>
                 <a href="Cursoiniciar.php?id=<?php echo $id;?>" <?php if ($access=="d") {
                     echo 'style="pointer-events: none;"';
+                    
                 }?>
+                
                 ><?php echo $dato6['nombreCurso'];?></a> <label> > </label> <a
                     href=""><?php echo $dato['nombreModulo'];?> </a>
             </div>
@@ -316,7 +318,7 @@
         <div class="col-md-1"></div>
         <div class="col-md-10">
             <div class="infoMin">
-                <a href=""><?php echo $dato6['nombreCurso'];?></a> <label> > </label> <a
+                <a href="curso.php?<?php echo 'id='.$id.'&idCI='.$idCI;?>"><?php echo $dato6['nombreCurso'];?></a> <label> > </label> <a
                     href=""><?php echo $dato13['nombreModulo'];?> </a><label> >
                 </label><a href=""><?php echo $dato2['nombreTema'];?></a>
             </div>

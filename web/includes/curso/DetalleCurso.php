@@ -51,10 +51,10 @@ body {
 
 #btnComprarAhora:hover {
 
-    background: #99ccff;
-    color: black;
+    background: #7c83fddb;
+    color: white;
     font-weight: bold;
-    border: 2px solid black;
+    /* border: 2px solid black; */
 }
 
 #nombreTemaCss:hover {
@@ -109,6 +109,36 @@ body {
 
     position: relative;
     left: -63px;
+  }
+
+}
+
+@media (min-width: 1300px){
+  .responsv1 {
+     margin-left: 60px;
+  }
+
+}
+
+@media (min-width: 1300px){
+  .d-flex {
+    width: 85%;
+  }
+
+}
+
+@media (min-width: 1300px){
+  .card {
+    width: 85%;
+  }
+
+}
+
+@media (min-width: 1300px){
+  .imagecuadr {
+    margin-top: 19em;
+    margin-left: -6em;
+    height: 33em;
   }
 
 }
@@ -216,7 +246,7 @@ body {
 
 
     <!-- pppp -->
-    <div class="container-course bg-light" style="min-height: 100vh;background: rgb(231,244,255);background: linear-gradient(0deg, rgba(231,244,255,1) 0%, rgba(231,244,255,1) 21%, rgba(224,199,229,1) 50%);">
+    <div class="container-course bg-light" style="min-height: 100vh;background: rgb(231,244,255);background: linear-gradient(0deg, rgba(231,244,255,1) 0%, rgba(231,244,255,1) 21%, rgba(224,199,229,1) 30%);">
 
         <!-- zzzz -->
         <div class="bg-dark11">
@@ -656,7 +686,7 @@ body {
                 <div class="col-12 col-sm-12 col-md-7 col-lg-8 col-xl-9 text-dark" style="padding: 55px;margin-top: -65px;">
                     <h4 class="font-weight-bold" style="color: #7C83FD;">Contenido del curso</h4>
                     <div class="d-flex">
-                        <div class="mr-auto p-2">
+                        <div class="mr-auto p-2" style="font-weight: 600;">
                             <span class="mr-1"><?php echo $modulos; ?></span>Módulos <i class="fas fa-circle mx-2" style="font-size: 5px;"></i>
                             <span class="mr-1"><?php echo $temas; ?></span>Temas <i class="fas fa-circle mx-2" style="font-size: 5px;"></i>
                             <span class="mr-1"><?php echo $cuestionarios; ?></span>Cuestionarios
@@ -673,7 +703,7 @@ body {
                         <div id="accordion" class="accordion my-3">
                             <div class="card">
                                 <!-- ////////////////// -->
-                                <div style="background: #7c83fd; cursor:pointer;" class="card-header border-0" data-toggle="collapse"  href="<?php echo '#collapseOne' . $i  ?>" aria-controls="collapse1">
+                                <div style="background: #7c83fd; cursor:pointer;border-radius: 9px;" class="card-header border-0" data-toggle="collapse"  href="<?php echo '#collapseOne' . $i  ?>" aria-controls="collapse1">
                                     <span><i class="fas fa-sort-down mr-3 cart-text"></i>Módulo: <?php echo $modulosC['nombreModulo'] ?></span>
                                 </div>
                                 
@@ -753,9 +783,9 @@ body {
     
     <?php
     if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
-    ?>
+    ?>  
 
-        <div class="comments-container" style="background-color: #F1F7F7; border-radius: 40px;" id="foro-curso">
+        <div class="comments-container responsv1" style="background-color: #F1F7F7; border-radius: 40px; margin-top: auto;" id="foro-curso">
 
 
         <h1 style="text-align: center">Foro Educalma <?php echo $_SESSION['iduser']?></h1>

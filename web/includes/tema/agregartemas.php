@@ -100,7 +100,7 @@
                                 -->
 
                                 <a style="cursor: pointer;" class="btn btn-outline-secondary btn-back btn-sm" href="agregarModulos.php?id=<?php echo $idCurso=$_GET['idCurso'];?>" role="button">
-                                    <i class="fas fa-arrow-left"></i> Atrás
+                                    <i class="fas fa-arrow-left"></i> <span class="atras">Atrás</span>
                                 </a>
                                 
                             </div>
@@ -129,6 +129,7 @@
                                     <div class="form-group col-md-6 ">
                                         <label class="form-label">Nombre del tema</label>
                                         <input type="text" class="form-control" name="temas_agregar" id="temas_agregar" placeholder="Ingrese un nombre" aria-label="TemaAgr" aria-describedby="temaAgr-addon" required>
+                                        <label for="temas_agregar" style="color:red; display:none" id="temaValido">Ingresar Nombre valido</label>
                                     </div>
     
                                     <div class="form-group col-md-6 ">
@@ -144,6 +145,7 @@
                                     <div class="form-group col-12">
                                         <label class="form-label">Descripción del tema</label>
                                         <textarea class="form-control" placeholder="Añadir descripción" rows="3" id="descripcio_tema" name="descripcio_tema" required></textarea>
+                                        <label for="linkValidate" style="color:red; display:none" id="DescripcionValida">Ingresar Descripción valida</label>
                                     </div>
                                 </div>
     
@@ -172,7 +174,7 @@
 
                                         function alertaAgregar() {
  
-                                            const agregar = document.querySelector('#descripcio_tema,#link,temas_agregar');
+                                            const agregar = document.querySelector('#descripcio_tema,#link,#temas_agregar');
                                             let formulario = document.querySelector('#o');
                                             
                                             if (agregar.value.length != 0 && agregar.value.length != 1) {
@@ -384,5 +386,7 @@
 <script src="assets/js/validarCategoria.js"></script>
 <script src="assets/js/plugins/sweetalert2.all.min.js"></script>
 <script src="assets/js/validarModulo.js"></script>
+<script src="assets/js/ValidarNombreTema.js"></script>
+<script src="assets/js/ValidarDescripcion.js"></script>
 </body>
 </html>

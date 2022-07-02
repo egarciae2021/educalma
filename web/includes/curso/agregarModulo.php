@@ -127,7 +127,7 @@
                                     -->
 
                                     <a style="" class="btn btn-outline-secondary btn-back btn-sm" href="javascript:history.back()" role="button" style="position: relative; top: -20px;">
-                                        <i class="fas fa-arrow-left"></i> Atrás
+                                        <i class="fas fa-arrow-left"></i> <span class="atras">Atrás</span> 
                                     </a>
                                 </div>
 
