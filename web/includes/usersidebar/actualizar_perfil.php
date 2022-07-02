@@ -1,5 +1,16 @@
 <?php
 require_once '../../database/databaseConection.php';
+function guidv4($data = null) {
+    $data = $data ?? random_bytes(16);
+    assert(strlen($data) == 16);
+
+    $data[6] = chr(ord($data[6]) & 0x0f | 0x40);
+    $data[8] = chr(ord($data[8]) & 0x3f | 0x80);
+
+    return vsprintf('%s%s-%s-%s-%s-%s%s%s', str_split(bin2hex($data), 4));
+} 
+
+
     if(isset($_GET['id'])){
         $id=$_GET['id'];
 
@@ -19,13 +30,40 @@ require_once '../../database/databaseConection.php';
     // $password = password_hash($pass, PASSWORD_BCRYPT);
 
         if($_FILES['imagen']['size']>0){
-            $imga=$_FILES['imagen']['tmp_name'];
-            $imagen = addslashes(file_get_contents($imga));
+            //
+            //$imga=$_FILES['imagen']['tmp_name'];
+            //$imagen = addslashes(file_get_contents($imga));
+            
+    $archivo = $_FILES['imagen']['name'];
+   //Si el archivo contiene algo y es diferente de vacio
+   if (isset($archivo) && $archivo != "") {
+      //Obtenemos algunos datos necesarios sobre el archivo
+      $tipo = $_FILES['imagen']['type'];
+      $tamano = $_FILES['imagen']['size'];
+      $temp = $_FILES['imagen']['tmp_name'];
+      $UUID = guidv4();
+      $ruta = null;
+      $rutaAbsoluta = $_SERVER["DOCUMENT_ROOT"]."/imagenes/";
+      //Se comprueba si el archivo a cargar es correcto observando su extensión y tamaño
+     if (!((strpos($tipo, "gif") || strpos($tipo, "jpeg") || strpos($tipo, "jpg") || strpos($tipo, "png")) && ($tamano < 2000000))) {
+        echo '<div><b>Error. La extensión o el tamaño de los archivos no es correcta.<br/>
+        - Se permiten archivos .gif, .jpg, .png. y de 200 kb como máximo.</b></div>';
+     }
+     else {
+        //Si la imagen es correcta en tamaño y tipo
+        //Se intenta subir al servidor
+        if (move_uploaded_file($temp, $rutaAbsoluta.$UUID.'.png')) {
+            //Cambiamos los permisos del archivo a 777 para poder modificarlo posteriormente
+            $ruta = '20.226.29.168/imagenes/'.$UUID.'.png';
+            chmod($rutaAbsoluta.$UUID.'.png', 0777);
 
             $pdo2 = Database::connect();  
-            $veri2="UPDATE usuarios SET nombres='$nombre', apellido_pat='$ape_pater', apellido_mat='$ape_mater', email='$correo', telefono='$telefono', tipo_doc='$tipo_docu',nro_doc='$num_docume',sexo='$sexo',fecha_nacimiento	='$fecha',pais ='$pais',mifoto = '$imagen' WHERE id_user = '$id' ";
+            $veri2="UPDATE usuarios SET nombres='$nombre', apellido_pat='$ape_pater', apellido_mat='$ape_mater', email='$correo', telefono='$telefono', tipo_doc='$tipo_docu',nro_doc='$num_docume',sexo='$sexo',fecha_nacimiento	='$fecha',pais ='$pais',mifoto = '$ruta' WHERE id_user = '$id' ";
             $q2 = $pdo2->prepare($veri2);
             $q2->execute(array());
+        }
+      }
+   }
         }else{
             $pdo2 = Database::connect();  
             $veri2="UPDATE usuarios SET nombres='$nombre', apellido_pat='$ape_pater', apellido_mat='$ape_mater', email='$correo', telefono='$telefono', tipo_doc='$tipo_docu',nro_doc='$num_docume',sexo='$sexo',fecha_nacimiento	='$fecha',pais ='$pais' WHERE id_user = '$id' ";
