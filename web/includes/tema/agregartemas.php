@@ -100,7 +100,7 @@
                                 -->
 
                                 <a style="cursor: pointer;" class="btn btn-outline-secondary btn-back btn-sm" href="agregarModulos.php?id=<?php echo $idCurso=$_GET['idCurso'];?>" role="button">
-                                    <i class="fas fa-arrow-left"></i> Atrás
+                                    <i class="fas fa-arrow-left"></i> <span class="atras">Atrás</span>
                                 </a>
                                 
                             </div>
