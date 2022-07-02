@@ -17,6 +17,7 @@ class Database
   // private static $dbUsername = 'root';
   // private static $dbUserPassword = ''; 
   
+  
 	private static $cont  = null;
 
 	public function __construct() {
