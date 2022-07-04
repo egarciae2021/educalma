@@ -13,7 +13,9 @@
 
     <section class="main">
         <div class="login-container">
-            <img class="image" src="./assets/images/Logo-min.jpg" width="30%" alt="hola">
+
+            <img class="image" src="./assets/images/logo_educalma.png" width="50%" alt="hola">
+
             <p class="title">Verificar un certificado</p>
             <div class="separator"></div>
             <form class="login-form" id="form-registro" action="includes/reco-certi/validarCertificado.php" method="POST" target="dummyframe">
