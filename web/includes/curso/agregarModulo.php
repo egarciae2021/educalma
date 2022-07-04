@@ -418,34 +418,6 @@
 
                         </div>
                         <!-- fin segunda columna -->
-
-                        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                     </div>
                 </div>
             </div>

@@ -55,7 +55,7 @@ $("#salir_agregar").click(function () {
         cancelButtonText: 'Cancelar',
       }).then((result) => {
         if (result.isConfirmed) {
-            window.location.href ="ListaCursos.php";
+            window.location.href ="./user-sidebar.php";
         }
       })
       

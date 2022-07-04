@@ -56,7 +56,7 @@
 
                             <div class="list-group lista2 text-left form-row">
                                 <a href="editarcurso.php?id=<?php echo $_GET['id']?>" class="btn btn-outline-secondary btn-back btn-sm" style="">
-                                    <i class="fas fa-pencil-alt"></i><span class="editar">Editar datos del curso</span>
+                                    <i class="fas fa-pencil-alt"></i><span class="editar">Editar datos del curso</span>     
                                 </a>
 
                                 <!--

@@ -84,12 +84,12 @@
                                         <!-- <a href="ListaCursos.php?pag=1" class="list-group-item list-group-item-action">
                                     <i class="fas fa-eye"></i> Ver todos los Cursos
                                 </a> -->
-                                        <button type="button" id="salir_public" class="btn btn-outline-secondary btn-back btn-sm" style="cursor: pointer; position: relative; top: -30px;">
-                                            <i class="fad fa-books"></i> Ver lista de cursos <br> No publicados
-                                        </button>
+                                        <!-- <button type="button" id="salir_public" class="btn btn-outline-secondary btn-back btn-sm" style="cursor: pointer; position: relative; top: -30px;">
+                                            <i class="fad fa-books"></i><span class="cursos">Ver lista de cursos <br> No publicados</span>
+                                        </button> -->
 
                                         <a style="position: relative; top: -40px;" class="btn btn-outline-secondary btn-back btn-sm" href="Form_pregun_cuestionario.php?id=<?php echo $_GET['id']; ?>&id_modulo=<?php echo $idmodulo=$_GET['id_modulo'];?>" role="button">
-                                            <i class="fas fa-arrow-left"></i> Atrás
+                                            <i class="fas fa-arrow-left"></i> <span class="atras">Atrás</span>
                                         </a>
                                     </div>
 
@@ -177,7 +177,7 @@
                                                 </a> -->
                                             <a>
                                                 <button class="btn btn-block btn-outline-success" type="button" data-toggle="modal" data-target="#ModaleditarResp<?php echo $registro1['idRespuesta']?>">
-                                                    <i class="far fa-edit"></i>
+                                                    <center><i class="far fa-edit"></i></center>
                                                 </button>
                                             </a>
                                         </div>
