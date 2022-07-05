@@ -161,12 +161,12 @@
 
                                 <div class="form-group col-md-6 ">
                                     <label class="form-label">Público Dirigido</label>
-                                    <input type="text " id="publico_dirigidoo" name="publico_dirigido" placeholder="Ingrese público dirigido" class="form-control" aria-label="Dirigido" aria-describedby="names-addon">
+                                    <input type="text" id="publico_dirigidoo" name="publico_dirigido" placeholder="Ingrese público dirigido" class="form-control" aria-label="Dirigido" aria-describedby="names-addon">
                                 </div>
 
                                 <div class="form-group col-md-6 ">
                                     <label class="form-label">Link Trailer</label>
-                                    <input type="text " id="link_trailer" name="link_trailer" placeholder="Ingrese link trailer" class="form-control" aria-label="lk_trailer" aria-describedby="names-addon">
+                                    <input type="text" id="link_trailer" name="link_trailer" placeholder="Ingrese link trailer" class="form-control" aria-label="lk_trailer" aria-describedby="names-addon">
                                 </div>
                                 
                             </div>

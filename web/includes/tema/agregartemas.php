@@ -22,6 +22,13 @@
         padding: 10px;*/
         margin:0;
         }
+        .form-group .error{
+            color: crimson;
+            font-style: normal;
+            font-size: 16px;
+            padding-top: 5px;
+            margin:0;
+        }
     </style>
     <script src="https://kit.fontawesome.com/f9e5248491.js" crossorigin="anonymous"></script>
     <title>Agregar Temas</title>
@@ -134,8 +141,8 @@
     
                                     <div class="form-group col-md-6 ">
                                         <label class="form-label">Link del vídeo</label>
-                                        <input type="text" id="linkValidate" class="form-control" name="link" id="link" placeholder="Ingrese un link" aria-label="ApellidosMat" aria-describedby="apellidoMat-addon" required>
-                                        <label for="linkValidate" style="color:red; display:none" id="labelLinkValidate">Ingresar Link valido</label>
+                                        <input type="text" class="form-control" name="link" id="link" placeholder="Ingrese un link" aria-label="ApellidosMat" aria-describedby="apellidoMat-addon" required>
+
                                     </div>
     
                                 </div>
@@ -382,11 +389,12 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.js"></script>
-<script src="assets/js/validarLink.js"></script>
+<!-- <script src="assets/js/validarLink.js"></script> La validación ahora está incluida en validarCategoria.js -->
 <script src="assets/js/validarCategoria.js"></script>
+<!-- <script src="assets/js/validarAgreTema.js"></script> en validarCategoria.js -->
 <script src="assets/js/plugins/sweetalert2.all.min.js"></script>
-<script src="assets/js/validarModulo.js"></script>
-<script src="assets/js/ValidarNombreTema.js"></script>
-<script src="assets/js/ValidarDescripcion.js"></script>
+<!-- <script src="assets/js/validarModulo.js"></script> Script no utilizado en esta vista -->
+<!-- <script src="assets/js/ValidarNombreTema.js"></script> en validarCategoria.js -->
+<!-- <script src="assets/js/ValidarDescripcion.js"></script> en validarCategoria.js -->
 </body>
 </html>
