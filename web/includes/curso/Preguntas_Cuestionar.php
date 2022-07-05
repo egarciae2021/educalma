@@ -129,7 +129,7 @@
                         </form>
                     
                     
-                        <form style="border: #4F52D6 2px solid; border-radius: 5px;" class="pt-0">
+                        <form style="margin-top: 20px;border: #4F52D6 2px solid; border-radius: 5px;" class="pt-0">
                             <div class="form-row">
                                 <div class="form-group col-12" style="position: relative; top: 10px; text-align: center;">
                                     <label style="font-size: 24px;" class="form-label">Preguntas del cuestionario del módulo:</label>
@@ -139,7 +139,7 @@
                             <!-- lista de preguntas - codigo php -->
                             <!-- <div class="overflow-auto"> -->
                             <div>
-                                <div class="form-row">
+                                <div class="form-row" style="position: relative; top: 10px;">
 
                                     <?php
                                         error_reporting(0);
@@ -159,25 +159,25 @@
                                         while($registro1 = $q1->fetch(PDO::FETCH_ASSOC)){
                                     ?>
 
-                                    <div class="form-group col-8 col-md-7 col-sm-9 col-lg-7 col-xl-8">
+                                    <div class="form-group col-8 col-md-7 col-sm-9 col-lg-7 col-xl-8 col-12">
                                         <input type="text" value="Pregunta: <?php echo $registro1['pregunta'];?>" class="form-control" disabled>
                                     </div>
 
                                     <!-- boton agregar respuesta -->
-                                    <div class="form-group col-2 col-md-3 col-sm-1 col-lg-3 col-xl-2">
+                                    <div class="form-group col-2 col-md-3 col-sm-1 col-lg-3 col-xl-2 col-12">
                                         <a style="background-color: #74F077;" class="btn btn-block btn-add" href="Form_respue_cuestionario.php?id=<?php echo $_GET['id']; ?>&id_pregunta=<?php echo $registro1['idPregunta']?>&id_modulo=<?php echo $idmodulo;?>&pregunta=<?php echo $registro1['pregunta']?>">
                                             <i class="fas fa-plus-square"></i> Respuesta
                                         </a>
                                     </div>
                                     
                                     <!-- boton editar pregunta -->
-                                    <a class="form-group col-1 col-md-1 col-sm-1 col-lg-1 col-xl-1">
+                                    <a class="form-group col-1 col-md-1 col-sm-1 col-lg-1 col-xl-1 col-12">
                                         <button class="btn btn-block btn-outline-success" type="button" data-toggle="modal" data-target="#ModaleditarPregun<?php echo $registro1['idPregunta']?>">
                                         <i class="far fa-edit"></i></button>
                                     </a>
 
                                     <!-- boton borrar pregunta -->
-                                    <a class="form-group col-1 col-md-1 col-sm-1 col-lg-1 col-xl-1">
+                                    <a class="form-group col-1 col-md-1 col-sm-1 col-lg-1 col-xl-1 col-12">
                                         <button class="btn btn-block btn-outline-danger" type="button" data-toggle="modal" data-target="#ModalquitarPregun<?php echo $registro1['idPregunta']?>">
                                         <i class="fas fa-trash-alt"></i></button>
                                     </a>

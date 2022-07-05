@@ -135,7 +135,7 @@
                                     </div>
                                 </form>
 
-                                <form style="  border: #4F52D6 2px solid; border-radius: 5px;" class="pt-0">
+                                <form style="margin-top: 20px;border: #4F52D6 2px solid; border-radius: 5px;" class="pt-0">
                                     <div class="form-row" style="position: relative; top: 10px;">
                                         <div class="form-group col-md-12" style="text-align: center;">
                                             <label style="font-size: 24px;" class="form-label">Listado de respuestas</label>
@@ -145,7 +145,7 @@
                                     <!-- lista de preguntas - codigo php -->
                                     <!-- <div class="overflow-auto"> -->
 
-                                    <div style="position: relative; top: -10px;"><!--clas="scroll"-->
+                                    <div style="position: relative; top: 10px;"><!--clas="scroll"-->
                                         <div class="form-row">
 
                                             <?php
@@ -166,33 +166,35 @@
 
                                             <?php while($registro1 = $q1->fetch(PDO::FETCH_ASSOC)){$success = $registro1['estado'];?>
 
-                                        <div class="form-group col-8 col-md-10 col-sm-8 col-lg-10 col-xl-10">
-                                            <input type="text" id="<?php if($success=='1'){$success = 'success'; echo $success;}?>" value="Respuesta: <?php echo $registro1['respuesta'];?>" class="form-control" disabled>
-                                        </div>
+                                        
+                                            <div class="form-group col-8 col-md-10 col-sm-8 col-lg-10 col-xl-10 col-12">
+                                                <input type="text" id="<?php if($success=='1'){$success = 'success'; echo $success;}?>" value="Respuesta: <?php echo $registro1['respuesta'];?>" class="form-control" disabled>
+                                            </div>
             
-                                        <!-- boton editar respuesta -->
-                                        <div class="form-group col-2 col-md-1 col-sm-2 col-lg-1 col-xl-1">
-                                            <!-- <a class="btn btn-block btn-outline-success" data-toggle="modal" data-target="#ModaleditarResp<?php echo $registro1['idRespuesta']?>">
-                                                    <i class="far fa-edit"></i>
-                                                </a> -->
-                                            <a>
-                                                <button class="btn btn-block btn-outline-success" type="button" data-toggle="modal" data-target="#ModaleditarResp<?php echo $registro1['idRespuesta']?>">
-                                                    <center><i class="far fa-edit"></i></center>
-                                                </button>
-                                            </a>
-                                        </div>
+                                            <!-- boton editar respuesta -->
+                                            <div class="form-group col-2 col-md-1 col-sm-2 col-lg-1 col-xl-1 col-12">
+                                                <!-- <a class="btn btn-block btn-outline-success" data-toggle="modal" data-target="#ModaleditarResp<?php echo $registro1['idRespuesta']?>">
+                                                        <i class="far fa-edit"></i>
+                                                    </a> -->
+                                                <a>
+                                                    <button class="btn btn-block btn-outline-success" type="button" data-toggle="modal" data-target="#ModaleditarResp<?php echo $registro1['idRespuesta']?>">
+                                                        <center><i class="far fa-edit"></i></center>
+                                                    </button>
+                                                </a>
+                                            </div>
 
-                                        <!-- boton borrar respuesta -->
-                                        <div class="form-group col-2 col-md-1 col-sm-2 col-lg-1 col-xl-1">
-                                            <!-- <a class="btn btn-block btn-outline-danger" data-toggle="modal" data-target="#ModalquitarResp<?php echo $registro1['idRespuesta']?>">
-                                                    <i class="fas fa-trash-alt"></i>
-                                                </a> -->
-                                            <a>
-                                                <button class="btn btn-block btn-outline-danger" type="button" data-toggle="modal" data-target="#ModalquitarResp<?php echo $registro1['idRespuesta']?>">
-                                                    <i class="fas fa-trash-alt"></i>
-                                                </button>
-                                            </a>
-                                        </div>
+                                            <!-- boton borrar respuesta -->
+                                            <div class="form-group col-2 col-md-1 col-sm-2 col-lg-1 col-xl-1 col-12">
+                                                <!-- <a class="btn btn-block btn-outline-danger" data-toggle="modal" data-target="#ModalquitarResp<?php echo $registro1['idRespuesta']?>">
+                                                        <i class="fas fa-trash-alt"></i>
+                                                    </a> -->
+                                                <a>
+                                                    <button class="btn btn-block btn-outline-danger" type="button" data-toggle="modal" data-target="#ModalquitarResp<?php echo $registro1['idRespuesta']?>">
+                                                        <i class="fas fa-trash-alt"></i>
+                                                    </button>
+                                                </a>
+                                            </div>
+                                        
                                             
                                 </form>
 
