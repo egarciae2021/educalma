@@ -42,7 +42,6 @@ require_once 'database/databaseConection.php';
                         <li class="nav-link" style="--i: .6s">
                 
                             <a href="ListaCursos.php?pag=1">Cursos</a>
-                
                         </li>
 
                         <!-- <li class="nav-link" style="--i: .6s;">
@@ -190,15 +189,15 @@ require_once 'database/databaseConection.php';
                             <div class="dropdown">
                                 <ul>
                                     <li class="dropdown-link">
-                                        <a style="color: black;" href="user-sidebar.php">Dashboard</a>
+                                        <a style="color: white;" href="user-sidebar.php">Dashboard</a>
                                     </li>
 
                                     <li class="dropdown-link">
-                                        <a style="color: black;" href="sidebarEditar.php">Ajustes</a>
+                                        <a style="color: white;" href="sidebarEditar.php">Ajustes</a>
                                     </li>
 
                                     <li class="dropdown-link">
-                                        <a style="color: black;" href="includes/login/logout.php">Cerrar Sesión</a>
+                                        <a style="color: white; border-top: 1px solid white;" href="includes/login/logout.php">Cerrar Sesión</a>
                                     </li>
                               
                                 </ul>
@@ -243,7 +242,7 @@ require_once 'database/databaseConection.php';
                                     </li>
                     
                                     <li class="dropdown-link">
-                                        <a style="color: white;" href="includes/login/logout.php">Cerrar Sesión</a>
+                                        <a style="color: white; border-top: 1px solid white;" href="includes/login/logout.php">Cerrar Sesión</a>
                                     </li>
                                   
                                 </ul>
@@ -290,7 +289,7 @@ require_once 'database/databaseConection.php';
                                     </li>
 
                                     <li class="dropdown-link">
-                                        <a style="color: white;" href="includes/login/logout.php">Cerrar Sesión</a>
+                                        <a style="color: white; border-top: 1px solid white;" href="includes/login/logout.php">Cerrar Sesión</a>
                                     </li>
                             
                                 </ul>
@@ -335,7 +334,7 @@ require_once 'database/databaseConection.php';
                                     </li>
                   
                                     <li class="dropdown-link">
-                                        <a style="color: white;" href="includes/login/logout.php">Cerrar Sesión</a>
+                                        <a style="color: white; border-top: 1px solid white;" href="includes/login/logout.php">Cerrar Sesión</a>
                                     </li>
                                 
                                 </ul>
@@ -379,7 +378,7 @@ require_once 'database/databaseConection.php';
                                     </li>
                                     
                                     <li class="dropdown-link">
-                                        <a style="color: white;" href="includes/login/logout.php">Cerrar Sesión</a>
+                                        <a style="color: white; border-top: 1px solid white;" href="includes/login/logout.php">Cerrar Sesión</a>
                                     </li>
                                   
                                 </ul>
@@ -423,7 +422,7 @@ require_once 'database/databaseConection.php';
                                     </li>
 
                                     <li class="dropdown-link">
-                                        <a style="color: white;" href="includes/login/logout.php">Cerrar Sesión</a>
+                                        <a style="color: white; border-top: 1px solid white;" href="includes/login/logout.php">Cerrar Sesión</a>
                                     </li>
                               
                                 </ul>

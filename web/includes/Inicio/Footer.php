@@ -119,13 +119,13 @@ Estamos presentes en Perú, Costa Rica, México, Argentina, y Colombia. </p> -->
           </div>
 
           <div class="col-md-4 col-sm-6 col-12">
-            <ul class="social-icons">
+            <ul style="margin-right: 35px;" class="social-icons">
               
               <li><a target="_blank" class="facebook" href="https://www.facebook.com/fundacioncalma.org/"><i class="fab fa-facebook-f"></i></a></li>
               <li><a target="_blank" class="twitter" href="https://twitter.com/fundacioncalma2 "><i class="fab fa-twitter"></i></a></li>
               <li><a target="_blank" class="youtube" href="https://www.youtube.com/channel/UCsEmW0is_Q-d_IMfux0pfEw"><i class="fab fa-youtube"></i></a></li>
               <li><a target="_blank" class="instagram" href="https://www.instagram.com/fundacioncalma/?hl=es"><i class="fab fa-instagram"></i></a></li>
-              <li><a target="_blank" class="whatsapp" href="https://api.whatsapp.com/send?phone=51910571087&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20los%20cursos%20."><i class="fab fa-whatsapp"></i></a></li>
+              <!--<li><a target="_blank" class="whatsapp" href="https://api.whatsapp.com/send?phone=51910571087&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20los%20cursos%20."><i class="fab fa-whatsapp"></i></a></li>-->
               <li><a target="_blank" class="envelope" href="https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&su=Educalma+-+Consulta&to=fundacioncalma5@gmail.com&body=Vi%20su%20plataforma%20y%20me%20pareci%C3%B3%20muy%20bueno%20pero%20tengo%20la%20siguiente%20duda:"><i class="far fa-envelope"></i></i></a></li>
               
             </ul>

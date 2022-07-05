@@ -117,7 +117,7 @@
     ?>
 
     <div class="login-page">
-        <div class="form">
+        <div class="form" style="border-radius: 20px;">
             <form class="login-form">
                 <!-- Codigo Empresa -->
                 <div class="col my-3">
