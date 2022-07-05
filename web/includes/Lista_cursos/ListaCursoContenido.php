@@ -39,7 +39,7 @@
         <div class="col-12">
             <div class="row mb-4 mt-4" style="background-color: #e7f4ff; margin-left: 25px; margin-right: 25px; border-radius: 50px;">
                 <div class="container section-title-course">
-                    <i class="fas fa-shapes mr-3"></i>Cursos publicados más destacados
+                    <i class="fas fa-shapes mr-3"></i>Cursos destacados
                     <hr>
                 </div>
             </div>
@@ -209,7 +209,7 @@
                                                             if($dato['costoCurso']!=0 && $dato['costoCurso'] != "Gratis"){
                                                                 echo 'S/ ' . $dato['costoCurso'];
                                                             }else{
-                                                                echo 'Gratis';
+                                                                echo 'Gratis por tiempo limitado';
                                                             }
                                                         ?>
                                                     </p>
@@ -221,7 +221,7 @@
                                                             if($dato['costoCurso']!=0 && $dato['costoCurso'] != "Gratis"){
                                                                 echo 'S/ ' . $dato['costoCurso'],"","<span style='position: relative; left: 100px; color: #63F70E;'>Comprado</span>";
                                                             }else{
-                                                                echo 'Gratis',"","<span style='margin-left: 110px; color: #63F70E;'>Comprado</span>";
+                                                                echo 'Gratis por tiempo limitado',"","<span style='margin-left: 110px; color: #63F70E;'>Comprado</span>";
                                                             }
                                                         ?>
                                                     </p>
@@ -230,28 +230,87 @@
                                                 <?php } ?>
                                                 
                                                 
-                                                <?php
-                                                //if(isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)){
-                                                ?>
-                                                    <!--Link "Leer Más"-->
-                                                    <!--<div class="container-card-link" style="margin: auto;">
-                                                        <a href="<?php echo $paginaRed ?>.php?id=<?php echo $dato['idCurso']; ?><?php if(!empty($dato2)){?>&idCI=<?php echo $dato2['id_cursoInscrito']; }?>">
-                                                        <center><strong>Leer Más</strong></center>
-                                                        </a>
-                                                    </div>-->
-                                                <?php
-                                                //}else{
-                                                ?>
+
+
                                                 
-                                                    <!--Link "Leer Más"-->
-                                                    <!--<div class="container-card-link" style="margin: auto;">
-                                                        <a href="iniciosesion.php">
-                                                        <center><strong>Leer Más</strong></center>
-                                                        </a>
-                                                    </div>-->
+
+
+
                                                 <?php
-                                                //}
+                                                            if($dato['costoCurso']!=0 && $dato['costoCurso'] != "Gratis"){ //Si no gratis
                                                 ?>
+
+
+                                                                <?php
+                                                                if(isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)){
+                                                                ?>
+                                                                    <!--Link "Leer Más"-->
+                                                                    <div class="container-card-link" style="margin: auto;">
+                                                                        <a href="<?php echo $paginaRed ?>.php?id=<?php echo $dato['idCurso']; ?><?php if(!empty($dato2)){?>&idCI=<?php echo $dato2['id_cursoInscrito']; }?>">
+                                                                        <center><strong>Leer Más</strong></center>
+                                                                        </a>
+                                                                    </div>
+                                                                <?php
+                                                                }else{
+                                                                ?>
+                                                                
+                                                                    <!--Link "Leer Más"-->
+                                                                    <div class="container-card-link" style="margin: auto;">
+                                                                        <a href="iniciosesion.php">
+                                                                        <center><strong>Leer Más</strong></center>
+                                                                        </a>
+                                                                    </div>
+                                                                <?php
+                                                                }
+                                                                ?>
+                                                                
+
+                                                <?php
+                                                            }else{ //Si es gratis
+                                                ?>  
+
+                                                                <?php
+                                                                if(isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)){
+                                                                ?>
+                                                                    <!--Link "Leer Más"-->
+                                                                    <div class="container-card-link" style="margin: auto;">
+                                                                        <a href="<?php echo $paginaRed ?>.php?id=<?php echo $dato['idCurso']; ?><?php if(!empty($dato2)){?>&idCI=<?php echo $dato2['id_cursoInscrito']; }?>">
+                                                                        <center><strong>Obtener Gratis</strong></center>
+                                                                        </a>
+                                                                    </div>
+                                                                <?php
+                                                                }else{
+                                                                ?>
+                                                                
+                                                                    <!--Link "Leer Más"-->
+                                                                    <div class="container-card-link" style="margin: auto;">
+                                                                        <a href="iniciosesion.php">
+                                                                        <center><strong>Obtener Gratis</strong></center>
+                                                                        </a>
+                                                                    </div>
+                                                                <?php
+                                                                }
+                                                                ?>
+
+
+
+
+                                                <?php
+                                                            }
+                                                ?>
+
+
+
+
+
+
+
+
+
+
+
+
+                                            
                         
                                     </div>
 
@@ -571,7 +630,7 @@
                                         if($dato['costoCurso']!=0 && $dato['costoCurso'] != "Gratis"){
                                             echo 'S/ ' . $dato['costoCurso'];
                                         }else{
-                                            echo 'Gratis';
+                                            echo 'Gratis por tiempo limitado';
                                         }
                                     ?>
                                 </p>
@@ -583,7 +642,7 @@
                                         if($dato['costoCurso']!=0 && $dato['costoCurso'] != "Gratis"){
                                             echo 'S/ ' . $dato['costoCurso'],"","<span style='position: relative; left: 100px; color: #63F70E;'>Comprado</span>";
                                         }else{
-                                            echo 'Gratis',"","<span style='margin-left: 110px; color: #63F70E;'>Comprado</span>";
+                                            echo 'Gratis por tiempo limitado',"","<span style='margin-left: 110px; color: #63F70E;'>Comprado</span>";
                                         }
                                     ?>
                                 </p>
@@ -591,28 +650,68 @@
             
                             <?php } ?>
 
-                                    <?php
-                                    //if(isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)){
-                                    ?>
-                                        <!--Link "Leer Más"-->
-                                        <!--<div class="container-card-link" style="margin: auto;">
-                                            <a href="<?php echo $paginaRed ?>.php?id=<?php echo $dato['idCurso']; ?><?php if(!empty($dato2)){?>&idCI=<?php echo $dato2['id_cursoInscrito']; }?>">
-                                            <center><strong>Leer Más</strong></center>
-                                            </a>
-                                        </div>-->
-                                    <?php
-                                    //}else{
-                                    ?>
-                                    
-                                        <!--Link "Leer Más"-->
-                                        <!--<div class="container-card-link" style="margin: auto;">
-                                            <a href="iniciosesion.php">
-                                            <center><strong>Leer Más</strong></center>
-                                            </a>
-                                        </div>-->
-                                    <?php
-                                    //}
-                                    ?>
+                                                <?php
+                                                            if($dato['costoCurso']!=0 && $dato['costoCurso'] != "Gratis"){ //Si no gratis
+                                                ?>
+
+
+                                                                <?php
+                                                                if(isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)){
+                                                                ?>
+                                                                    <!--Link "Leer Más"-->
+                                                                    <div class="container-card-link" style="margin: auto;">
+                                                                        <a href="<?php echo $paginaRed ?>.php?id=<?php echo $dato['idCurso']; ?><?php if(!empty($dato2)){?>&idCI=<?php echo $dato2['id_cursoInscrito']; }?>">
+                                                                        <center><strong>Leer Más</strong></center>
+                                                                        </a>
+                                                                    </div>
+                                                                <?php
+                                                                }else{
+                                                                ?>
+                                                                
+                                                                    <!--Link "Leer Más"-->
+                                                                    <div class="container-card-link" style="margin: auto;">
+                                                                        <a href="iniciosesion.php">
+                                                                        <center><strong>Leer Más</strong></center>
+                                                                        </a>
+                                                                    </div>
+                                                                <?php
+                                                                }
+                                                                ?>
+                                                                
+
+                                                <?php
+                                                            }else{ //Si es gratis
+                                                ?>  
+
+                                                                <?php
+                                                                if(isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)){
+                                                                ?>
+                                                                    <!--Link "Leer Más"-->
+                                                                    <div class="container-card-link" style="margin: auto;">
+                                                                        <a href="<?php echo $paginaRed ?>.php?id=<?php echo $dato['idCurso']; ?><?php if(!empty($dato2)){?>&idCI=<?php echo $dato2['id_cursoInscrito']; }?>">
+                                                                        <center><strong>Obtener Gratis</strong></center>
+                                                                        </a>
+                                                                    </div>
+                                                                <?php
+                                                                }else{
+                                                                ?>
+                                                                
+                                                                    <!--Link "Leer Más"-->
+                                                                    <div class="container-card-link" style="margin: auto;">
+                                                                        <a href="iniciosesion.php">
+                                                                        <center><strong>Obtener Gratis</strong></center>
+                                                                        </a>
+                                                                    </div>
+                                                                <?php
+                                                                }
+                                                                ?>
+
+
+
+
+                                                <?php
+                                                            }
+                                                ?>
             
                         </div>
 
@@ -743,6 +842,16 @@
                         
                                         <?php } ?>
 
+
+
+
+
+
+
+                                        <?php
+                                        if($dato['costoCurso']!=0 && $dato['costoCurso'] != "Gratis"){//Si no es gratis
+                                        ?>
+
                                                 <?php
                                                 if(isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)){
                                                 ?>
@@ -765,6 +874,50 @@
                                                 <?php
                                                 }
                                                 ?>
+
+
+
+
+                                        <?php    
+                                        }else{ //Si es gratis
+                                        ?>
+
+
+                                                <?php
+                                                if(isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)){
+                                                ?>
+                                                    <!--Link "Leer Más"-->
+                                                    <div style="margin-bottom: -50px; background: #168eb3; border-radius: 30px; font-weight: 500; padding: 9px; width: 180px; float: right; position: relative; top: -60px;">
+                                                        <a style="color: #FFFF; font-size: 20px; text-decoration: none;" href="<?php echo $paginaRed ?>.php?id=<?php echo $dato['idCurso']; ?><?php if(!empty($dato2)){?>&idCI=<?php echo $dato2['id_cursoInscrito']; }?>">
+                                                        <center>Obtener Gratis</center>
+                                                        </a>
+                                                    </div>
+                                                <?php
+                                                }else{
+                                                ?>
+                                                
+                                                    <!--Link "Leer Más"-->
+                                                    <div style="margin: auto; background: #168eb3; border-radius: 30px; font-weight: 500; padding: 9px; width: 180px; float: right; position: relative; top: -60px;">
+                                                        <a style="color: #FFFF; font-size: 20px; text-decoration: none;" href="iniciosesion.php">
+                                                        <center>Obtener Gratis</center>
+                                                        </a>
+                                                    </div>
+                                                <?php
+                                                }
+                                                ?>
+
+
+                                        <?php   
+                                        }
+                                        ?>
+                                
+
+
+
+
+
+
+                                                
                         
                                     </div>
 
