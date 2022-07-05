@@ -55,9 +55,9 @@
                             </ul-->
 
                             <div class="list-group lista2 text-left form-row">
-                                <a href="editarcurso.php?id=<?php echo $_GET['id']?>" class="btn btn-outline-secondary btn-back btn-sm" style="">
+                                <!-- <a href="editarcurso.php?id=<?php echo $_GET['id']?>" class="btn btn-outline-secondary btn-back btn-sm" style="">
                                     <i class="fas fa-pencil-alt"></i><span class="editar">Editar datos del curso</span>     
-                                </a>
+                                </a> -->
 
                                 <!--
                                 <a href="agregarModulos.php?id=<?php echo $_GET['id'] ?>" class="btn btn-outline-secondary btn-back btn-sm" style="position: relative; top: -50px;">
@@ -71,9 +71,9 @@
                                     <!-- <a href="ListaCursos.php?pag=1" class="list-group-item list-group-item-action">
                                         <i class="fas fa-eye"></i> Ver todos los Cursos
                                     </a> -->
-                                <button typer="button" id="salir_public" class="btn btn-outline-secondary btn-back btn-sm" style="cursor: pointer; position: relative; top: -50px;">
+                                <!-- <button typer="button" id="salir_public" class="btn btn-outline-secondary btn-back btn-sm" style="cursor: pointer; position: relative; top: -50px;">
                                     <i class="fad fa-books"></i><span class="cursos">Ver lista de cursos <br> No publicados</span>
-                                </button>
+                                </button> -->
                                 <a class="btn btn-outline-secondary btn-back btn-sm" style="cursor: pointer;" href="agregarModulos.php?id=<?php echo $id=$_SESSION['ids'];?>" role="button">
                                     <i class="fas fa-arrow-left"></i><span class="atras">Atrás</span>
                                 </a>
