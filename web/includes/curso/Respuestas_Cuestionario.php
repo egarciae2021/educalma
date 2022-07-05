@@ -107,7 +107,7 @@
                                         Registro de respuestas para la pregunta del módulo:
                                         </div>
                                         <div class="form-group col-md-12" style="">
-                                            <h5 class="font-weight-light" style="color: black; font-weight: bold; font-size: 24px; position: relative; top: 20px;">
+                                            <h5 class="font-weight-light pregunta" style="">
                                                 Pregunta: <?php echo $pregunta;?>
                                             </h5>
                                         </div>
@@ -339,7 +339,7 @@
                                                 </div>
                                             
                                                     <div class="form-group col-4 col-xs-4 col-md-3 col-sm-4 col-lg-2 col-xl-2">
-                                                        <button class="btn btn-block btn-primary text-white" id="form_respuesta" type="submit">Correcto</button>
+                                                        <button class="btn btn-block btn-primary text-white" id="form_respuesta" type="submit"><span class="btnCorrecto">Correcto</span></button>
                                                     </div>
 
                                             </div>
