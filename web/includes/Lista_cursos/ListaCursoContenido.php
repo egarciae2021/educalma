@@ -221,7 +221,7 @@
                                                             if($dato['costoCurso']!=0 && $dato['costoCurso'] != "Gratis"){
                                                                 echo 'S/ ' . $dato['costoCurso'],"","<span style='position: relative; left: 100px; color: #63F70E;'>Comprado</span>";
                                                             }else{
-                                                                echo 'Gratis por tiempo limitado',"","<span style='margin-left: 110px; color: #63F70E;'>Comprado</span>";
+                                                                echo 'Gratis por tiempo limitado',"","<span style='color: #63F70E; margin-left: 10px;'>Comprado</span>";
                                                             }
                                                         ?>
                                                     </p>
@@ -642,7 +642,7 @@
                                         if($dato['costoCurso']!=0 && $dato['costoCurso'] != "Gratis"){
                                             echo 'S/ ' . $dato['costoCurso'],"","<span style='position: relative; left: 100px; color: #63F70E;'>Comprado</span>";
                                         }else{
-                                            echo 'Gratis por tiempo limitado',"","<span style='margin-left: 110px; color: #63F70E;'>Comprado</span>";
+                                            echo 'Gratis por tiempo limitado',"","<span style='color: #63F70E; margin-left: 10px;'>Comprado</span>";
                                         }
                                     ?>
                                 </p>
