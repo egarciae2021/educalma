@@ -186,6 +186,16 @@ if (!isset($_GET['pag'])) {
   <div class="row">
     <div class="col-12">
 
+      <style>
+        @media (max-width: 600px) {
+
+          .divCursosDestacados {
+            position: relative;
+            top: 30px;
+          }
+
+        }
+      </style>
       <div class="divCursosDestacados row"> <!--/////////////////////////-->
         <div class="section-title">
           <div class=""></div>
@@ -386,8 +396,21 @@ if (!isset($_GET['pag'])) {
       <!--<div class="input-data">-->
 
         <!--<input type="email" placeholder="Escribe tu correo empresarial" id="txtEmail" />-->
+        <style>
+          #btnAction {
+
+            margin-left: 200px;
+          }
+
+          @media (max-width: 600px){
+            #btnAction {
+
+              margin-left: 50px;
+            }
+          }
+        </style>
         <br>
-          <button id="btnAction" style="width: 200px; position: relative; top: -50px; margin-left: 50px; background-color:#737BF1; font-weight:500;">MÁS INFORMACIÓN</button>
+          <button id="btnAction" style="width: 200px; position: relative; top: -50px; background-color:#737BF1; font-weight:500;">MÁS INFORMACIÓN</button>
         <br>
 
       <!--</div>-->
@@ -570,12 +593,33 @@ if (!isset($_GET['pag'])) {
                 
               </div>
             </div-->
+            <style>
+
+              .select {
+                border: none;
+                background: #cce4fc;
+                width: 285px;
+                height: 35px;
+              }
+
+              @media (max-width: 600px) {
+
+                .select {
+
+                  width: 270px;
+                }
+              }
+            </style>
             <div class="group-control">
               <span class="title">Tamaño de la empresa</span>
               <div  class="row-three">
-              <div class="icon" id="quitNumber">-</div>
-                <input  class="text-center" type="text" min="0" value="0" name="" id="numSusc" onKeypress="if (event.keyCode < 49 || event.keyCode > 57) event.returnValue = false;"/>
-                <div class="icon" id="plusNumber">+</div>
+                <select class="select" type="text" min="0" value="0" name="" id="numSusc" onKeypress="if (event.keyCode < 49 || event.keyCode > 57) event.returnValue = false;">
+                  <option disabled selected>Seleccione tamaño</option>
+                  <option>Microempresa</option>
+                  <option>Pequeña Empresa</option>
+                  <option>Mediana Empresa</option>
+                  <option>Gran Empresa</option>
+                </select>
               </div>
             </div>
 
