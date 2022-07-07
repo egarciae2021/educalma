@@ -43,7 +43,7 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                                 if($dato['mifoto']!=null){
                             ?>
                                 
-                               <img id="miFoto"  src="data:image/*;base64,<?php echo base64_encode($dato['mifoto']); ?>" alt="foto_curso" class="header__img__side-dashboard" >  
+                               <img id="miFoto"  src="<?php echo $dato['mifoto']; ?>" alt="foto_curso" class="header__img__side-dashboard" >  
                                <!-- <style>
                                    #miFoto{
                                     border-radius: 50%;
