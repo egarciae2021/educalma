@@ -594,7 +594,7 @@
                                                 var url = "includes/curso/rating.php";
                                                 var rating = $("input[name='rating']:checked").val();
                                                 var coment = $("#coment1").val();
-                                                var queryString = new URLSearchParams(window.location.search)
+                                                var prepQuery = new URLSearchParams(window.location.search)
                                                 var id = prepQuery.get('id');
                                                 var idCI = prepQuery.get('idCI');
 
