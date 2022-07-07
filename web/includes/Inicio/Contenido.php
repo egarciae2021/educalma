@@ -271,19 +271,12 @@ if (!isset($_GET['pag'])) {
 
 
         <style>
-          body {
-              display: flex;
-              flex-wrap: wrap;
-              align-items: center;
-              justify-content: center;
-          }
-
 
           .card {
-              position: relative;
-              width: 300px;
+              
+              width: 500px;
               height: 350px;
-              margin: 20px;
+       
           }
 
           .card .face {
@@ -300,7 +293,7 @@ if (!isset($_GET['pag'])) {
               transform: perspective(600px) rotateY(0deg);
               box-shadow: 0 5px 10px #000;
               position: relative;
-              top: -1px;
+              top: 1px;
           }
 
           .card .front img {
@@ -359,125 +352,141 @@ if (!isset($_GET['pag'])) {
               transform: perspective(600px) rotateY(360deg);
           }
 
+          @media (max-width: 600px) {
+
+            .cardsCursosDest{
+              margin-top: 30px;
+            }
+
+            .card .front {
+              transform: perspective(600px) rotateY(0deg);
+              box-shadow: 0 5px 10px #000;
+              position: relative;
+              top: -20px;
+            }
+            
+          }
+
 
         </style>
 
+     
+            <div class="card" style="background: transparent;">
 
-        <div class="card" style="background: white;">
 
+                <!--ADELANTE-->
+                <div class="face front cardsCursosDest">
 
-            <!--ADELANTE-->
-            <div class="face front">
+                    <!--IMAGEN-->
+                    <!--Contenedor de la imagen-->
+                    <div style="border-radius: 30px 30px 0 0;" class="container-card-image">                      
+                        <?php
+                        if ($dato['imagenDestacadaCurso'] != null) {
+                        ?>
+                            <!--Imagen-->
+                            <img class="imgCurso" style="" src="data:image/*;base64,<?php echo base64_encode($dato['imagenDestacadaCurso']); ?>" alt="">
+                            <a class="txtTrailer" data-toggle="modal" data-target=".bd-example-modal-lg<?php echo $dato['idCurso'];?>"><label>Ver Trailer</label></a>
+                        <?php
+                        } else {
+                        ?>
+                            <img class="imgCurso" src="./assets/images/curso_educalma.png">
+                            <a class="txtTrailer" data-toggle="modal" data-target=".bd-example-modal-lg<?php echo $dato['idCurso'];?>"><label>Ver Trailer</label></a>
+                        <?php
+                        }
+                        ?>
 
-                <!--IMAGEN-->
-                <!--Contenedor de la imagen-->
-                <div style="border-radius: 30px 30px 0 0;" class="container-card-image">                      
-                    <?php
-                    if ($dato['imagenDestacadaCurso'] != null) {
-                    ?>
-                        <!--Imagen-->
-                        <img class="imgCurso" style="" src="data:image/*;base64,<?php echo base64_encode($dato['imagenDestacadaCurso']); ?>" alt="">
-                        <a class="txtTrailer" data-toggle="modal" data-target=".bd-example-modal-lg<?php echo $dato['idCurso'];?>"><label>Ver Trailer</label></a>
-                    <?php
-                    } else {
-                    ?>
-                        <img class="imgCurso" src="./assets/images/curso_educalma.png">
-                        <a class="txtTrailer" data-toggle="modal" data-target=".bd-example-modal-lg<?php echo $dato['idCurso'];?>"><label>Ver Trailer</label></a>
-                    <?php
-                    }
-                    ?>
+                    </div>
 
+                    <!--NOMBRE CURSO-->
+                    <h3 style="color: #99ccff;"><?php echo $dato['nombreCurso'];?></h3>
                 </div>
 
-                <!--NOMBRE CURSO-->
-                <h3><?php echo $dato['nombreCurso'];?></h3>
-            </div>
 
+                <!--ATRÁS-->
+                <div class="face back" style="background: linear-gradient(to right, #7C83FD, #E0C7E5);">
 
-            <!--ATRÁS-->
-            <div class="face back" style="background: linear-gradient(to right, #7C83FD, #E0C7E5);">
+                    <!--NOMBRE CURSO-->
+                    <h4 style="font-weight: 600; margin-bottom: 20px;"><?php echo $dato['nombreCurso'];?></h4>
 
-                <!--NOMBRE CURSO-->
-                <h4 style="font-weight: 600; margin-bottom: 20px;"><?php echo $dato['nombreCurso'];?></h4>
+                    <!--AUTOR-->
+                    <!--Contenedor del nombre del profesor del curso publicado más destacado-->
+                    <div class="container-card-description" style="font-size: 11px; position: relative; top: 20px;">
 
-                <!--AUTOR-->
-                <!--Contenedor del nombre del profesor del curso publicado más destacado-->
-                <div class="container-card-description" style="font-size: 11px; position: relative; top: 20px;">
-
-                    <!--Código para obtener el nombre del profesor-->
-                    <?php 
-                        $idUsuario = $dato['id_userprofesor'];
-                        $sql = "SELECT * FROM usuarios WHERE id_user = '$idUsuario'";
-                        $q = $pdo->prepare($sql);
-                        $q->execute(array());
-                        $dato5 = $q->fetch(PDO::FETCH_ASSOC);
+                        <!--Código para obtener el nombre del profesor-->
+                        <?php 
+                            $idUsuario = $dato['id_userprofesor'];
+                            $sql = "SELECT * FROM usuarios WHERE id_user = '$idUsuario'";
+                            $q = $pdo->prepare($sql);
+                            $q->execute(array());
+                            $dato5 = $q->fetch(PDO::FETCH_ASSOC);
+                            
+                        ?>
                         
-                    ?>
-                    
 
-                    <a style="position: relative; top: -40px;">
+                        <a style="position: relative; top: -40px;">
 
-                        <?php 
-                            if($dato5['privilegio']==1){
-                        ?>
+                            <?php 
+                                if($dato5['privilegio']==1){
+                            ?>
 
-                                <span style="color: black; font-size: 13px;">Creado por la Fundación CALMA.</span>
+                                    <span style="color: black; font-size: 13px;">Creado por la Fundación CALMA.</span>
 
-                        <?php 
-                            }
+                            <?php 
+                                }
 
-                            if($dato5['privilegio']==2){
-                        ?>
-                                <span style="color: black; font-size: 13px;">Creado por <?php echo " " . $dato5['nombres'] . " " . $dato5['apellido_pat'] . " " . $dato5['apellido_mat'] . "."?></span>
-                        <?php 
-                            }
-                        ?>
-                    </a>
+                                if($dato5['privilegio']==2){
+                            ?>
+                                    <span style="color: black; font-size: 13px;">Creado por <?php echo " " . $dato5['nombres'] . " " . $dato5['apellido_pat'] . " " . $dato5['apellido_mat'] . "."?></span>
+                            <?php 
+                                }
+                            ?>
+                        </a>
 
-                </div>
+                    </div>
 
-                <!--DESCRIPCIÓN-->
-                <h5 style="color: #282C71; text-align: left;" style="height: 60px;"><?php echo $dato['descripcionCurso']; ?></h5>
+                    <!--DESCRIPCIÓN-->
+                    <h5 style="color: #282C71; text-align: left;" style="height: 60px;"><?php echo $dato['descripcionCurso']; ?></h5>
 
-                <!--PRECIO-->
-                <div>
-                                
-                                <p style="">
-                                    <?php
-                                        if($dato['costoCurso']!=0 && $dato['costoCurso'] != "Gratis"){
-                                            echo 'S/ ' . $dato['costoCurso'];
-                                        }else{
-                                            echo 'Gratuito por tiempo limitado';
-                                        }
-                                    ?>
-                                </p>
-            
-                       
+                    <!--PRECIO-->
+                    <div>
+                                    
+                                    <p style="font-size: 20px;">
+                                        <?php
+                                            if($dato['costoCurso']!=0 && $dato['costoCurso'] != "Gratis"){
+                                                echo 'S/ ' . $dato['costoCurso'];
+                                            }else{
+                                                echo 'Gratuito por tiempo limitado';
+                                            }
+                                        ?>
+                                    </p>
                 
-                </div>
-               
-                <!--BOTÓN-->
-                <div class="link">
-                    <?php
-                    if(isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)){
-                    ?>
-                    <a style="color: #7c83fd; background: white; border-radius: 30px;" href="<?php echo $paginaRed ?>.php?id=<?php echo $dato['idCurso']; ?><?php if(!empty($dato2)){?>&idCI=<?php echo $dato2['id_cursoInscrito']; }?>" type="button" class="btn btn-outline-info btn_registrar">
-                      <i class="far fa-play-circle"></i>
-                      Comienza a ver el curso
-                    </a>
-                    <?php
-                    }else{
-                    ?>
-                      <a style="color: #7c83fd; background: white; border-radius: 30px;" href="iniciosesion.php" type="button" class="btn btn-outline-info btn_registrar">
-                        <i class="far fa-play-circle"></i>
-                        Comienza a ver el curso
-                      </a>
-                    <?php
-                    }
-                    ?>
+                          
+                    
+                    </div>
+                  
+                    <!--BOTÓN-->
+                    <div class="link">
+                        <?php
+                        if(isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)){
+                        ?>
+                        <a style="color: #7c83fd; background: white; border-radius: 30px;" href="<?php echo $paginaRed ?>.php?id=<?php echo $dato['idCurso']; ?><?php if(!empty($dato2)){?>&idCI=<?php echo $dato2['id_cursoInscrito']; }?>" type="button" class="btn btn-outline-info btn_registrar">
+                          <i class="far fa-play-circle"></i>
+                          Comienza a ver el curso
+                        </a>
+                        <?php
+                        }else{
+                        ?>
+                          <a style="color: #7c83fd; background: white; border-radius: 30px;" href="iniciosesion.php" type="button" class="btn btn-outline-info btn_registrar">
+                            <i class="far fa-play-circle"></i>
+                            Comienza a ver el curso
+                          </a>
+                        <?php
+                        }
+                        ?>
+                    </div>
                 </div>
             </div>
-        </div>
+        
 
 
 
