@@ -589,33 +589,7 @@
  -->     
                                         <button id="botonTerminar" type="button" data-toggle="modal" class="btn btn-outline-secondary" data-target="#btnTerminar" >Guardar</button>
                                         <script>
-                                            $("#botonTerminar").click(function(){
-
-                                                var url = "includes/curso/rating.php";
-                                                var rating = $("input[name='rating']:checked").val();
-                                                var coment = $("#coment1").val();
-                                                var prepQuery = new URLSearchParams(window.location.search)
-                                                var id = prepQuery.get('id');
-                                                var idCI = prepQuery.get('idCI');
-
-                                                $.ajax({
-                                                    type: "POST",
-                                                    url: url,
-                                                    data: 
-                                                    {
-                                                        rating : rating,
-                                                        coment : coment,
-                                                        id : id,
-                                                        idCI : idCI
-                                                    },
-                                                    success: function(data)
-                                                    {
-                                                        alert("success!");
-                                                        console.log(data);
-                                                    }
-                                                });
-
-                                                /*
+                                            $("#botonTerminar").click((event)=>{
                                                 const rating = $("input[name='rating']:checked").val()
                                                 console.log(rating)
                             
@@ -627,9 +601,9 @@
                                                 const prepQuery = new URLSearchParams(window.location.search)
                                                 queryString.append('id',prepQuery.get('id'))
                                                 queryString.append('idCI',prepQuery.get('idCI'))
-                                                window.location="curso.php?"+queryString*/
+                                                window.location="curso.php?"+queryString
                                                 /* window.location.search = queryString.toString()  */
-                                                //console.log(queryString.toString())
+                                                console.log(queryString.toString())
                                             /*  window.location="./rating.php" */
 
                                             })
