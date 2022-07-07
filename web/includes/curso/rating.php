@@ -1,4 +1,5 @@
-<?php 
+<?php
+require_once '././database/databaseConection.php';
 ob_start();
 @session_start();
 ini_set('display_errors', 1);
