@@ -212,60 +212,293 @@ if (!isset($_GET['pag'])) {
           $query->execute();
           $conteo=0;
 
-          while($dato=$query->fetch(PDO::FETCH_ASSOC)){
+          while ($dato = $query->fetch(PDO::FETCH_ASSOC)) {
+
+            $conteo = $conteo + 1;
+
+            //ALGORITMO CURSO INSCRITO Y NO INSCRITO
             if (isset($_SESSION['codUsuario'])) {
-              $cursoID = $dato['idCurso'];
-              $userID = $_SESSION['codUsuario'];
-
-
-
-              $sql4 = "SELECT * FROM cursoinscrito where curso_id='$cursoID' and usuario_id = '$userID' ";
-              $query4 = $pdo->prepare($sql4);
-              $query4->execute(array());
-              $dato2 = $query4->fetch(PDO::FETCH_ASSOC);
-              if (empty($dato2)) {
-                  $paginaRed = "detallecurso";
-              } else {
-                  $paginaRed = "curso";
-              }
-          } else {
-              $paginaRed =
-                  "detallecurso";
-          }
-              
+                $cursoID = $dato['idCurso'];
+                $userID = $_SESSION['codUsuario'];
+                $sql4 = "SELECT * FROM cursoinscrito where curso_id='$cursoID' and usuario_id = '$userID'";
+                $query4 = $pdo->prepare($sql4);
+                $query4->execute(array());
+                $dato2 = $query4->fetch(PDO::FETCH_ASSOC);
+                if (empty($dato2)) {
+                    $paginaRed = "detallecurso";
+                } else {
+                    $paginaRed = "curso";
+                }
+            } else {
+                $paginaRed = "detallecurso";
+            }
         ?>
 
 
-        <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 mb-4">
-          <div  style="background: #E7F4FF; border-radius: 20px; color: #282C71;" class="card destacados">
-            <div class="row ">
-              <div class="col-4 col-sm-4 col-md-12 col-lg-4 col-xl-4 ">
 
-                <div class="container-image-course">
-                  <img class="imgCurso" src="./assets/images/icono_libro_1.png" alt="" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <style>
+          body {
+              display: flex;
+              flex-wrap: wrap;
+              align-items: center;
+              justify-content: center;
+          }
+
+
+          .card {
+              position: relative;
+              width: 300px;
+              height: 350px;
+              margin: 20px;
+          }
+
+          .card .face {
+              position: absolute;
+              width: 100%;
+              height: 100%;
+              backface-visibility: hidden;
+              border-radius: 10px;
+              overflow: hidden;
+              transition: .5s;
+          }
+
+          .card .front {
+              transform: perspective(600px) rotateY(0deg);
+              box-shadow: 0 5px 10px #000;
+              position: relative;
+              top: -1px;
+          }
+
+          .card .front img {
+              position: absolute;
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+          }
+
+          .card .front h3 {
+              position: absolute;
+              bottom: 0;
+              width: 100%;
+              height: 45px;
+              line-height: 45px;
+              color: #fff;
+              background: rgba(0,0,0,.4);
+              text-align: center;
+          }
+
+          .card .back {
+              transform: perspective(600px) rotateY(180deg);
+              background: rgb(3, 35, 54);
+              padding: 15px;
+              color: #f3f3f3;
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+              text-align: center;
+              box-shadow: 0 5px 10px #000;
+          }
+
+          .card .back .link {
+          
+          }
+
+          .card .back .link a {
+              color: #f3f3f3;
+          }
+
+          .card .back h3 {
+              font-size: 30px;
+              margin-top: 20px;
+              letter-spacing: 2px;
+          }
+
+          .card .back p {
+              letter-spacing: 1px;
+          } 
+
+          .card:hover .front {
+              transform: perspective(600px) rotateY(180deg);
+          }
+
+          .card:hover .back {
+              transform: perspective(600px) rotateY(360deg);
+          }
+
+
+        </style>
+
+
+        <div class="card" style="background: white;">
+
+
+            <!--ADELANTE-->
+            <div class="face front">
+
+                <!--IMAGEN-->
+                <!--Contenedor de la imagen-->
+                <div style="border-radius: 30px 30px 0 0;" class="container-card-image">                      
+                    <?php
+                    if ($dato['imagenDestacadaCurso'] != null) {
+                    ?>
+                        <!--Imagen-->
+                        <img class="imgCurso" style="" src="data:image/*;base64,<?php echo base64_encode($dato['imagenDestacadaCurso']); ?>" alt="">
+                        <a class="txtTrailer" data-toggle="modal" data-target=".bd-example-modal-lg<?php echo $dato['idCurso'];?>"><label>Ver Trailer</label></a>
+                    <?php
+                    } else {
+                    ?>
+                        <img class="imgCurso" src="./assets/images/curso_educalma.png">
+                        <a class="txtTrailer" data-toggle="modal" data-target=".bd-example-modal-lg<?php echo $dato['idCurso'];?>"><label>Ver Trailer</label></a>
+                    <?php
+                    }
+                    ?>
+
                 </div>
 
-              </div>
-              <div class="col-8 col-sm-8 col-md-12 col-lg-8 col-xl-8">
-
-                <h4 style="font-weight: 600;"><?php echo $dato['nombreCurso'];?></h4>
-
-                <h5 style="color: #282C71;" style="height: 60px;"><?php echo substr($dato['descripcionCurso'], 0, 30) . "..."; ?></h5>
-                
-                <a style="font-size: 13px; margin-top: 10px; margin-bottom: 10px; padding: 10px;" href="#" class="btn btn-success mt-2" data-toggle="modal" data-target=".bd-example-modal-lg<?php echo $dato['idCurso'];?>">
-                VER INFORMACIÓN >
-                </a>
-                
-              </div>
+                <!--NOMBRE CURSO-->
+                <h3><?php echo $dato['nombreCurso'];?></h3>
             </div>
-              <style>
-                .destacados:hover{
-                  box-shadow: 5px 5px 20px rgba(0,0,0,0.4);
-	                transform: translateY(-3%);
-                }
-              </style>
-          </div>
+
+
+            <!--ATRÁS-->
+            <div class="face back" style="background: linear-gradient(to right, #7C83FD, #E0C7E5);">
+
+                <!--NOMBRE CURSO-->
+                <h4 style="font-weight: 600; margin-bottom: 20px;"><?php echo $dato['nombreCurso'];?></h4>
+
+                <!--AUTOR-->
+                <!--Contenedor del nombre del profesor del curso publicado más destacado-->
+                <div class="container-card-description" style="font-size: 11px; position: relative; top: 20px;">
+
+                    <!--Código para obtener el nombre del profesor-->
+                    <?php 
+                        $idUsuario = $dato['id_userprofesor'];
+                        $sql = "SELECT * FROM usuarios WHERE id_user = '$idUsuario'";
+                        $q = $pdo->prepare($sql);
+                        $q->execute(array());
+                        $dato5 = $q->fetch(PDO::FETCH_ASSOC);
+                        
+                    ?>
+                    
+
+                    <a style="position: relative; top: -40px;">
+
+                        <?php 
+                            if($dato5['privilegio']==1){
+                        ?>
+
+                                <span style="color: black; font-size: 13px;">Creado por la Fundación CALMA.</span>
+
+                        <?php 
+                            }
+
+                            if($dato5['privilegio']==2){
+                        ?>
+                                <span style="color: black; font-size: 13px;">Creado por <?php echo " " . $dato5['nombres'] . " " . $dato5['apellido_pat'] . " " . $dato5['apellido_mat'] . "."?></span>
+                        <?php 
+                            }
+                        ?>
+                    </a>
+
+                </div>
+
+                <!--DESCRIPCIÓN-->
+                <h5 style="color: #282C71; text-align: left;" style="height: 60px;"><?php echo $dato['descripcionCurso']; ?></h5>
+
+                <!--PRECIO-->
+                <div>
+                                
+                                <p style="">
+                                    <?php
+                                        if($dato['costoCurso']!=0 && $dato['costoCurso'] != "Gratis"){
+                                            echo 'S/ ' . $dato['costoCurso'];
+                                        }else{
+                                            echo 'Gratuito por tiempo limitado';
+                                        }
+                                    ?>
+                                </p>
+            
+                       
+                
+                </div>
+               
+                <!--BOTÓN-->
+                <div class="link">
+                    <?php
+                    if(isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)){
+                    ?>
+                    <a style="color: #7c83fd; background: white; border-radius: 30px;" href="<?php echo $paginaRed ?>.php?id=<?php echo $dato['idCurso']; ?><?php if(!empty($dato2)){?>&idCI=<?php echo $dato2['id_cursoInscrito']; }?>" type="button" class="btn btn-outline-info btn_registrar">
+                      <i class="far fa-play-circle"></i>
+                      Comienza a ver el curso
+                    </a>
+                    <?php
+                    }else{
+                    ?>
+                      <a style="color: #7c83fd; background: white; border-radius: 30px;" href="iniciosesion.php" type="button" class="btn btn-outline-info btn_registrar">
+                        <i class="far fa-play-circle"></i>
+                        Comienza a ver el curso
+                      </a>
+                    <?php
+                    }
+                    ?>
+                </div>
+            </div>
         </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <!-- MODAL -->
 <div class="modal fade bd-example-modal-lg<?php echo $dato['idCurso'];?>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
@@ -338,44 +571,33 @@ if (!isset($_GET['pag'])) {
           }
           Database::disconnect();
         ?>
-        <!-- <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 mb-4">
-          <div class="card">
-            <div class="row">
-              <div class="col-4 col-sm-4 col-md-12 col-lg-4 col-xl-4">
-                <div class="container-image-course">
-                  <img src="./assets/images/2232688.png" alt="" />
-                </div>
-              </div>
-              <div class="col-8 col-sm-8 col-md-12 col-lg-8 col-xl-8">
-                <h4>CURSO DESTACADO1</h4>
-                <h5>Lorem ipsum dolor sit amet, consectetur adipiscing ... </h5>
-                <a href="#" class="btn btn-success mt-2" data-toggle="modal" data-target=".bd-example-modal-lg">ver
-                  informaci&oacute;n ></a>
-              </div>
-            </div>
-          </div>
-        </div> -->
-        <!-- <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 mb-4">
-          <div class="card">
-            <div class="row">
-              <div class="col-4 col-sm-4 col-md-12 col-lg-4 col-xl-4">
-                <div class="container-image-course">
-                  <img src="./assets/images/2232688.png" alt="" />
-                </div>
-              </div>
-              <div class="col-8 col-sm-8 col-md-12 col-lg-8 col-xl-8">
-                <h4>CURSO DESTACADO1</h4>
-                <h5>Lorem ipsum dolor sit amet, consectetur adipiscing ... </h5>
-                <a href="#" class="btn btn-success mt-2" data-toggle="modal" data-target=".bd-example-modal-lg">ver
-                  informaci&oacute;n ></a>
-              </div>
-            </div>
-          </div>
-        </div> -->
       </div>
     </div>
   </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!-- EMPRESAS -->
 <div class="container-bussines container divEmp">
 
