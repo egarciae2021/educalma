@@ -43,7 +43,7 @@ function guidv4($data = null) {
       $temp = $_FILES['imagen']['tmp_name'];
       $UUID = guidv4();
       $ruta = null;
-      $rutaAbsoluta = $_SERVER["DOCUMENT_ROOT"]."/test-educalma/web/imagenes/";
+      $rutaAbsoluta = $_SERVER["DOCUMENT_ROOT"]."/test_educalma/web/imagenes/";
       //Se comprueba si el archivo a cargar es correcto observando su extensión y tamaño
      if (!((strpos($tipo, "gif") || strpos($tipo, "jpeg") || strpos($tipo, "jpg") || strpos($tipo, "png")) && ($tamano < 2000000))) {
         echo '<div><b>Error. La extensión o el tamaño de los archivos no es correcta.<br/>
