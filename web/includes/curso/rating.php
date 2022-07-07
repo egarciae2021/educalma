@@ -20,6 +20,10 @@ error_reporting(E_ALL);
         Database::disconnect();
     }else{
         echo "no se guardó";
+        echo $id;
+        echo $idCurso;
+        echo $estrellas;
+        echo $comentario;
     }
 
     
