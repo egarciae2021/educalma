@@ -43,7 +43,7 @@ function guidv4($data = null) {
       $temp = $_FILES['imagen']['tmp_name'];
       $UUID = guidv4();
       $ruta = null;
-      $rutaAbsoluta = $_SERVER["DOCUMENT_ROOT"]."/imagenes/";
+      $rutaAbsoluta = $_SERVER["DOCUMENT_ROOT"]."/test-educalma/web/imagenes/";
       //Se comprueba si el archivo a cargar es correcto observando su extensión y tamaño
      if (!((strpos($tipo, "gif") || strpos($tipo, "jpeg") || strpos($tipo, "jpg") || strpos($tipo, "png")) && ($tamano < 2000000))) {
         echo '<div><b>Error. La extensión o el tamaño de los archivos no es correcta.<br/>
@@ -54,7 +54,7 @@ function guidv4($data = null) {
         //Se intenta subir al servidor
         if (move_uploaded_file($temp, $rutaAbsoluta.$UUID.'.png')) {
             //Cambiamos los permisos del archivo a 777 para poder modificarlo posteriormente
-            $ruta = '20.226.29.168/imagenes/'.$UUID.'.png';
+            $ruta = '/imagenes/'.$UUID.'.png';
             chmod($rutaAbsoluta.$UUID.'.png', 0777);
 
             $pdo2 = Database::connect();  
