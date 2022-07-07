@@ -591,7 +591,7 @@
                                         <script>
                                             $("#botonTerminar").click(function(){
 
-                                                var url = "includes/curso/rating.php";
+                                                var url = "curso.php";
                                                 var rating = $("input[name='rating']:checked").val();
                                                 var coment = $("#coment1").val();
                                                 var prepQuery = new URLSearchParams(window.location.search)
