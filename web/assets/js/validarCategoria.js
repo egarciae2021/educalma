@@ -10,7 +10,7 @@ e.preventDefault();
 */
 
 $.validator.addMethod("yturl", function(_value,_element,_parameter){
-    const reg = /^(https?:\/\/)?(www\.)?((?:youtube\.com)|(?:youtu(?:\.)be))(?:\/)(?:(?:watch\?(v=))|(?:embed\/))?([\w\-]{11,11})(?:&[\w\?=]*)?$/gm;
+    const reg = /^(https?:\/\/)?(www\.)?((?:youtube\.com)|(?:youtu(?:\.)be))(?:\/)(?:(?:watch\?(?:v=))|(?:embed\/))?([\w\-]{11,11})(?:(?:&|\?)[\w\?=]*)?$/gm;
     if(reg.test(_value)) return true;
     else return false;
 },"El Link del vídeo no es válido")
