@@ -81,6 +81,14 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
           font-size: 20px;
       }
 
+      @media (max-width: 400px) {
+        .dataTables_filter{
+          float: left;
+          position: relative;
+          width: 80%;
+        }
+      }
+
       @media (max-width: 620px) {
 
         .card-body .numCursos {

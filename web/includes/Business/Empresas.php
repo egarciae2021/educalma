@@ -93,6 +93,13 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                 }
             }
 
+            @media (max-width: 400px) {
+                .dataTables_filter{
+                float: left;
+                position: relative;
+                width: 80%;
+                }
+            }
 
         </style>
     </head>
