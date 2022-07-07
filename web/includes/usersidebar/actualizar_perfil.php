@@ -43,7 +43,7 @@ function guidv4($data = null) {
       $temp = $_FILES['imagen']['tmp_name'];
       $UUID = guidv4();
       $ruta = null;
-      $rutaAbsoluta = $_SERVER["DOCUMENT_ROOT"]."/test_educalma/web/imagenes/";
+      $rutaAbsoluta = $_SERVER["DOCUMENT_ROOT"]."/test-educalma/web/imagenes/";
       //Se comprueba si el archivo a cargar es correcto observando su extensión y tamaño
      if (!((strpos($tipo, "gif") || strpos($tipo, "jpeg") || strpos($tipo, "jpg") || strpos($tipo, "png")) && ($tamano < 2000000))) {
         echo '<div><b>Error. La extensión o el tamaño de los archivos no es correcta.<br/>
@@ -52,11 +52,9 @@ function guidv4($data = null) {
      else {
         //Si la imagen es correcta en tamaño y tipo
         //Se intenta subir al servidor
+        opendir($rutaAbsoluta);
         if (move_uploaded_file($temp, $rutaAbsoluta.$UUID.'.png')) {
-            //Cambiamos los permisos del archivo a 777 para poder modificarlo posteriormente
             $ruta = '/imagenes/'.$UUID.'.png';
-            chmod($rutaAbsoluta.$UUID.'.png', 0777);
-
             $pdo2 = Database::connect();  
             $veri2="UPDATE usuarios SET nombres='$nombre', apellido_pat='$ape_pater', apellido_mat='$ape_mater', email='$correo', telefono='$telefono', tipo_doc='$tipo_docu',nro_doc='$num_docume',sexo='$sexo',fecha_nacimiento	='$fecha',pais ='$pais',mifoto = '$ruta' WHERE id_user = '$id' ";
             $q2 = $pdo2->prepare($veri2);
