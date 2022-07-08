@@ -1,6 +1,14 @@
 <?php
-    require_once '../../database/databaseConection.php';
-   
+require_once '../../database/databaseConection.php';
+function guidv4($data = null) {
+    $data = $data ?? random_bytes(16);
+    assert(strlen($data) == 16);
+
+    $data[6] = chr(ord($data[6]) & 0x0f | 0x40);
+    $data[8] = chr(ord($data[8]) & 0x3f | 0x80);
+
+    return vsprintf('%s%s-%s-%s-%s-%s%s%s', str_split(bin2hex($data), 4));
+}
     /*=============================================
                  PARA Agregar CURSO 
     ===============================================*/
@@ -14,16 +22,24 @@
         $intro = $_POST['intro_curso'];
         $categoriaCur = $_POST['categoria'];
         $precio=$_POST['prec_curso'];
-        $nombreimagen=$_FILES['txtimagen']['tmp_name'];
         $dirigido =$_POST['publico_dirigido'];
         $idProfe = $_SESSION['codUsuario'];
-        
+
+        //imagen
+        $nombreimagen=$_FILES['txtimagen']['name'];
+        $temp=$_FILES['txtimagen']['tmp_name'];
+        $ruta = null;
+        $rutaAbsoluta = $_SERVER["DOCUMENT_ROOT"]."/imagenes/";
+        $UUID = guidv4();
         
         if($_FILES['txtimagen']['size']>0){
-            $nombreimagen = addslashes(file_get_contents($nombreimagen));
+            if(move_uploaded_file($temp, $rutaAbsoluta.$UUID.'png')){
+                $ruta = '/imagenes/'.$UUID.'.png';
+                $nombreimagen = $ruta;
+            }
         }else{
             $aux = "../../assets/images/curso_educalma.png";
-            $nombreimagen = addslashes(file_get_contents($aux));
+            $nombreimagen = $aux;
 
         }
         
@@ -142,10 +158,16 @@
         $prec=$_POST['prec_curso'];
         $publ=$_POST['publi_cursos'];
         $introduc=$_POST['intRR_cursos'];
-	
+        $ruta = null;
+        $rutaAbsoluta = $_SERVER["DOCUMENT_ROOT"]."/imagenes/";
+        $UUID = guidv4();
 	    if(($_FILES['txtimagenAct']['size'])>0){
+
             $nombreimagenes=$_FILES['txtimagenAct']['tmp_name'];
-        	$nombreimagen=addslashes(file_get_contents($nombreimagenes));
+            if(move_uploaded_file($temp,$rutaAbsoluta.$UUID.'png')){
+                $ruta = '/imagenes/'.$UUID.'.png';
+                $nombreimagen = $ruta;
+            }
             $pdo = Database::connect();
             $consulta= $pdo->prepare("UPDATE cursos SET imagenDestacadaCurso='$nombreimagen' WHERE idCurso='$id'");
             $consulta->execute();
