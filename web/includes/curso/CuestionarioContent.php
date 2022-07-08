@@ -262,7 +262,7 @@
                 <div class="container" style="margin-top: 120px;"></div>
 
                 <div style="background: none; width: 80%; margin: auto; margin-bottom: 50px;">
-                    <div class="col-md-12" style="background-color: white; padding-bottom: 40px;">
+                    <div class="col-md-12" style="padding-bottom: 40px;">
                         <div class="infoMin">
                             <a href="">
                                 <?php echo $nombre_curso['nombreCurso']?> </a> <label> > </label>
@@ -1007,19 +1007,19 @@
                             $q2->execute(array());
                     ?>
 
-                            <h5 style="background: #CFE8FE; padding: 20px 35px; color: #4F52D6">
+                            <h5 style="background: #7C83FD; padding: 20px 35px; color: #fff">
                                 <?php echo $fila1[$envi]['pregunta'];?>
                             </h5>
-                            <form style="padding: 30px;" action="includes/cuestionarioCRUD/cuestion.php?contador=<?php echo $contador;?>&id=<?php echo $id;?>&c=<?php $correcta ?>&idModulo=<?php echo $idModulo;?>&validar=<?php echo 0; ?>&up=<?php echo $up ?>&cuen=<?php echo $ens ?>&nro=<?php echo $envi?>&id_pregunta=<?php echo $idpregunta ?>&nW=<?php echo $_GET['nW']?>&idCI=<?php echo $idCI?>"
+                            <form style="padding: 30px; background: #fff;margin-top: -7px;" action="includes/cuestionarioCRUD/cuestion.php?contador=<?php echo $contador;?>&id=<?php echo $id;?>&c=<?php $correcta ?>&idModulo=<?php echo $idModulo;?>&validar=<?php echo 0; ?>&up=<?php echo $up ?>&cuen=<?php echo $ens ?>&nro=<?php echo $envi?>&id_pregunta=<?php echo $idpregunta ?>&nW=<?php echo $_GET['nW']?>&idCI=<?php echo $idCI?>"
                                 method="POST" id="formcito">
                                 <?php while($fila2=$q2->fetch(PDO::FETCH_ASSOC)){ 
                                             //checked
                                         ?>      
                                                                            
-                                <div style="padding: 10px; border-radius: 5px; background: #E2EDF8; border-bottom: 1px solid slategray; margin-bottom: 20px;">
+                                <div style="padding: 10px; border-radius: 5px; background: #E2EDF8; margin-bottom: 20px;">
                                     <div class="form-check">
-                                        <label class="form-check-label" style=" width: 100%;">
-                                        <input class="form-check-input" type="radio" name="verif_resp" value="<?php echo $fila2['respuesta'];?>">
+                                        <label class="form-check-label" style=" width: 100%; margin-left: 15px; font-size: 1.20rem">
+                                        <input class="form-check-input" style="margin-top: -1px;height: 28px;width: 28px;left: 17px"type="radio" name="verif_resp" value="<?php echo $fila2['respuesta'];?>">
                                         <input type="hidden" name="correcta" value="<?php echo $correcta;?>">
                                         <input type="hidden" name="contadorP" value="<?php echo $contadorP;?>">
                                          <?php echo $fila2['respuesta'];?> </label>
