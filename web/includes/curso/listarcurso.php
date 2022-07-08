@@ -20,43 +20,35 @@
     <style>
 
         .dataTables_filter{
+            /*Centrando el buscador de "Por Empresas".*/
+            position: relative;  
+            left: -140px;
+            float: left;
+            /**/
 
-        /*Centrando el buscador de "Lista de Cursos No Publicados".*/
-        position: relative;  
-        left: -140px;
-        float: left;
-        /**/
-
-        border-radius: 10px ; 
-        border: 1px solid #7C83FD;
-        background-repeat: no-repeat;
-        background-image: url("./assets/img/buscar.png");
-        background-position: 310px 5px;
-        background-size: 25px 25px;
-        width: 25em;
-        height: 3em;
-        left: -187px;
+            border-radius: 5px ; 
+            border: 1px solid #57B3F7;
+            background-repeat: no-repeat;
+            background-image: url("./assets/img/buscar.png");
+            background-position: 8px 5px;
+            background-size: 25px 25px;
 
         }
 
         /*Palabra "Buscar"*/ 
         .dataTables_filter label {
-
-        position: relative;
-            top: 8px;
-            color: #000;
-            left: -53px;
+            position: relative;
+            top: 5px;
+            left: 38px;
             /*font-weight: bold;*/
             width: 280px;
-
             font-size: 15.4px;
 
         }
 
         /*Caja de texto del buscador*/ 
         .dataTables_filter label .form-control {
-
-        border: 0;
+            border: 0;
             height: 25px;
             position: relative;
             left: -9px;
@@ -79,7 +71,43 @@
         color: white !important;
         }
 
+        @media screen and (max-width: 720px) {
+            .dataTables_filter{
+
+                float: right;
+                position: relative;
+                left: 25px;
+            }
+        }
+
+        @media screen and (max-width: 640px) {
+
+        .dataTables_filter{
+
+            float: right;
+            position: relative;
+            left: 25px;
+        }
+        }
         
+        @media (max-width: 620px) {
+            .numUsers {
+            color: #7C83FD;
+            float: left; 
+            position: relative; 
+            top: 15px; 
+            font-size: 20px;
+            }
+            }
+
+        @media screen and (max-width: 400px) {
+                .dataTables_filter{
+                float: left;
+                position: relative;
+                
+                width: 85%;
+                }
+            }
     </style>
    
 </head>
