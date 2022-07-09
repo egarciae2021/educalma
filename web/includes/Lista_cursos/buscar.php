@@ -7,8 +7,8 @@ require_once '../../database/databaseConection.php';
     {
     ?>
 
-        <div class="container-card-course">
-            <div class="row pt-1 container d-flex justify-content-center" style="margin: 0 auto;">
+        <div class="container container-card-course">
+            <div class="row pt-1 container">
                 <?php
                 $pdo2 = Database::connect();
                 $busqueda = $_POST['buscar'];
@@ -45,10 +45,10 @@ require_once '../../database/databaseConection.php';
                 ?>
                         <!--Contenedor del curso publicado-->
                         <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3">
-                            <div style="border-radius: 30px;" class="card">
+                            <div style="border-radius: 30px; overflow: hidden;" class="card">
 
                                 <!--Contenedor de la imagen-->
-                                <div style="border-radius: 30px 30px 0 0;" class="container-card-image">
+                                <div class="container-card-image">
                                     <?php    
                                         if($dato['imagenDestacadaCurso']!=null){
                                     ?>
@@ -66,18 +66,19 @@ require_once '../../database/databaseConection.php';
                                 </div>
 
                                 <!--Contenedor del nombre del curso publicado-->
-                                <div class="container-card-title" style="padding-bottom: 1px; color: black;">
-                                    <a style="float: left;">
+                            <div style="background-color: #ECDDF0; flex-grow: 1;" class="d-flex flex-column p-2">
+                                <div class="container-card-title">
+                                    <span class="font-weight-bold">
                                         <!--Nombre-->
-                                        <center><strong><?php echo $dato['nombreCurso']; ?></strong> </center>
-                                    </a>
+                                        <?php echo $dato['nombreCurso']; ?>
+                                    </span>
                                 </div>
 
 
 
                                 <!--Falta arreglar este problema, pues no quiere mostrar el autor del curso en el buscador.-->
                                 <!--Contenedor del nombre del profesor del curso publicado más destacado-->
-                                <div class="container-card-description" style="margin-top: 1px; padding-top: 1px; font-size: 11px;">
+                                <div class="container-card-description">
 
                                     <!--Código para obtener el nombre del profesor-->
                                     <?php
@@ -96,7 +97,7 @@ require_once '../../database/databaseConection.php';
                                             //if($dato5['privilegio']==1){
                                         ?>
 
-                                                <span style="color: #565656;">Creado por la Fundación CALMA.</span>
+                                                <span>Creado por la Fundación CALMA.</span>
 
                                         <?php 
                                             //}
@@ -151,19 +152,19 @@ require_once '../../database/databaseConection.php';
 
                                 <!--Falta arreglar este problema, pues no quiere mostrar la palabra comprado.-->
                                 <!--Contenedor de la descripción del curso-->
-                                <div class="container-card-description" style="padding-bottom: 1px; margin-bottom: 1px; font-size: 13px; position: relative;">
+                                <div class="container-card-description">
                                     <!--Descripción-->
-                                    <p><?php echo substr($dato['descripcionCurso'], 0, 50) . "..."; ?></p>
+                                    <span><?php echo substr($dato['descripcionCurso'], 0, 50) . "..."; ?></span>
                                 </div>
 
 
 
                                 <!--Contenedor del costo del curso, mensaje si se compró o no el curso y del link "Leer Más".-->
-                                <div class="container-card-description" style="padding-top: 1px; margin-top: 1px; font-weight: bold; font-size: 15px; color: black; position: relative;">
+                                <div class="container-card-description">
                                     
                                     <?php if($dato2['id_cursoInscrito'] == NULL){ ?>
                     
-                                        <p>
+                                        <p class="font-weight-bold" style="color: #303030; text-transform: uppercase;">
                                             <?php
                                                 if($dato['costoCurso']!=0 && $dato['costoCurso'] != "Gratis"){
                                                     echo 'S/ ' . $dato['costoCurso'];
@@ -189,16 +190,16 @@ require_once '../../database/databaseConection.php';
                                     <?php } ?>
         
                                     <!-- Link "Leer Más"-->
-                                    <div class="container-card-link" style="margin: auto;">
+                                    <div class="container-card-link">
         
-                                    <a href="<?php echo $paginaRed ?>.php?id=<?php echo $dato['idCurso']; ?><?php if(!empty($dato2)){?>&idCI=<?php echo $dato2['id_cursoInscrito']; }?>">
-                                        <center><strong>Leer Más</strong> </center>
-                                    </a>
+                                        <a href="<?php echo $paginaRed ?>.php?id=<?php echo $dato['idCurso']; ?><?php if(!empty($dato2)){?>&idCI=<?php echo $dato2['id_cursoInscrito']; }?>">
+                                            Leer Más
+                                        </a>
         
                                     </div>
                     
                                 </div>
-
+                                </div>
 
 
                             </div>

@@ -324,6 +324,7 @@ border-radius: 10px;
     margin: 0 auto;
     border: 1px solid lightgray;
     text-align: justify;
+    justify-content: space-between;
 }
 
 .container-fluid
@@ -394,6 +395,7 @@ border-radius: 10px;
 .container-fluid .container-card-course /* CREADO POR DE LAS CARD */
 .row .col-12 .card .container-card-title + .container-card-description {
     font-size: .8rem;
+    flex-grow: 1;
 }
 
 /*

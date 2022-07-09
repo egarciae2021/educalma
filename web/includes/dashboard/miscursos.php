@@ -105,10 +105,11 @@
         <!--Título-->
         <div class="row">
             <div class="col-12">
-                <div class="row mb-4 mt-4" style="background-color: #e7f4ff; margin-left: 25px; margin-right: 25px; border-radius: 50px;">
-                    <div class="container section-title-course">
-                        <i class="fas fa-shapes mr-3"></i>Cursos comprados
-                        <hr>
+                <div class="row">
+                    <div class="container mb-4">
+                        <div class="title_miscursos">
+                            Cursos comprados
+                        </div>
                     </div>
                 </div>
             </div>
@@ -116,7 +117,7 @@
 
 
 
-        <!--Buscador-->
+        <!--Buscador
         <div class="container mb-4">
             <div class="col-12">
                 <div class="row mb-2">
@@ -135,7 +136,7 @@
             <div class="col-12">
     
             </div>
-        </div>
+        </div>-->
     </div>
     <!--FIN DE CURSOS COMPRADOS (aquí está solo el título y el buscador)-->
 
@@ -219,10 +220,10 @@
 
                 <!--Contenedor del curso comprado-->
                 <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3">
-                    <div style="border-radius: 30px;" class="card">
+                    <div style="border-radius: 30px; overflow: hidden;" class="card">
 
                         <!--Contenedor de la imagen-->
-                        <div style="border-radius: 30px 30px 0 0;" class="container-card-image">
+                        <div class="container-card-image">
                             <?php
                             if ($dato['imagenDestacadaCurso'] != null) {
                             ?>
@@ -241,17 +242,18 @@
                         </div>
 
                         <!--Contenedor del nombre del curso publicado-->
-                        <div class="container-card-title" style="padding-bottom: 1px; color: black;">
-                            <a style="float: left;">
+                    <div style="background-color: #ECDDF0; flex-grow: 1;" class="d-flex flex-column p-2">
+                        <div class="container-card-title">
+                            <span class="font-weight-bold">
                                 <!--Nombre-->
-                                <center><strong><?php echo $dato['nombreCurso']; ?></strong></center>
-                            </a>
+                                <?php echo $dato['nombreCurso']; ?>
+                            </span>
                         </div>
 
 
 
                         <!--Contenedor del nombre del profesor del curso publicado-->
-                        <div class="container-card-description" style="margin-top: 1px; padding-top: 1px; font-size: 11px;">
+                        <div class="container-card-description">
 
                             <!--Código para obtener el nombre del profesor-->
                             <?php 
@@ -270,14 +272,14 @@
                                                 if($dato5['privilegio']==1){
                                             ?>
 
-                                                    <span style="color: #565656;">Creado por la Fundación CALMA.</span>
+                                                    <span>Creado por la Fundación CALMA.</span>
 
                                             <?php 
                                                 }
 
                                                 if($dato5['privilegio']==2){
                                             ?>
-                                                    <span style="color: #565656;">Creado por <?php echo " " . $dato5['nombres'] . " " . $dato5['apellido_pat'] . " " . $dato5['apellido_mat'] . "."?></span>
+                                                    <span>Creado por <?php echo " " . $dato5['nombres'] . " " . $dato5['apellido_pat'] . " " . $dato5['apellido_mat'] . "."?></span>
                                             <?php 
                                                 }
                                             ?>
@@ -295,13 +297,13 @@
 
 
                         <!--Contenedor de la descripción del curso-->
-                        <div class="container-card-description" style="padding-bottom: 1px; margin-bottom: 1px; font-size: 13px; position: relative;">
+                        <div class="container-card-description">
                             <!--Descripción-->
-                            <p><?php echo substr($dato['descripcionCurso'], 0, 50) . "..."; ?></p>
+                            <span><?php echo substr($dato['descripcionCurso'], 0, 50) . "..."; ?></span>
                         </div>
 
                         <!-- Link "Iniciar curso" -->
-                        <div class="container-card-description" style="padding-top: 1px; margin-top: 1px; font-weight: bold; font-size: 15px; color: black; position: relative;">
+                        <div class="container-card-description">
                                     
                             <?php if($dato2['id_cursoInscrito'] == NULL){ ?>
             
@@ -317,9 +319,9 @@
                                     if(isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)){
                                     ?>
                                         <!--Link "Iniciar Curso"-->
-                                        <div class="container-card-link" style="margin: auto;">
+                                        <div class="container-card-link">
                                             <a href="<?php echo $paginaRed ?>.php?id=<?php echo $dato['idCurso']; ?><?php if(!empty($dato2)){?>&idCI=<?php echo $dato2['id_cursoInscrito']; }?>">
-                                            <center><strong>Iniciar Curso</strong></center>
+                                                Iniciar Curso
                                             </a>
                                         </div>
                                     <?php
@@ -327,9 +329,9 @@
                                     ?>
                                     
                                         <!--Link "Iniciar Curso"-->
-                                        <div class="container-card-link" style="margin: auto;">
+                                        <div class="container-card-link">
                                             <a href="iniciosesion.php">
-                                            <center><strong>Iniciar Curso</strong></center>
+                                                Iniciar Curso
                                             </a>
                                         </div>
                                     <?php
@@ -337,7 +339,7 @@
                                     ?>
             
                         </div>
-
+                        </div>
                          
                         
 

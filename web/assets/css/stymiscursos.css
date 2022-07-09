@@ -2,12 +2,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
 
 .title_miscursos{
-    width: 50%;
+    width: 100%;
     text-align: center;
-    margin: 0px auto;
     font-family: "Satisfy", cursive;
-    font-size: 3rem;
-    color: #27ae60;
+    font-size: 5rem;
+    color: #ECBE83;
 }
 .blog-post-cursos{
     width: 90%;
