@@ -3,7 +3,12 @@
     <link rel="stylesheet" href="assets/css/cursos.css" />
 
     <style>
-
+        body {
+            background: rgb(255,255,255);
+            background: linear-gradient(180deg, rgba(255,255,255,1) 11%, rgba(224,199,229,1) 42%, rgba(231,244,255,1) 96%);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
         .txtTrailer {
             padding: 100px 130px 100px 130px; 
             position: absolute; 
@@ -24,12 +29,8 @@
     </style>
 </head>
 
-
-<br><br><br>
-
-
 <!------------------------------------------------------------->
-<div style="position: relative; top: -40px;" class="container-fluid px-0">
+<div class="container-fluid px-0">
 
         <div class="container-card-course">
             <div class="row pt-1 container" style="margin: 0 auto;">
@@ -106,7 +107,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="row">
-                    <div class="container mb-4">
+                    <div class="container mt-3 mb-2">
                         <div class="title_miscursos">
                             Cursos comprados
                         </div>
@@ -157,15 +158,15 @@
 
 
 <!--CURSOS COMPRADOS (aquí está la lista de cursos)-->
-<div style="position: relative; top: -90px;" class="container-fluid px-0" id="result">
+<div class="container-fluid px-0" id="result">
 
 
-    <div class="container-card-course">
+    <div class="container container-card-course">
 
 
 
 
-        <div class="row pt-1 container" style="margin: 0 auto;">
+        <div class="row pt-1">
 
 
         <?php
@@ -220,7 +221,7 @@
 
                 <!--Contenedor del curso comprado-->
                 <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3">
-                    <div style="border-radius: 30px; overflow: hidden;" class="card">
+                    <div style="border-radius: 30px; overflow: hidden; border: 1px solid #7C83FD;" class="card">
 
                         <!--Contenedor de la imagen-->
                         <div class="container-card-image">
@@ -242,7 +243,7 @@
                         </div>
 
                         <!--Contenedor del nombre del curso publicado-->
-                    <div style="background-color: #ECDDF0; flex-grow: 1;" class="d-flex flex-column p-2">
+                    <div style="background-color: white; flex-grow: 1;" class="d-flex flex-column p-2">
                         <div class="container-card-title">
                             <span class="font-weight-bold">
                                 <!--Nombre-->
@@ -498,20 +499,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                 <?php
                 }
                 ?>
@@ -521,6 +508,27 @@
                 ?>
 
         </div>
+        <!--PAGINADOR-->
+        <div class="row m-0 my-5">
+            <div class="col-12">
+                <nav aria-label="Page navigation calma">
+                    <ul class="pagination justify-content-end">
+                        <li class="page-item <?php if ($_GET['pag'] <= 1) echo 'disabled' ?>">
+                            <a class="page-link" href="sidebarCursos.php?pag=<?php echo $_GET['pag'] - 1; ?>&idcate=<?php echo $_GET['$idcate']; ?>" tabindex="-1">
+                                Anterior
+                            </a>
+                        </li>
+                        <?php for ($i = 0; $i < $page; $i++) : ?>
+                            <li class="page-item <?php echo $_GET['pag'] == $i + 1 ? 'activate' : '' ?>"><a class="page-link" href="sidebarCursos.php?pag=<?php echo $i + 1; ?>&idcate=<?php echo $_GET['idcate']; ?>"><?php echo $i + 1; ?></a></li>
+                        <?php endfor ?>
+                        <li class="page-item <?php if ($_GET['pag'] >= $page) echo 'disabled' ?>">
+                            <a class="page-link" href="sidebarCursos.php?pag=<?php echo $_GET['pag'] + 1; ?>&idcate=<?php echo $_GET['idcate']; ?>">Siguiente</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <!--FIN DE PAGINADOR-->
     </div>
    
 
@@ -537,54 +545,3 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!--PAGINADOR-->
-<div class="row container py-4" style="margin: 0 auto; position: relative; top: -80px;">
-    <div class="col-12 mx-auto">
-        <nav aria-label="Page navigation calma">
-            <ul class="pagination justify-content-end">
-                <li class="page-item <?php if ($_GET['pag'] <= 1) echo 'disabled' ?>">
-                    <a class="page-link" href="sidebarCursos.php?pag=<?php echo $_GET['pag'] - 1; ?>&idcate=<?php echo $_GET['$idcate']; ?>" tabindex="-1">
-                        Anterior
-                    </a>
-                </li>
-                <?php for ($i = 0; $i < $page; $i++) : ?>
-                    <li class="page-item <?php echo $_GET['pag'] == $i + 1 ? 'activate' : '' ?>"><a class="page-link" href="sidebarCursos.php?pag=<?php echo $i + 1; ?>&idcate=<?php echo $_GET['idcate']; ?>"><?php echo $i + 1; ?></a></li>
-                <?php endfor ?>
-                <li class="page-item <?php if ($_GET['pag'] >= $page) echo 'disabled' ?>">
-                    <a class="page-link" href="sidebarCursos.php?pag=<?php echo $_GET['pag'] + 1; ?>&idcate=<?php echo $_GET['idcate']; ?>">Siguiente</a>
-                </li>
-            </ul>
-        </nav>
-    </div>
-</div>
-<!--FIN DE PAGINADOR-->
