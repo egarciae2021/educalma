@@ -5,12 +5,11 @@
     <style>
         body {
             background: rgb(255,255,255);
-            background: linear-gradient(180deg, rgba(255,255,255,1) 11%, rgba(224,199,229,1) 42%, rgba(231,244,255,1) 96%);
+            background: linear-gradient(180deg, rgba(255,255,255,1) 20%, rgba(224,199,229,1) 50%, rgba(231,244,255,1) 92%);
             background-repeat: no-repeat;
             background-attachment: fixed;
         }
         .txtTrailer {
-            padding: 100px 130px 100px 130px; 
             position: absolute; 
             background: rgba(0,0,0,0.6);  
             font-size: 16px; 
@@ -33,7 +32,7 @@
 <div class="container-fluid px-0">
 
         <div class="container-card-course">
-            <div class="row pt-1 container" style="margin: 0 auto;">
+            <div class="row pt-1">
 
                 <?php
                 $pdo = Database::connect();
@@ -158,12 +157,10 @@
 
 
 <!--CURSOS COMPRADOS (aquí está la lista de cursos)-->
-<div class="container-fluid px-0" id="result">
+<div class="container-fluid px-0 pl-2" id="result">
 
 
-    <div class="container container-card-course">
-
-
+    <div class="container-card-course">
 
 
         <div class="row pt-1">
@@ -217,35 +214,36 @@
                 }
             ?>
 
-            <?php if($dato2['id_cursoInscrito'] != NULL){ ?>  
+            <?php if($dato2['id_cursoInscrito'] != NULL){ ?>
 
                 <!--Contenedor del curso comprado-->
                 <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3">
-                    <div style="border-radius: 30px; overflow: hidden; border: 1px solid #7C83FD;" class="card">
+                    <div style="border-radius: 30px; overflow: hidden; border: 1px solid #7C83FD;" class="card card-miscursos">
 
                         <!--Contenedor de la imagen-->
-                        <div class="container-card-image">
-                            <?php
-                            if ($dato['imagenDestacadaCurso'] != null) {
-                            ?>
-                                <!--Imagen elegida-->
-                                <img heigth="10px"; src="data:image/*;base64,<?php echo base64_encode($dato['imagenDestacadaCurso']); ?>" alt="">
-                                <a class="txtTrailer" data-toggle="modal" data-target=".bd-example-modal-lg<?php echo $dato['idCurso'];?>"><label>Ver Trailer</label></a>
-                            <?php
-                            } else {
-                            ?>
-                                <!--Imagen por default-->
-                                <img heigth="10px"; src="./assets/images/curso_educalma.png">
-                                <a class="txtTrailer" data-toggle="modal" data-target=".bd-example-modal-lg<?php echo $dato['idCurso'];?>"><label>Ver Trailer</label></a>
-                            <?php
-                            }
-                            ?>
+                        <div class="p-2" style="overflow: hidden; border-radius: 30px;">
+                            <div class="container-card-image" style="border-radius: 30px;">
+                                <?php
+                                if ($dato['imagenDestacadaCurso'] != null) {
+                                ?>
+                                    <!--Imagen elegida-->
+                                    <img heigth="10px"; src="data:image/*;base64,<?php echo base64_encode($dato['imagenDestacadaCurso']); ?>" alt="">
+                                    <a class="txtTrailer w-100 h-100 d-flex align-items-center justify-content-center" data-toggle="modal" data-target=".bd-example-modal-lg<?php echo $dato['idCurso'];?>"><label>Ver Trailer</label></a>
+                                <?php
+                                } else {
+                                ?>
+                                    <!--Imagen por default-->
+                                    <img heigth="10px"; src="./assets/images/curso_educalma.png">
+                                    <a class="txtTrailer w-100 h-100 d-flex align-items-center justify-content-center" data-toggle="modal" data-target=".bd-example-modal-lg<?php echo $dato['idCurso'];?>"><label>Ver Trailer</label></a>
+                                <?php
+                                }
+                                ?>
+                            </div>
                         </div>
-
                         <!--Contenedor del nombre del curso publicado-->
                     <div style="background-color: white; flex-grow: 1;" class="d-flex flex-column p-2">
-                        <div class="container-card-title">
-                            <span class="font-weight-bold">
+                        <div class="container-card-title text-center">
+                            <span class="font-weight-bold" style="color: #7C83FD;">
                                 <!--Nombre-->
                                 <?php echo $dato['nombreCurso']; ?>
                             </span>
@@ -254,7 +252,7 @@
 
 
                         <!--Contenedor del nombre del profesor del curso publicado-->
-                        <div class="container-card-description">
+                        <div class="container-card-description text-center">
 
                             <!--Código para obtener el nombre del profesor-->
                             <?php 
@@ -298,9 +296,9 @@
 
 
                         <!--Contenedor de la descripción del curso-->
-                        <div class="container-card-description">
+                        <div class="container-card-description card-description-miscursos px-3">
                             <!--Descripción-->
-                            <span><?php echo substr($dato['descripcionCurso'], 0, 50) . "..."; ?></span>
+                            <span><?php echo substr($dato['descripcionCurso'], 0, 60) . "..."; ?></span>
                         </div>
 
                         <!-- Link "Iniciar curso" -->
@@ -320,9 +318,9 @@
                                     if(isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)){
                                     ?>
                                         <!--Link "Iniciar Curso"-->
-                                        <div class="container-card-link">
+                                        <div class="container-card-link card-link-miscursos">
                                             <a href="<?php echo $paginaRed ?>.php?id=<?php echo $dato['idCurso']; ?><?php if(!empty($dato2)){?>&idCI=<?php echo $dato2['id_cursoInscrito']; }?>">
-                                                Iniciar Curso
+                                                Ver más <i class="fas fa-arrow-right"></i>
                                             </a>
                                         </div>
                                     <?php
@@ -330,9 +328,9 @@
                                     ?>
                                     
                                         <!--Link "Iniciar Curso"-->
-                                        <div class="container-card-link">
+                                        <div class="container-card-link card-link-miscursos">
                                             <a href="iniciosesion.php">
-                                                Iniciar Curso
+                                                Ver más <i class="fas fa-arrow-right"></i>
                                             </a>
                                         </div>
                                     <?php
