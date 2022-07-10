@@ -121,11 +121,7 @@
                                         if ($dato['imagenDestacadaCurso'] != null) {
                                         ?>
                                             <!--Imagen-->
-<<<<<<< HEAD
                                             <img class="imgCurso" style="" src="<?php echo $dato['imagenDestacadaCurso']; ?>" alt="">
-=======
-                                            <img class="imgCurso" src="data:image/*;base64,<?php echo base64_encode($dato['imagenDestacadaCurso']); ?>" alt="">
->>>>>>> 8109b2c05decc9c845487534203616a0a4596912
                                             <a class="txtTrailer" data-toggle="modal" data-target=".bd-example-modal-lg<?php echo $dato['idCurso'];?>"><label>Ver Trailer</label></a>
                                         <?php
                                         } else {
