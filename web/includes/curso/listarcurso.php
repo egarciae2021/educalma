@@ -326,7 +326,7 @@
                                                 <?php    
                                                     if($curso['imagenDestacadaCurso']!=null){
                                                 ?>
-                                                        <img style="height:40px;" src="data:image/*;base64,<?php echo base64_encode($curso['imagenDestacadaCurso']) ?>">
+                                                        <img style="height:40px;" src="<?php echo $curso['imagenDestacadaCurso'] ?>">
                                                 <?php
                                                     }else{
                                                 ?>
