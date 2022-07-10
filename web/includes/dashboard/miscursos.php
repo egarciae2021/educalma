@@ -3,9 +3,13 @@
     <link rel="stylesheet" href="assets/css/cursos.css" />
 
     <style>
-
+        body {
+            background: rgb(255,255,255);
+            background: linear-gradient(180deg, rgba(255,255,255,1) 20%, rgba(224,199,229,1) 50%, rgba(231,244,255,1) 92%);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
         .txtTrailer {
-            padding: 100px 130px 100px 130px; 
             position: absolute; 
             background: rgba(0,0,0,0.6);  
             font-size: 16px; 
@@ -24,15 +28,11 @@
     </style>
 </head>
 
-
-<br><br><br>
-
-
 <!------------------------------------------------------------->
-<div style="position: relative; top: -40px;" class="container-fluid px-0">
+<div class="container-fluid px-0">
 
         <div class="container-card-course">
-            <div class="row pt-1 container" style="margin: 0 auto;">
+            <div class="row pt-1">
 
                 <?php
                 $pdo = Database::connect();
@@ -105,10 +105,11 @@
         <!--Título-->
         <div class="row">
             <div class="col-12">
-                <div class="row mb-4 mt-4" style="background-color: #e7f4ff; margin-left: 25px; margin-right: 25px; border-radius: 50px;">
-                    <div class="container section-title-course">
-                        <i class="fas fa-shapes mr-3"></i>Cursos comprados
-                        <hr>
+                <div class="row">
+                    <div class="container mt-3 mb-2">
+                        <div class="title_miscursos">
+                            Cursos comprados
+                        </div>
                     </div>
                 </div>
             </div>
@@ -116,7 +117,7 @@
 
 
 
-        <!--Buscador-->
+        <!--Buscador
         <div class="container mb-4">
             <div class="col-12">
                 <div class="row mb-2">
@@ -135,7 +136,7 @@
             <div class="col-12">
     
             </div>
-        </div>
+        </div>-->
     </div>
     <!--FIN DE CURSOS COMPRADOS (aquí está solo el título y el buscador)-->
 
@@ -156,15 +157,13 @@
 
 
 <!--CURSOS COMPRADOS (aquí está la lista de cursos)-->
-<div style="position: relative; top: -90px;" class="container-fluid px-0" id="result">
+<div class="container-fluid px-0 pl-2" id="result">
 
 
     <div class="container-card-course">
 
 
-
-
-        <div class="row pt-1 container" style="margin: 0 auto;">
+        <div class="row pt-1">
 
 
         <?php
@@ -215,43 +214,45 @@
                 }
             ?>
 
-            <?php if($dato2['id_cursoInscrito'] != NULL){ ?>  
+            <?php if($dato2['id_cursoInscrito'] != NULL){ ?>
 
                 <!--Contenedor del curso comprado-->
                 <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3">
-                    <div style="border-radius: 30px;" class="card">
+                    <div style="border-radius: 30px; overflow: hidden; border: 1px solid #7C83FD;" class="card card-miscursos">
 
                         <!--Contenedor de la imagen-->
-                        <div style="border-radius: 30px 30px 0 0;" class="container-card-image">
-                            <?php
-                            if ($dato['imagenDestacadaCurso'] != null) {
-                            ?>
-                                <!--Imagen elegida-->
-                                <img heigth="10px"; src="data:image/*;base64,<?php echo base64_encode($dato['imagenDestacadaCurso']); ?>" alt="">
-                                <a class="txtTrailer" data-toggle="modal" data-target=".bd-example-modal-lg<?php echo $dato['idCurso'];?>"><label>Ver Trailer</label></a>
-                            <?php
-                            } else {
-                            ?>
-                                <!--Imagen por default-->
-                                <img heigth="10px"; src="./assets/images/curso_educalma.png">
-                                <a class="txtTrailer" data-toggle="modal" data-target=".bd-example-modal-lg<?php echo $dato['idCurso'];?>"><label>Ver Trailer</label></a>
-                            <?php
-                            }
-                            ?>
+                        <div class="p-2" style="overflow: hidden; border-radius: 30px;">
+                            <div class="container-card-image" style="border-radius: 30px;">
+                                <?php
+                                if ($dato['imagenDestacadaCurso'] != null) {
+                                ?>
+                                    <!--Imagen elegida-->
+                                    <img heigth="10px"; src="data:image/*;base64,<?php echo base64_encode($dato['imagenDestacadaCurso']); ?>" alt="">
+                                    <a class="txtTrailer w-100 h-100 d-flex align-items-center justify-content-center" data-toggle="modal" data-target=".bd-example-modal-lg<?php echo $dato['idCurso'];?>"><label>Ver Trailer</label></a>
+                                <?php
+                                } else {
+                                ?>
+                                    <!--Imagen por default-->
+                                    <img heigth="10px"; src="./assets/images/curso_educalma.png">
+                                    <a class="txtTrailer w-100 h-100 d-flex align-items-center justify-content-center" data-toggle="modal" data-target=".bd-example-modal-lg<?php echo $dato['idCurso'];?>"><label>Ver Trailer</label></a>
+                                <?php
+                                }
+                                ?>
+                            </div>
                         </div>
-
                         <!--Contenedor del nombre del curso publicado-->
-                        <div class="container-card-title" style="padding-bottom: 1px; color: black;">
-                            <a style="float: left;">
+                    <div style="background-color: white; flex-grow: 1;" class="d-flex flex-column p-2">
+                        <div class="container-card-title text-center">
+                            <span class="font-weight-bold" style="color: #7C83FD;">
                                 <!--Nombre-->
-                                <center><strong><?php echo $dato['nombreCurso']; ?></strong></center>
-                            </a>
+                                <?php echo $dato['nombreCurso']; ?>
+                            </span>
                         </div>
 
 
 
                         <!--Contenedor del nombre del profesor del curso publicado-->
-                        <div class="container-card-description" style="margin-top: 1px; padding-top: 1px; font-size: 11px;">
+                        <div class="container-card-description text-center">
 
                             <!--Código para obtener el nombre del profesor-->
                             <?php 
@@ -270,14 +271,14 @@
                                                 if($dato5['privilegio']==1){
                                             ?>
 
-                                                    <span style="color: #565656;">Creado por la Fundación CALMA.</span>
+                                                    <span>Creado por la Fundación CALMA.</span>
 
                                             <?php 
                                                 }
 
                                                 if($dato5['privilegio']==2){
                                             ?>
-                                                    <span style="color: #565656;">Creado por <?php echo " " . $dato5['nombres'] . " " . $dato5['apellido_pat'] . " " . $dato5['apellido_mat'] . "."?></span>
+                                                    <span>Creado por <?php echo " " . $dato5['nombres'] . " " . $dato5['apellido_pat'] . " " . $dato5['apellido_mat'] . "."?></span>
                                             <?php 
                                                 }
                                             ?>
@@ -295,13 +296,13 @@
 
 
                         <!--Contenedor de la descripción del curso-->
-                        <div class="container-card-description" style="padding-bottom: 1px; margin-bottom: 1px; font-size: 13px; position: relative;">
+                        <div class="container-card-description card-description-miscursos px-3">
                             <!--Descripción-->
-                            <p><?php echo substr($dato['descripcionCurso'], 0, 50) . "..."; ?></p>
+                            <span><?php echo substr($dato['descripcionCurso'], 0, 60) . "..."; ?></span>
                         </div>
 
                         <!-- Link "Iniciar curso" -->
-                        <div class="container-card-description" style="padding-top: 1px; margin-top: 1px; font-weight: bold; font-size: 15px; color: black; position: relative;">
+                        <div class="container-card-description">
                                     
                             <?php if($dato2['id_cursoInscrito'] == NULL){ ?>
             
@@ -317,9 +318,9 @@
                                     if(isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)){
                                     ?>
                                         <!--Link "Iniciar Curso"-->
-                                        <div class="container-card-link" style="margin: auto;">
+                                        <div class="container-card-link card-link-miscursos">
                                             <a href="<?php echo $paginaRed ?>.php?id=<?php echo $dato['idCurso']; ?><?php if(!empty($dato2)){?>&idCI=<?php echo $dato2['id_cursoInscrito']; }?>">
-                                            <center><strong>Iniciar Curso</strong></center>
+                                                Ver más <i class="fas fa-arrow-right"></i>
                                             </a>
                                         </div>
                                     <?php
@@ -327,9 +328,9 @@
                                     ?>
                                     
                                         <!--Link "Iniciar Curso"-->
-                                        <div class="container-card-link" style="margin: auto;">
+                                        <div class="container-card-link card-link-miscursos">
                                             <a href="iniciosesion.php">
-                                            <center><strong>Iniciar Curso</strong></center>
+                                                Ver más <i class="fas fa-arrow-right"></i>
                                             </a>
                                         </div>
                                     <?php
@@ -337,7 +338,7 @@
                                     ?>
             
                         </div>
-
+                        </div>
                          
                         
 
@@ -496,20 +497,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                 <?php
                 }
                 ?>
@@ -519,6 +506,27 @@
                 ?>
 
         </div>
+        <!--PAGINADOR-->
+        <div class="row m-0 my-5">
+            <div class="col-12">
+                <nav aria-label="Page navigation calma">
+                    <ul class="pagination justify-content-end">
+                        <li class="page-item <?php if ($_GET['pag'] <= 1) echo 'disabled' ?>">
+                            <a class="page-link" href="sidebarCursos.php?pag=<?php echo $_GET['pag'] - 1; ?>&idcate=<?php echo $_GET['$idcate']; ?>" tabindex="-1">
+                                Anterior
+                            </a>
+                        </li>
+                        <?php for ($i = 0; $i < $page; $i++) : ?>
+                            <li class="page-item <?php echo $_GET['pag'] == $i + 1 ? 'activate' : '' ?>"><a class="page-link" href="sidebarCursos.php?pag=<?php echo $i + 1; ?>&idcate=<?php echo $_GET['idcate']; ?>"><?php echo $i + 1; ?></a></li>
+                        <?php endfor ?>
+                        <li class="page-item <?php if ($_GET['pag'] >= $page) echo 'disabled' ?>">
+                            <a class="page-link" href="sidebarCursos.php?pag=<?php echo $_GET['pag'] + 1; ?>&idcate=<?php echo $_GET['idcate']; ?>">Siguiente</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <!--FIN DE PAGINADOR-->
     </div>
    
 
@@ -535,54 +543,3 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!--PAGINADOR-->
-<div class="row container py-4" style="margin: 0 auto; position: relative; top: -80px;">
-    <div class="col-12 mx-auto">
-        <nav aria-label="Page navigation calma">
-            <ul class="pagination justify-content-end">
-                <li class="page-item <?php if ($_GET['pag'] <= 1) echo 'disabled' ?>">
-                    <a class="page-link" href="sidebarCursos.php?pag=<?php echo $_GET['pag'] - 1; ?>&idcate=<?php echo $_GET['$idcate']; ?>" tabindex="-1">
-                        Anterior
-                    </a>
-                </li>
-                <?php for ($i = 0; $i < $page; $i++) : ?>
-                    <li class="page-item <?php echo $_GET['pag'] == $i + 1 ? 'activate' : '' ?>"><a class="page-link" href="sidebarCursos.php?pag=<?php echo $i + 1; ?>&idcate=<?php echo $_GET['idcate']; ?>"><?php echo $i + 1; ?></a></li>
-                <?php endfor ?>
-                <li class="page-item <?php if ($_GET['pag'] >= $page) echo 'disabled' ?>">
-                    <a class="page-link" href="sidebarCursos.php?pag=<?php echo $_GET['pag'] + 1; ?>&idcate=<?php echo $_GET['idcate']; ?>">Siguiente</a>
-                </li>
-            </ul>
-        </nav>
-    </div>
-</div>
-<!--FIN DE PAGINADOR-->

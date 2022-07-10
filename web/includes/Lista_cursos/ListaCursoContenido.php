@@ -53,7 +53,7 @@
 
 
         <div class="container container-card-course mb-4">
-            <div class="row pt-1 container" style="margin: 0 auto;">
+            <div class="row pt-1 container">
 
                 <?php
                 $pdo = Database::connect();
@@ -121,7 +121,11 @@
                                         if ($dato['imagenDestacadaCurso'] != null) {
                                         ?>
                                             <!--Imagen-->
+<<<<<<< HEAD
                                             <img class="imgCurso" style="" src="<?php echo $dato['imagenDestacadaCurso']; ?>" alt="">
+=======
+                                            <img class="imgCurso" src="data:image/*;base64,<?php echo base64_encode($dato['imagenDestacadaCurso']); ?>" alt="">
+>>>>>>> 8109b2c05decc9c845487534203616a0a4596912
                                             <a class="txtTrailer" data-toggle="modal" data-target=".bd-example-modal-lg<?php echo $dato['idCurso'];?>"><label>Ver Trailer</label></a>
                                         <?php
                                         } else {
@@ -151,7 +155,7 @@
                                 
 
                                 <!--Nombre del curso publicado más destacado-->
-                                <div style="background-color: #ECDDF0;" class="d-flex flex-column p-2">
+                                <div style="background-color: #ECDDF0; flex-grow: 1;" class="d-flex flex-column p-2">
                                     <div class="container-card-title">
                                         <span class="font-weight-bold">
                                             <?php echo $dato['nombreCurso']; ?>
@@ -212,7 +216,7 @@
                                 
                                                 <?php }else{ ?>
                                 
-                                                    <p class="font-weight-bold" style="color: #303030; text-transform: uppercase;">
+                                                    <p>
                                                         <?php
                                                             if($dato['costoCurso']!=0 && $dato['costoCurso'] != "Gratis"){
                                                                 echo 'S/ ' . $dato['costoCurso'],"","<span style='position: relative; left: 100px; color: #63F70E;'>Comprado</span>";
@@ -420,20 +424,7 @@
 
     <div class="container container-card-course">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-        <div class="row pt-1 container" style="margin: 0 auto;">
+        <div class="row pt-1 container">
 
 
         <?php
@@ -547,7 +538,7 @@
                         </div>
 
                         <!--Contenedor del nombre del curso publicado-->
-                        <div style="background-color: #ECDDF0;" class="d-flex flex-column p-2">
+                    <div style="background-color: #ECDDF0;  flex-grow: 1;" class="d-flex flex-column p-2">
                         <div class="container-card-title">
                             <!--Nombre-->
                             <span class="font-weight-bold">
@@ -558,7 +549,7 @@
 
 
                         <!--Contenedor del nombre del profesor del curso publicado-->
-                        <div class="container-card-description" style="font-size: .8rem;">
+                        <div class="container-card-description">
 
                             <!--Código para obtener el nombre del profesor-->
                             <?php 

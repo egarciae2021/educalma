@@ -5,7 +5,7 @@
 
 
 <!-- PANEL -->
-<div class="container-fluid div-container-panel-nosotros">
+<div class="container-fluid div-container-panel-nosotros" style="margin-top: 3em;">
     <div class="row">
         <div class="col-12 col-md-6 col-lg-7 col-xl-6 m-auto">
             <div class="container-panel-image-nosotros">

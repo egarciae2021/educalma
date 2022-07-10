@@ -324,6 +324,10 @@ border-radius: 10px;
     margin: 0 auto;
     border: 1px solid lightgray;
     text-align: justify;
+    justify-content: space-between;
+}
+.container-fluid .container-card-course .row .col-12 .card-miscursos {
+    max-width: none;
 }
 
 .container-fluid
@@ -390,10 +394,20 @@ border-radius: 10px;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2; */
 }
+.container-fluid
+    .container-card-course
+    .row
+    .col-12
+    .card
+    .card-description-miscursos {
+    font-size: .9rem;
+    font-weight: 600;
+}
 
 .container-fluid .container-card-course /* CREADO POR DE LAS CARD */
 .row .col-12 .card .container-card-title + .container-card-description {
     font-size: .8rem;
+    flex-grow: 1;
 }
 
 /*
@@ -430,6 +444,10 @@ border-radius: 10px;
 	box-shadow: 5px 5px 20px rgba(0,0,0,0.4);
 	transform: translateY(-3%);
 }
+.card-miscursos:hover {
+    box-shadow: 0px 0px 18px 0px #7c83fd;
+	transform: translateY(-3%);
+}
 
 .container-card-link{ /* ESTILOS DE BOTON CARD */
     text-align: center;
@@ -449,6 +467,14 @@ border-radius: 10px;
     padding: .4rem 1rem 0rem 1rem;
     min-width: 160px;
 }
+.card .card-link-miscursos a{
+    border-radius: 6px;
+    padding: .8rem 2rem .5rem 2rem;
+}
+.card .card-link-miscursos i{
+    font-size: 1.2rem;
+}
+
 .card .container-card-link a:hover{
 	background-color:#127b9b;
 }
@@ -481,6 +507,9 @@ border-radius: 10px;
     .container-card-link{ /* ESTILOS DE BOTON CARD */
         font-size: 1.3rem;
     }
+    .card .card-link-miscursos i{
+        font-size: 1.1rem;
+    }
 }
 
 @media (max-width: 1055px) {
@@ -504,6 +533,9 @@ border-radius: 10px;
     }
     .container-card-link{ /* ESTILOS DE BOTON CARD */
         font-size: 1.2rem;
+    }
+    .card .card-link-miscursos i{
+        font-size: 1rem;
     }
 }
 
@@ -541,8 +573,20 @@ border-radius: 10px;
     .row .col-12 .card .container-card-description {
         font-size: 1rem;
     }
+    .container-fluid
+    .container-card-course
+    .row
+    .col-12
+    .card
+    .card-description-miscursos {
+        font-size: .9rem;
+        font-weight: 600;
+    }
     .container-card-link{ /* ESTILOS DE BOTON CARD */
         font-size: 1.4rem;
+    }
+    .card .card-link-miscursos i{
+        font-size: 1.2rem;
     }
 }
 

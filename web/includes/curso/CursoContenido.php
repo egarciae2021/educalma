@@ -12,12 +12,19 @@
    transition: all 0.2s ease;
    }
    .color1{
-      color: #7c83fd8a;
+      color: #e0c7e5;
    }
 
    @media (max-width: 767px) {
       .responsv1 {
      width: 100%;
+  }}
+
+  @media (max-width: 360px) {
+      .respons7 {
+     width: 100%;
+     display: flex;
+     justify-content: center;
   }
 
 }
@@ -171,9 +178,9 @@
             <div class="container-detalle-course col-12 col sm-12 col-md-6 col-lg-6 col-xl-6">
                <div class="row container-title-course">
                   <div class="col-auto icon-course pr-0">
-                     <img src="assets/images/curso-por-internet.png" class="mr-2" alt="" style="height: 100px;">
-                  </div>
-                  <div class="col title-course" style="color: #6c74f5;">
+                     <!-- <img src="assets/images/curso-por-internet.png" class="mr-2" alt="" style="height: 100px;">-->
+                  </div> 
+                  <div class="col title-course" style="color: #7C83FD; margin-left: -14px;">
                      <?php echo $dato4['nombreCurso']; ?>
                   </div>
                </div>
@@ -396,7 +403,7 @@
                       while ($modulosC = $q6->fetch(PDO::FETCH_ASSOC)) {
                           $nW=$nW+1;
                   ?>
-               <div class="w-100">
+               <div class="w-100 respons7">
                   <a id="btnInicioModulo" href="video.php?id=<?php echo $id;?>&idtema=<?php echo 1;?>&id_modulo=<?php echo $modulosC['idModulo']?>&nW=<?php echo $nW-1?>&idCI=<?php echo $idCI?>" class="btn px-4 mb-2 puntos-suspensivos responsv1"  style="background:#DCECFA; width:55%; text-align:left;">
                   <i class="fas fa-play mr-3"></i>
                   <span style="color:black; width:100%;white-space: initial;"><?php echo $modulosC['nombreModulo'] ?></span>
@@ -416,7 +423,7 @@
             </div>
          </div>
          <!--foro educalma-->
-         <div style="width:100%;">
+         <div style="width:100%; margin-left: -12em;">
             <?php
                $idCurso = $id;
                
@@ -437,12 +444,14 @@
                if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                ?>
             <!-- COMIENZOOOOOOOOOOOOOO - Contenedor de todo. El que tiene esquinas curveadas. -->
-            <div id="contenedorTodo" class="comments-container"  style="background-color: #D9EBFF; border-radius: 40px;">
+            <div id="contenedorTodo" class="comments-container"  style="border-radius: 40px;">
                <!-- TITULO FORO EDUCALMA -->
-               <h1 id="tituloForoEducalma" style="text-align: center">Foro Educalma<?php echo $_SESSION['iduser']?></h1>
+               <h1 id="tituloForoEducalma">Comenta sobre el curso<?php echo $_SESSION['iduser']?></h1>
+               <h4 style="font-size: 16px;">Deja un comentario sobre este curso.</h4> 
                <!-- TITULO FORO EDUCALMA -->
                <!-- BOTON COMENTAR -->
-               <button id="btnComentar2" style="width: 310px;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Comentar</button>
+               <button id="btnComentar2" style="width: 10em;height: 45px; border-radius: 8px;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Comentar</button>
+               <h1 style="margin-top: 43px;">Destacados</h1>
                <!-- BOTON COMENTAR -->
                <!-- BOTON ELIMINAR TODO -->
                <!--botonEliminarTodo Le quite los estilos(style="position: relative; left: 10px; top: -10px" type="button"), hace que el boton 

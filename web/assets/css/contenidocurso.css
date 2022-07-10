@@ -32,7 +32,7 @@ body {
 }
 
 .container-curso .container-info-course-curso .container-detalle-course .rankin-course {
-    color: #666efd;
+    color: #7C83FD;
     font-weight: 600;
 }
 
@@ -73,7 +73,7 @@ body {
 }
 
 .container-curso .container-info-course-curso .container-detalle-course .start-course .container-start-course h5 {
-    font-size: 13px;
+    font-size: 14px;
     font-weight: normal;
     color: #fff;
 }
@@ -138,10 +138,11 @@ body {
 .container-curso .container-other-course-curso .row .col-lg-4 {
     border-left: 1px solid #597c9b;
     border-right: 1px solid #597c9b;
+    font-size: 20px;
 }
 
 .container-curso .container-other-course-curso .row h5 {
-    font-size: 12px;
+    font-size: 15px;
     text-align: center;
     color: #000; 
     text-transform: capitalize;

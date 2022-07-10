@@ -52,9 +52,9 @@ body {
 }
 
 .comments-container h1 {
-  font-size: 36px;
+  font-size: 26px;
   color: #7C83FD;
-  font-weight: 400;
+  font-weight: 700;
 }
 
 .comments-container h1 a {
@@ -63,7 +63,7 @@ body {
 }
 
 .comments-list {
-  margin-top: 30px;
+  margin-top: 5px;
   position: relative;
 }
 
@@ -281,7 +281,7 @@ body {
 #btnComentar2 {
 
   /*Centrar botón*/
-  display: block; 
+  /* display: block;  */
   margin: 0 auto;
 }
 
@@ -318,7 +318,7 @@ body {
   #btnComentar2 {
 
     /*Centrar botón*/
-    display: block; 
+    /* display: block;  */
     margin: 0 auto;
   }
 
