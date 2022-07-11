@@ -17,8 +17,7 @@ $preference = new MercadoPago\Preference();
 
 <head>
     <link rel="stylesheet" href="assets/css/pagepay.css" />
-    <!-- <link rel="stylesheet" href="assets/css/tarjeta.css" /> -->
-    <link rel="stylesheet" href="assets/css/tarjetaCredito.css">
+     <link rel="stylesheet" href="assets/css/tarjetaCredito.css">
     <link rel="stylesheet" href="assets/js/plugins/sweetalert2.min.css">
 
     <link rel="stylesheet" href="assets/css/modalPagarVisa.css">
@@ -166,10 +165,7 @@ $preference = new MercadoPago\Preference();
                                 <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
 
                                     <div class="card-body">
-                                        <!-- <a href="pay.php">VISA</a> -->
-                                        <!-- <a href="pay.php?id=<?php # echo $idUserr; ?>">VISA</a> -->
-
-                                        <!-- -->
+                            
                                         <div>
                                             
                                             <!-- Aqui abajo estaba el anterior buton para pago -->
@@ -202,10 +198,7 @@ $preference = new MercadoPago\Preference();
                                         </div>  
                                     </div>
       
-                                            <!--Inicio-->
-                                            <?#php include_once 'includes/curso/pagoTarjeta.php' ?>
-    
-                                            <!--Fin-->          
+                                                    
                                 </div>
                             </div>
 
@@ -243,11 +236,7 @@ $preference = new MercadoPago\Preference();
                 <div class="container-info-resumen" style="background-color: white;">
                     <div class="px-4">
                         <h4 class="text-center mt-4 mb-3">Resumen de pedido</h4>
-                        <!-- <p class="m-0">Curso:</p> 
-                        <div class="row">
-                            <div class="col-6" style="font-weight: bold;">Producto</div>
-                            <div class="col-6 text-right" style="font-weight: bold;"><span>$.<?php echo $dato['costoCurso'];?></span></div>
-                        </div>-->
+                         
                         <div class="row">
                             <div class="col-6 col-lg-6 col-xl-6">
                                 <div class="container-image-detalle">
@@ -277,8 +266,7 @@ $preference = new MercadoPago\Preference();
                         <div class="px-3">
                             <hr class="mb-1">
                             <h3 class="m-0 pb-3" style="font-size: .9rem;">Los productos podrán ser descargados una vez que se procede el pago</h3>
-                            <!--<h3 class="font-weight-bold" style="font-size: 10px;">(Para aclaraciones giancarlosuggardaddy@gmail.com)</h3>-->
-                        </div>
+                         </div>
 
                        
                     </div>
@@ -321,9 +309,7 @@ $preference = new MercadoPago\Preference();
                 
                 let url = 'includes/Cursos_crud/inscribeteCurso.php?id=<?php echo $dato["idCurso"];?>';
                 actions.order.capture().then(function(details) {
-                    // alert('pago exitoso');
-                    //     window.location.href = 'sidebarCursos.php';
-                    // window.location = "curso.php?id= ?php echo $dato["idCurso"];?>";
+                   
                     console.log(details);
                     
                     return fetch(url, {
@@ -348,7 +334,7 @@ $preference = new MercadoPago\Preference();
             },
 
             onCancel: function(data) {
-                // alert('cancelaste tu pago');
+               
                 Swal.fire({
                     title: 'Cancelaste tu pago!!',
                     icon: 'error',
