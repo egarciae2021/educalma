@@ -164,7 +164,7 @@ function guidv4($data = null) {
 	    if(($_FILES['txtimagenAct']['size'])>0){
 
             $nombreimagenes=$_FILES['txtimagenAct']['tmp_name'];
-            if(move_uploaded_file($temp,$rutaAbsoluta.$UUID.'.png')){
+            if(move_uploaded_file($nombreimagenes,$rutaAbsoluta.$UUID.'.png')){
                 $ruta = '/imagenes/'.$UUID.'.png';
                 $nombreimagen = $ruta;
             }

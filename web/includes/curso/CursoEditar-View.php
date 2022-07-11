@@ -181,7 +181,7 @@
                                                 <input type="file" id="file-upload" name="txtimagenAct" onchange='cambiar()' style='display: none;' aria-label="Upload" aria-describedby="inputGroupFileAddon04" accept="image/*" ; multiple />
 
                                                 <div class="content-imagen">
-                                                    <img class="content-img" src="data:image/*;base64,<?php echo base64_encode($dato2['imagenDestacadaCurso']) ?>">
+                                                    <img class="content-img" src="<?php echo $dato2['imagenDestacadaCurso'] ?>">
                                                 </div>
                                             </div>
 
