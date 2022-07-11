@@ -175,7 +175,7 @@ $preference = new MercadoPago\Preference();
                                             <!-- Aqui abajo estaba el anterior buton para pago -->
                                             <!-- <button data-open="modal1" id="cardBtn" class="btn btn-primary btn-lg btn-block" type="button">Pagar con tarjeta de credito o debito <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-credit-card" viewBox="0 -2 16 16" style="width: 23; height: 23; @media only screen and (max-width: 768px){width: 23; height: 23;}"><path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v1h14V4a1 1 0 0 0-1-1H2zm13 4H1v5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V7z"/><path d="M2 10a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-1z"/></svg></button> -->
                                             <!-- Aqui esta el div donde estara el nuevo boton -->
-                                            <div class="checkout-btn "> </div>
+                                            
                                       
                                             <script>
                                                 // Agrega credenciales de SDK
@@ -279,6 +279,8 @@ $preference = new MercadoPago\Preference();
                             <h3 class="m-0 pb-3" style="font-size: .9rem;">Los productos podrán ser descargados una vez que se procede el pago</h3>
                             <!--<h3 class="font-weight-bold" style="font-size: 10px;">(Para aclaraciones giancarlosuggardaddy@gmail.com)</h3>-->
                         </div>
+
+                        <div class="checkout-btn "> </div>
                     </div>
 
                     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></>
