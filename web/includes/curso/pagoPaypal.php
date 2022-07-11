@@ -1,7 +1,7 @@
 <html lang="en">
 <?php
 require_once 'database/databaseConection.php';
-require  '/vendor/autoload.php';
+require  'vendor/autoload.php';
 
 $id = $_GET['id']; 
 
