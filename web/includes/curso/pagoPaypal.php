@@ -1,7 +1,41 @@
 <html lang="en">
 <?php
 require_once 'database/databaseConection.php';
-$id = $_GET['id'];
+require __DIR__ .  '/vendor/autoload.php';
+
+$id = $_GET['id']; 
+
+// Agrega credenciales
+MercadoPago\SDK::setAccessToken('APP_USR-1923618636570539-071014-5632864634d560a172adbfd37f3d8c8e-1157900136');
+ 
+// Crea un objeto de preferencia
+$preference = new MercadoPago\Preference();
+
+// Crea un ítem en la preferencia
+$item = new MercadoPago\Item();
+$item->title = $dato['nombreCurso'];
+$item->quantity = 1;
+$item->unit_price = $dato['costoCurso'];
+$item->currency_id="PEN";
+$item-> auto_return = "approved" ;
+ 
+$preference->items = array($item);
+ 
+$preference->back_urls = array(
+    "success" => "https://apiflutter.azurewebsites.net/mercadopago/lectura.php",
+    "failure" => "https://youtube.com", 
+    "pending" => "https://Facebook.com"
+);
+$preference->auto_return = "approved"; 
+ 
+$preference->save();
+
+$response = array(
+    'id' => $preference->id,
+); 
+echo json_encode($response);
+ 
+  
 ?>
 
 <head>
@@ -127,11 +161,35 @@ $id = $_GET['id'];
                                         <!-- -->
                                         <div>
                                             <!--<button id="cardBtn" onclick="location.href='pay.php?id=<?php echo $idUserr; ?>'" class="btn btn-primary btn-lg btn-block" type="button">Pagar con tarjeta de credito o debito <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-credit-card" viewBox="0 -2 16 16" style="width: 23; height: 23; @media only screen and (max-width: 768px){width: 23; height: 23;}"><path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v1h14V4a1 1 0 0 0-1-1H2zm13 4H1v5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V7z"/><path d="M2 10a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-1z"/></svg></button>-->
-                                            <button data-open="modal1" id="cardBtn" class="btn btn-primary btn-lg btn-block" type="button">Pagar con tarjeta de credito o debito <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-credit-card" viewBox="0 -2 16 16" style="width: 23; height: 23; @media only screen and (max-width: 768px){width: 23; height: 23;}"><path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v1h14V4a1 1 0 0 0-1-1H2zm13 4H1v5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V7z"/><path d="M2 10a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-1z"/></svg></button>
-                                        </div>
+                                            
+                                            <!-- Aqui abajo estaba el anterior buton para pago -->
+                                            <!-- <button data-open="modal1" id="cardBtn" class="btn btn-primary btn-lg btn-block" type="button">Pagar con tarjeta de credito o debito <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-credit-card" viewBox="0 -2 16 16" style="width: 23; height: 23; @media only screen and (max-width: 768px){width: 23; height: 23;}"><path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v1h14V4a1 1 0 0 0-1-1H2zm13 4H1v5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V7z"/><path d="M2 10a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-1z"/></svg></button> -->
+                                            <!-- Aqui esta el div donde estara el nuevo boton -->
+                                            <div class="checkout-btn  btn btn-primary btn-lg btn-block"> </div>
+                                      
+                                            <script>
+                                                // Agrega credenciales de SDK
+                                                const mp = new MercadoPago("APP_USR-151e9e9b-62d0-439d-8f66-e4d1239f2c9e", {
+                                                    locale: "es-PE",
+                                                });
 
-                                        
+                                                // Inicializa el checkout
+                                                mp.checkout({
+                                                    preference: {
+                                                    id: '<?php echo $preference->id;?>'
+                                                    },
+                                                    // autoOpen: true,
+                                                    render: {
+                                                    container: ".checkout-btn", // Indica el nombre de la clase donde se mostrará el botón de pago
+                                                    label: "Pagar con tarjeta de credito o debito ", // Cambia el texto del botón de pago (opcional)
+                                                    },
+                                                });
+                                            </script>
 
+
+                                      
+                                      
+                                        </div>  
                                     </div>
       
                                             <!--Inicio-->
