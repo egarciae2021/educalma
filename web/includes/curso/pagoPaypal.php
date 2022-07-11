@@ -41,7 +41,7 @@ $preference = new MercadoPago\Preference();
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="assets/js/plugins/sweetalert2.all.min.js"></script>
-    <script src="assets/js/card-validator.js"></script>
+    <!-- <script src="assets/js/card-validator.js"></script> -->
 
     <?php
         ob_start();
