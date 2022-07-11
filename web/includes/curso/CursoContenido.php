@@ -415,7 +415,7 @@
             </div>
             <div class="col-md-5 col-lg-5 order-1 " style="width:auto; float:right; position: relative; " >
                <h5 style="color: #7C83FD;font-weight: 600;font-size: 23px;">Certificación del curso</h5>
-               <img src="assets/images/certificado.jpg" class="img-fluid"alt="">
+               <img src="assets/images/certificate.jpg" class="img-fluid"alt="">
                <div class="info">
                   <!--Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse sapiente, harum, vero molestiae magnam
                      blanditiis cum omnis magni-->
