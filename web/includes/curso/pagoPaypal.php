@@ -10,30 +10,7 @@ MercadoPago\SDK::setAccessToken('APP_USR-1923618636570539-071014-5632864634d560a
  
 // Crea un objeto de preferencia
 $preference = new MercadoPago\Preference();
-
-// Crea un ítem en la preferencia
-$item = new MercadoPago\Item();
-$item->title = $dato['nombreCurso'];
-$item->quantity = 1;
-$item->unit_price = $dato['costoCurso'];
-$item->currency_id="PEN";
-$item-> auto_return = "approved" ;
  
-$preference->items = array($item);
- 
-$preference->back_urls = array(
-    "success" => "https://apiflutter.azurewebsites.net/mercadopago/lectura.php",
-    "failure" => "https://youtube.com", 
-    "pending" => "https://Facebook.com"
-);
-$preference->auto_return = "approved"; 
- 
-$preference->save();
-
-$response = array(
-    'id' => $preference->id,
-); 
-echo json_encode($response);
  
   
 ?>
@@ -86,6 +63,40 @@ echo json_encode($response);
             $qS->execute(array());
             $datoS=$qS->fetch(PDO::FETCH_ASSOC);
             Database::disconnect();
+
+
+
+// Aqui creamos la referencia de mercado pago
+            $item = new MercadoPago\Item();
+            $item->title = $dato['nombreCurso'];
+            $item->quantity = 1;
+            $item->unit_price = $dato['costoCurso'];
+            $item->currency_id="PEN";
+            $item-> auto_return = "approved" ;
+             
+            $preference->items = array($item);
+             
+            $preference->back_urls = array(
+                "success" => "https://apiflutter.azurewebsites.net/mercadopago/lectura.php",
+                "failure" => "https://youtube.com", 
+                "pending" => "https://Facebook.com"
+            );
+            $preference->auto_return = "approved"; 
+             
+            $preference->save();
+            
+            $response = array(
+                'id' => $preference->id,
+            ); 
+            echo json_encode($response);
+
+
+
+
+
+
+
+
 
             if (empty($datoS['id_cursoInscrito'])){        
     ?>
