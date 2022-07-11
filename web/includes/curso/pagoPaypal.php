@@ -23,7 +23,7 @@ $preference = new MercadoPago\Preference();
 
     <link rel="stylesheet" href="assets/css/modalPagarVisa.css">
     <link rel="stylesheet" href="assets/css/formPagarVisa.css">
-
+    <script src="https://sdk.mercadopago.com/js/v2"></script>
     <style>
 
     @media screen and (min-width: 1000px) {
