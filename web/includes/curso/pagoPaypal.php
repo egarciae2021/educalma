@@ -1,18 +1,28 @@
 <html lang="en">
 <?php
 require_once 'database/databaseConection.php';
-$id = $_GET['id'];
+require  'vendor/autoload.php';
+
+$id = $_GET['id']; 
+
+// Agrega credenciales
+MercadoPago\SDK::setAccessToken('APP_USR-1923618636570539-071014-5632864634d560a172adbfd37f3d8c8e-1157900136');
+ 
+// Crea un objeto de preferencia
+$preference = new MercadoPago\Preference();
+ 
+ 
+  
 ?>
 
 <head>
     <link rel="stylesheet" href="assets/css/pagepay.css" />
-    <!-- <link rel="stylesheet" href="assets/css/tarjeta.css" /> -->
-    <link rel="stylesheet" href="assets/css/tarjetaCredito.css">
+     <link rel="stylesheet" href="assets/css/tarjetaCredito.css">
     <link rel="stylesheet" href="assets/js/plugins/sweetalert2.min.css">
 
     <link rel="stylesheet" href="assets/css/modalPagarVisa.css">
     <link rel="stylesheet" href="assets/css/formPagarVisa.css">
-
+    <script src="https://sdk.mercadopago.com/js/v2"></script>
     <style>
 
     @media screen and (min-width: 1000px) {
@@ -31,7 +41,7 @@ $id = $_GET['id'];
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="assets/js/plugins/sweetalert2.all.min.js"></script>
-    <script src="assets/js/card-validator.js"></script>
+    <!-- <script src="assets/js/card-validator.js"></script> -->
 
     <?php
         ob_start();
@@ -52,6 +62,40 @@ $id = $_GET['id'];
             $qS->execute(array());
             $datoS=$qS->fetch(PDO::FETCH_ASSOC);
             Database::disconnect();
+
+
+
+// Aqui creamos la referencia de mercado pago
+            $item = new MercadoPago\Item();
+            $item->title = $dato['nombreCurso'];
+            $item->quantity = 1;
+            $item->unit_price = $dato['costoCurso'];
+            $item->currency_id="PEN";
+            $item-> auto_return = "approved" ;
+             
+            $preference->items = array($item);
+             
+            $preference->back_urls = array(
+                "success" => "https://apiflutter.azurewebsites.net/mercadopago/lectura.php",
+                "failure" => "https://youtube.com", 
+                "pending" => "https://Facebook.com"
+            );
+            $preference->auto_return = "approved"; 
+             
+            $preference->save();
+            
+            $response = array(
+                'id' => $preference->id,
+            ); 
+            echo json_encode($response);
+
+
+
+
+
+
+
+
 
             if (empty($datoS['id_cursoInscrito'])){        
     ?>
@@ -121,23 +165,40 @@ $id = $_GET['id'];
                                 <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
 
                                     <div class="card-body">
-                                        <!-- <a href="pay.php">VISA</a> -->
-                                        <!-- <a href="pay.php?id=<?php # echo $idUserr; ?>">VISA</a> -->
-
-                                        <!-- -->
+                            
                                         <div>
-                                            <!--<button id="cardBtn" onclick="location.href='pay.php?id=<?php echo $idUserr; ?>'" class="btn btn-primary btn-lg btn-block" type="button">Pagar con tarjeta de credito o debito <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-credit-card" viewBox="0 -2 16 16" style="width: 23; height: 23; @media only screen and (max-width: 768px){width: 23; height: 23;}"><path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v1h14V4a1 1 0 0 0-1-1H2zm13 4H1v5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V7z"/><path d="M2 10a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-1z"/></svg></button>-->
-                                            <button data-open="modal1" id="cardBtn" class="btn btn-primary btn-lg btn-block" type="button">Pagar con tarjeta de credito o debito <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-credit-card" viewBox="0 -2 16 16" style="width: 23; height: 23; @media only screen and (max-width: 768px){width: 23; height: 23;}"><path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v1h14V4a1 1 0 0 0-1-1H2zm13 4H1v5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V7z"/><path d="M2 10a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-1z"/></svg></button>
-                                        </div>
+                                            
+                                            <!-- Aqui abajo estaba el anterior buton para pago -->
+                                            <!-- <button data-open="modal1" id="cardBtn" class="btn btn-primary btn-lg btn-block" type="button">Pagar con tarjeta de credito o debito <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-credit-card" viewBox="0 -2 16 16" style="width: 23; height: 23; @media only screen and (max-width: 768px){width: 23; height: 23;}"><path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v1h14V4a1 1 0 0 0-1-1H2zm13 4H1v5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V7z"/><path d="M2 10a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-1z"/></svg></button> -->
+                                            <!-- Aqui esta el div donde estara el nuevo boton -->
+                                            <div class="checkout-btn "> </div>
+                                      
+                                            <script>
+                                                // Agrega credenciales de SDK
+                                                const mp = new MercadoPago("APP_USR-151e9e9b-62d0-439d-8f66-e4d1239f2c9e", {
+                                                    locale: "es-PE",
+                                                });
 
-                                        
+                                                // Inicializa el checkout
+                                                mp.checkout({
+                                                    preference: {
+                                                    id: '<?php echo $preference->id;?>'
+                                                    },
+                                                    // autoOpen: true,
+                                                    render: {
+                                                    container: ".checkout-btn", // Indica el nombre de la clase donde se mostrará el botón de pago
+                                                    label: "Pagar con tarjeta de credito o debito ", // Cambia el texto del botón de pago (opcional)
+                                                    },
+                                                });
+                                            </script>
 
+
+                                      
+                                      
+                                        </div>  
                                     </div>
       
-                                            <!--Inicio-->
-                                            <?#php include_once 'includes/curso/pagoTarjeta.php' ?>
-    
-                                            <!--Fin-->          
+                                                    
                                 </div>
                             </div>
 
@@ -175,11 +236,7 @@ $id = $_GET['id'];
                 <div class="container-info-resumen" style="background-color: white;">
                     <div class="px-4">
                         <h4 class="text-center mt-4 mb-3">Resumen de pedido</h4>
-                        <!-- <p class="m-0">Curso:</p> 
-                        <div class="row">
-                            <div class="col-6" style="font-weight: bold;">Producto</div>
-                            <div class="col-6 text-right" style="font-weight: bold;"><span>$.<?php echo $dato['costoCurso'];?></span></div>
-                        </div>-->
+                         
                         <div class="row">
                             <div class="col-6 col-lg-6 col-xl-6">
                                 <div class="container-image-detalle">
@@ -209,8 +266,9 @@ $id = $_GET['id'];
                         <div class="px-3">
                             <hr class="mb-1">
                             <h3 class="m-0 pb-3" style="font-size: .9rem;">Los productos podrán ser descargados una vez que se procede el pago</h3>
-                            <!--<h3 class="font-weight-bold" style="font-size: 10px;">(Para aclaraciones giancarlosuggardaddy@gmail.com)</h3>-->
-                        </div>
+                         </div>
+
+                       
                     </div>
 
                     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></>
@@ -251,9 +309,7 @@ $id = $_GET['id'];
                 
                 let url = 'includes/Cursos_crud/inscribeteCurso.php?id=<?php echo $dato["idCurso"];?>';
                 actions.order.capture().then(function(details) {
-                    // alert('pago exitoso');
-                    //     window.location.href = 'sidebarCursos.php';
-                    // window.location = "curso.php?id= ?php echo $dato["idCurso"];?>";
+                   
                     console.log(details);
                     
                     return fetch(url, {
@@ -278,7 +334,7 @@ $id = $_GET['id'];
             },
 
             onCancel: function(data) {
-                // alert('cancelaste tu pago');
+               
                 Swal.fire({
                     title: 'Cancelaste tu pago!!',
                     icon: 'error',
