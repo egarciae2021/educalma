@@ -445,7 +445,7 @@
                           $nW=$nW+1;
                   ?>
                <div class="w-100 respons7">
-                  <a id="btnInicioModulo" href="video.php?id=<?php echo $id;?>&idtema=<?php echo 1;?>&id_modulo=<?php echo $modulosC['idModulo']?>&nW=<?php echo $nW-1?>&idCI=<?php echo $idCI?>" class="btn px-4 mb-2 puntos-suspensivos responsv1"  style="background:#DCECFA; width:55%; text-align:left;">
+                  <a id="btnInicioModulo" href="video.php?id=<?php echo $id;?>&idtema=<?php echo 1;?>&id_modulo=<?php echo $modulosC['idModulo']?>&nW=<?php echo $nW-1?>&idCI=<?php echo $idCI?>" class="btn px-4 mb-2 puntos-suspensivos responsv1"  style="background:#fff; width:55%; text-align:left;">
                   <i class="fas fa-play mr-3"></i>
                   <span style="color:black; width:100%;white-space: initial;"><?php echo $modulosC['nombreModulo'] ?></span>
                   </a>
