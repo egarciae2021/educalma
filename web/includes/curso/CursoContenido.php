@@ -25,6 +25,27 @@
      width: 100%;
      display: flex;
      justify-content: center;
+  }}
+
+  @media (min-width: 1200px) {
+      .responsv5 {
+      flex: 0 0 38%;
+      max-width: 50%;
+      margin-left: 150px;
+  }
+
+}
+
+@media (min-width: 1200px) {
+      .image-course {
+      margin-left: -90px;
+  }
+
+}
+
+@media (min-width: 1200px) {
+      .largoresponsv {
+      margin-left: -7em;
   }
 
 }
@@ -175,7 +196,7 @@
    <div class="container container-curso">
       <div class="container-info-course-curso">
          <div class="row">
-            <div class="container-detalle-course col-12 col sm-12 col-md-6 col-lg-6 col-xl-6">
+            <div class="container-detalle-course col-12 col sm-12 col-md-6 col-lg-6 col-xl-6 responsv5">
                <div class="row container-title-course">
                   <div class="col-auto icon-course pr-0">
                      <!-- <img src="assets/images/curso-por-internet.png" class="mr-2" alt="" style="height: 100px;">-->
@@ -232,7 +253,7 @@
                   </div>
                </div>
             </div>
-            <div class="container-image-course col-12 col sm-12 col-md-6 col-lg-6 col-xl-6">
+            <div class="container-image-course col-12 col sm-12 col-md-6 col-lg-6 col-xl-6 responsv5">
                <div class="image-course">
                   <?php
                      if ($dato4['imagenDestacadaCurso'] != null) {
@@ -415,7 +436,7 @@
             </div>
             <div class="col-md-5 col-lg-5 order-1 " style="width:auto; float:right; position: relative; " >
                <h5 style="color: #7C83FD;font-weight: 600;font-size: 23px;">Certificación del curso</h5>
-               <img src="assets/images/certificate.jpg" class="img-fluid"alt="">
+               <img src="assets/images/certificado.jpg" class="img-fluid"alt="">
                <div class="info">
                   <!--Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse sapiente, harum, vero molestiae magnam
                      blanditiis cum omnis magni-->
@@ -423,7 +444,7 @@
             </div>
          </div>
          <!--foro educalma-->
-         <div style="width:100%; margin-left: -12em;">
+         <div class="largoresponsv" style="width:100%;">
             <?php
                $idCurso = $id;
                
@@ -446,7 +467,7 @@
             <!-- COMIENZOOOOOOOOOOOOOO - Contenedor de todo. El que tiene esquinas curveadas. -->
             <div id="contenedorTodo" class="comments-container"  style="border-radius: 40px;">
                <!-- TITULO FORO EDUCALMA -->
-               <h1 id="tituloForoEducalma">Comenta sobre el curso<?php echo $_SESSION['iduser']?></h1>
+               <h1 id="tituloForoEducalma">Comenta sobre el curso</h1>
                <h4 style="font-size: 16px;">Deja un comentario sobre este curso.</h4> 
                <!-- TITULO FORO EDUCALMA -->
                <!-- BOTON COMENTAR -->

@@ -97,7 +97,7 @@ body {
 /*  */
 
 .container-curso .container-info-course-curso .container-image-course .image-course {
-    height: 320px;
+    height: 300px;
     width: 100%;
     text-align: center;
     position: relative;
@@ -229,10 +229,6 @@ body {
     left: 100px;
 
 }
-.comments-container .btn-primary{
-
-   
-}
 
 }
 
@@ -243,7 +239,7 @@ body {
 @media (min-width:1000px){
     .container-fluid .container-detalle-informacion .col-8  {
       position:relative;
-      /* left: 1px; */
+      left: 70px;
       margin-bottom:25px;
       align-self: auto; 
       margin-right:-310px;
@@ -276,12 +272,9 @@ body {
     @media(min-width: 950px){
 
         .respons{
-            margin-left: 140px;
+            margin-left: 118px;
         }
-    /* .comments-container .btn-primary{
-    
-       
-    } */
+    }
 }
 
 @media(min-width: 950px){
