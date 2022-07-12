@@ -62,6 +62,14 @@
       }
   }
 
+  @media (min-width: 1200px) {
+      .col-xl-4 {
+      flex: 0 0 28%;
+      max-width: 28%;
+  }
+
+}
+
 </style>
 <body>
    <?php
@@ -396,10 +404,10 @@
                   </div>
                   <!--div class="col-8"-->
                   <div class="col-8"  id="informacion">
-                     <h5 style="color: #7C83FD;font-weight: 600;text-transform: capitalize;">¿Que incluye este curso?</h5>
-                     <div class="container-info-course-detalle" style="margin-top: 1em;border-radius: 20px;border: 2px solid #7C83FD;">
+                     <h5 style="color: #7C83FD;font-weight: 600;text-transform: initial;">¿Que incluye este curso?</h5>
+                     <div class="container-info-course-detalle" style="margin-top: 2em;border-radius: 20px;border: 2px solid #7C83FD;">
                         <h5>Tabla de contenido del curso</h5>
-                        <div class="row pt-2" style="color: #000;">
+                        <div class="row pt-2" style="color: #000;padding-top: 0.6rem!important;">
                            <div class="col-12 col-sm-6 col-lg-6">
                               <div><i class="far fa-file"></i></div>
                               <?php echo $modulos; ?> Modulos

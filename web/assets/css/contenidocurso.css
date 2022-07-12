@@ -133,12 +133,15 @@ body {
     color: #7C83FD;
     text-transform: uppercase;
     font-weight: bold;
+    justify-content: center;
+    letter-spacing: 1px;
 }
 
 .container-curso .container-other-course-curso .row .col-lg-4 {
-    border-left: 1px solid #597c9b;
-    border-right: 1px solid #597c9b;
-    font-size: 20px;
+    /* border-left: 1px solid #597c9b;
+    border-right: 1px solid #597c9b; */
+    font-size: 22px;
+    letter-spacing: 1px;
 }
 
 .container-curso .container-other-course-curso .row h5 {
@@ -148,6 +151,7 @@ body {
     text-transform: capitalize;
     font-weight: normal;
     padding-top: 0.5rem;
+    letter-spacing: 0px;
 }
 
 .container-fluid {
@@ -191,7 +195,7 @@ body {
 }
 
 .container-fluid .container-detalle-informacion .col-8 h5 {
-    font-size: 20px;
+    font-size: 21px;
 }
 
 .container-fluid .container-detalle-informacion .col-8 .container-info-course-detalle {
