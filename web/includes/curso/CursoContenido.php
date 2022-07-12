@@ -50,6 +50,18 @@
 
 }
 
+@media (max-width: 360px) {
+      .btn-light {
+      position: relative;
+      top: 10px;
+      }
+
+      .comment-box .comment-head i {
+      position: relative;
+      top: -13px;
+      }
+  }
+
 </style>
 <body>
    <?php
