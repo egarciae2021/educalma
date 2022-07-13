@@ -385,12 +385,10 @@ if (!isset($_GET['pag'])) {
                         ?>
                             <!--Imagen-->
                             <img class="imgCurso" style="" src="data:image/*;base64,<?php echo base64_encode($dato['imagenDestacadaCurso']); ?>" alt="">
-                            <a class="txtTrailer" data-toggle="modal" data-target=".bd-example-modal-lg<?php echo $dato['idCurso'];?>"><label>Ver Trailer</label></a>
                         <?php
                         } else {
                         ?>
                             <img class="imgCurso" src="./assets/images/curso_educalma.png">
-                            <a class="txtTrailer" data-toggle="modal" data-target=".bd-example-modal-lg<?php echo $dato['idCurso'];?>"><label>Ver Trailer</label></a>
                         <?php
                         }
                         ?>
