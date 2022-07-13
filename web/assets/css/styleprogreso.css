@@ -92,3 +92,18 @@
 
 }
 */
+
+@media (max-width:400px) {
+    .before{
+        display: none;
+    }
+    .next{
+        display: none;
+    }
+}
+
+/* .opciones{
+    justify-content: center;
+    align-items: center;
+    flex-shrink: ;
+} */

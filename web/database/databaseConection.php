@@ -3,20 +3,29 @@ class Database
 {
 
   /*Para conectarse a la BD remota*/
-  /*
+  
   private static $dbName = 'educalma' ;
   private static $dbHost = '20.226.29.168';
   private static $dbUsername = 'root';
   private static $dbUserPassword = 'T3$t1ng.C4lm4';
-  */
+  
 
   /*Para conectarse a la BD local*/
+<<<<<<< HEAD
 
   private static $dbName = 'educalma' ;
   private static $dbHost = 'localhost'; 
   private static $dbUsername = 'root';
   private static $dbUserPassword = ''; 
   
+=======
+ 
+  //private static $dbName = 'educalma' ;
+  //private static $dbHost = 'localhost'; 
+  //private static $dbUsername = 'root';
+  //private static $dbUserPassword = ''; 
+ 
+>>>>>>> 2a6aedd3d3aeae17a201f653aa5c66e1ab9a9df4
   
 	private static $cont  = null;
 
