@@ -62,6 +62,8 @@ body {
 }
 
 
+
+
 /*  */
 
 .container-curso .container-info-course-curso .container-detalle-course .start-course .container-start-course {
@@ -95,6 +97,10 @@ body {
 
 
 /*  */
+
+.container-curso .container-info-course-curso .container-detalle-course .start-course .container-start-course button:hover{
+    background-color: #6b72f4;
+}
 
 .container-curso .container-info-course-curso .container-image-course .image-course {
     height: 300px;
@@ -182,7 +188,7 @@ body {
 }
 
 .container-fluid .container-detalle-informacion {
-    background: #F2F7FF;
+    background: linear-gradient(0deg, rgba(231,244,255,1) 25%, rgba(224,199,229,0.9051995798319328) 72%, rgba(255,255,255,1) 100%);
 }
 
 .container-fluid .container-detalle-informacion .col-4 img {

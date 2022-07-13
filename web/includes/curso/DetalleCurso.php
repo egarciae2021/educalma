@@ -12,6 +12,10 @@
 
 <style>
 
+div[id^='accordion'] .card .card-header span {
+  color: #fff;
+  font-weight: bold;
+}
 
 .boton4 {
   
@@ -700,7 +704,7 @@ body {
                     $i = 0;
                     while ($modulosC = $q6->fetch(PDO::FETCH_ASSOC)) {
                     ?>
-                        <div id="accordion" class="accordion my-3">
+                        <div id="<?php echo 'accordion' . $i  ?>" class="accordion my-3">
                             <div class="card">
                                 <!-- ////////////////// -->
                                 <div style="background: #7c83fd; cursor:pointer;border-radius: 9px;" class="card-header border-0" data-toggle="collapse"  href="<?php echo '#collapseOne' . $i  ?>" aria-controls="collapse1">
@@ -719,7 +723,7 @@ body {
 
                                 while ($temasC = $q7->fetch(PDO::FETCH_ASSOC)) {
                                 ?>
-                                    <div id="<?php echo 'collapseOne' . $i ?>" class="collapse" data-parent="#accordion">
+                                    <div id="<?php echo 'collapseOne' . $i ?>" class="collapse" data-parent="<?php echo '#accordion' . $i  ?>">
                                         <div class="card-body py-0" id="nombreTemaCss" style="background: white;" >
                                             
                                             <ul class="px-0">
@@ -1291,12 +1295,7 @@ body {
         }
     </script>
 
-    <!-- ALL JS FILES -->
-    <script src="assets/js/plugins/jquery.min.js"></script>
-    <script src="assets/js/plugins//popper.min.js"></script>
-    <script src="assets/js/plugins/bootstrap.min.js"></script>
     <!-- FORO -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="./assets/js/plugins/eliminarforo.js"></script>
     <!-- ALL PLUGINS -->
