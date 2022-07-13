@@ -575,6 +575,8 @@
                                     <h5>Déjanos un comentario</h5>
                                     <input type="text" name="text" id="coment1" maxLength="250">
                                         <label for="coment1"></label>
+                                    <h5>Encuesta de satifaccion</h5>
+                                    <a>https://forms.gle/YZ7hv9yromfTGW6r7<a>
                                 </div>
                             </div>
                                     </div>
