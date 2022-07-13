@@ -12,6 +12,14 @@ if (!isset($_GET['pag'])) {
   <link rel="stylesheet" href="assets/css/home.css" />
 
   <style>
+
+    @import url("https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap");
+    @import url("https://fonts.googleapis.com/css2?family=Old+Standard+TT&display=swap");
+    @import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap");
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap");
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,600;1,100&family=Zen+Antique+Soft&display=swap");
+    @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;300;500&display=swap");
+    @import url("https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Poppins:wght@400;700&family=Work+Sans&display=swap");
     
     /*Título*/
     .title-panel .txtBienvenido {
