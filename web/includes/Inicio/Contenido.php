@@ -114,16 +114,16 @@ if (!isset($_GET['pag'])) {
 
 
         <!--CURSOS-->
-        <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
-          <div class="card card-cursos">
-            <div class="card-image cursos">
-              <img src="./assets/images/cur.png" alt="" />
+        <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 d-flex justify-content-center mb-3">
+          <div class="card h-100" style="padding: 2rem 1rem; max-width: 300px;">
+            <div class="card-image text-center mb-3">
+              <img style="width: 100px; height: 100px;" src="./assets/images/cur.png" alt="" />
             </div>
-            <div class="card-title">
-              <p style="font-weight: bold; color: #7C83FD">Cursos</p>
+            <div class="card-title text-center mb-0">
+              <p class="text-uppercase">Cursos</p>
             </div>
             <div class="card-descripti">
-              <p style="color: black; font-weight: 500;">
+              <p class="text-black text-center mx-auto" style="width: 90%;">
                 Otorgamos cursos calificados para que el alumno aprenda y
                 desarrolle nuevas habilidades.
               </p>
@@ -134,16 +134,16 @@ if (!isset($_GET['pag'])) {
 
 
         <!--DESARROLLO PERSONAL-->
-        <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
-          <div class="card card-desarrollo-personal">
-            <div class="card-image desarrollo-personal">
-              <img src="./assets/images/curso culminad.png" alt="" />
+        <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 d-flex justify-content-center mb-3">
+          <div class="card h-100" style="padding: 2rem 1rem; max-width: 300px;">
+            <div class="card-image text-center mb-3">
+              <img style="width: 66px; height: 100px;" src="./assets/images/curso culminad.png" alt="" />
             </div>
-            <div class="card-title">
-              <p style="font-weight: bold; color: #7C83FD">Desarrollo Personal</p>
+            <div class="card-title text-center mb-0">
+              <p class="text-uppercase">Desarrollo Personal</p>
             </div>
             <div class="card-descripti">
-              <p style="color: black; font-weight: 500;">
+              <p class="text-black text-center mx-auto" style="width: 90%;">
                 Cada tema enseñado será de buena ayuda en los test de cada sesión.
               </p>
             </div>
@@ -153,7 +153,22 @@ if (!isset($_GET['pag'])) {
 
 
         <!--CERTIFICADOS-->
-        <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+        <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 d-flex justify-content-center mb-3">
+          <div class="card h-100" style="padding: 2rem 1rem; max-width: 300px;">
+            <div class="card-image text-center mb-3">
+              <img style="width: 100px; height: 100px;" src="./assets/images/certificad.png" alt="" />
+            </div>
+            <div class="card-title text-center mb-0">
+              <p class="text-uppercase">Certificados</p>
+            </div>
+            <div class="card-descripti">
+              <p class="text-black text-center mx-auto" style="width: 90%;">
+                Al concluir el curso se les entregará un certificado por todo lo aprendido en cada sesión.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
           <div class="card card-certificados">
             <div class="card-image certificados">
               <img src="./assets/images/certificad.png" alt="" />
@@ -167,7 +182,7 @@ if (!isset($_GET['pag'])) {
               </p>
             </div>
           </div>
-        </div>
+        </div> -->
 
 
       </div>
@@ -236,13 +251,6 @@ if (!isset($_GET['pag'])) {
 
         <style>
 
-          .card {
-              
-              width: 500px;
-              height: 350px;
-       
-          }
-
           .card .face {
               position: absolute;
               width: 100%;
@@ -255,7 +263,6 @@ if (!isset($_GET['pag'])) {
 
           .card .front {
               transform: perspective(600px) rotateY(0deg);
-              box-shadow: 0 5px 10px #000;
               position: relative;
               top: 1px;
           }
@@ -280,14 +287,13 @@ if (!isset($_GET['pag'])) {
 
           .card .back {
               transform: perspective(600px) rotateY(180deg);
-              background: rgb(3, 35, 54);
-              padding: 15px;
               color: #f3f3f3;
+              padding-left: 3rem;
+              padding-right: 3rem;
               display: flex;
               flex-direction: column;
-              justify-content: space-between;
-              text-align: center;
-              box-shadow: 0 5px 10px #000;
+              justify-content: end;
+              text-align: start;
           }
 
           .card .back .link {
@@ -324,57 +330,87 @@ if (!isset($_GET['pag'])) {
 
             .card .front {
               transform: perspective(600px) rotateY(0deg);
-              box-shadow: 0 5px 10px #000;
               position: relative;
-              top: -20px;
+              top: -30px;
             }
-            
+            .txtCurDes {
+              margin-bottom: 4rem;
+            }
+
           }
 
 
         </style>
 
      
-            <div class="card" style="background: transparent;">
+            <div class="card mb-4" style="background: transparent; width: 350px; height: 350px;">
 
 
                 <!--ADELANTE-->
-                <div class="face front cardsCursosDest">
+                <div class="p-2 face front cardsCursosDest" style="width: 100%; height: 100%; border-radius: 10px;
+                  background: rgb(124,131,253);
+                  background: linear-gradient(180deg, rgba(124,131,253,1) 0%, rgba(224,199,229,1) 100%);">
+                  <div class="face front cardsCursosDest">
 
-                    <!--IMAGEN-->
-                    <!--Contenedor de la imagen-->
-                    <div style="border-radius: 30px 30px 0 0;" class="container-card-image">                      
-                        <?php
-                        if ($dato['imagenDestacadaCurso'] != null) {
-                        ?>
-                            <!--Imagen-->
-                            <img class="imgCurso" style="" src="data:image/*;base64,<?php echo base64_encode($dato['imagenDestacadaCurso']); ?>" alt="">
-                            <a class="txtTrailer" data-toggle="modal" data-target=".bd-example-modal-lg<?php echo $dato['idCurso'];?>"><label>Ver Trailer</label></a>
-                        <?php
-                        } else {
-                        ?>
-                            <img class="imgCurso" src="./assets/images/curso_educalma.png">
-                            <a class="txtTrailer" data-toggle="modal" data-target=".bd-example-modal-lg<?php echo $dato['idCurso'];?>"><label>Ver Trailer</label></a>
-                        <?php
-                        }
-                        ?>
+                      <!--IMAGEN-->
+                      <!--Contenedor de la imagen-->
+                      <div style="border-radius: 30px 30px 0 0;" class="container-card-image">                      
+                          <?php
+                          if ($dato['imagenDestacadaCurso'] != null) {
+                          ?>
+                              <!--Imagen-->
+                              <img class="imgCurso" style="" src="<?php echo $dato['imagenDestacadaCurso']; ?>" alt="">
+                          <?php
+                          } else {
+                          ?>
+                              <img class="imgCurso" src="./assets/images/curso_educalma.png">
+                          <?php
+                          }
+                          ?>
 
-                    </div>
+                      </div>
 
-                    <!--NOMBRE CURSO-->
-                    <h3 style="color: #99ccff;"><?php echo $dato['nombreCurso'];?></h3>
+                      <!--NOMBRE CURSO-->
+                      <h3 class="mb-0" style="bottom: 45px; height: 64px;
+                      background: rgb(124,131,253);
+                      background: linear-gradient(0deg, rgba(124,131,253,.7) 0%, rgba(255,255,255,0) 100%);"></h3>
+                      <h3 class="text-white mb-0" style="background: rgba(124,131,253,.7); font-size: 24px;">
+                        <?php echo $dato['nombreCurso'];?>
+                      </h3>
+                  </div>
                 </div>
 
-
                 <!--ATRÁS-->
-                <div class="face back" style="background: linear-gradient(to right, #7C83FD, #E0C7E5);">
+                <style>
+                  .back::before {
+                    background-color: rgba(124,131,253,.5);
+                    content: '';
+                    display: block;
+                    height: 100%;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    z-index: -1;
+                    width: 100%;
+                  }
+                </style>
+                
+                <div class="face back" style="background: url(
+                  <?php if ($dato['imagenDestacadaCurso'] != null) {
+                    echo('data:image/*;base64,'); echo base64_encode($dato['imagenDestacadaCurso']);
+                  } else {
+                    echo('./assets/images/curso_educalma.png');
+                  }
+                    ?>
+                  ) no-repeat;
+                  background-size: 100% 100%;">
 
                     <!--NOMBRE CURSO-->
-                    <h4 style="font-weight: 600; margin-bottom: 20px;"><?php echo $dato['nombreCurso'];?></h4>
+                    <h4 class="mb-0" style="font-weight: 600;"><?php echo $dato['nombreCurso'];?></h4>
 
                     <!--AUTOR-->
                     <!--Contenedor del nombre del profesor del curso publicado más destacado-->
-                    <div class="container-card-description" style="font-size: 11px; position: relative; top: 20px;">
+                    <div class="container-card-description mb-2" style="font-size: .9rem;">
 
                         <!--Código para obtener el nombre del profesor-->
                         <?php 
@@ -387,20 +423,20 @@ if (!isset($_GET['pag'])) {
                         ?>
                         
 
-                        <a style="position: relative; top: -40px;">
+                        <a>
 
                             <?php 
                                 if($dato5['privilegio']==1){
                             ?>
 
-                                    <span style="color: black; font-size: 13px;">Creado por la Fundación CALMA.</span>
+                                    <span>Creado por la Fundación CALMA.</span>
 
                             <?php 
                                 }
 
                                 if($dato5['privilegio']==2){
                             ?>
-                                    <span style="color: black; font-size: 13px;">Creado por <?php echo " " . $dato5['nombres'] . " " . $dato5['apellido_pat'] . " " . $dato5['apellido_mat'] . "."?></span>
+                                    <span>Creado por <?php echo " " . $dato5['nombres'] . " " . $dato5['apellido_pat'] . " " . $dato5['apellido_mat'] . "."?></span>
                             <?php 
                                 }
                             ?>
@@ -409,15 +445,15 @@ if (!isset($_GET['pag'])) {
                     </div>
 
                     <!--DESCRIPCIÓN-->
-                    <h5 style="color: #282C71; text-align: left;" style="height: 60px;"><?php echo $dato['descripcionCurso']; ?></h5>
+                    <h5 class="my-3" style="text-align: left; font-size: .9rem;"><?php echo $dato['descripcionCurso']; ?></h5>
 
                     <!--PRECIO-->
-                    <div>
+                    <div class="d-flex justify-content-center">
                                     
-                                    <p style="font-size: 20px;">
+                                    <p class="mb-2" style="font-size: .9rem;">
                                         <?php
                                             if($dato['costoCurso']!=0 && $dato['costoCurso'] != "Gratis"){
-                                                echo 'S/ ' . $dato['costoCurso'];
+                                                echo 'Costo S/ ' . $dato['costoCurso'];
                                             }else{
                                                 echo 'Gratuito por tiempo limitado';
                                             }
@@ -429,20 +465,20 @@ if (!isset($_GET['pag'])) {
                     </div>
                   
                     <!--BOTÓN-->
-                    <div class="link">
+                    <div class="link d-flex justify-content-center mb-3">
                         <?php
                         if(isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)){
                         ?>
                         <a style="color: #7c83fd; background: white; border-radius: 30px;" href="<?php echo $paginaRed ?>.php?id=<?php echo $dato['idCurso']; ?><?php if(!empty($dato2)){?>&idCI=<?php echo $dato2['id_cursoInscrito']; }?>" type="button" class="btn btn-outline-info btn_registrar">
                           <i class="far fa-play-circle"></i>
-                          Comienza a ver el curso
+                          <span class="d-inline-block position-relative" style="top: -.04rem;">Comienza a ver el curso</span>
                         </a>
                         <?php
                         }else{
                         ?>
                           <a style="color: #7c83fd; background: white; border-radius: 30px;" href="iniciosesion.php" type="button" class="btn btn-outline-info btn_registrar">
                             <i class="far fa-play-circle"></i>
-                            Comienza a ver el curso
+                            <span class="d-inline-block position-relative" style="top: -.04rem;">Comienza a ver el curso</span>
                           </a>
                         <?php
                         }

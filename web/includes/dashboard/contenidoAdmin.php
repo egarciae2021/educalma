@@ -224,7 +224,7 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                             <?php
                             if ($curso['imagenDestacadaCurso'] != null) {
                             ?>
-                              <img style="height: 40px;" class="rounded-circle" src="data:image/*;base64,<?php echo base64_encode($curso['imagenDestacadaCurso']) ?>">
+                              <img style="height: 40px;" class="rounded-circle" src="<?php echo $curso['imagenDestacadaCurso'] ?>">
                             <?php
                             } else {
                             ?>

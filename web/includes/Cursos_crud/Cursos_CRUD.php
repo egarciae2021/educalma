@@ -24,6 +24,7 @@ function guidv4($data = null) {
         $precio=$_POST['prec_curso'];
         $dirigido =$_POST['publico_dirigido'];
         $idProfe = $_SESSION['codUsuario'];
+        $linkTrailer = $_POST['link_trailer'];
 
         //imagen
         $nombreimagen=$_FILES['txtimagen']['name'];
@@ -64,8 +65,8 @@ function guidv4($data = null) {
             
             $pdo = Database::connect();
             try{
-                $verif=$pdo->prepare(" INSERT INTO `cursos` (`nombreCurso`,`descripcionCurso`,`categoriaCurso`,`dirigido`,`costoCurso`,permisoCurso,`introduccion`,`id_userprofesor`) 
-                VALUES (:nombreCur,:descripcionCur,:categoriaCur,:dirigido,:precio,0,:intro,:idProfe)");
+                $verif=$pdo->prepare(" INSERT INTO `cursos` (`nombreCurso`,`descripcionCurso`,`categoriaCurso`,`dirigido`,`costoCurso`,permisoCurso,`introduccion`,`id_userprofesor`,`link_trailer`) 
+                VALUES (:nombreCur,:descripcionCur,:categoriaCur,:dirigido,:precio,0,:intro,:idProfe,:linkTrailer)");
                 $verif->bindParam(":nombreCur",$nombreCur,PDO::PARAM_STR);
                 $verif->bindParam(":descripcionCur",$descripcionCur,PDO::PARAM_STR);
                 $verif->bindParam(":categoriaCur",$categoriaCur,PDO::PARAM_INT);
@@ -74,6 +75,7 @@ function guidv4($data = null) {
                 // $verif->bindParam(":nombreimagen", $nombreimagen);
                 $verif->bindParam(":intro",$intro,PDO::PARAM_STR);
                 $verif->bindParam(":idProfe",$idProfe,PDO::PARAM_INT);
+                $verif->bindParam(":linkTrailer",$linkTrailer);
                 $verif->execute();
             }catch(PDOException $e){
                 echo $e->getMessage();
@@ -164,7 +166,7 @@ function guidv4($data = null) {
 	    if(($_FILES['txtimagenAct']['size'])>0){
 
             $nombreimagenes=$_FILES['txtimagenAct']['tmp_name'];
-            if(move_uploaded_file($temp,$rutaAbsoluta.$UUID.'.png')){
+            if(move_uploaded_file($nombreimagenes,$rutaAbsoluta.$UUID.'.png')){
                 $ruta = '/imagenes/'.$UUID.'.png';
                 $nombreimagen = $ruta;
             }

@@ -227,7 +227,7 @@
                                 if ($dato['imagenDestacadaCurso'] != null) {
                                 ?>
                                     <!--Imagen elegida-->
-                                    <img heigth="10px"; src="data:image/*;base64,<?php echo base64_encode($dato['imagenDestacadaCurso']); ?>" alt="">
+                                    <img heigth="10px"; src="<?php echo $dato['imagenDestacadaCurso']; ?>" alt="">
                                     <a class="txtTrailer w-100 h-100 d-flex align-items-center justify-content-center" data-toggle="modal" data-target=".bd-example-modal-lg<?php echo $dato['idCurso'];?>"><label>Ver Trailer</label></a>
                                 <?php
                                 } else {
@@ -448,13 +448,13 @@
                                             <p>
                                                 <?php
                                                     if($dato['costoCurso']!=0 && $dato['costoCurso'] != "Gratis"){
-                                                        echo 'S/ ' . $dato['costoCurso'],"","<span style='position: relative; left: 100px; color: #63F70E;'>Comprado</span>";
+                                                        echo 'S/ ' . $dato['costoCurso'],"";
                                                     }else{
                                                         echo 'Gratis';
                                                     }
                                                 ?>
                                             </p>
-                                            <!--<p>S/.<?php echo $dato['costoCurso'],"","<span style='position: relative; left: 100px; color: #63F70E;'>Comprado</span>" ?></p>-->
+                                            <!--<p>S/.<?php echo $dato['costoCurso'],"" ?></p>-->
                         
                                         <?php } ?>
 
@@ -462,7 +462,7 @@
                                                 if(isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)){
                                                 ?>
                                                     <!--Link "Iniciar Curso"-->
-                                                    <div style="margin-bottom: -50px; background: #168eb3; border-radius: 30px; font-weight: 500; padding: 9px; width: 180px; float: right; position: relative; top: -60px;">
+                                                    <div style="margin-bottom: -50px; background: #7c83fd; border-radius: 30px; font-weight: 500; padding: 9px; width: 180px; float: right; position: relative; top: -60px;">
                                                         <a style="color: #FFFF; font-size: 20px; text-decoration: none;" href="<?php echo $paginaRed ?>.php?id=<?php echo $dato['idCurso']; ?><?php if(!empty($dato2)){?>&idCI=<?php echo $dato2['id_cursoInscrito']; }?>">
                                                         <center>Iniciar Curso</center>
                                                         </a>
@@ -472,7 +472,7 @@
                                                 ?>
                                                 
                                                     <!--Link "Iniciar Curso"-->
-                                                    <div style="margin: auto; background: #168eb3; border-radius: 30px; font-weight: 500; padding: 9px; width: 180px; float: right; position: relative; top: -60px;">
+                                                    <div style="margin: auto; background: #7c83fd; border-radius: 30px; font-weight: 500; padding: 9px; width: 180px; float: right; position: relative; top: -60px;">
                                                         <a style="color: #FFFF; font-size: 20px; text-decoration: none;" href="iniciosesion.php">
                                                         <center>Iniciar Curso</center>
                                                         </a>

@@ -575,6 +575,9 @@
                                     <h5>Déjanos un comentario</h5>
                                     <input type="text" name="text" id="coment1" maxLength="250">
                                         <label for="coment1"></label>
+                                    <br>
+                                    <h5>Realiza la siguiente encuesta de satifaccion</h5>
+                                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfLNgkgG3cjR8gAYaC3BPhyraDkbraC78WVO3KcqYPWyu8Kcg/viewform"><button class="btn btn-primary" type="submit">Ir a la encuesta</button><a>
                                 </div>
                             </div>
                                     </div>

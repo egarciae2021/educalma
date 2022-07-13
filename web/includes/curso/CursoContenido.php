@@ -25,6 +25,47 @@
      width: 100%;
      display: flex;
      justify-content: center;
+  }}
+
+  @media (min-width: 1200px) {
+      .responsv5 {
+      flex: 0 0 38%;
+      max-width: 50%;
+      margin-left: 150px;
+  }
+
+}
+
+@media (min-width: 1200px) {
+      .image-course {
+      margin-left: -90px;
+  }
+
+}
+
+@media (min-width: 1200px) {
+      .largoresponsv {
+      margin-left: -7em;
+  }
+
+}
+
+@media (max-width: 360px) {
+      .btn-light {
+      position: relative;
+      top: 10px;
+      }
+
+      .comment-box .comment-head i {
+      position: relative;
+      top: -13px;
+      }
+  }
+
+  @media (min-width: 1200px) {
+      .col-xl-4 {
+      flex: 0 0 28%;
+      max-width: 28%;
   }
 
 }
@@ -175,7 +216,7 @@
    <div class="container container-curso">
       <div class="container-info-course-curso">
          <div class="row">
-            <div class="container-detalle-course col-12 col sm-12 col-md-6 col-lg-6 col-xl-6">
+            <div class="container-detalle-course col-12 col sm-12 col-md-6 col-lg-6 col-xl-6 responsv5">
                <div class="row container-title-course">
                   <div class="col-auto icon-course pr-0">
                      <!-- <img src="assets/images/curso-por-internet.png" class="mr-2" alt="" style="height: 100px;">-->
@@ -232,11 +273,11 @@
                   </div>
                </div>
             </div>
-            <div class="container-image-course col-12 col sm-12 col-md-6 col-lg-6 col-xl-6">
+            <div class="container-image-course col-12 col sm-12 col-md-6 col-lg-6 col-xl-6 responsv5">
                <div class="image-course">
                   <?php
                      if ($dato4['imagenDestacadaCurso'] != null) {
-                      echo '<img src="data:image/*;base64,' . base64_encode($dato4['imagenDestacadaCurso']) . '" alt="foto_curso" >' ;}    
+                      echo '<img src="' . $dato4['imagenDestacadaCurso'] . '" alt="foto_curso" >' ;}    
                       else { echo ' <img src="./assets/images/curso_educalma.png" alt="foto_curso" >';}
                      ?> 
                   <!-- <img src="assets/images/curso_educalma.png" alt=""> -->
@@ -363,10 +404,10 @@
                   </div>
                   <!--div class="col-8"-->
                   <div class="col-8"  id="informacion">
-                     <h5 style="color: #7C83FD;font-weight: 600;text-transform: capitalize;">¿Que incluye este curso?</h5>
-                     <div class="container-info-course-detalle" style="margin-top: 1em;border-radius: 20px;border: 2px solid #7C83FD;">
+                     <h5 style="color: #7C83FD;font-weight: 600;text-transform: initial;">¿Que incluye este curso?</h5>
+                     <div class="container-info-course-detalle" style="margin-top: 2em;border-radius: 20px;border: 2px solid #7C83FD;">
                         <h5>Tabla de contenido del curso</h5>
-                        <div class="row pt-2" style="color: #000;">
+                        <div class="row pt-2" style="color: #000;padding-top: 0.6rem!important;">
                            <div class="col-12 col-sm-6 col-lg-6">
                               <div><i class="far fa-file"></i></div>
                               <?php echo $modulos; ?> Modulos
@@ -404,7 +445,7 @@
                           $nW=$nW+1;
                   ?>
                <div class="w-100 respons7">
-                  <a id="btnInicioModulo" href="video.php?id=<?php echo $id;?>&idtema=<?php echo 1;?>&id_modulo=<?php echo $modulosC['idModulo']?>&nW=<?php echo $nW-1?>&idCI=<?php echo $idCI?>" class="btn px-4 mb-2 puntos-suspensivos responsv1"  style="background:#DCECFA; width:55%; text-align:left;">
+                  <a id="btnInicioModulo" href="video.php?id=<?php echo $id;?>&idtema=<?php echo 1;?>&id_modulo=<?php echo $modulosC['idModulo']?>&nW=<?php echo $nW-1?>&idCI=<?php echo $idCI?>" class="btn px-4 mb-2 puntos-suspensivos responsv1"  style="background:#fff; width:55%; text-align:left;">
                   <i class="fas fa-play mr-3"></i>
                   <span style="color:black; width:100%;white-space: initial;"><?php echo $modulosC['nombreModulo'] ?></span>
                   </a>
@@ -423,7 +464,7 @@
             </div>
          </div>
          <!--foro educalma-->
-         <div style="width:100%; margin-left: -12em;">
+         <div class="largoresponsv" style="width:100%;">
             <?php
                $idCurso = $id;
                
@@ -446,7 +487,7 @@
             <!-- COMIENZOOOOOOOOOOOOOO - Contenedor de todo. El que tiene esquinas curveadas. -->
             <div id="contenedorTodo" class="comments-container"  style="border-radius: 40px;">
                <!-- TITULO FORO EDUCALMA -->
-               <h1 id="tituloForoEducalma">Comenta sobre el curso<?php echo $_SESSION['iduser']?></h1>
+               <h1 id="tituloForoEducalma">Comenta sobre el curso</h1>
                <h4 style="font-size: 16px;">Deja un comentario sobre este curso.</h4> 
                <!-- TITULO FORO EDUCALMA -->
                <!-- BOTON COMENTAR -->

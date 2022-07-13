@@ -12,6 +12,10 @@
 
 <style>
 
+div[id^='accordion'] .card .card-header span {
+  color: #fff;
+  font-weight: bold;
+}
 
 .boton4 {
   
@@ -340,7 +344,7 @@ body {
                             <?php    
                                 if($dato4['imagenDestacadaCurso']!=null){
                             ?>
-                                    <img class="card-img-top1" src="data:image/*;base64,<?php echo base64_encode($dato4['imagenDestacadaCurso']) ?>" alt="Card image">
+                                    <img class="card-img-top1" src="<?php echo $dato4['imagenDestacadaCurso'] ?>" alt="Card image">
                             <?php
                                 }else{
                             ?>
@@ -700,11 +704,11 @@ body {
                     $i = 0;
                     while ($modulosC = $q6->fetch(PDO::FETCH_ASSOC)) {
                     ?>
-                        <div id="accordion" class="accordion my-3">
+                        <div id="<?php echo 'accordion' . $i  ?>" class="accordion my-3">
                             <div class="card">
                                 <!-- ////////////////// -->
                                 <div style="background: #7c83fd; cursor:pointer;border-radius: 9px;" class="card-header border-0" data-toggle="collapse"  href="<?php echo '#collapseOne' . $i  ?>" aria-controls="collapse1">
-                                    <span><i class="fas fa-sort-down mr-3 cart-text"></i>Módulo: <?php echo $modulosC['nombreModulo'] ?></span>
+                                    <span><i class="fas fa-sort-down mr-3 cart-text"></i><?php echo $modulosC['nombreModulo'] ?></span>
                                 </div>
                                 
                                 <?php
@@ -719,7 +723,7 @@ body {
 
                                 while ($temasC = $q7->fetch(PDO::FETCH_ASSOC)) {
                                 ?>
-                                    <div id="<?php echo 'collapseOne' . $i ?>" class="collapse" data-parent="#accordion">
+                                    <div id="<?php echo 'collapseOne' . $i ?>" class="collapse" data-parent="<?php echo '#accordion' . $i  ?>">
                                         <div class="card-body py-0" id="nombreTemaCss" style="background: white;" >
                                             
                                             <ul class="px-0">
@@ -832,7 +836,7 @@ body {
                         <?php    
                             if($registro['mifoto']!=null){
                         ?>
-                                <img src="data:image/*;base64,<?php echo base64_encode($registro['mifoto']);?>" alt="foto_curso"
+                                <img src="<?php echo $registro['mifoto'];?>" alt="foto_curso"
                                     style="width: 60px;height:60px;">
                         <?php
                             }else{
@@ -935,7 +939,7 @@ body {
                             <?php    
                                 if($registro2['mifoto']!=null){
                             ?>
-                                    <img src="data:image/*;base64,?php echo base64_encode($registro2['mifoto']);?>"
+                                    <img src="<?php echo $registro2['mifoto'];?>"
                                 alt="foto_curso" style="width: 43px;height:43px;">
                             <?php
                                 }else{
@@ -1116,7 +1120,7 @@ body {
                             <?php    
                                 if($registro['mifoto']!=null){
                             ?>
-                                    <img src="data:image/*;base64,<?php echo base64_encode($registro['mifoto']);?>" alt="foto_curso"
+                                    <img src="<?php echo $registro['mifoto'];?>" alt="foto_curso"
                                         style="width: 60px;height:60px;">
                             <?php
                                 }else{
@@ -1202,7 +1206,7 @@ body {
                                 <?php    
                                     if($registro2['mifoto']!=null){
                                 ?>
-                                        <img src="data:image/*;base64,?php echo base64_encode($registro2['mifoto']);?>"
+                                        <img src="<?php echo $registro2['mifoto'];?>"
                                     alt="foto_curso" style="width: 43px;height:43px;">
                                 <?php
                                     }else{
@@ -1291,12 +1295,7 @@ body {
         }
     </script>
 
-    <!-- ALL JS FILES -->
-    <script src="assets/js/plugins/jquery.min.js"></script>
-    <script src="assets/js/plugins//popper.min.js"></script>
-    <script src="assets/js/plugins/bootstrap.min.js"></script>
     <!-- FORO -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="./assets/js/plugins/eliminarforo.js"></script>
     <!-- ALL PLUGINS -->
