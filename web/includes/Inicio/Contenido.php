@@ -10,6 +10,27 @@ if (!isset($_GET['pag'])) {
 
 <head>
   <link rel="stylesheet" href="assets/css/home.css" />
+
+  <style>
+    
+    /*Título*/
+    .title-panel .txtBienvenido {
+      
+      color: black;
+      font-family: 'Baloo Tamma 2';
+      font-size: 100px;
+      position: relative;
+      top: 55px;
+    }
+
+    /*Título*/
+    .title-panel .txtEducalma {
+
+      color: #737BF1;
+      font-family: 'Baloo Tamma 2';
+      font-size: 125px;
+    }
+  </style>
 </head>
 
 
