@@ -8,7 +8,7 @@
 
 <?php include_once 'includes/dashboard/head1.php' ?>
 
-<body>
+<body style="background: linear-gradient(180deg, rgba(255,255,255,1) 20%, rgba(224,199,229,1) 50%, rgba(231,244,255,1) 92%);">
 
 
     <?php include_once 'includes/dashboard/header1.php' ?>

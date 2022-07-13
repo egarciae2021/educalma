@@ -121,12 +121,12 @@
                                         if ($dato['imagenDestacadaCurso'] != null) {
                                         ?>
                                             <!--Imagen-->
-                                            <img class="imgCurso" style="" src="<?php echo $dato['imagenDestacadaCurso']; ?>" alt="">
+                                            <img class="imgCurso" style="cursor: pointer;" src="<?php echo $dato['imagenDestacadaCurso']; ?>" alt="">
                                             <a class="txtTrailer" data-toggle="modal" data-target=".bd-example-modal-lg<?php echo $dato['idCurso'];?>"><label>Ver Trailer</label></a>
                                         <?php
                                         } else {
                                         ?>
-                                            <img class="imgCurso" src="./assets/images/curso_educalma.png">
+                                            <img class="imgCurso" style="cursor: pointer;" src="./assets/images/curso_educalma.png">
                                             <a class="txtTrailer" data-toggle="modal" data-target=".bd-example-modal-lg<?php echo $dato['idCurso'];?>"><label>Ver Trailer</label></a>
                                         <?php
                                         }
@@ -205,19 +205,19 @@
                                                             if($dato['costoCurso']!=0 && $dato['costoCurso'] != "Gratis"){
                                                                 echo 'S/ ' . $dato['costoCurso'];
                                                             }else{
-                                                                echo 'Gratuito por tiempo limitado';
+                                                                echo 'Gratuito';
                                                             }
                                                         ?>
                                                     </p>
                                 
                                                 <?php }else{ ?>
                                 
-                                                    <p>
+                                                    <p class="font-weight-bold" style="color: #303030; text-transform: uppercase;">
                                                         <?php
                                                             if($dato['costoCurso']!=0 && $dato['costoCurso'] != "Gratis"){
                                                                 echo 'S/ ' . $dato['costoCurso'],"","<span style='position: relative; left: 100px; color: #63F70E;'>Comprado</span>";
                                                             }else{
-                                                                echo 'Gratuito por tiempo limitado',"","<span style='color: #63F70E; margin-left: 10px;'>Comprado</span>";
+                                                                echo 'Gratuito',"","<span style='color: #63F70E; margin-left: 10px;'>Comprado</span>";
                                                             }
                                                         ?>
                                                     </p>
@@ -510,13 +510,13 @@
                             ?>
                             
                                 <!--Imagen elegida-->
-                                <img class="imgCurso" heigth="10px"; src="<?php echo $dato['imagenDestacadaCurso']; ?>" alt="">
+                                <img style="cursor: pointer;" class="imgCurso" heigth="10px"; src="<?php echo $dato['imagenDestacadaCurso']; ?>" alt="">
                                 <a class="txtTrailer" data-toggle="modal" data-target=".bd-example-modal-lg<?php echo $dato['idCurso'];?>"><label>Ver Trailer</label></a>
                             <?php
                             } else {
                             ?>
                                 <!--Imagen por default-->
-                                <img class="imgCurso" heigth="10px"; src="./assets/images/curso_educalma.png">
+                                <img style="cursor: pointer;" class="imgCurso" heigth="10px"; src="./assets/images/curso_educalma.png">
                                 <a class="txtTrailer" data-toggle="modal" data-target=".bd-example-modal-lg<?php echo $dato['idCurso'];?>"><label>Ver Trailer</label></a>
                             <?php
                             }
@@ -604,7 +604,7 @@
                                         if($dato['costoCurso']!=0 && $dato['costoCurso'] != "Gratis"){
                                             echo 'S/ ' . $dato['costoCurso'];
                                         }else{
-                                            echo 'Gratis por tiempo limitado';
+                                            echo 'Gratuito';
                                         }
                                     ?>
                                 </p>
@@ -616,7 +616,7 @@
                                         if($dato['costoCurso']!=0 && $dato['costoCurso'] != "Gratis"){
                                             echo 'S/ ' . $dato['costoCurso'],"","<span style='position: relative; left: 100px; color: #63F70E;'>Comprado</span>";
                                         }else{
-                                            echo 'Gratis por tiempo limitado',"","<span style='color: #63F70E; margin-left: 10px;'>Comprado</span>";
+                                            echo 'Gratuito',"","<span style='color: #63F70E; margin-left: 10px;'>Comprado</span>";
                                         }
                                     ?>
                                 </p>
