@@ -277,7 +277,7 @@
                <div class="image-course">
                   <?php
                      if ($dato4['imagenDestacadaCurso'] != null) {
-                      echo '<img src="data:image/*;base64,' . base64_encode($dato4['imagenDestacadaCurso']) . '" alt="foto_curso" >' ;}    
+                      echo '<img src="' . $dato4['imagenDestacadaCurso'] . '" alt="foto_curso" >' ;}    
                       else { echo ' <img src="./assets/images/curso_educalma.png" alt="foto_curso" >';}
                      ?> 
                   <!-- <img src="assets/images/curso_educalma.png" alt=""> -->

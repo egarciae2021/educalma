@@ -245,7 +245,7 @@ $preference = new MercadoPago\Preference();
                                     <?php    
                                         if($dato['imagenDestacadaCurso']!=null){
                                     ?>
-                                            <img height="50px" src="data:image/*;base64,<?php echo base64_encode($dato['imagenDestacadaCurso']) ?>">
+                                            <img height="50px" src="data:image/*;base64,<?php echo $dato['imagenDestacadaCurso'] ?>">
                                     <?php
                                         }else{
                                     ?>
