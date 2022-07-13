@@ -344,7 +344,7 @@ body {
                             <?php    
                                 if($dato4['imagenDestacadaCurso']!=null){
                             ?>
-                                    <img class="card-img-top1" src="data:image/*;base64,<?php echo base64_encode($dato4['imagenDestacadaCurso']) ?>" alt="Card image">
+                                    <img class="card-img-top1" src="<?php echo $dato4['imagenDestacadaCurso'] ?>" alt="Card image">
                             <?php
                                 }else{
                             ?>
@@ -836,7 +836,7 @@ body {
                         <?php    
                             if($registro['mifoto']!=null){
                         ?>
-                                <img src="data:image/*;base64,<?php echo base64_encode($registro['mifoto']);?>" alt="foto_curso"
+                                <img src="<?php echo $registro['mifoto'];?>" alt="foto_curso"
                                     style="width: 60px;height:60px;">
                         <?php
                             }else{
@@ -939,7 +939,7 @@ body {
                             <?php    
                                 if($registro2['mifoto']!=null){
                             ?>
-                                    <img src="data:image/*;base64,?php echo base64_encode($registro2['mifoto']);?>"
+                                    <img src="<?php echo $registro2['mifoto'];?>"
                                 alt="foto_curso" style="width: 43px;height:43px;">
                             <?php
                                 }else{
@@ -1120,7 +1120,7 @@ body {
                             <?php    
                                 if($registro['mifoto']!=null){
                             ?>
-                                    <img src="data:image/*;base64,<?php echo base64_encode($registro['mifoto']);?>" alt="foto_curso"
+                                    <img src="<?php echo $registro['mifoto'];?>" alt="foto_curso"
                                         style="width: 60px;height:60px;">
                             <?php
                                 }else{
@@ -1206,7 +1206,7 @@ body {
                                 <?php    
                                     if($registro2['mifoto']!=null){
                                 ?>
-                                        <img src="data:image/*;base64,?php echo base64_encode($registro2['mifoto']);?>"
+                                        <img src="<?php echo $registro2['mifoto'];?>"
                                     alt="foto_curso" style="width: 43px;height:43px;">
                                 <?php
                                     }else{

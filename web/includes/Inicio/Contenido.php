@@ -395,7 +395,7 @@ if (!isset($_GET['pag'])) {
                           if ($dato['imagenDestacadaCurso'] != null) {
                           ?>
                               <!--Imagen-->
-                              <img class="imgCurso" style="" src="data:image/*;base64,<?php echo base64_encode($dato['imagenDestacadaCurso']); ?>" alt="">
+                              <img class="imgCurso" style="" src="<?php echo $dato['imagenDestacadaCurso']; ?>" alt="">
                           <?php
                           } else {
                           ?>
