@@ -217,7 +217,7 @@
                                                             if($dato['costoCurso']!=0 && $dato['costoCurso'] != "Gratis"){
                                                                 echo 'S/ ' . $dato['costoCurso'],"","<span style='position: relative; left: 100px; color: #63F70E;'>Comprado</span>";
                                                             }else{
-                                                                echo 'Gratuito',"","<span style='color: #63F70E; margin-left: 10px;'>Comprado</span>";
+                                                                echo 'Gratuito',"","<span style='position: relative; left: 100px; color: #63F70E;'>Comprado</span>";
                                                             }
                                                         ?>
                                                     </p>
@@ -616,7 +616,7 @@
                                         if($dato['costoCurso']!=0 && $dato['costoCurso'] != "Gratis"){
                                             echo 'S/ ' . $dato['costoCurso'],"","<span style='position: relative; left: 100px; color: #63F70E;'>Comprado</span>";
                                         }else{
-                                            echo 'Gratuito',"","<span style='color: #63F70E; margin-left: 10px;'>Comprado</span>";
+                                            echo 'Gratuito',"","<span style='position: relative; left: 100px; color: #63F70E;'>Comprado</span>";
                                         }
                                     ?>
                                 </p>
@@ -831,7 +831,7 @@
                                                 if(isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)){
                                                 ?>
                                                     <!--Link "Leer Más"-->
-                                                    <div style="margin-bottom: -50px; background: #168eb3; border-radius: 30px; font-weight: 500; padding: 9px; width: 180px; float: right; position: relative; top: -60px;">
+                                                    <div style="margin-bottom: -50px; background: #7C83FD; border-radius: 30px; font-weight: 500; padding: 9px; width: 180px; float: right; position: relative; top: -60px;">
                                                         <a style="color: #FFFF; font-size: 20px; text-decoration: none;" href="<?php echo $paginaRed ?>.php?id=<?php echo $dato['idCurso']; ?><?php if(!empty($dato2)){?>&idCI=<?php echo $dato2['id_cursoInscrito']; }?>">
                                                         <center>Leer Más</center>
                                                         </a>
@@ -841,7 +841,7 @@
                                                 ?>
                                                 
                                                     <!--Link "Leer Más"-->
-                                                    <div style="margin: auto; background: #168eb3; border-radius: 30px; font-weight: 500; padding: 9px; width: 180px; float: right; position: relative; top: -60px;">
+                                                    <div style="margin: auto; background: #7C83FD; border-radius: 30px; font-weight: 500; padding: 9px; width: 180px; float: right; position: relative; top: -60px;">
                                                         <a style="color: #FFFF; font-size: 20px; text-decoration: none;" href="iniciosesion.php">
                                                         <center>Leer Más</center>
                                                         </a>
