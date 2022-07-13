@@ -234,42 +234,6 @@ if (!isset($_GET['pag'])) {
             }
         ?>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         <style>
 
           .card {
@@ -694,7 +658,7 @@ if (!isset($_GET['pag'])) {
         <div class="formu">
           <div class="row">
             <div class="group-control">
-              <span class="title">Nombre Completo</span><input type="text" id="nomCompleto" />
+              <span class="title">Nombre Completo</span><input type="text" id="nomCompleto" onkeypress="return valNombre(event);" pattern=".{3,99}" maxlength="20"/>
             </div>
             <div class="group-control">
               <span class="title">Correo electrónico</span><input type="text" id="txtEmail" />
@@ -876,17 +840,6 @@ if (!isset($_GET['pag'])) {
       </div>
     </div>
   </div>
-
-
-
-
-
-
-
-
-
-
-
 </div>
 <!-- EMPRESAS SHEYLA -->
 <!-- <div class="container container-fluid-empresa" style="border: 1px solid red;">
@@ -923,3 +876,5 @@ if (!isset($_GET['pag'])) {
     </div>
   </div>
 </div> -->
+
+<script src="assets/js/valNombre.js"></script>
