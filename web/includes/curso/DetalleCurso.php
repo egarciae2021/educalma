@@ -704,7 +704,7 @@ body {
                             <div class="card">
                                 <!-- ////////////////// -->
                                 <div style="background: #7c83fd; cursor:pointer;border-radius: 9px;" class="card-header border-0" data-toggle="collapse"  href="<?php echo '#collapseOne' . $i  ?>" aria-controls="collapse1">
-                                    <span><i class="fas fa-sort-down mr-3 cart-text"></i>Módulo: <?php echo $modulosC['nombreModulo'] ?></span>
+                                    <span><i class="fas fa-sort-down mr-3 cart-text"></i><?php echo $modulosC['nombreModulo'] ?></span>
                                 </div>
                                 
                                 <?php
