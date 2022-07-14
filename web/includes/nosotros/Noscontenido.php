@@ -34,7 +34,7 @@
 
 <!-- PREGUNTAS -->
 <div class="container container-questions">
-    <div class="row my-4">
+    <div class="row my-4 w-100">
         <div class="col-md-12">
             <div class="row">
                 <div class="section-title-course px-4">

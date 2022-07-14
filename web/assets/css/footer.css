@@ -2,10 +2,8 @@
 
 @media (min-width: 1000px) {
 
-  .footer--light {
-
-    margin-top: 100px;
-  
+    .footer--light {
+    background-color: #E7F3FF;
   }
 
 

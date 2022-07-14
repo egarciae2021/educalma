@@ -98,16 +98,17 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                         ?>
 
 
-
-                        <h4 style="color: black; font-weight: 550; font-size: 16px; position: relative; left: 20px; top: -15px;" class="nav__subtitle-dashboard">
-                            <?php
-                            if (isset($_SESSION['Logueado']) && $_SESSION['Logueado'] === true) {
-                                echo $nom." "."<br>".$apepat." ".$apemat;
-                            } else {
-                                echo '';
-                            }
-                            ?>
-                        </h4>
+                        <div style="height: 50px; position: relative; left: 5px; top: -15px;" class="nav__subtitle-container">
+                            <h4 style="color: black; font-weight: 550; font-size: 16px;" id="user__name" class="nav__subtitle-dashboard">
+                                <?php
+                                if (isset($_SESSION['Logueado']) && $_SESSION['Logueado'] === true) {
+                                    echo $nom." "."<br>".$apepat." ".$apemat;
+                                } else {
+                                    echo '';
+                                }
+                                ?>
+                            </h4>
+                        </div>
 
                         <a style="position: relative; left: 8px;" href="index.php" class="nav__link-dashboard">
                             <!-- <i class='bx bx-home nav__icon'></i> -->
@@ -275,7 +276,7 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                             </button>
                         </a>
 
-                        <img style="position: relative; top: 20px;" src="./assets/images/ilu_niño.png">
+                        <img class="img__ilu" id="img__ilu" style="position: relative; top: 20px;" src="./assets/images/ilu_niño.png">
 
                     </div>
                 </div>
@@ -283,6 +284,18 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
 
         </nav>
     </div>
+    <script>
+        const navbarId = document.getElementById("navbar");
+        const toggleBtn = document.getElementById("header-toggle");
+        const imgIlu = document.getElementById("img__ilu");
+        const miFoto = document.getElementById("miFoto");
+        const navbarSub = document.getElementById("user__name");
+        toggleBtn.addEventListener('click', ()=>{
+            imgIlu.classList.toggle("img__ilu-show");
+            miFoto.classList.toggle("miFoto-show");
+            navbarSub.classList.toggle("user__name-show");
+        })
+    </script>
 <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"></script>-->
     <!--========== CONTENTS ==========-->
 <?php
