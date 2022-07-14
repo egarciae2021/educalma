@@ -847,9 +847,9 @@ body {
                         
                     </div> 
                     <!-- Contenedor del Comentario -->
-                   <div class="comment-box">
+                   <div class="comment-box" style="width: 612px;">
                         <div class="comment-head">
-                            <h6 class="comment-name<?php echo $autor; ?>">
+                            <h6 class="commen-name<?php echo $autor; ?>">
                                 <spam><?php echo $registro['nombreUser']; ?></spam>
                             </h6>
                             <span>
@@ -949,9 +949,9 @@ body {
                             ?> 
                         </div> 
                         <!-- Contenedor del Comentario -->
-                       <div class="comment-box">
+                       <div class="comment-box" style="width: 612px;">
                             <div class="comment-head">
-                                <h6 class="comment-name<?php echo $autor; ?>"><spam><?php echo $registro2['user_men'];?></spam></h6>
+                                <h6 class="commen-name<?php echo $autor; ?>"><spam><?php echo $registro2['user_men'];?></spam></h6>
                                 <span>
                                     <?php 
                                         $fecha1_2 = new DateTime($registro2['fecha_ingreso']);
@@ -1131,9 +1131,9 @@ body {
                             
                         </div> 
                         <!-- Contenedor del Comentario -->
-                    <div class="comment-box">
+                    <div class="comment-box" style="width: 612px;">
                             <div class="comment-head">
-                                <h6 class="comment-name<?php echo $autor; ?>">
+                                <h6 class="commen-name<?php echo $autor; ?>">
                                     <spam><?php echo $registro['nombreUser']; ?></spam>
                                 </h6>
                                 <span>
@@ -1216,9 +1216,9 @@ body {
                                 ?> 
                             </div> 
                             <!-- Contenedor del Comentario -->
-                        <div class="comment-box">
+                        <div class="comment-box" style="width: 612px;">
                                 <div class="comment-head">
-                                    <h6 class="comment-name<?php echo $autor; ?>"><spam><?php echo $registro2['user_men'];?></spam></h6>
+                                    <h6 class="commen-name<?php echo $autor; ?>"><spam><?php echo $registro2['user_men'];?></spam></h6>
                                     <span>
                                         <?php 
                                             $fecha1_2 = new DateTime($registro2['fecha_ingreso']);
