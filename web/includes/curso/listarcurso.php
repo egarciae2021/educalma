@@ -407,10 +407,6 @@
                                                 ?>
                                                     <!--para publicar curso-->
                                                     <a style="" href="includes/Cursos_crud/aceptarCurso.php?id_curso=<?php echo $curso['idCurso']; ?>&pag=<?php echo $_GET['pag'];?>">
-                                                        <button  id="btnPublicarCurso" class="btn btn-upload" type="button" hidden multiple>Publicar</button>
-                                                    </a>
-                                               
-                                                    <a>
                                                         <button id="" class="boton3" type="button" onclick="alertaCursoPublicado()">Publicar Curso</button>
                                                     </a>
                                                  </td>
