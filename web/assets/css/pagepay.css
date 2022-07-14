@@ -133,10 +133,11 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-left: 40%;
 }
 
 .container-info-resumen div .row .container-image-detalle img {
-  width: 120%;
+  width: 100%;
 }
 
 .container-info-resumen .info-resumen-detalle span {
