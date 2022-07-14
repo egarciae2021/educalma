@@ -1574,6 +1574,12 @@
     user-select: none;
 }
 
+.footer--light {
+    position: relative; 
+    top: 30px;
+    margin-top: 4.6rem;
+}
+
 @media screen and (min-width: 580px) {
     .container-bussines>.send-data .back .formu .row {
         display: grid;

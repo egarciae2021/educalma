@@ -1,17 +1,14 @@
 <style>
 
   .footer--light {
-
-    background-color: #e7f4ff;
-    position: relative; 
-    top: 30px;
+    background-color: #E7F3FF;
   }
   
   @media (max-width: 768px) {
       
     .footer--light {
 
-        background-color: #e7f4ff;
+        background-color: #E7F3FF;
     }  
   }
 
@@ -37,7 +34,7 @@
 
 </style>
 
-<footer class="footer--light">
+<footer class="footer--light pt-4">
 
   <div class="footer-big">
     <div class="container">
