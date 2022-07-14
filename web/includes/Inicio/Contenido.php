@@ -10,6 +10,35 @@ if (!isset($_GET['pag'])) {
 
 <head>
   <link rel="stylesheet" href="assets/css/home.css" />
+
+  <style>
+
+    @import url("https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap");
+    @import url("https://fonts.googleapis.com/css2?family=Old+Standard+TT&display=swap");
+    @import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap");
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap");
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,600;1,100&family=Zen+Antique+Soft&display=swap");
+    @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;300;500&display=swap");
+    @import url("https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Poppins:wght@400;700&family=Work+Sans&display=swap");
+    
+    /*Título*/
+    .title-panel .txtBienvenido {
+      
+      color: black;
+      font-family: 'Baloo Tamma 2';
+      font-size: 100px;
+      position: relative;
+      top: 55px;
+    }
+
+    /*Título*/
+    .title-panel .txtEducalma {
+
+      color: #737BF1;
+      font-family: 'Baloo Tamma 2';
+      font-size: 125px;
+    }
+  </style>
 </head>
 
 
@@ -858,7 +887,7 @@ if (!isset($_GET['pag'])) {
               <span class="title">N° de suscripciones</span>
               <div class="row-three">
                 <div class="icon" id="restaNumber1">-</div>
-                <input  class="text-center" type="text" min="0" value="0" name="" id="txtTamEmpresa" onKeypress="if (event.keyCode < 49 || event.keyCode > 57) event.returnValue = false;"/>
+                <input  class="text-center" type="text" min="0" value="0" name="" id="txtTamEmpresa" onKeypress="if (event.keyCode < 48 || event.keyCode > 57) event.returnValue = false;"/>
                 <div class="icon" id="sumNumber1">+</div>
               </div>
             </div>

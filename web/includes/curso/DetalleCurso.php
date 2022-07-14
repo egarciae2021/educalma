@@ -99,10 +99,8 @@ body {
   }
   
   #btnComentar2 {
-
-    /*Centrar botón*/
-    display: block; 
     margin: 0 auto;
+    margin-bottom: 30px;
   }
 
   .comments-container {
@@ -257,7 +255,7 @@ body {
 
 
             <!-- yyyy -->
-            <div class="row py-5" style="padding: 15px">
+            <div class="row py-5" style="padding: 15px;position: relative;margin-left: 50px;">
 
 
             
@@ -687,7 +685,7 @@ body {
                 <div class="col-12 col-sm-12 col-md-5 col-lg-4 col-xl-3 info-course-left" style="border: 1px solid red;">
                     <h4>Contenido del curso</h4>
                 </div>
-                <div class="col-12 col-sm-12 col-md-7 col-lg-8 col-xl-9 text-dark" style="padding: 55px;margin-top: -65px;">
+                <div class="col-12 col-sm-12 col-md-7 col-lg-8 col-xl-9 text-dark" style="padding: 55px;margin-top: -65px;margin-bottom: -75px;">
                     <h4 class="font-weight-bold" style="color: #7C83FD;">Contenido del curso</h4>
                     <div class="d-flex">
                         <div class="mr-auto p-2" style="font-weight: 600;">
@@ -789,13 +787,14 @@ body {
     if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
     ?>  
 
-        <div class="comments-container responsv1" style="background-color: #F1F7F7; border-radius: 40px; margin-top: auto;" id="foro-curso">
+        <div class="comments-container responsv1" style="border-radius: 40px; margin-top: auto;" id="foro-curso">
 
 
-        <h1 style="text-align: center">Foro Educalma <?php echo $_SESSION['iduser']?></h1>
+        <h1 style="font-size: 34px;">Foro Educalma</h1>
+        <h1 style="font-weight: 400;color: #000;font-size: 20px;margin-bottom: 16px;">Deja un comentario sobre este curso. </h1>
         
 
-        <button id="btnComentar" style="width: 320px;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Comentar</button>
+        <button id="btnComentar" style="width: 200px;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Comentar</button>
 
         <br>
 
@@ -848,9 +847,9 @@ body {
                         
                     </div> 
                     <!-- Contenedor del Comentario -->
-                   <div class="comment-box">
+                   <div class="comment-box" style="width: 612px;">
                         <div class="comment-head">
-                            <h6 class="comment-name<?php echo $autor; ?>">
+                            <h6 class="commen-name<?php echo $autor; ?>">
                                 <spam><?php echo $registro['nombreUser']; ?></spam>
                             </h6>
                             <span>
@@ -950,9 +949,9 @@ body {
                             ?> 
                         </div> 
                         <!-- Contenedor del Comentario -->
-                       <div class="comment-box">
+                       <div class="comment-box" style="width: 612px;">
                             <div class="comment-head">
-                                <h6 class="comment-name<?php echo $autor; ?>"><spam><?php echo $registro2['user_men'];?></spam></h6>
+                                <h6 class="commen-name<?php echo $autor; ?>"><spam><?php echo $registro2['user_men'];?></spam></h6>
                                 <span>
                                     <?php 
                                         $fecha1_2 = new DateTime($registro2['fecha_ingreso']);
@@ -1132,9 +1131,9 @@ body {
                             
                         </div> 
                         <!-- Contenedor del Comentario -->
-                    <div class="comment-box">
+                    <div class="comment-box" style="width: 612px;">
                             <div class="comment-head">
-                                <h6 class="comment-name<?php echo $autor; ?>">
+                                <h6 class="commen-name<?php echo $autor; ?>">
                                     <spam><?php echo $registro['nombreUser']; ?></spam>
                                 </h6>
                                 <span>
@@ -1217,9 +1216,9 @@ body {
                                 ?> 
                             </div> 
                             <!-- Contenedor del Comentario -->
-                        <div class="comment-box">
+                        <div class="comment-box" style="width: 612px;">
                                 <div class="comment-head">
-                                    <h6 class="comment-name<?php echo $autor; ?>"><spam><?php echo $registro2['user_men'];?></spam></h6>
+                                    <h6 class="commen-name<?php echo $autor; ?>"><spam><?php echo $registro2['user_men'];?></spam></h6>
                                     <span>
                                         <?php 
                                             $fecha1_2 = new DateTime($registro2['fecha_ingreso']);

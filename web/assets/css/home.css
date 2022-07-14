@@ -5,7 +5,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,600;1,100&family=Zen+Antique+Soft&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;300;500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Poppins:wght@400;700&family=Work+Sans&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Baloo+Tamma+2:wght@400;500;600;700;800&display=swap');
+ 
  
 
 /* PANEL */
@@ -666,10 +666,13 @@
 
 
 .container-fluid-brida .row .col-12 .card {
+    max-width: 318px;
+    margin: auto;
     border: 2px #7d84fd solid;
     -webkit-transition: background-color 1s linear;
     transition: background-color 1s linear;
     cursor: pointer;
+    padding: 2rem;
     border-radius: 30px;
 }
 
@@ -685,10 +688,10 @@
 
 .container-fluid-brida .row .col-12 .card-image {
     background: transparent;
-    /* border-radius: 30px;
-    margin: 0 auto;
+    border-radius: 30px;
     max-width: 121px;
-    max-height: 121px; */
+    max-height: 121px;
+    margin: 0 auto;
     -webkit-transition: width 1s ease;
     transition: width 1s ease;
 }
@@ -742,21 +745,22 @@
 
 
 .container-fluid-brida .row .col-12 .card-title {
-    font-family: 'Baloo Tamma 2', cursive;
-    font-size: 1.3rem;
-    font-weight: 700;
-    color: #7C83FD
+    font-family: "Poppins", sans-serif;
+    font-size: 18px;
+    margin-top: 1rem;
+    text-align: center;
+    text-transform: uppercase;
 }
 
-/* .container-fluid-brida .row .col-12 .card-title p {
+.container-fluid-brida .row .col-12 .card-title p {
     margin-bottom: 0;
-} */
+}
 
 .container-fluid-brida .row .col-12 .card-descripti {
-    font-family: 'Baloo Tamma 2', cursive;
-    font-size: 1rem;
-    font-weight: 500;
-    line-height: 20px;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    text-align: center;
+    color: #b4b4b4;
 }
 
 .container-fluid-brida .row .col-12 .card-descripti p {

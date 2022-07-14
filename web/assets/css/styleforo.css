@@ -174,6 +174,7 @@ body {
   box-shadow: 0 1px 1px rgba(0,0,0,0.15); */
 }
 
+
 .comments-list .comment-box:before, .comments-list .comment-box:after {
   content: '';
   height: 0;
@@ -228,6 +229,16 @@ body {
   font-weight: 700;
   float: left;
   margin-right: 10px;
+}
+
+.commen-name{
+  color: #fff;
+  font-size: 17px;
+  font-weight: 700;
+  float: left;
+  margin-right: 10px;
+  margin-top: 10px;
+  margin-left: -12px;
 }
 
 .comment-box .comment-name a {

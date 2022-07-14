@@ -382,7 +382,7 @@
 
                     
                                                 ?>
-                                                <td>
+                                                <td style="position: relative;top: -23px;">
                                                     <!--para agregar modulo-->
                                                     <a style="color:#7C83FD;" href="agregarModulos.php?id=<?php echo $curso['idCurso']; ?>">
                                                         <i class="far fa-plus-square fa-lg"></i> 

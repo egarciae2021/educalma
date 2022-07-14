@@ -15,6 +15,15 @@
       color: #e0c7e5;
    }
 
+   .img-nina{
+      width: 30em;
+      position: relative;
+      display: flex;
+      float: right;
+      left: 100px;
+      margin-top: -45em;
+   }
+
    @media (max-width: 767px) {
       .responsv1 {
      width: 100%;
@@ -45,7 +54,18 @@
 
 @media (min-width: 1200px) {
       .largoresponsv {
-      margin-left: -7em;
+      margin-left: -12em;
+  }
+
+}
+
+@media (max-width: 360px) {
+      .img-nina {
+      width: 19em;
+      position: relative;
+      left: 35px;
+      margin-top: 3em;
+      float: unset;
   }
 
 }
@@ -277,7 +297,7 @@
                <div class="image-course">
                   <?php
                      if ($dato4['imagenDestacadaCurso'] != null) {
-                      echo '<img src="' . $dato4['imagenDestacadaCurso'] . '" alt="foto_curso" >' ;}    
+                      echo '<img src="data:image/*;base64,' . base64_encode($dato4['imagenDestacadaCurso']) . '" alt="foto_curso" >' ;}    
                       else { echo ' <img src="./assets/images/curso_educalma.png" alt="foto_curso" >';}
                      ?> 
                   <!-- <img src="assets/images/curso_educalma.png" alt=""> -->
@@ -789,6 +809,9 @@
                   <!-- lilililili -->
                </ul>
                <!-- LISTA DE COMENTARIOS -->
+            </div>
+            <div class="" style="" >
+               <img src="assets/images/ilu-nina.png" class="img-nina"alt="" >
             </div>
             <!-- COMIENZOOOOOOOOOOOOOO - Contenedor de todo. El que tiene esquinas curveadas.-->
             <!------------------------------------
