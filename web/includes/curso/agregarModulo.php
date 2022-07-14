@@ -179,7 +179,7 @@
                                         
                                     ?>  
                                     <!--Por favor no agregar más de 5 módulos :(-->
-                                    <div class="form-group col-12" hidden multiple>
+                                    <div class="form-group col-12" hidden multiple >
                                         <label class="form-label">Nombre del módulo</label>
                                         <input type="text" class="form-control" name="modulo_agregar" id="modulo_agregar" placeholder="Ingrese un nombre" aria-label="ModuloAgr" aria-describedby="ModuloAgr" aria-describedby="moduloAgr-addon" minlength="2" value="Módulo <?=$number?>">                              
 
@@ -236,7 +236,7 @@
                                             }
 
                                         }
-
+                                        
                                     </script>
 
                                     
@@ -283,7 +283,7 @@
                                             $q3->execute(array());
                                         ?>
 
-                                            <div class="form-group col-12">
+                                            <div class="form-group col-12" id="container-module-add">
 
                                                 
 
@@ -423,6 +423,15 @@
             </div>
         </div>
         <!-- FIN Nuevo form -->
+        <script>
+
+            const modules = document.querySelectorAll('#container-module-add')
+            const btnOut = document.getElementById('salir_agregar')
+            btnOut.style.visibility = "hidden"
+            if(modules.length >= 1){
+                btnOut.style.visibility = "visible"  
+            }
+        </script>
 
     <?php
     } else {
