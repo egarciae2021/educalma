@@ -723,15 +723,16 @@ if (!isset($_GET['pag'])) {
         <div class="formu">
           <div class="row">
             <div class="group-control">
-              <span class="title">Nombre Completo</span><input type="text" id="nomCompleto" onkeypress="return valNombre(event);" maxlength="30"/>
+              <span class="title">Nombre Completo</span><input type="text" id="nomCompleto" onkeypress="return valNombre(event);" maxlength="30" required/>
             </div>
             <div class="group-control">
-              <span class="title">Correo electrónico</span><input type="text" id="txtEmail" pattern='/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i'/>
+              <span class="title">Correo electrónico</span><input type="email" id="txtEmail" pattern="/^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}
+[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/" required/>
             </div>
           </div>
           <div class="row">
             <div class="group-control">
-              <span class="title">Empresa</span><input type="text" id="txtEmpresa" onkeypress="return valNombre(event);" maxlength="20"/>
+              <span class="title">Empresa</span><input type="text" id="txtEmpresa" onkeypress="return valNombre(event);" maxlength="20" required/>
             </div>
             <div class="group-control">
               <span class="title">Teléfono móvil</span>
@@ -743,7 +744,7 @@ if (!isset($_GET['pag'])) {
                     <div id="btnPais">
                       <img id="imgPais" src="./assets/images/peru.png" style="cursor: pointer;"/>
                     </div>
-                    <input type="text" class="code" id="code" value="+51" style="width:120%;" maxlength="4" onKeypress="return ((event.charCode >= 48 && event.charCode <= 57) || event.charCode == 43)" readonly />
+                    <input type="tel" class="code" id="code" value="+51" style="width:120%;" maxlength="4" onKeypress="return ((event.charCode >= 48 && event.charCode <= 57) || event.charCode == 43)" readonly required/>
                   </div>
 
                   <ul class="sel" id="listPais" style="height:300px; width:430%; overflow:auto;">
@@ -865,7 +866,7 @@ if (!isset($_GET['pag'])) {
             <div class="group-control">
               <span class="title">Tamaño de la empresa</span>
               <div  class="row-three">
-                <select class="select" type="text" min="0" value="0" name="" id="numSusc" onKeypress="if (event.keyCode < 49 || event.keyCode > 57) event.returnValue = false;">
+                <select class="select" type="text" min="0" value="0" name="" id="numSusc" onKeypress="if (event.keyCode < 49 || event.keyCode > 57) event.returnValue = false;" required>
                   <option disabled selected>Seleccione tamaño</option>
                   <option>Microempresa</option>
                   <option>Pequeña Empresa</option>
@@ -879,7 +880,7 @@ if (!isset($_GET['pag'])) {
               <span class="title">N° de suscripciones</span>
               <div class="row-three">
                 <div class="icon" id="restaNumber1">-</div>
-                <input  class="text-center" type="text" min="0" value="0" name="" id="txtTamEmpresa"/>
+                <input  class="text-center" type="text" min="0" value="0" name="" id="txtTamEmpresa" required/>
                 <div class="icon" id="sumNumber1">+</div>
               </div>
             </div>
@@ -888,7 +889,7 @@ if (!isset($_GET['pag'])) {
 
           <div class="group-control">
             <span>¿Qué objetivo tiene tu equipo?</span>
-            <textarea rows="2" id="objEmpresa" onkeypress="return valNombre(event);" maxlength="250"></textarea>
+            <textarea rows="2" id="objEmpresa" onkeypress="return valNombre(event);" maxlength="250" required></textarea>
           </div>
           <div class="box-btn">
             <button id="btnSendRequest">COMENZAR</button>
