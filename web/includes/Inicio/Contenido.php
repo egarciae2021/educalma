@@ -723,15 +723,15 @@ if (!isset($_GET['pag'])) {
         <div class="formu">
           <div class="row">
             <div class="group-control">
-              <span class="title">Nombre Completo</span><input type="text" id="nomCompleto" onkeypress="return valNombre(event);" maxlength="20"/>
+              <span class="title">Nombre Completo</span><input type="text" id="nomCompleto" onkeypress="return valNombre(event);" maxlength="30"/>
             </div>
             <div class="group-control">
-              <span class="title">Correo electrónico</span><input type="text" id="txtEmail" />
+              <span class="title">Correo electrónico</span><input type="text" id="txtEmail" pattern='/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i'/>
             </div>
           </div>
           <div class="row">
             <div class="group-control">
-              <span class="title">Empresa</span><input type="text" id="txtEmpresa" />
+              <span class="title">Empresa</span><input type="text" id="txtEmpresa" onkeypress="return valNombre(event);" maxlength="20"/>
             </div>
             <div class="group-control">
               <span class="title">Teléfono móvil</span>
@@ -845,14 +845,6 @@ if (!isset($_GET['pag'])) {
             </div>
           </div>
           <div class="row">
-            <!--div class="group-control">
-              <span class="title">Tamaño de la empresa</span>
-              <div  class="">
-              
-                <input  class="text-center" type="text" min="0" value="0" name="" id="txtTamEmpresa" onKeypress="if (event.keyCode < 49 || event.keyCode > 57) event.returnValue = false;"/>
-                
-              </div>
-            </div-->
             <style>
 
               .select {
@@ -887,7 +879,7 @@ if (!isset($_GET['pag'])) {
               <span class="title">N° de suscripciones</span>
               <div class="row-three">
                 <div class="icon" id="restaNumber1">-</div>
-                <input  class="text-center" type="text" min="0" value="0" name="" id="txtTamEmpresa" onKeypress="if (event.keyCode < 48 || event.keyCode > 57) event.returnValue = false;"/>
+                <input  class="text-center" type="text" min="0" value="0" name="" id="txtTamEmpresa"/>
                 <div class="icon" id="sumNumber1">+</div>
               </div>
             </div>
@@ -896,7 +888,7 @@ if (!isset($_GET['pag'])) {
 
           <div class="group-control">
             <span>¿Qué objetivo tiene tu equipo?</span>
-            <textarea rows="2" id="objEmpresa"></textarea>
+            <textarea rows="2" id="objEmpresa" onkeypress="return valNombre(event);" maxlength="250"></textarea>
           </div>
           <div class="box-btn">
             <button id="btnSendRequest">COMENZAR</button>
@@ -906,40 +898,5 @@ if (!isset($_GET['pag'])) {
     </div>
   </div>
 </div>
-<!-- EMPRESAS SHEYLA -->
-<!-- <div class="container container-fluid-empresa" style="border: 1px solid red;">
-  <div class="row">
-    <div class="col-12 col-sm-12 col-md-6 col-lg-8 col-xl-6" style="border: 1px solid red;">
-      <div class="line"></div>
-      <h2 class="">Educalma para empresas</h2>
-      <ul>
-        <li><i class="fas fa-check-circle mr-3"></i>Mide y analiza los resultados de tu equipo con nuestro servicio.
-        </li>
-        <li><i class="fas fa-check-circle mr-3"></i>Acompañamiento y seguimiento por un Ejecutivo de Cuenta.</li>
-        <li><i class="fas fa-check-circle mr-3"></i>Certificaciones por cada curso de plan compleado.</li>
-      </ul>
-
-
-      <div class="box-email">
-        <span>Recibe informaci&oacute;n específica para tu empresa</span>
-        <div class="row mt-2">
-          <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-8 mb-2" style="border: 1px solid red;">
-            <input type="email" placeholder="Escribe tu correo empresarial" id="txtEmail" />
-          </div>
-          <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-4" style="border: 1px solid red;">
-            <button id="btnAction">CONOCE MÁS</button>
-          </div>
-
-
-        </div>
-        <span class="msg-error">Debe ser un correo corporativo.</span>
-
-      </div>
-    </div>
-    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6" style="border: 1px solid red;">
-    <img class="img-fluid" src="./assets/images/empresas.jpg" alt="" />
-    </div>
-  </div>
-</div> -->
 
 <script src="assets/js/valNombre.js"></script>
