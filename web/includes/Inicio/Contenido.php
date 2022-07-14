@@ -694,7 +694,7 @@ if (!isset($_GET['pag'])) {
         <div class="formu">
           <div class="row">
             <div class="group-control">
-              <span class="title">Nombre Completo</span><input type="text" id="nomCompleto" onkeypress="return valNombre(event);" pattern=".{3,99}" maxlength="20"/>
+              <span class="title">Nombre Completo</span><input type="text" id="nomCompleto" onkeypress="return valNombre(event);" maxlength="20"/>
             </div>
             <div class="group-control">
               <span class="title">Correo electrónico</span><input type="text" id="txtEmail" />
