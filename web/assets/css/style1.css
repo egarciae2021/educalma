@@ -102,7 +102,15 @@ a {
     border-radius: 50%;
 
     position: relative;
-    left: 20px !important;
+    left: 5px !important;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s .3s, opacity .3s linear;
+}
+.miFoto-show {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity .3s linear;
 }
 
 .header__img__logo {
@@ -217,12 +225,24 @@ a {
     margin: 0 0;
 }
 
+.nav__subtitle-container {
+    margin-bottom: 60px;
+    transition: all .1s linear;
+}
 .nav__subtitle-dashboard {
     font-size: 1rem;
     text-align: center;
     text-transform: uppercase;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s .1s, opacity .1s linear;
     /* letter-spacing: .1rem; */
     color: var(--text-color-light);
+}
+.user__name-show {
+    visibility: visible;
+    opacity: 1;
+    transition: visibility 0s .2s, opacity .9s linear;
 }
 
 .nav__subtitle__img-dashboard {
@@ -264,6 +284,16 @@ a {
     margin-top: 5rem;
 }
 
+.img__ilu {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s .3s, opacity .3s linear;
+}
+.img__ilu-show {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity .3s linear;
+}
 
 /* Dropdown */
 
@@ -385,6 +415,10 @@ a {
         width: 90px;
         /* Reduced navbar */
     }
+    .header__img__side-dashboard {
+        visibility: hidden;
+    }
+    
     .nav__items-dashboard {
         row-gap: 1.7rem;
         width: 100%;
@@ -401,7 +435,6 @@ a {
     }
     .nav__logo-name-dashboard,
     .nav__name-dashboard,
-    .nav__subtitle-dashboard,
     .nav__dropdown-icon-dashboard {
         opacity: 0;
         transition: .3s;
@@ -409,11 +442,27 @@ a {
     .nav-dashboard:hover {
         width: 300px;
     }
+    .nav-dashboard:hover .header__img__side-dashboard {
+        visibility: visible;
+        opacity: 1;
+        transition: opacity .3s linear;
+    }
+    .nav-dashboard:hover .img__ilu {
+        visibility: visible;
+        opacity: 1;
+        transition: opacity .3s linear;
+    }
     .nav-dashboard:hover .nav__logo-name-dashboard {
         opacity: 1;
     }
     .nav-dashboard:hover .nav__subtitle-dashboard {
+        visibility: visible;
         opacity: 1;
+        transition: visibility 0s .2s, opacity .9s linear;
+    }
+    .nav-dashboard:hover .nav__subtitle-container {
+        margin-bottom: 0px;
+        transition: all .1s linear;
     }
     .nav-dashboard:hover .nav__name-dashboard {
         opacity: 1;
@@ -461,6 +510,9 @@ a {
     .nav-dashboard {
 
         margin-top: 64px;
+    }
+    .nav__subtitle-container {
+        margin-bottom: 0px;
     }
 }
 
