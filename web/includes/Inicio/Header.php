@@ -44,7 +44,38 @@ require_once 'database/databaseConection.php';
                             <a href="ListaCursos.php?pag=1">Cursos</a>
                         </li>
 
-                        <!-- <li class="nav-link" style="--i: .6s;">
+                        <li class="nav-link" style="--i: .6s;">
+                            <?php 
+                            $nom_privilegio = "";
+                            switch ($_SESSION['privilegio']) {
+                                case 1:
+                                    $nom_privilegio = "Administrador";
+                                    break;
+                                case 2:
+                                    $nom_privilegio = "Profesor";
+                                    break;
+                                case 3:
+                                    $nom_privilegio = "Usuario Normal";
+                                    break;
+                                case 4:
+                                    $nom_privilegio = "Empresa";
+                                    break;
+                                case 5:
+                                    $nom_privilegio = "Usuario (Empresa)";
+                                    break;
+                                case 6:
+                                    $nom_privilegio = "Super Admin";
+                                    break;
+                            }
+                            ?>
+                    
+                            <a class="link-cel" href="user-sidebar.php" style="white-space: nowrap;text-overflow: ellipsis; overflow: hidden;">
+                                <?php echo $_SESSION['nombres_nom'].' ('.$nom_privilegio.')'?>
+                            </a>
+                    
+                        </li>
+
+                        <li class="nav-link" style="--i: .6s;">
                     
                             <a class="link-cel" href="user-sidebar.php">Dashboard</a>
                     
@@ -60,7 +91,7 @@ require_once 'database/databaseConection.php';
                     
                             <a class="link-cel" href="includes/login/logout.php">Cerrar Sesión</a>
                     
-                        </li> -->
+                        </li>
 
                    
 
