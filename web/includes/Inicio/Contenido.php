@@ -432,7 +432,8 @@ if (!isset($_GET['pag'])) {
                   }
                     ?>
                   ) no-repeat;
-                  background-size: 100% 100%;">
+                  background-size: cover;
+                  background-position: center;">
 
                     <!--NOMBRE CURSO-->
                     <h4 class="mb-0" style="font-weight: 600;"><?php echo $dato['nombreCurso'];?></h4>
