@@ -720,181 +720,189 @@ if (!isset($_GET['pag'])) {
               los objetivos del equipo y tu empresa.</span>
           </div>
         </div>
-        <div class="formu">
-          <div class="row">
-            <div class="group-control">
-              <span class="title">Nombre Completo</span><input type="text" id="nomCompleto" onkeypress="return valNombre(event);" maxlength="30" required/>
+
+        <style>
+          .group-control .error{
+            color: crimson;
+            font-style: normal;
+            font-size: 16px;
+            padding-top: 5px;
+            /* max-width:300px; 
+            padding: 10px;*/
+            margin:0;
+          }
+        </style>
+
+        <form id="validacion" class="formu">
+            <div class="row">
+              <div class="group-control">
+                <span class="title">Nombre Completo</span><input name="nomCompleto" type="text" id="nomCompleto" onkeypress="return valNombre(event);" aria-describedby="names-addon"/>
+              </div>
+              <div class="group-control">
+                <span class="title">Correo electrónico</span><input name="txtEmail" type="email" id="txtEmail" pattern="/^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/" aria-describedby="names-addon"/>
+              </div>
             </div>
-            <div class="group-control">
-              <span class="title">Correo electrónico</span><input type="email" id="txtEmail" pattern="/^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}
-[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/" required/>
-            </div>
-          </div>
-          <div class="row">
-            <div class="group-control">
-              <span class="title">Empresa</span><input type="text" id="txtEmpresa" onkeypress="return valNombre(event);" maxlength="20" required/>
-            </div>
-            <div class="group-control">
-              <span class="title">Teléfono móvil</span>
-              <div class="row-icon">
-                
-                <div class="selItem">
-                  
-                  <div class="btn-select">
-                    <div id="btnPais">
-                      <img id="imgPais" src="./assets/images/peru.png" style="cursor: pointer;"/>
+            <div class="row">
+              <div class="group-control">
+                <span class="title">Empresa</span><input name="txtEmpresa" type="text" id="txtEmpresa" onkeypress="return valNombre(event);" maxlength="50" aria-describedby="names-addon"/>
+              </div>
+              <div class="group-control">
+                <span class="title">Teléfono móvil</span>
+                <div class="row-icon">
+                  <div class="selItem">
+                    <div class="btn-select">
+                      <div id="btnPais">
+                        <img id="imgPais" src="./assets/images/peru.png" style="cursor: pointer;"/>
+                      </div>
+                      <input type="tel" class="code" id="code" value="+51" style="width:120%;" maxlength="4" onKeypress="return ((event.charCode >= 48 && event.charCode <= 57) || event.charCode == 43)" readonly/>
                     </div>
-                    <input type="tel" class="code" id="code" value="+51" style="width:120%;" maxlength="4" onKeypress="return ((event.charCode >= 48 && event.charCode <= 57) || event.charCode == 43)" readonly required/>
+  
+                    <ul class="sel" id="listPais" style="height:300px; width:430%; overflow:auto;">
+  
+                      <li style="border-bottom: 1px solid black;">
+                        <img src="./assets/images/peru.png" alt="+51" />
+                        <span>Perú (+51)</span>
+                      </li>
+  
+                      <li>
+                        <img src="./assets/images/argentina.png" alt="+54" />
+                        <span>Argentina (+54)</span>
+                      </li>
+                      <li>
+                        <img src="./assets/images/bolivia.png" alt="+591" />
+                        <span>Bolivia (+591)</span>
+                      </li>
+                      <li>
+                        <img src="./assets/images/brasil.png" alt="+55" />
+                        <span>Brasil (+55)</span>
+                      </li>
+                      <li>
+                        <img src="./assets/images/chile.png" alt="+56" />
+                        <span>Chile (+56)</span>
+                      </li>
+                      <li>
+                        <img src="./assets/images/colombia.png" alt="+57" />
+                        <span>Colombia (+57)</span>
+                      </li>
+                      <li>
+                        <img src="./assets/images/costa-rica.png" alt="+506" />
+                        <span>Costa Rica (+506)</span>
+                      </li>
+                      <li>
+                        <img src="./assets/images/cuba.png" alt="+53" />
+                        <span>Cuba (+53)</span>
+                      </li>
+                      <li>
+                        <img src="./assets/images/ecuador.png" alt="+593" />
+                        <span>Ecuador (+593)</span>
+                      </li>
+                      <li>
+                        <img src="./assets/images/el-salvador.png" alt="+503" />
+                        <span>El Salvador (+503)</span>
+                      </li>
+                      <li>
+                        <img src="./assets/images/estados-unidos.png" alt="+1" />
+                        <span>Estados Unidos (+1)</span>
+                      </li>
+                      <li>
+                        <img src="./assets/images/guatemala.png" alt="+502" />
+                        <span>Guatemala (+502)</span>
+                      </li>
+                      <li>
+                        <img src="./assets/images/honduras.png" alt="+504" />
+                        <span>Honduras (+504)</span>
+                      </li>
+                      <li>
+                        <img src="./assets/images/mexico.png" alt="+52" />
+                        <span>México (+52)</span>
+                      </li>
+                      <li>
+                        <img src="./assets/images/nicaragua.png" alt="+505" />
+                        <span>Nicaragua (+505)</span>
+                      </li>
+                      <li>
+                        <img src="./assets/images/panama.png" alt="+507" />
+                        <span>Panamá (+507)</span>
+                      </li>
+                      <li>
+                        <img src="./assets/images/paraguay.png" alt="+595" />
+                        <span>Paraguay (+595)</span>
+                      </li>
+                      <li>
+                        <img src="./assets/images/republica-dominicana.png" alt="+1" />
+                        <span>República Dominicana (+1)</span>
+                      </li>
+                      <li>
+                        <img src="./assets/images/uruguay.png" alt="+598" />
+                        <span>Uruguay (+598)</span>
+                      </li>
+                      <li>
+                        <img src="./assets/images/venezuela.png" alt="+58" />
+                        <span>Venezuela (+58)</span>
+                      </li>
+  
+                      <ol style="border-top: 1px solid black; cursor: pointer;">
+                        <img id="otro" src="./assets/images/otro.png" alt="+" />
+                        <span>Otro</span>
+                      </ol>
+                      
+                    </ul>
+  
                   </div>
-
-                  <ul class="sel" id="listPais" style="height:300px; width:430%; overflow:auto;">
-
-                    <li style="border-bottom: 1px solid black;">
-                      <img src="./assets/images/peru.png" alt="+51" />
-                      <span>Perú (+51)</span>
-                    </li>
-
-                    <li>
-                      <img src="./assets/images/argentina.png" alt="+54" />
-                      <span>Argentina (+54)</span>
-                    </li>
-                    <li>
-                      <img src="./assets/images/bolivia.png" alt="+591" />
-                      <span>Bolivia (+591)</span>
-                    </li>
-                    <li>
-                      <img src="./assets/images/brasil.png" alt="+55" />
-                      <span>Brasil (+55)</span>
-                    </li>
-                    <li>
-                      <img src="./assets/images/chile.png" alt="+56" />
-                      <span>Chile (+56)</span>
-                    </li>
-                    <li>
-                      <img src="./assets/images/colombia.png" alt="+57" />
-                      <span>Colombia (+57)</span>
-                    </li>
-                    <li>
-                      <img src="./assets/images/costa-rica.png" alt="+506" />
-                      <span>Costa Rica (+506)</span>
-                    </li>
-                    <li>
-                      <img src="./assets/images/cuba.png" alt="+53" />
-                      <span>Cuba (+53)</span>
-                    </li>
-                    <li>
-                      <img src="./assets/images/ecuador.png" alt="+593" />
-                      <span>Ecuador (+593)</span>
-                    </li>
-                    <li>
-                      <img src="./assets/images/el-salvador.png" alt="+503" />
-                      <span>El Salvador (+503)</span>
-                    </li>
-                    <li>
-                      <img src="./assets/images/estados-unidos.png" alt="+1" />
-                      <span>Estados Unidos (+1)</span>
-                    </li>
-                    <li>
-                      <img src="./assets/images/guatemala.png" alt="+502" />
-                      <span>Guatemala (+502)</span>
-                    </li>
-                    <li>
-                      <img src="./assets/images/honduras.png" alt="+504" />
-                      <span>Honduras (+504)</span>
-                    </li>
-                    <li>
-                      <img src="./assets/images/mexico.png" alt="+52" />
-                      <span>México (+52)</span>
-                    </li>
-                    <li>
-                      <img src="./assets/images/nicaragua.png" alt="+505" />
-                      <span>Nicaragua (+505)</span>
-                    </li>
-                    <li>
-                      <img src="./assets/images/panama.png" alt="+507" />
-                      <span>Panamá (+507)</span>
-                    </li>
-                    <li>
-                      <img src="./assets/images/paraguay.png" alt="+595" />
-                      <span>Paraguay (+595)</span>
-                    </li>
-                    <li>
-                      <img src="./assets/images/republica-dominicana.png" alt="+1" />
-                      <span>República Dominicana (+1)</span>
-                    </li>
-                    <li>
-                      <img src="./assets/images/uruguay.png" alt="+598" />
-                      <span>Uruguay (+598)</span>
-                    </li>
-                    <li>
-                      <img src="./assets/images/venezuela.png" alt="+58" />
-                      <span>Venezuela (+58)</span>
-                    </li>
-
-                    <ol style="border-top: 1px solid black; cursor: pointer;">
-                      <img id="otro" src="./assets/images/otro.png" alt="+" />
-                      <span>Otro</span>
-                    </ol>
-                    
-                  </ul>
-
+  
+                  <input name="txtTelMovil" type="tel" id="txtTelMovil" style="position:relative; left:7px; width:96%" maxlength="9" onKeypress="if (event.keyCode < 46 || event.keyCode > 57) event.returnValue = false;" aria-describedby="names-addon"/>
+  
                 </div>
-
-                <input type="tel" id="txtTelMovil" style="position:relative; left:7px; width:96%" maxlength="15" onKeypress="if (event.keyCode < 46 || event.keyCode > 57) event.returnValue = false;"/>
-
               </div>
             </div>
-          </div>
-          <div class="row">
-            <style>
-
-              .select {
-                border: none;
-                background: #cce4fc;
-                width: 285px;
-                height: 35px;
-              }
-
-              @media (max-width: 600px) {
-
+            <div class="row">
+              <style>
+  
                 .select {
-
-                  width: 270px;
+                  border: none;
+                  background: #cce4fc;
+                  width: 285px;
+                  height: 35px;
                 }
-              }
-            </style>
-            <div class="group-control">
-              <span class="title">Tamaño de la empresa</span>
-              <div  class="row-three">
-                <select class="select" type="text" min="0" value="0" name="" id="numSusc" onKeypress="if (event.keyCode < 49 || event.keyCode > 57) event.returnValue = false;" required>
-                  <option disabled selected>Seleccione tamaño</option>
-                  <option>Microempresa</option>
-                  <option>Pequeña Empresa</option>
-                  <option>Mediana Empresa</option>
-                  <option>Gran Empresa</option>
-                </select>
+  
+                @media (max-width: 600px) {
+  
+                  .select {
+  
+                    width: 270px;
+                  }
+                }
+              </style>
+              <div class="group-control">
+                <span class="title">Tamaño de la empresa</span>
+                <div  class="row-three">
+                  <select class="select" type="text" name="numSusc" id="numSusc" aria-describedby="names-addon">
+                    <option disabled selected>Seleccione tamaño</option>
+                    <option>Microempresa</option>
+                    <option>Pequeña Empresa</option>
+                    <option>Mediana Empresa</option>
+                    <option>Gran Empresa</option>
+                  </select>
+                </div>
+              </div>
+  
+              <div class="group-control">
+                <span class="title">N° de suscripciones</span>
+                <div class="row-three">
+                  <div class="icon" id="restaNumber1">-</div>
+                  <input name="txtTamEmpresa" class="text-center" type="text" min="0" value="0" id="txtTamEmpresa" aria-describedby="names-addon"/>
+                  <div class="icon" id="sumNumber1">+</div>
+                </div>
               </div>
             </div>
-
             <div class="group-control">
-              <span class="title">N° de suscripciones</span>
-              <div class="row-three">
-                <div class="icon" id="restaNumber1">-</div>
-                <input  class="text-center" type="text" min="0" value="0" name="" id="txtTamEmpresa" required/>
-                <div class="icon" id="sumNumber1">+</div>
-              </div>
+              <span>¿Qué objetivo tiene tu equipo?</span>
+              <textarea rows="2" id="objEmpresa" name="objEmpresa" onkeypress="return valNombre(event);" maxlength="250" aria-describedby="names-addon"></textarea>
             </div>
-           </div>
-         
-
-          <div class="group-control">
-            <span>¿Qué objetivo tiene tu equipo?</span>
-            <textarea rows="2" id="objEmpresa" onkeypress="return valNombre(event);" maxlength="250" required></textarea>
-          </div>
-          <div class="box-btn">
-            <button id="btnSendRequest">COMENZAR</button>
-          </div>
-        </div>
+            <div class="box-btn">
+              <button id="btnSendRequest" type="submit">COMENZAR</button>
+            </div>
+        </form>
       </div>
     </div>
   </div>
