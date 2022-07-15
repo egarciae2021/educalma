@@ -388,7 +388,7 @@ if (!isset($_GET['pag'])) {
                           if ($dato['imagenDestacadaCurso'] != null) {
                           ?>
                               <!--Imagen-->
-                              <img class="imgCurso" style="" src="<?php echo $dato['imagenDestacadaCurso']; ?>" alt="">
+                              <img class="imgCurso" src="<?php echo $dato['imagenDestacadaCurso']; ?>" alt="">
                           <?php
                           } else {
                           ?>
@@ -412,7 +412,8 @@ if (!isset($_GET['pag'])) {
                 <!--ATRÁS-->
                 <style>
                   .back::before {
-                    background-color: rgba(124,131,253,.5);
+                    background: rgb(124,131,253);
+                    background: linear-gradient(90deg, rgba(124,131,253,.7) 0%, rgba(224,199,229,.4) 100%);
                     content: '';
                     display: block;
                     height: 100%;
