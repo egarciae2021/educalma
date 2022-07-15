@@ -725,12 +725,10 @@ if (!isset($_GET['pag'])) {
 
         <style>
           .group-control .error{
-            color: crimson;
-            font-style: normal;
-            font-size: 16px;
-            padding-top: 5px;
-            /* max-width:300px; 
-            padding: 10px;*/
+            color: #d71f25;
+            font-style: inherit;
+            font-size: 12px;
+            /* padding-top: 5px; */
             margin:0;
           }
         </style>
@@ -851,8 +849,8 @@ if (!isset($_GET['pag'])) {
                     </ul>
   
                   </div>
+                  <input name="txtTelMovil" type="tel" id="txtTelMovil"  maxlength="9" onKeypress="if (event.keyCode < 46 || event.keyCode > 57) event.returnValue = false;" aria-describedby="names-addon"/>
   
-                  <input name="txtTelMovil" type="tel" id="txtTelMovil" style="position:relative; left:7px; width:96%" maxlength="9" onKeypress="if (event.keyCode < 46 || event.keyCode > 57) event.returnValue = false;" aria-describedby="names-addon"/>
   
                 </div>
               </div>
@@ -892,7 +890,7 @@ if (!isset($_GET['pag'])) {
                 <span class="title">N° de suscripciones</span>
                 <div class="row-three">
                   <div class="icon" id="restaNumber1">-</div>
-                  <input name="txtTamEmpresa" class="text-center" type="text" min="0" value="0" id="txtTamEmpresa" aria-describedby="names-addon"/>
+                  <input name="txtTamEmpresa" class="text-center" type="text" min="0" value="0" id="txtTamEmpresa" aria-describedby="names-addon" onKeypress="return ((event.charCode >= 48 && event.charCode <= 57) || event.charCode == 43)"/>
                   <div class="icon" id="sumNumber1">+</div>
                 </div>
               </div>
