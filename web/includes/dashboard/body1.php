@@ -43,7 +43,7 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                                 if($dato['mifoto']!=null){
                             ?>
                                 
-                               <img id="miFoto" src="<?php echo $dato['mifoto']; ?>" alt="foto_curso" class="header__img__side-dashboard" >  
+                                <img id="miFoto" src="./assets/images/avatar_hombre.png" alt="foto_curso" class="header__img__side-dashboard"> 
                                <!-- <style>
                                    #miFoto{
                                     border-radius: 50%;
@@ -276,9 +276,7 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                                 <span class="nav__name-dashboard" style="float:left;">Salir</span>  
                             </button>
                         </a>
-
-                        <img class="img__ilu" id="img__ilu" style="position: relative; top: 20px;" src="./assets/images/ilu_niño.png">
-
+                        <img class="img__ilu" id="img__ilu" src="./assets/images/ilu_niño.png">
                     </div>
                 </div>
             </div>

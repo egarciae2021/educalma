@@ -311,6 +311,8 @@ a {
 }
 
 .img__ilu {
+    position: relative;
+    top: 20px;
     visibility: hidden;
     opacity: 0;
     transition: visibility 0s .3s, opacity .3s linear;
@@ -561,5 +563,25 @@ a {
     .nav-dashboard {
 
         margin-top: 64px;
+    }
+}
+
+@media (max-height: 900px) {
+    .img__ilu {
+        margin-left: 50px;
+        width: 60%;
+        top: 5px;
+    }
+}
+@media (max-height: 830px) {
+    .img__ilu {
+        margin-left: 60px;
+        width: 50%;
+        top: -8px;
+    }
+}
+@media (max-height: 790px) {
+    .img__ilu {
+        display: none;
     }
 }
