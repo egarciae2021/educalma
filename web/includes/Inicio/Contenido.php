@@ -426,7 +426,7 @@ if (!isset($_GET['pag'])) {
                 
                 <div class="face back" style="background: url(
                   <?php if ($dato['imagenDestacadaCurso'] != null) {
-                    echo('data:image/*;base64,'); echo base64_encode($dato['imagenDestacadaCurso']);
+                    echo $dato['imagenDestacadaCurso'];
                   } else {
                     echo('./assets/images/curso_educalma.png');
                   }
