@@ -16,12 +16,12 @@
    }
 
    .img-nina{
-      width: 30em;
+      width: 26em;
       position: relative;
       display: flex;
       float: right;
       left: 100px;
-      margin-top: -45em;
+      margin-top: -43em;
    }
 
    @media (max-width: 767px) {
