@@ -388,7 +388,7 @@ if (!isset($_GET['pag'])) {
                           if ($dato['imagenDestacadaCurso'] != null) {
                           ?>
                               <!--Imagen-->
-                              <img class="imgCurso" style="" src="<?php echo $dato['imagenDestacadaCurso']; ?>" alt="">
+                              <img class="imgCurso" src="<?php echo $dato['imagenDestacadaCurso']; ?>" alt="">
                           <?php
                           } else {
                           ?>
@@ -412,7 +412,8 @@ if (!isset($_GET['pag'])) {
                 <!--ATRÁS-->
                 <style>
                   .back::before {
-                    background-color: rgba(124,131,253,.5);
+                    background: rgb(124,131,253);
+                    background: linear-gradient(90deg, rgba(124,131,253,.7) 0%, rgba(224,199,229,.4) 100%);
                     content: '';
                     display: block;
                     height: 100%;
@@ -426,13 +427,14 @@ if (!isset($_GET['pag'])) {
                 
                 <div class="face back" style="background: url(
                   <?php if ($dato['imagenDestacadaCurso'] != null) {
-                    echo('data:image/*;base64,'); echo base64_encode($dato['imagenDestacadaCurso']);
+                    echo $dato['imagenDestacadaCurso'];
                   } else {
                     echo('./assets/images/curso_educalma.png');
                   }
                     ?>
                   ) no-repeat;
-                  background-size: 100% 100%;">
+                  background-size: cover;
+                  background-position: center;">
 
                     <!--NOMBRE CURSO-->
                     <h4 class="mb-0" style="font-weight: 600;"><?php echo $dato['nombreCurso'];?></h4>

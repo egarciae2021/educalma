@@ -43,7 +43,7 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                                 if($dato['mifoto']!=null){
                             ?>
                                 
-                               <img id="miFoto"  src="<?php echo $dato['mifoto']; ?>" alt="foto_curso" class="header__img__side-dashboard" >  
+                               <img id="miFoto" src="<?php echo $dato['mifoto']; ?>" alt="foto_curso" class="header__img__side-dashboard" >  
                                <!-- <style>
                                    #miFoto{
                                     border-radius: 50%;
@@ -71,11 +71,11 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
 
                                 <?php  if (isset($_SESSION['Logueado']) && $_SESSION['Logueado'] === true && $dato['sexo'] == 1) { ?>
 
-                                    <img src="./assets/images/avatar_hombre.png" alt="foto_curso" class="header__img__side-dashboard"> 
+                                    <img id="miFoto" src="./assets/images/avatar_hombre.png" alt="foto_curso" class="header__img__side-dashboard"> 
                                   
                                 <?php } else if (isset($_SESSION['Logueado']) && $_SESSION['Logueado'] === true && $dato['sexo'] == 2) { ?>
 
-                                    <img src="./assets/images/avatar_mujer.png" alt="foto_curso" class="header__img__side-dashboard">
+                                    <img id="miFoto" src="./assets/images/avatar_mujer.png" alt="foto_curso" class="header__img__side-dashboard">
                                
                                 <?php  } ?>
                             <?php
@@ -131,7 +131,7 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                         <div style="position: relative; left: 8px;" class="nav__dropdown-dashboard">
 
                             <a class="nav__link-dashboard">
-                                <img class="nav__icon-dashboard" src="./assets/images/cur.png" width="25" heigth="25">
+                                <img class="nav__icon-dashboard" src="./assets/images/cur.png" width="23" heigth="23">
                                 <!-- <i class="far fa-bookmark nav__icon"></i> -->
                                 <span style="color: #58555E; position: relative; left: -3px; font-size: 16px !important;" class="nav__name-dashboard">Cursos</span>
                                 <!-- <i class='bx bx-chevron-down nav__icon nav__dropdown-icon'></i> -->
@@ -265,14 +265,15 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                             }
                         ?>
 
-                        <a style="position: relative; left: 8px;" href="sidebarEditar.php" class="nav__link-dashboard">
-                            <i class="fas fa-cog nav__icon-dashboard" style="color:#7d83fc;"></i>
+                        <a style="position: relative; left: 10px;" href="sidebarEditar.php" class="nav__link-dashboard">
+                            <i class="fas fa-cog nav__icon-dashboard" style="color:#7d83fc; margin-right: 0.4rem;"></i>
                             <span style="font-size: 16px !important;" class="nav__name-dashboard">Ajustes</span>
                         </a>
 
-                        <a style="position: relative; left: 8px; margin-top: 10px;border-color: #7d83fc;" href="includes/login/logout.php" class="nav__link-dashboard nav__logout-dashboard">
-                            <button style="font-size: 16px !important; background-color:#7d83fc; color:azure; height: 45px; width:80px; ">
-                                <i class="fa fa-arrow-right nav__icon-dashboard" style="float: left;"></i><span class="nav__name-dashboard" style="float:left;">Salir </span>  
+                        <a id="logout__button" style="position: relative; left: 2px; margin-top: 10px;border-color: #7d83fc;" href="includes/login/logout.php" class="nav__link-dashboard nav__logout-dashboard">
+                            <button style="font-size: 16px !important; background-color:#7d83fc; color:azure; height: 45px;">
+                                <i class="fa fa-arrow-right nav__icon-dashboard" style="float: left;"></i>
+                                <span class="nav__name-dashboard" style="float:left;">Salir</span>  
                             </button>
                         </a>
 
@@ -290,10 +291,12 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
         const imgIlu = document.getElementById("img__ilu");
         const miFoto = document.getElementById("miFoto");
         const navbarSub = document.getElementById("user__name");
+        const btnLogout = document.getElementById("logout__button");
         toggleBtn.addEventListener('click', ()=>{
-            imgIlu.classList.toggle("img__ilu-show");
-            miFoto.classList.toggle("miFoto-show");
-            navbarSub.classList.toggle("user__name-show");
+            imgIlu.classList.toggle("img__ilu-show")
+            miFoto.classList.toggle("miFoto-show")
+            navbarSub.classList.toggle("user__name-show")
+            btnLogout.classList.toggle("nav__logout-dashboard-show")
         })
     </script>
 <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"></script>-->
