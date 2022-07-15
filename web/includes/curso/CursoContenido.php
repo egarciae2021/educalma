@@ -36,6 +36,21 @@
      justify-content: center;
   }}
 
+  @media (max-width: 375px) {
+      .respons7 {
+     width: 100%;
+     display: flex;
+     justify-content: center;
+  }}
+
+  @media (max-width: 414px) {
+      .respons7 {
+     width: 100%;
+     display: flex;
+     justify-content: center;
+  }}
+
+
   @media (min-width: 1200px) {
       .responsv5 {
       flex: 0 0 38%;
@@ -69,6 +84,45 @@
   }
 
 }
+
+@media (max-width: 375px) {
+      .img-nina {
+      width: 19em;
+      position: relative;
+      left: 35px;
+      margin-top: 3em;
+      float: unset;
+  }
+
+}
+
+@media (max-width: 414px) {
+      .img-nina {
+      width: 19em;
+      position: relative;
+      left: 35px;
+      margin-top: 3em;
+      float: unset;
+  }
+
+}
+
+@media only screen and (min-width:820px) and (max-width:1180px) {
+      .container-fluid .container-detalle-informacion .col-8 .container-info-course-detalle{
+         width: 25em;
+         line-height: 1.7;
+      }
+      .container-fluid .container-detalle-informacion .col-8{
+         left: 44px;
+      }
+      .parrafo{
+         width: 15em;
+      }
+      .col-12{
+         flex: 0 0 50%;
+         max-width: 58%;
+      }
+} 
 
 @media (max-width: 360px) {
       .btn-light {
@@ -420,7 +474,7 @@
                   <!--div class="col-md-5 col-lg-5 order-1 "style="align-self: flex-end; margin-top:25px;" -->
                   <div class="col col-md-4"  id="informacion">
                      <h5 style="color: #7C83FD;font-weight: 600;font-size: 24px;">Introducción</h5>
-                     <p style="margin-top: 15px;text-align: justify"><?php echo $dato4['introduccion']; ?></p>
+                     <p class="parrafo" style="margin-top: 15px;text-align: justify;"><?php echo $dato4['introduccion']; ?></p>
                   </div>
                   <!--div class="col-8"-->
                   <div class="col-8"  id="informacion">
@@ -457,7 +511,7 @@
                   </div>
                </div>
             </div>
-            <div class="col-12 respons1"   style="width:760px; height:auto; float:left; position: relative; " id="certificado-temario">
+            <div class="col-12 respons1"   style="width:756px; height:auto; float:left; position: relative; " id="certificado-temario">
                <h5 style="color: #7C83FD;font-weight: 600;font-size: 24px;">Temario del curso</h5>
                <?php 
                   $nW=0;
