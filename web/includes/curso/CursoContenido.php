@@ -118,9 +118,26 @@
       .parrafo{
          width: 15em;
       }
-      .col-12{
-         flex: 0 0 50%;
-         max-width: 58%;
+      .respons1{
+         flex: 0 0 40%;
+         max-width: 40%;
+      }
+      .respons7{
+         width: 30em;
+      }
+      .col-md-5{
+         flex: 0 0 45%;
+         max-width: 45%;
+      }
+      .img-fluid{
+         margin-top: 12px;
+      }
+      .img-nina{
+         float: none;
+         width: 26em;
+         position: relative;
+         display: flex;
+         left: 236px;
       }
 } 
 
@@ -518,7 +535,7 @@
                       while ($modulosC = $q6->fetch(PDO::FETCH_ASSOC)) {
                           $nW=$nW+1;
                   ?>
-               <div class="w-100 respons7">
+               <div class="respons7">
                   <a id="btnInicioModulo" href="video.php?id=<?php echo $id;?>&idtema=<?php echo 1;?>&id_modulo=<?php echo $modulosC['idModulo']?>&nW=<?php echo $nW-1?>&idCI=<?php echo $idCI?>" class="btn px-4 mb-2 puntos-suspensivos responsv1"  style="background:#fff; width:55%; text-align:left;">
                   <i class="fas fa-play mr-3"></i>
                   <span style="color:black; width:100%;white-space: initial;"><?php echo $modulosC['nombreModulo'] ?></span>
