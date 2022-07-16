@@ -36,6 +36,15 @@ div[id^='accordion'] .card .card-header span {
 
 }
 
+.img-nina{
+      width: 26em;
+      position: relative;
+      display: flex;
+      float: right;
+      left: 100px;
+      margin-top: -43em;
+   }
+
 body {
 
     background-color: white;
@@ -132,6 +141,7 @@ body {
 @media (min-width: 1300px){
   .card {
     width: 85%;
+    margin-bottom: -28px;
   }
 
 }
@@ -1053,6 +1063,9 @@ body {
                 ?>
             </li>
         </ul>
+        <div class="" style="" >
+            <img src="assets/images/ilu-nina.png" class="img-nina"alt="" >
+            </div>
     </div>              
 
 
@@ -1256,9 +1269,12 @@ body {
                                 <div class="comment-content">
                                     <?php echo $registro2['subcomentario'];?>
                                 </div>
+                                
                             </div>
+                            
                         </li>
                     </ul>
+                    
                     <?php 
                     }
                     ?>  
