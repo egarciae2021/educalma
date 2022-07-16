@@ -14,7 +14,10 @@
         }
 
         .txtTrailer:hover {
-            opacity: 1;
+            box-shadow: 5px 5px 20px rgba(185, 45, 225, 0.4);
+            color: #fff;
+            background: #8886f3;
+            
         }
 
         label {
@@ -110,8 +113,8 @@
                     
                
                     <!--Contenedor del curso publicado más destacado-->
-                    <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
-                        <div style="border-radius: 30px; overflow: hidden;" class="card">
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3">
+                        <div style="border-radius: 30px; overflow: hidden; border: 1px solid #7C83FD;" class="card">
 
                                     <!--Contenedor de la imagen-->
                                     <div class="container-card-image">

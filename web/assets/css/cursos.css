@@ -441,10 +441,10 @@ border-radius: 10px;
 **/
 
 .card:hover{
-	box-shadow: 5px 5px 20px rgba(0,0,0,0.4);
+    box-shadow: 5px 5px 20px rgba(203, 0, 253, 0.4);
 	transform: translateY(-3%);
 }
-.card-miscursos:hover {
+.card-miscursos:hover {    
     box-shadow: 0px 0px 18px 0px #7c83fd;
 	transform: translateY(-3%);
 }
