@@ -34,7 +34,7 @@ require_once 'database/databaseConection.php';
                     <ul style="margin-left: 25px;">
 
                         <!--Nosotros y Cursos-->
-                        <!-- <li class="nav-link" style="--i: .6s">
+                        <li class="nav-link" style="--i: .6s">
 
                             <a href="nosotros.php">Nosotros</a>
                         </li>
@@ -42,7 +42,7 @@ require_once 'database/databaseConection.php';
                         <li class="nav-link" style="--i: .6s">
                 
                             <a href="ListaCursos.php?pag=1">Cursos</a>
-                        </li> -->
+                        </li>
 
                         <li class="nav-link" style="--i: .6s;">
                             <?php 
