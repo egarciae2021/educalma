@@ -624,7 +624,7 @@ if (!isset($_GET['pag'])) {
 
 
       
-      <div style="" class="back">
+      <div class="back">
         <div class="header w-100">
           <div class="box-image">
             <img src="./assets/images/Rectangle 51.png" alt="" />

@@ -34,7 +34,7 @@ require_once 'database/databaseConection.php';
                     <ul style="margin-left: 25px;">
 
                         <!--Nosotros y Cursos-->
-                        <li class="nav-link" style="--i: .6s">
+                        <!-- <li class="nav-link" style="--i: .6s">
 
                             <a href="nosotros.php">Nosotros</a>
                         </li>
@@ -42,7 +42,7 @@ require_once 'database/databaseConection.php';
                         <li class="nav-link" style="--i: .6s">
                 
                             <a href="ListaCursos.php?pag=1">Cursos</a>
-                        </li>
+                        </li> -->
 
                         <li class="nav-link" style="--i: .6s;">
                             <?php 
@@ -61,7 +61,7 @@ require_once 'database/databaseConection.php';
                                     $nom_privilegio = "Empresa";
                                     break;
                                 case 5:
-                                    $nom_privilegio = "Usuario (Empresa)";
+                                    $nom_privilegio = "Usuario Empresa";
                                     break;
                                 case 6:
                                     $nom_privilegio = "Super Admin";
@@ -69,8 +69,11 @@ require_once 'database/databaseConection.php';
                             }
                             ?>
                     
-                            <a class="link-cel" href="user-sidebar.php" style="white-space: nowrap;text-overflow: ellipsis; overflow: hidden;">
-                                <?php echo $_SESSION['nombres_nom'].' ('.$nom_privilegio.')'?>
+                            <a class="link-cel pb-0" style="white-space: nowrap;text-overflow: ellipsis; overflow: hidden;">
+                                <?php echo $_SESSION['nombres_nom']?>
+                            </a>
+                            <a class="link-cel pt-2">
+                                <?php echo '('.$nom_privilegio.')'?>
                             </a>
                     
                         </li>
@@ -120,7 +123,7 @@ require_once 'database/databaseConection.php';
                         </li>
 
                         <!-- NO LOGUEADO - Iniciar Sesión y Regístrate -->
-                        <div class="log-sign" style="--i: 1.8s;">
+                        <div class="log-sign" style="--i: 1.4s;">
 
                             <a href="iniciosesion.php" class="btn transparent btnIni">Iniciar Sesión</a>
                       
