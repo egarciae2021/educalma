@@ -299,7 +299,7 @@ body {
                                                 if($dato20['privilegio']==1){
                                             ?>
 
-                                                    <span style="color: #fff; font-size: 15px;">Creado por la Fundación CALMA.</span>
+                                                   <!-- <span style="color: #fff; font-size: 15px;">Creado por la Fundación CALMA.</span> -->
 
                                             <?php 
                                                 }

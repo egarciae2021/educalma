@@ -150,7 +150,7 @@ header.btn.solid:hover {
   left: 0;
   width: 15rem;
   transform: translateY(10px);
-  opacity: 0;
+  opacity: 0; 
   pointer-events: none;
   transition: 0.5s;
 }
@@ -158,6 +158,19 @@ header.btn.solid:hover {
 .dropdown ul {
   position: relative;
 }
+/*jorge */
+.dropdown ul li ul:before{
+  content: '';
+  width: 0;
+  height: 0;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-bottom:12px solid purple;
+  position: absolute;
+  top: -12px;
+  left: 20px;
+}
+
 
 .dropdown-link > a {
   display: flex;

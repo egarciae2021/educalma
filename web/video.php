@@ -71,11 +71,13 @@
     
     <?php include_once 'includes/Inicio/Header.php' ?>
 
-    <div style="position: relative; top: -50px;">
+       <div style="position: relative; top: -50px;">
 
         <?php include_once 'includes/curso/videoCurso.php' ?>
 
     </div>
+
+    <?php include_once 'includes/Inicio/Footer.php' ?>
 
     <script src="assets/js/home.js"></script>
 

@@ -154,9 +154,6 @@
                     <div class="card-header">
                         <h3 class="card-title">Lista de Cursos No Publicados</h3>
                     </div>
-
-
-
                     <div class="card-body">
                         <?php
                         require_once 'database/databaseConection.php';

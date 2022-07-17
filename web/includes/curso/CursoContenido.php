@@ -335,7 +335,7 @@
                <?php 
                   if($dato20['privilegio']==1){
                   ?>
-               <span style="color: #565656; font-size: 14px;">Creado por la Fundación CALMA.</span>
+               <!-- <span style="color: #565656; font-size: 14px;">Creado por la Fundación CALMA.</span> -->
                <?php 
                   }
                   
