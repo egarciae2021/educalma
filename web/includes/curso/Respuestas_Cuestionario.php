@@ -38,8 +38,21 @@
         require_once 'database/databaseConection.php';
 
         if(isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)){
+            $idmodulo=$_GET['id_modulo'];
     ?>
+    <?php
+        require_once '././database/databaseConection.php';
+        
 
+        $pdo2 = Database::connect();
+        $sql2 = "SELECT * FROM modulo WHERE idModulo='$idmodulo'";
+        $q2 = $pdo2->prepare($sql2);
+        $q2->execute(array());
+        $dato2=$q2->fetch(PDO::FETCH_ASSOC)
+        //obtener el id por medio del $_GET['id']
+        //recorrer la tabla modulo y buscar el idmodulo=$_GET['id']
+        //hacer un array y traer el nombre
+    ?>
     <!--Contenido del cuestionario-->
 
     <?php
@@ -49,7 +62,7 @@
 
             <!-- Nuevo form -->
 
-            <?php $idmodulo=$_GET['id_modulo'];?>
+            
 
             <div class="container-fluid" style="">
                 <div class="container" id="contformulario">
@@ -99,12 +112,13 @@
                             <!-- fin primera columna -->
 
                             <!-- segunda columna -->
+                            
                             <div class="col-9 pl-0">
-                                <form id="respuestas_cuestionario" action="includes/Pregunta_Respuesta/Respuesta_CRUD.php?id=<?php echo $_GET['id'] ?>&id_modulo=<?php echo $idmodulo;?>" method="POST" enctype="multipart/form-data">
+                                <form id="respuestas_cuestionario" action="includes/Pregunta_Respuesta/Respuesta_CRUD.php?id=<?php echo $idCurso;?>&id_modulo=<?php echo $idModulo;?>" method="POST" enctype="multipart/form-data">
 
                                     <div class="form-row" style="text-align: center;">
                                         <div type="button" class="list-group-item list-group-item-action active" style="background: #4F52D6; text-align: center; font-size: 24px;">
-                                        Registro de respuestas para la pregunta del módulo:
+                                        Registro de respuestas para la pregunta del <?php echo $dato2['nombreModulo'];?> :
                                         </div>
                                         <div class="form-group col-md-12" style="">
                                             <h5 class="font-weight-light pregunta" style="">

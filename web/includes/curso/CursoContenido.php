@@ -24,6 +24,17 @@
       margin-top: -43em;
    }
 
+   @media only screen and (min-width:275px) and (max-width:1326px){
+      .img-nina{
+      width: 26em;
+      position: relative;
+      display: flex;
+      float: right;
+      left: 100px;
+      margin-top: -43em;
+   }
+   }
+
    @media (max-width: 767px) {
       .responsv1 {
      width: 100%;
