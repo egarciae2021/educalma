@@ -148,12 +148,12 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                         <nav class="navbar navbar-expand">
                             <ul class="navbar-nav">
                                 <li class="nav-item">
-                                    <a class="nav-link active" href="reporteUsuario.php">
+                                    <a class="nav-link active" href="reporteUsuario.php" style="color:#7c83fd;"> 
                                         por usuarios
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="reporteEmpresa.php">
+                                    <a class="nav-link" href="reporteEmpresa.php" style="color:#7c83fd;" >
                                         por empresas
                                     </a>
                                 </li>
@@ -227,7 +227,7 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
 
 
                     </div>
-                    <p style="margin-left: 20px; font-weight: bold; color:#8CC9DB;"><i
+                    <p style="margin-left: 20px; font-weight: bold; color:#000000;"><i
                             class="mdi mdi-file-document ml-4"></i>Resultados encontrados</p>
 
 

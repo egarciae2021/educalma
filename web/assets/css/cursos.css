@@ -317,7 +317,7 @@ border-radius: 10px;
 
 .container-fluid .container-card-course .row .col-12 .card {
     max-width: 320px;
-    max-height: 400px;
+    max-height: 500px;
     height: 100%;
     width: 100%;
     border-radius: 0;
@@ -352,8 +352,11 @@ border-radius: 10px;
     .card
     .container-card-image
     img {
-    min-height: 100%;
-    min-width: 100%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    overflow: hidden;
+    max-width: unset;
 }
 
 .container-fluid /* TITULO DE LAS CARD */
@@ -386,13 +389,12 @@ border-radius: 10px;
     font-family: 'Baloo Tamma 2', cursive;
     color: #515151;
     margin-bottom: 1.2rem;
-    /*texto en dos lineas*/
-    /* white-space: nowrap; */
-    /* overflow: hidden; */
-    /* text-overflow: ellipsis; */
-    /* display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    line-clamp: 2;
+    -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2; */
 }
 .container-fluid
     .container-card-course
@@ -441,10 +443,10 @@ border-radius: 10px;
 **/
 
 .card:hover{
-	box-shadow: 5px 5px 20px rgba(0,0,0,0.4);
+    box-shadow: 5px 5px 20px rgba(203, 0, 253, 0.4);
 	transform: translateY(-3%);
 }
-.card-miscursos:hover {
+.card-miscursos:hover {    
     box-shadow: 0px 0px 18px 0px #7c83fd;
 	transform: translateY(-3%);
 }

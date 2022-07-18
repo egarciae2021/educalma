@@ -51,7 +51,6 @@ require_once '../../database/databaseConection.php';
                 <!--Contenedor del curso comprado-->
                 <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3">
                     <div style="border-radius: 30px;" class="card">
-
                         <!--Contenedor de la imagen-->
                         <div style="border-radius: 30px 30px 0 0;" class="container-card-image">
                             <?php

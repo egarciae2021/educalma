@@ -124,12 +124,12 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
               <nav class="navbar navbar-expand">
                 <ul class="navbar-nav">
                   <li class="nav-item">
-                    <a class="nav-link" href="reporteUsuario.php">
+                    <a class="nav-link" href="reporteUsuario.php" style="color:#7c83fd;">
                       por usuarios
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link active" href="reporteEmpresa.php">
+                    <a class="nav-link active" href="reporteEmpresa.php" style="color:#7c83fd;" >
                       por empresas
                     </a>
                   </li>

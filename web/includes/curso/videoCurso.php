@@ -255,32 +255,6 @@
     $dato13=$q13->fetch(PDO::FETCH_ASSOC);
 ?>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!-- **************************************************************************************************** -->
 <!-- >>>>>>>>>>>>>>>>>>>>> <<<<<<<<<<<<<<<<<<< -->
 <div class="container" style="margin-top: 160px; margin-bottom: -25px;">
@@ -298,39 +272,7 @@
 </div>
 <!-- >>>>>>>>>>>>>>>>>>>>> <<<<<<<<<<<<<<<<<<< -->
 <!-- **************************************************************************************************** -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <br>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <!-- **************************************************************************************************** -->
 <!-- ANTERIOR - SIGUIENTE -->
@@ -348,12 +290,6 @@
                 $dato8 = $qy->fetch(PDO::FETCH_ASSOC);
                 ?>
                 <br>
-
-
-
-
-
-
                 <div class="opciones">
                     <!-- Aquí están los botones "Anterior" y "Siguiente" -->
                     <button style="background: #7C83FD; color: white; border-radius: 10px;" type="button" class="btn-outline-secondary" id="btnV"<?php if($nueva<=1){ echo "disabled";}?> onclick="parent.location='video.php?id=<?php echo $id; ?>&idtema=<?php echo ($nueva-1); ?>&id_modulo=<?php echo $dato['idModulo']?>&nW=<?php echo $nW?>&idCI=<?php echo $idCI?>'"> 
@@ -372,7 +308,9 @@
                     </button> 
 
                 </div>
-                
+                <style>
+                    
+                </style>
 
 
 
@@ -397,47 +335,12 @@
 <!-- ANTERIOR - SIGUIENTE -->
 <!-- **************************************************************************************************** -->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!-- **************************************************************************************************** -->
 <!-- VIDEO -->
 <div class="containervid">
 
     <div style="border: solid 4px #7C83FD; border-radius: 0 !important;" id="videoTema" class="contvid">
+    
         <?php 
               $url=$dato2['link_video'];
               function getYoutubeEmbedUrl($url){
