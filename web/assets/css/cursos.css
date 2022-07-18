@@ -367,7 +367,7 @@ border-radius: 10px;
     .container-card-title {
     text-transform: uppercase;
     color: #303030;
-    margin-top: .3rem;
+    margin-bottom: auto;
     line-height: 20px;
     font-size: 1.2rem;
     font-family: 'Baloo Tamma 2', cursive;
@@ -387,8 +387,8 @@ border-radius: 10px;
     .card
     .container-card-description {
     font-family: 'Baloo Tamma 2', cursive;
+    font-size: 1.2rem;
     color: #515151;
-    margin-bottom: 1.2rem;
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
@@ -408,8 +408,8 @@ border-radius: 10px;
 
 .container-fluid .container-card-course /* CREADO POR DE LAS CARD */
 .row .col-12 .card .container-card-title + .container-card-description {
-    font-size: .8rem;
-    flex-grow: 1;
+    font-size: 1rem;
+    margin: 22px 0 16px 0;
 }
 
 /*
@@ -500,11 +500,11 @@ border-radius: 10px;
     }
     .container-fluid .container-card-course /* CREADO POR DE LAS CARD */
     .row .col-12 .card .container-card-title + .container-card-description {
-        font-size: .7rem;
+        font-size: .9rem;
     }
     .container-fluid .container-card-course /* DESCRIPCIÓN DE LAS CARD */
     .row .col-12 .card .container-card-description {
-        font-size: .9rem;
+        font-size: 1.1rem;
     }
     .container-card-link{ /* ESTILOS DE BOTON CARD */
         font-size: 1.3rem;
@@ -524,14 +524,6 @@ border-radius: 10px;
     }
     .container-fluid .row .col-12 .card .col-7 .container-link {
         font-size: 13px;
-    }
-    .container-fluid .container-card-course /*Títulos de las Card*/
-    .row .col-12 .card .container-card-title {
-        font-size: 1rem;
-    }
-    .container-fluid .container-card-course /* DESCRIPCIÓN DE LAS CARD */
-    .row .col-12 .card .container-card-description {
-        font-size: .8rem;
     }
     .container-card-link{ /* ESTILOS DE BOTON CARD */
         font-size: 1.2rem;
@@ -569,11 +561,11 @@ border-radius: 10px;
     }
     .container-fluid .container-card-course /* CREADO POR DE LAS CARD */
     .row .col-12 .card .container-card-title + .container-card-description {
-        font-size: .8rem;
+        font-size: 1rem;
     }
     .container-fluid .container-card-course /* DESCRIPCIÓN DE LAS CARD */
     .row .col-12 .card .container-card-description {
-        font-size: 1rem;
+        font-size: 1.1rem;
     }
     .container-fluid
     .container-card-course
