@@ -16,6 +16,10 @@
     display: flex;
 }
 
+.topup{
+    margin-top: 3em;
+}
+
 div[id^='accordion'] .card .card-header span {
   color: #fff;
   font-weight: bold;
@@ -30,6 +34,9 @@ div[id^='accordion'] .card .card-header span {
   padding: 6px;
   border-radius: 10px;
   box-shadow: 4px 4px #7c83fda6;
+  height: 33em;
+  width: 80%;
+  margin-left: 1em;
 }
 
 .boton4:hover {
@@ -75,6 +82,16 @@ body {
 #nombreTemaCss:hover {
 
     background: #CCE3E5 !important; 
+}
+
+.width{
+    height: 100%;
+    width: 66%;
+}
+
+.colxl9{
+    flex: 0 0 100%;
+    max-width: 100%;
 }
 
 
@@ -142,7 +159,7 @@ body {
 
 @media (min-width: 1300px){
   .card {
-    width: 85%;
+    width: 98%;
     margin-bottom: -28px;
   }
 
@@ -150,9 +167,12 @@ body {
 
 @media (min-width: 1300px){
   .imagecuadr {
-    margin-top: 19em;
-    margin-left: -6em;
+    /* margin-top: 19em;
+    margin-left: -6em; */
     height: 33em;
+    width: 80%;
+    margin-left: 1em;
+
   }
 
 }
@@ -196,7 +216,7 @@ body {
   }
 }
 
-@media only screen and (min-width:820px) and (max-width:912px) {
+@media only screen and (min-width:820px) and (max-width:912  px) {
     .flex{
         position: relative;
         margin-left: 3em;
@@ -213,6 +233,19 @@ body {
   }
 }
 
+@media only screen and (min-width:1250px) and (max-width:1326px){
+    .width{
+        height: 100%;
+        width: 66%;
+    }
+}
+
+@media (min-width: 1200px){
+.col-xl-3 {
+    /* -ms-flex: 0 0 25%; */
+    flex: 0 0 30%;
+    max-width: 30%;
+}}
 /****************************************************************************************************/
 
 
@@ -317,7 +350,7 @@ body {
 
 
     <!-- pppp -->
-    <div class="container-course bg-light" style="min-height: 100vh;background: rgb(231,244,255);background: linear-gradient(0deg, rgba(231,244,255,1) 0%, rgba(231,244,255,1) 21%, rgba(224,199,229,1) 30%);">
+    <div class="container-course bg-light" style="min-height: 100vh;">
 
         <!-- zzzz -->
         <div class="bg-dark11">
@@ -397,364 +430,19 @@ body {
 
                 </div>
 
-
-
-                <!-- xxxxx -->
-                <div class="col-12 col-sm-12 col-md-5 col-lg-4 col-xl-3 info-course-right pt-5">
-                
-
-                    <!-- CARD///////////////////////////////// -->
-                    <div class="card imagecuadr">
-
-
-                        <div class="content-img">
-                            <?php    
-                                if($dato4['imagenDestacadaCurso']!=null){
-                            ?>
-                                    <img class="card-img-top1" src="<?php echo $dato4['imagenDestacadaCurso'] ?>" alt="Card image">
-                            <?php
-                                }else{
-                            ?>
-                                    <img class="card-img-top1"  src="./assets/images/curso_educalma.png">
-                            <?php
-                                }
-                            ?>
-                            
-                        </div>
-
-
-
-                        <!-- ///////////////////////////////// -->
-                        <div class="card-body">
-                            <h4 class="card-title font-weight-bold" style="font-size: 25px;display: flex;justify-content: center;color: #7C83FD;">
-                            <?php
-                                                                                                if ($dato4['costoCurso'] != 0) {
-                                                                                                    echo 'S/ ' . $dato4['costoCurso'];
-                                                                                                } else {
-                                                                                                    echo 'Gratis';
-                                                                                                }
-                                                                                                ?></h4>
-
-
-
-
-
-
-
-
-
-
-                        <?php 
-
-
-                            if (isset($_SESSION['Logueado']) && $_SESSION['Logueado'] === true && $_SESSION['privilegio'] == 1){
-
-                                //////// ADMINISTRADOR
-                                if ($dato4['costoCurso'] != 0) {
-                                    if(isset($_SESSION['Logueado'])){
-                                ?>
-                                    
-                                <?php
-                                    }else{
-                                        ?>
-                                        <a href="pagepay.php?id=<?php echo $dato4["idCurso"]; ?>"> 
-    
-                                        
-                                        
-                                        <?php
-                                    }
-                                } else {
-                                    if(isset($_SESSION['Logueado'])){
-                                ?>
-                                    
-                                <?php
-                                    }else{
-                                        ?>
-                                            
-                                        <?php
-                                    }
-                                }
-                                ////////
-                                ?>
-                                
-                        <?php
-
-                            }
-
-                            if (isset($_SESSION['Logueado']) && $_SESSION['Logueado'] === true && $_SESSION['privilegio'] == 2){
-
-                                //////// PROFESOR
-                                if ($dato4['costoCurso'] != 0) {
-                                    if(isset($_SESSION['Logueado'])){
-                                ?>
-                                    
-                                <?php
-                                    }else{
-                                        ?>
-                                        <a href="pagepay.php?id=<?php echo $dato4["idCurso"]; ?>"> 
-    
-                                        
-                                        
-                                        <?php
-                                    }
-                                } else {
-                                    if(isset($_SESSION['Logueado'])){
-                                ?>
-                                    
-                                <?php
-                                    }else{
-                                        ?>
-                                            
-                                        <?php
-                                    }
-                                }
-                                ////////
-                                ?>
-                                
-                        <?php
-                                
-                                
-                            }
-
-                            if (isset($_SESSION['Logueado']) && $_SESSION['Logueado'] === true && $_SESSION['privilegio'] == 3){
-
-                                //////// USUARIO NORMAL
-                                if ($dato4['costoCurso'] != 0) {
-                                    if(isset($_SESSION['Logueado'])){
-                                ?>
-                                    <a id="btnComprarAhora" href="pagepay.php?id=<?php echo $dato4["idCurso"]; ?>" class="btn btn-outline-dark">Comprar ahora</a>
-                                <?php
-                                    }else{
-                                        ?>
-                                        <a href="pagepay.php?id=<?php echo $dato4["idCurso"]; ?>"> 
-    
-                                        <a id="btnComprarAhora" onclick="msje_Redireccion()" class="btn btn-outline-dark my-3">Comprar ahora</a>
-                                        
-                                        <?php
-                                    }
-                                } else {
-                                    if(isset($_SESSION['Logueado'])){
-                                ?>
-                                    <a id="btnComprarAhora" href="includes/Cursos_crud/inscribirseGratis.php?id=<?php echo $dato4["idCurso"]; ?>" class="btn btn-outline-dark my-3">Comprar ahora</a>
-                                <?php
-                                    }else{
-                                        ?>
-                                            <a id="btnComprarAhora" onclick="msje_Redireccion()" class="btn btn-outline-dark my-3">Comprar ahora</a>
-                                        <?php
-                                    }
-                                }
-                                ////////
-                                ?>
-                                
-                        <?php
-
-                            }
-
-                            if (isset($_SESSION['Logueado']) && $_SESSION['Logueado'] === true && $_SESSION['privilegio'] == 4){
-
-                                //////// EMPRESA
-                                if ($dato4['costoCurso'] != 0) {
-                                    if(isset($_SESSION['Logueado'])){
-                                ?>
-                                    <a id="btnComprarAhora" href="pagepay.php?id=<?php echo $dato4["idCurso"]; ?>" class="btn btn-outline-dark my-3">Comprar ahora</a>
-                                <?php
-                                    }else{
-                                        ?>
-                                        <a href="pagepay.php?id=<?php echo $dato4["idCurso"]; ?>"> 
-    
-                                        <a id="btnComprarAhora" onclick="msje_Redireccion()" class="btn btn-outline-dark my-3">Comprar ahora</a>
-                                        
-                                        <?php
-                                    }
-                                } else {
-                                    if(isset($_SESSION['Logueado'])){
-                                ?>
-                                    <a id="btnComprarAhora" href="includes/Cursos_crud/inscribirseGratis.php?id=<?php echo $dato4["idCurso"]; ?>" class="btn btn-outline-dark my-3">Comprar ahora</a>
-                                <?php
-                                    }else{
-                                        ?>
-                                            <a id="btnComprarAhora" onclick="msje_Redireccion()" class="btn btn-outline-dark my-3">Comprar ahora</a>
-                                        <?php
-                                    }
-                                }
-                                ////////
-                                ?>
-                                
-                        <?php
-                                
-                                
-                            }
-
-                            if (isset($_SESSION['Logueado']) && $_SESSION['Logueado'] === true && $_SESSION['privilegio'] == 5){
-
-                                //////// USUARIO EMPRESA
-                                if ($dato4['costoCurso'] != 0) {
-                                    if(isset($_SESSION['Logueado'])){
-                                ?>
-                                    <a id="btnComprarAhora" href="pagepay.php?id=<?php echo $dato4["idCurso"]; ?>" class="btn btn-outline-dark my-3">Comprar ahora</a>
-                                <?php
-                                    }else{
-                                        ?>
-                                        <a href="pagepay.php?id=<?php echo $dato4["idCurso"]; ?>"> 
-    
-                                        <a id="btnComprarAhora" onclick="msje_Redireccion()" class="btn btn-outline-dark my-3">Comprar ahora</a>
-                                        
-                                        <?php
-                                    }
-                                } else {
-                                    if(isset($_SESSION['Logueado'])){
-                                ?>
-                                    <a id="btnComprarAhora" href="includes/Cursos_crud/inscribirseGratis.php?id=<?php echo $dato4["idCurso"]; ?>" class="btn btn-outline-dark my-3">Comprar ahora</a>
-                                <?php
-                                    }else{
-                                        ?>
-                                            <a id="btnComprarAhora" onclick="msje_Redireccion()" class="btn btn-outline-dark my-3">Comprar ahora</a>
-                                        <?php
-                                    }
-                                }
-                                ////////
-                                ?>
-                                
-                        <?php
-                                
-                                
-                            }
-
-                            if (isset($_SESSION['Logueado']) && $_SESSION['Logueado'] === true && $_SESSION['privilegio'] == 6){
-
-                                //////// SUPER ADMINISTRADOR
-                                if ($dato4['costoCurso'] != 0) {
-                                    if(isset($_SESSION['Logueado'])){
-                                ?>
-                                    
-                                <?php
-                                    }else{
-                                        ?>
-                                        <a href="pagepay.php?id=<?php echo $dato4["idCurso"]; ?>"> 
-    
-                                        
-                                        
-                                        <?php
-                                    }
-                                } else {
-                                    if(isset($_SESSION['Logueado'])){
-                                ?>
-                                    
-                                <?php
-                                    }else{
-                                        ?>
-                                            
-                                        <?php
-                                    }
-                                }
-                                ////////
-                                ?>
-                                
-                        <?php
-                                
-                                
-                            }
-                    
-                        ?>
-
-
-                            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                            <p class="font-weight-bold mb-0 my-3">Este curso incluye:</p>
-
-
-                            <div class="my-1" style="font-size: 13px;">
-
-                                <div>
-                                    <i class="far fa-file text-center" style="width: 1.5rem;"></i>
-                                    <span class="ml-3"><?php echo $modulos; ?> Módulos con sus respectivos</span>
-                                </div>
-
-                                <div style="padding-left: 28px;">
-                                    
-                                    <span class="ml-3">temas y cuestionarios</span>
-                                </div>
-
-                                <!--
-                                <div>
-                                    <i class="far fa-folder text-center" style="width: 1.5rem;"></i>
-                                    <span class="ml-3"><?php echo $temas; ?> Temas</span>
-                                </div>
-                                -->
-
-                                <!--
-                                <div>
-                                    <i class="far fa-list-alt text-center" style="width: 1.5rem;"></i>
-                                    <span class="ml-3"><?php echo $cuestionarios; ?> Cuestionarios</span>
-                                </div>
-                                -->
-
-                                <div>
-                                    <i class="fas fa-graduation-cap text-center" style="width: 1.5rem;"></i>
-                                    <span class="ml-3">La nota mínima aprobatoria<span>
-                                </div>
-
-                                <div style="padding-left: 28px;">
-                                    
-                                    <span class="ml-3">es 14<?php //echo $minimo_respuestas_para_aprobar; ?></span>
-                                </div>
-
-                                <div>
-                                    <i class="fas fa-list-ol text-center" style="width: 1.5rem;"></i>
-                                    <span class="ml-3">Cantidad de preguntas: <?php echo $preguntas; ?></span>
-                                </div>
-
-
-                                <div>
-                                    <i class="fas fa-trophy text-center" style="width: 1.5rem;"></i>
-                                    <span class="ml-3">Certificado de Finalización</span>
-                                </div>
-
-                            </div>
-
-                        </div>
-                        <!-- ///////////////////////////////// -->
-
-                    </div>
-                    <!-- CARD///////////////////////////////// -->
-
-                </div>
-                <!-- xxxxx -->
-
             </div>
             <!-- yyyy -->
 
         </div>
         <!-- zzzz -->
-
+        <div class="flex">                                         
         <!-- mmmm -->
-        <div class="bg-light" style="height: 100%;">
-            <div class="row py-5" style="height: 100%;background: rgb(224,199,229);background: linear-gradient(0deg, rgba(224,199,229,1) -2%, rgba(255,255,255,1) 77%);">
-                <div class="col-12 col-sm-12 col-md-5 col-lg-4 col-xl-3 info-course-left" style="border: 1px solid red;">
+        <div class="bg-light width" style="height: 100%;">
+            <div class="row py-5" style="height: 100%;">
+                <!-- <div class="col-12 col-sm-12 col-md-5 col-lg-4 col-xl-3 info-course-left" style="border: 1px solid red;">
                     <h4>Contenido del curso</h4>
-                </div>
-                <div class="col-12 col-sm-12 col-md-7 col-lg-8 col-xl-9 text-dark" style="padding: 55px;margin-top: -65px;margin-bottom: -75px;">
+                </div> -->
+                <div class="col-12 col-sm-12 col-md-7 col-lg-8 colxl9 text-dark" style="padding: 55px;margin-top: -65px;margin-bottom: -75px; width: 100%;">
                     <h4 class="font-weight-bold" style="color: #7C83FD;">Contenido del curso</h4>
                     <div class="d-flex">
                         <div class="mr-auto p-2" style="font-weight: 600;">
@@ -828,6 +516,350 @@ body {
             </div>
         </div>
         <!-- mmmm -->
+
+         <!-- xxxxx -->
+         <div class="col-12 col-sm-12 col-md-5 col-lg-4 pt-5">
+                
+
+                <!-- CARD///////////////////////////////// -->
+                <div class="card imagecuadr">
+
+
+                    <div class="content-img">
+                        <?php    
+                            if($dato4['imagenDestacadaCurso']!=null){
+                        ?>
+                                <img class="card-img-top1" src="<?php echo $dato4['imagenDestacadaCurso'] ?>" alt="Card image">
+                        <?php
+                            }else{
+                        ?>
+                                <img class="card-img-top1"  src="./assets/images/curso_educalma.png">
+                        <?php
+                            }
+                        ?>
+                        
+                    </div>
+
+
+
+                    <!-- ///////////////////////////////// -->
+                    <div class="card-body">
+                        <h4 class="card-title font-weight-bold" style="font-size: 25px;display: flex;justify-content: center;color: #7C83FD;">
+                        <?php
+                                                                                            if ($dato4['costoCurso'] != 0) {
+                                                                                                echo 'S/ ' . $dato4['costoCurso'];
+                                                                                            } else {
+                                                                                                echo 'Gratis';
+                                                                                            }
+                                                                                            ?></h4>
+
+
+
+
+
+
+
+
+
+
+                    <?php 
+
+
+                        if (isset($_SESSION['Logueado']) && $_SESSION['Logueado'] === true && $_SESSION['privilegio'] == 1){
+
+                            //////// ADMINISTRADOR
+                            if ($dato4['costoCurso'] != 0) {
+                                if(isset($_SESSION['Logueado'])){
+                            ?>
+                                
+                            <?php
+                                }else{
+                                    ?>
+                                    <a href="pagepay.php?id=<?php echo $dato4["idCurso"]; ?>"> 
+
+                                    
+                                    
+                                    <?php
+                                }
+                            } else {
+                                if(isset($_SESSION['Logueado'])){
+                            ?>
+                                
+                            <?php
+                                }else{
+                                    ?>
+                                        
+                                    <?php
+                                }
+                            }
+                            ////////
+                            ?>
+                            
+                    <?php
+
+                        }
+
+                        if (isset($_SESSION['Logueado']) && $_SESSION['Logueado'] === true && $_SESSION['privilegio'] == 2){
+
+                            //////// PROFESOR
+                            if ($dato4['costoCurso'] != 0) {
+                                if(isset($_SESSION['Logueado'])){
+                            ?>
+                                
+                            <?php
+                                }else{
+                                    ?>
+                                    <a href="pagepay.php?id=<?php echo $dato4["idCurso"]; ?>"> 
+
+                                    
+                                    
+                                    <?php
+                                }
+                            } else {
+                                if(isset($_SESSION['Logueado'])){
+                            ?>
+                                
+                            <?php
+                                }else{
+                                    ?>
+                                        
+                                    <?php
+                                }
+                            }
+                            ////////
+                            ?>
+                            
+                    <?php
+                            
+                            
+                        }
+
+                        if (isset($_SESSION['Logueado']) && $_SESSION['Logueado'] === true && $_SESSION['privilegio'] == 3){
+
+                            //////// USUARIO NORMAL
+                            if ($dato4['costoCurso'] != 0) {
+                                if(isset($_SESSION['Logueado'])){
+                            ?>
+                                <a id="btnComprarAhora" href="pagepay.php?id=<?php echo $dato4["idCurso"]; ?>" class="btn btn-outline-dark">Comprar ahora</a>
+                            <?php
+                                }else{
+                                    ?>
+                                    <a href="pagepay.php?id=<?php echo $dato4["idCurso"]; ?>"> 
+
+                                    <a id="btnComprarAhora" onclick="msje_Redireccion()" class="btn btn-outline-dark my-3">Comprar ahora</a>
+                                    
+                                    <?php
+                                }
+                            } else {
+                                if(isset($_SESSION['Logueado'])){
+                            ?>
+                                <a id="btnComprarAhora" href="includes/Cursos_crud/inscribirseGratis.php?id=<?php echo $dato4["idCurso"]; ?>" class="btn btn-outline-dark my-3">Comprar ahora</a>
+                            <?php
+                                }else{
+                                    ?>
+                                        <a id="btnComprarAhora" onclick="msje_Redireccion()" class="btn btn-outline-dark my-3">Comprar ahora</a>
+                                    <?php
+                                }
+                            }
+                            ////////
+                            ?>
+                            
+                    <?php
+
+                        }
+
+                        if (isset($_SESSION['Logueado']) && $_SESSION['Logueado'] === true && $_SESSION['privilegio'] == 4){
+
+                            //////// EMPRESA
+                            if ($dato4['costoCurso'] != 0) {
+                                if(isset($_SESSION['Logueado'])){
+                            ?>
+                                <a id="btnComprarAhora" href="pagepay.php?id=<?php echo $dato4["idCurso"]; ?>" class="btn btn-outline-dark my-3">Comprar ahora</a>
+                            <?php
+                                }else{
+                                    ?>
+                                    <a href="pagepay.php?id=<?php echo $dato4["idCurso"]; ?>"> 
+
+                                    <a id="btnComprarAhora" onclick="msje_Redireccion()" class="btn btn-outline-dark my-3">Comprar ahora</a>
+                                    
+                                    <?php
+                                }
+                            } else {
+                                if(isset($_SESSION['Logueado'])){
+                            ?>
+                                <a id="btnComprarAhora" href="includes/Cursos_crud/inscribirseGratis.php?id=<?php echo $dato4["idCurso"]; ?>" class="btn btn-outline-dark my-3">Comprar ahora</a>
+                            <?php
+                                }else{
+                                    ?>
+                                        <a id="btnComprarAhora" onclick="msje_Redireccion()" class="btn btn-outline-dark my-3">Comprar ahora</a>
+                                    <?php
+                                }
+                            }
+                            ////////
+                            ?>
+                            
+                    <?php
+                            
+                            
+                        }
+
+                        if (isset($_SESSION['Logueado']) && $_SESSION['Logueado'] === true && $_SESSION['privilegio'] == 5){
+
+                            //////// USUARIO EMPRESA
+                            if ($dato4['costoCurso'] != 0) {
+                                if(isset($_SESSION['Logueado'])){
+                            ?>
+                                <a id="btnComprarAhora" href="pagepay.php?id=<?php echo $dato4["idCurso"]; ?>" class="btn btn-outline-dark my-3">Comprar ahora</a>
+                            <?php
+                                }else{
+                                    ?>
+                                    <a href="pagepay.php?id=<?php echo $dato4["idCurso"]; ?>"> 
+
+                                    <a id="btnComprarAhora" onclick="msje_Redireccion()" class="btn btn-outline-dark my-3">Comprar ahora</a>
+                                    
+                                    <?php
+                                }
+                            } else {
+                                if(isset($_SESSION['Logueado'])){
+                            ?>
+                                <a id="btnComprarAhora" href="includes/Cursos_crud/inscribirseGratis.php?id=<?php echo $dato4["idCurso"]; ?>" class="btn btn-outline-dark my-3">Comprar ahora</a>
+                            <?php
+                                }else{
+                                    ?>
+                                        <a id="btnComprarAhora" onclick="msje_Redireccion()" class="btn btn-outline-dark my-3">Comprar ahora</a>
+                                    <?php
+                                }
+                            }
+                            ////////
+                            ?>
+                            
+                    <?php
+                            
+                            
+                        }
+
+                        if (isset($_SESSION['Logueado']) && $_SESSION['Logueado'] === true && $_SESSION['privilegio'] == 6){
+
+                            //////// SUPER ADMINISTRADOR
+                            if ($dato4['costoCurso'] != 0) {
+                                if(isset($_SESSION['Logueado'])){
+                            ?>
+                                
+                            <?php
+                                }else{
+                                    ?>
+                                    <a href="pagepay.php?id=<?php echo $dato4["idCurso"]; ?>"> 
+
+                                    
+                                    
+                                    <?php
+                                }
+                            } else {
+                                if(isset($_SESSION['Logueado'])){
+                            ?>
+                                
+                            <?php
+                                }else{
+                                    ?>
+                                        
+                                    <?php
+                                }
+                            }
+                            ////////
+                            ?>
+                            
+                    <?php
+                            
+                            
+                        }
+                
+                    ?>
+
+
+                        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <p class="font-weight-bold mb-0 my-3">Este curso incluye:</p>
+
+
+                        <div class="my-1" style="font-size: 13px;">
+
+                            <div>
+                                <i class="far fa-file text-center" style="width: 1.5rem;"></i>
+                                <span class="ml-3"><?php echo $modulos; ?> Módulos con sus respectivos</span>
+                            </div>
+
+                            <div style="padding-left: 28px;">
+                                
+                                <span class="ml-3">temas y cuestionarios</span>
+                            </div>
+
+                            <!--
+                            <div>
+                                <i class="far fa-folder text-center" style="width: 1.5rem;"></i>
+                                <span class="ml-3"><?php echo $temas; ?> Temas</span>
+                            </div>
+                            -->
+
+                            <!--
+                            <div>
+                                <i class="far fa-list-alt text-center" style="width: 1.5rem;"></i>
+                                <span class="ml-3"><?php echo $cuestionarios; ?> Cuestionarios</span>
+                            </div>
+                            -->
+
+                            <div>
+                                <i class="fas fa-graduation-cap text-center" style="width: 1.5rem;"></i>
+                                <span class="ml-3">La nota mínima aprobatoria<span>
+                            </div>
+
+                            <div style="padding-left: 28px;">
+                                
+                                <span class="ml-3">es 14<?php //echo $minimo_respuestas_para_aprobar; ?></span>
+                            </div>
+
+                            <div>
+                                <i class="fas fa-list-ol text-center" style="width: 1.5rem;"></i>
+                                <span class="ml-3">Cantidad de preguntas: <?php echo $preguntas; ?></span>
+                            </div>
+
+
+                            <div>
+                                <i class="fas fa-trophy text-center" style="width: 1.5rem;"></i>
+                                <span class="ml-3">Certificado de Finalización</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <!-- ///////////////////////////////// -->
+
+                </div>
+                <!-- CARD///////////////////////////////// -->
+
+            </div>
+            <!-- xxxxx -->
+        </div>
     
 
     <?php
@@ -851,7 +883,7 @@ body {
 
      <!-- Contenedor Principal -->
     <!-- Comentar Foro para que no se muestre y quitado de simbolos < > en los inicios de cada  ?php -->
- <div class="flex">
+ <div class="flex topup">
     <?php
     if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
     ?>  
