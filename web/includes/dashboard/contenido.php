@@ -20,6 +20,9 @@ ob_start();
 
 ?>
 <style>
+    body{
+	background-color: #f7f7f7;
+    }
     @media (max-width:420px){
 	.modalResponsive{
 	    width:80%    
@@ -27,12 +30,12 @@ ob_start();
     }
 </style>
 <main>
-    <section class="about" id="about">
-        <div class="image col" >
-            <img style="position: relative; top: 80px;" src="./assets/images/tu_tablero.jpg" alt="">
+    <section class="about" id="about" style="width:100%;height:100%;margin:0;padding:0;margin-left:2%">
+        <div class="image col"  >
+            <img style="position: relative; top: 45px;" src="./assets/images/tu_tablero.jpg" alt="">
         </div>
 
-        <div class="content col" style="position: relative; top: 80px;">
+        <div class="content col" style="position: relative; top: 35px;">
 	    <center>
             <span style="text-align:center">Tu tablero</span>
 	    </center>
@@ -54,7 +57,7 @@ ob_start();
                 </a>
 
         </div>
-
+    </section>
 	<!-- modal -->
     <div class="modal fade" id="cursosModal"  role="dialog" >
 	<div class="modal-dialog">
@@ -151,7 +154,6 @@ ob_start();
 	</div>
     </div>
     <!-- fin Modal2 -->
-    </section>
 </main>
 
 
