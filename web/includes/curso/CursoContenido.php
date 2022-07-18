@@ -18,26 +18,36 @@
    .img-nina{
       width: 26em;
       position: relative;
+      margin-top: 4em;
+   }
+
+   .flex{
       display: flex;
-      float: right;
-      left: 100px;
-      margin-top: -43em;
+      position: relative;
+      margin-left: 21em;
    }
 
    @media only screen and (min-width:275px) and (max-width:1326px){
       .img-nina{
-      width: 26em;
-      position: relative;
-      display: flex;
-      float: right;
-      left: 100px;
-      margin-top: -43em;
+         width: 26em;
+         position: relative;
+         margin-top: 4em;
+         
+         /* 
+         margin-top: -21em;
+         position: relative;
+         float: right;
+         left: -7em;
+         margin-top: -20em; */
    }
    }
 
    @media (max-width: 767px) {
+      .flex{
+         display: initial;
+   }   
       .responsv1 {
-     width: 100%;
+       width: 100%;
   }}
 
   @media (max-width: 360px) {
@@ -111,12 +121,24 @@
       .img-nina {
       width: 19em;
       position: relative;
-      left: 35px;
+      left: 44px;
       margin-top: 3em;
       float: unset;
   }
 
 }
+
+@media (max-width: 360px) {
+      .img-nina {
+      width: 19em;
+      position: relative;
+      left: 22px;
+      margin-top: 3em;
+      float: unset;
+  }
+
+}
+
 
 @media only screen and (min-width:820px) and (max-width:1180px) {
       .container-fluid .container-detalle-informacion .col-8 .container-info-course-detalle{
@@ -150,6 +172,9 @@
          display: flex;
          left: 236px;
       }
+      .flex{
+         display: initial;
+   } 
 } 
 
 @media (max-width: 360px) {
@@ -566,6 +591,7 @@
             </div>
          </div>
          <!--foro educalma-->
+      <div class="flex">
          <div class="largoresponsv" style="width:100%;">
             <?php
                $idCurso = $id;
@@ -586,6 +612,7 @@
             <?php
                if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                ?>
+
             <!-- COMIENZOOOOOOOOOOOOOO - Contenedor de todo. El que tiene esquinas curveadas. -->
             <div id="contenedorTodo" class="comments-container"  style="border-radius: 40px;">
                <!-- TITULO FORO EDUCALMA -->
@@ -892,9 +919,7 @@
                </ul>
                <!-- LISTA DE COMENTARIOS -->
             </div>
-            <div class="" style="" >
-               <img src="assets/images/ilu-nina.png" class="img-nina"alt="" >
-            </div>
+            
             <!-- COMIENZOOOOOOOOOOOOOO - Contenedor de todo. El que tiene esquinas curveadas.-->
             <!------------------------------------
                modal para ingresar mensaje
@@ -1099,6 +1124,10 @@
                }
                ?>
          </div>
+         <div class="col-lg-5">
+               <img src="assets/images/ilu-nina.png" class="img-nina"alt="" >
+         </div>
+   <div>  
       </div>
    </div>
    <!-- Foro -->
