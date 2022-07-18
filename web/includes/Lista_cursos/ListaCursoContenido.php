@@ -5,23 +5,27 @@
     <style>
 
         .txtTrailer {
-            padding: 100px 130px 100px 130px; 
+            /* padding: 100px 130px 100px 130px; */
+            width: 100%;
+            height: 100%;
             position: absolute; 
-            background: rgba(0,0,0,0.6);  
-            font-size: 16px; 
+            background: rgba(0,0,0,0.6);
+            font-size: 1rem; 
             font-weight: bold;
-            opacity: 0; 
+            opacity: 0;
+            display: flex;
+            transition: all .2s ease;
         }
 
         .txtTrailer:hover {
             box-shadow: 5px 5px 20px rgba(185, 45, 225, 0.4);
             color: #fff;
-            background: #8886f3;
-            
+            opacity: 1;
         }
 
         label {
             color: white;
+            margin: auto;
         }
 
     </style>
@@ -125,12 +129,12 @@
                                         ?>
                                             <!--Imagen-->
                                             <img class="imgCurso" style="cursor: pointer;" src="<?php echo $dato['imagenDestacadaCurso']; ?>" alt="">
-                                            <a class="txtTrailer" data-toggle="modal" data-target=".bd-example-modal-lg<?php echo $dato['idCurso'];?>"><label>Ver Trailer</label></a>
+                                            <a class="txtTrailer text-center" data-toggle="modal" data-target=".bd-example-modal-lg<?php echo $dato['idCurso'];?>"><label>Ver<br>Trailer</label></a>
                                         <?php
                                         } else {
                                         ?>
                                             <img class="imgCurso" style="cursor: pointer;" src="./assets/images/curso_educalma.png">
-                                            <a class="txtTrailer" data-toggle="modal" data-target=".bd-example-modal-lg<?php echo $dato['idCurso'];?>"><label>Ver Trailer</label></a>
+                                            <a class="txtTrailer text-center" data-toggle="modal" data-target=".bd-example-modal-lg<?php echo $dato['idCurso'];?>"><label>Ver<br>Trailer</label></a>
                                         <?php
                                         }
                                         ?>
@@ -203,7 +207,7 @@
                                         
                                                 <?php if($dato2['id_cursoInscrito'] == NULL){ ?>
                                 
-                                                    <p class="font-weight-bold" style="color: #303030; text-transform: uppercase;">
+                                                    <p class="font-weight-bold mb-0" style="color: #303030; text-transform: uppercase;">
                                                         <?php
                                                             if($dato['costoCurso']!=0 && $dato['costoCurso'] != "Gratis"){
                                                                 echo 'S/ ' . $dato['costoCurso'];
@@ -215,7 +219,7 @@
                                 
                                                 <?php }else{ ?>
                                 
-                                                    <p class="font-weight-bold" style="color: #303030; text-transform: uppercase;">
+                                                    <p class="font-weight-bold mb-0" style="color: #303030; text-transform: uppercase;">
                                                         <?php
                                                             if($dato['costoCurso']!=0 && $dato['costoCurso'] != "Gratis"){
                                                                 echo 'S/ ' . $dato['costoCurso'],"","<span style='position: relative; left: 100px; color: #63F70E;'>Comprado</span>";
@@ -237,21 +241,21 @@
                                                                 if(isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)){
                                                                 ?>
                                                                     <!--Link "Leer Más"-->
-                                                                    <div class="container-card-link">
+                                                                    <!-- <div class="container-card-link">
                                                                         <a href="<?php echo $paginaRed ?>.php?id=<?php echo $dato['idCurso']; ?><?php if(!empty($dato2)){?>&idCI=<?php echo $dato2['id_cursoInscrito']; }?>">
                                                                             Leer más
                                                                         </a>
-                                                                    </div>
+                                                                    </div> -->
                                                                 <?php
                                                                 }else{
                                                                 ?>
                                                                 
                                                                     <!--Link "Leer Más"-->
-                                                                    <div class="container-card-link">
+                                                                    <!-- <div class="container-card-link">
                                                                         <a href="iniciosesion.php">
                                                                             Leer más
                                                                         </a>
-                                                                    </div>
+                                                                    </div> -->
                                                                 <?php
                                                                 }
                                                                 ?>
@@ -264,21 +268,21 @@
                                                                 if(isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)){
                                                                 ?>
                                                                     <!--Link "Leer Más"-->
-                                                                    <div class="container-card-link">
+                                                                    <!-- <div class="container-card-link">
                                                                         <a href="<?php echo $paginaRed ?>.php?id=<?php echo $dato['idCurso']; ?><?php if(!empty($dato2)){?>&idCI=<?php echo $dato2['id_cursoInscrito']; }?>">
                                                                             Obtener Gratis
                                                                         </a>
-                                                                    </div>
+                                                                    </div> -->
                                                                 <?php
                                                                 }else{
                                                                 ?>
                                                                 
                                                                     <!--Link "Leer Más"-->
-                                                                    <div class="container-card-link">
+                                                                    <!-- <div class="container-card-link">
                                                                         <a href="iniciosesion.php">
                                                                             Obtener Gratis
                                                                         </a>
-                                                                    </div>
+                                                                    </div> -->
                                                                 <?php
                                                                 }
                                                                 ?>
@@ -514,13 +518,13 @@
                             
                                 <!--Imagen elegida-->
                                 <img style="cursor: pointer;" class="imgCurso" src="<?php echo $dato['imagenDestacadaCurso']; ?>" alt="">
-                                <a class="txtTrailer" data-toggle="modal" data-target=".bd-example-modal-lg<?php echo $dato['idCurso'];?>"><label>Ver Trailer</label></a>
+                                <a class="txtTrailer text-center" data-toggle="modal" data-target=".bd-example-modal-lg<?php echo $dato['idCurso'];?>"><label>Ver<br>Trailer</label></a>
                             <?php
                             } else {
                             ?>
                                 <!--Imagen por default-->
                                 <img style="cursor: pointer;" class="imgCurso" src="./assets/images/curso_educalma.png">
-                                <a class="txtTrailer" data-toggle="modal" data-target=".bd-example-modal-lg<?php echo $dato['idCurso'];?>"><label>Ver Trailer</label></a>
+                                <a class="txtTrailer text-center" data-toggle="modal" data-target=".bd-example-modal-lg<?php echo $dato['idCurso'];?>"><label>Ver<br>Trailer</label></a>
                             <?php
                             }
                             ?>
