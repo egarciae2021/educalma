@@ -12,6 +12,10 @@
 
 <style>
 
+.flex{
+    display: flex;
+}
+
 div[id^='accordion'] .card .card-header span {
   color: #fff;
   font-weight: bold;
@@ -37,13 +41,11 @@ div[id^='accordion'] .card .card-header span {
 }
 
 .img-nina{
-      width: 26em;
-      position: relative;
-      display: flex;
-      float: right;
-      left: 100px;
-      margin-top: -43em;
-   }
+    width: 26em;
+    position: relative;
+    left: -3em;
+    margin-top: 1em;
+}
 
 body {
 
@@ -792,12 +794,12 @@ body {
 
      <!-- Contenedor Principal -->
     <!-- Comentar Foro para que no se muestre y quitado de simbolos < > en los inicios de cada  ?php -->
-    
+ <div class="flex">
     <?php
     if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
     ?>  
 
-        <div class="comments-container responsv1" style="border-radius: 40px; margin-top: auto;" id="foro-curso">
+      <div class="comments-container responsv1" style="border-radius: 40px; margin-top: -1em;" id="foro-curso">
 
 
         <h1 style="font-size: 34px;">Foro Educalma</h1>
@@ -1063,11 +1065,12 @@ body {
                 ?>
             </li>
         </ul>
-        <div class="" style="" >
+        
+    </div>   
+    <div class="" style="" >
             <img src="assets/images/ilu-nina.png" class="img-nina"alt="" >
-            </div>
-    </div>              
-
+    </div>           
+    </div>  
 
 
     <!------------------------------------
