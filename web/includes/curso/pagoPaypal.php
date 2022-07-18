@@ -1,13 +1,18 @@
 <html lang="en">
 <?php
 require_once 'database/databaseConection.php';
-require 'vendor/autoload.php';
+require  'vendor/autoload.php';
 
-$id = $_GET['id'];
+$id = $_GET['id']; 
+
+// Agrega credenciales
+MercadoPago\SDK::setAccessToken('APP_USR-361254289137109-071003-69685b1c8975d58c29da92becb412463-1157895713');
  
-MercadoPago\SDK::setAccessToken('APP_USR-1923618636570539-071014-5632864634d560a172adbfd37f3d8c8e-1157900136');
+// Crea un objeto de preferencia
 $preference = new MercadoPago\Preference();
-
+ 
+ 
+  
 ?>
 
 <head>
@@ -35,58 +40,65 @@ $preference = new MercadoPago\Preference();
 <body>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="assets/js/plugins/sweetalert2.all.min.js"></script> -->
-   <script src="assets/js/card-validator.js"></script>
+    <script src="assets/js/plugins/sweetalert2.all.min.js"></script>
+    <!-- <script src="assets/js/card-validator.js"></script> -->
 
     <?php
-ob_start();
-@session_start();
-if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true))
-{
-    $id = $_GET['id'];
-    $_SESSION['cursoVisa'] = $id;
-    $pdo = Database::connect();
-    $sql = "SELECT * FROM cursos WHERE idCurso='$id'";
-    $q = $pdo->prepare($sql);
-    $q->execute(array());
-    $dato = $q->fetch(PDO::FETCH_ASSOC);
+        ob_start();
+        @session_start();
+        if(isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)){
+            $id = $_GET['id'];
+            $_SESSION['cursoVisa']=$id;
+            $pdo = Database::connect();
+            $sql = "SELECT * FROM cursos WHERE idCurso='$id'";
+            $q = $pdo->prepare($sql);
+            $q->execute(array());
+            $dato = $q->fetch(PDO::FETCH_ASSOC);
+            
 
-    $idUserr = $_SESSION['codUsuario'];
-    $veriS = "SELECT * FROM cursoinscrito WHERE curso_id = $id AND usuario_id='$idUserr'";
-    $qS = $pdo->prepare($veriS);
-    $qS->execute(array());
-    $datoS = $qS->fetch(PDO::FETCH_ASSOC);
-    Database::disconnect();
+            $idUserr = $_SESSION['codUsuario'];
+            $veriS="SELECT * FROM cursoinscrito WHERE curso_id = $id AND usuario_id='$idUserr'";
+            $qS = $pdo->prepare($veriS);
+            $qS->execute(array());
+            $datoS=$qS->fetch(PDO::FETCH_ASSOC);
+            Database::disconnect();
 
-    // Aqui creamos la referencia de mercado pago
-    $item = new MercadoPago\Item();
-    $item->title = $dato['nombreCurso'];
-    $item->quantity = 1;
-    $item->unit_price = $dato['costoCurso'];
-    $item->currency_id = "PEN";
-    $item->auto_return = "approved";
 
-    $preference->items = array(
-        $item
-    );
 
-    $preference->back_urls = array(
-        "success" => "https://apiflutter.azurewebsites.net/mercadopago/lectura.php",
-        "failure" => "https://youtube.com",
-        "pending" => "https://Facebook.com"
-    );
-    $preference->auto_return = "approved";
+// Aqui creamos la referencia de mercado pago
+            $item = new MercadoPago\Item();
+            $item->title = $dato['nombreCurso'];
+            $item->quantity = 1;
+            $item->unit_price = $dato['costoCurso'];
+            $item->currency_id="PEN";
+            $item-> auto_return = "approved" ;
+             
+            $preference->items = array($item);
+             
+            $preference->back_urls = array(
+                "success" => "https://apiflutter.azurewebsites.net/mercadopago/lectura.php",
+                "failure" => "https://youtube.com", 
+                "pending" => "https://Facebook.com"
+            );
+            $preference->auto_return = "approved"; 
+             
+            $preference->save();
+            
+            $response = array(
+                'id' => $preference->id,
+            ); 
+            echo json_encode($response);
 
-    $preference->save();
 
-    $response = array(
-        'id' => $preference->id,
-    );
-    echo json_encode($response);
 
-    if (empty($datoS['id_cursoInscrito']))
-    {
-?>
+
+
+
+
+
+
+            if (empty($datoS['id_cursoInscrito'])){        
+    ?>
 
     <header style="background-color: #ffffff77;">
         <div class="container-header navbar-fixed-top" style="max-width: 95rem;">
@@ -122,7 +134,7 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true))
             </div>
         </div>
         <div class="row">
-            col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8
+            <!-- col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8 -->
             <div class="col-12 col-sm-12 col-md-7 col-lg-8 col-xl-8 mb-0">
                 <form action="" style="height: 100%;">
                     <div class="container-pay px-4" style="background-color: white;height: 100%;">
@@ -142,7 +154,7 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true))
                             </div>
                         </div>
                         <div id="accordion">
-                            <div class="card mb-3 aqui-estara-la-tarjeta">
+                            <div class="card mb-3">
 
                                 <!-- -->
                                 <a class="card-header" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -157,20 +169,20 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true))
                                         <div>
                                             
                                             <!-- Aqui abajo estaba el anterior buton para pago -->
-                                            <button data-open="modal1" id="cardBtn" class="btn btn-primary btn-lg btn-block" type="button">Pagar con tarjeta de credito o debito <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-credit-card" viewBox="0 -2 16 16" style="width: 23; height: 23; @media only screen and (max-width: 768px){width: 23; height: 23;}"><path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v1h14V4a1 1 0 0 0-1-1H2zm13 4H1v5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V7z"/><path d="M2 10a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-1z"/></svg></button> -->
+                                            <!-- <button data-open="modal1" id="cardBtn" class="btn btn-primary btn-lg btn-block" type="button">Pagar con tarjeta de credito o debito <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-credit-card" viewBox="0 -2 16 16" style="width: 23; height: 23; @media only screen and (max-width: 768px){width: 23; height: 23;}"><path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v1h14V4a1 1 0 0 0-1-1H2zm13 4H1v5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V7z"/><path d="M2 10a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-1z"/></svg></button> -->
                                             <!-- Aqui esta el div donde estara el nuevo boton -->
-                                         <div class="checkout-btn "> </div>
+                                            <div class="checkout-btn "> </div>
                                       
                                             <script>
-                                                
+                                                // Agrega credenciales de SDK
                                                 const mp = new MercadoPago("APP_USR-151e9e9b-62d0-439d-8f66-e4d1239f2c9e", {
                                                     locale: "es-PE",
                                                 });
 
-                                                
+                                                // Inicializa el checkout
                                                 mp.checkout({
                                                     preference: {
-                                                    id: '<?php echo $preference->id; ?>'
+                                                    id: '<?php echo $preference->id;?>'
                                                     },
                                                     // autoOpen: true,
                                                     render: {
@@ -178,7 +190,7 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true))
                                                     label: "Pagar con tarjeta de credito o debito ", // Cambia el texto del botón de pago (opcional)
                                                     },
                                                 });
-                                            </script> -->
+                                            </script>
 
 
                                       
@@ -215,8 +227,8 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true))
                         <h4 class="text-center my-4">Detalles del pedido</h4>
                         <!-- <p class="m-0">Curso:</p> -->
                         <div class="d-flex flex-column mb-5">
-                            <span><span>Nombre del curso: </span> <?php echo $dato['nombreCurso']; ?></span>
-                            <span><span>Descripción del curso: <br></span> <?php echo $dato['descripcionCurso']; ?></span>
+                            <span><span>Nombre del curso: </span> <?php echo $dato['nombreCurso'];?></span>
+                            <span><span>Descripción del curso: <br></span> <?php echo $dato['descripcionCurso'];?></span>
                             <!-- <span>Nombre del curso</span> -->
                         </div>
                     </div>
@@ -230,28 +242,25 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true))
                                 <div class="container-image-detalle">
                                     <!-- <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAPars5s2FQzySbkUpPjtBlvPlANAFDLP7x38q8nOqcke_Lrf_if34Y-kTjGQgS6pRvuQ&usqp=CAU" alt=""> -->
                                     
+                                    <?php    
+                                        if($dato['imagenDestacadaCurso']!=null){
+                                    ?>
+                                            <img height="50px" src="data:image/*;base64,<?php echo base64_encode($dato['imagenDestacadaCurso']) ?>">
                                     <?php
-        if ($dato['imagenDestacadaCurso'] != null)
-        {
-?>
-                                            <img height="90px" src="<?php echo $dato['imagenDestacadaCurso'] ?>">
-                                    <?php
-        }
-        else
-        {
-?>
+                                        }else{
+                                    ?>
                                             <img src="./assets/images/curso_educalma.png">
                                     <?php
-        }
-?> 
+                                        }
+                                    ?> 
 
                                 </div>
                             </div>
                             <div class="col-6 col-lg-6 col-xl-6 d-flex flex-column justify-content-center info-resumen-detalle">
                                 <span>Producto</span>
-                                <span class="font-weight-bold"><?php echo $dato['nombreCurso']; ?></span>
-                                <span style="font-size: 1.5rem; line-height: 30px; color: #737BF1; font-weight: bold;">S/. <?php echo $dato['costoCurso']; ?></span>
-                                <?php $_SESSION['costoPay'] = $dato['costoCurso']; ?>
+                                <span class="font-weight-bold"><?php echo $dato['nombreCurso'];?></span>
+                                <span style="font-size: 1.5rem; line-height: 30px; color: #737BF1; font-weight: bold;">S/. <?php echo $dato['costoCurso'];?></span>
+                                <?php $_SESSION['costoPay']=$dato['costoCurso'];?>
                             </div>
                         </div>
                         <div class="px-3">
@@ -269,11 +278,11 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true))
             </div>
         </div>
     </div>
-    <!-- CLIENTE REAL  -->
-   <script src="https://www.paypal.com/sdk/js?client-id=AbnJTS6i2adyvJS6ZQxGXFyk7aAsytmqwwOAFy-SEHVZ39rHIfC6LUOf8B9o-y-vd9RkjkdgCNVfGNBC&currency=USD" data-sdk-integration-source="button-factory"></script>
+    <!-- CLIENTE REAL 
+    <script src="https://www.paypal.com/sdk/js?client-id=AbnJTS6i2adyvJS6ZQxGXFyk7aAsytmqwwOAFy-SEHVZ39rHIfC6LUOf8B9o-y-vd9RkjkdgCNVfGNBC&currency=USD" data-sdk-integration-source="button-factory"></script> -->
                 
     <!-- SANDBOX -->
-    <!-- <script src="https://www.paypal.com/sdk/js?client-id=AVnkZnDaKvFAocz7KIUYvfvpw4DcrqR5DK0dMdD4-BaisXfbd0eKi2qG2hBDv5wkLbc52alNaMqW4s3j&currency=USD" data-sdk-integration-source="button-factory"></script>  -->
+    <script src="https://www.paypal.com/sdk/js?client-id=AVnkZnDaKvFAocz7KIUYvfvpw4DcrqR5DK0dMdD4-BaisXfbd0eKi2qG2hBDv5wkLbc52alNaMqW4s3j&currency=USD" data-sdk-integration-source="button-factory"></script> 
 
     <script>
         paypal.Buttons({
@@ -289,7 +298,7 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true))
                 return actions.order.create({
                     purchase_units: [{
                         amount: {
-                            value: <?php echo $dato['costoCurso']; ?>
+                            value: <?php echo $dato['costoCurso'];?>
                         }
                         
                     }]
@@ -298,7 +307,7 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true))
             },
             onApprove: function(data, actions) {
                 
-                let url = 'includes/Cursos_crud/inscribeteCurso.php?id=<?php echo $dato["idCurso"]; ?>';
+                let url = 'includes/Cursos_crud/inscribeteCurso.php?id=<?php echo $dato["idCurso"];?>';
                 actions.order.capture().then(function(details) {
                    
                     console.log(details);
@@ -318,7 +327,7 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true))
                             timer: 1000,
                             showConfirmButton: false,
                         }).then(()=>{
-                            window.location = "curso.php?id= <?php echo $dato["idCurso"]; ?>";
+                            window.location = "curso.php?id= <?php echo $dato["idCurso"];?>";
                         })
                     })
                 });
@@ -340,22 +349,19 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true))
     </script>
 
     <?php
-    }
-    else
-    {
-        echo '
+            }else{
+                echo'
                     <script>
-                        window.location = "../../curso.php?id=' . $id . '";
+                        window.location = "../../curso.php?id='.$id.'";
                         
                     </script>
                 ';
-    }
-}
-else
-{
-    header('Location:iniciosesion.php');
-}
-?>
+            }
+        }
+        else{
+                    header('Location:iniciosesion.php');
+        }
+    ?>
     <script>
     /*    function msje_Redirec(){
             Swal.fire({
@@ -504,33 +510,10 @@ else
   </div>
 </div>
  
+
 <script src="assets/js/modalPagarVisa.js"></script>
 <script src="assets/js/formPagarVisa.js"></script>
  
-
-<div class="checkout-btn "> </div>
-                                      
-                                      <script>
-                                          
-                                          const mp = new MercadoPago("APP_USR-151e9e9b-62d0-439d-8f66-e4d1239f2c9e", {
-                                              locale: "es-PE",
-                                          });
-
-                                          
-                                          mp.checkout({
-                                              preference: {
-                                              id: '<?php echo $preference->id; ?>'
-                                              },
-                                              // autoOpen: true,
-                                              render: {
-                                              container: ".checkout-btn", // Indica el nombre de la clase donde se mostrará el botón de pago
-                                              label: "Pagar con tarjeta de credito o debito ", // Cambia el texto del botón de pago (opcional)
-                                              },
-                                          });
-                                      </script>
-
-
 </body>
-
 
 </html>
