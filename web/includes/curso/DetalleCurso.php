@@ -156,6 +156,63 @@ body {
   }
 
 }
+
+@media (max-width: 360px) {
+    .flex{
+         display: initial;
+   } 
+   .img-nina {
+      width: 19em;
+      position: relative;
+      left: 35px;
+      margin-top: 3em;
+      float: unset;
+  }
+}
+
+@media (max-width: 375px) {
+    .flex{
+         display: initial;
+   } 
+   .img-nina {
+      width: 19em;
+      position: relative;
+      left: 35px;
+      margin-top: 1em;
+      float: unset;
+  }
+}
+
+@media (max-width: 414px) {
+    .flex{
+         display: initial;
+   } 
+   .img-nina {
+      width: 19em;
+      position: relative;
+      left: 4em;
+      margin-top: 1em;
+      float: unset;
+  }
+}
+
+@media only screen and (min-width:820px) and (max-width:912px) {
+    .flex{
+        position: relative;
+        margin-left: 3em;
+   } 
+   .img-nina {
+      width: 19em;
+      position: relative;
+      left: -3em;
+      margin-top: 1em;
+      float: unset;
+  }
+  .imagecuadr{
+    margin-top: 25em;
+  }
+}
+
 /****************************************************************************************************/
 
 
@@ -267,7 +324,7 @@ body {
 
 
             <!-- yyyy -->
-            <div class="row py-5" style="padding: 15px;position: relative;margin-left: 50px;">
+            <div class="row py-5" style="padding: 15px;position: relative;">
 
 
             
