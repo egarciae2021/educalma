@@ -16,8 +16,8 @@
     <link rel="stylesheet" href="assets/css/style4.css">
     <link rel="stylesheet" href="assets/css/stymiscursos.css">
 
-    <!-- Bootstrap CSS
-    <link rel="stylesheet" href="assets/css/plugins/bootstrap.min.css" /> -->
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="assets/css/plugins/bootstrap.min.css" /> 
     <!-- Pogo Slider CSS -->
     <link rel="stylesheet" href="assets/css/plugins/pogo-slider.min.css" />
     <!-- Responsive CSS -->
