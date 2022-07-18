@@ -523,7 +523,7 @@ else
                                               },
                                               // autoOpen: true,
                                               render: {
-                                              container: ".aqui-estara-la-tarjeta", // Indica el nombre de la clase donde se mostrará el botón de pago
+                                              container: ".checkout-btn", // Indica el nombre de la clase donde se mostrará el botón de pago
                                               label: "Pagar con tarjeta de credito o debito ", // Cambia el texto del botón de pago (opcional)
                                               },
                                           });
