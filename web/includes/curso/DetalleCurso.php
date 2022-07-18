@@ -16,6 +16,10 @@
     display: flex;
 }
 
+.colorsdegradado{
+
+}
+
 .topup{
     margin-top: 3em;
 }
@@ -216,7 +220,7 @@ body {
   }
 }
 
-@media only screen and (min-width:820px) and (max-width:912  px) {
+@media only screen and (min-width:820px) and (max-width:912px) {
     .flex{
         position: relative;
         margin-left: 3em;
@@ -246,6 +250,17 @@ body {
     flex: 0 0 30%;
     max-width: 30%;
 }}
+
+@media only screen and (min-width:375px) and (max-width:667px){
+    .width{
+        width: 100%;
+    }
+    
+    .card{
+        margin-bottom: -3em;
+    }
+}
+
 /****************************************************************************************************/
 
 
@@ -350,7 +365,7 @@ body {
 
 
     <!-- pppp -->
-    <div class="container-course bg-light" style="min-height: 100vh;">
+    <div class="container-course hola" style="min-height: 100vh;">
 
         <!-- zzzz -->
         <div class="bg-dark11">
@@ -434,10 +449,11 @@ body {
             <!-- yyyy -->
 
         </div>
+    <div class="colorsdegradado" style="background: linear-gradient(0deg, rgba(231,244,255,1) 16%, rgba(224,199,229,0.9051995798319328) 50%, rgba(255,255,255,1) 100%);">    
         <!-- zzzz -->
         <div class="flex">                                         
         <!-- mmmm -->
-        <div class="bg-light width" style="height: 100%;">
+        <div class="width" style="height: 100%;">
             <div class="row py-5" style="height: 100%;">
                 <!-- <div class="col-12 col-sm-12 col-md-5 col-lg-4 col-xl-3 info-course-left" style="border: 1px solid red;">
                     <h4>Contenido del curso</h4>
@@ -1160,6 +1176,7 @@ body {
             <img src="assets/images/ilu-nina.png" class="img-nina"alt="" >
     </div>           
     </div>  
+    </div>
 
 
     <!------------------------------------

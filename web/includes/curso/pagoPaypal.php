@@ -74,7 +74,7 @@ $preference = new MercadoPago\Preference();
             $item-> auto_return = "approved" ;
              
             $preference->items = array($item);
-             
+            $preference-> binary_mode =  true;
             $preference->back_urls = array(
                 "success" => "https://apiflutter.azurewebsites.net/mercadopago/lectura.php",
                 "failure" => "https://youtube.com", 
@@ -82,20 +82,15 @@ $preference = new MercadoPago\Preference();
             );
             $preference->auto_return = "approved"; 
              
+            $preference-> statement_descripton = array("Educalma - " + $dato['nombreCurso'] );
             $preference->save();
             
             $response = array(
-                'id' => $preference->id,
-            ); 
+                'status' => $payment->status,
+                'status_detail' => $payment->status_detail,
+                'id' => $payment->id
+            );
             echo json_encode($response);
-
-
-
-
-
-
-
-
 
             if (empty($datoS['id_cursoInscrito'])){        
     ?>
