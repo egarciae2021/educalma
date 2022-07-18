@@ -16,22 +16,22 @@ $preference = new MercadoPago\Preference();
 ?>
 
 <head>
-    <link rel="stylesheet" href="assets/css/pagepay.css" />
+    <!-- <link rel="stylesheet" href="assets/css/pagepay.css" />
      <link rel="stylesheet" href="assets/css/tarjetaCredito.css">
     <link rel="stylesheet" href="assets/js/plugins/sweetalert2.min.css">
 
     <link rel="stylesheet" href="assets/css/modalPagarVisa.css">
-    <link rel="stylesheet" href="assets/css/formPagarVisa.css">
+    <link rel="stylesheet" href="assets/css/formPagarVisa.css"> -->
     <script src="https://sdk.mercadopago.com/js/v2"></script>
     <style>
 
-    @media screen and (min-width: 1000px) {
+    /* @media screen and (min-width: 1000px) {
 
         .logo-container {
             margin-left: -85px;
             margin-right: 270px;
         }
-    }
+    } */
 
     </style>
 
@@ -39,8 +39,8 @@ $preference = new MercadoPago\Preference();
 
 <body>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="assets/js/plugins/sweetalert2.all.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="assets/js/plugins/sweetalert2.all.min.js"></script> -->
     <!-- <script src="assets/js/card-validator.js"></script> -->
 
     <?php
@@ -517,8 +517,8 @@ $preference = new MercadoPago\Preference();
 
 
 
-<script src="assets/js/modalPagarVisa.js"></script>
-<script src="assets/js/formPagarVisa.js"></script>
+// <script src="assets/js/modalPagarVisa.js"></script>
+// <script src="assets/js/formPagarVisa.js"></script>
 
 
 
