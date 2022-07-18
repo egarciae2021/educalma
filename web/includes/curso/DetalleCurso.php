@@ -20,8 +20,12 @@
 
 }
 
+.botton{
+    margin-bottom: 5px;
+}
+
 .topup{
-    margin-top: 3em;
+    /* margin-top: 3em; */
 }
 
 div[id^='accordion'] .card .card-header span {
@@ -55,7 +59,7 @@ div[id^='accordion'] .card .card-header span {
     width: 26em;
     position: relative;
     left: -3em;
-    margin-top: 1em;
+    margin-top: 2em;
 }
 
 body {
@@ -451,7 +455,7 @@ body {
         </div>
     <div class="colorsdegradado" style="background: linear-gradient(0deg, rgba(231,244,255,1) 16%, rgba(224,199,229,0.9051995798319328) 50%, rgba(255,255,255,1) 100%);">    
         <!-- zzzz -->
-        <div class="flex">                                         
+        <div class="flex botton">                                         
         <!-- mmmm -->
         <div class="width" style="height: 100%;">
             <div class="row py-5" style="height: 100%;">
