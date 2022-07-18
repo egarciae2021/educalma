@@ -171,15 +171,15 @@ $preference = new MercadoPago\Preference();
                                             <!-- Aqui abajo estaba el anterior buton para pago -->
                                             <!-- <button data-open="modal1" id="cardBtn" class="btn btn-primary btn-lg btn-block" type="button">Pagar con tarjeta de credito o debito <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-credit-card" viewBox="0 -2 16 16" style="width: 23; height: 23; @media only screen and (max-width: 768px){width: 23; height: 23;}"><path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v1h14V4a1 1 0 0 0-1-1H2zm13 4H1v5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V7z"/><path d="M2 10a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-1z"/></svg></button> -->
                                             <!-- Aqui esta el div donde estara el nuevo boton -->
-                                            <div class="checkout-btn "> </div>
+                                            <!-- <div class="checkout-btn "> </div>
                                       
                                             <script>
-                                                // Agrega credenciales de SDK
+                                                
                                                 const mp = new MercadoPago("APP_USR-151e9e9b-62d0-439d-8f66-e4d1239f2c9e", {
                                                     locale: "es-PE",
                                                 });
 
-                                                // Inicializa el checkout
+                                                
                                                 mp.checkout({
                                                     preference: {
                                                     id: '<?php echo $preference->id;?>'
@@ -190,7 +190,7 @@ $preference = new MercadoPago\Preference();
                                                     label: "Pagar con tarjeta de credito o debito ", // Cambia el texto del botón de pago (opcional)
                                                     },
                                                 });
-                                            </script>
+                                            </script> -->
 
 
                                       
@@ -278,11 +278,11 @@ $preference = new MercadoPago\Preference();
             </div>
         </div>
     </div>
-    <!-- CLIENTE REAL 
-    <script src="https://www.paypal.com/sdk/js?client-id=AbnJTS6i2adyvJS6ZQxGXFyk7aAsytmqwwOAFy-SEHVZ39rHIfC6LUOf8B9o-y-vd9RkjkdgCNVfGNBC&currency=USD" data-sdk-integration-source="button-factory"></script> -->
+    <!-- CLIENTE REAL  -->
+    // <script src="https://www.paypal.com/sdk/js?client-id=AbnJTS6i2adyvJS6ZQxGXFyk7aAsytmqwwOAFy-SEHVZ39rHIfC6LUOf8B9o-y-vd9RkjkdgCNVfGNBC&currency=USD" data-sdk-integration-source="button-factory"></script>
                 
     <!-- SANDBOX -->
-    <script src="https://www.paypal.com/sdk/js?client-id=AVnkZnDaKvFAocz7KIUYvfvpw4DcrqR5DK0dMdD4-BaisXfbd0eKi2qG2hBDv5wkLbc52alNaMqW4s3j&currency=USD" data-sdk-integration-source="button-factory"></script> 
+    <!-- <script src="https://www.paypal.com/sdk/js?client-id=AVnkZnDaKvFAocz7KIUYvfvpw4DcrqR5DK0dMdD4-BaisXfbd0eKi2qG2hBDv5wkLbc52alNaMqW4s3j&currency=USD" data-sdk-integration-source="button-factory"></script>  -->
 
     <script>
         paypal.Buttons({
@@ -509,49 +509,31 @@ $preference = new MercadoPago\Preference();
     </section>
   </div>
 </div>
-
-
+ 
+<script src="assets/js/modalPagarVisa.js"></script>
+<script src="assets/js/formPagarVisa.js"></script>
  
 
+<div class="checkout-btn "> </div>
+                                      
+                                      <script>
+                                          
+                                          const mp = new MercadoPago("APP_USR-151e9e9b-62d0-439d-8f66-e4d1239f2c9e", {
+                                              locale: "es-PE",
+                                          });
 
-
-
-
-// <script src="assets/js/modalPagarVisa.js"></script>
-// <script src="assets/js/formPagarVisa.js"></script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                                          
+                                          mp.checkout({
+                                              preference: {
+                                              id: '<?php echo $preference->id;?>'
+                                              },
+                                              // autoOpen: true,
+                                              render: {
+                                              container: ".checkout-btn", // Indica el nombre de la clase donde se mostrará el botón de pago
+                                              label: "Pagar con tarjeta de credito o debito ", // Cambia el texto del botón de pago (opcional)
+                                              },
+                                          });
+                                      </script>
 
 
 </body>
