@@ -110,6 +110,7 @@ body {
 
 
 
+
 /****************************************************************************************************/
 /** =====================
 * Responsive
@@ -120,7 +121,7 @@ body {
   }
 
   .comments-list .comment-box {
-     width: 260px;
+     width: 612px;
   }
 
   .reply-list .comment-box {
@@ -265,6 +266,45 @@ body {
     }
 }
 
+@media only screen and (min-width:360px) and (max-width:667px){
+    .lef{
+        margin-left: -1em;
+    }
+
+    .width{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        /* margin-left: -1em; */
+    }
+
+    .card{
+        margin-bottom: -3em;
+    }
+
+    .imagecuadr{
+        margin-top: -3em;
+    }
+
+    .responsbott{
+        margin-bottom: 6em;
+        display: flex;
+        justify-content: center;
+    }
+
+    .comments-container{
+        width: 85%;
+    }
+    
+    .comments-list{
+        margin-left: -1em;
+    }
+
+    .comments-list .comment-box{
+        width: 16em;
+    }
+}
+
 /****************************************************************************************************/
 
 
@@ -382,7 +422,7 @@ body {
             
 
 
-                <div class="col-12 col-sm-12 col-md-7 col-lg-8 col-xl-9 " style="color: #fff;padding: 29px;margin-top: -48px;">
+                <div class="col-12 col-sm-12 col-md-7 col-lg-8 col-xl-9 lef" style="color: #fff;padding: 29px;margin-top: -48px;">
                     
                     <br><br><br><br>
 
@@ -538,7 +578,7 @@ body {
         <!-- mmmm -->
 
          <!-- xxxxx -->
-         <div class="col-12 col-sm-12 col-md-5 col-lg-4 pt-5">
+         <div class="col-12 col-sm-12 col-md-5 col-lg-4 pt-5 responsbott">
                 
 
                 <!-- CARD///////////////////////////////// -->
@@ -968,7 +1008,7 @@ body {
                         
                     </div> 
                     <!-- Contenedor del Comentario -->
-                   <div class="comment-box" style="width: 612px;">
+                   <div class="comment-box" style="">
                         <div class="comment-head">
                             <h6 class="commen-name<?php echo $autor; ?>">
                                 <spam><?php echo $registro['nombreUser']; ?></spam>
@@ -1070,7 +1110,7 @@ body {
                             ?> 
                         </div> 
                         <!-- Contenedor del Comentario -->
-                       <div class="comment-box" style="width: 612px;">
+                       <div class="comment-box" style="">
                             <div class="comment-head">
                                 <h6 class="commen-name<?php echo $autor; ?>"><spam><?php echo $registro2['user_men'];?></spam></h6>
                                 <span>
@@ -1257,7 +1297,7 @@ body {
                             
                         </div> 
                         <!-- Contenedor del Comentario -->
-                    <div class="comment-box" style="width: 612px;">
+                    <div class="comment-box" style="">
                             <div class="comment-head">
                                 <h6 class="commen-name<?php echo $autor; ?>">
                                     <spam><?php echo $registro['nombreUser']; ?></spam>
@@ -1342,7 +1382,7 @@ body {
                                 ?> 
                             </div> 
                             <!-- Contenedor del Comentario -->
-                        <div class="comment-box" style="width: 612px;">
+                        <div class="comment-box" style="">
                                 <div class="comment-head">
                                     <h6 class="commen-name<?php echo $autor; ?>"><spam><?php echo $registro2['user_men'];?></spam></h6>
                                     <span>
