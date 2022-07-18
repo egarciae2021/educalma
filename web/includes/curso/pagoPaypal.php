@@ -142,7 +142,7 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true))
                             </div>
                         </div>
                         <div id="accordion">
-                            <div class="card mb-3" id="aqui-estara-la-tarjeta">
+                            <div class="card mb-3 aqui-estara-la-tarjeta">
 
                                 <!-- -->
                                 <a class="card-header" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -523,7 +523,7 @@ else
                                               },
                                               // autoOpen: true,
                                               render: {
-                                              container: "#aqui-estara-la-tarjeta", // Indica el nombre de la clase donde se mostrará el botón de pago
+                                              container: ".aqui-estara-la-tarjeta", // Indica el nombre de la clase donde se mostrará el botón de pago
                                               label: "Pagar con tarjeta de credito o debito ", // Cambia el texto del botón de pago (opcional)
                                               },
                                           });
