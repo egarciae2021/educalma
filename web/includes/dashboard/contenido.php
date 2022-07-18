@@ -71,10 +71,10 @@ ob_start();
 		    <div class="col-12 pt-4">
 			<div class="card mb-3" style="max-width: 540px; height:20%">
 			    <div class="row no-gutters" style="text-align:left;">
-				<div class="col-md-5">
+				<div class="col-md-6">
 				<img src="<?php echo $row['imagenDestacadaCurso'] ?>" class="card-img" alt="Imagen Curso" style="width:100%; height:100%">
 				</div>
-				<div class="col-md-7" style="height:160">
+				<div class="col-md-6" style="height:160">
 				    <div class="card-body">
 				    <h5 class="card-title" style="color:#7C83FD"><?php echo $row['nombreCurso'] ?></h5>
 					    <p class="card-text"><small class="text-muted">Creado por Fundación CALMA</small></p>
@@ -113,10 +113,10 @@ ob_start();
 		    <div class="col-12 pt-4">
 			<div class="card mb-3" style="max-width: 540px; height:20%">
 			    <div class="row no-gutters" style="text-align:left;">
-				<div class="col-md-5">
+				<div class="col-md-6">
 				<img src="<?php echo $row['imagenDestacadaCurso'] ?>" class="card-img" alt="Imagen Curso" style="width:100%; height:100%">
 				</div>
-				<div class="col-md-7" style="height:160">
+				<div class="col-md-6" style="height:160">
 				    <div class="card-body">
 				    <h5 class="card-title" style="color:#7C83FD"><?php echo $row['nombreCurso'] ?></h5>
 					    <p class="card-text"><small class="text-muted">Creado por Fundación CALMA</small></p>
