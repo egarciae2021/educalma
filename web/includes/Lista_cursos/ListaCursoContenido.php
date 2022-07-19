@@ -117,32 +117,14 @@
                 <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3">
                     <div style="border-radius: 30px; overflow: hidden; border: 1px solid #7C83FD;" class="card">
 
-<<<<<<< HEAD
-                                        
-                                        <?php
-                                        if ($dato['imagenDestacadaCurso'] != null) {
-                                        ?>
-                                            <!--Imagen-->
-                                            <img class="imgCurso" style="cursor: pointer;" src="<?php echo $dato['imagenDestacadaCurso']; ?>" alt="">
-                                            <a class="txtTrailer" style="cursor: pointer;"  data-toggle="modal" data-target=".bd-example-modal-lg<?php echo $dato['idCurso'];?>"><label>Ver Trailer</label></a>
-                                        <?php
-                                        } else {
-                                        ?>
-                                            <img class="imgCurso" style="cursor: pointer;" src="./assets/images/curso_educalma.png">
-                                            <a class="txtTrailer" style="cursor: pointer;" data-toggle="modal" data-target=".bd-example-modal-lg<?php echo $dato['idCurso'];?>"><label>Ver Trailer</label></a>
-                                        <?php
-                                        }
-                                        ?>
-=======
                         <!--Contenedor de la imagen-->
                         <div class="container-card-image">
                             
                             <?php if ($dato['imagenDestacadaCurso'] != null) { ?>
->>>>>>> 4933b02c990e8051ef1a4393bcd617c0fa4a098e
 
                                 <!--Imagen-->
                                 <img class="imgCurso" style="cursor: pointer;" src="<?php echo $dato['imagenDestacadaCurso']; ?>" alt="">
-                                <a class="txtTrailer text-center" data-toggle="modal" data-target=".bd-example-modal-lg<?php echo $dato['idCurso'];?>"><label>Ver<br>Trailer</label></a>
+                                <a class="txtTrailer text-center" style="cursor: pointer;" data-toggle="modal" data-target=".bd-example-modal-lg<?php echo $dato['idCurso'];?>"><label>Ver<br>Trailer</label></a>
                             
                             <?php } else { ?>
 
@@ -452,11 +434,11 @@
 
                         <!--Imagen elegida-->
                         <img style="cursor: pointer;" class="imgCurso" src="<?php echo $dato['imagenDestacadaCurso']; ?>" alt="">
-                        <a class="txtTrailer text-center" data-toggle="modal" data-target=".bd-example-modal-lg<?php echo $dato['idCurso'];?>"><label>Ver<br>Trailer</label></a>
+                        <a class="txtTrailer text-center" data-toggle="modal" style="cursor: pointer;" data-target=".bd-example-modal-lg<?php echo $dato['idCurso'];?>"><label>Ver<br>Trailer</label></a>
                         
                         <?php } else { ?>
 
-<<<<<<< HEAD
+
                             <?php
                             if ($dato['imagenDestacadaCurso'] != null) {
                             ?>
@@ -473,13 +455,12 @@
                             <?php
                             }
                             ?>
-=======
+
                         <!--Imagen por default-->
                         <img style="cursor: pointer;" class="imgCurso" src="./assets/images/curso_educalma.png">
                         <a class="txtTrailer text-center" data-toggle="modal" data-target=".bd-example-modal-lg<?php echo $dato['idCurso'];?>"><label>Ver<br>Trailer</label></a>
                         
                         <?php } ?>
->>>>>>> 4933b02c990e8051ef1a4393bcd617c0fa4a098e
 
                     </div>
 
