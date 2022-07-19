@@ -222,19 +222,19 @@
 
                         <!--Contenedor de la imagen-->
                         <div class="p-2" style="overflow: hidden; border-radius: 30px;">
-                            <div class="container-card-image" style="border-radius: 30px;">
+                            <div class="container-card-image" style="border-radius: 30px;" >
                                 <?php
                                 if ($dato['imagenDestacadaCurso'] != null) {
                                 ?>
                                     <!--Imagen elegida-->
-                                    <img heigth="10px"; src="<?php echo $dato['imagenDestacadaCurso']; ?>" alt="">
-                                    <a class="txtTrailer w-100 h-100 d-flex align-items-center justify-content-center" data-toggle="modal" data-target=".bd-example-modal-lg<?php echo $dato['idCurso'];?>"><label>Ver Trailer</label></a>
+                                    <img heigth="10px"; src="<?php echo $dato['imagenDestacadaCurso']; ?>" style="cursor:pointer;"alt="">
+                                    <a class="txtTrailer w-100 h-100 d-flex align-items-center justify-content-center" style="cursor: pointer;" data-toggle="modal" data-target=".bd-example-modal-lg<?php echo $dato['idCurso'];?>"><label>Ver Trailer</label></a>
                                 <?php
                                 } else {
                                 ?>
                                     <!--Imagen por default-->
-                                    <img heigth="10px"; src="./assets/images/curso_educalma.png">
-                                    <a class="txtTrailer w-100 h-100 d-flex align-items-center justify-content-center" data-toggle="modal" data-target=".bd-example-modal-lg<?php echo $dato['idCurso'];?>"><label>Ver Trailer</label></a>
+                                    <img heigth="10px"; src="./assets/images/curso_educalma.png" style="cursor: pointer;">
+                                    <a class="txtTrailer w-100 h-100 d-flex align-items-center justify-content-center" style="cursor: pointer;" data-toggle="modal" data-target=".bd-example-modal-lg<?php echo $dato['idCurso'];?>"><label>Ver Trailer</label></a>
                                 <?php
                                 }
                                 ?>

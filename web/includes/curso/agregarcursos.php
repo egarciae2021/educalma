@@ -173,6 +173,7 @@
 
                             <div class="form-row">
                                 <div class="form-group col-12">
+                                    
                                     <input type="submit" class="btn btn-block btn-agregar pt-2 pb-1 border-0" value="Agregar nuevo curso">
                                 </div>
                             </div>
