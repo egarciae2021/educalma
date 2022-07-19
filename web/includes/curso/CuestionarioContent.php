@@ -17,11 +17,8 @@
 
     <script src="./assets/js/plugins/sweetalert2.all.min.js"></script>
 
-    <style>
-
- 
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Mukta:wght@600&display=swap');
- 
+    <style> 
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Mukta:wght@600&display=swap'); 
 
         /* WEBKIT BROWSERS - CHROME, OPERA AND SAFARI */
        progress::-webkit-progress-bar {
@@ -51,8 +48,7 @@
            border-radius: 18px;
            background: repeating-linear-gradient(45deg, #5BF543, #5BF543 10px,#5BF543 10px, #5BF543 20px);
        }
-
-
+ 
 
        .opciones {
             margin-top: -65px;
@@ -417,12 +413,13 @@
                             $notaCurso = $datoConsultaCurso['Cantidad'];
                             Database::disconnect();*/
                     ?>
-
-                    <h4 style="text-align: right; ">
+                    <!--barra de avanace del curso -->
+                   <!-- <h4 style="text-align: right; ">
                     <span style="text-align: center; color: #9383F3;">Avance de curso : </span> 
                     <progress style="width:; background:#E3E8E2;" max="100" value="<?php echo($AvanceFinal)?>"></progress>
                     <span style="text-align: center; color: #9383F3;"><?php echo($AvanceFinal)?>%</span>
-                        </h4> 
+                    </h4> 
+                        -->
 
                    
                     <h1 style="color: #4F52D6; font-size: 30px; padding: 15px; text-align: center;">
@@ -890,9 +887,9 @@
                                                     <div class="col-sm-12 text-right" style="color:#768EE8; color: white; font-weight: 900;">Puntos: &nbsp; <?php echo (($puntaje)?''.round($puntRes).'/'.round($puntRes).' pts':'0/'.round($puntRes).' pts')?> </div>
                                                 </div> 
                                         </div>
-                                        <div class="list-group list-group-flush small text-left text-secondary font-weight-normal my-3" style="color: black !important; font-weight: bold; font-size: 20px; margin-left:10px;">
-                                            <?php echo $filaCor['pregunta'];?>
-                                        </div>
+                                        <!--<div class="list-group list-group-flush small text-left text-secondary font-weight-normal my-3" style="color: black !important; font-weight: bold; font-size: 20px; margin-left:10px;">
+                                             <?php echo $filaCor['pregunta'];?> 
+                                        </div>-->
                                         <ul style="background: #E7F4FF;" class="list-group list-group-flush text-justify">
                                         
                                             <?php while($fila23=$q23->fetch(PDO::FETCH_ASSOC)){

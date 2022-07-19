@@ -16,17 +16,38 @@
    }
 
    .img-nina{
-      width: 30em;
+      width: 26em;
       position: relative;
+      margin-top: 4em;
+   }
+
+   .flex{
       display: flex;
-      float: right;
-      left: 100px;
-      margin-top: -45em;
+      position: relative;
+      margin-left: 21em;
+   }
+
+   @media only screen and (min-width:275px) and (max-width:1326px){
+      .img-nina{
+         width: 26em;
+         position: relative;
+         margin-top: 4em;
+         
+         /* 
+         margin-top: -21em;
+         position: relative;
+         float: right;
+         left: -7em;
+         margin-top: -20em; */
+   }
    }
 
    @media (max-width: 767px) {
+      .flex{
+         display: initial;
+   }   
       .responsv1 {
-     width: 100%;
+       width: 100%;
   }}
 
   @media (max-width: 360px) {
@@ -35,6 +56,21 @@
      display: flex;
      justify-content: center;
   }}
+
+  @media (max-width: 375px) {
+      .respons7 {
+     width: 100%;
+     display: flex;
+     justify-content: center;
+  }}
+
+  @media (max-width: 414px) {
+      .respons7 {
+     width: 100%;
+     display: flex;
+     justify-content: center;
+  }}
+
 
   @media (min-width: 1200px) {
       .responsv5 {
@@ -69,6 +105,77 @@
   }
 
 }
+
+@media (max-width: 375px) {
+      .img-nina {
+      width: 19em;
+      position: relative;
+      left: 35px;
+      margin-top: 3em;
+      float: unset;
+  }
+
+}
+
+@media (max-width: 414px) {
+      .img-nina {
+      width: 19em;
+      position: relative;
+      left: 44px;
+      margin-top: 3em;
+      float: unset;
+  }
+
+}
+
+@media (max-width: 360px) {
+      .img-nina {
+      width: 19em;
+      position: relative;
+      left: 22px;
+      margin-top: 3em;
+      float: unset;
+  }
+
+}
+
+
+@media only screen and (min-width:820px) and (max-width:1180px) {
+      .container-fluid .container-detalle-informacion .col-8 .container-info-course-detalle{
+         width: 25em;
+         line-height: 1.7;
+      }
+      .container-fluid .container-detalle-informacion .col-8{
+         left: 44px;
+      }
+      .parrafo{
+         width: 15em;
+      }
+      .respons1{
+         flex: 0 0 40%;
+         max-width: 40%;
+      }
+      .respons7{
+         width: 30em;
+      }
+      .col-md-5{
+         flex: 0 0 45%;
+         max-width: 45%;
+      }
+      .img-fluid{
+         margin-top: 12px;
+      }
+      .img-nina{
+         float: none;
+         width: 26em;
+         position: relative;
+         display: flex;
+         left: 236px;
+      }
+      .flex{
+         display: initial;
+   } 
+} 
 
 @media (max-width: 360px) {
       .btn-light {
@@ -264,7 +371,7 @@
                <?php 
                   if($dato20['privilegio']==1){
                   ?>
-               <span style="color: #565656; font-size: 14px;">Creado por la Fundación CALMA.</span>
+               <!-- <span style="color: #565656; font-size: 14px;">Creado por la Fundación CALMA.</span> -->
                <?php 
                   }
                   
@@ -420,7 +527,7 @@
                   <!--div class="col-md-5 col-lg-5 order-1 "style="align-self: flex-end; margin-top:25px;" -->
                   <div class="col col-md-4"  id="informacion">
                      <h5 style="color: #7C83FD;font-weight: 600;font-size: 24px;">Introducción</h5>
-                     <p style="margin-top: 15px;text-align: justify"><?php echo $dato4['introduccion']; ?></p>
+                     <p class="parrafo" style="margin-top: 15px;text-align: justify;"><?php echo $dato4['introduccion']; ?></p>
                   </div>
                   <!--div class="col-8"-->
                   <div class="col-8"  id="informacion">
@@ -457,14 +564,14 @@
                   </div>
                </div>
             </div>
-            <div class="col-12 respons1"   style="width:760px; height:auto; float:left; position: relative; " id="certificado-temario">
+            <div class="col-12 respons1"   style="width:756px; height:auto; float:left; position: relative; " id="certificado-temario">
                <h5 style="color: #7C83FD;font-weight: 600;font-size: 24px;">Temario del curso</h5>
                <?php 
                   $nW=0;
                       while ($modulosC = $q6->fetch(PDO::FETCH_ASSOC)) {
                           $nW=$nW+1;
                   ?>
-               <div class="w-100 respons7">
+               <div class="respons7">
                   <a id="btnInicioModulo" href="video.php?id=<?php echo $id;?>&idtema=<?php echo 1;?>&id_modulo=<?php echo $modulosC['idModulo']?>&nW=<?php echo $nW-1?>&idCI=<?php echo $idCI?>" class="btn px-4 mb-2 puntos-suspensivos responsv1"  style="background:#fff; width:55%; text-align:left;">
                   <i class="fas fa-play mr-3"></i>
                   <span style="color:black; width:100%;white-space: initial;"><?php echo $modulosC['nombreModulo'] ?></span>
@@ -484,6 +591,7 @@
             </div>
          </div>
          <!--foro educalma-->
+      <div class="flex">
          <div class="largoresponsv" style="width:100%;">
             <?php
                $idCurso = $id;
@@ -504,6 +612,7 @@
             <?php
                if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                ?>
+
             <!-- COMIENZOOOOOOOOOOOOOO - Contenedor de todo. El que tiene esquinas curveadas. -->
             <div id="contenedorTodo" class="comments-container"  style="border-radius: 40px;">
                <!-- TITULO FORO EDUCALMA -->
@@ -810,9 +919,7 @@
                </ul>
                <!-- LISTA DE COMENTARIOS -->
             </div>
-            <div class="" style="" >
-               <img src="assets/images/ilu-nina.png" class="img-nina"alt="" >
-            </div>
+            
             <!-- COMIENZOOOOOOOOOOOOOO - Contenedor de todo. El que tiene esquinas curveadas.-->
             <!------------------------------------
                modal para ingresar mensaje
@@ -1017,6 +1124,10 @@
                }
                ?>
          </div>
+         <div class="col-lg-5">
+               <img src="assets/images/ilu-nina.png" class="img-nina"alt="" >
+         </div>
+   <div>  
       </div>
    </div>
    <!-- Foro -->

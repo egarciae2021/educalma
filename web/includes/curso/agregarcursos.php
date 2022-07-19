@@ -80,7 +80,7 @@
                     <!-- segunda columna -->
                     <div class="pl-0" style="width: 97.2%; position: relative; left: 15px;">
                         
-                        <form name="formulario" id="newUserForm" method="POST" action="includes/Cursos_crud/Cursos_CRUD.php"  onsubmit="return comprobarDatosFormulario()" enctype="multipart/form-data">
+                        <form name="formulario" id="newUserForm" method="POST" action="includes/Cursos_crud/Cursos_CRUD.php">
                             <div class="list-group-item list-group-item-action active text-center pb-0 position-relative" style="background: #7C83FD; font-size: 3rem; top: -30px; font-weight: 700; border-radius: 12px;">
                                 REGISTRO DE CURSO NUEVO
                             </div>
@@ -180,18 +180,7 @@
 
                         </form>
                     </div>
-                    <!-- fin segunda columna -->
-
-
-
-
-
-
-
-
-
-
-                    
+                    <!-- fin segunda columna -->  
                 </div>
             </div>
         </div>

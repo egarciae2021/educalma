@@ -122,7 +122,7 @@ $("#restaNumber1").click((e) => {
 
 
   
-  const error_catch = { "TITLE_RESP": "¡ERROR!", "TEXT_RESP": "EL SERVIDOR NO HA RETORNADO RESPUESTA.", "TYPE_RESP": "error", "REFREST_RESP": 1 };
+  /* const error_catch = { "TITLE_RESP": "¡ERROR!", "TEXT_RESP": "EL SERVIDOR NO HA RETORNADO RESPUESTA.", "TYPE_RESP": "error", "REFREST_RESP": 1 };
 
   const ShowMessage = (resp) => {
     // Si no retorna la respuesta esperada
@@ -141,7 +141,7 @@ $("#restaNumber1").click((e) => {
       })
     }
 
-  };
+  }; */
 
   $('#btnSendRequest').click(() => {
     

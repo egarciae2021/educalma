@@ -182,6 +182,8 @@ a {
     padding-bottom: 3rem;
     overflow: auto;
     scrollbar-width: none;
+    position: relative;
+    left: 3px;
     /* For mozilla */
 }
 
@@ -283,8 +285,34 @@ a {
 .nav__logout-dashboard {
     margin-top: 5rem;
 }
+.nav__logout-dashboard button {
+    border-radius: 8px;
+    padding-left: 10px;
+    width: 36px;
+    transition: all .3s ease;
+}
+.nav__logout-dashboard span {
+    font-size: 14px;
+    visibility: hidden;
+    opacity: 0;
+    height: 0;
+    transition: visibility 0s .1s, opacity .1s linear;
+}
+.nav__logout-dashboard-show button {
+    width: 80px;
+}
+.nav__logout-dashboard-show span {
+    font-size: 14px;
+    visibility: visible;
+    opacity: 1;
+    margin-top: 1px;
+    /* height: 10px; */
+    transition: visibility 0s .2s, opacity .4s linear;
+}
 
 .img__ilu {
+    position: relative;
+    top: 20px;
     visibility: hidden;
     opacity: 0;
     transition: visibility 0s .3s, opacity .3s linear;
@@ -470,6 +498,17 @@ a {
     .nav-dashboard:hover .nav__dropdown-icon-dashboard {
         opacity: 1;
     }
+    
+    .nav-dashboard:hover .nav__logout-dashboard button {
+        width: 80px;
+    }
+    .nav-dashboard:hover .nav__logout-dashboard span {
+        visibility: visible;
+        opacity: 1;
+        margin-top: 1px;
+        /* height: 10px; */
+        transition: visibility 0s .2s, opacity .4s linear;
+    }
 }
 
 .fa-bars:hover {
@@ -524,5 +563,25 @@ a {
     .nav-dashboard {
 
         margin-top: 64px;
+    }
+}
+
+@media (max-height: 900px) {
+    .img__ilu {
+        margin-left: 50px;
+        width: 60%;
+        top: 5px;
+    }
+}
+@media (max-height: 830px) {
+    .img__ilu {
+        margin-left: 60px;
+        width: 50%;
+        top: -8px;
+    }
+}
+@media (max-height: 790px) {
+    .img__ilu {
+        display: none;
     }
 }

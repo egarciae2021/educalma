@@ -6,7 +6,7 @@ require  'vendor/autoload.php';
 $id = $_GET['id']; 
 
 // Agrega credenciales
-MercadoPago\SDK::setAccessToken('APP_USR-1923618636570539-071014-5632864634d560a172adbfd37f3d8c8e-1157900136');
+MercadoPago\SDK::setAccessToken('APP_USR-361254289137109-071003-69685b1c8975d58c29da92becb412463-1157895713');
  
 // Crea un objeto de preferencia
 $preference = new MercadoPago\Preference();
@@ -74,7 +74,7 @@ $preference = new MercadoPago\Preference();
             $item-> auto_return = "approved" ;
              
             $preference->items = array($item);
-             
+            $preference-> binary_mode =  true;
             $preference->back_urls = array(
                 "success" => "https://apiflutter.azurewebsites.net/mercadopago/lectura.php",
                 "failure" => "https://youtube.com", 
@@ -82,20 +82,15 @@ $preference = new MercadoPago\Preference();
             );
             $preference->auto_return = "approved"; 
              
+            $preference-> statement_descripton = array("Educalma - " + $dato['nombreCurso'] );
             $preference->save();
             
             $response = array(
-                'id' => $preference->id,
-            ); 
+                'status' => $payment->status,
+                'status_detail' => $payment->status_detail,
+                'id' => $payment->id
+            );
             echo json_encode($response);
-
-
-
-
-
-
-
-
 
             if (empty($datoS['id_cursoInscrito'])){        
     ?>
@@ -245,7 +240,7 @@ $preference = new MercadoPago\Preference();
                                     <?php    
                                         if($dato['imagenDestacadaCurso']!=null){
                                     ?>
-                                            <img height="90px" src="<?php echo $dato['imagenDestacadaCurso'] ?>">
+                                            <img height="50px" src="https://test-apicalma.site<?php echo ($dato['imagenDestacadaCurso']) ?>">
                                     <?php
                                         }else{
                                     ?>
@@ -271,17 +266,17 @@ $preference = new MercadoPago\Preference();
                        
                     </div>
 
-                    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></>
+                    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
                     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
                     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
                 </div> 
             </div>
         </div>
     </div>
-    <!-- CLIENTE REAL 
+    
     <script src="https://www.paypal.com/sdk/js?client-id=AbnJTS6i2adyvJS6ZQxGXFyk7aAsytmqwwOAFy-SEHVZ39rHIfC6LUOf8B9o-y-vd9RkjkdgCNVfGNBC&currency=USD" data-sdk-integration-source="button-factory"></script> -->
                 
-    <!-- SANDBOX -->
+  
     <script src="https://www.paypal.com/sdk/js?client-id=AVnkZnDaKvFAocz7KIUYvfvpw4DcrqR5DK0dMdD4-BaisXfbd0eKi2qG2hBDv5wkLbc52alNaMqW4s3j&currency=USD" data-sdk-integration-source="button-factory"></script> 
 
     <script>
@@ -509,51 +504,11 @@ $preference = new MercadoPago\Preference();
     </section>
   </div>
 </div>
-
-
  
-
-
-
-
 
 <script src="assets/js/modalPagarVisa.js"></script>
 <script src="assets/js/formPagarVisa.js"></script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+ 
 </body>
 
 </html>

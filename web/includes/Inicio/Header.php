@@ -44,7 +44,41 @@ require_once 'database/databaseConection.php';
                             <a href="ListaCursos.php?pag=1">Cursos</a>
                         </li>
 
-                        <!-- <li class="nav-link" style="--i: .6s;">
+                        <li class="nav-link" style="--i: .6s;">
+                            <?php 
+                            $nom_privilegio = "";
+                            switch ($_SESSION['privilegio']) {
+                                case 1:
+                                    $nom_privilegio = "Administrador";
+                                    break;
+                                case 2:
+                                    $nom_privilegio = "Profesor";
+                                    break;
+                                case 3:
+                                    $nom_privilegio = "Usuario Normal";
+                                    break;
+                                case 4:
+                                    $nom_privilegio = "Empresa";
+                                    break;
+                                case 5:
+                                    $nom_privilegio = "Usuario Empresa";
+                                    break;
+                                case 6:
+                                    $nom_privilegio = "Super Admin";
+                                    break;
+                            }
+                            ?>
+                    
+                            <a class="link-cel pb-0" style="white-space: nowrap;text-overflow: ellipsis; overflow: hidden;">
+                                <?php echo $_SESSION['nombres_nom']?>
+                            </a>
+                            <a class="link-cel pt-2">
+                                <?php echo '('.$nom_privilegio.')'?>
+                            </a>
+                    
+                        </li>
+
+                        <li class="nav-link" style="--i: .6s;">
                     
                             <a class="link-cel" href="user-sidebar.php">Dashboard</a>
                     
@@ -60,7 +94,7 @@ require_once 'database/databaseConection.php';
                     
                             <a class="link-cel" href="includes/login/logout.php">Cerrar Sesión</a>
                     
-                        </li> -->
+                        </li>
 
                    
 
@@ -89,7 +123,7 @@ require_once 'database/databaseConection.php';
                         </li>
 
                         <!-- NO LOGUEADO - Iniciar Sesión y Regístrate -->
-                        <div class="log-sign" style="--i: 1.8s;">
+                        <div class="log-sign" style="--i: 1.4s;">
 
                             <a href="iniciosesion.php" class="btn transparent btnIni">Iniciar Sesión</a>
                       

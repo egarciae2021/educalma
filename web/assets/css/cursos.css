@@ -317,12 +317,12 @@ border-radius: 10px;
 
 .container-fluid .container-card-course .row .col-12 .card {
     max-width: 320px;
-    max-height: 400px;
+    max-height: 500px;
     height: 100%;
     width: 100%;
     border-radius: 0;
     margin: 0 auto;
-    border: 1px solid lightgray;
+    border: 1px solid #7C83FD;
     text-align: justify;
     justify-content: space-between;
 }
@@ -352,8 +352,11 @@ border-radius: 10px;
     .card
     .container-card-image
     img {
-    min-height: 100%;
-    min-width: 100%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    overflow: hidden;
+    max-width: unset;
 }
 
 .container-fluid /* TITULO DE LAS CARD */
@@ -364,7 +367,7 @@ border-radius: 10px;
     .container-card-title {
     text-transform: uppercase;
     color: #303030;
-    margin-top: .3rem;
+    margin-bottom: auto;
     line-height: 20px;
     font-size: 1.2rem;
     font-family: 'Baloo Tamma 2', cursive;
@@ -384,15 +387,14 @@ border-radius: 10px;
     .card
     .container-card-description {
     font-family: 'Baloo Tamma 2', cursive;
+    font-size: 1.2rem;
     color: #515151;
-    margin-bottom: 1.2rem;
-    /*texto en dos lineas*/
-    /* white-space: nowrap; */
-    /* overflow: hidden; */
-    /* text-overflow: ellipsis; */
-    /* display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    line-clamp: 2;
+    -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2; */
 }
 .container-fluid
     .container-card-course
@@ -406,8 +408,8 @@ border-radius: 10px;
 
 .container-fluid .container-card-course /* CREADO POR DE LAS CARD */
 .row .col-12 .card .container-card-title + .container-card-description {
-    font-size: .8rem;
-    flex-grow: 1;
+    font-size: 1rem;
+    margin: 22px 0 16px 0;
 }
 
 /*
@@ -441,10 +443,10 @@ border-radius: 10px;
 **/
 
 .card:hover{
-	box-shadow: 5px 5px 20px rgba(0,0,0,0.4);
+    box-shadow: 5px 5px 20px rgba(203, 0, 253, 0.4);
 	transform: translateY(-3%);
 }
-.card-miscursos:hover {
+.card-miscursos:hover {    
     box-shadow: 0px 0px 18px 0px #7c83fd;
 	transform: translateY(-3%);
 }
@@ -498,11 +500,11 @@ border-radius: 10px;
     }
     .container-fluid .container-card-course /* CREADO POR DE LAS CARD */
     .row .col-12 .card .container-card-title + .container-card-description {
-        font-size: .7rem;
+        font-size: .9rem;
     }
     .container-fluid .container-card-course /* DESCRIPCIÓN DE LAS CARD */
     .row .col-12 .card .container-card-description {
-        font-size: .9rem;
+        font-size: 1.1rem;
     }
     .container-card-link{ /* ESTILOS DE BOTON CARD */
         font-size: 1.3rem;
@@ -522,14 +524,6 @@ border-radius: 10px;
     }
     .container-fluid .row .col-12 .card .col-7 .container-link {
         font-size: 13px;
-    }
-    .container-fluid .container-card-course /*Títulos de las Card*/
-    .row .col-12 .card .container-card-title {
-        font-size: 1rem;
-    }
-    .container-fluid .container-card-course /* DESCRIPCIÓN DE LAS CARD */
-    .row .col-12 .card .container-card-description {
-        font-size: .8rem;
     }
     .container-card-link{ /* ESTILOS DE BOTON CARD */
         font-size: 1.2rem;
@@ -567,11 +561,11 @@ border-radius: 10px;
     }
     .container-fluid .container-card-course /* CREADO POR DE LAS CARD */
     .row .col-12 .card .container-card-title + .container-card-description {
-        font-size: .8rem;
+        font-size: 1rem;
     }
     .container-fluid .container-card-course /* DESCRIPCIÓN DE LAS CARD */
     .row .col-12 .card .container-card-description {
-        font-size: 1rem;
+        font-size: 1.1rem;
     }
     .container-fluid
     .container-card-course

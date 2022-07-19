@@ -13,17 +13,13 @@ ob_start();
     <!--Whatsapp-->
     <link rel="stylesheet" href="./assets/css/whatsapp.css">
 
-    <style>
-
+    <!-- <style>
         @media (max-width: 600px){
-
             .btnWth {
-
                 margin-bottom: 150px;
-
             }
         }
-    </style>
+    </style> -->
 
 </head>
 
