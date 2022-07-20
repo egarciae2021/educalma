@@ -37,7 +37,12 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <footer class="footer--light">
+=======
+<footer class="footer--light pt-4">
+
+>>>>>>> 0faa781762053769ad137769ffbc6f9c3826910d
 =======
 <footer class="footer--light pt-4">
 
@@ -100,6 +105,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     <div class="footer-big">
       <div class="container">
         <div class="row">
@@ -151,6 +157,8 @@
                   </li>
                 </ul>
               </div>
+=======
+>>>>>>> 0faa781762053769ad137769ffbc6f9c3826910d
 =======
 >>>>>>> 0faa781762053769ad137769ffbc6f9c3826910d
 =======
