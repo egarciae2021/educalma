@@ -613,20 +613,23 @@ border-radius: 10px;
 .container-card-title .tittle {
     text-transform: uppercase;
     font-family: 'Baloo Tamma 2', cursive;
+    font-weight: bold;
+    font-size: 30px;
 }
 
 .container-card-description{
-    font-size: 13px; 
+    font-size: 15px; 
     text-align: center;
+    font-family: 'Baloo Tamma 2', cursive;
    
 }
 
-.container-card-description{
+.description{
+    font-family: 'Baloo Tamma 2', cursive;
     padding-bottom: 1px; 
     margin-bottom: 1px; 
-    font-size: 14px; 
+    font-size: 16px; 
     position: relative;
-    
 }
 
 .precio{
@@ -634,6 +637,8 @@ border-radius: 10px;
     flex-direction: row;
     gap: 30px;
     justify-content: center;
+    font-family: 'Baloo Tamma 2', cursive;
+    font-weight: bold;
 }
 
 .info{
@@ -646,10 +651,33 @@ border-radius: 10px;
 
 .info a{
     color: #7C83FD; 
-    font-size: 18px; 
+    font-size: 20px; 
     text-decoration: none;
     position: relative;
     margin: auto;
     padding: 9px;
     top: -23px;
+    font-family: 'Baloo Tamma 2', cursive;
+    font-weight: bold;
+}
+
+.info1{
+    background: #FFF; 
+    border-radius: 30px; 
+    font-weight: 500;  
+    width: 150px;
+    height: 30px;
+    text-decoration: none;
+}
+
+.info1 a{
+    color: #7C83FD; 
+    font-size: 20px; 
+    text-decoration: none;
+    position: relative;
+    margin: auto;
+    padding: 8px;
+    top: -28px;
+    font-family: 'Baloo Tamma 2', cursive;
+    font-weight: bold;
 }

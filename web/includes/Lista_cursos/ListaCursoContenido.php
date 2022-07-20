@@ -607,7 +607,7 @@
                                     </div>
 
                                     <!--Contenedor del nombre del profesor del curso publicado-->
-                                    <div class="container-card-description">
+                                    <div class="container-card-description" >
 
                                         <!--Código para obtener el nombre del profesor-->
                                         <?php 
@@ -635,7 +635,7 @@
                                     </div>
 
                                     <!--Contenedor de la descripción del curso-->
-                                    <div class="container-card-description">
+                                    <div class="container-card-description description">
                                         <!--Descripción-->
                                         <strong>
                                             <p style="text-align: justify;padding: 2em 4em 0 4em"><?php echo $dato['descripcionCurso'] ?></p>
@@ -644,7 +644,7 @@
                                     </div>
 
                                     <!--Contenedor del costo del curso, mensaje si se compró o no el curso y del link "Leer Más".-->
-                                    <div style="font-size: 18px; color: white; padding-top: 1em;" class="precio">
+                                    <div style="font-size: 18px; color: white; padding-top: 1em; font-weight: bold;font-size: 20px;" class="precio">
                                                 
                                         <?php if($dato2['id_cursoInscrito'] == NULL){ ?>
                         
@@ -718,7 +718,7 @@
                                                 if(isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)){
                                                 ?>
                                                     <!--Link "Leer Más"-->
-                                                    <div class="info">
+                                                    <div class="info1">
                                                         <a href="<?php echo $paginaRed ?>.php?id=<?php echo $dato['idCurso']; ?><?php if(!empty($dato2)){?>&idCI=<?php echo $dato2['id_cursoInscrito']; }?>">
                                                         <center>Obtener Gratis</center>
                                                         </a>
@@ -728,7 +728,7 @@
                                                 ?>
                                                 
                                                     <!--Link "Leer Más"-->
-                                                    <div class="info">
+                                                    <div class="info1">
                                                         <a href="iniciosesion.php">
                                                         <center>Obtener Gratis</center>
                                                         </a>
