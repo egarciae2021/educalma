@@ -38,7 +38,6 @@
 </style>
 
 <footer class="footer--light">
-<<<<<<< HEAD
   <div class="footer-big">
     <div class="container">
       <div class="row">
@@ -85,7 +84,7 @@
                   <a href="recursos1.php"><i class="fas fa-bullhorn"></i> Comparte tu curso</a>
                 </li>
               </ul>
-=======
+
     <div class="footer-big">
       <div class="container">
         <div class="row">
@@ -137,7 +136,6 @@
                   </li>
                 </ul>
               </div>
->>>>>>> d76d573ca7aaca9d66b985ee107b433f54aba036
             </div>
           </div>
         </div>

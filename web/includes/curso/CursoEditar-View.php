@@ -44,6 +44,21 @@
             margin: 0;
         }
 
+        .form-group .col-12{
+            
+            -ms-word-break: break-all;
+     word-break: break-all;
+
+    
+     word-break: break-word;
+
+-webkit-hyphens: auto;
+   -moz-hyphens: auto;
+    -ms-hyphens: auto;
+        hyphens: auto;
+
+        }
+
         #actucurso_2 {
 
             position: relative;
