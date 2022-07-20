@@ -600,12 +600,12 @@ if (!isset($_GET['pag'])) {
       <span class="msg-error">Debe ser un correo corporativo.</span>
     </div>
   </div>
-  <div class="send-data col-12 my-auto justify-content-center align-items-center" id="sendData" style="
-    position: relative;    left: 21px;top: -350px;">
-    <div class="box-rotate my-5 justify-content-center abs-center " id="boxRotate" >
+  <div class="send-data col-12 my-auto justify-content-center align-items-center" id="sendData" >
+    <div class="box-rotate my-5 justify-content-center abs-center " id="boxRotate" style="
+    position: relative;    left: 301px;top: -370px;">
       <div class="front d-flex" id="front" >       
         <div class="box-image d-flex align-items-center justify-content-center" >
-          &nbsp;&nbsp; <img class="img-fluid; " src="./assets/images/EDU-EMP.png" alt="" style="width: 450px;" />
+          &nbsp;&nbsp; <img class="img-fluid; " src="./assets/images/EDU-EMP.png" alt="" style="width: 480px;" />
         </div>
       </div> 
       <div class="back">
