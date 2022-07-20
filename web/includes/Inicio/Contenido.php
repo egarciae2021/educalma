@@ -261,6 +261,14 @@ if (!isset($_GET['pag'])) {
       .card:hover .back {
           transform: perspective(600px) rotateY(360deg);
       }
+      /*Alinear la imagen Educalma para empresas*/
+      #boxRotate{
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+      }
       </style>
         <?php
           $pdo= Database::connect();
@@ -592,8 +600,8 @@ if (!isset($_GET['pag'])) {
       <span class="msg-error">Debe ser un correo corporativo.</span>
     </div>
   </div>
-  <div class="send-data col-12 my-auto" id="sendData">
-    <div class="box-rotate my-5" id="boxRotate">
+  <div class="send-data col-12 my-auto justify-content-center align-items-center" id="sendData">
+    <div class="box-rotate my-5 justify-content-center abs-center " id="boxRotate">
       <div class="front d-flex" id="front" >       
         <div class="box-image d-flex align-items-center justify-content-center">
           &nbsp;&nbsp; <img class="img-fluid; " src="./assets/images/EDU-EMP.png" alt="" style="width: 400px; height: 400px;" />
