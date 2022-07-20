@@ -567,7 +567,7 @@ if (!isset($_GET['pag'])) {
 
 
 <!-- EMPRESAS -->
-<div class="container-bussines container divEmp" style="margin-top: 4.4rem; margin-bottom: 3rem;">
+<div class="container-bussines container divEmp" style="margin-top: 4.4rem; margin-bottom: -21rem;">
 
 
   <div class="info col-12 d-flex flex-column justify-content-center"> <!--/////////////////////////-->
@@ -600,11 +600,12 @@ if (!isset($_GET['pag'])) {
       <span class="msg-error">Debe ser un correo corporativo.</span>
     </div>
   </div>
-  <div class="send-data col-12 my-auto justify-content-center align-items-center" id="sendData">
-    <div class="box-rotate my-5 justify-content-center abs-center " id="boxRotate">
+  <div class="send-data col-12 my-auto justify-content-center align-items-center" id="sendData" style="
+    position: relative;    left: 21px;top: -350px;">
+    <div class="box-rotate my-5 justify-content-center abs-center " id="boxRotate" >
       <div class="front d-flex" id="front" >       
-        <div class="box-image d-flex align-items-center justify-content-center">
-          &nbsp;&nbsp; <img class="img-fluid; " src="./assets/images/EDU-EMP.png" alt="" style="width: 500px;" />
+        <div class="box-image d-flex align-items-center justify-content-center" >
+          &nbsp;&nbsp; <img class="img-fluid; " src="./assets/images/EDU-EMP.png" alt="" style="width: 450px;" />
         </div>
       </div> 
       <div class="back">
