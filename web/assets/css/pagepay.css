@@ -1,13 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;300;500&family=Raleway:wght@100;200;300;400;500;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Tamma+2:wght@400;500;600;700;800&display=swap');
 body {
-    background-image: url("../images/preguntas.png");
-    background-size: cover;
-    background-repeat: no-repeat;
+    background: rgb(255,255,255);
+    background: linear-gradient(180deg, rgba(255,255,255,1) 11%, rgba(224,199,229,1) 42%, rgba(231,244,255,1) 96%);
     /* background-position-y: 50%; */
     color: #000000;
-    height: 100vh;
-    font-family: "Inter", sans-serif;
-    font-family: "Raleway", sans-serif;
+    height: calc(100vh - 4rem);
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* font-family: "Inter", sans-serif;
+    font-family: "Raleway", sans-serif; */
+    font-family: 'Baloo Tamma 2', cursive;
 }
 
 .container {
@@ -17,37 +20,47 @@ body {
 }
 
 .container-navbar-router a {
+  margin-left: 1.5rem;
     text-decoration: none;
-    color: #777777;
-    font-size: 14px;
+    color: #737BF1;
+    font-size: 1.2rem;
 }
 
 .container-navbar-router i {
-    font-size: 10px;
-    color: #777777;
+  color: #737BF1;
+  font-size: .8rem;
 }
 
 .container-navbar-router span {
-    font-size: 14px;
-    color: #777777;
+  color: #737BF1;
+  font-size: 1.2rem;
 }
 
 .container-pay .d-flex h4 {
-    font-size: 14px;
+    font-size: 1.3rem;
 }
 
 .container-pay .d-flex span {
-    font-size: 14px;
+  font-size: 1.3rem;
 }
 
 .container-pay .d-flex span a {
-    text-decoration: none;
+    color: #EDF4FF;
+}
+
+.container-pay .d-flex div:last-child{
+  text-decoration: none;
+    background-color: #737BF1;
+    border-radius: 10px;
+    color: #EDF4FF;
+    padding: .2rem .8rem .1rem .8rem;
+    text-align: center;
 }
 
 .container-pay .container-pay-online .col-12 {
     background-color: #f7f7f7;
     border-radius: 5px;
-    font-size: 13px;
+    font-size: 1rem;
     color: rgb(148, 148, 148);
 }
 
@@ -70,12 +83,14 @@ body {
 }
 
 .container-info-course {
-    border-top: 3px solid #abb0ee;
+  border-radius: 1rem;
+  box-shadow: 6px 6px 10px -1px rgba(124,131,253,0.8);
 }
 
-.container-info-course .px-4 h5 {
-    font-size: 15px;
+.container-info-course div h4 {
+    font-size: 1.8rem;
     font-weight: bold;
+    color: #737BF1;
 }
 
 
@@ -84,14 +99,24 @@ body {
   font-weight: bold;
 } */
 
-.container-info-course .px-4 .d-flex span {
-    font-size: 13px;
-    /* font-weight: bold; */
+.container-info-course .d-flex span {
+  line-height: 20px;
 }
 
-.container-info-resumen .px-4 h5 {
-    font-size: 15px;
+.container-info-course .d-flex span span {
+    font-size: 1rem;
     font-weight: bold;
+}
+
+.container-info-resumen {
+  border-radius: 1rem;
+  box-shadow: 6px 6px 10px -1px rgba(124,131,253,0.8);
+}
+
+.container-info-resumen div h4 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #737BF1;
 }
 
 
@@ -100,29 +125,42 @@ body {
   font-weight: bold;
 } */
 
-.container-info-resumen .px-4 .row {
-    font-size: 13px;
-    /* font-weight: bold; */
+.container-info-resumen div .row .container-image-detalle {
+  border-radius: 1rem;
+  height: 100px;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 40%;
 }
 
-.container-info-resumen .px-4 .row .container-image-detalle {
-    position: relative;
-    /* border:1px dashed red; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
+.container-info-resumen div .row .container-image-detalle img {
+  width: 100%;
 }
 
-.container-info-resumen .px-4 .row .container-image-detalle img {
-    flex-shrink: 0;
-    min-width: 100%;
-    min-height: 100%;
+.container-info-resumen .info-resumen-detalle span {
+  line-height: 20px;
+  font-size: 1rem;
+}
+
+.container-info-resumen hr {
+  border: 1px solid #737BF1;
 }
 
 @media (max-width: 767px) {
     .container-info-course {
         margin-top: 1rem;
+    }
+    body {
+      height: 100%;
+    }
+    .container-info-resumen{
+      margin-bottom: 2rem;
+    }
+    .container {
+      margin-top: 1rem;
     }
 }
 
@@ -131,7 +169,7 @@ body {
 }
 
 #accordion .card a {
-    font-size: 13px;
+  font-size: 1rem;
 }
 
 #accordion .card .card-header {
@@ -140,7 +178,7 @@ body {
 }
 
 #accordion .card .card-header i {
-    color: rgba(136, 136, 136, 0.747);
+    color: rgb(176 176 176 / 75%);
 }
 
 

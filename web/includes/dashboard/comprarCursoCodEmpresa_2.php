@@ -95,13 +95,9 @@
         color: #EF3B3A;
         }
         body {
-            /* background-image: url("./assets/img/fondop33.jpg"); */
-            /* width: 1313px;
-            height: 724px; */
-            /* background-color: red; */
-            background-image: url("./assets/img/codigo_empresa.png");
-            background-size: 200px 200px;
-            background-size: 100% 100%;
+    
+            background-image: url("./assets/img/fondo_codigo_empresa.jpg");
+            background-size: cover;
             background-repeat: no-repeat;
         }
 
@@ -121,7 +117,7 @@
     ?>
 
     <div class="login-page">
-        <div class="form">
+        <div class="form" style="border-radius: 20px;">
             <form class="login-form">
                 <!-- Codigo Empresa -->
                 <div class="col my-3">

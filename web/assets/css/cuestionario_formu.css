@@ -238,6 +238,32 @@ textarea:focus {
     }
 }
 
+@media (max-width: 400px) {
+    .atras{
+      display: none;
+    }
+    .editar{
+        display: none;
+    }
+    .cursos{
+        display: none;
+    }
+    .btnCorrecto{
+        font-size: 15px;
+        display: flex;
+        justify-content: center;
+
+    }
+  }
+
+.pregunta{
+    color: black; 
+    font-weight: bold; 
+    font-size: 24px; 
+    position: relative; 
+    top: 20px;
+    word-wrap: break-word;
+}
 
 /*form cuestionario*/
 
@@ -378,4 +404,8 @@ textarea {
     width: auto;
     height: 10rem;
     overflow: auto;
+}
+
+.display-none{
+    display: none;
 }

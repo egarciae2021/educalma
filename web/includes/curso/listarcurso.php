@@ -20,40 +20,35 @@
     <style>
 
         .dataTables_filter{
+            /*Centrando el buscador de "Por Empresas".*/
+            position: relative;  
+            left: -140px;
+            float: left;
+            /**/
 
-        /*Centrando el buscador de "Lista de Cursos No Publicados".*/
-        position: relative;  
-        left: -140px;
-        float: left;
-        /**/
-
-        border-radius: 5px ; 
-        border: 1px solid #57B3F7;
-        background-repeat: no-repeat;
-        background-image: url("./assets/img/buscar.png");
-        background-position: 8px 5px;
-        background-size: 25px 25px;
+            border-radius: 5px ; 
+            border: 1px solid #57B3F7;
+            background-repeat: no-repeat;
+            background-image: url("./assets/img/buscar.png");
+            background-position: 8px 5px;
+            background-size: 25px 25px;
 
         }
 
         /*Palabra "Buscar"*/ 
         .dataTables_filter label {
-
-        position: relative;
+            position: relative;
             top: 5px;
-            
             left: 38px;
             /*font-weight: bold;*/
             width: 280px;
-
             font-size: 15.4px;
 
         }
 
         /*Caja de texto del buscador*/ 
         .dataTables_filter label .form-control {
-
-        border: 0;
+            border: 0;
             height: 25px;
             position: relative;
             left: -9px;
@@ -61,10 +56,10 @@
         }
 
                 
-            .boton3 {
+        .boton3 {
         color: #737BF1 !important;
         padding: 0.5em 1.2em;
-        background: rgba(0,0,0,0);
+        background: #E7F4FF;
         border-radius:10px;
         border: 2px solid;
         border-color: #737BF1;
@@ -75,7 +70,44 @@
         background: #737BF1;
         color: white !important;
         }
+
+        @media screen and (max-width: 720px) {
+            .dataTables_filter{
+
+                float: right;
+                position: relative;
+                left: 25px;
+            }
+        }
+
+        @media screen and (max-width: 640px) {
+
+        .dataTables_filter{
+
+            float: right;
+            position: relative;
+            left: 25px;
+        }
+        }
         
+        @media (max-width: 620px) {
+            .numUsers {
+            color: #7C83FD;
+            float: left; 
+            position: relative; 
+            top: 15px; 
+            font-size: 20px;
+            }
+            }
+
+        @media screen and (max-width: 400px) {
+                .dataTables_filter{
+                float: left;
+                position: relative;
+                
+                width: 85%;
+                }
+            }
     </style>
    
 </head>
@@ -122,9 +154,6 @@
                     <div class="card-header">
                         <h3 class="card-title">Lista de Cursos No Publicados</h3>
                     </div>
-
-
-
                     <div class="card-body">
                         <?php
                         require_once 'database/databaseConection.php';
@@ -161,9 +190,9 @@
                         ?>
                         <div class="table-responsive">
                 
-                             <table id="tablaCursos" class="table table-borderless dt-responsive" cellspacing="0" width="100%" >
+                             <table id="tablaCursos" class="table table-borderless dt-responsive" cellspacing="0" width="100%" style="background-color:#fff;padding: 17px;border-radius: 10px;">
                                 <thead>
-                                    <tr style="background-color:#737BF1">
+                                    <tr style="background: rgb(124,131,253);background: linear-gradient(50deg, rgba(124,131,253,1) 0%, rgb(224 199 229) 100%);">
                                         <th style="border-radius: 10px 0 0  10px;">Nombre</th>
                                         <th>Creado Por</th>
                                         <th>Categoría</th>
@@ -294,7 +323,7 @@
                                                 <?php    
                                                     if($curso['imagenDestacadaCurso']!=null){
                                                 ?>
-                                                        <img style="height:40px;" src="data:image/*;base64,<?php echo base64_encode($curso['imagenDestacadaCurso']) ?>">
+                                                        <img style="height:40px;" src="<?php echo $curso['imagenDestacadaCurso'] ?>">
                                                 <?php
                                                     }else{
                                                 ?>
@@ -350,15 +379,15 @@
 
                     
                                                 ?>
-                                                <td>
+                                                <td style="position: relative;top: -23px;">
                                                     <!--para agregar modulo-->
-                                                    <a style="color:blue;" href="agregarModulos.php?id=<?php echo $curso['idCurso']; ?>">
+                                                    <a style="color:#7C83FD;" href="agregarModulos.php?id=<?php echo $curso['idCurso']; ?>">
                                                         <i class="far fa-plus-square fa-lg"></i> 
                                                     </a>
 
                                                   
                                                     <!--para editar curso-->
-                                                    <a style="color:green;" href="editarcurso.php?id=<?php echo $curso['idCurso']; ?>">
+                                                    <a style="color:#ECBE83;" href="editarcurso.php?id=<?php echo $curso['idCurso']; ?>">
                                                         <i class="far fa-edit fa-lg"></i>
                                                     </a>
                                                      
@@ -375,10 +404,6 @@
                                                 ?>
                                                     <!--para publicar curso-->
                                                     <a style="" href="includes/Cursos_crud/aceptarCurso.php?id_curso=<?php echo $curso['idCurso']; ?>&pag=<?php echo $_GET['pag'];?>">
-                                                        <button  id="btnPublicarCurso" class="btn btn-upload" type="button" hidden multiple>Publicar</button>
-                                                    </a>
-                                               
-                                                    <a>
                                                         <button id="" class="boton3" type="button" onclick="alertaCursoPublicado()">Publicar Curso</button>
                                                     </a>
                                                  </td>

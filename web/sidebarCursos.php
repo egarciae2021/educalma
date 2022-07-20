@@ -1,14 +1,15 @@
-<?php
-ob_start();
-@session_start();
+<?php   
+    ob_start();
+    @session_start();
+    //if(isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)){
 ?>
+
+<?php include_once 'includes/Inicio/Head.php' ?>
+
 <?php include_once 'includes/dashboard/head1.php' ?>
 
-<head>
-<link rel="shortcut icon" href="assets/images/logo_edu.png">
-</head>
+<body>
 
-<body style="background: white;">
 
     <?php include_once 'includes/dashboard/header1.php' ?>
 
@@ -16,11 +17,49 @@ ob_start();
 
     <?php include_once 'includes/dashboard/miscursos.php' ?>
 
-    <script src="./assets/js/main.js"></script>
-    
-    <script src="./assets/lib/jquery-3.2.1.slim.min.js"></script>
-    
-    <script src="./assets/js/m.dashboard.js"></script>
-</body>
 
-</html>
+    <script src="assets/js/home.js"></script>
+    <script src="assets/js/buscarCurso_2.js"></script>
+
+    <!-- <script src="./assets/js/plugins/jquery.min.js"></script> -->
+    <!-- ALL JS FILES -->
+    <script src="./assets/js/plugins/jquery.min.js"></script>
+    <script src="./assets/js/plugins//popper.min.js"></script>
+    <script src="./assets/js/plugins/bootstrap.min.js"></script>
+    <script src="./assets/js/plugins/sweetalert2.all.min.js"></script>
+    <script src="./assets/js/validarRegisCateg.js"></script>
+    <script src="./assets/js/home.js"></script>
+
+    <script src="./assets/js/main.js"></script>
+    <!-- DataTables  & Plugins -->
+    <script src="includes/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="includes/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+    <script src="includes/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="includes/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+    <script src="includes/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+    <script src="includes/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+    <script src="includes/plugins/jszip/jszip.min.js"></script>
+    <script src="includes/plugins/pdfmake/pdfmake.min.js"></script>
+    <script src="includes/plugins/pdfmake/vfs_fonts.js"></script>
+    <script src="includes/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+    <script src="includes/plugins/datatables-buttons/js/buttons.print.min.js"></script>
+    <script src="includes/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+
+    <!-- <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap4.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.2.9/js/responsive.bootstrap4.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.0.1/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.0.1/js/buttons.bootstrap4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.0.1/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.0.1/js/buttons.print.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.0.1/js/buttons.colVis.min.js"></script> -->
+    
+    
+
+    <script src="./assets/js/datatableFunctions.js"></script>
+
+</body>

@@ -1,9 +1,23 @@
- <?php
+<!--Su archivo CSS es style1.css y la ruta es assets\css\style1.css.-->
+
+<?php
 // Este codigo hace validacion para que no se pueda acceder a cualquier pagina sin estar logueado__Pablo Loyola
 
 if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
-
 ?>
+
+<style>
+
+ 
+    @import url('https://fonts.googleapis.com/css2?family=Baloo+Tamma+2:wght@400;700&display=swap');
+ 
+
+    .nav-dashboard {
+
+        font-family: 'Baloo Tamma 2';
+    }
+    
+</style>
 
     <!--========== NAV ==========-->
     <div class="nav-dashboard" id="navbar">
@@ -29,7 +43,7 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                                 if($dato['mifoto']!=null){
                             ?>
                                 
-                               <img id="miFoto"  src="data:image/*;base64,<?php echo base64_encode($dato['mifoto']); ?>" alt="foto_curso" class="header__img__side-dashboard" >  
+                                <img id="miFoto" src="./assets/images/avatar_hombre.png" alt="foto_curso" class="header__img__side-dashboard"> 
                                <!-- <style>
                                    #miFoto{
                                     border-radius: 50%;
@@ -49,28 +63,21 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                                     background-image: -o-linear-gradient(left, #3acfd5 0%, #3a4ed5 100%), -o-linear-gradient(left, #3acfd5 0%, #3a4ed5 100%);
                                     background-image: linear-gradient(to right, #3acfd5 0%, #3a4ed5 100%), linear-gradient(to right, #3acfd5 0%, #3a4ed5 100%);
                                     }
-                               </style> -->
+                               </styl> -->
                           
                           <?php
                                 }else{
                             ?>
 
-                                <?php  //if (isset($_SESSION['Logueado']) && $_SESSION['Logueado'] === true && $dato['sexo'] === 1) { // 1 -> Masculino?>
+                                <?php  if (isset($_SESSION['Logueado']) && $_SESSION['Logueado'] === true && $dato['sexo'] == 1) { ?>
 
-                                    <!--<img src="./assets/images/avatar_hombre.png" alt="foto_curso" class="header__img__side-dashboard"> -->
-                                    <img src="" alt="foto_curso" class="header__img__side-dashboard">
+                                    <img id="miFoto" src="./assets/images/avatar_hombre.png" alt="foto_curso" class="header__img__side-dashboard"> 
+                                  
+                                <?php } else if (isset($_SESSION['Logueado']) && $_SESSION['Logueado'] === true && $dato['sexo'] == 2) { ?>
 
-                                <?php // } else if (isset($_SESSION['Logueado']) && $_SESSION['Logueado'] === true && $dato['sexo'] === 2) { // 2 -> Femenino?>
-
-                                    <!-- <img src="./assets/images/avatar_mujer.png" alt="foto_curso" class="header__img__side-dashboard"> -->
-
-                                <?php // } else if (isset($_SESSION['Logueado']) && $_SESSION['Logueado'] === true && $dato['sexo'] === 3) { // 3 -> No binario?>
-
-                                    
-                                <?php // } else if (isset($_SESSION['Logueado']) && $_SESSION['Logueado'] === true && $dato['sexo'] === 4) { // 4 -> Prefiero no decir?>
-
-
-                                <?php // } ?>
+                                    <img id="miFoto" src="./assets/images/avatar_mujer.png" alt="foto_curso" class="header__img__side-dashboard">
+                               
+                                <?php  } ?>
                             <?php
                                 }
                             ?>
@@ -91,28 +98,29 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                         ?>
 
 
-
-                        <h4 style="position: relative; left: 20px; top: -15px;" class="nav__subtitle-dashboard">
-                            <?php
-                            if (isset($_SESSION['Logueado']) && $_SESSION['Logueado'] === true) {
-                                echo $nom." ".$apepat." ".$apemat;
-                            } else {
-                                echo '';
-                            }
-                            ?>
-                        </h4>
+                        <div style="height: 50px; position: relative; left: 5px; top: -15px;" class="nav__subtitle-container">
+                            <h4 style="color: black; font-weight: 550; font-size: 16px;" id="user__name" class="nav__subtitle-dashboard">
+                                <?php
+                                if (isset($_SESSION['Logueado']) && $_SESSION['Logueado'] === true) {
+                                    echo $nom." "."<br>".$apepat." ".$apemat;
+                                } else {
+                                    echo '';
+                                }
+                                ?>
+                            </h4>
+                        </div>
 
                         <a style="position: relative; left: 8px;" href="index.php" class="nav__link-dashboard">
                             <!-- <i class='bx bx-home nav__icon'></i> -->
                             <i class="fas fa-home nav__icon-dashboard" style="color:#7d83fc;"></i>
-                            <span style="position: relative; left: -3px;" class="nav__name-dashboard">Inicio</span>
+                            <span style="position: relative; left: -3px; font-size: 16px !important;" class="nav__name-dashboard">Inicio</span>
                         </a>
                         
                         <div style="position: relative; left: 8px;" class="nav__dropdown-dashboard">
                             <a href="user-sidebar.php" class="nav__link-dashboard">
                                 <i class="fa fa-chart-line nav__icon-dashboard" style="color:#7d83fc;"></i>
                                 <!-- <i class="far fa-bookmark nav__icon"></i> -->
-                                <span class="nav__name-dashboard">Dashboard</span>
+                                <span style="font-size: 16px !important;" class="nav__name-dashboard">Dashboard</span>
                                 <!-- <i class='bx bx-chevron-down nav__icon nav__dropdown-icon'></i> -->
                                 
                             </a>
@@ -123,9 +131,9 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                         <div style="position: relative; left: 8px;" class="nav__dropdown-dashboard">
 
                             <a class="nav__link-dashboard">
-                                <img class="nav__icon-dashboard" src="./assets/images/cur.png" width="25" heigth="25">
+                                <img class="nav__icon-dashboard" src="./assets/images/cur.png" width="23" heigth="23">
                                 <!-- <i class="far fa-bookmark nav__icon"></i> -->
-                                <span style="position: relative; left: -3px;" class="nav__name-dashboard">Cursos</span>
+                                <span style="color: #58555E; position: relative; left: -3px; font-size: 16px !important;" class="nav__name-dashboard">Cursos</span>
                                 <!-- <i class='bx bx-chevron-down nav__icon nav__dropdown-icon'></i> -->
                                 <i class="fas fa-caret-down nav__icon-dashboard nav__dropdown-icon-dashboard"></i>
                             </a>
@@ -148,17 +156,17 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                                     ?>
 
                                         <!--//-->
-                                        <a href="sidebarCursos.php" class="nav__dropdown-item-dashboard nav__link-dashboard"><i class="fa fa-angle-right" aria-hidden="true"></i>Mis Cursos</a>
+                                        <a style="font-size: 16px !important;" href="sidebarCursos.php" class="nav__dropdown-item-dashboard nav__link-dashboard"><i class="fa fa-angle-right" aria-hidden="true"></i>&nbsp;Mis Cursos</a>
 
                                         <!--//-->
-                                        <a href="comprarCursoCodEmpresa.php" class="nav__dropdown-item-dashboard nav__link-dashboard"><i class="fa fa-angle-right" aria-hidden="true"></i>Comprar Curso por Código de Empresa</a>
+                                        <a style="font-size: 16px !important;" href="comprarCursoCodEmpresa.php" class="nav__dropdown-item-dashboard nav__link-dashboard"><i class="fa fa-angle-right" aria-hidden="true"></i>&nbsp;Comprar Curso por Código de Empresa</a>
 
                                     <?php
                                     }
                                     ?>
                                     
                                     <!--//-->
-                                    <a href="ListaCursos.php?pag=1" class="nav__dropdown-item-dashboard nav__link-dashboard"><i class="fa fa-angle-right" aria-hidden="true"></i>Cursos Publicados</a>
+                                    <a style="font-size: 16px !important;" href="ListaCursos.php?pag=1" class="nav__dropdown-item-dashboard nav__link-dashboard"><i class="fa fa-angle-right" aria-hidden="true"></i>&nbsp;Cursos Publicados</a>
 
 
                                     
@@ -176,10 +184,10 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                                     ?>
 
                                         <!--//-->
-                                        <a href="agregarcurso.php" class="nav__dropdown-item-dashboard nav__link-dashboard"><i class="fa fa-angle-right" aria-hidden="true"></i>Agregar Un Nuevo Curso</a>
+                                        <a style="font-size: 16px !important;" href="agregarcurso.php" class="nav__dropdown-item-dashboard nav__link-dashboard"><i class="fa fa-angle-right" aria-hidden="true"></i>&nbsp;Agregar Un Nuevo Curso</a>
 
                                         <!--//-->
-                                        <a href="publicarcursos.php?pag=1" class="nav__dropdown-item-dashboard nav__link-dashboard"><i class="fa fa-angle-right" aria-hidden="true"></i>Cursos No Publicados</a>
+                                        <a style="font-size: 16px !important;" href="publicarcursos.php?pag=1" class="nav__dropdown-item-dashboard nav__link-dashboard"><i class="fa fa-angle-right" aria-hidden="true"></i>&nbsp;Cursos No Publicados</a>
 
                                     <?php
                                     }
@@ -214,10 +222,10 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                                 </div>
 
                             </div> -->
-                            <div style="position: relative; left: 8px;" class="nav__dropdown-dashboard">
+                            <div style="color: #58555E; position: relative; left: 8px;" class="nav__dropdown-dashboard">
                                 <a alt="Empresas" class="nav__link-dashboard">
                                     <i class="fas fa-city" style="color:#7d83fc;"> </i>
-                                    <span style="position: relative; left: -8px;" class="nav__name-dashboard">&nbsp;&nbsp; Empresas</span>
+                                    <span style="position: relative; left: -8px; font-size: 16px !important;" class="nav__name-dashboard">&nbsp;&nbsp; Empresas</span>
                                     <!-- <i class='bx bx-chevron-down nav__icon nav__dropdown-icon'></i> -->
                                     <i class="fas fa-caret-down nav__icon-dashboard nav__dropdown-icon-dashboard"></i>
                                 </a>
@@ -230,7 +238,7 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                                     </div> -->
                                     <div class="nav__dropdown-content-dashboard">
 
-                                        <a href="curseEmp.php" class="nav__dropdown-item-dashboard nav__link-dashboard"><i class="fa fa-angle-right" aria-hidden="true"></i>Cursos para Empresas</a>
+                                        <a style="font-size: 16px !important;" href="curseEmp.php" class="nav__dropdown-item-dashboard nav__link-dashboard"><i class="fa fa-angle-right" aria-hidden="true"></i>&nbsp;Cursos para Empresas</a>
                                         <!-- <a href="#" class="nav__dropdown-item-dashboard nav__link-dashboard">Control de Empleados</a> -->
 
                                     </div>
@@ -246,7 +254,7 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
 
                             <a style="position: relative; left: 12px;" href="reporteUsuario.php" class="nav__link-dashboard">
                                 <i class="fas fa-clipboard nav__icon-dashboard" style="color:#7d83fc;"></i>
-                                <span class="nav__name-dashboard">Reporte</span>
+                                <span style="font-size: 16px !important;" class="nav__name-dashboard">Reporte</span>
                             </a>
 
                         <?php
@@ -256,27 +264,43 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                         <?php
                             }
                         ?>
-
-                        <a style="position: relative; left: 8px;" href="sidebarEditar.php" class="nav__link-dashboard">
-                            <i class="fas fa-cog nav__icon-dashboard" style="color:#7d83fc;"></i>
-                            <span class="nav__name-dashboard">Ajustes</span>
+                      
+                        <a style="position: relative; left: 10px;" href="sidebarEditar.php" class="nav__link-dashboard">
+                            <i class="fas fa-cog nav__icon-dashboard" style="color:#7d83fc; margin-right: 0.4rem;"></i>
+                            <span style="font-size: 16px !important;" class="nav__name-dashboard">Ajustes</span>
                         </a>
 
-                        <a style="position: relative; left: 8px; margin-top: 10px;border-color: #7d83fc;" href="includes/login/logout.php" class="nav__link-dashboard nav__logout-dashboard">
-                            <button style="background-color:#7d83fc; color:azure; height: 45px; width:80px; ">
-                                <i class="fa fa-arrow-right nav__icon-dashboard" style="float: left;"></i><span class="nav__name-dashboard" style="float:left;">Salir </span>  
+                        <a id="logout__button" style="position: relative; left: 2px; margin-top: 10px;border-color: #7d83fc;" href="includes/login/logout.php" class="nav__link-dashboard nav__logout-dashboard">
+                            <button style="font-size: 16px !important; background-color:#7d83fc; color:azure; height: 45px;">
+                            
+                                <i class="fa fa-door-closed nav__icon-dashboard" style="float: left;">
+                                
+                                </i>
+                                <span class="nav__name-dashboard" style="float:left;">Salir</span>  
                             </button>
                         </a>
-
-                        <img style="position: relative; top: 20px;" src="./assets/images/ilu_niño.png">
-
+                        <img class="img__ilu" id="img__ilu" src="./assets/images/ilu_niño.png">
                     </div>
                 </div>
             </div>
 
         </nav>
     </div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"></script>
+    <script>
+        const navbarId = document.getElementById("navbar");
+        const toggleBtn = document.getElementById("header-toggle");
+        const imgIlu = document.getElementById("img__ilu");
+        const miFoto = document.getElementById("miFoto");
+        const navbarSub = document.getElementById("user__name");
+        const btnLogout = document.getElementById("logout__button");
+        toggleBtn.addEventListener('click', ()=>{
+            imgIlu.classList.toggle("img__ilu-show")
+            miFoto.classList.toggle("miFoto-show")
+            navbarSub.classList.toggle("user__name-show")
+            btnLogout.classList.toggle("nav__logout-dashboard-show")
+        })
+    </script>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"></script>-->
     <!--========== CONTENTS ==========-->
 <?php
 }else {

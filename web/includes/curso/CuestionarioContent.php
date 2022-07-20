@@ -1,3 +1,4 @@
++
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,11 +17,8 @@
 
     <script src="./assets/js/plugins/sweetalert2.all.min.js"></script>
 
-    <style>
-
- 
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Mukta:wght@600&display=swap');
- 
+    <style> 
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Mukta:wght@600&display=swap'); 
 
         /* WEBKIT BROWSERS - CHROME, OPERA AND SAFARI */
        progress::-webkit-progress-bar {
@@ -50,8 +48,7 @@
            border-radius: 18px;
            background: repeating-linear-gradient(45deg, #5BF543, #5BF543 10px,#5BF543 10px, #5BF543 20px);
        }
-
-
+ 
 
        .opciones {
             margin-top: -65px;
@@ -262,7 +259,7 @@
                 <div class="container" style="margin-top: 120px;"></div>
 
                 <div style="background: none; width: 80%; margin: auto; margin-bottom: 50px;">
-                    <div class="col-md-12" style="background-color: white; padding-bottom: 40px;">
+                    <div class="col-md-12" style="padding-bottom: 40px; font-size: 19px;">
                         <div class="infoMin">
                             <a href="">
                                 <?php echo $nombre_curso['nombreCurso']?> </a> <label> > </label>
@@ -416,12 +413,13 @@
                             $notaCurso = $datoConsultaCurso['Cantidad'];
                             Database::disconnect();*/
                     ?>
-
-                    <h4 style="text-align: right; ">
+                    <!--barra de avanace del curso -->
+                   <!-- <h4 style="text-align: right; ">
                     <span style="text-align: center; color: #9383F3;">Avance de curso : </span> 
                     <progress style="width:; background:#E3E8E2;" max="100" value="<?php echo($AvanceFinal)?>"></progress>
                     <span style="text-align: center; color: #9383F3;"><?php echo($AvanceFinal)?>%</span>
-                        </h4> 
+                    </h4> 
+                        -->
 
                    
                     <h1 style="color: #4F52D6; font-size: 30px; padding: 15px; text-align: center;">
@@ -575,6 +573,9 @@
                                     <h5>Déjanos un comentario</h5>
                                     <input type="text" name="text" id="coment1" maxLength="250">
                                         <label for="coment1"></label>
+                                    <br>
+                                    <h5>Realiza la siguiente encuesta de satifaccion</h5>
+                                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfLNgkgG3cjR8gAYaC3BPhyraDkbraC78WVO3KcqYPWyu8Kcg/viewform"><button class="btn btn-primary" type="submit">Ir a la encuesta</button><a>
                                 </div>
                             </div>
                                     </div>
@@ -886,9 +887,9 @@
                                                     <div class="col-sm-12 text-right" style="color:#768EE8; color: white; font-weight: 900;">Puntos: &nbsp; <?php echo (($puntaje)?''.round($puntRes).'/'.round($puntRes).' pts':'0/'.round($puntRes).' pts')?> </div>
                                                 </div> 
                                         </div>
-                                        <div class="list-group list-group-flush small text-left text-secondary font-weight-normal my-3" style="color: black !important; font-weight: bold; font-size: 20px; margin-left:10px;">
-                                            <?php echo $filaCor['pregunta'];?>
-                                        </div>
+                                        <!--<div class="list-group list-group-flush small text-left text-secondary font-weight-normal my-3" style="color: black !important; font-weight: bold; font-size: 20px; margin-left:10px;">
+                                             <?php echo $filaCor['pregunta'];?> 
+                                        </div>-->
                                         <ul style="background: #E7F4FF;" class="list-group list-group-flush text-justify">
                                         
                                             <?php while($fila23=$q23->fetch(PDO::FETCH_ASSOC)){
@@ -1007,19 +1008,19 @@
                             $q2->execute(array());
                     ?>
 
-                            <h5 style="background: #CFE8FE; padding: 20px 35px; color: #4F52D6">
+                            <h5 style="background: #7C83FD; padding: 20px 35px; color: #fff; margin-top: -20px;">
                                 <?php echo $fila1[$envi]['pregunta'];?>
                             </h5>
-                            <form style="padding: 30px;" action="includes/cuestionarioCRUD/cuestion.php?contador=<?php echo $contador;?>&id=<?php echo $id;?>&c=<?php $correcta ?>&idModulo=<?php echo $idModulo;?>&validar=<?php echo 0; ?>&up=<?php echo $up ?>&cuen=<?php echo $ens ?>&nro=<?php echo $envi?>&id_pregunta=<?php echo $idpregunta ?>&nW=<?php echo $_GET['nW']?>&idCI=<?php echo $idCI?>"
+                            <form style="padding: 30px; background: #fff;margin-top: -7px;" action="includes/cuestionarioCRUD/cuestion.php?contador=<?php echo $contador;?>&id=<?php echo $id;?>&c=<?php $correcta ?>&idModulo=<?php echo $idModulo;?>&validar=<?php echo 0; ?>&up=<?php echo $up ?>&cuen=<?php echo $ens ?>&nro=<?php echo $envi?>&id_pregunta=<?php echo $idpregunta ?>&nW=<?php echo $_GET['nW']?>&idCI=<?php echo $idCI?>"
                                 method="POST" id="formcito">
                                 <?php while($fila2=$q2->fetch(PDO::FETCH_ASSOC)){ 
                                             //checked
                                         ?>      
                                                                            
-                                <div style="padding: 10px; border-radius: 5px; background: #E2EDF8; border-bottom: 1px solid slategray; margin-bottom: 20px;">
+                                <div style="padding: 10px; border-radius: 5px; background: #E2EDF8; margin-bottom: 20px;">
                                     <div class="form-check">
-                                        <label class="form-check-label" style=" width: 100%;">
-                                        <input class="form-check-input" type="radio" name="verif_resp" value="<?php echo $fila2['respuesta'];?>">
+                                        <label class="form-check-label" style=" width: 100%; margin-left: 22px; font-size: 1.20rem">
+                                        <input class="form-check-input" style="margin-top: 2px;height: 25px;width: 25px;left: 22px"type="radio" name="verif_resp" value="<?php echo $fila2['respuesta'];?>">
                                         <input type="hidden" name="correcta" value="<?php echo $correcta;?>">
                                         <input type="hidden" name="contadorP" value="<?php echo $contadorP;?>">
                                          <?php echo $fila2['respuesta'];?> </label>
@@ -1040,7 +1041,7 @@
 
                                             if($envi<$cuenta2 && $ens<=$cuenta2){
                                     ?>
-                                                <button type="submit" id="env" class="btn btn-outline-primary">Siguiente</button>
+                                                <button type="submit" style="background-color: #7C83FD;color: #fff;width: 9em; height: 44px;"id="env" class="btn btn-outline-primary">Siguiente</button>
                                     <?php
                                             }
 

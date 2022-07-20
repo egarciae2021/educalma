@@ -11,6 +11,192 @@
    box-shadow: 0 4px 16px rgba(49, 138, 172, 1);
    transition: all 0.2s ease;
    }
+   .color1{
+      color: #e0c7e5;
+   }
+
+   .img-nina{
+      width: 26em;
+      position: relative;
+      margin-top: 4em;
+   }
+
+   .flex{
+      display: flex;
+      position: relative;
+      margin-left: 21em;
+   }
+
+   @media only screen and (min-width:275px) and (max-width:1326px){
+      .img-nina{
+         width: 26em;
+         position: relative;
+         margin-top: 4em;
+         
+         /* 
+         margin-top: -21em;
+         position: relative;
+         float: right;
+         left: -7em;
+         margin-top: -20em; */
+   }
+   }
+
+   @media (max-width: 767px) {
+      .flex{
+         display: initial;
+   }   
+      .responsv1 {
+       width: 100%;
+  }}
+
+  @media (max-width: 360px) {
+      .respons7 {
+     width: 100%;
+     display: flex;
+     justify-content: center;
+  }}
+
+  @media (max-width: 375px) {
+      .respons7 {
+     width: 100%;
+     display: flex;
+     justify-content: center;
+  }}
+
+  @media (max-width: 414px) {
+      .respons7 {
+     width: 100%;
+     display: flex;
+     justify-content: center;
+  }}
+
+
+  @media (min-width: 1200px) {
+      .responsv5 {
+      flex: 0 0 38%;
+      max-width: 50%;
+      margin-left: 150px;
+  }
+
+}
+
+@media (min-width: 1200px) {
+      .image-course {
+      margin-left: -90px;
+  }
+
+}
+
+@media (min-width: 1200px) {
+      .largoresponsv {
+      margin-left: -12em;
+  }
+
+}
+
+@media (max-width: 360px) {
+      .img-nina {
+      width: 19em;
+      position: relative;
+      left: 35px;
+      margin-top: 3em;
+      float: unset;
+  }
+
+}
+
+@media (max-width: 375px) {
+      .img-nina {
+      width: 19em;
+      position: relative;
+      left: 35px;
+      margin-top: 3em;
+      float: unset;
+  }
+
+}
+
+@media (max-width: 414px) {
+      .img-nina {
+      width: 19em;
+      position: relative;
+      left: 44px;
+      margin-top: 3em;
+      float: unset;
+  }
+
+}
+
+@media (max-width: 360px) {
+      .img-nina {
+      width: 19em;
+      position: relative;
+      left: 22px;
+      margin-top: 3em;
+      float: unset;
+  }
+
+}
+
+
+@media only screen and (min-width:820px) and (max-width:1180px) {
+      .container-fluid .container-detalle-informacion .col-8 .container-info-course-detalle{
+         width: 25em;
+         line-height: 1.7;
+      }
+      .container-fluid .container-detalle-informacion .col-8{
+         left: 44px;
+      }
+      .parrafo{
+         width: 15em;
+      }
+      .respons1{
+         flex: 0 0 40%;
+         max-width: 40%;
+      }
+      .respons7{
+         width: 30em;
+      }
+      .col-md-5{
+         flex: 0 0 45%;
+         max-width: 45%;
+      }
+      .img-fluid{
+         margin-top: 12px;
+      }
+      .img-nina{
+         float: none;
+         width: 26em;
+         position: relative;
+         display: flex;
+         left: 236px;
+      }
+      .flex{
+         display: initial;
+   } 
+} 
+
+@media (max-width: 360px) {
+      .btn-light {
+      position: relative;
+      top: 10px;
+      }
+
+      .comment-box .comment-head i {
+      position: relative;
+      top: -13px;
+      }
+  }
+
+  @media (min-width: 1200px) {
+      .col-xl-4 {
+      flex: 0 0 28%;
+      max-width: 28%;
+  }
+
+}
+
 </style>
 <body>
    <?php
@@ -157,18 +343,21 @@
    <div class="container container-curso">
       <div class="container-info-course-curso">
          <div class="row">
-            <div class="container-detalle-course col-12 col sm-12 col-md-6 col-lg-6 col-xl-6">
+            <div class="container-detalle-course col-12 col sm-12 col-md-6 col-lg-6 col-xl-6 responsv5">
                <div class="row container-title-course">
                   <div class="col-auto icon-course pr-0">
-                     <img src="assets/images/curso-por-internet.png" class="mr-2" alt="" style="height: 100px;">
-                  </div>
-                  <div class="col title-course">
+                     <!-- <img src="assets/images/curso-por-internet.png" class="mr-2" alt="" style="height: 100px;">-->
+                  </div> 
+                  <div class="col title-course" style="color: #7C83FD; margin-left: -14px;">
                      <?php echo $dato4['nombreCurso']; ?>
                   </div>
                </div>
+               <div style="padding-top: 25px;color:#000" class="description-course puntos-suspensivos">
+                  <?php echo $dato4['descripcionCurso']; ?>
+               </div>
                <div class="rankin-course my-3">
-                  <i class="fas fa-star m-1"></i><i class="fas fa-star m-1"></i><i class="fas fa-star m-1"></i><i
-                     class="fas fa-star m-1"></i><i class="fas fa-star m-1"></i>
+                  <i class="fas fa-star m-1 color1"></i><i class="fas fa-star m-1 color1"></i><i class="fas fa-star m-1 color1"></i><i
+                     class="fas fa-star m-1 color1"></i><i class="fas fa-star m-1 color1"></i>
                   <span class="ml-4">20</span> Opiniones
                </div>
                <!--Código para obtener el nombre del profesor-->
@@ -182,7 +371,7 @@
                <?php 
                   if($dato20['privilegio']==1){
                   ?>
-               <span style="color: #565656; font-size: 14px;">Creado por la Fundación CALMA.</span>
+               <!-- <span style="color: #565656; font-size: 14px;">Creado por la Fundación CALMA.</span> -->
                <?php 
                   }
                   
@@ -191,16 +380,13 @@
                <span style="color: #565656; font-size: 14px;">Creado por <?php echo " " . $dato20['nombres'] . " " . $dato20['apellido_pat'] . " " . $dato20['apellido_mat'] . "."?></span>
                <?php 
                   }
-                  ?>    
-               <div style="padding-top: 40px;" class="description-course puntos-suspensivos">
-                  <?php echo $dato4['descripcionCurso']; ?>
-               </div>
+                  ?>
                <div class="start-course mt-5">
                   <div class="row container-start-course py-2 ml-1 my-3" style="position: relative; left: -10px;">
-                     <div class="col-6 pr-0">
+                     <div class="col-6 pr-0" style="display: flex;justify-content: space-around;">
                         <h5 class="m-0">Mira la primera clase de este curso!</h5>
                      </div>
-                     <div class="col-6">
+                     <div class="col-6" style="display: flex;justify-content: space-around;">
                         <a class="hvr-radial-out button-theme" href="Cursoiniciar.php?id=<?php echo $id;?>&idCI=<?php echo $idCI?>"<?php if ($query==0 || $vere==false) {
                            echo 'style="pointer-events: none;"';}?> >
                         <button id="btnComienzaAhora" type="button" class="btn container-button" hidden multiple>
@@ -214,7 +400,7 @@
                   </div>
                </div>
             </div>
-            <div class="container-image-course col-12 col sm-12 col-md-6 col-lg-6 col-xl-6">
+            <div class="container-image-course col-12 col sm-12 col-md-6 col-lg-6 col-xl-6 responsv5">
                <div class="image-course">
                   <?php
                      if ($dato4['imagenDestacadaCurso'] != null) {
@@ -261,6 +447,31 @@
                <?php 
                   // PONER EN EL BOTON DEL CERTIFICADO
                   if($dato['nota']>=18 && $dato['avance']>=99 ){
+                     $codCertificado = $dato90['codigo_alumno']."".$dato['cod_curso'];
+                     $codAlumnoC = $dato90['codigo_alumno'];
+                     $codCursoC = $dato['cod_curso'];
+                     $pdoConsultaC = Database::connect();
+                     $sqlConsultaC = "SELECT COUNT(codCertificado) Cantidad FROM certificados WHERE codCertificado = '$codCertificado'";
+                     $qiConsultaC = $pdoConsultaC->prepare($sqlConsultaC);
+                     $qiConsultaC->execute();
+                     $datoConsulta = $qiConsultaC -> fetch(PDO::FETCH_ASSOC);
+                     $CantidadCertificado = $datoConsulta['Cantidad'];
+                     Database::disconnect();
+
+                     if($CantidadCertificado < 1){
+                        $pdo2 = Database::connect();
+                        try{
+                              $verif2=$pdo2->prepare("INSERT INTO `certificados` (`codCertificado`, `codAlumno`, `codCurso`) VALUES (:codCer, :codA, :codC)");
+                              $verif2->bindParam(":codCer",$codCertificado,PDO::PARAM_STR);
+                              $verif2->bindParam(":codA",$codAlumnoC,PDO::PARAM_STR);
+                              $verif2->bindParam(":codC",$codCursoC,PDO::PARAM_STR);
+                              $verif2->execute();
+                        }catch(PDOException $e){
+                              echo $e->getMessage();
+                        }
+                        Database::disconnect();
+                     }
+
                       echo '<a style="cursor: pointer;" id="solcert" onclick="con_certificado()">Certificado</a>';     
                       //'<a style="cursor: pointer;" data-filter=".seo" href="plugins/ejemplo.php?idCurso='.$id.'&idUsu='.$idUser56.'">Certificado</a>';
                       $validar=1;/*
@@ -309,21 +520,21 @@
       <div class="container-detalle-informacion">
          <div class="container"  style="width:auto; overflow:hidden;">
             <div class="container"  style="width:auto; overflow:hidden;">
-               <div class="row py-0  "style="display:flex; flex-direction:row ;margin-top:25px ;">
+               <div class="row py-0 respons"style="display:flex; flex-direction:row ;margin-top:25px ;">
                   <!-- <div class="col-4">
                      <img src="assets/img/cursophp.png" alt=""> 
                      </div>-->
                   <!--div class="col-md-5 col-lg-5 order-1 "style="align-self: flex-end; margin-top:25px;" -->
                   <div class="col col-md-4"  id="informacion">
-                     <h5>Introducción</h5>
-                     <p><?php echo $dato4['introduccion']; ?></p>
+                     <h5 style="color: #7C83FD;font-weight: 600;font-size: 24px;">Introducción</h5>
+                     <p class="parrafo" style="margin-top: 15px;text-align: justify;"><?php echo $dato4['introduccion']; ?></p>
                   </div>
                   <!--div class="col-8"-->
                   <div class="col-8"  id="informacion">
-                     <h5>¿Que incluye este curso?</h5>
-                     <div class="container-info-course-detalle">
+                     <h5 style="color: #7C83FD;font-weight: 600;text-transform: initial;">¿Que incluye este curso?</h5>
+                     <div class="container-info-course-detalle" style="margin-top: 2em;border-radius: 20px;border: 2px solid #7C83FD;">
                         <h5>Tabla de contenido del curso</h5>
-                        <div class="row pt-2">
+                        <div class="row pt-2" style="color: #000;padding-top: 0.6rem!important;">
                            <div class="col-12 col-sm-6 col-lg-6">
                               <div><i class="far fa-file"></i></div>
                               <?php echo $modulos; ?> Modulos
@@ -353,17 +564,17 @@
                   </div>
                </div>
             </div>
-            <div class="col-12"   style="width:760px; height:auto; float:left; position: relative; " id="certificado-temario">
-               <h5>Temario del curso</h5>
+            <div class="col-12 respons1"   style="width:756px; height:auto; float:left; position: relative; " id="certificado-temario">
+               <h5 style="color: #7C83FD;font-weight: 600;font-size: 24px;">Temario del curso</h5>
                <?php 
                   $nW=0;
                       while ($modulosC = $q6->fetch(PDO::FETCH_ASSOC)) {
                           $nW=$nW+1;
                   ?>
-               <div class="w-100">
-                  <a id="btnInicioModulo" href="video.php?id=<?php echo $id;?>&idtema=<?php echo 1;?>&id_modulo=<?php echo $modulosC['idModulo']?>&nW=<?php echo $nW-1?>&idCI=<?php echo $idCI?>" class="btn px-4 mb-2 puntos-suspensivos"  style="background:#DCECFA; width:100%; text-align:left;">
+               <div class="respons7">
+                  <a id="btnInicioModulo" href="video.php?id=<?php echo $id;?>&idtema=<?php echo 1;?>&id_modulo=<?php echo $modulosC['idModulo']?>&nW=<?php echo $nW-1?>&idCI=<?php echo $idCI?>" class="btn px-4 mb-2 puntos-suspensivos responsv1"  style="background:#fff; width:55%; text-align:left;">
                   <i class="fas fa-play mr-3"></i>
-                  <span style="color:black; width:100%;    white-space: initial;"><?php echo $modulosC['nombreModulo'] ?></span>
+                  <span style="color:black; width:100%;white-space: initial;"><?php echo $modulosC['nombreModulo'] ?></span>
                   </a>
                </div>
                <?php 
@@ -371,8 +582,8 @@
                   ?>
             </div>
             <div class="col-md-5 col-lg-5 order-1 " style="width:auto; float:right; position: relative; " >
-               <h5>Certificación del curso</h5>
-               <img src="assets/images/certificado.jpg" class="img-fluid "alt="">
+               <h5 style="color: #7C83FD;font-weight: 600;font-size: 23px;">Certificación del curso</h5>
+               <img src="assets/images/certificado.jpg" class="img-fluid"alt="">
                <div class="info">
                   <!--Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse sapiente, harum, vero molestiae magnam
                      blanditiis cum omnis magni-->
@@ -380,7 +591,8 @@
             </div>
          </div>
          <!--foro educalma-->
-         <div style="width:100%;">
+      <div class="flex">
+         <div class="largoresponsv" style="width:100%;">
             <?php
                $idCurso = $id;
                
@@ -400,13 +612,16 @@
             <?php
                if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                ?>
+
             <!-- COMIENZOOOOOOOOOOOOOO - Contenedor de todo. El que tiene esquinas curveadas. -->
-            <div id="contenedorTodo" class="comments-container"  style="background-color: #D9EBFF; border-radius: 40px;">
+            <div id="contenedorTodo" class="comments-container"  style="border-radius: 40px;">
                <!-- TITULO FORO EDUCALMA -->
-               <h1 id="tituloForoEducalma" style="text-align: center">Foro Educalma<?php echo $_SESSION['iduser']?></h1>
+               <h1 id="tituloForoEducalma">Comenta sobre el curso</h1>
+               <h4 style="font-size: 16px;">Deja un comentario sobre este curso.</h4> 
                <!-- TITULO FORO EDUCALMA -->
                <!-- BOTON COMENTAR -->
-               <button id="btnComentar2" style="width: 310px;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Comentar</button>
+               <button id="btnComentar2" style="width: 10em;height: 45px; border-radius: 8px;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Comentar</button>
+               <h1 style="margin-top: 43px;">Destacados</h1>
                <!-- BOTON COMENTAR -->
                <!-- BOTON ELIMINAR TODO -->
                <!--botonEliminarTodo Le quite los estilos(style="position: relative; left: 10px; top: -10px" type="button"), hace que el boton 
@@ -704,6 +919,7 @@
                </ul>
                <!-- LISTA DE COMENTARIOS -->
             </div>
+            
             <!-- COMIENZOOOOOOOOOOOOOO - Contenedor de todo. El que tiene esquinas curveadas.-->
             <!------------------------------------
                modal para ingresar mensaje
@@ -908,6 +1124,10 @@
                }
                ?>
          </div>
+         <div class="col-lg-5">
+               <img src="assets/images/ilu-nina.png" class="img-nina"alt="" >
+         </div>
+   <div>  
       </div>
    </div>
    <!-- Foro -->
@@ -985,7 +1205,6 @@
               formData.append('cod_alumno','<?php echo  $dato90['codigo_alumno']; ?>');
               formData.append('cod_curso', '<?php echo $dato['cod_curso'] ;?>');
               formData.append('nombre_estudiante', '<?php echo $dato90['nombres']." ".$dato90['apellido_pat']." ".$dato90['apellido_mat'] ;?>'); 
-
 
             var request = new XMLHttpRequest();
             request.onreadystatechange = dataLoaded;

@@ -2,6 +2,7 @@
     @import url("https://fonts.googleapis.com/css2?family=Old+Standard+TT&display=swap");
     @import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap");
     @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap");
+    @import url('https://fonts.googleapis.com/css2?family=Baloo+Tamma+2:wght@400;500;600;700;800&display=swap');
     
     * {
         margin: 0;
@@ -31,31 +32,32 @@
     }
     
     .title-panel {
-        font-family: "Inter", sans-serif;
+        font-family: 'Baloo Tamma 2', cursive;
         font-weight: bolder;
-        font-size: 92px;
-        text-transform: uppercase;
-        text-align: right;
+        font-size: 9rem;
+        font-weight: 800;
+        line-height: 7rem;
+        color: #7c83fd;
     }
     
     .description-panel {
-        font-family: "Inter", sans-serif;
+        font-family: 'Baloo Tamma 2', cursive;
         font-style: normal;
         font-weight: normal;
-        font-size: 18px;
-        text-shadow: -1px -1px 0px #fff, 1px -1px 0px #fff, -1px 1px 0px #fff, 1px 1px 0px #fff;
-        /* padding-right: 20rem; */
-        text-align: right;
+        line-height: 2.4rem;
+        margin-bottom: 1rem;
+        font-size: 2rem;
     }
     
     .button-panel {
-        margin: 2rem 0 0 0;
-        text-align: right;
+        font-family: 'Baloo Tamma 2', cursive;
     }
     
     .btn_registrar_panel {
-        font-size: 16px;
-        padding: 1rem 3rem;
+        font-size: 1.5rem;
+        font-weight: 600;
+        border-radius: 10px;
+        padding: .4rem 2.8rem;
         background-color: #7c83fd;
         color: #ffffff;
         transition: all 0.3s ease;
@@ -78,7 +80,8 @@
     }*/
     
     .container-panel-image-nosotros img {
-        width: 800px;
+        width: 660px;
+        margin-bottom: 1.6rem;
     }
     
 
@@ -143,15 +146,22 @@
             transition: all 0.3s ease;
         }
         .title-panel {
-            font-size: 82px;
+            font-size: 6.4rem;
             transition: all 0.3s ease;
+        }
+        .description-panel {
+            font-size: 1.8rem;
         }
     }
     
     @media (max-width: 1341px) {
         .title-panel {
-            font-size: 62px;
+            font-size: 5rem;
+            line-height: 5rem;
             transition: all 0.3s ease;
+        }
+        .description-panel {
+            font-size: 1.5rem;
         }
     }
     
@@ -166,9 +176,13 @@
     }
     
     @media (max-width: 1024px) {
-        .container-panel-image-nosotros img {
-            width: 700px;
+        .title-panel {
+            font-size: 4rem;
+            line-height: 5rem;
             transition: all 0.3s ease;
+        }
+        .description-panel {
+            font-size: 1.2rem;
         }
     }
     
@@ -188,78 +202,97 @@
             transition: all 0.3s ease;
         }
         .title-panel {
-            font-size: 52px;
+            font-size: 3.3rem;
             transition: all 0.3s ease;
-            /*position: relative;
-            top: 500px;*/
         }
         .description-panel {
-            font-size: 16px;
+            font-size: 1.2rem;
             transition: all 0.3s ease;
         }
-        .button-panel {
-            font-size: 16px;
+        .btn_registrar_panel {
+            font-size: 1.2rem;
             transition: all 0.3s ease;
         }
     }
     
     @media (max-width: 767px) {
-        .container-panel-image-nosotros {
+        .div-container-panel-nosotros .row .m-auto {
             display: none;
         }
         .title-panel {
-            font-size: 72px;
+            font-size: 7.4rem;
+            line-height: 7rem;
             transition: all 0.3s ease;
         }
         .description-panel {
-            font-size: 18px;
+            font-size: 2rem;
             transition: all 0.3s ease;
         }
-        .button-panel {
-            font-size: 18px;
+        .btn_registrar_panel {
+            font-size: 1.6rem;
             transition: all 0.3s ease;
         }
         .container-panel-nosotros {
-            padding-left: 10rem;
+            padding-left: 4rem;
         }
     }
     
     @media (max-width: 613px) {
+        .title-panel {
+            font-size: 5rem;
+            line-height: 5rem;
+            transition: all 0.3s ease;
+        }
+        .description-panel {
+            font-size: 2rem;
+            transition: all 0.3s ease;
+        }
+        .btn_registrar_panel {
+            font-size: 1.6rem;
+            transition: all 0.3s ease;
+        }
         .container-panel-nosotros {
-            padding-left: 5rem;
+            padding-left: 4rem;
         }
     }
     
     @media (max-width: 533px) {
         .title-panel {
-            font-size: 62px;
+            font-size: 4rem;
+            line-height: 4rem;
             transition: all 0.3s ease;
         }
         .description-panel {
-            font-size: 18px;
+            font-size: 1.6rem;
             transition: all 0.3s ease;
         }
-        .button-panel {
-            font-size: 18px;
+        .btn_registrar_panel {
+            font-size: 1.4rem;
             transition: all 0.3s ease;
         }
         .container-panel-nosotros {
-            padding-left: 0rem;
+            padding-left: 2rem;
         }
     }
     
     @media (max-width: 440px) {
         .title-panel {
-            font-size: 52px;
+            text-align: center;
+            font-size: 3.6rem;
+            line-height: 4rem;
             transition: all 0.3s ease;
         }
         .description-panel {
-            padding-left: 5rem;
-            font-size: 14px;
+            text-align: center;
+            font-size: 1.4rem;
             transition: all 0.3s ease;
         }
         .button-panel {
-            font-size: 14px;
+            display: flex;
+            justify-content: center;
+        }
+        .btn_registrar_panel {
+            font-size: 1.2rem;
             transition: all 0.3s ease;
         }
     }
@@ -267,9 +300,19 @@
 
     @media (max-width: 360px) {
         .title-panel {
-            font-size: 42px;
-            transition: all 0.3s ease;       
-        }    
+            font-size: 3rem;
+            line-height: 3.6rem;
+            transition: all 0.3s ease;
+            margin-bottom: 1.3rem;
+        }
+        .description-panel {
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+        .btn_registrar_panel {
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
     }
     
 
@@ -329,12 +372,14 @@
 
 
     .container-video {
-        background-image: url(../images/nosotros.png);
+        background-color: #e0c7e5;
         background-repeat: no-repeat;
         background-position: center center;
         background-size: cover;
-        max-width: 100%;
-        padding: 4rem 0;
+        padding: 5rem 0;
+    }
+    .container-video .d-flex {
+        padding: 0 5.6rem;
     }
     
     .container-video-educalma {
@@ -342,6 +387,7 @@
     }
     
     .video-youtube {
+        width: 100%;
         height: 0px;
         padding-bottom: 56.25%;
         position: relative;
@@ -349,16 +395,24 @@
     
     .video-youtube iframe {
         position: absolute;
+        top: 0;
+        left: 0;
         height: 100%;
         width: 100%;
-        border-radius: 6px;
+        border-radius: 20px;
     }
     
     .title-video {
         text-transform: uppercase;
         font-weight: bold;
-        font-size: 36px;
-        font-family: "Inter", sans-serif;
+        font-size: 2.6rem;
+        font-family: 'Baloo Tamma 2', cursive;
+        color: #7c83fd
+    }
+    .text-title-video {
+        font-family: 'Baloo Tamma 2', cursive;
+        font-size: 1.3rem;
+        font-weight: 500;
     }
     
     .cards-video {
@@ -372,26 +426,38 @@
         font-size: 16px;
     }
     
+    @media (max-width: 1199px) {
+        .container-video .d-flex {
+            padding: 0 3rem;
+        }
+        .title-video {
+            line-height: 2.5rem;
+        }
+    }
     @media (max-width: 991px) {
         .cards-video img {
             width: 30px;
         }
-        .text-cards-video {
-            font-size: 13px;
-        }
         .title-video {
-            font-size: 26px;
+            font-size: 2rem;
         }
         .text-title-video {
-            font-size: 13px;
+            font-size: 1rem;
+        }
+    }
+    @media (max-width: 768px) {
+        .title-video {
+            text-align: center;
+        }
+        .text-title-video {
+            text-align: center;
+            margin-bottom: 2rem;
         }
     }
     
     .container-questions {
-        background-image: url(../images/preguntas.png);
-        background-repeat: no-repeat;
-        background-position: center center;
-        background-size: cover;
+        background: rgb(255,255,255);
+        background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(224,199,229,1) 42%, rgba(231,244,255,1) 100%);
         max-width: 100%;
         padding: .1rem 0 4rem 0;
     }
@@ -404,12 +470,18 @@
     .container-questions .col-md-12 {
         max-width: 924px;
     }
+
+    .container-questions .card-body {
+        font-size: 1.1rem;
+        padding-right: 6rem;
+        line-height: 1.4rem;
+    }
     
     .container .row .col-md-12 .section-title-course {
         text-transform: uppercase;
         font-weight: bold;
-        font-size: 36px;
-        font-family: "Inter", sans-serif;
+        font-size: 2.6rem;
+        font-family: 'Baloo Tamma 2', cursive;
         text-align: center;
         justify-content: center;
         color: #7c83fd;
@@ -424,7 +496,7 @@
     
     .container .row .col-md-12 .accordion .card {
         text-align: justify;
-        background: #cce4fc;
+        background: #e7f4ff;
         color: #0c0d0e;
         padding-left: 2rem;
         font-size: 14px;
@@ -437,15 +509,67 @@
     }
     
     .container .row .col-md-12 .accordion .card .card-header {
-        background: #cce4fc;
+        background: #e7f4ff;
     }
     
     .container .row .col-md-12 .accordion .card .card-header .card-text {
         font-family: "Work Sans", sans-serif;
         font-style: normal;
-        font-weight: normal;
-        font-size: 17px;
+        font-weight: bold;
+        font-size: 1.1rem;
         color: #0c0e0f;
         text-decoration: none;
         cursor: pointer;
+    }
+    .card-text i {
+        float:right;
+        color: #7c83fd;
+        font-size: 2.4rem;
+    }
+
+    @media (max-width: 750px) {
+        .container .row .col-md-12 .section-title-course {
+            font-size: 2.2rem;
+        }
+        .container .row .col-md-12 .accordion .card {
+            padding: 0;
+        }
+        .container .row .col-md-12 .accordion .card .card-header .card-text {
+            font-size: 1rem;
+        }
+        .card-text i {
+            font-size: 1rem;
+            padding-top: .4rem;
+        }
+        .container-questions .card-body {
+            font-size: .9rem;
+            padding: 0 .8rem;
+        }
+    }
+
+    @media (max-width: 440px) {
+        .container .row .col-md-12 .section-title-course {
+            font-size: 2.2rem;
+            line-height: 2.2rem;
+        }
+        .container .row .col-md-12 .accordion .card {
+            padding: 0;
+        }
+        .container .row .col-md-12 .accordion .card .card-header .card-text {
+            font-size: 1rem;
+        }
+        .card-text i {
+            font-size: 1rem;
+            padding-top: .4rem;
+        }
+        .container-questions .card-body {
+            font-size: .9rem;
+            padding: 0 .8rem;
+        }
+    }
+
+    @media (max-width: 370px) {
+        .container .row .col-md-12 .section-title-course {
+            font-size: 2.2rem;
+        }
     }

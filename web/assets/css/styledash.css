@@ -43,7 +43,8 @@
     .card {
         border: 0;
         box-shadow: none;
-        padding-top: 1.5rem;
+        padding-top: 0.5rem;
+        background-color: transparent;
     }
     
     .card.t-categ {
@@ -58,15 +59,27 @@
     }
     
     .card-title {
-        text-align: left;
-        font-size: 20px;
-        letter-spacing: -0.02em;
-        color: #56A4D0;
+        /* text-align: left; */
+        font-size: 25px;
+        /* letter-spacing: -0.02em; */
+        color: #fff;
         padding-bottom: .5rem;
+        background: rgb(124,131,253);
+        background: linear-gradient(50deg, rgba(124,131,253,1) 0%, rgba(224,199,229,0.6054796918767507) 100%);
+        border-radius: 10px;
+        padding: 9px;
+        height: 58px;
+        margin-left: 26px;
+        margin-right: 19px;
+        display: flex;
+        /* align-items: center; */
+        justify-content: center;
+        align-items: flex-end;
+        font-weight: 700;
     }
     
     .card-body {
-        border: 1px solid #56A4D0;
+        /* border: 1px solid #56A4D0; */
         border-radius: 5px;
         font-size: 14px;
     }

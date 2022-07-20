@@ -38,8 +38,21 @@
         require_once 'database/databaseConection.php';
 
         if(isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)){
+            $idmodulo=$_GET['id_modulo'];
     ?>
+    <?php
+        require_once '././database/databaseConection.php';
+        
 
+        $pdo2 = Database::connect();
+        $sql2 = "SELECT * FROM modulo WHERE idModulo='$idmodulo'";
+        $q2 = $pdo2->prepare($sql2);
+        $q2->execute(array());
+        $dato2=$q2->fetch(PDO::FETCH_ASSOC)
+        //obtener el id por medio del $_GET['id']
+        //recorrer la tabla modulo y buscar el idmodulo=$_GET['id']
+        //hacer un array y traer el nombre
+    ?>
     <!--Contenido del cuestionario-->
 
     <?php
@@ -49,7 +62,7 @@
 
             <!-- Nuevo form -->
 
-            <?php $idmodulo=$_GET['id_modulo'];?>
+            
 
             <div class="container-fluid" style="">
                 <div class="container" id="contformulario">
@@ -84,12 +97,12 @@
                                         <!-- <a href="ListaCursos.php?pag=1" class="list-group-item list-group-item-action">
                                     <i class="fas fa-eye"></i> Ver todos los Cursos
                                 </a> -->
-                                        <button type="button" id="salir_public" class="btn btn-outline-secondary btn-back btn-sm" style="cursor: pointer; position: relative; top: -30px;">
-                                            <i class="fad fa-books"></i> Ver lista de cursos <br> No publicados
-                                        </button>
+                                        <!-- <button type="button" id="salir_public" class="btn btn-outline-secondary btn-back btn-sm" style="cursor: pointer; position: relative; top: -30px;">
+                                            <i class="fad fa-books"></i><span class="cursos">Ver lista de cursos <br> No publicados</span>
+                                        </button> -->
 
                                         <a style="position: relative; top: -40px;" class="btn btn-outline-secondary btn-back btn-sm" href="Form_pregun_cuestionario.php?id=<?php echo $_GET['id']; ?>&id_modulo=<?php echo $idmodulo=$_GET['id_modulo'];?>" role="button">
-                                            <i class="fas fa-arrow-left"></i> Atrás
+                                            <i class="fas fa-arrow-left"></i> <span class="atras">Atrás</span>
                                         </a>
                                     </div>
 
@@ -99,15 +112,16 @@
                             <!-- fin primera columna -->
 
                             <!-- segunda columna -->
+                            
                             <div class="col-9 pl-0">
-                                <form id="respuestas_cuestionario" action="includes/Pregunta_Respuesta/Respuesta_CRUD.php?id=<?php echo $_GET['id'] ?>&id_modulo=<?php echo $idmodulo;?>" method="POST" enctype="multipart/form-data">
+                                <form id="respuestas_cuestionario" action="includes/Pregunta_Respuesta/Respuesta_CRUD.php?id=<?php echo $idCurso;?>&id_modulo=<?php echo $idModulo;?>" method="POST" enctype="multipart/form-data">
 
                                     <div class="form-row" style="text-align: center;">
                                         <div type="button" class="list-group-item list-group-item-action active" style="background: #4F52D6; text-align: center; font-size: 24px;">
-                                        Registro de respuestas para la pregunta del módulo:
+                                        Registro de respuestas para la pregunta del <?php echo $dato2['nombreModulo'];?> :
                                         </div>
                                         <div class="form-group col-md-12" style="">
-                                            <h5 class="font-weight-light" style="color: black; font-weight: bold; font-size: 24px; position: relative; top: 20px;">
+                                            <h5 class="font-weight-light pregunta" style="">
                                                 Pregunta: <?php echo $pregunta;?>
                                             </h5>
                                         </div>
@@ -135,7 +149,7 @@
                                     </div>
                                 </form>
 
-                                <form style="  border: #4F52D6 2px solid; border-radius: 5px;" class="pt-0">
+                                <form style="margin-top: 20px;border: #4F52D6 2px solid; border-radius: 5px;" class="pt-0">
                                     <div class="form-row" style="position: relative; top: 10px;">
                                         <div class="form-group col-md-12" style="text-align: center;">
                                             <label style="font-size: 24px;" class="form-label">Listado de respuestas</label>
@@ -145,7 +159,7 @@
                                     <!-- lista de preguntas - codigo php -->
                                     <!-- <div class="overflow-auto"> -->
 
-                                    <div style="position: relative; top: -10px;"><!--clas="scroll"-->
+                                    <div style="position: relative; top: 10px;"><!--clas="scroll"-->
                                         <div class="form-row">
 
                                             <?php
@@ -166,33 +180,35 @@
 
                                             <?php while($registro1 = $q1->fetch(PDO::FETCH_ASSOC)){$success = $registro1['estado'];?>
 
-                                        <div class="form-group col-8 col-md-10 col-sm-8 col-lg-10 col-xl-10">
-                                            <input type="text" id="<?php if($success=='1'){$success = 'success'; echo $success;}?>" value="Respuesta: <?php echo $registro1['respuesta'];?>" class="form-control" disabled>
-                                        </div>
+                                        
+                                            <div class="form-group col-8 col-md-10 col-sm-8 col-lg-10 col-xl-10 col-12">
+                                                <input type="text" id="<?php if($success=='1'){$success = 'success'; echo $success;}?>" value="Respuesta: <?php echo $registro1['respuesta'];?>" class="form-control" disabled>
+                                            </div>
             
-                                        <!-- boton editar respuesta -->
-                                        <div class="form-group col-2 col-md-1 col-sm-2 col-lg-1 col-xl-1">
-                                            <!-- <a class="btn btn-block btn-outline-success" data-toggle="modal" data-target="#ModaleditarResp<?php echo $registro1['idRespuesta']?>">
-                                                    <i class="far fa-edit"></i>
-                                                </a> -->
-                                            <a>
-                                                <button class="btn btn-block btn-outline-success" type="button" data-toggle="modal" data-target="#ModaleditarResp<?php echo $registro1['idRespuesta']?>">
-                                                    <i class="far fa-edit"></i>
-                                                </button>
-                                            </a>
-                                        </div>
+                                            <!-- boton editar respuesta -->
+                                            <div class="form-group col-2 col-md-1 col-sm-2 col-lg-1 col-xl-1 col-12">
+                                                <!-- <a class="btn btn-block btn-outline-success" data-toggle="modal" data-target="#ModaleditarResp<?php echo $registro1['idRespuesta']?>">
+                                                        <i class="far fa-edit"></i>
+                                                    </a> -->
+                                                <a>
+                                                    <button class="btn btn-block btn-outline-success" type="button" data-toggle="modal" data-target="#ModaleditarResp<?php echo $registro1['idRespuesta']?>">
+                                                        <center><i class="far fa-edit"></i></center>
+                                                    </button>
+                                                </a>
+                                            </div>
 
-                                        <!-- boton borrar respuesta -->
-                                        <div class="form-group col-2 col-md-1 col-sm-2 col-lg-1 col-xl-1">
-                                            <!-- <a class="btn btn-block btn-outline-danger" data-toggle="modal" data-target="#ModalquitarResp<?php echo $registro1['idRespuesta']?>">
-                                                    <i class="fas fa-trash-alt"></i>
-                                                </a> -->
-                                            <a>
-                                                <button class="btn btn-block btn-outline-danger" type="button" data-toggle="modal" data-target="#ModalquitarResp<?php echo $registro1['idRespuesta']?>">
-                                                    <i class="fas fa-trash-alt"></i>
-                                                </button>
-                                            </a>
-                                        </div>
+                                            <!-- boton borrar respuesta -->
+                                            <div class="form-group col-2 col-md-1 col-sm-2 col-lg-1 col-xl-1 col-12">
+                                                <!-- <a class="btn btn-block btn-outline-danger" data-toggle="modal" data-target="#ModalquitarResp<?php echo $registro1['idRespuesta']?>">
+                                                        <i class="fas fa-trash-alt"></i>
+                                                    </a> -->
+                                                <a>
+                                                    <button class="btn btn-block btn-outline-danger" type="button" data-toggle="modal" data-target="#ModalquitarResp<?php echo $registro1['idRespuesta']?>">
+                                                        <i class="fas fa-trash-alt"></i>
+                                                    </button>
+                                                </a>
+                                            </div>
+                                        
                                             
                                 </form>
 
@@ -339,7 +355,7 @@
                                                 </div>
                                             
                                                     <div class="form-group col-4 col-xs-4 col-md-3 col-sm-4 col-lg-2 col-xl-2">
-                                                        <button class="btn btn-block btn-primary text-white" id="form_respuesta" type="submit">Correcto</button>
+                                                        <button class="btn btn-block btn-primary text-white" id="form_respuesta" type="submit"><span class="btnCorrecto">Correcto</span></button>
                                                     </div>
 
                                             </div>

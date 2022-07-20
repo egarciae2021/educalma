@@ -17,11 +17,6 @@
     top: -70px !important;
 }
 
-#btnV2 {
-
-     
-
-}
 
 /****************************************************************************************************/
 /** =====================
@@ -39,17 +34,10 @@
         width: 150px;
         
     }
- 
-
 }
 /****************************************************************************************************/
 
     </style>
-
-
-
-
-
 
 </head>
 <?php
@@ -57,10 +45,7 @@
 
  if(isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)){
 ?>
-<?php
-    
-    
-     
+<?php 
     if(isset($_GET['nW']))
     { $nW=$_GET['nW']; }
     else{
@@ -124,101 +109,88 @@
 
     ?>
 
-
-
-
-
-<div class="container">
-    <div class="row">
-        <div class="col-md-1"></div>
-        <div class="col-md-10">
-            <div class="infoMin"> 
-            <h2><?php 
-                    $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-                    $components = parse_url($url);
-                    parse_str($components['query'], $results);
-                    if (array_key_exists('a', $results)) {
-                        $access=$results["a"]; 
-                    }else{
-                        $access="true";
-                    }
-                ?></h2>
-                <a href="Cursoiniciar.php?id=<?php echo $id;?>" <?php if ($access=="d") {
-                    echo 'style="pointer-events: none;"';
-                }?>
-                ><?php echo $dato6['nombreCurso'];?></a> <label> > </label> <a
-                    href=""><?php echo $dato['nombreModulo'];?> </a>
-            </div>
-        </div>
-        <div class="col-md-1"></div>
-    </div>
-</div>
-
-
-
-
-<br>
-
-
-
-
-
-<div>
     <div class="container">
         <div class="row">
             <div class="col-md-1"></div>
             <div class="col-md-10">
+                <div class="infoMin"> 
                 <h2><?php 
- 
-                    $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-                    $components = parse_url($url);
-                    parse_str($components['query'], $results);
-                    if (array_key_exists('a', $results)) {
-                        $access=$results["a"]; 
-                    }else{
-                        $access="true";
-                    }
-                ?>
-                </h2>
-                <button type="button" <?php if ($access=="d") {
-                    echo "disabled";
-                }?>  class="btn btn-outline-secondary" id="btnV"
-                    onclick="parent.location='includes/curso/VideoSiguiente.php?id=<?php echo $id; ?>&nW=<?php echo $_GET['nW']?>&idtema=<?php echo ($idtema-1)?>&id_modulo=<?php echo $dato['idModulo']?>&idCI=<?php echo $idCI?>'"> <strong> < </strong> Anterior</button>
-                <button type="button" class="btn btn-outline-secondary" id="btnV2"> 
-                    <?php echo $dato2['nombreTema'];?>
-                    <img src="././assets/images/video_icono_32.png"></button>
-                <button type="button"<?php if ($access=="d") {
-                    echo "disabled";
-                }?> class="btn btn-outline-secondary" id="btnV"
-                    onclick="parent.location='includes/curso/VideoSiguiente.php?id=<?php echo $id; ?>&validar=1&c_modulo=<?php echo $cont_modulo;?>&c_tema=<?php echo ($cont_tema+1);?>&idmodulo=<?php echo $dato['idModulo']?>&nW=<?php echo $_GET['nW']?>&idCI=<?php echo $idCI?>'">
-                    Siguiente <strong> > </strong></button>
+                        $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+                        $components = parse_url($url);
+                        parse_str($components['query'], $results);
+                        if (array_key_exists('a', $results)) {
+                            $access=$results["a"]; 
+                        }else{
+                            $access="true";
+                        }
+                    ?></h2>
+                    <a href="Cursoiniciar.php?id=<?php echo $id;?>" <?php if ($access=="d") {
+                        echo 'style="pointer-events: none;"';
+                        
+                    }?>
+                    
+                    ><?php echo $dato6['nombreCurso'];?></a> <label> > </label> <a
+                        href=""><?php echo $dato['nombreModulo'];?> </a>
+                </div>
             </div>
             <div class="col-md-1"></div>
         </div>
     </div>
-</div>
+    <br>
+    <div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-md-10">
+                    <h2>
+                        <?php 
+                            $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+                            $components = parse_url($url);
+                            parse_str($components['query'], $results);
+                            if (array_key_exists('a', $results)) {
+                                $access=$results["a"]; 
+                            }else{
+                                $access="true";
+                            }
+                        ?>
+                    </h2>
+                    <button type="button" <?php if ($access=="d") {echo "disabled";}?>class="btn btn-outline-secondary" id="btnV" onclick="parent.location='includes/curso/VideoSiguiente.php?id=<?php echo $id; ?>&nW=<?php echo $_GET['nW']?>&idtema=<?php echo ($idtema-1)?>&id_modulo=<?php echo $dato['idModulo']?>&idCI=<?php echo $idCI?>'"> 
+                        <strong> < </strong><span class="before">Anterior</span>
+                    </button>
 
-<div class="containervid">
+                    <button type="button" class="btn btn-outline-secondary" id="btnV2"> 
+                        <?php echo $dato2['nombreTema'];?>
+                        <img src="././assets/images/video_icono_32.png">
+                    </button>
 
-    <div class="contvid" style="max-width: 500px; min-width:350px; height: 270px; padding: 10px; ">
-        <?php 
-              $url=$dato2['link_video'];
-              function getYoutubeEmbedUrl($url){
-
-                $urlParts   = explode('/', $url);
-                $vidid      = explode( '&', str_replace('watch?v=', '', end($urlParts) ) );
-            
-                return 'https://www.youtube.com/embed/' . $vidid[0] ;
-            }
-              $link = getYoutubeEmbedUrl($dato2['link_video']);
-              
-              ?>
-        <iframe width="100%" height="100%" src="<?php echo $link;?>" title="YouTube video player" frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen>
-        </iframe>
+                    <button type="button"<?php if ($access=="d") {echo "disabled";}?> class="btn btn-outline-secondary" id="btnV" onclick="parent.location='includes/curso/VideoSiguiente.php?id=<?php echo $id; ?>&validar=1&c_modulo=<?php echo $cont_modulo;?>&c_tema=<?php echo ($cont_tema+1);?>&idmodulo=<?php echo $dato['idModulo']?>&nW=<?php echo $_GET['nW']?>&idCI=<?php echo $idCI?>'">
+                        <span class="next">Siguiente</span><strong> > </strong>
+                    </button>
+                </div>
+                <div class="col-md-1"></div>
+            </div>
+        </div>
     </div>
-</div>
+
+    <div class="containervid">
+        <div class="contvid" style="max-width: 500px; min-width:350px; height: 270px; padding: 10px; ">
+            <?php 
+                $url=$dato2['link_video'];
+                function getYoutubeEmbedUrl($url){
+
+                    $urlParts   = explode('/', $url);
+                    $vidid      = explode( '&', str_replace('watch?v=', '', end($urlParts) ) );
+                
+                    return 'https://www.youtube.com/embed/' . $vidid[0] ;
+                }
+                $link = getYoutubeEmbedUrl($dato2['link_video']);    
+            ?>
+            <iframe width="100%" height="100%" src="<?php echo $link;?>" title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+            </iframe>
+        </div>
+    </div>
 
 <br>
 
@@ -283,32 +255,6 @@
     $dato13=$q13->fetch(PDO::FETCH_ASSOC);
 ?>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!-- **************************************************************************************************** -->
 <!-- >>>>>>>>>>>>>>>>>>>>> <<<<<<<<<<<<<<<<<<< -->
 <div class="container" style="margin-top: 160px; margin-bottom: -25px;">
@@ -316,7 +262,7 @@
         <div class="col-md-1"></div>
         <div class="col-md-10">
             <div class="infoMin">
-                <a href=""><?php echo $dato6['nombreCurso'];?></a> <label> > </label> <a
+                <a href="curso.php?<?php echo 'id='.$id.'&idCI='.$idCI;?>"><?php echo $dato6['nombreCurso'];?></a> <label> > </label> <a
                     href=""><?php echo $dato13['nombreModulo'];?> </a><label> >
                 </label><a href=""><?php echo $dato2['nombreTema'];?></a>
             </div>
@@ -326,39 +272,7 @@
 </div>
 <!-- >>>>>>>>>>>>>>>>>>>>> <<<<<<<<<<<<<<<<<<< -->
 <!-- **************************************************************************************************** -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <br>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <!-- **************************************************************************************************** -->
 <!-- ANTERIOR - SIGUIENTE -->
@@ -376,45 +290,27 @@
                 $dato8 = $qy->fetch(PDO::FETCH_ASSOC);
                 ?>
                 <br>
+                <div class="opciones">
+                    <!-- Aquí están los botones "Anterior" y "Siguiente" -->
+                    <button style="background: #7C83FD; color: white; border-radius: 10px;" type="button" class="btn-outline-secondary" id="btnV"<?php if($nueva<=1){ echo "disabled";}?> onclick="parent.location='video.php?id=<?php echo $id; ?>&idtema=<?php echo ($nueva-1); ?>&id_modulo=<?php echo $dato['idModulo']?>&nW=<?php echo $nW?>&idCI=<?php echo $idCI?>'"> 
+                        <strong>
+                            <?php if(count($resultado1)<=0){echo "No existo";}?><img style="height: 20px;" src="./assets/images/flecha_anterior.png"> 
+                        </strong><span class="before">Anterior</span> 
+                    </button>
+    
+                    <button style="border: solid 2px #7C83FD; border-radius: 10px;" id="btnV2" type="button" class="btn btn-outline-secondary"> 
+                        <img src="././assets/images/video_icono_32.png">
+                    </button>
+    
+                    <!-- Botón Siguiente -->
+                    <button style="background: #7C83FD; color: white; border-radius: 10px;" type="button" class="botonSiguiente btn-outline-secondary" id="btnV" <?php if($nueva>=count($resultado1)){?>onclick="parent.location='cuestionario.php?id=<?php echo $id;?>&nW=<?php echo $nW;?>&idModulo=<?php echo $_GET['id_modulo'];?>&up=0&idcues=<?php echo $dato8['idCuestionario'];?>&idCI=<?php echo $idCI?>&cuen=1&nro=0'">
+                    <span class="next">Siguiente</span><strong><img style="height: 20px;" src="./assets/images/flecha_siguiente.png"> </strong>
+                    </button> 
 
-
-
-
-
-
-
-                <!-- Aquí están los botones "Anterior" y "Siguiente" -->
-                <button style="background: #7C83FD; color: white; border-radius: 10px;" type="button" class="btn-outline-secondary" id="btnV"<?php if($nueva<=1){ echo "disabled";}?>
-                onclick="parent.location='video.php?id=<?php echo $id; ?>&idtema=<?php echo ($nueva-1); ?>&id_modulo=<?php echo $dato['idModulo']?>&nW=<?php echo $nW?>&idCI=<?php echo $idCI?>'"> <strong>
-                <?php if(count($resultado1)<=0){echo "No existo";}?><img style="height: 20px;" src="./assets/images/flecha_anterior.png"> </strong> 
-                    Anterior 
-                </button>
-
-
-
-
-
-
-
-                <button style="border: solid 2px #7C83FD; border-radius: 10px;" id="btnV2" type="button" class="btn btn-outline-secondary"> 
-                    <img src="././assets/images/video_icono_32.png">
-                </button>
-
-                <!-- Botón Siguiente 2 -->
-                <!--
-                <button type="button" class="botonSiguiente_2 btn btn-outline-secondary" id="btnV">
-                    Siguiente<strong> > </strong>
-                </button> -->
-
-
-
-
-
-                <!-- Botón Siguiente -->
-                <button style="background: #7C83FD; color: white; border-radius: 10px;" type="button" class="botonSiguiente btn-outline-secondary" id="btnV" <?php if($nueva>=count($resultado1)){?>onclick="parent.location='cuestionario.php?id=<?php echo $id;?>&nW=<?php echo $nW;?>&idModulo=<?php echo $_GET['id_modulo'];?>&up=0&idcues=<?php echo $dato8['idCuestionario'];?>&idCI=<?php echo $idCI?>&cuen=1&nro=0'">
-                    Siguiente<strong><img style="height: 20px;" src="./assets/images/flecha_siguiente.png"> </strong>
-                </button> 
-                
+                </div>
+                <style>
+                    
+                </style>
 
 
 
@@ -439,47 +335,12 @@
 <!-- ANTERIOR - SIGUIENTE -->
 <!-- **************************************************************************************************** -->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!-- **************************************************************************************************** -->
 <!-- VIDEO -->
 <div class="containervid">
 
     <div style="border: solid 4px #7C83FD; border-radius: 0 !important;" id="videoTema" class="contvid">
+    
         <?php 
               $url=$dato2['link_video'];
               function getYoutubeEmbedUrl($url){

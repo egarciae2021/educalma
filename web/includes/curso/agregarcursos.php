@@ -80,9 +80,9 @@
                     <!-- segunda columna -->
                     <div class="pl-0" style="width: 97.2%; position: relative; left: 15px;">
                         
-                        <form name="formulario" id="newUserForm" method="POST" action="includes/Cursos_crud/Cursos_CRUD.php"  onsubmit="return comprobarDatosFormulario()" enctype="multipart/form-data">
-                            <div type="button" class="list-group-item list-group-item-action active" style="background: #4F52D6; text-align: center; font-size: 35px; position: relative; top: -30px;">
-                                Registro de curso nuevo
+                        <form name="formulario" id="newUserForm" method="POST" action="includes/Cursos_crud/Cursos_CRUD.php">
+                            <div class="list-group-item list-group-item-action active text-center pb-0 position-relative" style="background: #7C83FD; font-size: 3rem; top: -30px; font-weight: 700; border-radius: 12px;">
+                                REGISTRO DE CURSO NUEVO
                             </div>
                             <div class="form-row ">
                                 <div class="form-group col-md-6 ">
@@ -146,7 +146,7 @@
                                         Insertar imagen
                                     </button> -->
                                     <div class="column" style="margin:auto;">
-                                        <label for="file-upload" class="btn btn-block btn-agregar">
+                                        <label for="file-upload" class="btn btn-block btn-insertar">
                                             <i class="fas fa-cloud-upload-alt" aria-hidden="true"></i>
                                             Insertar imagen
                                         </label>
@@ -161,31 +161,26 @@
 
                                 <div class="form-group col-md-6 ">
                                     <label class="form-label">Público Dirigido</label>
-                                    <input type="text " id="publico_dirigidoo" name="publico_dirigido" placeholder="Ingrese público dirigido" class="form-control" aria-label="Dirigido" aria-describedby="names-addon">
+                                    <input type="text" id="publico_dirigidoo" name="publico_dirigido" placeholder="Ingrese público dirigido" class="form-control" aria-label="Dirigido" aria-describedby="names-addon">
+                                </div>
+
+                                <div class="form-group col-md-6 ">
+                                    <label class="form-label">Link Trailer</label>
+                                    <input type="text" id="link_trailer" name="link_trailer" placeholder="Ingrese link trailer" class="form-control" aria-label="lk_trailer" aria-describedby="names-addon">
                                 </div>
                                 
                             </div>
 
                             <div class="form-row">
                                 <div class="form-group col-12">
-                                    <input style="background-color: #74F077;" type="submit" class="btn btn-block btn-agregar" value="Agregar nuevo curso">
+                                    
+                                    <input type="submit" class="btn btn-block btn-agregar pt-2 pb-1 border-0" value="Agregar nuevo curso">
                                 </div>
                             </div>
 
                         </form>
                     </div>
-                    <!-- fin segunda columna -->
-
-
-
-
-
-
-
-
-
-
-                    
+                    <!-- fin segunda columna -->  
                 </div>
             </div>
         </div>

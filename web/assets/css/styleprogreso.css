@@ -92,3 +92,27 @@
 
 }
 */
+
+@media (max-width:400px) {
+    .before{
+        display: none;
+    }
+    .next{
+        display: none;
+    }
+    .containervid{
+        position: relative;
+    }
+    .contvid{
+        /* centrar vertical y horizontalmente */
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin: -15px 0 0 -15px;
+    }
+}
+
+.opciones{
+    justify-content: center;
+    display: flex;
+}

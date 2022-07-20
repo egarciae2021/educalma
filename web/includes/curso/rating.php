@@ -1,6 +1,6 @@
 <?php 
     if(isset($_GET['rating'])&& $_GET['coment']){
-        echo "guardado";
+        //echo "guardado";
         $pdo2 = Database::connect();
         try{
             $id =$_SESSION['codUsuario'];
@@ -13,7 +13,5 @@
             echo $e->getMessage();
         }
         Database::disconnect();
-    }else{
-        echo "no se guardó";
     }
 ?>

@@ -1,17 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;300;500&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Tamma+2:wght@400;500;600;700;800&display=swap');
 
 body {
     background-color: #fff;
 }
 
 .container-fluid .row .col-12 .section-title-course {
-    font-family: "Inter", sans-serif;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 24px;
+    font-family: 'Baloo Tamma 2', cursive;
+    font-weight: 500;
+    font-size: 2.6rem;
     text-transform: uppercase;
-    color: #7c83fd;
-    padding: 1rem 3rem 0.5rem 3rem;
+    background-color: #7C83FD;
+    border-radius: 50px;
+    color: white;
+    padding: .7rem 4rem .2rem 4rem;
     width: 100%;
 }
 
@@ -101,65 +103,6 @@ min-height: 100%;
     text-align: justify;
 }
 
-@media (max-width: 1241px) {
-    .container-fluid .row .col-12 .card .col-7 .container-descrition {
-        font-size: 14px;
-        padding-right: 2rem;
-    }
-    .container-fluid .row .col-12 .card .col-7 .container-link {
-        font-size: 14px;
-    }
-}
-
-@media (max-width: 1055px) {
-    .container-fluid .row .col-12 .card .col-7 {
-        padding: 1rem 0.5rem;
-    }
-    .container-fluid .row .col-12 .card .col-7 .container-descrition {
-        font-size: 13px;
-        padding-right: 1rem;
-    }
-    .container-fluid .row .col-12 .card .col-7 .container-link {
-        font-size: 13px;
-    }
-}
-
-@media (max-width: 930px) {
-    .container-fluid .row .col-12 .card .col-7 .container-descrition {
-        padding-right: 1.5rem;
-    }
-}
-
-@media (max-width: 767px) {
-    .container-fluid .row .col-12 .card .col-7 .container-descrition {
-        font-size: 16px;
-        padding-right: 3rem;
-    }
-    .container-fluid .row .col-12 .card .col-7 .container-link {
-        font-size: 16px;
-    }
-}
-
-@media (max-width: 440px) {
-    .container-fluid .row .col-12 .card .col-7 .container-descrition {
-        font-size: 14px;
-        padding-right: 4rem;
-    }
-    .container-fluid .row .col-12 .card .col-7 .container-link {
-        font-size: 14px;
-    }
-}
-
-@media (max-width: 379px) {
-    .container-fluid .row .col-12 .card .col-7 .container-descrition {
-        font-size: 13px;
-        padding-right: 3rem;
-    }
-    .container-fluid .row .col-12 .card .col-7 .container-link {
-        font-size: 13px;
-    }
-}
-
 /* cursos */
 
 /* 
@@ -232,6 +175,10 @@ border-radius: 10px;
 */
 
 /* BUSCADOR */
+
+.search_wrap .input-group .form-control:focus{
+    box-shadow: none;
+}
 
 .container .input {
     border: 1px solid #d5d7da;
@@ -370,13 +317,17 @@ border-radius: 10px;
 
 .container-fluid .container-card-course .row .col-12 .card {
     max-width: 320px;
-    max-height: 400px;
+    max-height: 500px;
     height: 100%;
     width: 100%;
     border-radius: 0;
     margin: 0 auto;
-    border: 1px solid lightgray;
+    border: 1px solid #7C83FD;
     text-align: justify;
+    justify-content: space-between;
+}
+.container-fluid .container-card-course .row .col-12 .card-miscursos {
+    max-width: none;
 }
 
 .container-fluid
@@ -401,24 +352,25 @@ border-radius: 10px;
     .card
     .container-card-image
     img {
-    min-height: 100%;
-    min-width: 100%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    overflow: hidden;
+    max-width: unset;
 }
 
-.container-fluid
+.container-fluid /* TITULO DE LAS CARD */
     .container-card-course
     .row
     .col-12
     .card
     .container-card-title {
     text-transform: uppercase;
-    color: dimgray;
-    font-family: "Inter", sans-serif;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 0.8rem;
-    padding: 0.5rem 0.5rem;
-    /* height: 55px; */
+    color: #303030;
+    margin-bottom: auto;
+    line-height: 20px;
+    font-size: 1.2rem;
+    font-family: 'Baloo Tamma 2', cursive;
 }
 
 .info {
@@ -428,23 +380,36 @@ border-radius: 10px;
     padding: 1rem 0;
 }
 
-.container-fluid
+.container-fluid /* DESCRIPCIÓN DE LAS CARD */
     .container-card-course
     .row
     .col-12
     .card
     .container-card-description {
-    color: gray;
-    font-family: "Inter", sans-serif;
-    font-size: 0.8rem;
-    padding: 0.5rem;
-    /*texto en dos lineas*/
-    /* white-space: nowrap; */
-    /* overflow: hidden; */
-    /* text-overflow: ellipsis; */
-    /* display: -webkit-box;
+    font-family: 'Baloo Tamma 2', cursive;
+    font-size: 1.2rem;
+    color: #515151;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    line-clamp: 2;
+    -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2; */
+}
+.container-fluid
+    .container-card-course
+    .row
+    .col-12
+    .card
+    .card-description-miscursos {
+    font-size: .9rem;
+    font-weight: 600;
+}
+
+.container-fluid .container-card-course /* CREADO POR DE LAS CARD */
+.row .col-12 .card .container-card-title + .container-card-description {
+    font-size: 1rem;
+    margin: 22px 0 16px 0;
 }
 
 /*
@@ -478,29 +443,163 @@ border-radius: 10px;
 **/
 
 .card:hover{
-	box-shadow: 5px 5px 20px rgba(0,0,0,0.4);
+    box-shadow: 5px 5px 20px rgba(203, 0, 253, 0.4);
+	transform: translateY(-3%);
+}
+.card-miscursos:hover {    
+    box-shadow: 0px 0px 18px 0px #7c83fd;
 	transform: translateY(-3%);
 }
 
-.container-card-link{
+.container-card-link{ /* ESTILOS DE BOTON CARD */
     text-align: center;
+    font-size: 1.4rem;
     /*float: left;*/
 }
 
 .card .container-card-link a{
 	display: inline-block;
-	padding: 10px;
-	margin-top: 10px;
 	text-decoration: none;
 	color: #e7e7e7;
-	background-color:#168eb3;
+	background-color: #7c83fd;
 	border-radius: 50px;
 	transition: all 400ms ease;
-	margin-bottom: 5px;
-    width: 150px;
+    font-weight: bold;
+    line-height: 1.8rem;
+    padding: .4rem 1rem 0rem 1rem;
+    min-width: 160px;
 }
+.card .card-link-miscursos a{
+    border-radius: 6px;
+    padding: .8rem 2rem .5rem 2rem;
+}
+.card .card-link-miscursos i{
+    font-size: 1.2rem;
+}
+
 .card .container-card-link a:hover{
 	background-color:#127b9b;
 }
 
 /*fin de cartillas*/
+
+@media (max-width: 1241px) {
+    .container-fluid .row .col-12 .card .col-7 .container-descrition {
+        font-size: 14px;
+        padding-right: 2rem;
+    }
+    .container-fluid .row .col-12 .card .col-7 .container-link {
+        font-size: 14px;
+    }
+    .container-fluid .row .col-12 .section-title-course { /*Títulos de secciones*/
+        font-size: 2rem;
+    }
+    .container-fluid .container-card-course /*Títulos de las Card*/
+    .row .col-12 .card .container-card-title {
+        font-size: 1.1rem;
+    }
+    .container-fluid .container-card-course /* CREADO POR DE LAS CARD */
+    .row .col-12 .card .container-card-title + .container-card-description {
+        font-size: .9rem;
+    }
+    .container-fluid .container-card-course /* DESCRIPCIÓN DE LAS CARD */
+    .row .col-12 .card .container-card-description {
+        font-size: 1.1rem;
+    }
+    .container-card-link{ /* ESTILOS DE BOTON CARD */
+        font-size: 1.3rem;
+    }
+    .card .card-link-miscursos i{
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 1055px) {
+    .container-fluid .row .col-12 .card .col-7 {
+        padding: 1rem 0.5rem;
+    }
+    .container-fluid .row .col-12 .card .col-7 .container-descrition {
+        font-size: 13px;
+        padding-right: 1rem;
+    }
+    .container-fluid .row .col-12 .card .col-7 .container-link {
+        font-size: 13px;
+    }
+    .container-card-link{ /* ESTILOS DE BOTON CARD */
+        font-size: 1.2rem;
+    }
+    .card .card-link-miscursos i{
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 930px) {
+    .container-fluid .row .col-12 .card .col-7 .container-descrition {
+        padding-right: 1.5rem;
+    }
+    .container-fluid .row .col-12 .section-title-course { /*Títulos de secciones*/
+        font-size: 1.6rem;
+        text-align: center;
+    }
+}
+
+@media (max-width: 767px) {
+    .container-fluid .row .col-12 .card .col-7 .container-descrition {
+        font-size: 16px;
+        padding-right: 3rem;
+    }
+    .container-fluid .row .col-12 .card .col-7 .container-link {
+        font-size: 16px;
+    }
+    .container-fluid .row .col-12 .section-title-course { /*Títulos de secciones*/
+        line-height: 1.8rem;
+        font-weight: 600;
+    }
+    .container-fluid .container-card-course /*Títulos de las Card*/
+    .row .col-12 .card .container-card-title {
+        font-size: 1.2rem;
+    }
+    .container-fluid .container-card-course /* CREADO POR DE LAS CARD */
+    .row .col-12 .card .container-card-title + .container-card-description {
+        font-size: 1rem;
+    }
+    .container-fluid .container-card-course /* DESCRIPCIÓN DE LAS CARD */
+    .row .col-12 .card .container-card-description {
+        font-size: 1.1rem;
+    }
+    .container-fluid
+    .container-card-course
+    .row
+    .col-12
+    .card
+    .card-description-miscursos {
+        font-size: .9rem;
+        font-weight: 600;
+    }
+    .container-card-link{ /* ESTILOS DE BOTON CARD */
+        font-size: 1.4rem;
+    }
+    .card .card-link-miscursos i{
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 440px) {
+    .container-fluid .row .col-12 .card .col-7 .container-descrition {
+        font-size: 14px;
+        padding-right: 4rem;
+    }
+    .container-fluid .row .col-12 .card .col-7 .container-link {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 379px) {
+    .container-fluid .row .col-12 .card .col-7 .container-descrition {
+        font-size: 13px;
+        padding-right: 3rem;
+    }
+    .container-fluid .row .col-12 .card .col-7 .container-link {
+        font-size: 13px;
+    }
+}

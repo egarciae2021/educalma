@@ -9,61 +9,66 @@ e.preventDefault();
 })
 */
 
+$.validator.addMethod("yturl", function(_value,_element,_parameter){
+    const reg = /^(https?:\/\/)?(www\.)?((?:youtube\.com)|(?:youtu(?:\.)be))(?:\/)(?:(?:watch\?(?:v=))|(?:embed\/))?([\w\-]{11,11})(?:(?:&|\?)[\w\?=]*)?$/gm;
+    if(reg.test(_value)) return true;
+    else return false;
+},"El Link del vídeo no es válido")
 
-    var $registrationForm = $('#newUserForm');
+//Validación Formulario AgregarCurso - RegistroDeCursoNuevo
 
-if($registrationForm.length){
-  $registrationForm.validate({
-      rules:{
-          //username is the name of the textbox
-          nombres_agrecursos: {
-              required: true,
-              minlength:2
-          },
-          categoria: {
-              required: true
-          },
-          descripcio_curso: {
-              required: true,
-              minlength:6
-          },
-          intro_curso: {
+$('#newUserForm').validate({
+    rules:{
+        //username is the name of the textbox
+        nombres_agrecursos: {
+            required: true,
+            minlength:2
+        },
+        categoria: {
+            required: true
+        },
+        descripcio_curso: {
+            required: true,
+            minlength:6
+        },
+        intro_curso: {
             required: true,
             minlength: 6
-          },
-          publico_dirigido: {
-              required: true,
-              minlength:4
-          }
-      },
-      messages:{
-          nombres_agrecursos: {
-              //error message for the required field
-              required: 'Por favor, Ingrese el Nombre!',
-              minlength: "Nombre debe ser de por lo menos 2 caracteres"
-          },
-          categoria: {
-              required: 'Por favor, Seleccionar una Categoría!'
-          },
-          descripcio_curso: {
-              required: 'Por favor, Ingrese la Descripción del Curso!',
-              minlength: 'Descripción debe ser de por lo menos 6 caracteres'
-          },
-          intro_curso: {
-              required: 'Por favor, Ingrese la Introducción del Curso!',
-              minlength: "Introducción debe ser de por lo menos 6 caracteres"
-          },
-          publico_dirigido: {
-              required: 'Por favor, Ingrese el Público que se Dirige!',
-              minlength: "Público debe ser de por lo menos 4 caracteres"
-          },
-          prec_curso:{
-            min: 'Por favor. Ingrese un valor mayor o igual a 0'
-          }
-
-      },
-  });
-}
+        },
+        publico_dirigido: {
+            required: true,
+            minlength:4
+        },
+        link_trailer:{
+            required: true,
+            yturl: true
+        }
+    },
+    messages:{
+        nombres_agrecursos: {
+            required: 'Por favor, Ingrese el Nombre!',
+            minlength: "Nombre debe ser de por lo menos 2 caracteres"
+        },
+        categoria: {
+            required: 'Por favor, Seleccionar una Categoría!'
+        },
+        descripcio_curso: {
+            required: 'Por favor, Ingrese la Descripción del Curso!',
+            minlength: 'Descripción debe ser de por lo menos 6 caracteres'
+        },
+        intro_curso: {
+            required: 'Por favor, Ingrese la Introducción del Curso!',
+            minlength: "Introducción debe ser de por lo menos 6 caracteres"
+        },
+        publico_dirigido: {
+            required: 'Por favor, Ingrese el Público que se Dirige!',
+            minlength: "Público debe ser de por lo menos 4 caracteres"
+        },
+        link_trailer: {
+            required: 'Por favor, Ingrese el Link del vídeo!'
+        }
+    }
+});
 
 var $registrationForm2 = $('#form-agretemas');
 
@@ -86,42 +91,39 @@ if($registrationForm2.length){
   });
 }
 
-var $registrationForm3 = $('#form-agretemas2');
+//Validación Formulario AgregarTema
 
-if($registrationForm3.length){
-  $registrationForm3.validate({
-      rules:{
-          //username is the name of the textbox
-          temas_agregar: {
-              required: true,
-              minlength:2
-          },
-          link:{
-              required: true,
-              minlength:4
-          },
-          descripcio_tema:{
-              required: true,
-              minlength:5
-          }
-      },
-      messages:{
+$('#form-agretemas2').validate({
+    rules:{
+        //username is the name of the textbox
         temas_agregar: {
-              //error message for the required field
-              required: 'Por favor, Ingrese el Nombre del Tema!',
-              minlength: "Nombre del Tema debe ser de por lo menos 2 caracteres"
-          },
-          link:{
-            required: 'Por favor, Ingrese el Link',
-            minlength:'Link debe ser de por lo menos 4 caracteres'
+            required: true,
+            minlength: 2
         },
-        descripcio_tema:{
-            required: 'Por favor, Ingrese una Descripción',
-            minlength: 'Descripción debe ser de por lo menos 5 caracteres'
+        link: {
+            required: true,
+            yturl: true//function(){return $('#link').val()}
+        },
+        descripcio_tema: {
+            required: true,
+            minlength: 6
         }
-      },
-  });
-}
+    },
+    messages:{
+        temas_agregar: {
+            required: 'Por favor, Ingrese el Nombre del Tema!',
+            minlength: "Nombre del Tema debe ser de por lo menos 2 caracteres"
+        },
+        link: {
+            required: 'Por favor, Ingrese el Link del vídeo!',
+        },
+        descripcio_tema: {
+            required: 'Por favor, Ingrese la Descripción del Tema!',
+            minlength: "La Descripción debe ser de por lo menos 6 caracteres"
+        }
+    }
+});
+
 
 var $registrationForm4 = $('#form-agretemas3');
 
