@@ -697,8 +697,8 @@
                                                 ?>
                                                 
                                                     <!--Link "Leer Más"-->
-                                                    <div style="margin: auto; background: #FFFF; border-radius: 30px; font-weight: 500; padding: 9px; width: 180px; float: right; position: relative; top: -60px;">
-                                                        <a style="color: #7C83FD; font-size: 20px; text-decoration: none;" href="iniciosesion.php">
+                                                    <div class="info">
+                                                        <a href="iniciosesion.php">
                                                         <center>Leer Más</center>
                                                         </a>
                                                     </div>
