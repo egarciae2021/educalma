@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Tamma+2&display=swap');
+
+.footer--light {
+    background-image: url("assets/images/fondo2-min.png") !important;
+    /* background-color: blue; */
+    background-size: 100% 100%;
+}
+
+.widget-about{
+    display: flex;
+    justify-content: center;
+}
+
+.widget-about img{
+    padding-top: 60px;
+    width: 20%;
+}
+
+.contenido{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-family: 'Baloo Tamma 2', cursive;
+    gap: 98px;
+    margin-right: 340px;
+    
+}
+
+.enviar_inicio{
+    width: 63px;
+    height: auto;
+    margin-left: 100px;
+}
+
+.title{
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.footer-menu a{
+    color: white;
+    font-size: 10px;
+}
+
+.copy{
+    margin: auto; 
+    text-align: center; 
+    width: 800px;
+}
+
+.copyright-text{
+    font-size: 16px; 
+    color: #ffffff;
+}
+
+.redes{
+    margin-left: 45px;
+}
+
+.copyright-text{
+    font-family: 'Baloo Tamma 2', cursive;
+}
+  
+@media (max-width: 768px) {
+    
+.footer--light {
+    background-image: url("assets/images/fondo2-min.png") !important;
+}  
+}
+
+  /*  .footer-menu li{
+
+      -webkit-transform: scale(1,1);
+      -webkit-transition-timing-function: ease-out;
+      -webkit-transition-duration: 250ms;
+      -moz-transform: scale(1,1);
+      -moz-transition-timing-function: ease-out;
+      -moz-transition-duration: 250ms;
+  }
+
+  .footer-menu li:hover{
+
+      -webkit-transform: scale(1.10,1.10);
+      -webkit-transition-timing-function: ease-out;
+      -webkit-transition-duration: 1.2;
+      -moz-transform: scale(1.10,1.10);
+      -moz-transition-timing-function: ease-out;
+      -moz-transition-duration: 250ms;
+  } */
