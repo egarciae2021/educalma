@@ -663,17 +663,11 @@
                      <div id="divComentario" class="comment-main-level" >
                         <!-- AVATAR -->
                         <div id="avatarComentario" class="comment-avatar">
-                           <?php    
-                              if($registro['mifoto']!=null){
-                              ?>
-                           <img id="imagenAvatarComentario" src="data:image/*;base64,<?php echo base64_encode($registro['mifoto']);?>" alt="foto_curso" style="width: 60px;height:60px;">
-                           <?php
-                              }else{
-                              ?>
-                           <img id="imagenAvatarComentario" src="./assets/images/user.png" alt="foto_curso" style="width: 60px;height:60px;">
-                           <?php
-                              }
-                              ?> 
+                           <?php if($registro['mifoto']!=null) { ?>
+                              <img id="imagenAvatarComentario" src="data:image/*;base64,<?php echo base64_encode($registro['mifoto']);?>" alt="foto_curso">
+                           <?php } else { ?>
+                              <img id="imagenAvatarComentario" src="./assets/images/user.png" alt="foto_curso">
+                           <?php } ?> 
                         </div>
                         <!-- AVATAR -->
                         <!-- CONTENEDOR DEL COMENTARIO -->
@@ -681,51 +675,57 @@
                            <!-- HEAD -->
                            <div id="headComentario" class="comment-head">
                               <!-- Nombre de Usuario del Comentario -->
-                              <h6 class="comment-name<?php echo $autor; ?>">
-                                 <span id="nombreUsuarioComentario"><?php echo $registro['nombreUser']; ?></span>
-                              </h6>
+                              <div class="container-comment-autor">
+                                 <h6 class="m-0 comment-name<?php echo $autor; ?>">
+                                    <span id="nombreUsuarioComentario"><?php echo $registro['nombreUser']; ?></span>
+                                 </h6>
+                              </div>
                               <!-- Nombre de Usuario del Comentario -->
                               <!-- yyyyyyyyyyyyyyyyyyy -->
-                              <span>
-                              <?php
-                                 $fecha1 = new DateTime($registro['fecha_ingreso']);
-                                 $fecha_actual= new DateTime("now");
-                                 $fecha_correcta= $fecha1->add(new DateInterval('PT6H'));
-                                 //se agrega 6 horas porq restar al contrario agrega, no se porque.
-                                 //sucede el error q al crear un nuevo post aparece como si fuese 
-                                 //de hace 6 horas, incluso al probar como aparece en segundos(unix epoch)
-                                 $intervalo = $fecha_correcta->diff($fecha_actual);
-                                 
-                                 if($intervalo->y>0){
-                                     echo 'hace '. $intervalo->y . ' año'.($intervalo->y>1?'s':'');
-                                 }
-                                 else if($intervalo->m>0){
-                                     echo 'hace '.$intervalo->m . ' mes'.($intervalo->m>1?'es':'');
-                                 }
-                                 else if($intervalo->days>0){
-                                     echo 'hace '.$intervalo->d . ' dia'.($intervalo->d>1?'s':'');
-                                 }
-                                 else if($intervalo->h>=1){
-                                     echo 'hace '.$intervalo->h . ' hora'.($intervalo->h>1?'s':'');
-                                 }
-                                 else if($intervalo->i>0){
-                                     echo 'hace '.$intervalo->i . ' minuto'.($intervalo->i>1?'s':'');
-                                 }
-                                 else if($intervalo->i=0){
-                                     echo 'justo ahora';
-                                 }        
-                                 else{
-                                     echo 'justo ahora';
-                                 }//si no pones el else hay bug
-                                 ?>
-                              </span>
+                              <div class="container-time-ago">
+                                 <span class="time-ago">
+                                    <?php
+                                       $fecha1 = new DateTime($registro['fecha_ingreso']);
+                                       $fecha_actual= new DateTime("now");
+                                       $fecha_correcta= $fecha1->add(new DateInterval('PT6H'));
+                                       //se agrega 6 horas porq restar al contrario agrega, no se porque.
+                                       //sucede el error q al crear un nuevo post aparece como si fuese 
+                                       //de hace 6 horas, incluso al probar como aparece en segundos(unix epoch)
+                                       $intervalo = $fecha_correcta->diff($fecha_actual);
+                                       
+                                       if($intervalo->y>0){
+                                          echo 'hace '. $intervalo->y . ' año'.($intervalo->y>1?'s':'');
+                                       }
+                                       else if($intervalo->m>0){
+                                          echo 'hace '.$intervalo->m . ' mes'.($intervalo->m>1?'es':'');
+                                       }
+                                       else if($intervalo->days>0){
+                                          echo 'hace '.$intervalo->d . ' dia'.($intervalo->d>1?'s':'');
+                                       }
+                                       else if($intervalo->h>=1){
+                                          echo 'hace '.$intervalo->h . ' hora'.($intervalo->h>1?'s':'');
+                                       }
+                                       else if($intervalo->i>0){
+                                          echo 'hace '.$intervalo->i . ' minuto'.($intervalo->i>1?'s':'');
+                                       }
+                                       else if($intervalo->i=0){
+                                          echo 'justo ahora';
+                                       }        
+                                       else{
+                                          echo 'justo ahora';
+                                       }//si no pones el else hay bug
+                                    ?>
+                                 </span>
+                              </div>
                               <!-- yyyyyyyyyyyyyyyyyyy -->
-                              <button type="button" id="modal" class="btn btn-light btn-sm ml-3" data-toggle="modal"
-                                 data-target="#respuesta<?php echo $registro['idcomentario'] ?>"
-                                 data-id="<?php echo '5' ?>">Responder
-                              </button>
+                              <div class="container-comment-answer">
+                                 <button type="button" id="modal" class="btn btn-light btn-sm" data-toggle="modal"
+                                    data-target="#respuesta<?php echo $registro['idcomentario'] ?>"
+                                    data-id="<?php echo '5' ?>">Responder
+                                 </button>
+                              </div>
                               <!-- Botón Borrar Comentario -->
-                              <?php
+                              <!-- <?php
                                  if($_SESSION['privilegio']==1 || $_SESSION['iduser']==$idProfe || $registro['iduser']==$_SESSION['iduser']){
                                      echo '
                                          <button style="background-color:red; color:white; cursor:pointer;" type="submit" class="boton4 btn btn-sm ml-3" onClick="AlertEliminacion('.$registro['idcomentario'].')">
@@ -738,17 +738,19 @@
                                          
                                      ';
                                  }
-                                 ?>
+                              ?> -->
                               <!-- Botón Borrar Comentario -->
-                              <!-- Flecha compartir -->
-                              <a class="fb-xfbml-parse-ignore" target="_blank" href="http://www.facebook.com/sharer.php?s=100&p[url]=http://educalma.fundacioncalma.org/detallecurso.php?id=<?php echo $idCurso;?>&p[title]=prueba&p[summary]=descripcion_contenido&display=page" 
+                              <div class="container-comment-actions">
+                                 <!-- Corazón -->
+                                 <i id="corazonComentario" style="color: white;" class="fa fa-heart"></i>
+                                 <!-- Corazón -->
+                                 <!-- Flecha compartir -->
+                                 <a class="fb-xfbml-parse-ignore" target="_blank" href="http://www.facebook.com/sharer.php?s=100&p[url]=http://educalma.fundacioncalma.org/detallecurso.php?id=<?php echo $idCurso;?>&p[title]=prueba&p[summary]=descripcion_contenido&display=page" 
                                  onclick="window.open(this.href, this.target, 'width=300,height=400')">
-                              <i id="flechaCompartirComentario" style="color:white;" class="fa fa-reply"></i>
-                              </a>
-                              <!-- Flecha compartir -->
-                              <!-- Corazón -->
-                              <i id="corazonComentario" style="color: white;" class="fa fa-heart"></i>
-                              <!-- Corazón -->
+                                    <i id="flechaCompartirComentario" style="color:white;" class="fa fa-reply"></i>
+                                 </a>
+                                 <!-- Flecha compartir -->
+                              </div>
                            </div>
                            <!-- HEAD -->
                            <!-- Contenido del comentario -->
@@ -785,57 +787,55 @@
                            <div id="divSubcomentario">
                               <!-- AVATAR -->
                               <div id="avatarSubcomentario" class="comment-avatar">
-                                 <?php    
-                                    if($registro2['mifoto']!=null){
-                                    ?>
-                                 <img id="imagenAvatarSubcomentario" src="data:image/*;base64,?php echo base64_encode($registro2['mifoto']);?>" 
-                                    alt="foto_curso" style="width: 43px;height:43px;">
-                                 <?php
-                                    }else{
-                                    ?>
-                                 <img id="imagenAvatarSubcomentario" src="./assets/images/user.png" alt="foto_curso" style="width: 43px;height:43px;">
-                                 <?php
-                                    }
-                                    ?> 
+                                 <?php if($registro2['mifoto']!=null) { ?>
+                                    <img id="imagenAvatarSubcomentario" src="data:image/*;base64,?php echo base64_encode($registro2['mifoto']);?>" 
+                                    alt="foto_curso">
+                                 <?php } else { ?>
+                                    <img id="imagenAvatarSubcomentario" src="./assets/images/user.png" alt="foto_curso">
+                                 <?php } ?> 
                               </div>
                               <!-- AVATAR -->
                               <!-- CONTENEDOR DEL SUBCOMENTARIO -->
                               <div id="contenedorSubcomentario" class="comment-box">
                                  <!-- oeoeoeoeoeo -->
                                  <div id="headSubcomentario" class="comment-head">
-                                    <h6 class="comment-name<?php echo $autor; ?>">
-                                       <span id="nombreUsuarioSubcomentario"><?php echo $registro2['user_men'];?></span>
-                                    </h6>
-                                    <span>
-                                    <?php 
-                                       $fecha1_2 = new DateTime($registro2['fecha_ingreso']);
-                                       $fecha_actual12= new DateTime("now");
-                                       $fecha_correcta12= $fecha1_2->add(new DateInterval('PT6H'));
-                                       $intervalo = $fecha_correcta12->diff($fecha_actual12);
-                                       
-                                       if($intervalo->y>0){
-                                           echo 'hace '. $intervalo->y . ' año'.($intervalo->y>1?'s':'');
-                                       }
-                                       else if($intervalo->m>0){
-                                           echo 'hace '.$intervalo->m . ' mes'.($intervalo->m>1?'es':'');
-                                       }
-                                       else if($intervalo->days>0){
-                                           echo 'hace '.$intervalo->d . ' dia'.($intervalo->d>1?'s':'');
-                                       }
-                                       else if($intervalo->h>=1){
-                                           echo 'hace '.$intervalo->h . ' hora'.($intervalo->h>1?'s':'');
-                                       }
-                                       else if($intervalo->i>0){
-                                           echo 'hace '.$intervalo->i . ' minuto'.($intervalo->i>1?'s':'');
-                                       }
-                                       else if($intervalo->i=0){
-                                           echo 'justo ahora';
-                                       }        
-                                       else{
-                                           echo 'justo ahora';
-                                       }
-                                       ?>
-                                    </span>
+                                    <div class="container-comment-autor">
+                                       <h6 class="m-0 comment-name<?php echo $autor; ?>">
+                                          <span id="nombreUsuarioSubcomentario"><?php echo $registro2['user_men'];?></span>
+                                       </h6>
+                                    </div>
+                                    <div class="container-time-ago">
+                                       <span class="time-ago">
+                                       <?php 
+                                          $fecha1_2 = new DateTime($registro2['fecha_ingreso']);
+                                          $fecha_actual12= new DateTime("now");
+                                          $fecha_correcta12= $fecha1_2->add(new DateInterval('PT6H'));
+                                          $intervalo = $fecha_correcta12->diff($fecha_actual12);
+                                          
+                                          if($intervalo->y>0){
+                                             echo 'hace '. $intervalo->y . ' año'.($intervalo->y>1?'s':'');
+                                          }
+                                          else if($intervalo->m>0){
+                                             echo 'hace '.$intervalo->m . ' mes'.($intervalo->m>1?'es':'');
+                                          }
+                                          else if($intervalo->days>0){
+                                             echo 'hace '.$intervalo->d . ' dia'.($intervalo->d>1?'s':'');
+                                          }
+                                          else if($intervalo->h>=1){
+                                             echo 'hace '.$intervalo->h . ' hora'.($intervalo->h>1?'s':'');
+                                          }
+                                          else if($intervalo->i>0){
+                                             echo 'hace '.$intervalo->i . ' minuto'.($intervalo->i>1?'s':'');
+                                          }
+                                          else if($intervalo->i=0){
+                                             echo 'justo ahora';
+                                          }        
+                                          else{
+                                             echo 'justo ahora';
+                                          }
+                                          ?>
+                                       </span>
+                                    </div>
                                     <!-- Botón Borrar Subcomentario -->
                                     <?php
                                        if($_SESSION['privilegio']==1 || $_SESSION['iduser']==$idProfe || $registro2['iduser']==$_SESSION['iduser']){
@@ -853,12 +853,14 @@
                                        }
                                        ?>
                                     <!-- Botón Borrar Subcomentario -->
-                                    <!-- Flecha Compartir Subcomentario -->
-                                    <i id="flechaCompartirSubcomentario" style="color:white;" class="fa fa-reply"></i>
-                                    <!-- Flecha Compartir Subcomentario -->
-                                    <!-- Corazón Subcomentario -->
-                                    <i id="corazonSubcomentario" style="color:white;" class="fa fa-heart"></i>
-                                    <!-- Corazón Subcomentario -->
+                                    <div class="container-comment-actions">
+                                       <!-- Corazón Subcomentario -->
+                                       <i id="corazonSubcomentario" style="color:white;" class="fa fa-heart"></i>
+                                       <!-- Corazón Subcomentario -->
+                                       <!-- Flecha Compartir Subcomentario -->
+                                       <i id="flechaCompartirSubcomentario" style="color:white;" class="fa fa-reply"></i>
+                                       <!-- Flecha Compartir Subcomentario -->
+                                    </div>
                                  </div>
                                  <!-- oeoeoeoeoeo -->
                                  <!-- Contenido del subcomentario. -->
