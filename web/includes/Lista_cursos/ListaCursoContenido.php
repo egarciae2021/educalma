@@ -1,6 +1,7 @@
 <head>
     <link rel="shortcut icon" href="assets/images/logo_edu.png">
     <link rel="stylesheet" href="assets/css/cursos.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Tamma+2&display=swap" rel="stylesheet">
 
     <style>
 
@@ -576,22 +577,19 @@
                                     </div>
                                 </div>
 
-                            <div class="modal-body">
+                            <div class="modal-body" style="background-image: url('assets/images/fondo-modal.jpeg');background-size: 100% 100%;">
 
 
                                     <!--Contenedor del nombre del curso publicado-->
-                                    <div class="container-card-title" style="font-size: 20px; padding-bottom: 1px; color: black;">
-                                        <a style="float: left;">
+                                    <div class="container-card-title">
+                                        <a class="tittle">
                                             <!--Nombre-->
-                                            <center><strong><?php echo $dato['nombreCurso']; ?></strong></center>
+                                            <center><?php echo $dato['nombreCurso']; ?></center>
                                         </a>
                                     </div>
 
-                                    <br>
-                  
-
                                     <!--Contenedor del nombre del profesor del curso publicado-->
-                                    <div class="container-card-description" style="margin-top: 5px; padding-top: 1px; font-size: 13px;">
+                                    <div class="container-card-description">
 
                                         <!--Código para obtener el nombre del profesor-->
                                         <?php 
@@ -608,28 +606,27 @@
                                         <a>
                                             <?php if($dato5['privilegio']==1){ ?>
 
-                                                <span style="color: #565656;">Creado por la Fundación CALMA.</span>
+                                                <span style="color: white;">Creado por la Fundación CALMA.</span>
 
                                             <?php } if($dato5['privilegio']==2){ ?>
 
-                                                <span style="color: #565656;">Creado por <?php echo " " . $dato5['nombres'] . " " . $dato5['apellido_pat'] . " " . $dato5['apellido_mat'] . "."?></span>
+                                                <span style="color: white;">Creado por <?php echo " " . $dato5['nombres'] . " " . $dato5['apellido_pat'] . " " . $dato5['apellido_mat'] . "."?></span>
                                             
                                             <?php } ?>
                                         </a>
                                     </div>
 
-                                    <br>
-
                                     <!--Contenedor de la descripción del curso-->
-                                    <div class="container-card-description" style="padding-bottom: 1px; margin-bottom: 1px; font-size: 16px; position: relative;">
+                                    <div class="container-card-description">
                                         <!--Descripción-->
-                                        <p style="text-align: justify;"><?php echo $dato['descripcionCurso'] ?></p>
+                                        <strong>
+                                            <p style="text-align: justify;padding: 2em 4em 0 4em"><?php echo $dato['descripcionCurso'] ?></p>
+                                        </strong>
+                                            
                                     </div>
 
-                                    <br>
-
                                     <!--Contenedor del costo del curso, mensaje si se compró o no el curso y del link "Leer Más".-->
-                                    <div style="padding-top: 1px; margin-top: -20px; padding-bottom: -50px; font-weight: bold; font-size: 25px; color: black; position: relative;">
+                                    <div style="font-size: 18px; color: white; padding-top: 1em;" class="precio">
                                                 
                                         <?php if($dato2['id_cursoInscrito'] == NULL){ ?>
                         
@@ -672,8 +669,8 @@
                                                 if(isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)){
                                                 ?>
                                                     <!--Link "Leer Más"-->
-                                                    <div style="margin-bottom: -50px; background: #7C83FD; border-radius: 30px; font-weight: 500; padding: 9px; width: 180px; float: right; position: relative; top: -60px;">
-                                                        <a style="color: #FFFF; font-size: 20px; text-decoration: none;" href="<?php echo $paginaRed ?>.php?id=<?php echo $dato['idCurso']; ?><?php if(!empty($dato2)){?>&idCI=<?php echo $dato2['id_cursoInscrito']; }?>">
+                                                    <div class="info">
+                                                        <a href="<?php echo $paginaRed ?>.php?id=<?php echo $dato['idCurso']; ?><?php if(!empty($dato2)){?>&idCI=<?php echo $dato2['id_cursoInscrito']; }?>">
                                                         <center>Leer Más</center>
                                                         </a>
                                                     </div>
@@ -682,8 +679,8 @@
                                                 ?>
                                                 
                                                     <!--Link "Leer Más"-->
-                                                    <div style="margin: auto; background: #7C83FD; border-radius: 30px; font-weight: 500; padding: 9px; width: 180px; float: right; position: relative; top: -60px;">
-                                                        <a style="color: #FFFF; font-size: 20px; text-decoration: none;" href="iniciosesion.php">
+                                                    <div style="margin: auto; background: #FFFF; border-radius: 30px; font-weight: 500; padding: 9px; width: 180px; float: right; position: relative; top: -60px;">
+                                                        <a style="color: #7C83FD; font-size: 20px; text-decoration: none;" href="iniciosesion.php">
                                                         <center>Leer Más</center>
                                                         </a>
                                                     </div>
@@ -824,8 +821,6 @@
     </div>
 </div>
 <!--FIN DE PAGINADOR-->
-
-
 
 
 
