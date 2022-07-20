@@ -593,7 +593,7 @@ if (!isset($_GET['pag'])) {
 
         <!--<input type="email" placeholder="Escribe tu correo empresarial" id="txtEmail" />-->
         <br>
-          <button id="btnAction" style="background-color:#737BF1; font-weight:500;">MÁS INFORMACIÓN</button>
+        <button id="btnAction" style="width: 200px; position: relative; top: -40px;left: -400px;  background-color:#737BF1; font-weight:500;">MÁS INFORMACIÓN</button>
         <br>
 
       <!--</div>-->
@@ -604,7 +604,7 @@ if (!isset($_GET['pag'])) {
     <div class="box-rotate my-5 justify-content-center abs-center " id="boxRotate">
       <div class="front d-flex" id="front" >       
         <div class="box-image d-flex align-items-center justify-content-center">
-          &nbsp;&nbsp; <img class="img-fluid; " src="./assets/images/EDU-EMP.png" alt="" style="width: 400px; height: 400px;" />
+          &nbsp;&nbsp; <img class="img-fluid; " src="./assets/images/EDU-EMP.png" alt="" style="width: 500px;" />
         </div>
       </div> 
       <div class="back">
