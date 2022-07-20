@@ -125,7 +125,7 @@
 
                                 <!--Imagen-->
                                 <img class="imgCurso" style="cursor: pointer;" src="<?php echo $dato['imagenDestacadaCurso']; ?>" alt="">
-                                <a class="txtTrailer text-center" data-toggle="modal" data-target=".bd-example-modal-lg<?php echo $dato['idCurso'];?>"><label>Ver<br>Trailer</label></a>
+                                <a class="txtTrailer text-center" style="cursor: pointer;" data-toggle="modal" data-target=".bd-example-modal-lg<?php echo $dato['idCurso'];?>"><label>Ver<br>Trailer</label></a>
                             
                             <?php } else { ?>
 
@@ -435,9 +435,27 @@
 
                         <!--Imagen elegida-->
                         <img style="cursor: pointer;" class="imgCurso" src="<?php echo $dato['imagenDestacadaCurso']; ?>" alt="">
-                        <a class="txtTrailer text-center" data-toggle="modal" data-target=".bd-example-modal-lg<?php echo $dato['idCurso'];?>"><label>Ver<br>Trailer</label></a>
+                        <a class="txtTrailer text-center" data-toggle="modal" style="cursor: pointer;" data-target=".bd-example-modal-lg<?php echo $dato['idCurso'];?>"><label>Ver<br>Trailer</label></a>
                         
                         <?php } else { ?>
+
+
+                            <?php
+                            if ($dato['imagenDestacadaCurso'] != null) {
+                            ?>
+                            
+                                <!--Imagen elegida-->
+                                <img style="cursor: pointer;" class="imgCurso" heigth="10px"; src="<?php echo $dato['imagenDestacadaCurso']; ?>" alt="">
+                                <a class="txtTrailer" style="cursor: pointer;" data-toggle="modal" data-target=".bd-example-modal-lg<?php echo $dato['idCurso'];?>"><label>Ver Trailer</label></a>
+                            <?php
+                            } else {
+                            ?>
+                                <!--Imagen por default-->
+                                <img style="cursor: pointer;" class="imgCurso" heigth="10px"; src="./assets/images/curso_educalma.png">
+                                <a class="txtTrailer" style="cursor: pointer;" data-toggle="modal" data-target=".bd-example-modal-lg<?php echo $dato['idCurso'];?>"><label>Ver Trailer</label></a>
+                            <?php
+                            }
+                            ?>
 
                         <!--Imagen por default-->
                         <img style="cursor: pointer;" class="imgCurso" src="./assets/images/curso_educalma.png">

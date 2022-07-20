@@ -7,9 +7,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Poppins:wght@400;700&family=Work+Sans&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Baloo+Tamma+2:wght@400;500;600;700;800&display=swap');
  
+<<<<<<< HEAD
+=======
 /* *{
     border: 1px solid red;
 } */
+>>>>>>> 4933b02c990e8051ef1a4393bcd617c0fa4a098e
 
 /* PANEL */
 
@@ -187,13 +190,16 @@
 }
 
 .container-fluid-brida .row .col-12 .card {
+<<<<<<< HEAD
+    border: 2px #7d84fd solid;
+=======
     max-width: 318px;
     margin: auto;
     border: 3px #7d84fd solid;
+>>>>>>> 4933b02c990e8051ef1a4393bcd617c0fa4a098e
     -webkit-transition: background-color 1s linear;
     transition: background-color 1s linear;
     cursor: pointer;
-    padding: 2rem;
     border-radius: 30px;
 }
 
@@ -209,10 +215,10 @@
 
 .container-fluid-brida .row .col-12 .card-image {
     background: transparent;
-    border-radius: 30px;
-    max-width: 121px;
-    max-height: 121px;
+    /* border-radius: 30px;
     margin: 0 auto;
+    max-width: 121px;
+    max-height: 121px; */
     -webkit-transition: width 1s ease;
     transition: width 1s ease;
 }
@@ -248,22 +254,21 @@
 }
 
 .container-fluid-brida .row .col-12 .card-title {
-    font-family: "Poppins", sans-serif;
-    font-size: 18px;
-    margin-top: 1rem;
-    text-align: center;
-    text-transform: uppercase;
+    font-family: 'Baloo Tamma 2', cursive;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #7C83FD
 }
 
-.container-fluid-brida .row .col-12 .card-title p {
+/* .container-fluid-brida .row .col-12 .card-title p {
     margin-bottom: 0;
-}
+} */
 
 .container-fluid-brida .row .col-12 .card-descripti {
-    font-family: "Poppins", sans-serif;
-    font-size: 14px;
-    text-align: center;
-    color: #b4b4b4;
+    font-family: 'Baloo Tamma 2', cursive;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 20px;
 }
 
 .container-fluid-brida .row .col-12 .card-descripti p {
@@ -469,6 +474,7 @@
     transition: transform 2s;
     transform: rotateY(0);
     perspective: 1000px;
+
 }
 
 .container-bussines>.send-data .front {
@@ -481,12 +487,13 @@
 /* Activar rotacion */
 
 .container-bussines>.send-data .box-rotate.active {
-    transform: rotateY(180deg);
+    transform: rotateY(180deg);    
+   
 }
 
 .container-bussines>.send-data .box-rotate.active .front {
     transition: opacity 1.5s;
-    opacity: 0;
+    opacity: 0; 
 }
 
 .container-bussines>.send-data .back {
@@ -722,6 +729,17 @@
     user-select: none;
 }
 
+<<<<<<< HEAD
+@media screen and (min-width: 580px) {
+    .container-bussines>.send-data .back .formu .row {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        position: relative;
+    }
+    .certificados {
+        position: relative;
+        left: -9px;
+=======
 .container-bussines .bussines-info {
     margin-left: 3rem;
 }
@@ -730,6 +748,7 @@
     .div-container-panel .row .container-title-panel {
         padding: 10rem 0rem 10rem 5rem;
         transition: all .3s ease;
+>>>>>>> 4933b02c990e8051ef1a4393bcd617c0fa4a098e
     }
 }
 @media (max-width: 1250px) {

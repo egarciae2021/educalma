@@ -298,7 +298,7 @@
                                         ?>
                                         <!--//modulos de db-->
                                         <div class="form-group col-12" id="container-module-add">
-                                            <input style="background-color: #C4C5FB;" type="text" class="form-control"
+                                            <input disabled style="background-color: #C4C5FB;" type="text" class="form-control"
                                                 value="<?php echo $dato2['nombreModulo'] ?>"
                                                 aria-label="Recipient's username with two button addons">
                                             <!--agregar temas-->

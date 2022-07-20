@@ -16,8 +16,16 @@
     display: flex;
 }
 
+.colorsdegradado{
+
+}
+
+.botton{
+    margin-bottom: 5px;
+}
+
 .topup{
-    margin-top: 3em;
+    /* margin-top: 3em; */
 }
 
 div[id^='accordion'] .card .card-header span {
@@ -51,7 +59,7 @@ div[id^='accordion'] .card .card-header span {
     width: 26em;
     position: relative;
     left: -3em;
-    margin-top: 1em;
+    margin-top: 2em;
 }
 
 body {
@@ -102,6 +110,7 @@ body {
 
 
 
+
 /****************************************************************************************************/
 /** =====================
 * Responsive
@@ -112,7 +121,7 @@ body {
   }
 
   .comments-list .comment-box {
-     width: 260px;
+     width: 612px;
   }
 
   .reply-list .comment-box {
@@ -216,7 +225,7 @@ body {
   }
 }
 
-@media only screen and (min-width:820px) and (max-width:912  px) {
+@media only screen and (min-width:820px) and (max-width:912px) {
     .flex{
         position: relative;
         margin-left: 3em;
@@ -246,6 +255,56 @@ body {
     flex: 0 0 30%;
     max-width: 30%;
 }}
+
+@media only screen and (min-width:375px) and (max-width:667px){
+    .width{
+        width: 100%;
+    }
+    
+    .card{
+        margin-bottom: -3em;
+    }
+}
+
+@media only screen and (min-width:360px) and (max-width:667px){
+    .lef{
+        margin-left: -1em;
+    }
+
+    .width{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        /* margin-left: -1em; */
+    }
+
+    .card{
+        margin-bottom: -3em;
+    }
+
+    .imagecuadr{
+        margin-top: -3em;
+    }
+
+    .responsbott{
+        margin-bottom: 6em;
+        display: flex;
+        justify-content: center;
+    }
+
+    .comments-container{
+        width: 85%;
+    }
+    
+    .comments-list{
+        margin-left: -1em;
+    }
+
+    .comments-list .comment-box{
+        width: 16em;
+    }
+}
+
 /****************************************************************************************************/
 
 
@@ -350,7 +409,7 @@ body {
 
 
     <!-- pppp -->
-    <div class="container-course bg-light" style="min-height: 100vh;">
+    <div class="container-course hola" style="min-height: 100vh;">
 
         <!-- zzzz -->
         <div class="bg-dark11">
@@ -363,7 +422,7 @@ body {
             
 
 
-                <div class="col-12 col-sm-12 col-md-7 col-lg-8 col-xl-9 " style="color: #fff;padding: 29px;margin-top: -48px;">
+                <div class="col-12 col-sm-12 col-md-7 col-lg-8 col-xl-9 lef" style="color: #fff;padding: 29px;margin-top: -48px;">
                     
                     <br><br><br><br>
 
@@ -434,10 +493,11 @@ body {
             <!-- yyyy -->
 
         </div>
+    <div class="colorsdegradado" style="background: linear-gradient(0deg, rgba(231,244,255,1) 16%, rgba(224,199,229,0.9051995798319328) 50%, rgba(255,255,255,1) 100%);">    
         <!-- zzzz -->
-        <div class="flex">                                         
+        <div class="flex botton">                                         
         <!-- mmmm -->
-        <div class="bg-light width" style="height: 100%;">
+        <div class="width" style="height: 100%;">
             <div class="row py-5" style="height: 100%;">
                 <!-- <div class="col-12 col-sm-12 col-md-5 col-lg-4 col-xl-3 info-course-left" style="border: 1px solid red;">
                     <h4>Contenido del curso</h4>
@@ -518,7 +578,7 @@ body {
         <!-- mmmm -->
 
          <!-- xxxxx -->
-         <div class="col-12 col-sm-12 col-md-5 col-lg-4 pt-5">
+         <div class="col-12 col-sm-12 col-md-5 col-lg-4 pt-5 responsbott">
                 
 
                 <!-- CARD///////////////////////////////// -->
@@ -948,7 +1008,7 @@ body {
                         
                     </div> 
                     <!-- Contenedor del Comentario -->
-                   <div class="comment-box" style="width: 612px;">
+                   <div class="comment-box" style="">
                         <div class="comment-head">
                             <h6 class="commen-name<?php echo $autor; ?>">
                                 <spam><?php echo $registro['nombreUser']; ?></spam>
@@ -1050,7 +1110,7 @@ body {
                             ?> 
                         </div> 
                         <!-- Contenedor del Comentario -->
-                       <div class="comment-box" style="width: 612px;">
+                       <div class="comment-box" style="">
                             <div class="comment-head">
                                 <h6 class="commen-name<?php echo $autor; ?>"><spam><?php echo $registro2['user_men'];?></spam></h6>
                                 <span>
@@ -1160,6 +1220,7 @@ body {
             <img src="assets/images/ilu-nina.png" class="img-nina"alt="" >
     </div>           
     </div>  
+    </div>
 
 
     <!------------------------------------
@@ -1236,7 +1297,7 @@ body {
                             
                         </div> 
                         <!-- Contenedor del Comentario -->
-                    <div class="comment-box" style="width: 612px;">
+                    <div class="comment-box" style="">
                             <div class="comment-head">
                                 <h6 class="commen-name<?php echo $autor; ?>">
                                     <spam><?php echo $registro['nombreUser']; ?></spam>
@@ -1321,7 +1382,7 @@ body {
                                 ?> 
                             </div> 
                             <!-- Contenedor del Comentario -->
-                        <div class="comment-box" style="width: 612px;">
+                        <div class="comment-box" style="">
                                 <div class="comment-head">
                                     <h6 class="commen-name<?php echo $autor; ?>"><spam><?php echo $registro2['user_men'];?></spam></h6>
                                     <span>
