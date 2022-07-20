@@ -6,13 +6,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;300;500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Poppins:wght@400;700&family=Work+Sans&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Baloo+Tamma+2:wght@400;500;600;700;800&display=swap');
- 
-<<<<<<< HEAD
-=======
-/* *{
-    border: 1px solid red;
-} */
->>>>>>> 4933b02c990e8051ef1a4393bcd617c0fa4a098e
+
 
 /* PANEL */
 
@@ -190,13 +184,9 @@
 }
 
 .container-fluid-brida .row .col-12 .card {
-<<<<<<< HEAD
-    border: 2px #7d84fd solid;
-=======
     max-width: 318px;
     margin: auto;
     border: 3px #7d84fd solid;
->>>>>>> 4933b02c990e8051ef1a4393bcd617c0fa4a098e
     -webkit-transition: background-color 1s linear;
     transition: background-color 1s linear;
     cursor: pointer;
@@ -279,6 +269,19 @@
 .container-fluid-brida .row .col-12 .section-button {
     margin: 0 auto;
 }
+
+.container-fluid-course .row .card .back::before {
+    background: rgb(124,131,253);
+    background: linear-gradient(90deg, rgba(124,131,253,.7) 0%, rgba(224,199,229,.4) 100%);
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+  }
 
 .container-fluid-brida .row .col-12 .section-button button {
     max-width: 339px;
@@ -373,6 +376,10 @@
 /* EMPRESAS */
 
 /* Informacion (Parte izquierda)*/
+.container-bussines {
+    margin-top: 3rem;
+    margin-bottom: 4rem;
+}
 
 .container-bussines>.info .line {
     background: #99ccff;
@@ -405,6 +412,7 @@
 }
 
 .container-bussines>.info .box-email {
+    justify-content: center;
     max-width: 100%;
     margin-top: 16px;
 }
@@ -465,6 +473,9 @@
     display: block;
 }
 
+.container-bussines .front .box-image img {
+    width: 90%;
+}
 
 /* Formulario (Parte derecha) */
 
@@ -729,17 +740,6 @@
     user-select: none;
 }
 
-<<<<<<< HEAD
-@media screen and (min-width: 580px) {
-    .container-bussines>.send-data .back .formu .row {
-        display: grid;
-        grid-template-columns: 50% 50%;
-        position: relative;
-    }
-    .certificados {
-        position: relative;
-        left: -9px;
-=======
 .container-bussines .bussines-info {
     margin-left: 3rem;
 }
@@ -748,7 +748,6 @@
     .div-container-panel .row .container-title-panel {
         padding: 10rem 0rem 10rem 5rem;
         transition: all .3s ease;
->>>>>>> 4933b02c990e8051ef1a4393bcd617c0fa4a098e
     }
 }
 @media (max-width: 1250px) {
@@ -759,12 +758,28 @@
         width: 600px;
     }
 }
-@media (max-width: 1199px) {
+@media (max-width: 1200px) {
+    .container-bussines .bussines-info {
+        margin-left: 0rem;
+    }
     .col-md-6 .img_nueva {
         margin: 100px auto;
     }
     .div-container-panel .row .container-title-panel {
         padding: 10rem 0rem 10rem 3rem;
+    }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+    .container-bussines {
+        max-width: 90%;
+        /* padding: 0; */
+    }
+    .container-bussines .front .box-image img {
+        width: 100%;
+    }
+    .container-bussines>.info .box-email {
+        justify-content: start;
+        margin-left: 37px;
     }
 }
 @media (max-width: 940px) {
@@ -775,12 +790,12 @@
 @media (max-width: 768px) {
     .container-bussines>.info h2 {
         padding-left: 0;
-        font-size: 1.8rem;
+        font-size: 2rem;
         margin-bottom: 1.2rem;
     }
     .container-bussines>.send-data .back {
         width: 100%;
-        height: 100%;
+        height: 360px;
         backface-visibility: hidden;
         -webkit-backface-visibility: hidden;
         -moz-backface-visibility: hidden;
@@ -837,9 +852,6 @@
     .container-bussines>.info h2 {
         text-align: center;
     }
-    .container-bussines .bussines-info {
-        margin-left: 0rem;
-    }
     .div-container-panel .row .container-title-panel {
         padding: 7rem 0rem 10rem 0rem;
     }
@@ -864,6 +876,9 @@
     .description-panel {
         font-size: .9rem;
     }
+    .container-bussines>.send-data .back {
+        height: 220px;
+    }
 }
 @media (max-width: 333px) {
     .description-panel br {
@@ -871,5 +886,8 @@
     }
     .description-panel {
         font-size: .8rem;
+    }
+    .container-bussines>.send-data .back {
+        height: 120px;
     }
 }

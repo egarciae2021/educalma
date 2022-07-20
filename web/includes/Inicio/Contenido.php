@@ -338,20 +338,6 @@ if (!isset($_GET['pag'])) {
                 </div>
 
                 <!--ATRÁS-->
-                <style>
-                  .back::before {
-                    background: rgb(124,131,253);
-                    background: linear-gradient(90deg, rgba(124,131,253,.7) 0%, rgba(224,199,229,.4) 100%);
-                    content: '';
-                    display: block;
-                    height: 100%;
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    z-index: -1;
-                    width: 100%;
-                  }
-                </style>
                 
                 <div class="face back" style="background: url(
                   <?php if ($dato['imagenDestacadaCurso'] != null) {
@@ -430,14 +416,14 @@ if (!isset($_GET['pag'])) {
                         ?>
                         <a style="color: #7c83fd; background: white; border-radius: 30px;" href="<?php echo $paginaRed ?>.php?id=<?php echo $dato['idCurso']; ?><?php if(!empty($dato2)){?>&idCI=<?php echo $dato2['id_cursoInscrito']; }?>" type="button" class="btn btn-outline-info btn_registrar">
                           <i class="far fa-play-circle"></i>
-                          <span class="d-inline-block position-relative" style="top: -.04rem;">Comienza a ver el curso</span>
+                          <span class="d-inline-block">Comienza a ver el curso</span>
                         </a>
                         <?php
                         }else{
                         ?>
                           <a style="color: #7c83fd; background: white; border-radius: 30px;" href="iniciosesion.php" type="button" class="btn btn-outline-info btn_registrar">
                             <i class="far fa-play-circle"></i>
-                            <span class="d-inline-block position-relative" style="top: -.04rem;">Comienza a ver el curso</span>
+                            <span class="d-inline-block">Comienza a ver el curso</span>
                           </a>
                         <?php
                         }
@@ -567,7 +553,7 @@ if (!isset($_GET['pag'])) {
 
 
 <!-- EMPRESAS -->
-<div class="container-bussines container divEmp" style="margin-top: 4.4rem; margin-bottom: -21rem;">
+<div class="container-bussines container divEmp">
 
 
   <div class="info col-12 d-flex flex-column justify-content-center"> <!--/////////////////////////-->
@@ -585,30 +571,27 @@ if (!isset($_GET['pag'])) {
         </li>
       </ul>
     </div>
-    <div class="box-email d-flex justify-content-center">
+    <div class="box-email d-flex">
 
       <!--span style="/*position: relative;*/ top: -30px;">Recibe informaci&oacute;n específica para tu empresa</span-->
       
       <!--<div class="input-data">-->
 
         <!--<input type="email" placeholder="Escribe tu correo empresarial" id="txtEmail" />-->
-        <br>
-        <button id="btnAction" style="width: 200px; position: relative; top: -40px;left: -400px;  background-color:#737BF1; font-weight:500;">MÁS INFORMACIÓN</button>
-        <br>
+        <button id="btnAction" style="width: 200px; background-color:#737BF1; font-weight:500;">MÁS INFORMACIÓN</button>
 
       <!--</div>-->
       <span class="msg-error">Debe ser un correo corporativo.</span>
     </div>
   </div>
-  <div class="send-data col-12 my-auto justify-content-center align-items-center" id="sendData" >
-    <div class="box-rotate my-5 justify-content-center abs-center " id="boxRotate" style="
-    position: relative;    left: 117px;top: -370px;">
+  <div class="send-data col-12 my-auto justify-content-center align-items-center" id="sendData">
+    <div class="box-rotate my-5 justify-content-center abs-center" id="boxRotate">
       <div class="front d-flex" id="front" >       
-        <div class="box-image d-flex align-items-center justify-content-center" >
-          &nbsp;&nbsp; <img class="img-fluid; " src="./assets/images/EDU-EMP.png" alt="" style="width: 480px;" />
+        <div class="box-image d-flex align-items-center justify-content-center">
+          <img src="./assets/images/EDU-EMP.png" alt=""/>
         </div>
       </div> 
-      <div class="back">
+      <div id="container-form" class="back">
         <div class="header w-100">
           <div class="box-image">
             <img src="./assets/images/Rectangle 51.png" alt="" />
@@ -798,5 +781,11 @@ if (!isset($_GET['pag'])) {
     </div>
   </div>
 </div>
-
+<script>
+  var btnInfo = document.getElementById("btnAction");
+  var frmInfo = document.getElementById("container-form");
+  btnInfo.onclick = function () {
+    frmInfo.style.height = "100%";
+  }
+</script>
 <script src="assets/js/valNombre.js"></script>
