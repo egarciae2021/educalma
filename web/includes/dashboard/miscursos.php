@@ -337,7 +337,7 @@
                                     </div>
 
                                     <!--Contenedor del nombre del profesor del curso publicado-->
-                                    <div class="container-card-description">
+                                    <div class="container-card-description text-center" style="font-size: 15px;">
 
                                         <!--Código para obtener el nombre del profesor-->
                                         <?php 
