@@ -314,146 +314,127 @@
                     <!-- MODAL -->
                     <!-- Este modal es para mostrar la información del un curso publicado. También para mostrar la información de un curso publicado destacado. -->
                     <!-- Este modal se activa después de hacer clic en una imagen que está dentro de un elemento a. -->
-                    <div class="modal fade bd-example-modal-lg<?php echo $dato['idCurso'];?>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered  modal-xl">
-                        <div class="modal-content">
+                    <div class="modal fade bd-example-modal-lg<?php echo $dato['idCurso'];?>" tabindex="-1" role="dialog"   aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered  modal-xl">
+                            <div class="modal-content">
 
-                            <!--VIDEO-->
-                            <div>
-                                <div style="position: relative; margin: 0; padding: 0; width: auto; height: 270px;">
-                                    
-                                    <iframe width="100%" height="100%" src="https://www.youtube.com/watch?v=ptc4Awb0UpU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                <!--VIDEO-->
+                                <div>
+                                    <div style="position: relative; margin: 0; padding: 0; width: auto; height: 270px;">
+                                        
+                                        <iframe width="100%" height="100%" src="https://www.youtube.com/watch?v=ptc4Awb0UpU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+                                    </div>
+                                </div>
+
+                                <div class="modal-body" style="background-image: url('assets/images/fondo-modal.jpeg');background-size: 100% 100%;">
+                                    <!--Contenedor del nombre del curso publicado-->
+                                    <div class="container-card-title">
+                                        <a class="tittle">
+                                            <!--Nombre-->
+                                            <center><?php echo $dato['nombreCurso']; ?></center>
+                                        </a>
+                                    </div>
+
+                                    <!--Contenedor del nombre del profesor del curso publicado-->
+                                    <div class="container-card-description">
+
+                                        <!--Código para obtener el nombre del profesor-->
+                                        <?php 
+                                            $idUsuario = $dato['id_userprofesor'];
+                                            $sql = "SELECT * FROM usuarios WHERE id_user = '$idUsuario'";
+                                            $q = $pdo->prepare($sql);
+                                            $q->execute(array());
+                                            $dato5 = $q->fetch(PDO::FETCH_ASSOC);
+                                            $nombresProf = $dato5['nombres'];
+                                            $apepaternoProf = $dato5['apellido_pat'];
+                                            $apematernoProf = $dato5['apellido_mat'];
+                                        ?>
+
+                                        <a>
+                                            <?php 
+                                                if($dato5['privilegio']==1){
+                                            ?>
+
+                                                    <span style="color: white;">Creado por la Fundación CALMA.</span>
+
+                                            <?php 
+                                                }
+
+                                                if($dato5['privilegio']==2){
+                                            ?>
+                                                    <span style="color: white;">Creado por <?php echo " " . $dato5['nombres'] . " " . $dato5['apellido_pat'] . " " . $dato5['apellido_mat'] . "."?></span>
+                                            <?php 
+                                                }
+                                            ?>
+                                        </a>
+                                    </div>
+
+                                    <!--Contenedor de la descripción del curso-->
+                                    <div class="container-card-description description">
+                                        <!--Descripción-->
+                                        <strong>
+                                            <p style="text-align: justify;padding: 2em 4em 0 4em"><?php echo $dato['descripcionCurso'] ?></p>
+                                        </strong>
+                                    </div>
+
+                                    <!--Contenedor del costo del curso, mensaje si se compró o no el curso y del link "Leer Más".-->
+                                    <div style="font-size: 18px; color: white; padding-top: 1em; font-weight: bold;font-size: 20px;" class="precio">
+                                                
+                                        <?php if($dato2['id_cursoInscrito'] == NULL){ ?>
+                        
+                                            <p>
+                                                <?php
+                                                    if($dato['costoCurso']!=0 && $dato['costoCurso'] != "Gratis"){
+                                                        echo 'S/ ' . $dato['costoCurso'];
+                                                    }else{
+                                                        echo 'Gratis';
+                                                    }
+                                                ?>
+                                            </p>
+                        
+                                        <?php }else{ ?>
+                        
+                                            <p>
+                                                <?php
+                                                    if($dato['costoCurso']!=0 && $dato['costoCurso'] != "Gratis"){
+                                                        echo 'S/ ' . $dato['costoCurso'],"";
+                                                    }else{
+                                                        echo 'Gratis';
+                                                    }
+                                                ?>
+                                            </p>
+                                            <!--<p>S/.<?php echo $dato['costoCurso'],"" ?></p>-->
+                        
+                                        <?php } ?>
+
+                                                <?php
+                                                if(isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)){
+                                                ?>
+                                                    <!--Link "Iniciar Curso"-->
+                                                    <div class="info">
+                                                        <a href="<?php echo $paginaRed ?>.php?id=<?php echo $dato['idCurso']; ?><?php if(!empty($dato2)){?>&idCI=<?php echo $dato2['id_cursoInscrito']; }?>">
+                                                        <center>Iniciar Curso</center>
+                                                        </a>
+                                                    </div>
+                                                <?php
+                                                }else{
+                                                ?>
+                                                
+                                                    <!--Link "Iniciar Curso"-->
+                                                    <div class="info">
+                                                        <a href="iniciosesion.php">
+                                                        <center>Iniciar Curso</center>
+                                                        </a>
+                                                    </div>
+                                                <?php
+                                                }
+                                                ?>
+                                    </div>
                                 </div>
                             </div>
-
-                        <div class="modal-body">
-
-
-                                <!--Contenedor del nombre del curso publicado-->
-                                <div class="container-card-title" style="font-size: 20px; padding-bottom: 1px; color: black;">
-                                    <a style="float: left;">
-                                        <!--Nombre-->
-                                        <center><strong><?php echo $dato['nombreCurso']; ?></strong></center>
-                                    </a>
-                                </div>
-
-                                <br>
-                
-
-                                <!--Contenedor del nombre del profesor del curso publicado-->
-                                <div class="container-card-description" style="margin-top: 5px; padding-top: 1px; font-size: 13px;">
-
-                                    <!--Código para obtener el nombre del profesor-->
-                                    <?php 
-                                        $idUsuario = $dato['id_userprofesor'];
-                                        $sql = "SELECT * FROM usuarios WHERE id_user = '$idUsuario'";
-                                        $q = $pdo->prepare($sql);
-                                        $q->execute(array());
-                                        $dato5 = $q->fetch(PDO::FETCH_ASSOC);
-                                        $nombresProf = $dato5['nombres'];
-                                        $apepaternoProf = $dato5['apellido_pat'];
-                                        $apematernoProf = $dato5['apellido_mat'];
-                                    ?>
-
-                                    <a>
-                                                    <?php 
-                                                        if($dato5['privilegio']==1){
-                                                    ?>
-
-                                                            <span style="color: #565656;">Creado por la Fundación CALMA.</span>
-
-                                                    <?php 
-                                                        }
-
-                                                        if($dato5['privilegio']==2){
-                                                    ?>
-                                                            <span style="color: #565656;">Creado por <?php echo " " . $dato5['nombres'] . " " . $dato5['apellido_pat'] . " " . $dato5['apellido_mat'] . "."?></span>
-                                                    <?php 
-                                                        }
-                                                    ?>
-                                    </a>
-                                </div>
-
-                                <br>
-
-                                <!--Contenedor de la descripción del curso-->
-                                <div class="container-card-description" style="padding-bottom: 1px; margin-bottom: 1px; font-size: 16px; position: relative;">
-                                    <!--Descripción-->
-                                    <p style="text-align: justify;"><?php echo $dato['descripcionCurso'] ?></p>
-                                </div>
-
-                                <br>
-
-                                <!--Contenedor del costo del curso, mensaje si se compró o no el curso y del link "Leer Más".-->
-                                <div style="padding-top: 1px; margin-top: -20px; padding-bottom: -50px; font-weight: bold; font-size: 25px; color: black; position: relative;">
-                                            
-                                    <?php if($dato2['id_cursoInscrito'] == NULL){ ?>
-                    
-                                        <p>
-                                            <?php
-                                                if($dato['costoCurso']!=0 && $dato['costoCurso'] != "Gratis"){
-                                                    echo 'S/ ' . $dato['costoCurso'];
-                                                }else{
-                                                    echo 'Gratis';
-                                                }
-                                            ?>
-                                        </p>
-                    
-                                    <?php }else{ ?>
-                    
-                                        <p>
-                                            <?php
-                                                if($dato['costoCurso']!=0 && $dato['costoCurso'] != "Gratis"){
-                                                    echo 'S/ ' . $dato['costoCurso'],"";
-                                                }else{
-                                                    echo 'Gratis';
-                                                }
-                                            ?>
-                                        </p>
-                                        <!--<p>S/.<?php echo $dato['costoCurso'],"" ?></p>-->
-                    
-                                    <?php } ?>
-
-                                            <?php
-                                            if(isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)){
-                                            ?>
-                                                <!--Link "Iniciar Curso"-->
-                                                <div style="margin-bottom: -50px; background: #7c83fd; border-radius: 30px; font-weight: 500; padding: 9px; width: 180px; float: right; position: relative; top: -60px;">
-                                                    <a style="color: #FFFF; font-size: 20px; text-decoration: none;" href="<?php echo $paginaRed ?>.php?id=<?php echo $dato['idCurso']; ?><?php if(!empty($dato2)){?>&idCI=<?php echo $dato2['id_cursoInscrito']; }?>">
-                                                    <center>Iniciar Curso</center>
-                                                    </a>
-                                                </div>
-                                            <?php
-                                            }else{
-                                            ?>
-                                            
-                                                <!--Link "Iniciar Curso"-->
-                                                <div style="margin: auto; background: #7c83fd; border-radius: 30px; font-weight: 500; padding: 9px; width: 180px; float: right; position: relative; top: -60px;">
-                                                    <a style="color: #FFFF; font-size: 20px; text-decoration: none;" href="iniciosesion.php">
-                                                    <center>Iniciar Curso</center>
-                                                    </a>
-                                                </div>
-                                            <?php
-                                            }
-                                            ?>
-                    
-                                </div>
-
-                            
-
-
-                            
-                        </div>
                         </div>
                     </div>
-                    </div>
-
-
-
-
-
-
             <?php
             }
             ?>
