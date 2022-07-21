@@ -192,7 +192,7 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                   <table id="tablaCursos" class="table table-borderless dt-responsive" cellspacing="0" width="auto">
 
                     <thead>
-                      <tr style="background-color:#737BF1;">
+                      <tr style="background: rgb(124,131,253);background: linear-gradient(50deg, rgba(124,131,253,1) 0%, rgb(224 199 229) 100%);">
                         <th style="border-radius: 10px 0 0 10px;">Imagen</th>
                         <th>Nombre</th>
                         <th>Creado Por</th>
@@ -409,7 +409,7 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                       <form id="formRegis" action="includes/categorias/checkAgrCateg.php" target="dummyframe" method="POST" onsubmit="return comprobarCategoria()" style="padding:0;">
                         <table id="" class="table table-borderless text-center dt-responsive text-center" cellspacing="0 " width="100%">
                           <thead>
-                            <tr style="background-color:#737BF1;">
+                            <tr style="background: rgb(124,131,253);background: linear-gradient(50deg, rgba(124,131,253,1) 0%, rgb(224 199 229) 100%);">
                               <th style="border-radius:10px;">
                                 nombre de categoría
                               </th>
@@ -449,7 +449,7 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                       <!--Paginacion con datatable, la configuracion esta en el archivo datatableFunctions.js para configurar la cantidad de registros que se ve modificar el atributo data-page-length='3'-->
                       <table id="tablaCategorias" data-page-length='3' class="table table-borderless text-center dt-responsive text-center display" cellspacing="0" width="100%">
                         <thead>
-                          <tr style="background-color:#737BF1;">
+                          <tr style="background: rgb(124,131,253);background: linear-gradient(50deg, rgba(124,131,253,1) 0%, rgb(224 199 229) 100%);">
                             <th style="border-radius: 10px 0 0 10px;">
                               nombre de categoría
                             </th>

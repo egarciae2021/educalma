@@ -200,7 +200,7 @@ WHERE us.privilegio=4 order by id_user DESC;";
                                         <div class="table-responsive">
                                             <table id="tablaCursos" class="table table-borderless dt-responsive nowrap" cellspacing="0" width="100%">
                                                 <thead>
-                                                    <tr style="background-color:#737BF1;">
+                                                    <tr style="background: linear-gradient(50deg, rgba(124,131,253,1) 0%, rgba(224,199,229,0.6054796918767507) 100%);">
                                                         <th style="border-radius: 10px 0 0 10px;">
                                                             Privilegio
                                                         </th>

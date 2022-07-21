@@ -57,7 +57,7 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
 
 .filters {
     padding: 2%;
-    background: #7C83FD;
+    background: linear-gradient(50deg, rgba(124,131,253,1) 0%, rgb(224 199 229) 100%);
     /*border-radius: 20px !important;*/
 
 }
@@ -252,7 +252,7 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                                 <table id="tablaCursos" class="table table-borderless dt-responsive text-left"
                                     cellspacing="0" width="100%">
                                     <thead>
-                                        <tr style="background-color:#737BF1;">
+                                        <tr style="background: rgb(124,131,253);background: linear-gradient(50deg, rgba(124,131,253,1) 0%, rgb(224 199 229) 100%);">
                                             <th style="border-radius: 10px 0 0 10px;">ID Usuario</th>
                                             <th scope="col">Nombre Completo</th>
                                             <th>Curso</th>
