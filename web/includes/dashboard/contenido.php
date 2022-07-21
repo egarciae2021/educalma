@@ -40,7 +40,7 @@
 	}
 	.img-curso {
 		width: 100%;
-		height: 100%;
+		height: 160px;
 		object-fit: cover;
 		overflow: hidden;
 		max-width: unset;
