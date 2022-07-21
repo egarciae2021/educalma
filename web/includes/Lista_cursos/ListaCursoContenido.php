@@ -81,7 +81,7 @@
                 }
 
                 $inicio = ($_GET['pag'] - 1) * $cantidad_paginas;
-                $sql3 = "SELECT * FROM cursos where permisoCurso=1 AND estado=1 order by idCurso desc LIMIT 3";
+                $sql3 = "SELECT * FROM cursos where permisoCurso=1 AND estado=1 order by idCurso desc LIMIT 4";
                 // SELECT * FROM `cursos`order by idCurso DESC LIMIT 3 
 
                 $query3 = $pdo->prepare($sql3);
@@ -115,7 +115,7 @@
             <!--<input type="checkbox" id="activarModal" data-toggle="modal" data-target=".bd-example-modal-lg<?php echo $dato['idCurso'];?>">-->
 
                 <!--Contenedor del curso publicado más destacado-->
-                <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3">
+                <div class="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
                     <div style="border-radius: 30px; overflow: hidden; border: 1px solid #7C83FD;" class="card">
 
                         <!--Contenedor de la imagen-->
