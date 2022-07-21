@@ -154,8 +154,8 @@ $usuarios = $q3->fetchAll(PDO::FETCH_ASSOC);
 
                     <div class="card-body">
                     <p class="numUsers">Cantidad de usuarios
-                                    <span style="color:#BEC1F3;">(<?php echo $resultUsu['cantidad']; ?>)</span>
-                                </p>
+                    <span style="color:#BEC1F3;">(<?php echo $resultUsu['cantidad']; ?>)</span>
+                    </p>
 
                         <div class="table-responsive">
                             <table id="tablaCursos" class="table table-borderless dt-responsive text-left" cellspacing="0" width="100%">

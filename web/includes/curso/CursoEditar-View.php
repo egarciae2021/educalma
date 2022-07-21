@@ -44,6 +44,21 @@
             margin: 0;
         }
 
+        .form-group .col-12{
+            
+            -ms-word-break: break-all;
+     word-break: break-all;
+
+    
+     word-break: break-word;
+
+-webkit-hyphens: auto;
+   -moz-hyphens: auto;
+    -ms-hyphens: auto;
+        hyphens: auto;
+
+        }
+
         #actucurso_2 {
 
             position: relative;
@@ -117,7 +132,7 @@
                                     <!-- <a href="publicarcursos.php?pag=1" class="list-group-item list-group-item-action">
                                     <i class="fad fa-books"></i> Publicar cursos
                                 </a> -->
-                                    <a class="btn btn-outline-secondary btn-back btn-sm" href="javascript:history.back()" role="button" style="cursor: pointer;">
+                                    <a class="btn btn-outline-secondary btn-back btn-sm" href="user-sidebar.php" role="button" style="cursor: pointer;">
                                         <i class="fas fa-arrow-left"></i> Atrás
                                     </a>
                                 </div>

@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;300;500&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Baloo+Tamma+2:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Tamma+2&display=swap');
 
 body {
     background-color: #fff;
@@ -322,7 +323,7 @@ border-radius: 10px;
     width: 100%;
     border-radius: 0;
     margin: 0 auto;
-    border: 1px solid lightgray;
+    border: 1px solid #7C83FD;
     text-align: justify;
     justify-content: space-between;
 }
@@ -602,4 +603,74 @@ border-radius: 10px;
     .container-fluid .row .col-12 .card .col-7 .container-link {
         font-size: 13px;
     }
+}
+
+.container-card-title{
+    font-size: 20px;
+    color: #ffffff;
+}
+
+.container-card-title .tittle {
+    text-transform: uppercase;
+    font-family: 'Baloo Tamma 2', cursive;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.description{
+    font-family: 'Baloo Tamma 2', cursive;
+    padding-bottom: 1px; 
+    margin-bottom: 1px; 
+    font-size: 16px; 
+    position: relative;
+}
+
+.precio{
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    justify-content: center;
+    font-family: 'Baloo Tamma 2', cursive;
+    font-weight: bold;
+}
+
+.info{
+    background: #FFF; 
+    border-radius: 30px; 
+    font-weight: 500;  
+    width: 140px;
+    height: 30px;
+}
+
+.info a{
+    color: #7C83FD; 
+    font-size: 20px; 
+    text-decoration: none;
+    position: relative;
+    margin: auto;
+    padding: 9px;
+    top: -23px;
+    font-family: 'Baloo Tamma 2', cursive;
+    font-weight: bold;
+}
+
+.info1{
+    background: #FFF; 
+    border-radius: 30px; 
+    font-weight: 500;  
+    width: 150px;
+    height: 30px;
+    text-decoration: none;
+}
+
+.info1 a{
+    color: #7C83FD; 
+    font-size: 20px; 
+    text-decoration: none;
+    position: relative;
+    margin: auto;
+    padding: 8px;
+    top: -28px;
+    font-family: 'Baloo Tamma 2', cursive;
+    font-weight: bold;
 }
