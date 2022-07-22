@@ -401,7 +401,7 @@ require_once 'database/databaseConection.php';
                     <ul>
                         <li class="nav-link" style="--i: .85s">
                             <a style="color: white;" href="#"><?php echo $nom ?>&nbsp;(Usuario - Empresa)<i class="fas fa-caret-down"></i></a>
-                            <div class="dropdown">
+                            <div class="dropdown" style="left: 9em;">
                                 <ul>
                                     <li class="dropdown-link">
                                         <a style="color: white;" href="user-sidebar.php">Dashboard</a>
@@ -445,7 +445,7 @@ require_once 'database/databaseConection.php';
                     <ul>
                         <li class="nav-link" style="--i: .85s">
                             <a style="color: white;" href="#"><?php echo $nom ?>&nbsp;(Super Administrador)<i class="fas fa-caret-down"></i></a>
-                            <div class="dropdown">
+                            <div class="dropdown" style="left: 13em;">
                                 <ul>
                                     <li class="dropdown-link">
                                         <a style="color: white;" href="user-sidebar.php">Dashboard</a>
