@@ -21,7 +21,6 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
     left: -140px;
     float: left;
     /**/
-
     border-radius: 5px;
     border: 1px solid #57B3F7;
     background-repeat: no-repeat;

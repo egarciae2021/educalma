@@ -185,16 +185,17 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                  <?php             
+                                  <!-- linea 199 me sale mensaje de error fecha no definida -->
+                                  <?php                                               
                                     $pdo4 = Database::connect();
-                                    $sql4 = "SELECT * FROM `aprobados`";
-                                    foreach($pdo->query($sql4) as $aprobados){ //= $q4->fetch(PDO::FETCH_ASSOC)
+                                    $sql4 = "SELECT * FROM `aprobados`";                                    
+                                    foreach($pdo->query($sql4) as $aprobados){ //= $q4->fetch(PDO::FETCH_ASSOC)                                      
                                       echo '<tr class="h-100 justify-content-center align-items-center">';
                                       echo '
                                           <td>'. $aprobados['nombres'].'</td>
                                           <td>'. $aprobados['nombreCurso'].'</td> 
                                           <td>'. $aprobados['avance'].'</td> 
-                                          <td>'. $aprobados['nota'].'</td>
+                                          <td>'. $aprobados['nota'].'</td>                                          
                                           <td>'. $aprobados['fecha'].'</td>
                                       ';
                                           }

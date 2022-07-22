@@ -98,8 +98,8 @@
                     
                     <div class="column" style="margin: auto;  position: relative; top: -20px;">                        
                         <label for="inputGroupFile04" class="subir btn" style="color: white;  background: #ECBE83; border: #ECBE83;">
-                            <i style="position: center; left: 40px;" class="fa fa-camera" aria-hidden="true"></i>
-                            <span style="position: center; left: 40px;">Sube tu foto</span>
+                            <i style="position: center; align-items: center; " class="fa fa-camera" aria-hidden="true"></i>
+                            <span style="position: center; align-items: center; ">Sube tu foto</span>
                         </label>
                         <input type="file" name="imagen" accept="image/*" id="inputGroupFile04" onchange="cambiarImg()" aria-describedby="inputGroupFileAddon04" style="display: none;" aria-label="Upload" ; multiple>
 

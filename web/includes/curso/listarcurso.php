@@ -27,11 +27,12 @@
             /**/
 
             border-radius: 5px ; 
-            border: 1px solid #57B3F7;
+            border: 1px solid #7C83FD;
             background-repeat: no-repeat;
             background-image: url("./assets/img/buscar.png");
-            background-position: 8px 5px;
-            background-size: 25px 25px;
+            background-position: 250px 10px;
+            background-size: 1.4rem;
+            font-size: 1.4rem;
 
         }
 
@@ -53,6 +54,7 @@
             position: relative;
             left: -9px;
             padding: 0;
+            
         }
 
                 
@@ -155,7 +157,7 @@
                         <h3 class="card-title">Lista de Cursos No Publicados</h3>
                     </div>
                     <div class="card-body">
-                        <?php
+                <?php
                         require_once 'database/databaseConection.php';
                         $pdo3 = Database::connect();
 
@@ -187,10 +189,9 @@
                         $q3->execute();
                         $curso = $q3->fetchAll(PDO::FETCH_ASSOC);
 
-                        ?>
+                ?>
                         <div class="table-responsive">
-                
-                             <table id="tablaCursos" class="table table-borderless dt-responsive" cellspacing="0" width="100%" style="background-color:#fff;padding: 17px;border-radius: 10px;">
+                            <table id="tablaCursos" class="table table-borderless dt-responsive" cellspacing="0" width="100%" style="background-color:#fff;padding: 17px;border-radius: 10px;">
                                 <thead>
                                     <tr style="background: rgb(124,131,253);background: linear-gradient(50deg, rgba(124,131,253,1) 0%, rgb(224 199 229) 100%);">
                                         <th style="border-radius: 10px 0 0  10px;">Nombre</th>
