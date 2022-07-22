@@ -25,13 +25,13 @@ if (!isset($_GET['pag'])) {
         <!--Título-->
         <div class="title-panel">
           <span class="txtBienvenido">BIENVENIDO!</span>
-          <span class="txtEducalma d-block">EduCalma</span>
+          <span class="txtEducalma d-block">Educalma</span>
         </div>
 
 
         <!--Descripción-->
         <div class="description-panel">
-          ¡Impulsa tu aprendizaje junto a los mejores <br>especialistas en EduCalma desde hoy!
+          ¡Impulsa tu aprendizaje junto a los mejores <br>especialistas en Educalma desde hoy!
         </div>
 
 
