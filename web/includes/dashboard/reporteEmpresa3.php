@@ -110,6 +110,13 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
             }
             }
 
+            @media (max-width: 500px) {
+            .card-header{
+              display: flex;
+              justify-content: center;
+            }
+            }
+
         </style>
 
   
