@@ -90,7 +90,7 @@ $preference = new MercadoPago\Preference();
             $preference->auto_return = "approved"; 
              
             $preference-> statement_descripton = array("Educalma - " + $dato['nombreCurso'] );
-            $preference-> notification_url="https://test-apicalma.site/Infpay.php";    
+            // $preference-> notification_url="https://test-apicalma.site/Infpay.php";    
             $preference->save();
             
             $response = array(
