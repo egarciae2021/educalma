@@ -10,16 +10,15 @@
 </head>
 
 <body>
-  <footer class="footer--light" style="background-image: url('assets/images/fondo2-min.png') !important;">
+  <footer class=" footer--light " style="background-image: url('assets/images/fondo2-min.png') !important;">
 
-    <div class="widget-about">
+    <div class="widget-about " >
       <!--imagen de educalma empresas-->
       <img src="assets/images/educalma_logo_blanco.png" alt="" class="img-fluid" style="">
     </div>
     <br>
 
     <div class="contenido">
-
       <div class="enviar_inicio">
           <a href="#"><i class="fa fa-angle-double-up enviar_inicio fa-5x" style="color: #e0c7e5;" aria-hidden="true" src="./assets/images/enviar_inicio.png" ></i></a>
       </div>
@@ -71,7 +70,7 @@
 
       <div class="tercero">
         <p class="title">Servicios</p>
-        <div class="footer-menu">
+        <div class="footer-menu ">
           <!-- <h4 class="footer-widget-title">Blog</h4> -->
           <ul>
             <li>

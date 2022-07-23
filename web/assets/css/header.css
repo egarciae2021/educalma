@@ -173,15 +173,17 @@ header.btn.solid:hover {
 
 
 .dropdown-link > a {
-  display: flex;
-  background-color: #7c83fd;
-  color: #ffffff;
-  padding: 0.5rem 1rem;
-  font-size: 0.9rem;
-  align-items: center;
-  justify-content: space-between;
-  transition: 0.3s;
-  text-decoration: none;
+/*caja de texto*/
+display: flex;
+background-color: #7c83fd;
+color: #ffffff;
+padding: 0.5rem 1rem;
+font-size: 0.9rem;
+align-items: center;
+justify-content: space-between;
+transition: 0.3s;
+text-decoration: none;
+ 
 }
 
 .dropdown-link:hover > a {
@@ -212,6 +214,7 @@ header.btn.solid:hover {
 
 .dropdown-link:first-child:hover ~ .arrow {
   background-color: #7c83fd;
+
 }
 
 .dropdown-link {
@@ -245,6 +248,7 @@ header.btn.solid:hover {
   justify-content: flex-end;
   margin-top: 50px;
   margin-right: 18px;
+  
 }
 
 .hamburger-menu {
@@ -335,7 +339,7 @@ header.btn.solid:hover {
   @media (min-width: 1000px) {
     .container-header {
       max-width: 65rem;
-      padding: 1rem 1rem;
+      padding: 1rem 2rem;
       margin: 0 auto;
       display: flex;
       position: relative;
@@ -350,7 +354,7 @@ header.btn.solid:hover {
       .container-header {
         height: 80px;
         max-width: 65rem;
-        padding: 1rem 1rem;
+        padding: 1rem 2rem;
         margin: 0 auto;
         display: flex;
         position: relative;
@@ -383,6 +387,8 @@ header.btn.solid:hover {
       .dropdown-link > a {
       
         display: none;
+
+      
       }      
 
     }
@@ -457,7 +463,6 @@ header.btn.solid:hover {
   }
 
   .nav-link {
-
     position: relative;
     left: -60px;
   }
@@ -465,6 +470,7 @@ header.btn.solid:hover {
   .nav-link:hover > a > i,
   .dropdown-link:hover > a > i {
     transform: rotate(360deg);
+
   }
 
   .dropdown-link > a {
@@ -472,18 +478,28 @@ header.btn.solid:hover {
     color: rgb(0, 0, 0);
     padding: 1.2rem 2rem;
     line-height: 1;
+
+    
+
   }
 
   .dropdown.second .dropdown-link > a {
     padding: 1.2rem 2rem 1.2rem 3rem;
+
+
+
   }
 
   .dropdown.second .dropdown.second .dropdown-link > a {
     padding: 1.2rem 2rem 1.2rem 4rem;
+
+  
   }
 
   .dropdown-link:not(:nth-last-child(2)) {
     border-bottom: none;
+
+  
   }
 
   .arrow {
@@ -504,10 +520,13 @@ header.btn.solid:hover {
 
   .dropdown-link:hover > a {
     background-color: #c6e0fa;
+
   }
 
   .dropdown-link:first-child:hover ~ .arrow {
     background-color: #c6e0fa;
+  
+
   }
 
   .nav-link > a > i {
@@ -542,7 +561,7 @@ header.scrolled {
   .logo-container {
 
     margin-left: -70px;
-    margin-right: 250px;    
+    margin-right: 270px;    
   }
 
   #PagePay{
