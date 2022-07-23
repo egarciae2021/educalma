@@ -90,6 +90,7 @@ $preference = new MercadoPago\Preference();
             $preference->auto_return = "approved"; 
              
             $preference-> statement_descripton = array("Educalma - " + $dato['nombreCurso'] );
+            $preference-> notification_url="https://hookbin.com/QJx870eRNOi8G218W80r";    
             $preference->save();
             
             $response = array(
