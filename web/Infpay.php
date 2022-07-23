@@ -13,20 +13,25 @@ if (!$conn) {
 }
  
 if (isset($_GET["topic"])) {
-    $topic = $_GET["topic"];
-echo $_GET["topic"];
+    $topic = $_GET["topic"]; 
 }
 
 if (isset($_GET["id"])) {
-    $id = $_GET["id"];
-    echo $_GET["id"];
+    $id = $_GET["id"]; 
     }
 
 
 $sql = " insert into pagos(topic,id) values ('" +   $topic       +"','"+    $id       +"')";
 
 echo $sql;
-mysqli_query($conn, $sql);
+
+if (mysqli_query($conn, $sql)) {
+    echo "Table MyGuests created successfully";
+  } else {
+    echo "Error creating table: " . mysqli_error($conn);
+  }
+
+  
  
 mysqli_close($conn);   
 
