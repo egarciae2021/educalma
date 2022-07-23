@@ -6,7 +6,7 @@ require  'vendor/autoload.php';
 $id = $_GET['id']; 
 
 // Agrega credenciales
-MercadoPago\SDK::setAccessToken('APP_USR-361254289137109-071003-69685b1c8975d58c29da92becb412463-1157895713');
+MercadoPago\SDK::setAccessToken('APP_USR-1923618636570539-071014-5632864634d560a172adbfd37f3d8c8e-1157900136');
  
 // Crea un objeto de preferencia
 $preference = new MercadoPago\Preference();
