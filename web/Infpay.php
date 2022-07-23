@@ -21,7 +21,7 @@ if (isset($_GET["id"])) {
     }
 
 
-$sql = " insert into pagos(topic,id) values ('" +   $topic       +"','"+    $id       +"')";
+$sql = "INSERT INTO pagos(topic,id) VALUES ('" +   $topic       +"','"+    $id       +"')";
 
 echo $sql;
 
