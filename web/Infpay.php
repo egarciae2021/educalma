@@ -4,8 +4,8 @@ $servername = "20.226.29.168";
 $username = "root";
 $password = 'T3$t1ng.C4lm4';
 $dbname = "educalma";
-$topic ;
-$id;
+$topic ="" ;
+$id = "" ;
  
 $conn = mysqli_connect($servername, $username, $password, $dbname); 
 if (!$conn) {
