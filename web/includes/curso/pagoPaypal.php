@@ -47,7 +47,7 @@ $preference = new MercadoPago\Preference();
             
 
         <div class="checkout-btn "> </div>
-
+        <a href="<?php echo $preference->init_point; ?>">Pay with Mercado Pago</a>
 
 
     <?php
