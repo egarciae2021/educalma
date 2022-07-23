@@ -43,6 +43,13 @@ $preference = new MercadoPago\Preference();
     <script src="assets/js/plugins/sweetalert2.all.min.js"></script>
     <!-- <script src="assets/js/card-validator.js"></script> -->
 
+
+            
+
+        <div class="checkout-btn "> </div>
+
+
+
     <?php
         ob_start();
         @session_start();
@@ -505,10 +512,13 @@ $preference = new MercadoPago\Preference();
   </div>
 </div>
  
-
 <script src="assets/js/modalPagarVisa.js"></script>
 <script src="assets/js/formPagarVisa.js"></script>
  
+
+
+
+
 </body>
 
 </html>
