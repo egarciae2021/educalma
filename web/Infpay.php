@@ -23,7 +23,9 @@ if (isset($_GET["id"])) {
 
 $sql = "INSERT INTO pagos(topic,id) VALUES ($topic , $id)";
 
-echo $topic;
+echo $sql;
+
+
 
 if (mysqli_query($conn, $sql)) {
     echo "Table MyGuests created successfully";
