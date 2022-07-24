@@ -553,7 +553,11 @@ if (!isset($_GET['pag'])) {
 
 
 <!-- EMPRESAS -->
+<<<<<<< HEAD
+<div class="container-bussines container divEmp" style="margin-top: 4.4rem; margin-bottom: 3rem;">
+=======
 <div class="container-bussines container divEmp">
+>>>>>>> 354c64df758156adec4ef63db8adb632590382be
 
 
   <div class="info col-12 d-flex flex-column justify-content-center"> <!--/////////////////////////-->
@@ -578,17 +582,30 @@ if (!isset($_GET['pag'])) {
       <!--<div class="input-data">-->
 
         <!--<input type="email" placeholder="Escribe tu correo empresarial" id="txtEmail" />-->
+<<<<<<< HEAD
+        <br>
+          <button id="btnAction" style="background-color:#737BF1; font-weight:500;">MÁS INFORMACIÓN</button>
+        <br>
+=======
         <button id="btnAction" style="width: 200px; background-color:#737BF1; font-weight:500;">MÁS INFORMACIÓN</button>
+>>>>>>> 354c64df758156adec4ef63db8adb632590382be
 
       <!--</div>-->
       <span class="msg-error">Debe ser un correo corporativo.</span>
     </div>
   </div>
   <div class="send-data col-12 my-auto justify-content-center align-items-center" id="sendData">
+<<<<<<< HEAD
+    <div class="box-rotate my-5 justify-content-center abs-center " id="boxRotate">
+      <div class="front d-flex" id="front" >       
+        <div class="box-image d-flex align-items-center justify-content-center">
+          &nbsp;&nbsp; <img class="img-fluid; " src="./assets/images/EDU-EMP.png" alt="" style="width: 400px; height: 400px;" />
+=======
     <div class="box-rotate my-5 justify-content-center abs-center" id="boxRotate">
       <div class="front d-flex" id="front" >       
         <div class="box-image d-flex align-items-center justify-content-center">
           <img src="./assets/images/EDU-EMP.png" alt=""/>
+>>>>>>> 354c64df758156adec4ef63db8adb632590382be
         </div>
       </div> 
       <div id="container-form" class="back">

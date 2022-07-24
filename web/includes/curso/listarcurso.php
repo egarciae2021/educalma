@@ -110,6 +110,13 @@
                 width: 85%;
                 }
             }
+
+        @media (max-width: 476px) {
+            .card-title  {
+                align-items: center;
+                height: 3em;
+            }
+            }
     </style>
    
 </head>
