@@ -34,7 +34,7 @@
 </div>
 
 <!-- CARDS BRINDA -->
-<div class="container container-fluid-brida mt-4">
+<div class="container container-fluid-brida mision mt-4">
   <div class="row">
     <div class="col-12">
       
