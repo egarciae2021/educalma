@@ -1,4 +1,5 @@
 <head>
+    <link rel="stylesheet" href="assets/css/home.css" />
     <link rel="stylesheet" href="assets/css/nosotros.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/'-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -30,6 +31,102 @@
             </div>
         </div>
     </div>
+</div>
+
+<!-- CARDS BRINDA -->
+<div class="container container-fluid-brida mt-4">
+  <div class="row">
+    <div class="col-12">
+      
+      <div class="divBrinda row justify-content-center"> <!--/////////////////////////-->
+        <div class="section-title mb-4 text-center" style="font-family: 'Baloo Tamma 2', cursive;">
+          <h2>MISIÓN, VISIÓN Y VALORES</h2>
+        </div>
+      </div>
+
+
+
+      <!--Tres Cards-->
+      <div class="row tresCards">  
+
+
+        <!--misión-->
+        <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 d-flex justify-content-center mb-3">
+          <div class="card h-100" style="padding: 2rem 1rem; max-width: 300px;background: #e7f4ff:">
+            <div class="card-title text-center mb-3" style="font-size:33px;">
+              <p class="text-uppercase">misión</p>
+            </div>
+            <div class="card-image text-center mb-3">
+              <img style="width: 100px; height: 100px;" src="./assets/images/mision-min.png" alt="" />
+            </div>
+            <div class="card-descripti">
+              <p class="text-black text-center mx-auto" style="width: 90%;">
+                Somos una plataforma que promueve la educación mediante cursos virtuales de calidad, accesible y asequible para colegios, empresas, comunicades y usuarios independientes con el fin de mitigar la violencia.
+              </p>
+            </div>
+          </div>
+        </div>
+
+
+
+        <!--visión-->
+        <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 d-flex justify-content-center mb-3">
+          <div class="card h-100" style="padding: 2rem 1rem; max-width: 300px;">
+            <div class="card-title text-center mb-3" style="font-size:33px;">
+              <p class="text-uppercase">visión</p>
+            </div>
+            <div class="card-image text-center mb-3">
+              <img style="width: 66px; height: 100px;" src="./assets/images/vision-min.png" alt="" />
+            </div>
+            
+            <div class="card-descripti">
+              <p class="text-black text-center mx-auto" style="width: 90%;">
+                Ser reconocida como una plataforma lider que tene el poder de transformar la violencia en paz mediante la educación digital.
+              </p>
+            </div>
+          </div>
+        </div>
+
+
+
+        <!--valores-->
+        <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 d-flex justify-content-center mb-3">
+            <div class="card h-100" style="padding: 2rem 1rem; max-width: 300px;">
+                <div class="card-title text-center mb-3" style="font-size:33px;">
+                    <p class="text-uppercase">valores</p>
+                </div>
+                <div class="card-image text-center mb-3">
+                    <img style="width: 100px; height: 100px;" src="./assets/images/valores-min.png" alt="" />
+                </div>
+                <div class="card-descripti">
+                    <p class="text-black text-center mx-auto" style="width: 90%; ">
+                    Responsabilidad <br> Compromiso <br>Veracidad <br>Integridad <br>Trabajo en equipo <br>
+                    </p>
+                </div>
+          </div>
+        </div>
+        <!-- <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+          <div class="card card-certificados">
+            <div class="card-image certificados">
+              <img src="./assets/images/certificad.png" alt="" />
+            </div>
+            <div class="card-title">
+              <p style="font-weight: bold; color: #7C83FD">Certificados</p>
+            </div>
+            <div class="card-descripti">
+              <p style="color: black; font-weight: 500;">
+                Al concluir el curso se les entregará un certificado por todo lo aprendido en cada sesión.
+              </p>
+            </div>
+          </div>
+        </div> -->
+
+
+      </div>
+      <!--Fin de Tres Cards.-->
+
+    </div>
+  </div>
 </div>
 
 <!-- PREGUNTAS -->

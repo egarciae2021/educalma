@@ -1,285 +1,310 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="assets/css/footerIndex.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Baloo+Tamma+2&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+Tamma+2&display=swap" rel="stylesheet">
 
-</head>
+<style>
 
-<body>
-  <footer class="footer--light" style="background-image: url('assets/images/fondo2-min.png') !important;">
+  .footer--light {
+    background-image: url("assets/images/fondo2-min.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    /* min-height: 100vh; */
+    /* background-size: cover; */
+    /* max-width: 100%; */
+    
+  }
+  
+  @media (max-width: 768px) {
+      
+    .footer--light {
 
-    <div class="widget-about">
-      <!--imagen de educalma empresas-->
-      <img src="assets/images/educalma_logo_blanco.png" alt="" class="img-fluid" style="">
-    </div>
-    <br>
+      background-image: url("assets/images/fondo2-min.png");;
+    }  
+  }
 
-    <div class="contenido">
+  .footer-menu li{
 
-      <div class="enviar_inicio">
-          <a href="#"><i class="fa fa-angle-double-up enviar_inicio fa-5x" style="color: #e0c7e5;" aria-hidden="true" src="./assets/images/enviar_inicio.png" ></i></a>
-      </div>
+      -webkit-transform: scale(1,1);
+      -webkit-transition-timing-function: ease-out;
+      -webkit-transition-duration: 250ms;
+      -moz-transform: scale(1,1);
+      -moz-transition-timing-function: ease-out;
+      -moz-transition-duration: 250ms;
+  }
 
-      <div class="primero">
-        <p class="title">Educalma</p>
-        <div class="footer-menu">
-          <!-- centro -->
-          <ul>
-            <li>
-              <a href="https://fundacioncalma.org/%C2%BFqui%C3%A9nes-somos%3F">¿Quiénes Somos?</a>
-            </li>
-            <li>
-              <a href="https://fundacioncalma.org/contacto">Contáctanos</a>
-            </li>
-            <li>
-              <a href="https://fundacioncalma.org/%C2%BFc%C3%B3mo-ayudo%3F">Ayúdanos</a>
-            </li>
-          </ul>
-        </div>
-        <ul style="margin-right: 35px;" class="social-icons">
-            <li>
-              <a target="_blank" class="envelope" href="https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&su=Educalma+-+Consulta&to=fundacioncalma5@gmail.com&body=Vi%20su%20plataforma%20y%20me%20pareci%C3%B3%20muy%20bueno%20pero%20tengo%20la%20siguiente%20duda:">
-                <i class="far fa-envelope" style="color: #7C83FD;"></i>
-              </a>
-            </li>
-          </ul>
-      </div>
+  .footer-menu li:hover{
 
-      <div class="segundo">
-        <p class="title" style="text-align: center;">Redes Sociales</p>
-        <div class="redes">
-          <ul class="social-icons">
-            <li>
-              <a target="_blank" class="facebook" href="https://www.facebook.com/fundacioncalma.org/"><i class="fab fa-facebook-f" style="color: #7C83FD;"></i></a>
-            </li>
-            <li>
-              <a target="_blank" class="twitter" href="https://twitter.com/fundacioncalma2 "><i class="fab fa-twitter" style="color: #7C83FD;"></i></a>
-            </li>
-            <li>
-              <a target="_blank" class="youtube" href="https://www.youtube.com/channel/UCsEmW0is_Q-d_IMfux0pfEw"><i class="fab fa-youtube" style="color: #7C83FD;"></i></a>
-            </li>
-            <li>
-              <a target="_blank" class="instagram" href="https://www.instagram.com/fundacioncalma/?hl=es"><i class="fab fa-instagram" style="color: #7C83FD;"></i></a>
-            </li>          
-          </ul>
-        </div>
-      </div>
+      -webkit-transform: scale(1.10,1.10);
+      -webkit-transition-timing-function: ease-out;
+      -webkit-transition-duration: 1.2;
+      -moz-transform: scale(1.10,1.10);
+      -moz-transition-timing-function: ease-out;
+      -moz-transition-duration: 250ms;
+  }
 
-      <div class="tercero">
-        <p class="title">Servicios</p>
-        <div class="footer-menu">
-          <!-- <h4 class="footer-widget-title">Blog</h4> -->
-          <ul>
-            <li>
-              <a href="https://fundacioncalma.org/">Blog</a>
-            </li>
-            <li>
-              <a href="certi.php">Validación de Certificado</a>
-            </li>
-            <li>
-              <!-- <a href="recursos1.php">Presentaci&oacute;n</a> -->
-              <a href="recursos1.php">Comparte tu curso</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <br>
-    <br>
-    <div class="col-md-8 col-sm-6 col-12 copy">
-      <p class="copyright-text">Copyright © 2021 All Rights Reserved by EduCalma</p>
-    </div>
-    <br>
-    <!-- </div>
-    <footer class="footer--light pt-4">
-        <div class="footer-big">
-          <div class="container">
-            <div class="row">
-              <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
-                <div class="footer-widget">
-                  
-                </div>
-              </div>
-              <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
-                <div class="footer-widget">
-                  <div class="footer-menu">
-                    
-          <div class="footer-big">
-            <div class="container">
-              <div class="row">
-                <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
-                  <div class="footer-widget">
-                    <div class="widget-about">
-                      
-                    
-                    
-                      
-                    
-                    
-                    
-                    </div>
-                  </div>
-                </div>
-                <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
-                  
-                </div>
-                <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
-                  <div class="footer-widget">
-                    
-                  </div>
-                </div>
-              </div>
+</style>
+
+<footer class="footer--light pt-4">
+
+  <div class="footer-big">
+    <div class="container">
+      <div class="row">
+        <div class="logo" style="width:40%;">
+          <div class="footer-widget">
+            <div class="widget-about">
+              <!--imagen de educalma empresas-->
+              <img src="assets/images/educalma_logo_blanco.png" alt="" class="img-fluid" style="padding: 15px;">
             </div>
           </div>
-        </div> -->
+        </div>
+        <div class="">
+          <div class="footer-widget">
+            <div class="footer-menu">
+              <!-- centro -->
+              <h4 class="footer-widget-title">Educalma</h4>
+              <ul>
+                <li>
+                  <a href="https://fundacioncalma.org/%C2%BFqui%C3%A9nes-somos%3F">Nosotros</a>
+                </li>
+                <li>
+                  <a href="https://fundacioncalma.org/contacto">Contáctanos</a>
+                </li>
+                <li>
+                  <a href="https://fundacioncalma.org/%C2%BFc%C3%B3mo-ayudo%3F">Ayúdanos</a>
+                </li>
+              </ul>
+              <ul style="margin-right: 35px;" class="social-icons">
+                <li><a target="_blank" class="whatsapp" href="https://api.whatsapp.com/send?phone=51910571087&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20los%20cursos%20."><i class="fab fa-whatsapp" style="color: #7C83FD;"></i></a></li>
+                <li><a target="_blank" class="envelope" href="https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&su=Educalma+-+Consulta&to=fundacioncalma5@gmail.com&body=Vi%20su%20plataforma%20y%20me%20pareci%C3%B3%20muy%20bueno%20pero%20tengo%20la%20siguiente%20duda:"><i class="far fa-envelope" style="color: #7C83FD;"></i></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="">
+          <div class="footer-widget">
+            <div class="footer-menu">
+              <h4 class="footer-widget-title">Servicios</h4>
+              <!-- lado derecho -->
+              <ul>
+                <li>
+                  <a href="https://fundacioncalma.org/">Blog</a>
+                </li>
+                <li>
+                  <a href="certi.php">Validación de Certificado</a>
+                </li>
+                <li>
+                  <!-- <a href="recursos1.php">Presentaci&oacute;n</a> -->
+                  <a href="recursos1.php">Comparte tu curso</a>
+                </li>
+              </ul>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!--  <p align="center">
+Somos una organización independiente, sin fines de lucro, que busca la construcción de la paz🕊️ 
+Promovemos el diálogo como herramienta principal para el logro de la paz. 
+Estamos presentes en Perú, Costa Rica, México, Argentina, y Colombia. </p> -->
+
+    <div class="enviar_inicio">
+      <a href="#"><i class="fa fa-angle-double-up enviar_inicio fa-5x" style="color: #e0c7e5;" aria-hidden="true" src="./assets/images/enviar_inicio.png" ></i></a>
+    </div>
+
+    <div class="col-md-4 col-sm-6 col-12">
+      <h4 class="footer-widget-title">Redes Sociales</h4>
+      <ul style="margin-right: 35px;" class="social-icons">
+        <li><a target="_blank" class="facebook" href="https://www.facebook.com/fundacioncalma.org/"><i class="fab fa-facebook-f" style="color: #7C83FD;"></i></a></li>
+        <li><a target="_blank" class="twitter" href="https://twitter.com/fundacioncalma2 "><i class="fab fa-twitter" style="color: #7C83FD;"></i></a></li>
+        <li><a target="_blank" class="youtube" href="https://www.youtube.com/channel/UCsEmW0is_Q-d_IMfux0pfEw"><i class="fab fa-youtube" style="color: #7C83FD;"></i></a></li>
+        <li><a target="_blank" class="instagram" href="https://www.instagram.com/fundacioncalma/?hl=es"><i class="fab fa-instagram" style="color: #7C83FD;"></i></a></li>
+        
+      </ul>
+    </div>
+
+    <div class="site-footer">
+      <div class="container">
+        <hr class="small">
+      </div>
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-sm-6 col-12" style="margin: auto; text-align: center; width: 800px;">
+            <p style="font-size: 16px; color: white;" class="copyright-text">Copyright © 2021 All Rights Reserved by EduCalma</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <br>
 
   </footer>
 
-  <!-- ALL JS FILES -->
-  <script src="assets/js/plugins/jquery.min.js"></script>
-  <script src="assets/js/plugins/popper.min.js"></script>
-  <script src="assets/js/plugins/bootstrap.min.js"></script>
-  <!-- ALL PLUGINS -->
-  <script src="assets/js/plugins/jquery.magnific-popup.min.js"></script>
-  <script src="assets/js/plugins/jquery.pogo-slider.min.js"></script>
-  <script src="assets/js/plugins/slider-index.js"></script>
-  <script src="assets/js/plugins/smoothscroll.js"></script>
-  <script src="assets/js/plugins/form-validator.min.js"></script>
-  <script src="assets/js/plugins/contact-form-script.js"></script>
-  <script src="assets/js/plugins/isotope.min.js"></script>
-  <script src="assets/js/plugins/images-loded.min.js"></script>
-  <script src="assets/js/plugins/custom.js"></script>
-  <script src="https://kit.fontawesome.com/f9e5248491.js" crossorigin="anonymous"></script>
 
 
-  <!-- ALL PLUGINS ADMIN LTE3-->
-  <!-- jQuery -->
+<!-- <a href="#" id="scroll-to-top" class="hvr-radial-out"><i class="fa fa-angle-up"></i></a> -->
 
-  <!-- Bootstrap 4 -->
-  <script src="includes/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <!-- DataTables  & Plugins -->
-
-  <script src="includes/plugins/datatables/jquery.dataTables.min.js"></script>
-  <script src="includes/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
-  <script src="includes/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
-  <script src="includes/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
-  <script src="includes/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
-  <script src="includes/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
-  <script src="includes/plugins/jszip/jszip.min.js"></script>
-  <script src="includes/plugins/pdfmake/pdfmake.min.js"></script>
-  <script src="includes/plugins/pdfmake/vfs_fonts.js"></script>
-  <script src="includes/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
-  <script src="includes/plugins/datatables-buttons/js/buttons.print.min.js"></script>
-  <script src="includes/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+<!-- ALL JS FILES -->
+<script src="assets/js/plugins/jquery.min.js"></script>
+<script src="assets/js/plugins/popper.min.js"></script>
+<script src="assets/js/plugins/bootstrap.min.js"></script>
+<!-- ALL PLUGINS -->
+<script src="assets/js/plugins/jquery.magnific-popup.min.js"></script>
+<script src="assets/js/plugins/jquery.pogo-slider.min.js"></script>
+<script src="assets/js/plugins/slider-index.js"></script>
+<script src="assets/js/plugins/smoothscroll.js"></script>
+<script src="assets/js/plugins/form-validator.min.js"></script>
+<script src="assets/js/plugins/contact-form-script.js"></script>
+<script src="assets/js/plugins/isotope.min.js"></script>
+<script src="assets/js/plugins/images-loded.min.js"></script>
+<script src="assets/js/plugins/custom.js"></script>
+<script src="https://kit.fontawesome.com/f9e5248491.js" crossorigin="anonymous"></script>
 
 
-  <!-- <script type="text/javascript" src="../../dataTable/datatables.min.js"></script> -->
+<!-- ALL PLUGINS ADMIN LTE3-->
+<!-- jQuery -->
 
-  <script>
-  /* counter js */
+<!-- Bootstrap 4 -->
+<script src="includes/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- DataTables  & Plugins -->
 
-  (function($) {
-      $.fn.countTo = function(options) {
-          options = options || {};
+<script src="includes/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="includes/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+<script src="includes/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+<script src="includes/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+<script src="includes/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+<script src="includes/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+<script src="includes/plugins/jszip/jszip.min.js"></script>
+<script src="includes/plugins/pdfmake/pdfmake.min.js"></script>
+<script src="includes/plugins/pdfmake/vfs_fonts.js"></script>
+<script src="includes/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+<script src="includes/plugins/datatables-buttons/js/buttons.print.min.js"></script>
+<script src="includes/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
 
-          return $(this).each(function() {
-              // set options for current element
-              var settings = $.extend({}, $.fn.countTo.defaults, {
-                  from: $(this).data('from'),
-                  to: $(this).data('to'),
-                  speed: $(this).data('speed'),
-                  refreshInterval: $(this).data('refresh-interval'),
-                  decimals: $(this).data('decimals')
-              }, options);
 
-              // how many times to update the value, and how much to increment the value on each update
-              var loops = Math.ceil(settings.speed / settings.refreshInterval),
-                  increment = (settings.to - settings.from) / loops;
+<!-- <script type="text/javascript" src="../../dataTable/datatables.min.js"></script> -->
 
-              // references & variables that will change with each update
-              var self = this,
-                  $self = $(this),
-                  loopCount = 0,
-                  value = settings.from,
-                  data = $self.data('countTo') || {};
 
-              $self.data('countTo', data);
 
-              // if an existing interval can be found, clear it first
-              if (data.interval) {
-                  clearInterval(data.interval);
-              }
-              data.interval = setInterval(updateTimer, settings.refreshInterval);
 
-              // initialize the element with the starting value
-              render(value);
 
-              function updateTimer() {
-                  value += increment;
-                  loopCount++;
 
-                  render(value);
 
-                  if (typeof(settings.onUpdate) == 'function') {
-                      settings.onUpdate.call(self, value);
-                  }
 
-                  if (loopCount >= loops) {
-                      // remove the interval
-                      $self.removeData('countTo');
-                      clearInterval(data.interval);
-                      value = settings.to;
 
-                      if (typeof(settings.onComplete) == 'function') {
-                          settings.onComplete.call(self, value);
-                      }
-                  }
-              }
 
-              function render(value) {
-                  var formattedValue = settings.formatter.call(self, value, settings);
-                  $self.html(formattedValue);
-              }
-          });
-      };
 
-      $.fn.countTo.defaults = {
-          from: 0, // the number the element should start at
-          to: 0, // the number the element should end at
-          speed: 1000, // how long it should take to count between the target numbers
-          refreshInterval: 100, // how often the element should be updated
-          decimals: 0, // the number of decimal places to show
-          formatter: formatter, // handler for formatting the value before rendering
-          onUpdate: null, // callback method for every time the element is updated
-          onComplete: null // callback method for when the element finishes updating
-      };
 
-      function formatter(value, settings) {
-          return value.toFixed(settings.decimals);
-      }
-  }(jQuery));
 
-  jQuery(function($) {
-      // custom formatting example
-      $('.count-number').data('countToOptions', {
-          formatter: function(value, options) {
-              return value.toFixed(options.decimals).replace(/\B(?=(?:\d{3})+(?!\d))/g, ',');
-          }
-      });
 
-      // start all the timers
-      $('.timer').each(count);
 
-      function count(options) {
-          var $this = $(this);
-          options = $.extend({}, options || {}, $this.data('countToOptions') || {});
-          $this.countTo(options);
-      }
-  });
-  </script>
+
+
+
+<script>
+/* counter js */
+
+(function($) {
+    $.fn.countTo = function(options) {
+        options = options || {};
+
+        return $(this).each(function() {
+            // set options for current element
+            var settings = $.extend({}, $.fn.countTo.defaults, {
+                from: $(this).data('from'),
+                to: $(this).data('to'),
+                speed: $(this).data('speed'),
+                refreshInterval: $(this).data('refresh-interval'),
+                decimals: $(this).data('decimals')
+            }, options);
+
+            // how many times to update the value, and how much to increment the value on each update
+            var loops = Math.ceil(settings.speed / settings.refreshInterval),
+                increment = (settings.to - settings.from) / loops;
+
+            // references & variables that will change with each update
+            var self = this,
+                $self = $(this),
+                loopCount = 0,
+                value = settings.from,
+                data = $self.data('countTo') || {};
+
+            $self.data('countTo', data);
+
+            // if an existing interval can be found, clear it first
+            if (data.interval) {
+                clearInterval(data.interval);
+            }
+            data.interval = setInterval(updateTimer, settings.refreshInterval);
+
+            // initialize the element with the starting value
+            render(value);
+
+            function updateTimer() {
+                value += increment;
+                loopCount++;
+
+                render(value);
+
+                if (typeof(settings.onUpdate) == 'function') {
+                    settings.onUpdate.call(self, value);
+                }
+
+                if (loopCount >= loops) {
+                    // remove the interval
+                    $self.removeData('countTo');
+                    clearInterval(data.interval);
+                    value = settings.to;
+
+                    if (typeof(settings.onComplete) == 'function') {
+                        settings.onComplete.call(self, value);
+                    }
+                }
+            }
+
+            function render(value) {
+                var formattedValue = settings.formatter.call(self, value, settings);
+                $self.html(formattedValue);
+            }
+        });
+    };
+
+    $.fn.countTo.defaults = {
+        from: 0, // the number the element should start at
+        to: 0, // the number the element should end at
+        speed: 1000, // how long it should take to count between the target numbers
+        refreshInterval: 100, // how often the element should be updated
+        decimals: 0, // the number of decimal places to show
+        formatter: formatter, // handler for formatting the value before rendering
+        onUpdate: null, // callback method for every time the element is updated
+        onComplete: null // callback method for when the element finishes updating
+    };
+
+    function formatter(value, settings) {
+        return value.toFixed(settings.decimals);
+    }
+}(jQuery));
+
+jQuery(function($) {
+    // custom formatting example
+    $('.count-number').data('countToOptions', {
+        formatter: function(value, options) {
+            return value.toFixed(options.decimals).replace(/\B(?=(?:\d{3})+(?!\d))/g, ',');
+        }
+    });
+
+    // start all the timers
+    $('.timer').each(count);
+
+    function count(options) {
+        var $this = $(this);
+        options = $.extend({}, options || {}, $this.data('countToOptions') || {});
+        $this.countTo(options);
+    }
+});
+</script>
 </body>
+
 </html>
+

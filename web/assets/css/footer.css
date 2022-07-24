@@ -1,13 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Tamma+2&display=swap');
 
-@media (min-width: 1000px) {
+/* @media (min-width: 1000px) {
 
     .footer--light {
     background-color: #E7F3FF;
+    font-family: 'Baloo Tamma 2', cursive;
+
   }
 
 
-}
+} */
 
 footer ul {
   padding: 0;
@@ -28,12 +31,14 @@ footer a:hover {
   margin-bottom: 40px;
 }
 .footer--light {
-  background: #F2F7FF;
+  background-image: url("assets/images/fondo2-min.png");
+  background-size: 100%;
 }
 .footer-big .footer-menu ul li a,
 .footer-big p,
 .footer-big ul li {
-  color: #7c83fd;
+  font-family: 'Baloo Tamma 2', cursive;
+  color: #ffffff;
 }
 .footer-menu ul li a {
   font-size: 16px;
@@ -43,7 +48,7 @@ footer a:hover {
   transition: 0.3s;
 }
 .footer-menu ul li a:hover {
-  color: #7C83FD;
+  color: white;
 } 
 .footer-widget-title {
   line-height: 30px;
@@ -70,7 +75,7 @@ footer a:hover {
 }
 .widget-about .contact-details li i {
   padding-right: 10px;
-  color:#333;
+  color:rgb(50, 43, 57);
 }
 .widget-about .contact-details li a {
   color: #5867dd;
@@ -99,7 +104,7 @@ footer a:hover {
     margin: 20px 0;
   }
   .site-footer a {
-    color: #7c83fd;
+    color: #00ff44;
   }
   .site-footer a:hover {
     color: #fff;
@@ -115,7 +120,12 @@ footer a:hover {
     margin-left: 6px;
     margin-right: 0;
     border-radius: 100%;
-    background-color: #7C83FD;
+    background-color: #ffffff;
+  }
+
+  .footer-widget-title{
+    color: #ffffff;
+    font-weight: bold;
   }
   
   @media (max-width: 991px) {
