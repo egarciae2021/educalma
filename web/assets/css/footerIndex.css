@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Baloo+Tamma+2&display=swap');
 
 .footer--light {
-    background-image: url("assets/images/fondo2-min.png") !important;
+    background-image: url("assets/images/fondo2-min.png");
     /* background-color: blue; */
     background-size: 100% 100%;
 }
@@ -41,6 +41,11 @@
 .footer-menu a{
     color: white;
     font-size: 10px;
+    transition: color .5s;
+}
+
+.footer-menu a:hover{
+    color: red;
 }
 
 .copy{
@@ -62,12 +67,59 @@
     font-family: 'Baloo Tamma 2', cursive;
 }
   
-@media (max-width: 768px) {
-    
-.footer--light {
-    background-image: url("assets/images/fondo2-min.png") !important;
-}  
+@media (max-width: 400px) {
+    .footer--light {
+        /* background-image: url("assets/images/fondo2-min.png");
+        background-size: 100% 100%; */
+        background-color: blue !important;
+        /* overflow:hidden;
+        object-fit: cover;
+        width: 100%;
+        height: auto;  */  
+        }  
+   /*  .widget-about{
+        display: flex;
+        justify-content: center;
+    }
+    .widget-about img{
+        padding-top: 60px;
+        width: 60%;
+    }
+    .contenido{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        font-family: 'Baloo Tamma 2', cursive;
+        /* gap: 98px;
+        margin-right: 340px; */
+    /* }
+    .enviar_inicio{
+        width: 10%;
+        height: auto;
+        /* margin-left: 100px; */
+   /*  }  */
+    /* .title{
+        color: white;
+        font-weight: bold;
+        font-size: 20px;
+        padding-left: 7em;
+    }
+    .footer-menu{
+        padding-left: 9em;
+        
+    }
+    .social-icons{
+        display: flex;
+        flex-direction: row;
+        margin-left: 40px;
+    }
+    .envelope{
+        margin-left: 6em;
+    }
+ */
 }
+
+
 
   /*  .footer-menu li{
 

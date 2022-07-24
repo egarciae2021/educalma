@@ -455,11 +455,19 @@
         }
     }
     
-    .container-questions {
+    .container-questions  {
         background: rgb(255,255,255);
         background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(224,199,229,1) 42%, rgba(231,244,255,1) 100%);
         max-width: 100%;
         padding: .1rem 0 4rem 0;
+    }
+
+    .container-fluid-brida{
+        background: rgb(255,255,255);
+        background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(224,199,229,1) 42%, rgba(231,244,255,1) 100%);
+        max-width: 100%;
+        padding: .1rem 0 4rem 0;
+        
     }
     
     .container-questions .row .col-md-12 {
