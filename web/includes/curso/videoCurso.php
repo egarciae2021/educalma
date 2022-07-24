@@ -7,364 +7,370 @@
 
 
     <style>
+        .anterior{
+            text-decoration: none;
+            color: #fff;
+        }
+        .anterior:hover{
+            text-decoration: none;
+            color: #fff;
+        }
+        #videoTema {
 
-#videoTema {
+            width: 600px;
+            height: 370px;
 
-    width: 600px; 
-    height: 370px;
-
-    position: relative;
-    top: -70px !important;
-}
+            position: relative;
+            top: -70px !important;
+        }
 
 
-/****************************************************************************************************/
-/** =====================
+        /****************************************************************************************************/
+        /** =====================
 * Responsive
 ========================*/
-@media only screen and (max-width: 766px) {
+        @media only screen and (max-width: 766px) {
 
-    #videoTema {
-        width: 300px; 
-        height: 300px; 
-    }
+            #videoTema {
+                width: 300px;
+                height: 300px;
+            }
 
-    #btnV2 {
+            #btnV2 {
 
-        width: 150px;
-        
-    }
-}
-/****************************************************************************************************/
+                width: 150px;
 
+            }
+        }
+
+        /****************************************************************************************************/
     </style>
 
 </head>
 <?php
 // Este codigo hace validacion para que no se pueda acceder a cualquier pagina sin estar logueado__Pablo Loyola
 
- if(isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)){
+if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
 ?>
-<?php 
-    if(isset($_GET['nW']))
-    { $nW=$_GET['nW']; }
-    else{
-    $nW=0;}
+    <?php
+    if (isset($_GET['nW'])) {
+        $nW = $_GET['nW'];
+    } else {
+        $nW = 0;
+    }
 
     // ID del curso Iniscrito
-    if(isset($_GET['idCI'])){ 
-        $idCI=$_GET['idCI'];}
-    else{
-        $idCI=0;}
+    if (isset($_GET['idCI'])) {
+        $idCI = $_GET['idCI'];
+    } else {
+        $idCI = 0;
+    }
 
 
     require_once '././database/databaseConection.php';
-    if(isset($_GET['validar'])){
+    if (isset($_GET['validar'])) {
 
-        $id=$_GET['id'];
-        
+        $id = $_GET['id'];
+
         //$idtema=$_GET['idtema'];
 
-        $pdo6 = Database::connect(); 
+        $pdo6 = Database::connect();
         $sql6 = "SELECT * FROM cursos WHERE idCurso='$id'";
         $q6 = $pdo6->prepare($sql6);
         $q6->execute(array());
         $dato6 = $q6->fetch(PDO::FETCH_ASSOC);
         Database::disconnect();
 
-        if(!isset($_GET['c_modulo'])){
-            $_GET['c_modulo']=1;
+        if (!isset($_GET['c_modulo'])) {
+            $_GET['c_modulo'] = 1;
         }
-        $cont_modulo=$_GET['c_modulo'];
+        $cont_modulo = $_GET['c_modulo'];
 
-        $pdo = Database::connect(); 
+        $pdo = Database::connect();
         $sql = "SELECT * FROM modulo WHERE id_curso='$id'";
         $q = $pdo->prepare($sql);
         $q->execute(array());
         Database::disconnect();
-        $contaM=1;
-        while($contaM<$cont_modulo){
+        $contaM = 1;
+        while ($contaM < $cont_modulo) {
             $dato = $q->fetch(PDO::FETCH_ASSOC);
             $contaM++;
         }
         $dato = $q->fetch(PDO::FETCH_ASSOC);
 
-        if(!isset($_GET['c_tema'])){
-            $_GET['c_tema']=1;
+        if (!isset($_GET['c_tema'])) {
+            $_GET['c_tema'] = 1;
         }
-        $cont_tema=$_GET['c_tema'];
+        $cont_tema = $_GET['c_tema'];
 
-            $pdo2 = Database::connect(); 
-            $sql2 = "SELECT * FROM tema WHERE id_modulo='$dato[idModulo]'";
-            $q2 = $pdo2->prepare($sql2);
-            $q2->execute(array());
-                        
-            Database::disconnect();
-            $contaT=1;
-            while($contaT<$cont_tema){
-                $dato2 = $q2->fetch(PDO::FETCH_ASSOC);
-                $contaT++;
-            }
+        $pdo2 = Database::connect();
+        $sql2 = "SELECT * FROM tema WHERE id_modulo='$dato[idModulo]'";
+        $q2 = $pdo2->prepare($sql2);
+        $q2->execute(array());
+
+        Database::disconnect();
+        $contaT = 1;
+        while ($contaT < $cont_tema) {
             $dato2 = $q2->fetch(PDO::FETCH_ASSOC);
+            $contaT++;
+        }
+        $dato2 = $q2->fetch(PDO::FETCH_ASSOC);
 
     ?>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-md-1"></div>
-            <div class="col-md-10">
-                <div class="infoMin"> 
-                <h2><?php 
-                        $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-                        $components = parse_url($url);
-                        parse_str($components['query'], $results);
-                        if (array_key_exists('a', $results)) {
-                            $access=$results["a"]; 
-                        }else{
-                            $access="true";
-                        }
-                    ?></h2>
-                    <a href="Cursoiniciar.php?id=<?php echo $id;?>" <?php if ($access=="d") {
-                        echo 'style="pointer-events: none;"';
-                        
-                    }?>
-                    
-                    ><?php echo $dato6['nombreCurso'];?></a> <label> > </label> <a
-                        href=""><?php echo $dato['nombreModulo'];?> </a>
-                </div>
-            </div>
-            <div class="col-md-1"></div>
-        </div>
-    </div>
-    <br>
-    <div>
         <div class="container">
             <div class="row">
                 <div class="col-md-1"></div>
                 <div class="col-md-10">
-                    <h2>
-                        <?php 
+                    <div class="infoMin">
+                        <h2><?php
                             $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                             $components = parse_url($url);
                             parse_str($components['query'], $results);
                             if (array_key_exists('a', $results)) {
-                                $access=$results["a"]; 
-                            }else{
-                                $access="true";
+                                $access = $results["a"];
+                            } else {
+                                $access = "true";
                             }
-                        ?>
-                    </h2>
-                    <button type="button" <?php if ($access=="d") {echo "disabled";}?>class="btn btn-outline-secondary" id="btnV" onclick="parent.location='includes/curso/VideoSiguiente.php?id=<?php echo $id; ?>&nW=<?php echo $_GET['nW']?>&idtema=<?php echo ($idtema-1)?>&id_modulo=<?php echo $dato['idModulo']?>&idCI=<?php echo $idCI?>'"> 
-                        <strong> < </strong><span class="before">Anterior</span>
-                    </button>
-
-                    <button type="button" class="btn btn-outline-secondary" id="btnV2"> 
-                        <?php echo $dato2['nombreTema'];?>
-                        <img src="././assets/images/video_icono_32.png">
-                    </button>
-
-                    <button type="button"<?php if ($access=="d") {echo "disabled";}?> class="btn btn-outline-secondary" id="btnV" onclick="parent.location='includes/curso/VideoSiguiente.php?id=<?php echo $id; ?>&validar=1&c_modulo=<?php echo $cont_modulo;?>&c_tema=<?php echo ($cont_tema+1);?>&idmodulo=<?php echo $dato['idModulo']?>&nW=<?php echo $_GET['nW']?>&idCI=<?php echo $idCI?>'">
-                        <span class="next">Siguiente</span><strong> > </strong>
-                    </button>
+                            ?></h2>
+                        <a href="Cursoiniciar.php?id=<?php echo $id; ?>" <?php if ($access == "d") {
+                                                                            echo 'style="pointer-events: none;"';
+                                                                        } ?>><?php echo $dato6['nombreCurso']; ?></a> <label> > </label> <a href=""><?php echo $dato['nombreModulo']; ?> </a>
+                    </div>
                 </div>
                 <div class="col-md-1"></div>
             </div>
         </div>
-    </div>
+        <br>
+        <div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-10">
+                        <h2>
+                            <?php
+                            $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+                            $components = parse_url($url);
+                            parse_str($components['query'], $results);
+                            if (array_key_exists('a', $results)) {
+                                $access = $results["a"];
+                            } else {
+                                $access = "true";
+                            }
+                            ?>
+                        </h2>
+                        <button type="button" <?php if ($access == "d") {
+                                                    echo "disabled";
+                                                } ?>class="btn btn-outline-secondary" id="btnV" onclick="parent.location='includes/curso/VideoSiguiente.php?id=<?php echo $id; ?>&nW=<?php echo $_GET['nW'] ?>&idtema=<?php echo ($idtema - 1) ?>&id_modulo=<?php echo $dato['idModulo'] ?>&idCI=<?php echo $idCI ?>'">
+                            <strong>
+                                < </strong><span class="before">Anterior</span>
+                        </button>
 
-    <div class="containervid">
-        <div class="contvid" style="max-width: 500px; min-width:350px; height: 270px; padding: 10px; ">
-            <?php 
-                $url=$dato2['link_video'];
-                function getYoutubeEmbedUrl($url){
+                        <button type="button" class="btn btn-outline-secondary" id="btnV2">
+                            <?php echo $dato2['nombreTema']; ?>
+                            <img src="././assets/images/video_icono_32.png">
+                        </button>
+
+                        <button type="button" <?php if ($access == "d") {
+                                                    echo "disabled";
+                                                } ?> class="btn btn-outline-secondary" id="btnV" onclick="parent.location='includes/curso/VideoSiguiente.php?id=<?php echo $id; ?>&validar=1&c_modulo=<?php echo $cont_modulo; ?>&c_tema=<?php echo ($cont_tema + 1); ?>&idmodulo=<?php echo $dato['idModulo'] ?>&nW=<?php echo $_GET['nW'] ?>&idCI=<?php echo $idCI ?>'">
+                            <span class="next">Siguiente</span><strong> > </strong>
+                        </button>
+                    </div>
+                    <div class="col-md-1"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="containervid">
+            <div class="contvid" style="max-width: 500px; min-width:350px; height: 270px; padding: 10px; ">
+                <?php
+                $url = $dato2['link_video'];
+                function getYoutubeEmbedUrl($url)
+                {
 
                     $urlParts   = explode('/', $url);
-                    $vidid      = explode( '&', str_replace('watch?v=', '', end($urlParts) ) );
-                
-                    return 'https://www.youtube.com/embed/' . $vidid[0] ;
+                    $vidid      = explode('&', str_replace('watch?v=', '', end($urlParts)));
+
+                    return 'https://www.youtube.com/embed/' . $vidid[0];
                 }
-                $link = getYoutubeEmbedUrl($dato2['link_video']);    
-            ?>
-            <iframe width="100%" height="100%" src="<?php echo $link;?>" title="YouTube video player" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen>
-            </iframe>
-        </div>
-    </div>
-
-<br>
-
-
-
-<?php    
-    }
-    else{
-    
-   ?>
-
-
-
-
-<?php 
-    
-
-    $id=$_GET['id'];
-    $pdo = Database::connect(); 
-    $sql = "SELECT * FROM modulo WHERE id_curso='$id'";
-    $q = $pdo->prepare($sql);
-    $q->execute(array());
-    $dato = $q->fetch(PDO::FETCH_ASSOC);
-    Database::disconnect();
-    $d=$dato['idModulo'];
-    $pdod = Database::connect(); 
-    
-    $sqli="SELECT c.idModulo,p.idTema,l.idCurso FROM tema p INNER JOIN modulo c ON c.idModulo=p.id_modulo INNER JOIN cursos l ON idCurso= c.id_curso WHERE c.idModulo='$_GET[id_modulo]' AND l.idCurso='$id'";
-    $qs = $pdod->prepare($sqli);
-    $qs->execute(array());
-    // echo "<br>";
-    $resultado1=$qs->fetchAll();
-    // echo $resultado1[1]['idTema'];
-    // $idtema=$_GET['idtema'];
-    $nueva=$_GET['idtema'];
-    $idtema=$resultado1[intval($_GET['idtema'])-1]['idTema'];
-    // echo $idtema;
-    
-
-
-
-    $pdo2 = Database::connect(); 
-    $sql2 = "SELECT * FROM tema WHERE idTema='$idtema'";
-    $q2 = $pdo2->prepare($sql2);
-    $q2->execute(array());
-    $dato2 = $q2->fetch(PDO::FETCH_ASSOC);
-    Database::disconnect();
-
-    $idModu12= $dato2['id_modulo'];
-
-    $pdo6 = Database::connect(); 
-    $sql6 = "SELECT * FROM cursos WHERE idCurso='$id'";
-    $q6 = $pdo6->prepare($sql6);
-    $q6->execute(array());
-    $dato6 = $q6->fetch(PDO::FETCH_ASSOC);
-    Database::disconnect();
-
-    $pdo13=Database::connect();
-    $sql13="SELECT * FROM modulo WHERE idModulo='$idModu12'";
-    $q13=$pdo13->prepare($sql13);
-    $q13->execute(array());
-    $dato13=$q13->fetch(PDO::FETCH_ASSOC);
-?>
-
-<!-- **************************************************************************************************** -->
-<!-- >>>>>>>>>>>>>>>>>>>>> <<<<<<<<<<<<<<<<<<< -->
-<div class="container" style="margin-top: 160px; margin-bottom: -25px;">
-    <div class="row">
-        <div class="col-md-1"></div>
-        <div class="col-md-10">
-            <div class="infoMin">
-                <a href="curso.php?<?php echo 'id='.$id.'&idCI='.$idCI;?>"><?php echo $dato6['nombreCurso'];?></a> <label> > </label> <a
-                    href=""><?php echo $dato13['nombreModulo'];?> </a><label> >
-                </label><a href=""><?php echo $dato2['nombreTema'];?></a>
-            </div>
-        </div>
-        <div class="col-md-1"></div>
-    </div>
-</div>
-<!-- >>>>>>>>>>>>>>>>>>>>> <<<<<<<<<<<<<<<<<<< -->
-<!-- **************************************************************************************************** -->
-<br>
-
-<!-- **************************************************************************************************** -->
-<!-- ANTERIOR - SIGUIENTE -->
-<div>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-1"></div>
-            <div class="col-md-10">
-                <?php $d=$dato['idModulo'];
-                $pd8 = Database::connect();
-                $im=$_GET['id_modulo'];
-                $sq="SELECT * FROM cuestionario where id_modulo=$im";
-                $qy = $pd8->prepare($sq);
-                $qy->execute();
-                $dato8 = $qy->fetch(PDO::FETCH_ASSOC);
+                $link = getYoutubeEmbedUrl($dato2['link_video']);
                 ?>
-                <br>
-                <div class="opciones">
-                    <!-- Aquí están los botones "Anterior" y "Siguiente" -->
-                    <button style="background: #7C83FD; color: white; border-radius: 10px;" type="button" class="btn-outline-secondary" id="btnV"<?php if($nueva<=1){ echo "disabled";}?> onclick="parent.location='video.php?id=<?php echo $id; ?>&idtema=<?php echo ($nueva-1); ?>&id_modulo=<?php echo $dato['idModulo']?>&nW=<?php echo $nW?>&idCI=<?php echo $idCI?>'"> 
-                        <strong>
-                            <?php if(count($resultado1)<=0){echo "No existo";}?><img style="height: 20px;" src="./assets/images/flecha_anterior.png"> 
-                        </strong><span class="before">Anterior</span> 
-                    </button>
-    
-                    <button style="border: solid 2px #7C83FD; border-radius: 10px;" id="btnV2" type="button" class="btn btn-outline-secondary"> 
-                        <img src="././assets/images/video_icono_32.png">
-                    </button>
-    
-                    <!-- Botón Siguiente -->
-                    <button style="background: #7C83FD; color: white; border-radius: 10px;" type="button" class="botonSiguiente btn-outline-secondary" id="btnV" <?php if($nueva>=count($resultado1)){?>onclick="parent.location='cuestionario.php?id=<?php echo $id;?>&nW=<?php echo $nW;?>&idModulo=<?php echo $_GET['id_modulo'];?>&up=0&idcues=<?php echo $dato8['idCuestionario'];?>&idCI=<?php echo $idCI?>&cuen=1&nro=0'">
-                    <span class="next">Siguiente</span><strong><img style="height: 20px;" src="./assets/images/flecha_siguiente.png"> </strong>
-                    </button> 
-
-                </div>
-                <style>
-                    
-                </style>
-
-
-
-
-
-
-
-                <?php }else{ ?>
-                    
-                    onclick="parent.location='video.php?id=<?php echo $id; ?>&nW=<?php echo $_GET['nW']?>&idtema=<?php echo ($nueva+1); ?>&id_modulo=<?php echo $_GET['id_modulo']?>&idCI=<?php echo $idCI?>'">Siguiente<strong> > </strong></button>
-                    
-                    <?php }
-                    $si=$dato8['idCuestionario'];
-                    $_SESSION['idcue']=$si;
-                    //ponlo ente id y idtema  &validar=1&c_modulo=<?php echo $cont_modulo;?><!-- &c_tema=<?php //echo ($cont_tema+1);?> -->                  
-                    
+                <iframe width="100%" height="100%" src="<?php echo $link; ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                </iframe>
             </div>
-            <div class="col-md-1"></div>
         </div>
-    </div>
-</div>
-<!-- ANTERIOR - SIGUIENTE -->
-<!-- **************************************************************************************************** -->
 
-<!-- **************************************************************************************************** -->
-<!-- VIDEO -->
-<div class="containervid">
+        <br>
 
-    <div style="border: solid 4px #7C83FD; border-radius: 0 !important;" id="videoTema" class="contvid">
-    
-        <?php 
-              $url=$dato2['link_video'];
-              function getYoutubeEmbedUrl($url){
 
-                $urlParts   = explode('/', $url);
-                $vidid      = explode( '&', str_replace('watch?v=', '', end($urlParts) ) );
-            
-                return 'https://www.youtube.com/embed/' . $vidid[0] ;
-            }
-              $link = getYoutubeEmbedUrl($dato2['link_video']);
-              
-              ?>
-        <iframe width="100%" height="100%" src="<?php echo $link;?>" title="YouTube video player" frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen>
-        </iframe>
-    </div>
-</div>
-<!-- VIDEO -->
-<!-- **************************************************************************************************** -->
+
+    <?php
+    } else {
+
+    ?>
 
 
 
 
+        <?php
+
+
+        $id = $_GET['id'];
+        $pdo = Database::connect();
+        $sql = "SELECT * FROM modulo WHERE id_curso='$id'";
+        $q = $pdo->prepare($sql);
+        $q->execute(array());
+        $dato = $q->fetch(PDO::FETCH_ASSOC);
+        Database::disconnect();
+        $d = $dato['idModulo'];
+        $pdod = Database::connect();
+
+        $sqli = "SELECT c.idModulo,p.idTema,l.idCurso FROM tema p INNER JOIN modulo c ON c.idModulo=p.id_modulo INNER JOIN cursos l ON idCurso= c.id_curso WHERE c.idModulo='$_GET[id_modulo]' AND l.idCurso='$id'";
+        $qs = $pdod->prepare($sqli);
+        $qs->execute(array());
+        // echo "<br>";
+        $resultado1 = $qs->fetchAll();
+        // echo $resultado1[1]['idTema'];
+        // $idtema=$_GET['idtema'];
+        $nueva = $_GET['idtema'];
+        $idtema = $resultado1[intval($_GET['idtema']) - 1]['idTema'];
+        // echo $idtema;
+
+
+
+
+        $pdo2 = Database::connect();
+        $sql2 = "SELECT * FROM tema WHERE idTema='$idtema'";
+        $q2 = $pdo2->prepare($sql2);
+        $q2->execute(array());
+        $dato2 = $q2->fetch(PDO::FETCH_ASSOC);
+        Database::disconnect();
+
+        $idModu12 = $dato2['id_modulo'];
+
+        $pdo6 = Database::connect();
+        $sql6 = "SELECT * FROM cursos WHERE idCurso='$id'";
+        $q6 = $pdo6->prepare($sql6);
+        $q6->execute(array());
+        $dato6 = $q6->fetch(PDO::FETCH_ASSOC);
+        Database::disconnect();
+
+        $pdo13 = Database::connect();
+        $sql13 = "SELECT * FROM modulo WHERE idModulo='$idModu12'";
+        $q13 = $pdo13->prepare($sql13);
+        $q13->execute(array());
+        $dato13 = $q13->fetch(PDO::FETCH_ASSOC);
+        ?>
+
+        <!-- **************************************************************************************************** -->
+        <!-- >>>>>>>>>>>>>>>>>>>>> <<<<<<<<<<<<<<<<<<< -->
+        <div class="container" style="margin-top: 160px; margin-bottom: -25px;">
+            <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-md-10">
+                    <div class="infoMin">
+                        <a href="curso.php?<?php echo 'id=' . $id . '&idCI=' . $idCI; ?>"><?php echo $dato6['nombreCurso']; ?></a> <label> > </label> <a href=""><?php echo $dato13['nombreModulo']; ?> </a><label> >
+                        </label><a href=""><?php echo $dato2['nombreTema']; ?></a>
+                    </div>
+                </div>
+                <div class="col-md-1"></div>
+            </div>
+        </div>
+        <!-- >>>>>>>>>>>>>>>>>>>>> <<<<<<<<<<<<<<<<<<< -->
+        <!-- **************************************************************************************************** -->
+        <br>
+
+        <!-- **************************************************************************************************** -->
+        <!-- ANTERIOR - SIGUIENTE -->
+        <div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-10">
+                        <?php $d = $dato['idModulo'];
+                        $pd8 = Database::connect();
+                        $im = $_GET['id_modulo'];
+                        $sq = "SELECT * FROM cuestionario where id_modulo=$im";
+                        $qy = $pd8->prepare($sq);
+                        $qy->execute();
+                        $dato8 = $qy->fetch(PDO::FETCH_ASSOC);
+                        ?>
+                        <br>
+                        <div class="opciones">
+                            <!-- Aquí están los botones "Anterior" y "Siguiente" -->
+                            <button style="background: #7C83FD; color: white; border-radius: 10px;" type="button" class="btn-outline-secondary" id="btnV">
+
+                                <strong>
+                                    <img style="height: 20px;" src="./assets/images/flecha_anterior.png">
+                                </strong><a class="anterior" href="javascript:history.back()">Anterior</a>
+                            </button>
+
+                            <button style="border: solid 2px #7C83FD; border-radius: 10px;" id="btnV2" type="button" class="btn btn-outline-secondary">
+                                <img src="././assets/images/video_icono_32.png">
+                            </button>
+
+                            <!-- Botón Siguiente -->
+                            <button style="background: #7C83FD; color: white; border-radius: 10px;" type="button" class="botonSiguiente btn-outline-secondary" id="btnV" <?php if ($nueva >= count($resultado1)) { ?>onclick="parent.location='cuestionario.php?id=<?php echo $id; ?>&nW=<?php echo $nW; ?>&idModulo=<?php echo $_GET['id_modulo']; ?>&up=0&idcues=<?php echo $dato8['idCuestionario']; ?>&idCI=<?php echo $idCI ?>&cuen=1&nro=0'">
+                                <span class="next">Siguiente</span><strong><img style="height: 20px;" src="./assets/images/flecha_siguiente.png"> </strong>
+                            </button>
+
+                        </div>
+                        <style>
+
+                        </style>
+
+
+
+
+
+
+
+                    <?php } else { ?>
+
+                        onclick="parent.location='video.php?id=<?php echo $id; ?>&nW=<?php echo $_GET['nW'] ?>&idtema=<?php echo ($nueva + 1); ?>&id_modulo=<?php echo $_GET['id_modulo'] ?>&idCI=<?php echo $idCI ?>'">Siguiente<strong> > </strong></button>
+
+                    <?php }
+                                                                                                                                                                            $si = $dato8['idCuestionario'];
+                                                                                                                                                                            $_SESSION['idcue'] = $si;
+                                                                                                                                                                            //ponlo ente id y idtema  &validar=1&c_modulo=<?php echo $cont_modulo;
+                    ?>
+                    <!-- &c_tema=<?php //echo ($cont_tema+1);
+                                    ?> -->
+
+                    </div>
+                    <div class="col-md-1"></div>
+                </div>
+            </div>
+        </div>
+        <!-- ANTERIOR - SIGUIENTE -->
+        <!-- **************************************************************************************************** -->
+
+        <!-- **************************************************************************************************** -->
+        <!-- VIDEO -->
+        <div class="containervid">
+
+            <div style="border: solid 4px #7C83FD; border-radius: 0 !important;" id="videoTema" class="contvid">
+
+                <?php
+                $url = $dato2['link_video'];
+                function getYoutubeEmbedUrl($url)
+                {
+
+                    $urlParts   = explode('/', $url);
+                    $vidid      = explode('&', str_replace('watch?v=', '', end($urlParts)));
+
+                    return 'https://www.youtube.com/embed/' . $vidid[0];
+                }
+                $link = getYoutubeEmbedUrl($dato2['link_video']);
+
+                ?>
+                <iframe width="100%" height="100%" src="<?php echo $link; ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+        <!-- VIDEO -->
+        <!-- **************************************************************************************************** -->
 
 
 
@@ -381,11 +387,14 @@
 
 
 
-<br>
-<?php }?>
+
+
+
+
+        <br>
+    <?php } ?>
 <?php
-    }
-    else{
-                header('Location:iniciosesion.php');
-    }
+} else {
+    header('Location:iniciosesion.php');
+}
 ?>
