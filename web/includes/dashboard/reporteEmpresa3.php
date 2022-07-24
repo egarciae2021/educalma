@@ -110,6 +110,13 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
             }
             }
 
+            @media (max-width: 500px) {
+            .card-header{
+              display: flex;
+              justify-content: center;
+            }
+            }
+
         </style>
 
   
@@ -165,7 +172,7 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                     <div class="card-header">
                         <div class="row mb-2">
                             <div class="col-12">
-                                <h3 class="card-title" style="color:#737BF1;">Cantidad de Usuarios
+                                <h3 class="card-title" style="color: #fff;align-items: center;width: 14em;">Cantidad de Usuarios
                                     <!--<span style="color:#BEC1F3;">(<?php echo $resultUsu['cantidad']; ?>)</span>-->
                                 </h3>
                             </div>
@@ -176,7 +183,7 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                         <div class="table-responsive">
                             <table id="tableUsuarios" class="table table-borderless dt-responsive text-left" cellspacing="0" width="100%">
                                 <thead>
-                                    <tr style="background-color:#737BF1;">
+                                    <tr style="background: rgb(124,131,253);background: linear-gradient(50deg, rgba(124,131,253,1) 0%, rgb(224 199 229) 100%);">
                                         <th style="border-radius: 10px 0 0 10px;">Nombres</th>
                                         <th scope="col">Cursos</th>
                                         <th>Progreso</th>
@@ -185,16 +192,17 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                  <?php             
+                                  <!-- linea 199 me sale mensaje de error fecha no definida -->
+                                  <?php                                               
                                     $pdo4 = Database::connect();
-                                    $sql4 = "SELECT * FROM `aprobados`";
-                                    foreach($pdo->query($sql4) as $aprobados){ //= $q4->fetch(PDO::FETCH_ASSOC)
+                                    $sql4 = "SELECT * FROM `aprobados`";                                    
+                                    foreach($pdo->query($sql4) as $aprobados){ //= $q4->fetch(PDO::FETCH_ASSOC)                                      
                                       echo '<tr class="h-100 justify-content-center align-items-center">';
                                       echo '
                                           <td>'. $aprobados['nombres'].'</td>
                                           <td>'. $aprobados['nombreCurso'].'</td> 
                                           <td>'. $aprobados['avance'].'</td> 
-                                          <td>'. $aprobados['nota'].'</td>
+                                          <td>'. $aprobados['nota'].'</td>                                          
                                           <td>'. $aprobados['fecha'].'</td>
                                       ';
                                           }

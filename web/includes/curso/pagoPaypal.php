@@ -6,7 +6,7 @@ require  'vendor/autoload.php';
 $id = $_GET['id']; 
 
 // Agrega credenciales
-MercadoPago\SDK::setAccessToken('APP_USR-361254289137109-071003-69685b1c8975d58c29da92becb412463-1157895713');
+MercadoPago\SDK::setAccessToken('APP_USR-1923618636570539-071014-5632864634d560a172adbfd37f3d8c8e-1157900136');
  
 // Crea un objeto de preferencia
 $preference = new MercadoPago\Preference();
@@ -42,6 +42,13 @@ $preference = new MercadoPago\Preference();
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="assets/js/plugins/sweetalert2.all.min.js"></script>
     <!-- <script src="assets/js/card-validator.js"></script> -->
+
+
+            
+
+        <div class="checkout-btn "> </div>
+        <a href="<?php echo $preference->init_point; ?>">Pay with Mercado Pago</a>
+
 
     <?php
         ob_start();
@@ -83,6 +90,7 @@ $preference = new MercadoPago\Preference();
             $preference->auto_return = "approved"; 
              
             $preference-> statement_descripton = array("Educalma - " + $dato['nombreCurso'] );
+            // $preference-> notification_url="https://test-apicalma.site/Infpay.php";    
             $preference->save();
             
             $response = array(
@@ -505,10 +513,13 @@ $preference = new MercadoPago\Preference();
   </div>
 </div>
  
-
 <script src="assets/js/modalPagarVisa.js"></script>
 <script src="assets/js/formPagarVisa.js"></script>
  
+
+
+
+
 </body>
 
 </html>

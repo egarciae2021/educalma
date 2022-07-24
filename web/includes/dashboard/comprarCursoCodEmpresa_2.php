@@ -9,6 +9,7 @@
         width: 360px;
         padding: 8% 0 0;
         margin: auto;
+        margin-top: 5em;
         }
         .form {
         position: relative;
@@ -107,6 +108,7 @@
                 width: 300px;
                 padding: 8% 0 0;
                 margin: auto;
+                margin-top: 5em;
             }
         }
     </style>

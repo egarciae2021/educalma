@@ -21,7 +21,7 @@ require_once 'database/databaseConection.php';
 
 
         <!--Inicio de Nosotros, Cursos e Iniciar Sesión y Regístrate o Nombre (tipo de usuario)-->
-        <div style="margin: 20px;" class="nav-btn-header">
+        <div style="margin: 20px;margin-left: -3em;" class="nav-btn-header">
 
 
 
@@ -213,7 +213,7 @@ require_once 'database/databaseConection.php';
             ?>
 
             <!-- LOGUEADO - Nombre (Tipo de Usuario) -->
-            <div class="log-sign" style="--i: 1.8s;">
+            <div class="log-sign" style="--i: 1.8s; margin-left: -12em;margin-right: -10em;">
                     <ul>
                         <li class="nav-link" style="--i: .85s">
                             
@@ -233,7 +233,7 @@ require_once 'database/databaseConection.php';
                                     <li class="dropdown-link">
                                         <a style="color: white; border-top: 1px solid white;" href="includes/login/logout.php">Cerrar Sesión</a>
                                     </li>
-                              
+                                    <div class="arrow"></div>
                                 </ul>
                             </div>
                         </li>
@@ -261,7 +261,7 @@ require_once 'database/databaseConection.php';
             ?>
 
             <!-- LOGUEADO - Nombre (Tipo de Usuario) -->
-            <div class="log-sign" style="--i: 1.8s">
+            <div class="log-sign" style="--i: 1.8s; margin-left: -12em;margin-right: -10em;">
                     <ul>
                         <li class="nav-link" style="--i: .85s">
                             <a style="color: white;" href="#"><?php echo $nom ?>&nbsp;(Profesor)<i class="fas fa-caret-down"></i></a>
@@ -278,7 +278,7 @@ require_once 'database/databaseConection.php';
                                     <li class="dropdown-link">
                                         <a style="color: white; border-top: 1px solid white;" href="includes/login/logout.php">Cerrar Sesión</a>
                                     </li>
-                                  
+                                    <div class="arrow"></div>
                                 </ul>
                             </div>
                         </li>
@@ -305,7 +305,7 @@ require_once 'database/databaseConection.php';
             ?>
 
             <!-- LOGUEADO - Nombre (Tipo de Usuario) -->
-            <div class="log-sign" style="--i: 1.8s">
+            <div class="log-sign" style="--i: 1.8s; margin-left: -12em;margin-right: -10em;">
                     <ul>
                         <li class="nav-link" style="--i: .85s">
                            
@@ -325,7 +325,7 @@ require_once 'database/databaseConection.php';
                                     <li class="dropdown-link">
                                         <a style="color: white; border-top: 1px solid white;" href="includes/login/logout.php">Cerrar Sesión</a>
                                     </li>
-                            
+                                    <div class="arrow"></div>
                                 </ul>
                             </div>
 
@@ -353,7 +353,7 @@ require_once 'database/databaseConection.php';
             ?>
 
             <!-- LOGUEADO - Nombre (Tipo de Usuario) -->
-            <div class="log-sign" style="--i: 1.8s">
+            <div class="log-sign" style="--i: 1.8s; margin-left: -12em;margin-right: -10em;">
                     <ul>
                         <li class="nav-link" style="--i: .85s">
                             <a style="color: white;" href="#"><?php echo $nom ?>&nbsp;(Empresa)<i class="fas fa-caret-down"></i></a>
@@ -370,7 +370,7 @@ require_once 'database/databaseConection.php';
                                     <li class="dropdown-link">
                                         <a style="color: white; border-top: 1px solid white;" href="includes/login/logout.php">Cerrar Sesión</a>
                                     </li>
-                                
+                                    <div class="arrow"></div>
                                 </ul>
                             </div>
                         </li>
@@ -397,11 +397,11 @@ require_once 'database/databaseConection.php';
             ?>
 
             <!-- LOGUEADO - Nombre (Tipo de Usuario) -->
-            <div class="log-sign" style="--i: 1.8s">
+            <div class="log-sign" style="--i: 1.8s; margin-left: -12em;margin-right: -10em;">
                     <ul>
                         <li class="nav-link" style="--i: .85s">
                             <a style="color: white;" href="#"><?php echo $nom ?>&nbsp;(Usuario - Empresa)<i class="fas fa-caret-down"></i></a>
-                            <div class="dropdown">
+                            <div class="dropdown" style="left: 9em;">
                                 <ul>
                                     <li class="dropdown-link">
                                         <a style="color: white;" href="user-sidebar.php">Dashboard</a>
@@ -414,7 +414,7 @@ require_once 'database/databaseConection.php';
                                     <li class="dropdown-link">
                                         <a style="color: white; border-top: 1px solid white;" href="includes/login/logout.php">Cerrar Sesión</a>
                                     </li>
-                                  
+                                    <div class="arrow"></div>
                                 </ul>
                             </div>
                         </li>
@@ -441,11 +441,11 @@ require_once 'database/databaseConection.php';
             ?>
 
             <!-- LOGUEADO - Nombre (Tipo de Usuario) -->
-            <div style="margin: auto;" class="log-sign" style="--i: 1.8s">
+            <div style="margin: auto; margin-left: -12em;margin-right: -10em;" class="log-sign" style="--i: 1.8s;">
                     <ul>
                         <li class="nav-link" style="--i: .85s">
                             <a style="color: white;" href="#"><?php echo $nom ?>&nbsp;(Super Administrador)<i class="fas fa-caret-down"></i></a>
-                            <div class="dropdown">
+                            <div class="dropdown" style="left: 13em;">
                                 <ul>
                                     <li class="dropdown-link">
                                         <a style="color: white;" href="user-sidebar.php">Dashboard</a>
@@ -458,7 +458,7 @@ require_once 'database/databaseConection.php';
                                     <li class="dropdown-link">
                                         <a style="color: white; border-top: 1px solid white;" href="includes/login/logout.php">Cerrar Sesión</a>
                                     </li>
-                              
+                                    <div class="arrow"></div>
                                 </ul>
                             </div>
                         </li>

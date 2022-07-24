@@ -81,7 +81,7 @@
                 }
 
                 $inicio = ($_GET['pag'] - 1) * $cantidad_paginas;
-                $sql3 = "SELECT * FROM cursos where permisoCurso=1 AND estado=1 order by idCurso desc LIMIT 3";
+                $sql3 = "SELECT * FROM cursos where permisoCurso=1 AND estado=1 order by idCurso desc LIMIT 4";
                 // SELECT * FROM `cursos`order by idCurso DESC LIMIT 3 
 
                 $query3 = $pdo->prepare($sql3);
@@ -115,7 +115,7 @@
             <!--<input type="checkbox" id="activarModal" data-toggle="modal" data-target=".bd-example-modal-lg<?php echo $dato['idCurso'];?>">-->
 
                 <!--Contenedor del curso publicado más destacado-->
-                <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3">
+                <div class="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
                     <div style="border-radius: 30px; overflow: hidden; border: 1px solid #7C83FD;" class="card">
 
                         <!--Contenedor de la imagen-->
@@ -828,11 +828,11 @@
                         Anterior
                     </a>
                 </li>
-                <?php for ($i = 0; $i < $page; $i++) : ?>
-                    <li class="page-item <?php echo $_GET['pag'] == $i + 1 ? 'activate' : '' ?>"><a class="page-link" href="ListaCursos.php?pag=<?php echo $i + 1; ?>&idcate=<?php echo $_GET['idcate']; ?>"><?php echo $i + 1; ?></a></li>
+                <?php for ($i = 1; $i < $page; $i++) : ?>
+                    <li class="page-item <?php echo $_GET['pag'] == $i ? 'activate' : '' ?>"><a class="page-link" href="ListaCursos.php?pag=<?php echo $i; ?>&idcate=<?php echo $_GET['idcate']; ?>"><?php echo $i; ?></a></li>
                 <?php endfor ?>
-                <li class="page-item <?php if ($_GET['pag'] >= $page) echo 'disabled' ?>">
-                    <a class="page-link" href="ListaCursos.php?pag=<?php echo $_GET['pag'] + 1; ?>&idcate=<?php echo $_GET['idcate']; ?>">Siguiente</a>
+                <li class="page-item <?php if ($_GET['pag'] >= $page-1) echo 'disabled' ?>">
+		<a class="page-link" href="ListaCursos.php?pag=<?php echo $_GET['pag'] + 1; ?>&idcate=<?php echo $_GET['idcate']; ?>">Siguiente</a>
                 </li>
             </ul>
         </nav>

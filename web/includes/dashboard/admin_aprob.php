@@ -130,7 +130,7 @@
                         <div class="table-responsive">
                             <table id="tableUsuarios" class="table table-borderless dt-responsive text-left" cellspacing="0" width="100%">
                                 <thead>
-                                    <tr style="background-color:#737BF1;">
+                                    <tr style="background: rgb(124,131,253);background: linear-gradient(50deg, rgba(124,131,253,1) 0%, rgb(224 199 229) 100%);">
                                         <th style="border-radius: 10px 0 0 10px;">
                                             Tipo
                                         </th>
