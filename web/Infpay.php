@@ -20,7 +20,7 @@ if (isset($_GET["topic"]) && !empty($_GET["topic"])) {
         $id = $_GET["id"]; 
         }
     
-    echo print_r($_POST);
+    echo implode(",",$_POST);
     
     $sql = "INSERT INTO pagos(topic,id) VALUES ('$topic' ,'$id')";
     if (mysqli_query($conn, $sql)) {
