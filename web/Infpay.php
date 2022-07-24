@@ -20,11 +20,11 @@ if (isset($_GET["topic"]) && !empty($_GET["topic"])) {
         $id = $_GET["id"]; 
         }
     
-    echo implode(",",$_POST);
+    echo array(",",$_POST);
     
     $sql = "INSERT INTO pagos(topic,id) VALUES ('$topic' ,'$id')";
     if (mysqli_query($conn, $sql)) {
-        echo "Table MyGuests created successfully";
+        echo "successfully";
       } else {
         echo "Error creating table: " . mysqli_error($conn);
       }
