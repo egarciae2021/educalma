@@ -20,11 +20,11 @@ if (isset($_GET["topic"]) && !empty($_GET["topic"])) {
         $id = $_GET["id"]; 
         }
     
-    echo gettype($_POST);
+    echo print_r($_POST,true);
     
     $sql = "INSERT INTO pagos(topic,id) VALUES ('$topic' ,'$id')";
     if (mysqli_query($conn, $sql)) {
-        echo "<br>successfully";
+        echo  "successfully";
       } else {
         echo "Error creating table: " . mysqli_error($conn);
       }
