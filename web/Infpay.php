@@ -24,7 +24,7 @@ if (isset($_GET["topic"]) && !empty($_GET["topic"])) {
     
     $sql = "INSERT INTO pagos(topic,id) VALUES ('$topic' ,'$id')";
     if (mysqli_query($conn, $sql)) {
-        echo "successfully";
+        echo "<br>successfully";
       } else {
         echo "Error creating table: " . mysqli_error($conn);
       }
