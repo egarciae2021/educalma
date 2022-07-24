@@ -2,7 +2,6 @@
 
 <style>
 
-<<<<<<< HEAD
   .footer--light {
     background-image: url("assets/images/fondo2-min.png");
     background-repeat: no-repeat;
@@ -30,21 +29,6 @@
       -moz-transition-timing-function: ease-out;
       -moz-transition-duration: 250ms;
   }
-=======
-<body>
-  <footer class=" footer--light " style="background-image: url('assets/images/fondo2-min.png') !important;">
-
-    <div class="widget-about " >
-      <!--imagen de educalma empresas-->
-      <img src="assets/images/educalma_logo_blanco.png" alt="" class="img-fluid" style="">
-    </div>
-    <br>
-
-    <div class="contenido">
-      <div class="enviar_inicio">
-          <a href="#"><i class="fa fa-angle-double-up enviar_inicio fa-5x" style="color: #e0c7e5;" aria-hidden="true" src="./assets/images/enviar_inicio.png" ></i></a>
-      </div>
->>>>>>> 047f084da6519ac6626d21c14e81d35346639be5
 
   .footer-menu li:hover{
 
@@ -56,7 +40,6 @@
       -moz-transition-duration: 250ms;
   }
 
-<<<<<<< HEAD
 </style>
 
 <footer class="footer--light pt-4">
@@ -69,72 +52,6 @@
             <div class="widget-about">
               <!--imagen de educalma empresas-->
               <img src="assets/images/educalma_logo_blanco.png" alt="" class="img-fluid" style="padding: 15px;">
-=======
-      <div class="tercero">
-        <p class="title">Servicios</p>
-        <div class="footer-menu ">
-          <!-- <h4 class="footer-widget-title">Blog</h4> -->
-          <ul>
-            <li>
-              <a href="https://fundacioncalma.org/">Blog</a>
-            </li>
-            <li>
-              <a href="certi.php">Validación de Certificado</a>
-            </li>
-            <li>
-              <!-- <a href="recursos1.php">Presentaci&oacute;n</a> -->
-              <a href="recursos1.php">Comparte tu curso</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <br>
-    <br>
-    <div class="col-md-8 col-sm-6 col-12 copy">
-      <p class="copyright-text">Copyright © 2021 All Rights Reserved by EduCalma</p>
-    </div>
-    <br>
-    <!-- </div>
-    <footer class="footer--light pt-4">
-        <div class="footer-big">
-          <div class="container">
-            <div class="row">
-              <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
-                <div class="footer-widget">
-                  
-                </div>
-              </div>
-              <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
-                <div class="footer-widget">
-                  <div class="footer-menu">
-                    
-          <div class="footer-big">
-            <div class="container">
-              <div class="row">
-                <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
-                  <div class="footer-widget">
-                    <div class="widget-about">
-                      
-                    
-                    
-                      
-                    
-                    
-                    
-                    </div>
-                  </div>
-                </div>
-                <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
-                  
-                </div>
-                <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
-                  <div class="footer-widget">
-                    
-                  </div>
-                </div>
-              </div>
->>>>>>> 047f084da6519ac6626d21c14e81d35346639be5
             </div>
           </div>
         </div>
