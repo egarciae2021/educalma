@@ -52,7 +52,7 @@
 
         <!--misión-->
         <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 d-flex justify-content-center mb-3">
-          <div class="card h-100" style="padding: 2rem 1rem; max-width: 300px;background: #e7f4ff:">
+          <div class="card h-100" style="padding: 2rem 1rem; max-width: 300px;background-color: #e7f4ff !important;">
             <div class="card-title text-center mb-3" style="font-size:33px;">
               <p class="text-uppercase">misión</p>
             </div>
@@ -71,7 +71,7 @@
 
         <!--visión-->
         <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 d-flex justify-content-center mb-3">
-          <div class="card h-100" style="padding: 2rem 1rem; max-width: 300px;">
+          <div class="card h-100" style="padding: 2rem 1rem; max-width: 300px; background-color: #e7f4ff !important;">
             <div class="card-title text-center mb-3" style="font-size:33px;">
               <p class="text-uppercase">visión</p>
             </div>
@@ -91,7 +91,7 @@
 
         <!--valores-->
         <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 d-flex justify-content-center mb-3">
-            <div class="card h-100" style="padding: 2rem 1rem; max-width: 300px;">
+            <div class="card h-100" style="padding: 2rem 1rem; min-width: 300px;max-width: 300px;background-color: #e7f4ff !important;">
                 <div class="card-title text-center mb-3" style="font-size:33px;">
                     <p class="text-uppercase">valores</p>
                 </div>
