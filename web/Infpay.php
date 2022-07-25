@@ -20,11 +20,10 @@ if (isset($_GET["topic"]) && !empty($_GET["topic"])) {
         $id = $_GET["id"]; 
         }
     
-    $recibe = json_encode($_POST);
-
-    echo print_r($recibe,true);
+    $recibe = json_encode($_POST); 
+    echo $recibe;
     
-    $sql = "INSERT INTO pagos(topic,id) VALUES ('$topic' ,'$id')";
+    $sql = "INSERT INTO pagos(topic,id,resultado) VALUES ('$topic' ,'$id','$recibe')";
     if (mysqli_query($conn, $sql)) {
         echo  "successfully";
       } else {
