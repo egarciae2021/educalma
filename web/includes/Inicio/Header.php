@@ -77,6 +77,11 @@ require_once 'database/databaseConection.php';
                             </a>
                     
                         </li>
+                        <li class="nav-link" style="--i: .6s">
+                
+                        <a href="empresas.php">EMPRESAS</a>
+                         </li>
+
 
                         <li class="nav-link" style="--i: .6s;">
                     
