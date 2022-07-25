@@ -144,7 +144,7 @@ header.btn.solid:hover {
   transform: scale(1.1);
 }
 
-.btnIni .solid{
+.btnIni .solid .logo-container{
   transition: 0.5s;
   -moz-transition: 0.5s; /* Firefox */
   -webkit-transition: 0.5s; /* Chrome - Safari */
@@ -152,7 +152,8 @@ header.btn.solid:hover {
 }
 
 .btnIni:hover,
-.solid:hover{
+.solid:hover,
+.logo-container:hover{
   transform : scale(1.1);
   -moz-transform : scale(1.1); /* Firefox */
   -webkit-transform : scale(1.1); /* Chrome - Safari */

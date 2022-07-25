@@ -13,7 +13,7 @@ require_once 'database/databaseConection.php';
 
 
         <!--Logo-->
-        <div class="logo-container nav-link">
+        <div class="logo-container">
             
             <a href="index.php"><img style="width: 200px;" src="assets/images/educalma_logo_blanco.png" alt=""></a>
         
@@ -112,7 +112,7 @@ require_once 'database/databaseConection.php';
                     <ul style="margin-left: 25px;">
                     
                         <!--Nosotros y Cursos-->
-                        <li class="nav-link" style="--i: .6s">
+                        <li class="nav-link" style="--i: .6s; text-decoration: none">
 
                             <a href="nosotros.php">Nosotros</a>
                         </li>
