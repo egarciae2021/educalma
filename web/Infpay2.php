@@ -13,12 +13,8 @@ if (!$conn) {
 }
 
  
-if (isset($_GET["topic"]) && !empty($_GET["topic"])) {
-    $topic = $_GET["topic"]; 
-
-    if (isset($_GET["id"]) && !empty($_GET["id"])) {
-        $id = $_GET["id"]; 
-        }
+ $topic="esto";
+ $id="es una prueba";
     
     $json = file_get_contents('php://input');
     $recibe = json_encode($json); 
@@ -32,9 +28,7 @@ if (isset($_GET["topic"]) && !empty($_GET["topic"])) {
       }
     mysqli_close($conn);   
      
-}
-
-
+ 
 
 
 

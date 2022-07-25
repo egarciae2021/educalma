@@ -13,7 +13,7 @@ require_once 'database/databaseConection.php';
 
 
         <!--Logo-->
-        <div class="logo-container">
+        <div class="logo-container nav-link">
             
             <a href="index.php"><img style="width: 200px;" src="assets/images/educalma_logo_blanco.png" alt=""></a>
         
@@ -123,14 +123,13 @@ require_once 'database/databaseConection.php';
                         </li>
 
                         <!-- NO LOGUEADO - Iniciar Sesión y Regístrate -->
-                        <div class="log-sign" style="--i: 1.4s;">
+                        <div class="log-sign">
 
                             <a href="iniciosesion.php" class="btn transparent btnIni">Iniciar Sesión</a>
                       
                             <a href="registroUsuario.php" class="btn solid">Regístrate!</a>
                             
                         </div>
-
                     </ul>
                 <?php
                     }
