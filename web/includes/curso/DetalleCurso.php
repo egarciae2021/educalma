@@ -653,16 +653,12 @@
                         <h1 style="font-weight: 400;color: #000;font-size: 20px;margin-bottom: 16px;">Deja un comentario sobre este curso. </h1>
                         <button id="btnComentar" style="width: 200px;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Comentar</button>
                         <br>
-                        <?php
-                            if ($_SESSION['privilegio'] == 1 || $_SESSION['privilegio'] == 2) {
-                            echo '
-                            <button class="btn btn-danger" onClick="AlertEliminaTodo(' . $idCurso . ')">
+                        <?php if ($_SESSION['privilegio'] == 1 || $_SESSION['privilegio'] == 2) { ?>
+                            <button class="btn btn-danger" onClick="AlertEliminaTodo(' . <?php echo $idCurso ?> . ')">
                                 Borrar todo
                                 <i class="fas fa-trash-alt"></i>
                             </button>
-                            ';
-                            }
-                        ?>
+                        <?php } ?>
                         <ul id="comments-list" class="comments-list">
                             <li>
                                 <?php
@@ -684,12 +680,18 @@
                                             <?php } ?>
                                         </div>
                                         <!-- Contenedor del Comentario -->
+                                        <div class="comment-arrow">
+                                            <i class="fas fa-caret-left"></i>
+                                        </div>
                                         <div class="comment-box">
                                             <div class="comment-head">
                                                 <h6 class="commen-name<?php echo $autor; ?>">
                                                     <span><?php echo $registro['nombreUser']; ?></span>
                                                 </h6>
                                                 <span>
+                                                    <div class="d-inline-flex align-middle">
+                                                        <i class="fa fa-circle"></i>
+                                                    </div>
                                                     <?php
                                                     $fecha1 = new DateTime($registro['fecha_ingreso']);
                                                     $fecha_actual = new DateTime("now");
@@ -716,18 +718,16 @@
                                                     } //si no pones el else hay bug
                                                     ?>
                                                 </span>
-                                                <button type="button" id="modal" class="btn btn-sm" data-toggle="modal" data-target="#respuesta<?php echo $registro['idcomentario'] ?>" data-id="<?php echo '5' ?>">Responder
+                                                <button type="button" id="modal" class="btn btn-sm py-0" data-toggle="modal" data-target="#respuesta<?php echo $registro['idcomentario'] ?>" data-id="<?php echo '5' ?>">Responder
                                                 </button>
-                                                <?php
-                                                    if ($_SESSION['privilegio'] == 1 || $_SESSION['iduser'] == $idProfe || $registro['iduser'] == $_SESSION['iduser']) {
-                                                        echo '
-                                                    <button style="background-color:red; color:white;" type="submit" class="btn btn-sm" onClick="AlertEliminacion(' . $registro['idcomentario'] . ')">
+
+                                                <?php if ($_SESSION['privilegio'] == 1 || $_SESSION['iduser'] == $idProfe || $registro['iduser'] == $_SESSION['iduser']) { ?>
+                                                    <button type="submit" class="btn btn-sm btn-danger py-0" onClick="AlertEliminacion(' . <?php echo $registro['idcomentario']?> . ')">
                                                         <i id="botonBorrarComentario" style="color:white;" class="fas fa-trash-alt"></i>
                                                         Borrar
                                                     </button>
-                                                ';
-                                                }
-                                                ?>
+                                                <?php } ?>
+
                                                 <a class="fb-xfbml-parse-ignore" target="_blank" href="http://www.facebook.com/sharer.php?s=100&p[url]=http://educalma.fundacioncalma.org/detallecurso.php?id=<?php echo $idCurso; ?>&p[title]=prueba&p[summary]=descripcion_contenido&display=page" onclick="window.open(this.href, this.target, 'width=300,height=400')">
                                                     <i style="color:white;" class="fa fa-reply"></i>
                                                 </a>
@@ -769,10 +769,16 @@
                                                     <?php } ?>
                                                 </div>
                                                 <!-- Contenedor del Comentario -->
+                                                <div class="comment-arrow">
+                                                    <i class="fas fa-caret-left"></i>
+                                                </div>
                                                 <div class="comment-box">
                                                     <div class="comment-head">
                                                         <h6 class="commen-name<?php echo $autor; ?>"><span><?php echo $registro2['user_men']; ?></span></h6>
                                                         <span>
+                                                            <div class="d-inline-flex align-middle">
+                                                                <i class="fa fa-circle"></i>
+                                                            </div>
                                                             <?php
                                                             $fecha1_2 = new DateTime($registro2['fecha_ingreso']);
                                                             $fecha_actual12 = new DateTime("now");
@@ -796,16 +802,12 @@
                                                             }
                                                             ?>
                                                         </span>
-                                                        <?php
-                                                            if ($_SESSION['privilegio'] == 1 || $_SESSION['iduser'] == $idProfe || $registro2['iduser'] == $_SESSION['iduser']) {
-                                                                echo '
-                                                                <button style="background-color:red; color:white;" type="submit" class="btn btn-sm" onClick="AlertElimiSubComen(' . $registro2['idsubcomentario'] . ')">
+                                                        <?php if ($_SESSION['privilegio'] == 1 || $_SESSION['iduser'] == $idProfe || $registro2['iduser'] == $_SESSION['iduser']) { ?>
+                                                                <button type="submit" class="btn btn-danger btn-sm py-0" onClick="AlertElimiSubComen(' . <?php echo $registro2['idsubcomentario']?> . ')">
                                                                     <i style="color:white;" class="fas fa-trash-alt"></i>
                                                                     Borrar
                                                                 </button>
-                                                            ';
-                                                            }
-                                                        ?>
+                                                        <?php } ?>
                                                         <i style="color:white;" class="fa fa-reply"></i>
                                                         <i style="color:white;" class="fa fa-heart"></i>
                                                     </div>

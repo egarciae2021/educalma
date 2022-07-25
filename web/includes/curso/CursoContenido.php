@@ -524,22 +524,16 @@
                      <!--botonEliminarTodo Le quite los estilos(style="position: relative; left: 10px; top: -10px" type="button"), hace que el boton 
                      se vea fuera del contenedor -->
                      <br>
-                     <?php
-                        if ($_SESSION['privilegio'] == 1 || $_SESSION['privilegio'] == 2) {
-                           echo '
-                              <button class="btn btn-danger" onClick="AlertEliminaTodo(' . $idCurso . ')">
-                                 Borrar todo
-                                 <i class="fas fa-trash-alt"></i>
-                              </button>
-                           ';
-                        }
-                     ?>
+                     <?php if ($_SESSION['privilegio'] == 1 || $_SESSION['privilegio'] == 2) { ?>
+                        <button class="btn btn-danger" onClick="AlertEliminaTodo(' . <?php echo $idCurso?> . ')">
+                           Borrar todo
+                           <i class="fas fa-trash-alt"></i>
+                        </button>
+                     <?php } ?>
                      <!-- BOTON ELIMINAR TODO -->
                      <!-- LISTA DE COMENTARIOS -->
                      <ul id="comments-list" class="comments-list">
-                        <!-- lilililili -->
                         <li>
-                           <!-- tttttttttt -->
                            <?php
                               $autor = "";
                               while ($registro =  $stm->fetch(PDO::FETCH_ASSOC)) {
@@ -549,212 +543,200 @@
                                     $autor = "";
                                  }
                            ?>
-                              <!-- tttttttttt -->
-                              <!-- COMENTARIOOOOOOOOOOOOOOOOOOOOOOOOOOOOO -->
-                              <div class="comment-main-level d-flex">
-                                 <!-- AVATAR -->
-                                 <div class="comment-avatar">
-                                    <?php if ($registro['mifoto'] != null) { ?>
-                                       <img src="<?php echo $registro['mifoto']; ?>" alt="foto_curso">
-                                    <?php } else { ?>
-                                       <img src="./assets/images/user.png" alt="foto_curso">
-                                    <?php } ?>
-                                 </div>
-                                 <!-- AVATAR -->
-                                 <!-- CONTENEDOR DEL COMENTARIO -->
-                                 <div class="comment-box">
-                                    <!-- HEAD -->
-                                    <div class="comment-head">
-                                       <!-- Nombre de Usuario del Comentario -->
-                                       <h6 class="commen-name<?php echo $autor; ?>">
-                                          <span><?php echo $registro['nombreUser']; ?></span>
-                                       </h6>
-                                       <!-- Nombre de Usuario del Comentario -->
-                                       <!-- yyyyyyyyyyyyyyyyyyy -->
-                                       <span>
-                                          <?php
-                                          $fecha1 = new DateTime($registro['fecha_ingreso']);
-                                          $fecha_actual = new DateTime("now");
-                                          $fecha_correcta = $fecha1->add(new DateInterval('PT6H'));
-                                          //se agrega 6 horas porq restar al contrario agrega, no se porque.
-                                          //sucede el error q al crear un nuevo post aparece como si fuese 
-                                          //de hace 6 horas, incluso al probar como aparece en segundos(unix epoch)
-                                          $intervalo = $fecha_correcta->diff($fecha_actual);
-
-                                          if ($intervalo->y > 0) {
-                                             echo 'hace ' . $intervalo->y . ' año' . ($intervalo->y > 1 ? 's' : '');
-                                          } else if ($intervalo->m > 0) {
-                                             echo 'hace ' . $intervalo->m . ' mes' . ($intervalo->m > 1 ? 'es' : '');
-                                          } else if ($intervalo->days > 0) {
-                                             echo 'hace ' . $intervalo->d . ' dia' . ($intervalo->d > 1 ? 's' : '');
-                                          } else if ($intervalo->h >= 1) {
-                                             echo 'hace ' . $intervalo->h . ' hora' . ($intervalo->h > 1 ? 's' : '');
-                                          } else if ($intervalo->i > 0) {
-                                             echo 'hace ' . $intervalo->i . ' minuto' . ($intervalo->i > 1 ? 's' : '');
-                                          } else if ($intervalo->i = 0) {
-                                             echo 'justo ahora';
-                                          } else {
-                                             echo 'justo ahora';
-                                          } //si no pones el else hay bug
-                                          ?>
-                                       </span>
-                                       <!-- yyyyyyyyyyyyyyyyyyy -->
-                                       <button type="button" id="modal" class="btn btn-sm" data-toggle="modal" data-target="#respuesta<?php echo $registro['idcomentario'] ?>" data-id="<?php echo '5' ?>">Responder
-                                       </button>
-                                       <!-- Botón Borrar Comentario -->
+                           <div class="comment-main-level d-flex">
+                              <!-- AVATAR -->
+                              <div class="comment-avatar">
+                                 <?php if ($registro['mifoto'] != null) { ?>
+                                    <img src="<?php echo $registro['mifoto']; ?>" alt="foto_curso">
+                                 <?php } else { ?>
+                                    <img src="./assets/images/user.png" alt="foto_curso">
+                                 <?php } ?>
+                              </div>
+                              <!-- AVATAR -->
+                              <!-- CONTENEDOR DEL COMENTARIO -->
+                              <div class="comment-arrow">
+                                 <i class="fas fa-caret-left"></i>
+                              </div>
+                              <div class="comment-box">
+                                 <!-- HEAD -->
+                                 <div class="comment-head">
+                                    <!-- Nombre de Usuario del Comentario -->
+                                    <h6 class="commen-name<?php echo $autor; ?>">
+                                       <span><?php echo $registro['nombreUser']; ?></span>
+                                    </h6>
+                                    <!-- Nombre de Usuario del Comentario -->
+                                    <span>
+                                       <div class="d-inline-flex align-middle">
+                                          <i class="fa fa-circle"></i>
+                                       </div>
                                        <?php
-                                          if ($_SESSION['privilegio'] == 1 || $_SESSION['iduser'] == $idProfe || $registro['iduser'] == $_SESSION['iduser']) {
-                                             echo '
-                                                <button style="background-color:red; color:white;" type="submit" class="btn btn-sm" onClick="AlertEliminacion(' . $registro['idcomentario'] . ')">
-                                                      <i id="botonBorrarComentario" style="color:white;" class="fas fa-trash-alt"></i>
-                                                      Borrar
-                                                </button>
-                                             ';
-                                          }
+                                       $fecha1 = new DateTime($registro['fecha_ingreso']);
+                                       $fecha_actual = new DateTime("now");
+                                       $fecha_correcta = $fecha1->add(new DateInterval('PT6H'));
+                                       //se agrega 6 horas porq restar al contrario agrega, no se porque.
+                                       //sucede el error q al crear un nuevo post aparece como si fuese 
+                                       //de hace 6 horas, incluso al probar como aparece en segundos(unix epoch)
+                                       $intervalo = $fecha_correcta->diff($fecha_actual);
+
+                                       if ($intervalo->y > 0) {
+                                          echo 'hace ' . $intervalo->y . ' año' . ($intervalo->y > 1 ? 's' : '');
+                                       } else if ($intervalo->m > 0) {
+                                          echo 'hace ' . $intervalo->m . ' mes' . ($intervalo->m > 1 ? 'es' : '');
+                                       } else if ($intervalo->days > 0) {
+                                          echo 'hace ' . $intervalo->d . ' dia' . ($intervalo->d > 1 ? 's' : '');
+                                       } else if ($intervalo->h >= 1) {
+                                          echo 'hace ' . $intervalo->h . ' hora' . ($intervalo->h > 1 ? 's' : '');
+                                       } else if ($intervalo->i > 0) {
+                                          echo 'hace ' . $intervalo->i . ' minuto' . ($intervalo->i > 1 ? 's' : '');
+                                       } else if ($intervalo->i = 0) {
+                                          echo 'justo ahora';
+                                       } else {
+                                          echo 'justo ahora';
+                                       } //si no pones el else hay bug
                                        ?>
-                                       <!-- Botón Borrar Comentario -->
-                                       <a class="fb-xfbml-parse-ignore" target="_blank" href="http://www.facebook.com/sharer.php?s=100&p[url]=http://educalma.fundacioncalma.org/detallecurso.php?id=<?php echo $idCurso; ?>&p[title]=prueba&p[summary]=descripcion_contenido&display=page" onclick="window.open(this.href, this.target, 'width=300,height=400')">
-                                          <i style="color:white;" class="fa fa-reply"></i>
-                                       </a>
-                                       <a href="#">
-                                          <i style="color:white;" class="fa fa-heart"></i>
-                                       </a>
-                                    </div>
-                                    <!-- HEAD -->
-                                    <!-- Contenido del comentario -->
-                                    <div class="comment-content">
-                                       <?php echo $registro['comentario']; ?>
-                                    </div>
-                                    <!-- Contenido del comentario -->
+                                    </span>
+                                    <button type="button" id="modal" class="btn btn-sm py-0" data-toggle="modal" data-target="#respuesta<?php echo $registro['idcomentario'] ?>" data-id="<?php echo '5' ?>">Responder
+                                    </button>
+                                    <?php if ($_SESSION['privilegio'] == 1 || $_SESSION['iduser'] == $idProfe || $registro['iduser'] == $_SESSION['iduser']) { ?>
+                                       <button type="submit" class="btn btn-sm btn-danger py-0" onClick="AlertEliminacion(' . <?php echo $registro['idcomentario']?> . ')">
+                                          <i id="botonBorrarComentario" style="color:white;" class="fas fa-trash-alt"></i>
+                                          Borrar
+                                       </button>
+                                    <?php } ?>
+                                    <a class="fb-xfbml-parse-ignore" target="_blank" href="http://www.facebook.com/sharer.php?s=100&p[url]=http://educalma.fundacioncalma.org/detallecurso.php?id=<?php echo $idCurso; ?>&p[title]=prueba&p[summary]=descripcion_contenido&display=page" onclick="window.open(this.href, this.target, 'width=300,height=400')">
+                                       <i style="color:white;" class="fa fa-reply"></i>
+                                    </a>
+                                    <a href="#">
+                                       <i style="color:white;" class="fa fa-heart"></i>
+                                    </a>
                                  </div>
-                                 <!-- CONTENEDOR DEL COMENTARIO -->
+                                 <!-- HEAD -->
+                                 <!-- Contenido del comentario -->
+                                 <div class="comment-content">
+                                    <?php echo $registro['comentario']; ?>
+                                 </div>
+                                 <!-- Contenido del comentario -->
                               </div>
-                              <!-- COMENTARIOOOOOOOOOOOOOOOOOOOOOOOOOOOOO -->
-                              <br>
-                              <!-- ooooooooo -->
-                              <?php
-                                 $pdo2 = Database::connect();
-                                 $sql2 = "SELECT * FROM sub_come_foro as s inner join usuarios as u on u.id_user= s.iduser WHERE idcomentario = '$registro[idcomentario]'";
-                                 $stm2 = $pdo2->prepare($sql2);
-                                 $stm2->execute(array());
+                              <!-- CONTENEDOR DEL COMENTARIO -->
+                           </div>
+                           <br>
+                           <?php
+                              $pdo2 = Database::connect();
+                              $sql2 = "SELECT * FROM sub_come_foro as s inner join usuarios as u on u.id_user= s.iduser WHERE idcomentario = '$registro[idcomentario]'";
+                              $stm2 = $pdo2->prepare($sql2);
+                              $stm2->execute(array());
 
-                                 $autor = "";
-                                 while ($registro2 =  $stm2->fetch(PDO::FETCH_ASSOC)) {
-                                    if ($registro2['iduser'] == $idProfe) {
-                                       $autor = " by-author";
-                                    } else {
-                                       $autor = "";
-                                    }
-                              ?>
-                                 <!-- ooooooooo -->
-                                 <!-- LISTA DE SUBCOMENTARIOS -->
-                                 <ul class="comments-list reply-list">
-                                    <!-- iiiiiiiiii -->
-                                    <li>
-                                       <!-- AVATAR -->
-                                       <div class="comment-avatar">
-                                          <?php if ($registro2['mifoto'] != null) { ?>
-                                             <img src="<?php echo $registro2['mifoto']; ?>" alt="foto_curso">
-                                          <?php } else { ?>
-                                             <img src="./assets/images/user.png" alt="foto_curso">
-                                          <?php } ?>
-                                       </div>
-                                       <!-- AVATAR -->
-                                       <!-- CONTENEDOR DEL SUBCOMENTARIO -->
-                                       <div class="comment-box">
-                                          <!-- oeoeoeoeoeo -->
-                                          <div class="comment-head">
-                                             <h6 class="m-0 comment-name<?php echo $autor; ?>">
-                                                <span id="nombreUsuarioSubcomentario"><?php echo $registro2['user_men']; ?></span>
-                                             </h6>
-                                             <span>
-                                                <?php
-                                                $fecha1_2 = new DateTime($registro2['fecha_ingreso']);
-                                                $fecha_actual12 = new DateTime("now");
-                                                $fecha_correcta12 = $fecha1_2->add(new DateInterval('PT6H'));
-                                                $intervalo = $fecha_correcta12->diff($fecha_actual12);
-
-                                                if ($intervalo->y > 0) {
-                                                   echo 'hace ' . $intervalo->y . ' año' . ($intervalo->y > 1 ? 's' : '');
-                                                } else if ($intervalo->m > 0) {
-                                                   echo 'hace ' . $intervalo->m . ' mes' . ($intervalo->m > 1 ? 'es' : '');
-                                                } else if ($intervalo->days > 0) {
-                                                   echo 'hace ' . $intervalo->d . ' dia' . ($intervalo->d > 1 ? 's' : '');
-                                                } else if ($intervalo->h >= 1) {
-                                                   echo 'hace ' . $intervalo->h . ' hora' . ($intervalo->h > 1 ? 's' : '');
-                                                } else if ($intervalo->i > 0) {
-                                                   echo 'hace ' . $intervalo->i . ' minuto' . ($intervalo->i > 1 ? 's' : '');
-                                                } else if ($intervalo->i = 0) {
-                                                   echo 'justo ahora';
-                                                } else {
-                                                   echo 'justo ahora';
-                                                }
-                                                ?>
-                                             </span>
-                                             <!-- Botón Borrar Subcomentario -->
+                              $autor = "";
+                              while ($registro2 =  $stm2->fetch(PDO::FETCH_ASSOC)) {
+                                 if ($registro2['iduser'] == $idProfe) {
+                                    $autor = " by-author";
+                                 } else {
+                                    $autor = "";
+                                 }
+                           ?>
+                              <!-- LISTA DE SUBCOMENTARIOS -->
+                              <ul class="comments-list reply-list">
+                                 <li>
+                                    <!-- AVATAR -->
+                                    <div class="comment-avatar">
+                                       <?php if ($registro2['mifoto'] != null) { ?>
+                                          <img src="<?php echo $registro2['mifoto']; ?>" alt="foto_curso">
+                                       <?php } else { ?>
+                                          <img src="./assets/images/user.png" alt="foto_curso">
+                                       <?php } ?>
+                                    </div>
+                                    <!-- AVATAR -->
+                                    <!-- CONTENEDOR DEL SUBCOMENTARIO -->
+                                    <div class="comment-arrow">
+                                       <i class="fas fa-caret-left"></i>
+                                    </div>
+                                    <div class="comment-box">
+                                       <div class="comment-head">
+                                          <h6 class="m-0 comment-name<?php echo $autor; ?>">
+                                             <span id="nombreUsuarioSubcomentario"><?php echo $registro2['user_men']; ?></span>
+                                          </h6>
+                                          <span>
+                                             <div class="d-inline-flex align-middle">
+                                                <i class="fa fa-circle"></i>
+                                             </div>
                                              <?php
-                                                if ($_SESSION['privilegio'] == 1 || $_SESSION['iduser'] == $idProfe || $registro2['iduser'] == $_SESSION['iduser']) {
-                                                   echo '
-                                                      <button style="background-color:red; color:white;" type="submit" class="btn btn-sm" onClick="AlertElimiSubComen(' . $registro2['idsubcomentario'] . ')">
-                                                         <i style="color:white;" class="fas fa-trash-alt"></i>
-                                                         Borrar
-                                                      </button>
-                                                ';
-                                                }
+                                             $fecha1_2 = new DateTime($registro2['fecha_ingreso']);
+                                             $fecha_actual12 = new DateTime("now");
+                                             $fecha_correcta12 = $fecha1_2->add(new DateInterval('PT6H'));
+                                             $intervalo = $fecha_correcta12->diff($fecha_actual12);
+
+                                             if ($intervalo->y > 0) {
+                                                echo 'hace ' . $intervalo->y . ' año' . ($intervalo->y > 1 ? 's' : '');
+                                             } else if ($intervalo->m > 0) {
+                                                echo 'hace ' . $intervalo->m . ' mes' . ($intervalo->m > 1 ? 'es' : '');
+                                             } else if ($intervalo->days > 0) {
+                                                echo 'hace ' . $intervalo->d . ' dia' . ($intervalo->d > 1 ? 's' : '');
+                                             } else if ($intervalo->h >= 1) {
+                                                echo 'hace ' . $intervalo->h . ' hora' . ($intervalo->h > 1 ? 's' : '');
+                                             } else if ($intervalo->i > 0) {
+                                                echo 'hace ' . $intervalo->i . ' minuto' . ($intervalo->i > 1 ? 's' : '');
+                                             } else if ($intervalo->i = 0) {
+                                                echo 'justo ahora';
+                                             } else {
+                                                echo 'justo ahora';
+                                             }
                                              ?>
-                                             <!-- Botón Borrar Subcomentario -->
-                                             <i style="color:white;" class="fa fa-reply"></i>
-                                             <i style="color:white;" class="fa fa-heart"></i>
+                                          </span>
+                                          <?php if ($_SESSION['privilegio'] == 1 || $_SESSION['iduser'] == $idProfe || $registro2['iduser'] == $_SESSION['iduser']) { ?>
+                                             <button type="submit" class="btn btn-sm btn-danger py-0" onClick="AlertElimiSubComen(' . <?php echo $registro2['idsubcomentario'] ?> . ')">
+                                                <i style="color:white;" class="fas fa-trash-alt"></i>
+                                                Borrar
+                                             </button>
+                                          <?php } ?>
+                                          <i style="color:white;" class="fa fa-reply"></i>
+                                          <i style="color:white;" class="fa fa-heart"></i>
+                                       </div>
+                                       <!-- Contenido del subcomentario. -->
+                                       <div class="comment-content">
+                                          <?php echo $registro2['subcomentario']; ?>
+                                       </div>
+                                       <!-- Contenido del subcomentario. -->
+                                    </div>
+                                    <!-- CONTENEDOR DEL SUBCOMENTARIO -->
+                                 </li>
+                              </ul>
+                              <!-- LISTA DE SUBCOMENTARIOS -->
+                           <?php } ?>
+                           <!------------------------------------
+                           Modal para ingresar respuesta
+                           -------------------------------------->
+                           <!-- Modal -->
+                           <div class="modal fade" id="respuesta<?php echo $registro['idcomentario'] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                              <div class="modal-dialog">
+                                 <div class="modal-content">
+                                    <div class="modal-header">
+                                       <h5 class="modal-title" id="exampleModalLabel">:: RESPUESTA ::</h5>
+                                       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                          <span aria-hidden="true">&times;</span>
+                                       </button>
+                                    </div>
+                                    <div class="modal-body">
+                                       <form action="includes/foroCrud/foroMen.php" method="post">
+                                          <div class="form-group">
+                                             <label for="mensaje">Responder</label>
+                                             <textarea class="form-control" id="mensaje" name="submensaje" rows="3" required></textarea>
+                                             <input type="hidden" name="cursoGeneral" value="<?php echo $registro['idcomentario'] ?>">
+                                             <input type="hidden" name="id_comenta" value="<?php echo $registro['idcomentario'] ?>">
+                                             <input type="hidden" name="id" value="<?php echo $idCurso ?>">
                                           </div>
-                                          <!-- oeoeoeoeoeo -->
-                                          <!-- Contenido del subcomentario. -->
-                                          <div class="comment-content">
-                                             <?php echo $registro2['subcomentario']; ?>
+                                          <div class="modal-footer">
+                                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                             <button type="submit" class="btn btn-secondary">Enviar Respuesta</button>
                                           </div>
-                                          <!-- Contenido del subcomentario. -->
-                                       </div>
-                                       <!-- CONTENEDOR DEL SUBCOMENTARIO -->
-                                    </li>
-                                    <!-- iiiiiiiiii -->
-                                 </ul>
-                                 <!-- LISTA DE SUBCOMENTARIOS -->
-                              <?php } ?>
-                              <!------------------------------------
-                              Modal para ingresar respuesta
-                              -------------------------------------->
-                              <!-- Modal -->
-                              <div class="modal fade" id="respuesta<?php echo $registro['idcomentario'] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                 <div class="modal-dialog">
-                                    <div class="modal-content">
-                                       <div class="modal-header">
-                                          <h5 class="modal-title" id="exampleModalLabel">:: RESPUESTA ::</h5>
-                                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                             <span aria-hidden="true">&times;</span>
-                                          </button>
-                                       </div>
-                                       <div class="modal-body">
-                                          <form action="includes/foroCrud/foroMen.php" method="post">
-                                             <div class="form-group">
-                                                <label for="mensaje">Responder</label>
-                                                <textarea class="form-control" id="mensaje" name="submensaje" rows="3" required></textarea>
-                                                <input type="hidden" name="cursoGeneral" value="<?php echo $registro['idcomentario'] ?>">
-                                                <input type="hidden" name="id_comenta" value="<?php echo $registro['idcomentario'] ?>">
-                                                <input type="hidden" name="id" value="<?php echo $idCurso ?>">
-                                             </div>
-                                             <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                                                <button type="submit" class="btn btn-secondary">Enviar Respuesta</button>
-                                             </div>
-                                          </form>
-                                       </div>
+                                       </form>
                                     </div>
                                  </div>
                               </div>
+                           </div>
                            <?php
                            }
                            ?>
                         </li>
-                        <!-- lilililili -->
                      </ul>
                      <!-- LISTA DE COMENTARIOS -->
 
