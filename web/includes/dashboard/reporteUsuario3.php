@@ -241,13 +241,12 @@ if (isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)) {
                             </div>
                         </div>
 
-                        <div class="card-body">
+                        <div class="card-body table-responsive">
 
                             <p class="numUsers" style="color:#737BF1; margin-left: 0; font-size: 20px;">Cantidad de Usuarios
                                 <!--<span style="color:#BEC1F3;">(<?php echo $resultUsu['cantidad']; ?>)</span>-->
                             </p>
-
-                            <div style="margin-left: -20px;" class="table-responsive">
+                            <div style="margin-left: -20px;"  class="table-responsive">
                                 <table id="tablaCursos" class="table table-borderless dt-responsive text-left"
                                     cellspacing="0" width="100%">
                                     <thead>
