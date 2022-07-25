@@ -21,7 +21,7 @@
             </div>
 
             <!--Formulario-->
-            <form style="background: white; box-shadow: 0px 0px 10px 3px #C2BBF4; border-radius: 20px;" action="includes/usersidebar/actualizar_perfil.php?id=<?php echo $id; ?>" method="POST" enctype="multipart/form-data">
+            <form class="col-6" style="background: white; box-shadow: 0px 0px 10px 3px #C2BBF4; border-radius: 20px; margin-top:70 ;" action="includes/usersidebar/actualizar_perfil.php?id=<?php echo $id; ?>" method="POST" enctype="multipart/form-data">
                 <div class="inputBox">
                     <h3>Nombre</h3>
                     <input type="text" id="Nombre" name="Nombre" value="<?php echo $dato2['nombres']; ?>">
