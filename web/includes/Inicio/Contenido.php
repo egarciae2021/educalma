@@ -25,13 +25,13 @@ if (!isset($_GET['pag'])) {
         <!--Título-->
         <div class="title-panel">
           <span class="txtBienvenido">BIENVENIDO!</span>
-          <span class="txtEducalma d-block">EduCalma</span>
+          <span class="txtEducalma d-block">Educalma</span>
         </div>
 
 
         <!--Descripción-->
         <div class="description-panel">
-          ¡Impulsa tu aprendizaje junto a los mejores <br>especialistas en EduCalma desde hoy!
+          ¡Impulsa tu aprendizaje junto a los mejores <br>especialistas en Educalma desde hoy!
         </div>
 
 
@@ -596,7 +596,7 @@ if (!isset($_GET['pag'])) {
     <div class="box-rotate my-5" id="boxRotate">
       <div class="front d-flex" id="front" >       
         <div class="box-image d-flex align-items-center justify-content-center" style="width: 330px;">
-          &nbsp;&nbsp; <img class="img-fluid; " src="./assets/images/EDU-EMP.png" alt="" style="width: 330px;"/>
+          &nbsp;&nbsp; <img class="img-fluid; " src="./assets/images/EDU-EMP.png" alt="" style="width: 500px;"/>
         </div>
       </div> 
       <div class="back">
