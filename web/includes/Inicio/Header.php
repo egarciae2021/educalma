@@ -43,7 +43,10 @@ require_once 'database/databaseConection.php';
                 
                             <a href="ListaCursos.php?pag=1">Cursos</a>
                         </li>
-
+                        <li class="nav-link" style="--i: .6s">
+                
+                <a href="empresas.php">EMPRESAS</a>
+                 </li>
                         <li class="nav-link" style="--i: .6s;">
                             <?php 
                             $nom_privilegio = "";
@@ -77,10 +80,7 @@ require_once 'database/databaseConection.php';
                             </a>
                     
                         </li>
-                        <li class="nav-link" style="--i: .6s">
-                
-                        <a href="empresas.php">EMPRESAS</a>
-                         </li>
+                       
 
 
                         <li class="nav-link" style="--i: .6s;">
@@ -126,7 +126,10 @@ require_once 'database/databaseConection.php';
                 
                             <a href="cursosPublicados.php">Cursos</a> 
                         </li>
-
+                        <li class="nav-link" style="--i: .6s">
+                
+                           <a href="cursosPublicados.php">EMPRESAS</a> 
+                        </li>
                         <!-- NO LOGUEADO - Iniciar Sesión y Regístrate -->
                         <div class="log-sign">
 
