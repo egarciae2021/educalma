@@ -559,7 +559,7 @@ if (!isset($_GET['pag'])) {
 
 
 <!-- EMPRESAS -->
-<div class="container-bussines container divEmp" style="margin-top: 4.4rem; margin-bottom: 3rem;">
+<div class="container-bussines container divEmp">
 
 
   <div class="info col-12 d-flex flex-column justify-content-center"> <!--/////////////////////////-->
@@ -595,11 +595,11 @@ if (!isset($_GET['pag'])) {
   <div class="send-data col-12 my-auto" id="sendData">
     <div class="box-rotate my-5" id="boxRotate">
       <div class="front d-flex" id="front" >       
-        <div class="box-image d-flex align-items-center justify-content-center" style="width: 330px;">
-          &nbsp;&nbsp; <img class="img-fluid; " src="./assets/images/EDU-EMP.png" alt="" style="width: 350px;"/>
+        <div class="box-image d-flex align-items-center justify-content-center">
+          &nbsp;&nbsp; <img class="img-fluid" src="./assets/images/EDU-EMP.png" alt=""/>
         </div>
       </div> 
-      <div class="back">
+      <div id="container-form" class="back">
         <div class="header w-100">
           <div class="box-image">
             <img src="./assets/images/Rectangle 51.png" alt="" />
@@ -789,5 +789,13 @@ if (!isset($_GET['pag'])) {
     </div>
   </div>
 </div>
+<script>
+  var btnInfo = document.getElementById("btnAction");
+  var frmInfo = document.getElementById("container-form");
+  btnInfo.onclick = function () {
+    frmInfo.style.height = "100%";
+  }
+</script>
+
 
 <script src="assets/js/valNombre.js"></script>
