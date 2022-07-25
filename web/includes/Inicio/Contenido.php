@@ -596,7 +596,7 @@ if (!isset($_GET['pag'])) {
     <div class="box-rotate my-5" id="boxRotate">
       <div class="front d-flex" id="front" >       
         <div class="box-image d-flex align-items-center justify-content-center" style="width: 330px;">
-          &nbsp;&nbsp; <img class="img-fluid; " src="./assets/images/EDU-EMP.png" alt="" style="width: 500px;"/>
+          &nbsp;&nbsp; <img class="img-fluid; " src="./assets/images/EDU-EMP.png" alt="" style="width: 350px;"/>
         </div>
       </div> 
       <div class="back">
