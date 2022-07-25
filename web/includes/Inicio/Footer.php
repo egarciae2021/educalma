@@ -51,7 +51,7 @@
           <div class="footer-widget">
             <div class="widget-about">
               <!--imagen de educalma empresas-->
-              <img src="assets/images/educalma_logo_blanco.png" alt="" class="img-fluid" style="padding: 15px;">
+              <img src="assets/images/educalma_logo_blanco.png" alt="" class="logoFoot" style="padding: 15px;">
             </div>
           </div>
         </div>
