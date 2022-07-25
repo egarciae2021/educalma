@@ -20,7 +20,8 @@ if (isset($_GET["topic"]) && !empty($_GET["topic"])) {
         $id = $_GET["id"]; 
         }
     
-    $recibe = json_encode($_POST); 
+    $json = file_get_contents('php://input');
+    $recibe = json_encode($json); 
     echo $recibe;
     
     $sql = "INSERT INTO pagos(topic,id,resultado) VALUES ('$topic' ,'$id','$recibe')";
