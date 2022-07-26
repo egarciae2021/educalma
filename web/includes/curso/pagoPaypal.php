@@ -103,9 +103,12 @@ ob_start();
               "number" => "12345678"
             ); 
             $payer->email = "charles@hotmail.com";
-            $preference->payer = (object)(array($payer)); 
+             
+            $tmp = json_encode(array($payer));
+            $tmp2 = json_decode($tmp);
+            $preference->payer = $tmp2; 
 
-
+            
 
             $preference-> binary_mode =  true;
             $preference->back_urls = array(
