@@ -87,28 +87,23 @@ ob_start();
 
             
             $payer = new MercadoPago\Payer();
+            $payer->id=123456789;
             $payer->name = "Charles";
-            $payer->surname = "Luevano";
-            $payer->email = "charles@hotmail.com";
-            $payer->date_created = "2018-06-02T12:58:41.425-04:00";
+            $payer->first_name = "Luevano";
+            $payer->last_name = "Luevano";
+           
             $payer->phone = array(
               "area_code" => "",
-              "number" => "949 128 866"
+              "number" => "949 128 866",
+              "extension" => "asd"
             );
             
             $payer->identification = array(
               "type" => "DNI",
               "number" => "12345678"
-            );
-            
-            $payer->address = array(
-              "street_name" => "Cuesta Miguel Armendáriz",
-              "street_number" => 1004,
-              "zip_code" => "11020"
-            );
-          
-            $payment->payer = array($payer);
-            $payment->save();
+            ); 
+            $payer->email = "charles@hotmail.com";
+            $preference->payer = (object)(array($payer)); 
 
 
 
@@ -119,7 +114,7 @@ ob_start();
                 "pending" => "https://Facebook.com"
             );
             $preference->auto_return = "approved"; 
-             
+            $preference->notification_url = "http://20.226.29.168/Infpay.php";  
             $preference-> statement_descripton = array("Educalma - " + $dato['nombreCurso'] ); 
             $preference->save();
             
