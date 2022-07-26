@@ -4,12 +4,19 @@ $servername = "20.226.29.168";
 $username = "root";
 $password = 'T3$t1ng.C4lm4';
 $dbname = "educalma";
+$topic = "" ;
+$id = "" ;
 
  
 $conn = mysqli_connect($servername, $username, $password, $dbname); 
 if (!$conn) {
   die("Connection failed: " . mysqli_connect_error());
 }
+
+$topic = $_GET["topic"]; 
+
+
+
 
 
     // Aqui recibimos la notificación de pago , capturamos la api de consulta para usarlo en el GET mas adeltante
@@ -98,17 +105,11 @@ if (!$conn) {
     $sql = "INSERT INTO payments(`id`, `site_id`, `date_created`, `date_approved`, `money_release_date`, `last_modified`, `payerid`, `payerfirst_name`, `payerlast_name`, `payerphonearea_code`, `payerphonenumber`, `payerphoneextension`, `payeridentificationtype`, `payeridentificationnumber`, `payeremail`, `payernickname`, `order_id`, `external_reference`, `merchant_order_id`, `reason`, `currency_id`, `transaction_amount`, `net_received_amount`, `total_paid_amount`, `shipping_cost`, `coupon_amount`, `coupon_fee`, `finance_fee`, `discount_fee`, `coupon_id`, `status`, `status_detail`, `installments`, `issuer_id`, `installment_amount`, `deferred_period`, `payment_type`, `payment_method_id`, `marketplace`, `operation_type`, `transaction_order_id`, `statement_descriptor`, `cardholdername`, `cardholderidentificationtype`, `cardholderidentificationnumber`, `authorization_code`, `marketplace_fee`, `last_four_digits`, `deduction_schema`, `refunds`, `amount_refunded`, `last_modified_by_admin`, `api_version`, `concept_id`, `concept_amount`, `collectorid`, `collectorfirst_name`, `collectorlast_name`, `collectorphonearea_code`, `collectorphonenumber`, `collectorphoneextension`, `collectoridentificationtype`, `collectoridentificationnumber`, `collectoremail`, `collectornickname`) 
     values  ('$id','$site_id','$date_created','$date_approved','$money_release_date','$last_modified','$payerid','$payerfirst_name','$payerlast_name','$payerphonearea_code','$payerphonenumber','$payerphoneextension','$payeridentificationtype','$payeridentificationnumber','$payeremail','$payernickname','$order_id','$external_reference','$merchant_order_id','$reason','$currency_id','$transaction_amount','$net_received_amount','$total_paid_amount','$shipping_cost','$coupon_amount','$coupon_fee','$finance_fee','$discount_fee','$coupon_id','$status','$status_detail','$installments','$issuer_id','$installment_amount','$deferred_period','$payment_type','$payment_method_id','$marketplace','$operation_type','$transaction_order_id','$statement_descriptor','$cardholdername','$cardholderidentificationtype','$cardholderidentificationnumber','$authorization_code','$marketplace_fee','$last_four_digits','$deduction_schema','$refunds','$amount_refunded','$last_modified_by_admin','$api_version','$concept_id','$concept_amount','$collectorid','$collectorfirst_name','$collectorlast_name','$collectorphonearea_code','$collectorphonenumber','$collectorphoneextension','$collectoridentificationtype','$collectoridentificationnumber','$collectoremail','$collectornickname')" ;
    
-   echo $sql;
    if (mysqli_query($conn, $sql)) {
         echo  "successfully";
       } else {
         echo "Error creating table: " . mysqli_error($conn);
-      }
-
-
-
+      } 
     mysqli_close($conn);   
-     
-  
-
+      
 ?>
