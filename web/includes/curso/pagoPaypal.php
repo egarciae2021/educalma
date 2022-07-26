@@ -104,9 +104,7 @@ ob_start();
             ); 
             $payer->email = "charles@hotmail.com";
              
-            $tmp = json_encode(array($payer));
-            $tmp2 = json_decode($tmp);
-            $preference->payer = $tmp2; 
+            $preference->payer = $payer; 
 
             
 
