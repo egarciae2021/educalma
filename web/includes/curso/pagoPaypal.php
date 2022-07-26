@@ -114,7 +114,7 @@ ob_start();
                 "pending" => "https://Facebook.com"
             );
             $preference->auto_return = "approved"; 
-            $preference->notification_url = "http://20.226.29.168/Infpay.php";  
+            // $preference->notification_url = "http://20.226.29.168/Infpay.php";  
             $preference-> statement_descripton = array("Educalma - " + $dato['nombreCurso'] ); 
             $preference->save();
             
