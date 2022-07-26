@@ -15,7 +15,7 @@ if (!$conn) {
  
 if (isset($_GET["topic"]) && !empty($_GET["topic"]) &&str_contains($_GET["topic"], 'payment')) {
 
-
+echo "llego";
     // Aqui recibimos la notificación de pago , capturamos la api de consulta para usarlo en el GET mas adeltante
     $json = file_get_contents('php://input');
     $recibe_json = json_decode($json,true); 
