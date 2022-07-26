@@ -18,8 +18,7 @@ if (!$conn) {
     // Aqui recibimos la notificación de pago , capturamos la api de consulta para usarlo en el GET mas adeltante
     $json = file_get_contents('php://input');
     // $recibe = json_encode($json);  
-    $recibe_json = json_decode($json,true);
-    echo $recibe_json['resource'];
+    $recibe_json = json_decode($json,true); 
 
     // Iniciamos la petición GET a mercadopago para traer la info de pago
     $ch = curl_init();
@@ -33,9 +32,8 @@ if (!$conn) {
     curl_setopt($ch, CURLOPT_HTTPHEADER, $headers); 
     $server_output = curl_exec ($ch); 
     curl_close ($ch); 
-    $info_pago=json_decode($server_output,true);
-    $info_pago=$info_pago['collection'];
-    echo $info_pago;
+    $info_pago=json_decode($server_output,true); 
+    echo $info_pago['collection']['id'];
     echo "1";
 
     
