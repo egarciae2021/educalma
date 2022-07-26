@@ -36,6 +36,7 @@ if (!$conn) {
     $info_pago=json_decode($server_output,true);
     $info_pago=$info_pago['collection'];
     echo $info_pago;
+    echo "1";
 
     
     // $sql = "INSERT INTO pagos(topic,id,resultado) VALUES ('$topic' ,'$id','$recibe')";
