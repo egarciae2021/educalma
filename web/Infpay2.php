@@ -17,8 +17,8 @@ if (!$conn) {
     
     // Aqui recibimos la notificación de pago , capturamos la api de consulta para usarlo en el GET mas adeltante
     $json = file_get_contents('php://input');
-    $recibe = json_encode($json);  
-    $recibe_json = json_decode($recibe,true);
+    // $recibe = json_encode($json);  
+    $recibe_json = json_decode($json,true);
     echo $recibe_json['resource'];
 
     // Iniciamos la petición GET a mercadopago para traer la info de pago
