@@ -12,6 +12,8 @@ MercadoPago\SDK::setAccessToken('APP_USR-1923618636570539-071014-5632864634d560a
  
 // Crea un objeto de preferencia
 $preference = new MercadoPago\Preference();
+$payment = new MercadoPago\Payment();
+
 ob_start();
 @session_start();
   
@@ -105,8 +107,9 @@ ob_start();
               "zip_code" => "11020"
             );
           
-            $preference->payer = array($payer);
-    
+            $payment->payer = array($payer);
+            $payment->save();
+
 
 
             $preference-> binary_mode =  true;
