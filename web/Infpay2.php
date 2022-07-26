@@ -13,7 +13,7 @@ if (!$conn) {
   die("Connection failed: " . mysqli_connect_error());
 }
 
-echo ($_GET["topic"]);
+echo str_contains($_GET["topic"], 'payment');
  
 if (str_contains($_GET["topic"], 'payment')) 
 {
