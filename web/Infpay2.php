@@ -12,6 +12,8 @@ $conn = mysqli_connect($servername, $username, $password, $dbname);
 if (!$conn) {
   die("Connection failed: " . mysqli_connect_error());
 }
+
+echo "previa";
  
 if (isset($_GET["topic"]) && !empty($_GET["topic"]) &&str_contains($_GET["topic"], 'payment')) {
 
