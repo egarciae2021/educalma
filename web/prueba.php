@@ -26,8 +26,7 @@ $payer->identification = array(
 );
 
 $preference->payer=array($payer);
-
-
+ 
 $preference->back_urls = array(
     "success" => "https://apiflutter.azurewebsites.net/mercadopago/lectura.php",
     "failure" => "https://youtube.com", 
@@ -54,7 +53,7 @@ echo json_encode($response);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prueba mercadopago</title> 
+    <title>Prueba mercadopagos</title> 
     <script src="https://sdk.mercadopago.com/js/v2"></script>
 </head>
 <body>
