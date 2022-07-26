@@ -1,5 +1,8 @@
 <?php
 
+
+// NO SE ESTA USANDO EL ARCHIVO SOLO FUE CREADO A MODO DE PRUEBAS DURANTE LA IMPLEMENTACIÓN DE MERCADOGPAGO
+
 $servername = "20.226.29.168";
 $username = "root";
 $password = 'T3$t1ng.C4lm4';

@@ -14,10 +14,18 @@ $item->quantity = 1;
 $item->unit_price = 75.56;
 $item->currency_id="PEN";
 $item-> auto_return = "approved" ;
-
-
 $preference->items = array($item);
 
+$payer = new MercadoPago\Payer();
+$payer->name =  $_SESSION['nombres_nom']  ;
+$payer->surname =  $_SESSION['nombres_pat'] + ' ' +  $_SESSION['nombres_mat']   ;
+$payer->email=  $_SESSION['username']  ;
+$payer->identification = array(
+  'type' => $_SESSION['tipoDocIdentidad'],
+  'number' => $_SESSION['nroDocIdentidad']
+);
+
+$preference->payer=array($payer);
 
 
 $preference->back_urls = array(

@@ -82,22 +82,16 @@ $preference = new MercadoPago\Preference();
             $preference->items = array($item);
             $preference-> binary_mode =  true;
             $preference->back_urls = array(
-                "success" => "https://apiflutter.azurewebsites.net/mercadopago/lectura.php",
+                "success" => "https://test-apicalma.site/user-sidebar.php",
                 "failure" => "https://youtube.com", 
                 "pending" => "https://Facebook.com"
             );
             $preference->auto_return = "approved"; 
              
-            $preference-> statement_descripton = array("Educalma - " + $dato['nombreCurso'] );
-            // $preference-> notification_url="https://test-apicalma.site/Infpay2.php";    
+            $preference-> statement_descripton = array("Educalma - " + $dato['nombreCurso'] ); 
             $preference->save();
             
-            $response = array(
-                'status' => $payment->status,
-                'status_detail' => $payment->status_detail,
-                'id' => $payment->id
-            );
-            echo json_encode($response);
+            
 
             if (empty($datoS['id_cursoInscrito'])){        
     ?>
