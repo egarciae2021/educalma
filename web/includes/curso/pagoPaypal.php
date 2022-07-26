@@ -11,7 +11,6 @@ MercadoPago\SDK::setAccessToken('APP_USR-1923618636570539-071014-5632864634d560a
 // Crea un objeto de preferencia
 $preference = new MercadoPago\Preference();
  
- 
   
 ?>
 
