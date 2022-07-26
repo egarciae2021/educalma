@@ -62,10 +62,62 @@
 			width:80%;
 		}
     }
+
+	@media only screen and (min-width:390px) and (max-width:400px){
+		.respons1{
+			position: relative;
+			top: -9em;
+		}
+    }
+
+	@media only screen and (min-width:414px) and (max-width:420px){
+		.respons1{
+			position: relative;
+			top: -11em;
+		}
+    }
+
+	@media only screen and (min-width:412px) and (max-width:420px){
+		.respons1{
+			position: relative;
+			top: -12em;
+		}
+    }
+
+	@media only screen and (min-width:820px) and (max-width:830px){
+		.respons1{
+			position: relative;
+			top: -33em;
+		}
+    }
+
+	@media only screen and (min-width:768px) and (max-width:780px){
+		.respons1{
+			position: relative;
+			top: -25em;
+		}
+    }
+
+	@media only screen and (min-width:912px) and (max-width:920px){
+		.respons1{
+			position: relative;
+			top: -41em;
+		}
+    }
+
+	@media only screen and (min-width:540px) and (max-width:550px){
+		.respons1{
+			position: relative;
+			top: -3em;
+		}
+    }
+
+
+
 </style>
 
 <main>
-    <section class="about" id="about" style="width:100%;height:100%;margin:0;padding:0;margin-left:2%">
+    <section class="about respons1" id="about" style="width:100%;height:100%;margin:0;padding:0;margin-left:2%">
         <div class="image col">
             <img style="position: relative; top: 45px;" src="./assets/images/tu_tablero.jpg" alt="">
         </div>
