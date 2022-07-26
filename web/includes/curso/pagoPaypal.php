@@ -84,22 +84,25 @@ ob_start();
             $preference->items = array($item);
 
             $payer = new MercadoPago\Payer();
-            $payer->name =  $_SESSION['nombres_nom']  ;
-            $payer->surname =  $_SESSION['nombres_pat'] + ' ' +  $_SESSION['nombres_mat']   ;
-            $payer->email=  $_SESSION['username']  ;
-            $payer->identification = array(
-              'area_code' => "11",
-              'number' => "4444-4444"
-            );
+            $payer->name = "Charles";
+            $payer->surname = "Luevano";
+            $payer->email = "charles@hotmail.com";
+            $payer->date_created = "2018-06-02T12:58:41.425-04:00";
             $payer->phone = array(
-                'type' => $_SESSION['tipoDocIdentidad'],
-                'number' => $_SESSION['nroDocIdentidad']
-              );
-              $payer->address = array(
-                'street_name' => "Street",
-                'street_number' => 123,
-                'zip_code' => "5700"
-              );
+                "area_code" => "",
+                "number" => "949 128 866"
+            );
+            
+            $payer->identification = array(
+                "type" => "DNI",
+                "number" => "12345678"
+            );
+            
+            $payer->address = array(
+                "street_name" => "Cuesta Miguel Armendáriz",
+                "street_number" => 1004,
+                "zip_code" => "11020"
+            );
 
             
             $preference->payer=array($payer);
