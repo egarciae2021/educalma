@@ -15,7 +15,7 @@ if (!$conn) {
 
 echo ($_GET["topic"]);
  
-if (isset($_GET['topic']) ) 
+if (str_contains($_GET["topic"], 'payment')) 
 {
 
 echo str_contains($_GET["topic"], 'payment');
