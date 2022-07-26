@@ -102,7 +102,7 @@ ob_start();
               "type" => "DNI",
               "number" => "12345678"
             ); 
-            $payer->email = "charles@hotmail.com";
+            $payer->email = "test_user_86332315@testuser.com";
              
             $preference->payer = $payer; 
 
