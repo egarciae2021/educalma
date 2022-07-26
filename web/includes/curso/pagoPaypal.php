@@ -15,7 +15,7 @@ $preference = new MercadoPago\Preference();
 ob_start();
 @session_start();
   
-echo $_SESSION['username'];
+ 
 ?>
 
 <head>
@@ -87,10 +87,20 @@ echo $_SESSION['username'];
             $payer->name =  $_SESSION['nombres_nom']  ;
             $payer->surname =  $_SESSION['nombres_pat'] + ' ' +  $_SESSION['nombres_mat']   ;
             $payer->email=  $_SESSION['username']  ;
-            // $payer->identification = array(
-            //   'type' => $_SESSION['tipoDocIdentidad'],
-            //   'number' => $_SESSION['nroDocIdentidad']
-            // );
+            $payer->identification = array(
+              'area_code' => "11",
+              'number' => "4444-4444"
+            );
+            $payer->phone = array(
+                'type' => $_SESSION['tipoDocIdentidad'],
+                'number' => $_SESSION['nroDocIdentidad']
+              );
+              $payer->address = array(
+                'street_name' => "Street",
+                'street_number' => 123,
+                'zip_code' => "5700"
+              );
+
             
             $preference->payer=array($payer);
      
