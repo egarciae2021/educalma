@@ -83,29 +83,29 @@ ob_start();
             $item-> auto_return = "approved" ; 
             $preference->items = array($item);
 
-            $payer = new MercadoPago\Payer();
-            $payer->name = "Charles";
-            $payer->surname = "Luevano";
-            $payer->email = "charles@hotmail.com";
-            $payer->date_created = "2018-06-02T12:58:41.425-04:00";
-            $payer->phone = array(
-                "area_code" => "",
-                "number" => "949 128 866"
-            );
+            // $payer = new MercadoPago\Payer();
+            // $payer->name = "Charles";
+            // $payer->surname = "Luevano";
+            // $payer->email = "charles@hotmail.com";
+            // $payer->date_created = "2018-06-02T12:58:41.425-04:00";
+            // $payer->phone = array(
+            //     "area_code" => "",
+            //     "number" => "949 128 866"
+            // );
             
-            $payer->identification = array(
-                "type" => "DNI",
-                "number" => "12345678"
-            );
+            // $payer->identification = array(
+            //     "type" => "DNI",
+            //     "number" => "12345678"
+            // );
             
-            $payer->address = array(
-                "street_name" => "Cuesta Miguel Armendáriz",
-                "street_number" => 1004,
-                "zip_code" => "11020"
-            );
+            // $payer->address = array(
+            //     "street_name" => "Cuesta Miguel Armendáriz",
+            //     "street_number" => 1004,
+            //     "zip_code" => "11020"
+            // );
 
             
-            $preference->payer=array($payer);
+            // $preference->payer=array($payer);
      
 
 
