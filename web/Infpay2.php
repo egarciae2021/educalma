@@ -13,12 +13,12 @@ if (!$conn) {
   die("Connection failed: " . mysqli_connect_error());
 }
 
-echo str_contains($_GET["topic"], 'payment');
+echo strpos($_GET["topic"], 'payment');
  
-if (str_contains($_GET["topic"], 'payment')) 
+if (strpos($_GET["topic"], 'payment')) 
 {
 
-echo str_contains($_GET["topic"], 'payment');
+echo strpos($_GET["topic"], 'payment');
 echo "llego";
     // Aqui recibimos la notificación de pago , capturamos la api de consulta para usarlo en el GET mas adeltante
     $json = file_get_contents('php://input');
