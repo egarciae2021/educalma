@@ -12,8 +12,10 @@ MercadoPago\SDK::setAccessToken('APP_USR-1923618636570539-071014-5632864634d560a
  
 // Crea un objeto de preferencia
 $preference = new MercadoPago\Preference();
- 
+ob_start();
+@session_start();
   
+echo $_SESSION['username'];
 ?>
 
 <head>
@@ -52,8 +54,7 @@ $preference = new MercadoPago\Preference();
 
 
     <?php
-        ob_start();
-        @session_start();
+      
         if(isset($_SESSION['Logueado']) && ($_SESSION['Logueado'] === true)){
             $id = $_GET['id'];
             $_SESSION['cursoVisa']=$id;
@@ -73,7 +74,7 @@ $preference = new MercadoPago\Preference();
 
 
 
-// Aqui creamos la referencia de mercado pago
+            // Aqui creamos la referencia de mercado pago
             $item = new MercadoPago\Item();
             $item->title = $dato['nombreCurso'];
             $item->quantity = 1;
@@ -82,7 +83,16 @@ $preference = new MercadoPago\Preference();
             $item-> auto_return = "approved" ; 
             $preference->items = array($item);
 
-
+            $payer = new MercadoPago\Payer();
+            $payer->name =  $_SESSION['nombres_nom']  ;
+            $payer->surname =  $_SESSION['nombres_pat'] + ' ' +  $_SESSION['nombres_mat']   ;
+            $payer->email=  $_SESSION['username']  ;
+            // $payer->identification = array(
+            //   'type' => $_SESSION['tipoDocIdentidad'],
+            //   'number' => $_SESSION['nroDocIdentidad']
+            // );
+            
+            $preference->payer=array($payer);
      
 
 
