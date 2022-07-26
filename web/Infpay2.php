@@ -14,13 +14,11 @@ if (!$conn) {
 }
 
 $topic = $_GET["topic"];
-
-echo str_contains($topic, "payment");
  
-if (str_contains( $topic, 'payment')) 
+ 
+if (strpos($topic, 'payment') !== false) 
 {
-
-echo str_contains( $topic,'payment');
+ 
 echo "llego";
     // Aqui recibimos la notificación de pago , capturamos la api de consulta para usarlo en el GET mas adeltante
     $json = file_get_contents('php://input');
