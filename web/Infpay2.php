@@ -19,7 +19,7 @@ if (!$conn) {
     $json = file_get_contents('php://input');
     $recibe = json_encode($json);  
     $recibe_json = json_decode($recibe,true);
-     
+    echo $recibe_json['resource'];
 
     // Iniciamos la petición GET a mercadopago para traer la info de pago
     $ch = curl_init();
