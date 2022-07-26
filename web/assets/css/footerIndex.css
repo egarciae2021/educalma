@@ -66,18 +66,33 @@
 .copyright-text{
     font-family: 'Baloo Tamma 2', cursive;
 }
+
+#a{
+    transition: 0.5s;
+  -moz-transition: 0.5s; /* Firefox */
+  -webkit-transition: 0.5s; /* Chrome - Safari */
+  -o-transition: 0.5s; /* Opera */
+}
+
+#a:hover{
+    transform : scale(1.1);
+  -moz-transform : scale(1.1); /* Firefox */
+  -webkit-transform : scale(1.1); /* Chrome - Safari */
+  -o-transform : scale(1.1); /* Opera */
+  -ms-transform : scale(1.1); /* IE9 */
+}
   
 @media (max-width: 400px) {
     .footer--light {
-        /* background-image: url("assets/images/fondo2-min.png");
-        background-size: 100% 100%; */
-        background-color: blue !important;
+        background-image: url("assets/images/fondo2-min.png");
+        background-size: 100% 100%;
+        /* background-color: blue !important; */
         /* overflow:hidden;
         object-fit: cover;
         width: 100%;
         height: auto;  */  
         }  
-   /*  .widget-about{
+    .widget-about{
         display: flex;
         justify-content: center;
     }
@@ -90,15 +105,15 @@
         flex-direction: column;
         justify-content: flex-end;
         font-family: 'Baloo Tamma 2', cursive;
-        /* gap: 98px;
-        margin-right: 340px; */
-    /* }
+        gap: 98px;
+        margin-right: 340px;
+    }
     .enviar_inicio{
         width: 10%;
         height: auto;
-        /* margin-left: 100px; */
-   /*  }  */
-    /* .title{
+        margin-left: 100px;
+    } 
+    .title{
         color: white;
         font-weight: bold;
         font-size: 20px;
@@ -116,7 +131,7 @@
     .envelope{
         margin-left: 6em;
     }
- */
+ 
 }
 
 
