@@ -1,6 +1,10 @@
 <?php  
  
 require __DIR__ .  '/vendor/autoload.php';
+
+
+echo $_SESSION['nombres_nom'];
+
 // Agrega credenciales
 MercadoPago\SDK::setAccessToken('APP_USR-1923618636570539-071014-5632864634d560a172adbfd37f3d8c8e-1157900136');
  
@@ -20,10 +24,10 @@ $payer = new MercadoPago\Payer();
 $payer->name =  $_SESSION['nombres_nom']  ;
 $payer->surname =  $_SESSION['nombres_pat'] + ' ' +  $_SESSION['nombres_mat']   ;
 $payer->email=  $_SESSION['username']  ;
-$payer->identification = array(
-  'type' => $_SESSION['tipoDocIdentidad'],
-  'number' => $_SESSION['nroDocIdentidad']
-);
+// $payer->identification = array(
+//   'type' => $_SESSION['tipoDocIdentidad'],
+//   'number' => $_SESSION['nroDocIdentidad']
+// );
 
 $preference->payer=array($payer);
  
