@@ -2,6 +2,8 @@
 <?php
 require_once 'database/databaseConection.php';
 require  'vendor/autoload.php';
+ 
+
 
 $id = $_GET['id']; 
 
@@ -77,9 +79,22 @@ $preference = new MercadoPago\Preference();
             $item->quantity = 1;
             $item->unit_price = $dato['costoCurso'];
             $item->currency_id="PEN";
-            $item-> auto_return = "approved" ;
-             
+            $item-> auto_return = "approved" ; 
             $preference->items = array($item);
+
+
+            $payer = new MercadoPago\Payer();
+            $payer->name =  $_SESSION['nombres_nom']  ;
+            $payer->surname =  $_SESSION['nombres_pat'] + ' ' +  $_SESSION['nombres_mat']   ;
+            $payer->email=  $_SESSION['username']  ;
+            // $payer->identification = array(
+            //   'type' => $_SESSION['tipoDocIdentidad'],
+            //   'number' => $_SESSION['nroDocIdentidad']
+            // );
+            
+            $preference->payer=array($payer);
+
+
             $preference-> binary_mode =  true;
             $preference->back_urls = array(
                 "success" => "https://test-apicalma.site/user-sidebar.php",

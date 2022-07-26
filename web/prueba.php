@@ -1,5 +1,8 @@
 <?php  
  
+
+// ESTA PAGINA NO SE ESTA UTILIZANDO SOLO FUE A MODO DE PRUEBA
+
 require __DIR__ .  '/vendor/autoload.php';
 
 
