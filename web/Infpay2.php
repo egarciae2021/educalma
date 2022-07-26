@@ -13,9 +13,10 @@ if (!$conn) {
   die("Connection failed: " . mysqli_connect_error());
 }
 
-echo "previa";
+echo ($_GET["topic"]);
  
-if (isset($_GET["topic"]) && !empty($_GET["topic"]) ) {
+if (isset($_GET["topic"]) && !empty($_GET["topic"]) ) 
+{
 
 echo str_contains($_GET["topic"], 'payment');
 echo "llego";
@@ -114,6 +115,6 @@ echo "llego";
       
 
 
-    }
+}
 
 ?>
