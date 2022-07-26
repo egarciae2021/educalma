@@ -87,22 +87,22 @@ ob_start();
             // $payer->id = "Charles";
             // $payer->entity_type = "Charles";
             // $payer->type = "Charles";
-            // $payer->name = "Charles";
-            // $payer->surname = "Luevano";
+            $payer->name = "Charles";
+            $payer->surname = "Luevano";
             $payer->first_name = "Luevano";
             $payer->last_name = "Luevano";
 
-            // $payer->email = "charles@hotmail.com";
-            // $payer->date_created = "2018-06-02T12:58:41.425-04:00";
+            $payer->email = "charles@hotmail.com";
+            $payer->date_created = "2018-06-02T12:58:41.425-04:00";
             $payer->phone = array(
                 "area_code" => "",
                 "number" => "949 128 866"
             );
             
-            // $payer->identification = array(
-            //     "type" => "DNI",
-            //     "number" => "12345678"
-            // );
+            $payer->identification = array(
+                "type" => "DNI",
+                "number" => "12345678"
+            );
             
             $payer->address = array(
                 "street_name" => "Cuesta Miguel Armendáriz",
